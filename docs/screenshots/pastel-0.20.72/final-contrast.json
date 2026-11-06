@@ -1,0 +1,120 @@
+{
+  "version": "0.20.72",
+  "browser": "151.0.7922.34",
+  "source": "Actual one human plus five server bots; all 18 own catalogue kinds, six deployed opponents and mobile detail/rotation.",
+  "results": [
+    {
+      "name": "own-0",
+      "failures": []
+    },
+    {
+      "name": "own-1",
+      "failures": []
+    },
+    {
+      "name": "own-2",
+      "failures": []
+    },
+    {
+      "name": "own-3",
+      "failures": []
+    },
+    {
+      "name": "own-4",
+      "failures": []
+    },
+    {
+      "name": "own-5",
+      "failures": []
+    },
+    {
+      "name": "own-6",
+      "failures": []
+    },
+    {
+      "name": "own-7",
+      "failures": []
+    },
+    {
+      "name": "own-8",
+      "failures": []
+    },
+    {
+      "name": "own-9",
+      "failures": []
+    },
+    {
+      "name": "own-10",
+      "failures": []
+    },
+    {
+      "name": "own-11",
+      "failures": []
+    },
+    {
+      "name": "own-12",
+      "failures": []
+    },
+    {
+      "name": "own-13",
+      "failures": []
+    },
+    {
+      "name": "own-14",
+      "failures": []
+    },
+    {
+      "name": "own-15",
+      "failures": []
+    },
+    {
+      "name": "own-16",
+      "failures": []
+    },
+    {
+      "name": "own-17",
+      "failures": []
+    },
+    {
+      "name": "enemy-0",
+      "failures": []
+    },
+    {
+      "name": "enemy-1",
+      "failures": []
+    },
+    {
+      "name": "enemy-2",
+      "failures": []
+    },
+    {
+      "name": "enemy-3",
+      "failures": []
+    },
+    {
+      "name": "enemy-4",
+      "failures": []
+    },
+    {
+      "name": "enemy-5",
+      "failures": []
+    },
+    {
+      "name": "compact-pc",
+      "failures": []
+    },
+    {
+      "name": "mobile-detail-390-844",
+      "failures": []
+    },
+    {
+      "name": "mobile-detail-844-390",
+      "failures": []
+    },
+    {
+      "name": "mobile-detail-390-844",
+      "failures": []
+    }
+  ],
+  "errors": []
+}

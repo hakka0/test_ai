@@ -1,0 +1,83 @@
+{
+  "version": "0.19.0",
+  "browser": "138.0.7204.0",
+  "results": [
+    {
+      "mode": "pc",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "homeGeometry": {
+        "overflow": false,
+        "home": {
+          "x": 160,
+          "y": 41,
+          "width": 1120,
+          "height": 817,
+          "top": 41,
+          "right": 1280,
+          "bottom": 858,
+          "left": 160
+        },
+        "footer": {
+          "x": 12,
+          "y": 878,
+          "width": 1416,
+          "height": 110,
+          "top": 878,
+          "right": 1428,
+          "bottom": 988,
+          "left": 12
+        },
+        "pageHeight": 1000
+      },
+      "boardWidth": 560,
+      "entryModes": true,
+      "inlineErrors": true,
+      "modeBeforeEntry": true,
+      "reloadRestore": true,
+      "lobbyReturn": true,
+      "keyboard": true
+    },
+    {
+      "mode": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "homeGeometry": {
+        "overflow": false,
+        "home": {
+          "x": 6,
+          "y": 30.75,
+          "width": 378,
+          "height": 739.40625,
+          "top": 30.75,
+          "right": 384,
+          "bottom": 770.15625,
+          "left": 6
+        },
+        "footer": {
+          "x": 6,
+          "y": 790.15625,
+          "width": 378,
+          "height": 165.25,
+          "top": 790.15625,
+          "right": 384,
+          "bottom": 955.40625,
+          "left": 6
+        },
+        "pageHeight": 967
+      },
+      "boardWidth": 376,
+      "entryModes": true,
+      "inlineErrors": true,
+      "modeBeforeEntry": true,
+      "reloadRestore": true,
+      "lobbyReturn": true,
+      "keyboard": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,2334 @@
+{
+  "version": "0.20.68",
+  "browser": "151.0.7922.34",
+  "results": [
+    {
+      "mode": "pc",
+      "width": 1400,
+      "height": 1000,
+      "cards": [
+        {
+          "name": "쌍검 베기",
+          "kind": "액티브",
+          "cost": "코스트 60",
+          "img": 64,
+          "width": 129,
+          "scroll": 129,
+          "height": 68.96875
+        },
+        {
+          "name": "재빠른 발걸음",
+          "kind": "패시브",
+          "cost": "코스트 0",
+          "img": 64,
+          "width": 129,
+          "scroll": 129,
+          "height": 68.96875
+        }
+      ],
+      "skillRow": [
+        {
+          "x": 953,
+          "y": 448,
+          "width": 130.5,
+          "height": 68.96875,
+          "top": 448,
+          "right": 1083.5,
+          "bottom": 516.96875,
+          "left": 953
+        },
+        {
+          "x": 1089.5,
+          "y": 448,
+          "width": 130.5,
+          "height": 68.96875,
+          "top": 448,
+          "right": 1220,
+          "bottom": 516.96875,
+          "left": 1089.5
+        }
+      ],
+      "singleSkillRow": true,
+      "passive": {
+        "x": 995,
+        "y": 525,
+        "width": 320,
+        "height": 124.59375
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 295,
+          "y": 182,
+          "width": 534,
+          "height": 534,
+          "top": 182,
+          "right": 829,
+          "bottom": 716,
+          "left": 295
+        },
+        "bench": {
+          "x": 203,
+          "y": 716,
+          "width": 718,
+          "height": 100.84375,
+          "top": 716,
+          "right": 921,
+          "bottom": 816.84375,
+          "left": 203
+        },
+        "shop": {
+          "x": 24,
+          "y": 852,
+          "width": 1352,
+          "height": 130,
+          "top": 852,
+          "right": 1376,
+          "bottom": 982,
+          "left": 24
+        },
+        "rank": {
+          "x": 1266,
+          "y": 65,
+          "width": 104,
+          "height": 534,
+          "top": 65,
+          "right": 1370,
+          "bottom": 599,
+          "left": 1266
+        },
+        "targets": [
+          {
+            "x": 727.0625,
+            "y": 75,
+            "width": 44,
+            "height": 44,
+            "top": 75,
+            "right": 771.0625,
+            "bottom": 119,
+            "left": 727.0625
+          },
+          {
+            "x": 39,
+            "y": 101,
+            "width": 142,
+            "height": 44,
+            "top": 101,
+            "right": 181,
+            "bottom": 145,
+            "left": 39
+          },
+          {
+            "x": 39,
+            "y": 151,
+            "width": 142,
+            "height": 44,
+            "top": 151,
+            "right": 181,
+            "bottom": 195,
+            "left": 39
+          },
+          {
+            "x": 39,
+            "y": 201,
+            "width": 142,
+            "height": 44,
+            "top": 201,
+            "right": 181,
+            "bottom": 245,
+            "left": 39
+          },
+          {
+            "x": 246.390625,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 358.390625,
+            "bottom": 973,
+            "left": 246.390625
+          },
+          {
+            "x": 459.1875,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 571.1875,
+            "bottom": 973,
+            "left": 459.1875
+          },
+          {
+            "x": 671.984375,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 783.984375,
+            "bottom": 973,
+            "left": 671.984375
+          },
+          {
+            "x": 884.78125,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 996.78125,
+            "bottom": 973,
+            "left": 884.78125
+          },
+          {
+            "x": 1097.59375,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 1209.59375,
+            "bottom": 973,
+            "left": 1097.59375
+          },
+          {
+            "x": 1272,
+            "y": 115,
+            "width": 92,
+            "height": 76,
+            "top": 115,
+            "right": 1364,
+            "bottom": 191,
+            "left": 1272
+          },
+          {
+            "x": 1272,
+            "y": 195,
+            "width": 92,
+            "height": 76,
+            "top": 195,
+            "right": 1364,
+            "bottom": 271,
+            "left": 1272
+          },
+          {
+            "x": 1272,
+            "y": 275,
+            "width": 92,
+            "height": 76,
+            "top": 275,
+            "right": 1364,
+            "bottom": 351,
+            "left": 1272
+          },
+          {
+            "x": 1272,
+            "y": 355,
+            "width": 92,
+            "height": 76,
+            "top": 355,
+            "right": 1364,
+            "bottom": 431,
+            "left": 1272
+          },
+          {
+            "x": 1272,
+            "y": 435,
+            "width": 92,
+            "height": 76,
+            "top": 435,
+            "right": 1364,
+            "bottom": 511,
+            "left": 1272
+          },
+          {
+            "x": 1272,
+            "y": 515,
+            "width": 92,
+            "height": 76,
+            "top": 515,
+            "right": 1364,
+            "bottom": 591,
+            "left": 1272
+          }
+        ]
+      },
+      "opponentSkills": true,
+      "escapeKeepsParent": true,
+      "outsideClosesOnlyTooltip": true,
+      "nonmodal": true,
+      "unitNameRemoved": true,
+      "compactSynergy": true,
+      "room": "B9CC"
+    },
+    {
+      "mode": "pc",
+      "width": 1024,
+      "height": 768,
+      "cards": [
+        {
+          "name": "쌍검 베기",
+          "kind": "액티브",
+          "cost": "코스트 60",
+          "img": 64,
+          "width": 109,
+          "scroll": 109,
+          "height": 85.15625
+        },
+        {
+          "name": "재빠른 발걸음",
+          "kind": "패시브",
+          "cost": "코스트 0",
+          "img": 64,
+          "width": 109,
+          "scroll": 109,
+          "height": 85.15625
+        }
+      ],
+      "skillRow": [
+        {
+          "x": 675,
+          "y": 448,
+          "width": 110.5,
+          "height": 85.15625,
+          "top": 448,
+          "right": 785.5,
+          "bottom": 533.15625,
+          "left": 675
+        },
+        {
+          "x": 791.5,
+          "y": 448,
+          "width": 110.5,
+          "height": 85.15625,
+          "top": 448,
+          "right": 902,
+          "bottom": 533.15625,
+          "left": 791.5
+        }
+      ],
+      "singleSkillRow": true,
+      "passive": {
+        "x": 687,
+        "y": 541,
+        "width": 320,
+        "height": 124.59375
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 244.5,
+          "y": 182,
+          "width": 319,
+          "height": 319,
+          "top": 182,
+          "right": 563.5,
+          "bottom": 501,
+          "left": 244.5
+        },
+        "bench": {
+          "x": 165,
+          "y": 501,
+          "width": 478,
+          "height": 90,
+          "top": 501,
+          "right": 643,
+          "bottom": 591,
+          "left": 165
+        },
+        "shop": {
+          "x": 12,
+          "y": 626,
+          "width": 1000,
+          "height": 130,
+          "top": 626,
+          "right": 1012,
+          "bottom": 756,
+          "left": 12
+        },
+        "rank": {
+          "x": 948,
+          "y": 65,
+          "width": 64,
+          "height": 438,
+          "top": 65,
+          "right": 1012,
+          "bottom": 503,
+          "left": 948
+        },
+        "targets": [
+          {
+            "x": 449.0625,
+            "y": 75,
+            "width": 44,
+            "height": 44,
+            "top": 75,
+            "right": 493.0625,
+            "bottom": 119,
+            "left": 449.0625
+          },
+          {
+            "x": 21,
+            "y": 101,
+            "width": 122,
+            "height": 44,
+            "top": 101,
+            "right": 143,
+            "bottom": 145,
+            "left": 21
+          },
+          {
+            "x": 21,
+            "y": 151,
+            "width": 122,
+            "height": 44,
+            "top": 151,
+            "right": 143,
+            "bottom": 195,
+            "left": 21
+          },
+          {
+            "x": 21,
+            "y": 201,
+            "width": 122,
+            "height": 44,
+            "top": 201,
+            "right": 143,
+            "bottom": 245,
+            "left": 21
+          },
+          {
+            "x": 199.1875,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 311.1875,
+            "bottom": 747,
+            "left": 199.1875
+          },
+          {
+            "x": 341.59375,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 453.59375,
+            "bottom": 747,
+            "left": 341.59375
+          },
+          {
+            "x": 483.984375,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 595.984375,
+            "bottom": 747,
+            "left": 483.984375
+          },
+          {
+            "x": 626.390625,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 738.390625,
+            "bottom": 747,
+            "left": 626.390625
+          },
+          {
+            "x": 768.78125,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 880.78125,
+            "bottom": 747,
+            "left": 768.78125
+          },
+          {
+            "x": 954,
+            "y": 115,
+            "width": 52,
+            "height": 60,
+            "top": 115,
+            "right": 1006,
+            "bottom": 175,
+            "left": 954
+          },
+          {
+            "x": 954,
+            "y": 179,
+            "width": 52,
+            "height": 60,
+            "top": 179,
+            "right": 1006,
+            "bottom": 239,
+            "left": 954
+          },
+          {
+            "x": 954,
+            "y": 243,
+            "width": 52,
+            "height": 60,
+            "top": 243,
+            "right": 1006,
+            "bottom": 303,
+            "left": 954
+          },
+          {
+            "x": 954,
+            "y": 307,
+            "width": 52,
+            "height": 60,
+            "top": 307,
+            "right": 1006,
+            "bottom": 367,
+            "left": 954
+          },
+          {
+            "x": 954,
+            "y": 371,
+            "width": 52,
+            "height": 60,
+            "top": 371,
+            "right": 1006,
+            "bottom": 431,
+            "left": 954
+          },
+          {
+            "x": 954,
+            "y": 435,
+            "width": 52,
+            "height": 60,
+            "top": 435,
+            "right": 1006,
+            "bottom": 495,
+            "left": 954
+          }
+        ]
+      },
+      "opponentSkills": true,
+      "escapeKeepsParent": true,
+      "outsideClosesOnlyTooltip": true,
+      "nonmodal": true,
+      "unitNameRemoved": true,
+      "compactSynergy": true,
+      "room": "B9CC"
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "cards": [
+        {
+          "name": "쌍검 베기",
+          "kind": "액티브",
+          "cost": "코스트 60",
+          "img": 64,
+          "width": 158,
+          "scroll": 158,
+          "height": 62
+        },
+        {
+          "name": "재빠른 발걸음",
+          "kind": "패시브",
+          "cost": "코스트 0",
+          "img": 64,
+          "width": 158,
+          "scroll": 158,
+          "height": 62
+        }
+      ],
+      "skillRow": [
+        {
+          "x": 32,
+          "y": 481.03125,
+          "width": 160,
+          "height": 62,
+          "top": 481.03125,
+          "right": 192,
+          "bottom": 543.03125,
+          "left": 32
+        },
+        {
+          "x": 198,
+          "y": 481.03125,
+          "width": 160,
+          "height": 62,
+          "top": 481.03125,
+          "right": 358,
+          "bottom": 543.03125,
+          "left": 198
+        }
+      ],
+      "singleSkillRow": true,
+      "passive": {
+        "x": 62,
+        "y": 551,
+        "width": 320,
+        "height": 124.59375
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 38,
+          "y": 235,
+          "width": 254,
+          "height": 254,
+          "top": 235,
+          "right": 292,
+          "bottom": 489,
+          "left": 38
+        },
+        "bench": {
+          "x": 7,
+          "y": 489,
+          "width": 316,
+          "height": 94,
+          "top": 489,
+          "right": 323,
+          "bottom": 583,
+          "left": 7
+        },
+        "shop": {
+          "x": 6,
+          "y": 622,
+          "width": 378,
+          "height": 216,
+          "top": 622,
+          "right": 384,
+          "bottom": 838,
+          "left": 6
+        },
+        "rank": {
+          "x": 328,
+          "y": 57,
+          "width": 56,
+          "height": 360,
+          "top": 57,
+          "right": 384,
+          "bottom": 417,
+          "left": 328
+        },
+        "targets": [
+          {
+            "x": 188.234375,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "top": 64,
+            "right": 232.234375,
+            "bottom": 108,
+            "left": 188.234375
+          },
+          {
+            "x": 14,
+            "y": 134,
+            "width": 98,
+            "height": 44,
+            "top": 134,
+            "right": 112,
+            "bottom": 178,
+            "left": 14
+          },
+          {
+            "x": 116,
+            "y": 134,
+            "width": 98,
+            "height": 44,
+            "top": 134,
+            "right": 214,
+            "bottom": 178,
+            "left": 116
+          },
+          {
+            "x": 218,
+            "y": 134,
+            "width": 98,
+            "height": 44,
+            "top": 134,
+            "right": 316,
+            "bottom": 178,
+            "left": 218
+          },
+          {
+            "x": 153,
+            "y": 631,
+            "width": 64,
+            "height": 63.328125,
+            "top": 631,
+            "right": 217,
+            "bottom": 694.328125,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 631,
+            "width": 64,
+            "height": 63.328125,
+            "top": 631,
+            "right": 309,
+            "bottom": 694.328125,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 698.328125,
+            "width": 64,
+            "height": 63.328125,
+            "top": 698.328125,
+            "right": 217,
+            "bottom": 761.65625,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 698.328125,
+            "width": 64,
+            "height": 63.328125,
+            "top": 698.328125,
+            "right": 309,
+            "bottom": 761.65625,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 765.65625,
+            "width": 64,
+            "height": 63.328125,
+            "top": 765.65625,
+            "right": 217,
+            "bottom": 828.984375,
+            "left": 153
+          },
+          {
+            "x": 334,
+            "y": 101,
+            "width": 44,
+            "height": 48,
+            "top": 101,
+            "right": 378,
+            "bottom": 149,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 153,
+            "width": 44,
+            "height": 48,
+            "top": 153,
+            "right": 378,
+            "bottom": 201,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 205,
+            "width": 44,
+            "height": 48,
+            "top": 205,
+            "right": 378,
+            "bottom": 253,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 257,
+            "width": 44,
+            "height": 48,
+            "top": 257,
+            "right": 378,
+            "bottom": 305,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 309,
+            "width": 44,
+            "height": 48,
+            "top": 309,
+            "right": 378,
+            "bottom": 357,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 361,
+            "width": 44,
+            "height": 48,
+            "top": 361,
+            "right": 378,
+            "bottom": 409,
+            "left": 334
+          }
+        ]
+      },
+      "opponentSkills": true,
+      "escapeKeepsParent": true,
+      "outsideClosesOnlyTooltip": true,
+      "nonmodal": true,
+      "unitNameRemoved": true,
+      "compactSynergy": true,
+      "room": "2774"
+    },
+    {
+      "mode": "mobile",
+      "width": 320,
+      "height": 740,
+      "cards": [
+        {
+          "name": "쌍검 베기",
+          "kind": "액티브",
+          "cost": "코스트 60",
+          "img": 64,
+          "width": 123,
+          "scroll": 123,
+          "height": 85.15625
+        },
+        {
+          "name": "재빠른 발걸음",
+          "kind": "패시브",
+          "cost": "코스트 0",
+          "img": 64,
+          "width": 123,
+          "scroll": 123,
+          "height": 85.15625
+        }
+      ],
+      "skillRow": [
+        {
+          "x": 32,
+          "y": 475.828125,
+          "width": 125,
+          "height": 85.15625,
+          "top": 475.828125,
+          "right": 157,
+          "bottom": 560.984375,
+          "left": 32
+        },
+        {
+          "x": 163,
+          "y": 475.828125,
+          "width": 125,
+          "height": 85.15625,
+          "top": 475.828125,
+          "right": 288,
+          "bottom": 560.984375,
+          "left": 163
+        }
+      ],
+      "singleSkillRow": true,
+      "passive": {
+        "x": 8,
+        "y": 569,
+        "width": 304,
+        "height": 124.59375
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 70,
+          "y": 283,
+          "width": 120,
+          "height": 120,
+          "top": 283,
+          "right": 190,
+          "bottom": 403,
+          "left": 70
+        },
+        "bench": {
+          "x": 7,
+          "y": 403,
+          "width": 246,
+          "height": 94,
+          "top": 403,
+          "right": 253,
+          "bottom": 497,
+          "left": 7
+        },
+        "shop": {
+          "x": 6,
+          "y": 518,
+          "width": 308,
+          "height": 216,
+          "top": 518,
+          "right": 314,
+          "bottom": 734,
+          "left": 6
+        },
+        "rank": {
+          "x": 258,
+          "y": 57,
+          "width": 56,
+          "height": 360,
+          "top": 57,
+          "right": 314,
+          "bottom": 417,
+          "left": 258
+        },
+        "targets": [
+          {
+            "x": 118.234375,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "top": 64,
+            "right": 162.234375,
+            "bottom": 108,
+            "left": 118.234375
+          },
+          {
+            "x": 14,
+            "y": 134,
+            "width": 114,
+            "height": 44,
+            "top": 134,
+            "right": 128,
+            "bottom": 178,
+            "left": 14
+          },
+          {
+            "x": 132,
+            "y": 134,
+            "width": 114,
+            "height": 44,
+            "top": 134,
+            "right": 246,
+            "bottom": 178,
+            "left": 132
+          },
+          {
+            "x": 14,
+            "y": 182,
+            "width": 114,
+            "height": 44,
+            "top": 182,
+            "right": 128,
+            "bottom": 226,
+            "left": 14
+          },
+          {
+            "x": 141,
+            "y": 532.15625,
+            "width": 53,
+            "height": 53,
+            "top": 532.15625,
+            "right": 194,
+            "bottom": 585.15625,
+            "left": 141
+          },
+          {
+            "x": 198,
+            "y": 532.15625,
+            "width": 53,
+            "height": 53,
+            "top": 532.15625,
+            "right": 251,
+            "bottom": 585.15625,
+            "left": 198
+          },
+          {
+            "x": 141,
+            "y": 599.484375,
+            "width": 53,
+            "height": 53,
+            "top": 599.484375,
+            "right": 194,
+            "bottom": 652.484375,
+            "left": 141
+          },
+          {
+            "x": 198,
+            "y": 599.484375,
+            "width": 53,
+            "height": 53,
+            "top": 599.484375,
+            "right": 251,
+            "bottom": 652.484375,
+            "left": 198
+          },
+          {
+            "x": 141,
+            "y": 666.8125,
+            "width": 53,
+            "height": 53,
+            "top": 666.8125,
+            "right": 194,
+            "bottom": 719.8125,
+            "left": 141
+          },
+          {
+            "x": 264,
+            "y": 101,
+            "width": 44,
+            "height": 48,
+            "top": 101,
+            "right": 308,
+            "bottom": 149,
+            "left": 264
+          },
+          {
+            "x": 264,
+            "y": 153,
+            "width": 44,
+            "height": 48,
+            "top": 153,
+            "right": 308,
+            "bottom": 201,
+            "left": 264
+          },
+          {
+            "x": 264,
+            "y": 205,
+            "width": 44,
+            "height": 48,
+            "top": 205,
+            "right": 308,
+            "bottom": 253,
+            "left": 264
+          },
+          {
+            "x": 264,
+            "y": 257,
+            "width": 44,
+            "height": 48,
+            "top": 257,
+            "right": 308,
+            "bottom": 305,
+            "left": 264
+          },
+          {
+            "x": 264,
+            "y": 309,
+            "width": 44,
+            "height": 48,
+            "top": 309,
+            "right": 308,
+            "bottom": 357,
+            "left": 264
+          },
+          {
+            "x": 264,
+            "y": 361,
+            "width": 44,
+            "height": 48,
+            "top": 361,
+            "right": 308,
+            "bottom": 409,
+            "left": 264
+          }
+        ]
+      },
+      "opponentSkills": true,
+      "escapeKeepsParent": true,
+      "outsideClosesOnlyTooltip": true,
+      "nonmodal": true,
+      "unitNameRemoved": true,
+      "compactSynergy": true,
+      "room": "2774"
+    },
+    {
+      "mode": "mobile",
+      "width": 844,
+      "height": 390,
+      "cards": [
+        {
+          "name": "쌍검 베기",
+          "kind": "액티브",
+          "cost": "코스트 60",
+          "img": 64,
+          "width": 192,
+          "scroll": 192,
+          "height": 62
+        },
+        {
+          "name": "재빠른 발걸음",
+          "kind": "패시브",
+          "cost": "코스트 0",
+          "img": 64,
+          "width": 192,
+          "scroll": 192,
+          "height": 62
+        }
+      ],
+      "skillRow": [
+        {
+          "x": 225,
+          "y": 458.328125,
+          "width": 194,
+          "height": 62,
+          "top": 458.328125,
+          "right": 419,
+          "bottom": 520.328125,
+          "left": 225
+        },
+        {
+          "x": 425,
+          "y": 458.328125,
+          "width": 194,
+          "height": 62,
+          "top": 458.328125,
+          "right": 619,
+          "bottom": 520.328125,
+          "left": 425
+        }
+      ],
+      "singleSkillRow": true,
+      "passive": {
+        "x": 362,
+        "y": 248,
+        "width": 320,
+        "height": 124.59375
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 116.828125,
+          "y": 114,
+          "width": 174,
+          "height": 174,
+          "top": 114,
+          "right": 290.828125,
+          "bottom": 288,
+          "left": 116.828125
+        },
+        "bench": {
+          "x": 13,
+          "y": 292,
+          "width": 381.671875,
+          "height": 87,
+          "top": 292,
+          "right": 394.671875,
+          "bottom": 379,
+          "left": 13
+        },
+        "shop": {
+          "x": 539.6875,
+          "y": 53,
+          "width": 236.3125,
+          "height": 331,
+          "top": 53,
+          "right": 776,
+          "bottom": 384,
+          "left": 539.6875
+        },
+        "rank": {
+          "x": 782,
+          "y": 53,
+          "width": 56,
+          "height": 326,
+          "top": 53,
+          "right": 838,
+          "bottom": 379,
+          "left": 782
+        },
+        "targets": [
+          {
+            "x": 403.671875,
+            "y": 92,
+            "width": 44,
+            "height": 44,
+            "top": 92,
+            "right": 447.671875,
+            "bottom": 136,
+            "left": 403.671875
+          },
+          {
+            "x": 403.671875,
+            "y": 189,
+            "width": 118,
+            "height": 44,
+            "top": 189,
+            "right": 521.671875,
+            "bottom": 233,
+            "left": 403.671875
+          },
+          {
+            "x": 403.671875,
+            "y": 235,
+            "width": 118,
+            "height": 44,
+            "top": 235,
+            "right": 521.671875,
+            "bottom": 279,
+            "left": 403.671875
+          },
+          {
+            "x": 403.671875,
+            "y": 281,
+            "width": 118,
+            "height": 44,
+            "top": 281,
+            "right": 521.671875,
+            "bottom": 325,
+            "left": 403.671875
+          },
+          {
+            "x": 659.84375,
+            "y": 67.6875,
+            "width": 48,
+            "height": 48,
+            "top": 67.6875,
+            "right": 707.84375,
+            "bottom": 115.6875,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 131.09375,
+            "width": 48,
+            "height": 48,
+            "top": 131.09375,
+            "right": 707.84375,
+            "bottom": 179.09375,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 194.484375,
+            "width": 48,
+            "height": 48,
+            "top": 194.484375,
+            "right": 707.84375,
+            "bottom": 242.484375,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 257.890625,
+            "width": 48,
+            "height": 48,
+            "top": 257.890625,
+            "right": 707.84375,
+            "bottom": 305.890625,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 321.296875,
+            "width": 48,
+            "height": 48,
+            "top": 321.296875,
+            "right": 707.84375,
+            "bottom": 369.296875,
+            "left": 659.84375
+          },
+          {
+            "x": 788,
+            "y": 97,
+            "width": 44,
+            "height": 44,
+            "top": 97,
+            "right": 832,
+            "bottom": 141,
+            "left": 788
+          },
+          {
+            "x": 788,
+            "y": 143,
+            "width": 44,
+            "height": 44,
+            "top": 143,
+            "right": 832,
+            "bottom": 187,
+            "left": 788
+          },
+          {
+            "x": 788,
+            "y": 189,
+            "width": 44,
+            "height": 44,
+            "top": 189,
+            "right": 832,
+            "bottom": 233,
+            "left": 788
+          },
+          {
+            "x": 788,
+            "y": 235,
+            "width": 44,
+            "height": 44,
+            "top": 235,
+            "right": 832,
+            "bottom": 279,
+            "left": 788
+          },
+          {
+            "x": 788,
+            "y": 281,
+            "width": 44,
+            "height": 44,
+            "top": 281,
+            "right": 832,
+            "bottom": 325,
+            "left": 788
+          },
+          {
+            "x": 788,
+            "y": 327,
+            "width": 44,
+            "height": 44,
+            "top": 327,
+            "right": 832,
+            "bottom": 371,
+            "left": 788
+          }
+        ]
+      },
+      "opponentSkills": true,
+      "escapeKeepsParent": true,
+      "outsideClosesOnlyTooltip": true,
+      "nonmodal": true,
+      "unitNameRemoved": true,
+      "compactSynergy": true,
+      "room": "2774"
+    },
+    {
+      "mode": "mobile",
+      "width": 740,
+      "height": 360,
+      "cards": [
+        {
+          "name": "쌍검 베기",
+          "kind": "액티브",
+          "cost": "코스트 60",
+          "img": 64,
+          "width": 192,
+          "scroll": 192,
+          "height": 62
+        },
+        {
+          "name": "재빠른 발걸음",
+          "kind": "패시브",
+          "cost": "코스트 0",
+          "img": 64,
+          "width": 192,
+          "scroll": 192,
+          "height": 62
+        }
+      ],
+      "skillRow": [
+        {
+          "x": 173,
+          "y": 456.828125,
+          "width": 194,
+          "height": 62,
+          "top": 456.828125,
+          "right": 367,
+          "bottom": 518.828125,
+          "left": 173
+        },
+        {
+          "x": 373,
+          "y": 456.828125,
+          "width": 194,
+          "height": 62,
+          "top": 456.828125,
+          "right": 567,
+          "bottom": 518.828125,
+          "left": 373
+        }
+      ],
+      "singleSkillRow": true,
+      "passive": {
+        "x": 310,
+        "y": 30,
+        "width": 320,
+        "height": 124.59375
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 94,
+          "y": 114,
+          "width": 144,
+          "height": 144,
+          "top": 114,
+          "right": 238,
+          "bottom": 258,
+          "left": 94
+        },
+        "bench": {
+          "x": 13,
+          "y": 262,
+          "width": 306,
+          "height": 87,
+          "top": 262,
+          "right": 319,
+          "bottom": 349,
+          "left": 13
+        },
+        "shop": {
+          "x": 464,
+          "y": 53,
+          "width": 208,
+          "height": 301,
+          "top": 53,
+          "right": 672,
+          "bottom": 354,
+          "left": 464
+        },
+        "rank": {
+          "x": 678,
+          "y": 34,
+          "width": 56,
+          "height": 326,
+          "top": 34,
+          "right": 734,
+          "bottom": 360,
+          "left": 678
+        },
+        "targets": [
+          {
+            "x": 328,
+            "y": 92,
+            "width": 44,
+            "height": 44,
+            "top": 92,
+            "right": 372,
+            "bottom": 136,
+            "left": 328
+          },
+          {
+            "x": 328,
+            "y": 189,
+            "width": 118,
+            "height": 44,
+            "top": 189,
+            "right": 446,
+            "bottom": 233,
+            "left": 328
+          },
+          {
+            "x": 328,
+            "y": 235,
+            "width": 118,
+            "height": 44,
+            "top": 235,
+            "right": 446,
+            "bottom": 279,
+            "left": 328
+          },
+          {
+            "x": 328,
+            "y": 281,
+            "width": 118,
+            "height": 44,
+            "top": 281,
+            "right": 446,
+            "bottom": 325,
+            "left": 328
+          },
+          {
+            "x": 571,
+            "y": 65.6875,
+            "width": 46,
+            "height": 46,
+            "top": 65.6875,
+            "right": 617,
+            "bottom": 111.6875,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 123.09375,
+            "width": 46,
+            "height": 46,
+            "top": 123.09375,
+            "right": 617,
+            "bottom": 169.09375,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 180.484375,
+            "width": 46,
+            "height": 46,
+            "top": 180.484375,
+            "right": 617,
+            "bottom": 226.484375,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 237.890625,
+            "width": 46,
+            "height": 46,
+            "top": 237.890625,
+            "right": 617,
+            "bottom": 283.890625,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 295.296875,
+            "width": 46,
+            "height": 46,
+            "top": 295.296875,
+            "right": 617,
+            "bottom": 341.296875,
+            "left": 571
+          },
+          {
+            "x": 684,
+            "y": 78,
+            "width": 44,
+            "height": 44,
+            "top": 78,
+            "right": 728,
+            "bottom": 122,
+            "left": 684
+          },
+          {
+            "x": 684,
+            "y": 124,
+            "width": 44,
+            "height": 44,
+            "top": 124,
+            "right": 728,
+            "bottom": 168,
+            "left": 684
+          },
+          {
+            "x": 684,
+            "y": 170,
+            "width": 44,
+            "height": 44,
+            "top": 170,
+            "right": 728,
+            "bottom": 214,
+            "left": 684
+          },
+          {
+            "x": 684,
+            "y": 216,
+            "width": 44,
+            "height": 44,
+            "top": 216,
+            "right": 728,
+            "bottom": 260,
+            "left": 684
+          },
+          {
+            "x": 684,
+            "y": 262,
+            "width": 44,
+            "height": 44,
+            "top": 262,
+            "right": 728,
+            "bottom": 306,
+            "left": 684
+          },
+          {
+            "x": 684,
+            "y": 308,
+            "width": 44,
+            "height": 44,
+            "top": 308,
+            "right": 728,
+            "bottom": 352,
+            "left": 684
+          }
+        ]
+      },
+      "opponentSkills": true,
+      "escapeKeepsParent": true,
+      "outsideClosesOnlyTooltip": true,
+      "nonmodal": true,
+      "unitNameRemoved": true,
+      "compactSynergy": true,
+      "room": "2774"
+    },
+    {
+      "mode": "mobile",
+      "width": 667,
+      "height": 375,
+      "cards": [
+        {
+          "name": "쌍검 베기",
+          "kind": "액티브",
+          "cost": "코스트 60",
+          "img": 64,
+          "width": 192,
+          "scroll": 192,
+          "height": 62
+        },
+        {
+          "name": "재빠른 발걸음",
+          "kind": "패시브",
+          "cost": "코스트 0",
+          "img": 64,
+          "width": 192,
+          "scroll": 192,
+          "height": 62
+        }
+      ],
+      "skillRow": [
+        {
+          "x": 136.5,
+          "y": 457.578125,
+          "width": 194,
+          "height": 62,
+          "top": 457.578125,
+          "right": 330.5,
+          "bottom": 519.578125,
+          "left": 136.5
+        },
+        {
+          "x": 336.5,
+          "y": 457.578125,
+          "width": 194,
+          "height": 62,
+          "top": 457.578125,
+          "right": 530.5,
+          "bottom": 519.578125,
+          "left": 336.5
+        }
+      ],
+      "singleSkillRow": true,
+      "passive": {
+        "x": 274,
+        "y": 241,
+        "width": 320,
+        "height": 124.59375
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 72,
+          "y": 114,
+          "width": 159,
+          "height": 159,
+          "top": 114,
+          "right": 231,
+          "bottom": 273,
+          "left": 72
+        },
+        "bench": {
+          "x": 13,
+          "y": 277,
+          "width": 277,
+          "height": 87,
+          "top": 277,
+          "right": 290,
+          "bottom": 364,
+          "left": 13
+        },
+        "shop": {
+          "x": 391,
+          "y": 53,
+          "width": 208,
+          "height": 316,
+          "top": 53,
+          "right": 599,
+          "bottom": 369,
+          "left": 391
+        },
+        "rank": {
+          "x": 605,
+          "y": 49,
+          "width": 56,
+          "height": 326,
+          "top": 49,
+          "right": 661,
+          "bottom": 375,
+          "left": 605
+        },
+        "targets": [
+          {
+            "x": 299,
+            "y": 106,
+            "width": 44,
+            "height": 44,
+            "top": 106,
+            "right": 343,
+            "bottom": 150,
+            "left": 299
+          },
+          {
+            "x": 299,
+            "y": 250,
+            "width": 74,
+            "height": 44,
+            "top": 250,
+            "right": 373,
+            "bottom": 294,
+            "left": 299
+          },
+          {
+            "x": 299,
+            "y": 296,
+            "width": 74,
+            "height": 44,
+            "top": 296,
+            "right": 373,
+            "bottom": 340,
+            "left": 299
+          },
+          {
+            "x": 299,
+            "y": 342,
+            "width": 74,
+            "height": 44,
+            "top": 342,
+            "right": 373,
+            "bottom": 386,
+            "left": 299
+          },
+          {
+            "x": 498,
+            "y": 67.1875,
+            "width": 46,
+            "height": 46,
+            "top": 67.1875,
+            "right": 544,
+            "bottom": 113.1875,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 127.59375,
+            "width": 46,
+            "height": 46,
+            "top": 127.59375,
+            "right": 544,
+            "bottom": 173.59375,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 187.984375,
+            "width": 46,
+            "height": 46,
+            "top": 187.984375,
+            "right": 544,
+            "bottom": 233.984375,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 248.390625,
+            "width": 46,
+            "height": 46,
+            "top": 248.390625,
+            "right": 544,
+            "bottom": 294.390625,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 308.796875,
+            "width": 46,
+            "height": 46,
+            "top": 308.796875,
+            "right": 544,
+            "bottom": 354.796875,
+            "left": 498
+          },
+          {
+            "x": 611,
+            "y": 93,
+            "width": 44,
+            "height": 44,
+            "top": 93,
+            "right": 655,
+            "bottom": 137,
+            "left": 611
+          },
+          {
+            "x": 611,
+            "y": 139,
+            "width": 44,
+            "height": 44,
+            "top": 139,
+            "right": 655,
+            "bottom": 183,
+            "left": 611
+          },
+          {
+            "x": 611,
+            "y": 185,
+            "width": 44,
+            "height": 44,
+            "top": 185,
+            "right": 655,
+            "bottom": 229,
+            "left": 611
+          },
+          {
+            "x": 611,
+            "y": 231,
+            "width": 44,
+            "height": 44,
+            "top": 231,
+            "right": 655,
+            "bottom": 275,
+            "left": 611
+          },
+          {
+            "x": 611,
+            "y": 277,
+            "width": 44,
+            "height": 44,
+            "top": 277,
+            "right": 655,
+            "bottom": 321,
+            "left": 611
+          },
+          {
+            "x": 611,
+            "y": 323,
+            "width": 44,
+            "height": 44,
+            "top": 323,
+            "right": 655,
+            "bottom": 367,
+            "left": 611
+          }
+        ]
+      },
+      "opponentSkills": true,
+      "escapeKeepsParent": true,
+      "outsideClosesOnlyTooltip": true,
+      "nonmodal": true,
+      "unitNameRemoved": true,
+      "compactSynergy": true,
+      "room": "2774"
+    },
+    {
+      "mode": "mobile",
+      "width": 480,
+      "height": 320,
+      "cards": [
+        {
+          "name": "쌍검 베기",
+          "kind": "액티브",
+          "cost": "코스트 60",
+          "img": 64,
+          "width": 192,
+          "scroll": 192,
+          "height": 62
+        },
+        {
+          "name": "재빠른 발걸음",
+          "kind": "패시브",
+          "cost": "코스트 0",
+          "img": 64,
+          "width": 192,
+          "scroll": 192,
+          "height": 62
+        }
+      ],
+      "skillRow": [
+        {
+          "x": 43,
+          "y": 454.828125,
+          "width": 194,
+          "height": 62,
+          "top": 454.828125,
+          "right": 237,
+          "bottom": 516.828125,
+          "left": 43
+        },
+        {
+          "x": 243,
+          "y": 454.828125,
+          "width": 194,
+          "height": 62,
+          "top": 454.828125,
+          "right": 437,
+          "bottom": 516.828125,
+          "left": 243
+        }
+      ],
+      "singleSkillRow": true,
+      "passive": {
+        "x": 152,
+        "y": 10,
+        "width": 320,
+        "height": 124.59375
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 20,
+          "y": 118,
+          "width": 100,
+          "height": 100,
+          "top": 118,
+          "right": 120,
+          "bottom": 218,
+          "left": 20
+        },
+        "bench": {
+          "x": 13,
+          "y": 222,
+          "width": 114,
+          "height": 87,
+          "top": 222,
+          "right": 127,
+          "bottom": 309,
+          "left": 13
+        },
+        "shop": {
+          "x": 204,
+          "y": 57,
+          "width": 208,
+          "height": 257,
+          "top": 57,
+          "right": 412,
+          "bottom": 314,
+          "left": 204
+        },
+        "rank": {
+          "x": 418,
+          "y": 30,
+          "width": 56,
+          "height": 290,
+          "top": 30,
+          "right": 474,
+          "bottom": 320,
+          "left": 418
+        },
+        "targets": [
+          {
+            "x": 136,
+            "y": 90,
+            "width": 44,
+            "height": 44,
+            "top": 90,
+            "right": 180,
+            "bottom": 134,
+            "left": 136
+          },
+          {
+            "x": 136,
+            "y": 206,
+            "width": 50,
+            "height": 44,
+            "top": 206,
+            "right": 186,
+            "bottom": 250,
+            "left": 136
+          },
+          {
+            "x": 136,
+            "y": 252,
+            "width": 50,
+            "height": 44,
+            "top": 252,
+            "right": 186,
+            "bottom": 296,
+            "left": 136
+          },
+          {
+            "x": 136,
+            "y": 298,
+            "width": 50,
+            "height": 44,
+            "top": 298,
+            "right": 186,
+            "bottom": 342,
+            "left": 136
+          },
+          {
+            "x": 311,
+            "y": 66,
+            "width": 46,
+            "height": 44.59375,
+            "top": 66,
+            "right": 357,
+            "bottom": 110.59375,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 114.59375,
+            "width": 46,
+            "height": 44.59375,
+            "top": 114.59375,
+            "right": 357,
+            "bottom": 159.1875,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 163.1875,
+            "width": 46,
+            "height": 44.609375,
+            "top": 163.1875,
+            "right": 357,
+            "bottom": 207.796875,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 211.796875,
+            "width": 46,
+            "height": 44.59375,
+            "top": 211.796875,
+            "right": 357,
+            "bottom": 256.390625,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 260.390625,
+            "width": 46,
+            "height": 44.59375,
+            "top": 260.390625,
+            "right": 357,
+            "bottom": 304.984375,
+            "left": 311
+          },
+          {
+            "x": 424,
+            "y": 38,
+            "width": 44,
+            "height": 44,
+            "top": 38,
+            "right": 468,
+            "bottom": 82,
+            "left": 424
+          },
+          {
+            "x": 424,
+            "y": 84,
+            "width": 44,
+            "height": 44,
+            "top": 84,
+            "right": 468,
+            "bottom": 128,
+            "left": 424
+          },
+          {
+            "x": 424,
+            "y": 130,
+            "width": 44,
+            "height": 44,
+            "top": 130,
+            "right": 468,
+            "bottom": 174,
+            "left": 424
+          },
+          {
+            "x": 424,
+            "y": 176,
+            "width": 44,
+            "height": 44,
+            "top": 176,
+            "right": 468,
+            "bottom": 220,
+            "left": 424
+          },
+          {
+            "x": 424,
+            "y": 222,
+            "width": 44,
+            "height": 44,
+            "top": 222,
+            "right": 468,
+            "bottom": 266,
+            "left": 424
+          },
+          {
+            "x": 424,
+            "y": 268,
+            "width": 44,
+            "height": 44,
+            "top": 268,
+            "right": 468,
+            "bottom": 312,
+            "left": 424
+          }
+        ]
+      },
+      "opponentSkills": true,
+      "escapeKeepsParent": true,
+      "outsideClosesOnlyTooltip": true,
+      "nonmodal": true,
+      "unitNameRemoved": true,
+      "compactSynergy": true,
+      "room": "2774"
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "cards": [
+        {
+          "name": "쌍검 베기",
+          "kind": "액티브",
+          "cost": "코스트 60",
+          "img": 64,
+          "width": 158,
+          "scroll": 158,
+          "height": 62
+        },
+        {
+          "name": "재빠른 발걸음",
+          "kind": "패시브",
+          "cost": "코스트 0",
+          "img": 64,
+          "width": 158,
+          "scroll": 158,
+          "height": 62
+        }
+      ],
+      "skillRow": [
+        {
+          "x": 32,
+          "y": 481.03125,
+          "width": 160,
+          "height": 62,
+          "top": 481.03125,
+          "right": 192,
+          "bottom": 543.03125,
+          "left": 32
+        },
+        {
+          "x": 198,
+          "y": 481.03125,
+          "width": 160,
+          "height": 62,
+          "top": 481.03125,
+          "right": 358,
+          "bottom": 543.03125,
+          "left": 198
+        }
+      ],
+      "singleSkillRow": true,
+      "passive": {
+        "x": 62,
+        "y": 551,
+        "width": 320,
+        "height": 124.59375
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 38,
+          "y": 235,
+          "width": 254,
+          "height": 254,
+          "top": 235,
+          "right": 292,
+          "bottom": 489,
+          "left": 38
+        },
+        "bench": {
+          "x": 7,
+          "y": 489,
+          "width": 316,
+          "height": 94,
+          "top": 489,
+          "right": 323,
+          "bottom": 583,
+          "left": 7
+        },
+        "shop": {
+          "x": 6,
+          "y": 622,
+          "width": 378,
+          "height": 216,
+          "top": 622,
+          "right": 384,
+          "bottom": 838,
+          "left": 6
+        },
+        "rank": {
+          "x": 328,
+          "y": 57,
+          "width": 56,
+          "height": 360,
+          "top": 57,
+          "right": 384,
+          "bottom": 417,
+          "left": 328
+        },
+        "targets": [
+          {
+            "x": 188.234375,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "top": 64,
+            "right": 232.234375,
+            "bottom": 108,
+            "left": 188.234375
+          },
+          {
+            "x": 14,
+            "y": 134,
+            "width": 98,
+            "height": 44,
+            "top": 134,
+            "right": 112,
+            "bottom": 178,
+            "left": 14
+          },
+          {
+            "x": 116,
+            "y": 134,
+            "width": 98,
+            "height": 44,
+            "top": 134,
+            "right": 214,
+            "bottom": 178,
+            "left": 116
+          },
+          {
+            "x": 218,
+            "y": 134,
+            "width": 98,
+            "height": 44,
+            "top": 134,
+            "right": 316,
+            "bottom": 178,
+            "left": 218
+          },
+          {
+            "x": 153,
+            "y": 631,
+            "width": 64,
+            "height": 63.328125,
+            "top": 631,
+            "right": 217,
+            "bottom": 694.328125,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 631,
+            "width": 64,
+            "height": 63.328125,
+            "top": 631,
+            "right": 309,
+            "bottom": 694.328125,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 698.328125,
+            "width": 64,
+            "height": 63.328125,
+            "top": 698.328125,
+            "right": 217,
+            "bottom": 761.65625,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 698.328125,
+            "width": 64,
+            "height": 63.328125,
+            "top": 698.328125,
+            "right": 309,
+            "bottom": 761.65625,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 765.65625,
+            "width": 64,
+            "height": 63.328125,
+            "top": 765.65625,
+            "right": 217,
+            "bottom": 828.984375,
+            "left": 153
+          },
+          {
+            "x": 334,
+            "y": 101,
+            "width": 44,
+            "height": 48,
+            "top": 101,
+            "right": 378,
+            "bottom": 149,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 153,
+            "width": 44,
+            "height": 48,
+            "top": 153,
+            "right": 378,
+            "bottom": 201,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 205,
+            "width": 44,
+            "height": 48,
+            "top": 205,
+            "right": 378,
+            "bottom": 253,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 257,
+            "width": 44,
+            "height": 48,
+            "top": 257,
+            "right": 378,
+            "bottom": 305,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 309,
+            "width": 44,
+            "height": 48,
+            "top": 309,
+            "right": 378,
+            "bottom": 357,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 361,
+            "width": 44,
+            "height": 48,
+            "top": 361,
+            "right": 378,
+            "bottom": 409,
+            "left": 334
+          }
+        ]
+      },
+      "opponentSkills": true,
+      "escapeKeepsParent": true,
+      "outsideClosesOnlyTooltip": true,
+      "nonmodal": true,
+      "unitNameRemoved": true,
+      "compactSynergy": true,
+      "room": "2774"
+    }
+  ],
+  "feedback": [
+    {
+      "mode": "pc",
+      "fixture": "Receive-side skill states only",
+      "flashExpiry": true,
+      "liveCostPopup": true,
+      "cooldown": true,
+      "consumed": true,
+      "sustain": true,
+      "reducedMotion": true
+    },
+    {
+      "mode": "mobile",
+      "fixture": "Receive-side skill states only",
+      "flashExpiry": true,
+      "liveCostPopup": true,
+      "cooldown": true,
+      "consumed": true,
+      "sustain": true,
+      "reducedMotion": true
+    }
+  ],
+  "errors": [],
+  "scope": "Nine layouts with unchanged snapshots from actual one-human/five-bot rooms. Separate controlled receive-side combat-feedback checks."
+}

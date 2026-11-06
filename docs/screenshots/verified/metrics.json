@@ -1,0 +1,66 @@
+{
+  "browser": "138.0.7204.0",
+  "cases": [
+    {
+      "name": "pc-wide",
+      "width": 1440,
+      "height": 1000,
+      "mode": "pc",
+      "boardWidth": 560,
+      "boardHeight": 560,
+      "horizontalOverflow": false,
+      "actionDock": "static"
+    },
+    {
+      "name": "pc-short",
+      "width": 844,
+      "height": 390,
+      "mode": "pc",
+      "boardWidth": 360,
+      "boardHeight": 360,
+      "horizontalOverflow": false,
+      "actionDock": "static"
+    },
+    {
+      "name": "pc-portrait",
+      "width": 390,
+      "height": 844,
+      "mode": "pc",
+      "boardWidth": 349,
+      "boardHeight": 349,
+      "horizontalOverflow": false,
+      "actionDock": "static"
+    },
+    {
+      "name": "mobile-portrait",
+      "width": 390,
+      "height": 844,
+      "mode": "mobile",
+      "boardWidth": 361,
+      "boardHeight": 361,
+      "horizontalOverflow": false,
+      "actionDock": "static"
+    },
+    {
+      "name": "mobile-short",
+      "width": 844,
+      "height": 390,
+      "mode": "mobile",
+      "boardWidth": 180,
+      "boardHeight": 180,
+      "horizontalOverflow": false,
+      "actionDock": "static"
+    },
+    {
+      "name": "mobile-small",
+      "width": 320,
+      "height": 740,
+      "mode": "mobile",
+      "boardWidth": 291,
+      "boardHeight": 291,
+      "horizontalOverflow": false,
+      "actionDock": "static"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,50 @@
+{
+  "version": "0.20.18",
+  "browser": "155.0.8059.41",
+  "results": [
+    {
+      "mode": "pc",
+      "reverse": false,
+      "facing": true,
+      "recoil": true,
+      "hit": true,
+      "movement": true,
+      "death": true,
+      "coordinatesUnchanged": true
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "facing": true,
+      "recoil": true,
+      "hit": true,
+      "movement": true,
+      "death": true,
+      "coordinatesUnchanged": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "facing": true,
+      "recoil": true,
+      "hit": true,
+      "movement": true,
+      "death": true,
+      "coordinatesUnchanged": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "facing": true,
+      "recoil": true,
+      "hit": true,
+      "movement": true,
+      "death": true,
+      "coordinatesUnchanged": true
+    }
+  ],
+  "reducedMotion": true,
+  "reset": true,
+  "recall": true,
+  "errors": []
+}

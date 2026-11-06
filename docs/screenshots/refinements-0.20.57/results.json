@@ -1,0 +1,648 @@
+{
+  "version": "0.20.57",
+  "browser": "151.0.7922.34",
+  "focused": true,
+  "results": [
+    {
+      "mode": "mobile",
+      "width": 480,
+      "height": 320,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 19.5,
+          "y": 117,
+          "width": 101,
+          "height": 101,
+          "top": 117,
+          "right": 120.5,
+          "bottom": 218,
+          "left": 19.5
+        },
+        "bench": {
+          "x": 13,
+          "y": 222,
+          "width": 114,
+          "height": 87,
+          "top": 222,
+          "right": 127,
+          "bottom": 309,
+          "left": 13
+        },
+        "shop": {
+          "x": 204,
+          "y": 56,
+          "width": 208,
+          "height": 258,
+          "top": 56,
+          "right": 412,
+          "bottom": 314,
+          "left": 204
+        },
+        "rank": {
+          "x": 418,
+          "y": 30,
+          "width": 56,
+          "height": 290,
+          "top": 30,
+          "right": 474,
+          "bottom": 320,
+          "left": 418
+        },
+        "targets": [
+          {
+            "x": 136,
+            "y": 205,
+            "width": 50,
+            "height": 44,
+            "top": 205,
+            "right": 186,
+            "bottom": 249,
+            "left": 136
+          },
+          {
+            "x": 136,
+            "y": 251,
+            "width": 50,
+            "height": 44,
+            "top": 251,
+            "right": 186,
+            "bottom": 295,
+            "left": 136
+          },
+          {
+            "x": 136,
+            "y": 297,
+            "width": 50,
+            "height": 44,
+            "top": 297,
+            "right": 186,
+            "bottom": 341,
+            "left": 136
+          },
+          {
+            "x": 205,
+            "y": 87,
+            "width": 51,
+            "height": 226,
+            "top": 87,
+            "right": 256,
+            "bottom": 313,
+            "left": 205
+          },
+          {
+            "x": 257,
+            "y": 87,
+            "width": 45,
+            "height": 226,
+            "top": 87,
+            "right": 302,
+            "bottom": 313,
+            "left": 257
+          },
+          {
+            "x": 365,
+            "y": 101,
+            "width": 46,
+            "height": 212,
+            "top": 101,
+            "right": 411,
+            "bottom": 313,
+            "left": 365
+          },
+          {
+            "x": 424,
+            "y": 38,
+            "width": 44,
+            "height": 44,
+            "top": 38,
+            "right": 468,
+            "bottom": 82,
+            "left": 424
+          },
+          {
+            "x": 424,
+            "y": 84,
+            "width": 44,
+            "height": 44,
+            "top": 84,
+            "right": 468,
+            "bottom": 128,
+            "left": 424
+          },
+          {
+            "x": 424,
+            "y": 130,
+            "width": 44,
+            "height": 44,
+            "top": 130,
+            "right": 468,
+            "bottom": 174,
+            "left": 424
+          },
+          {
+            "x": 424,
+            "y": 176,
+            "width": 44,
+            "height": 44,
+            "top": 176,
+            "right": 468,
+            "bottom": 220,
+            "left": 424
+          },
+          {
+            "x": 424,
+            "y": 222,
+            "width": 44,
+            "height": 44,
+            "top": 222,
+            "right": 468,
+            "bottom": 266,
+            "left": 424
+          },
+          {
+            "x": 424,
+            "y": 268,
+            "width": 44,
+            "height": 44,
+            "top": 268,
+            "right": 468,
+            "bottom": 312,
+            "left": 424
+          }
+        ]
+      },
+      "selfColor": "dark blue",
+      "enemyColor": "dark red",
+      "noOwnerLabels": true,
+      "noActiveLabel": true,
+      "compactThresholds": [
+        2,
+        4,
+        6
+      ],
+      "thresholdAndEffectColors": true,
+      "scoutEconomyAndReady": true,
+      "matchingEconomyAndReady": true,
+      "matchingDeadlineUnchanged": true,
+      "rotationPreserved": true
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 37.5,
+          "y": 234,
+          "width": 255,
+          "height": 255,
+          "top": 234,
+          "right": 292.5,
+          "bottom": 489,
+          "left": 37.5
+        },
+        "bench": {
+          "x": 7,
+          "y": 489,
+          "width": 316,
+          "height": 94,
+          "top": 489,
+          "right": 323,
+          "bottom": 583,
+          "left": 7
+        },
+        "shop": {
+          "x": 6,
+          "y": 622,
+          "width": 378,
+          "height": 216,
+          "top": 622,
+          "right": 384,
+          "bottom": 838,
+          "left": 6
+        },
+        "rank": {
+          "x": 328,
+          "y": 56,
+          "width": 56,
+          "height": 360,
+          "top": 56,
+          "right": 384,
+          "bottom": 416,
+          "left": 328
+        },
+        "targets": [
+          {
+            "x": 14,
+            "y": 133,
+            "width": 98,
+            "height": 44,
+            "top": 133,
+            "right": 112,
+            "bottom": 177,
+            "left": 14
+          },
+          {
+            "x": 116,
+            "y": 133,
+            "width": 98,
+            "height": 44,
+            "top": 133,
+            "right": 214,
+            "bottom": 177,
+            "left": 116
+          },
+          {
+            "x": 218,
+            "y": 133,
+            "width": 98,
+            "height": 44,
+            "top": 133,
+            "right": 316,
+            "bottom": 177,
+            "left": 218
+          },
+          {
+            "x": 7,
+            "y": 653,
+            "width": 63,
+            "height": 184,
+            "top": 653,
+            "right": 70,
+            "bottom": 837,
+            "left": 7
+          },
+          {
+            "x": 71,
+            "y": 653,
+            "width": 61,
+            "height": 184,
+            "top": 653,
+            "right": 132,
+            "bottom": 837,
+            "left": 71
+          },
+          {
+            "x": 329,
+            "y": 667,
+            "width": 54,
+            "height": 170,
+            "top": 667,
+            "right": 383,
+            "bottom": 837,
+            "left": 329
+          },
+          {
+            "x": 334,
+            "y": 100,
+            "width": 44,
+            "height": 48,
+            "top": 100,
+            "right": 378,
+            "bottom": 148,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 152,
+            "width": 44,
+            "height": 48,
+            "top": 152,
+            "right": 378,
+            "bottom": 200,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 204,
+            "width": 44,
+            "height": 48,
+            "top": 204,
+            "right": 378,
+            "bottom": 252,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 256,
+            "width": 44,
+            "height": 48,
+            "top": 256,
+            "right": 378,
+            "bottom": 304,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 308,
+            "width": 44,
+            "height": 48,
+            "top": 308,
+            "right": 378,
+            "bottom": 356,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 360,
+            "width": 44,
+            "height": 48,
+            "top": 360,
+            "right": 378,
+            "bottom": 408,
+            "left": 334
+          }
+        ]
+      },
+      "selfColor": "dark blue",
+      "enemyColor": "dark red",
+      "noOwnerLabels": true,
+      "noActiveLabel": true,
+      "compactThresholds": [
+        2,
+        4,
+        6
+      ],
+      "thresholdAndEffectColors": true,
+      "scoutEconomyAndReady": true,
+      "matchingEconomyAndReady": true,
+      "matchingDeadlineUnchanged": true,
+      "rotationPreserved": true
+    },
+    {
+      "mode": "mobile",
+      "livePlacementAndColorUpdate": true,
+      "landscapeTouch": true
+    }
+  ],
+  "fixtureResults": [
+    {
+      "width": 1400,
+      "count": 1,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": []
+    },
+    {
+      "width": 1400,
+      "count": 2,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2
+      ]
+    },
+    {
+      "width": 1400,
+      "count": 3,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2
+      ]
+    },
+    {
+      "width": 1400,
+      "count": 4,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2,
+        4
+      ]
+    },
+    {
+      "width": 1400,
+      "count": 5,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2,
+        4
+      ]
+    },
+    {
+      "width": 1400,
+      "count": 6,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "width": 1400,
+      "count": 7,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "width": 320,
+      "count": 1,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": []
+    },
+    {
+      "width": 320,
+      "count": 2,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2
+      ]
+    },
+    {
+      "width": 320,
+      "count": 3,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2
+      ]
+    },
+    {
+      "width": 320,
+      "count": 4,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2,
+        4
+      ]
+    },
+    {
+      "width": 320,
+      "count": 5,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2,
+        4
+      ]
+    },
+    {
+      "width": 320,
+      "count": 6,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "width": 320,
+      "count": 7,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "width": 480,
+      "count": 1,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": []
+    },
+    {
+      "width": 480,
+      "count": 2,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2
+      ]
+    },
+    {
+      "width": 480,
+      "count": 3,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2
+      ]
+    },
+    {
+      "width": 480,
+      "count": 4,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2,
+        4
+      ]
+    },
+    {
+      "width": 480,
+      "count": 5,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2,
+        4
+      ]
+    },
+    {
+      "width": 480,
+      "count": 6,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "width": 480,
+      "count": 7,
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "achieved": [
+        2,
+        4,
+        6
+      ]
+    }
+  ],
+  "errors": [],
+  "source": "Actual one-human/five-bot rooms; unmodified authoritative snapshots. Separate renderer fixtures cover future counts; current catalogue still has two unique types per trait."
+}

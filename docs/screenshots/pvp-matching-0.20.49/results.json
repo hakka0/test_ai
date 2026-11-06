@@ -1,0 +1,1664 @@
+{
+  "version": "0.20.49",
+  "browser": "155.0.8059.85",
+  "fixture": "Actual two-player PvP server; received snapshots are unchanged",
+  "results": [
+    {
+      "mode": "pc",
+      "width": 1400,
+      "height": 1000,
+      "code": "56C1",
+      "preparePurchase": {
+        "id": "HkP7Zm79p-offer-0",
+        "kind": "warden",
+        "cost": 2,
+        "sold": false
+      },
+      "combatPurchase": {
+        "id": "HkP7Zm79p-offer-1",
+        "kind": "warden",
+        "cost": 2,
+        "sold": false
+      },
+      "matchingDuration": 5000,
+      "matchingDeadline": 1792558537997,
+      "combatNow": 1792558538391,
+      "geometry": {
+        "board": {
+          "x": 309.5,
+          "y": 180,
+          "width": 533,
+          "height": 533,
+          "top": 180,
+          "right": 842.5,
+          "bottom": 713,
+          "left": 309.5
+        },
+        "bench": {
+          "x": 203,
+          "y": 713,
+          "width": 746,
+          "height": 103.171875,
+          "top": 713,
+          "right": 949,
+          "bottom": 816.171875,
+          "left": 203
+        },
+        "shop": {
+          "x": 24,
+          "y": 852,
+          "width": 1352,
+          "height": 130,
+          "top": 852,
+          "right": 1376,
+          "bottom": 982,
+          "left": 24
+        },
+        "ranking": {
+          "x": 1294,
+          "y": 64,
+          "width": 76,
+          "height": 182,
+          "top": 64,
+          "right": 1370,
+          "bottom": 246,
+          "left": 1294
+        },
+        "banner": {
+          "x": 256,
+          "y": 130,
+          "width": 640,
+          "height": 46,
+          "top": 130,
+          "right": 896,
+          "bottom": 176,
+          "left": 256
+        },
+        "overflow": false,
+        "targets": [
+          {
+            "id": "room-code-toggle",
+            "class": "",
+            "x": 1130.703125,
+            "y": 12,
+            "width": 44,
+            "height": 44,
+            "top": 12,
+            "right": 1174.703125,
+            "bottom": 56,
+            "left": 1130.703125
+          },
+          {
+            "id": "room-code-copy",
+            "class": "",
+            "x": 1178.703125,
+            "y": 12,
+            "width": 44,
+            "height": 44,
+            "top": 12,
+            "right": 1222.703125,
+            "bottom": 56,
+            "left": 1178.703125
+          },
+          {
+            "id": "mobile-info-open",
+            "class": "",
+            "x": 755.484375,
+            "y": 73,
+            "width": 44,
+            "height": 44,
+            "top": 73,
+            "right": 799.484375,
+            "bottom": 117,
+            "left": 755.484375
+          },
+          {
+            "id": "history-toggle",
+            "class": "quiet",
+            "x": 805.484375,
+            "y": 73,
+            "width": 86.578125,
+            "height": 44,
+            "top": 73,
+            "right": 892.0625,
+            "bottom": 117,
+            "left": 805.484375
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 671.984375,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 783.984375,
+            "bottom": 973,
+            "left": 671.984375
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 884.78125,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 996.78125,
+            "bottom": 973,
+            "left": 884.78125
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 1097.59375,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 1209.59375,
+            "bottom": 973,
+            "left": 1097.59375
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 1300,
+            "y": 114,
+            "width": 64,
+            "height": 60,
+            "top": 114,
+            "right": 1364,
+            "bottom": 174,
+            "left": 1300
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 1300,
+            "y": 178,
+            "width": 64,
+            "height": 60,
+            "top": 178,
+            "right": 1364,
+            "bottom": 238,
+            "left": 1300
+          }
+        ]
+      }
+    },
+    {
+      "mode": "pc",
+      "width": 1024,
+      "height": 768,
+      "code": "0450",
+      "preparePurchase": {
+        "id": "PC93U6xvW-offer-0",
+        "kind": "mage",
+        "cost": 3,
+        "sold": false
+      },
+      "combatPurchase": {
+        "id": "PC93U6xvW-offer-1",
+        "kind": "ranger",
+        "cost": 2,
+        "sold": false
+      },
+      "matchingDuration": 5000,
+      "matchingDeadline": 1792558545884,
+      "combatNow": 1792558546298,
+      "geometry": {
+        "board": {
+          "x": 243.5,
+          "y": 180,
+          "width": 321,
+          "height": 321,
+          "top": 180,
+          "right": 564.5,
+          "bottom": 501,
+          "left": 243.5
+        },
+        "bench": {
+          "x": 165,
+          "y": 501,
+          "width": 478,
+          "height": 90,
+          "top": 501,
+          "right": 643,
+          "bottom": 591,
+          "left": 165
+        },
+        "shop": {
+          "x": 12,
+          "y": 626,
+          "width": 1000,
+          "height": 130,
+          "top": 626,
+          "right": 1012,
+          "bottom": 756,
+          "left": 12
+        },
+        "ranking": {
+          "x": 948,
+          "y": 64,
+          "width": 64,
+          "height": 182,
+          "top": 64,
+          "right": 1012,
+          "bottom": 246,
+          "left": 948
+        },
+        "banner": {
+          "x": 165,
+          "y": 130,
+          "width": 478,
+          "height": 46,
+          "top": 130,
+          "right": 643,
+          "bottom": 176,
+          "left": 165
+        },
+        "overflow": false,
+        "targets": [
+          {
+            "id": "room-code-toggle",
+            "class": "",
+            "x": 772.703125,
+            "y": 12,
+            "width": 44,
+            "height": 44,
+            "top": 12,
+            "right": 816.703125,
+            "bottom": 56,
+            "left": 772.703125
+          },
+          {
+            "id": "room-code-copy",
+            "class": "",
+            "x": 820.703125,
+            "y": 12,
+            "width": 44,
+            "height": 44,
+            "top": 12,
+            "right": 864.703125,
+            "bottom": 56,
+            "left": 820.703125
+          },
+          {
+            "id": "mobile-info-open",
+            "class": "",
+            "x": 449.484375,
+            "y": 73,
+            "width": 44,
+            "height": 44,
+            "top": 73,
+            "right": 493.484375,
+            "bottom": 117,
+            "left": 449.484375
+          },
+          {
+            "id": "history-toggle",
+            "class": "quiet",
+            "x": 499.484375,
+            "y": 73,
+            "width": 86.578125,
+            "height": 44,
+            "top": 73,
+            "right": 586.0625,
+            "bottom": 117,
+            "left": 499.484375
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 483.984375,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 595.984375,
+            "bottom": 747,
+            "left": 483.984375
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 626.390625,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 738.390625,
+            "bottom": 747,
+            "left": 626.390625
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 768.78125,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 880.78125,
+            "bottom": 747,
+            "left": 768.78125
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 954,
+            "y": 114,
+            "width": 52,
+            "height": 60,
+            "top": 114,
+            "right": 1006,
+            "bottom": 174,
+            "left": 954
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 954,
+            "y": 178,
+            "width": 52,
+            "height": 60,
+            "top": 178,
+            "right": 1006,
+            "bottom": 238,
+            "left": 954
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "code": "29D9",
+      "preparePurchase": {
+        "id": "eLzAjsSm6-offer-0",
+        "kind": "skirmisher",
+        "cost": 1,
+        "sold": false
+      },
+      "combatPurchase": {
+        "id": "eLzAjsSm6-offer-1",
+        "kind": "warden",
+        "cost": 2,
+        "sold": false
+      },
+      "matchingDuration": 5000,
+      "matchingDeadline": 1792558554182,
+      "combatNow": 1792558554668,
+      "geometry": {
+        "board": {
+          "x": 39.4375,
+          "y": 206,
+          "width": 251.109375,
+          "height": 251.109375,
+          "top": 206,
+          "right": 290.546875,
+          "bottom": 457.109375,
+          "left": 39.4375
+        },
+        "bench": {
+          "x": 7,
+          "y": 457.109375,
+          "width": 316,
+          "height": 94,
+          "top": 457.109375,
+          "right": 323,
+          "bottom": 551.109375,
+          "left": 7
+        },
+        "shop": {
+          "x": 6,
+          "y": 622,
+          "width": 378,
+          "height": 216,
+          "top": 622,
+          "right": 384,
+          "bottom": 838,
+          "left": 6
+        },
+        "ranking": {
+          "x": 328,
+          "y": 56,
+          "width": 56,
+          "height": 152,
+          "top": 56,
+          "right": 384,
+          "bottom": 208,
+          "left": 328
+        },
+        "banner": {
+          "x": 67,
+          "y": 156,
+          "width": 256,
+          "height": 46,
+          "top": 156,
+          "right": 323,
+          "bottom": 202,
+          "left": 67
+        },
+        "overflow": false,
+        "targets": [
+          {
+            "id": "room-code-toggle",
+            "class": "",
+            "x": 167.984375,
+            "y": 6,
+            "width": 44,
+            "height": 44,
+            "top": 6,
+            "right": 211.984375,
+            "bottom": 50,
+            "left": 167.984375
+          },
+          {
+            "id": "room-code-copy",
+            "class": "",
+            "x": 215.984375,
+            "y": 6,
+            "width": 44,
+            "height": 44,
+            "top": 6,
+            "right": 259.984375,
+            "bottom": 50,
+            "left": 215.984375
+          },
+          {
+            "id": "mobile-info-open",
+            "class": "",
+            "x": 187.71875,
+            "y": 63,
+            "width": 44,
+            "height": 44,
+            "top": 63,
+            "right": 231.71875,
+            "bottom": 107,
+            "left": 187.71875
+          },
+          {
+            "id": "history-toggle",
+            "class": "quiet",
+            "x": 235.71875,
+            "y": 63,
+            "width": 44,
+            "height": 44,
+            "top": 63,
+            "right": 279.71875,
+            "bottom": 107,
+            "left": 235.71875
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 153,
+            "y": 698,
+            "width": 64,
+            "height": 64,
+            "top": 698,
+            "right": 217,
+            "bottom": 762,
+            "left": 153
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 245,
+            "y": 698,
+            "width": 64,
+            "height": 64,
+            "top": 698,
+            "right": 309,
+            "bottom": 762,
+            "left": 245
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 153,
+            "y": 765.328125,
+            "width": 64,
+            "height": 64,
+            "top": 765.328125,
+            "right": 217,
+            "bottom": 829.328125,
+            "left": 153
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 334,
+            "y": 100,
+            "width": 44,
+            "height": 48,
+            "top": 100,
+            "right": 378,
+            "bottom": 148,
+            "left": 334
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 334,
+            "y": 152,
+            "width": 44,
+            "height": 48,
+            "top": 152,
+            "right": 378,
+            "bottom": 200,
+            "left": 334
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 320,
+      "height": 740,
+      "code": "947C",
+      "preparePurchase": {
+        "id": "361nPr02F-offer-0",
+        "kind": "skirmisher",
+        "cost": 1,
+        "sold": false
+      },
+      "combatPurchase": {
+        "id": "361nPr02F-offer-1",
+        "kind": "oracle",
+        "cost": 2,
+        "sold": false
+      },
+      "matchingDuration": 5000,
+      "matchingDeadline": 1792558562011,
+      "combatNow": 1792558562602,
+      "geometry": {
+        "board": {
+          "x": 41.5,
+          "y": 207.25,
+          "width": 177,
+          "height": 177,
+          "top": 207.25,
+          "right": 218.5,
+          "bottom": 384.25,
+          "left": 41.5
+        },
+        "bench": {
+          "x": 7,
+          "y": 384.25,
+          "width": 246,
+          "height": 94,
+          "top": 384.25,
+          "right": 253,
+          "bottom": 478.25,
+          "left": 7
+        },
+        "shop": {
+          "x": 6,
+          "y": 518,
+          "width": 308,
+          "height": 216,
+          "top": 518,
+          "right": 314,
+          "bottom": 734,
+          "left": 6
+        },
+        "ranking": {
+          "x": 258,
+          "y": 56,
+          "width": 56,
+          "height": 152,
+          "top": 56,
+          "right": 314,
+          "bottom": 208,
+          "left": 258
+        },
+        "banner": {
+          "x": 67,
+          "y": 157.25,
+          "width": 186,
+          "height": 46,
+          "top": 157.25,
+          "right": 253,
+          "bottom": 203.25,
+          "left": 67
+        },
+        "overflow": false,
+        "targets": [
+          {
+            "id": "room-code-toggle",
+            "class": "",
+            "x": 76.953125,
+            "y": 6,
+            "width": 44,
+            "height": 44,
+            "top": 6,
+            "right": 120.953125,
+            "bottom": 50,
+            "left": 76.953125
+          },
+          {
+            "id": "room-code-copy",
+            "class": "",
+            "x": 124.953125,
+            "y": 6,
+            "width": 44,
+            "height": 44,
+            "top": 6,
+            "right": 168.953125,
+            "bottom": 50,
+            "left": 124.953125
+          },
+          {
+            "id": "mobile-info-open",
+            "class": "",
+            "x": 117.71875,
+            "y": 63.625,
+            "width": 44,
+            "height": 44,
+            "top": 63.625,
+            "right": 161.71875,
+            "bottom": 107.625,
+            "left": 117.71875
+          },
+          {
+            "id": "history-toggle",
+            "class": "quiet",
+            "x": 165.71875,
+            "y": 63.625,
+            "width": 44,
+            "height": 44,
+            "top": 63.625,
+            "right": 209.71875,
+            "bottom": 107.625,
+            "left": 165.71875
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 141,
+            "y": 599.484375,
+            "width": 53,
+            "height": 53,
+            "top": 599.484375,
+            "right": 194,
+            "bottom": 652.484375,
+            "left": 141
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 198,
+            "y": 599.484375,
+            "width": 53,
+            "height": 53,
+            "top": 599.484375,
+            "right": 251,
+            "bottom": 652.484375,
+            "left": 198
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 141,
+            "y": 666.8125,
+            "width": 53,
+            "height": 53,
+            "top": 666.8125,
+            "right": 194,
+            "bottom": 719.8125,
+            "left": 141
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 264,
+            "y": 100,
+            "width": 44,
+            "height": 48,
+            "top": 100,
+            "right": 308,
+            "bottom": 148,
+            "left": 264
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 264,
+            "y": 152,
+            "width": 44,
+            "height": 48,
+            "top": 152,
+            "right": 308,
+            "bottom": 200,
+            "left": 264
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 844,
+      "height": 390,
+      "code": "6B15",
+      "preparePurchase": {
+        "id": "JZKe66-nX-offer-0",
+        "kind": "knight",
+        "cost": 1,
+        "sold": false
+      },
+      "combatPurchase": {
+        "id": "JZKe66-nX-offer-1",
+        "kind": "knight",
+        "cost": 1,
+        "sold": false
+      },
+      "matchingDuration": 5000,
+      "matchingDeadline": 1792558570483,
+      "combatNow": 1792558571335,
+      "geometry": {
+        "board": {
+          "x": 116.328125,
+          "y": 113,
+          "width": 175,
+          "height": 175,
+          "top": 113,
+          "right": 291.328125,
+          "bottom": 288,
+          "left": 116.328125
+        },
+        "bench": {
+          "x": 13,
+          "y": 292,
+          "width": 381.671875,
+          "height": 87,
+          "top": 292,
+          "right": 394.671875,
+          "bottom": 379,
+          "left": 13
+        },
+        "shop": {
+          "x": 539.6875,
+          "y": 52,
+          "width": 236.3125,
+          "height": 332,
+          "top": 52,
+          "right": 776,
+          "bottom": 384,
+          "left": 539.6875
+        },
+        "ranking": {
+          "x": 782,
+          "y": 52,
+          "width": 56,
+          "height": 142,
+          "top": 52,
+          "right": 838,
+          "bottom": 194,
+          "left": 782
+        },
+        "banner": {
+          "x": 13,
+          "y": 57,
+          "width": 381.671875,
+          "height": 48,
+          "top": 57,
+          "right": 394.671875,
+          "bottom": 105,
+          "left": 13
+        },
+        "overflow": false,
+        "targets": [
+          {
+            "id": "room-code-toggle",
+            "class": "",
+            "x": 545.984375,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "top": 4,
+            "right": 589.984375,
+            "bottom": 48,
+            "left": 545.984375
+          },
+          {
+            "id": "room-code-copy",
+            "class": "",
+            "x": 593.984375,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "top": 4,
+            "right": 637.984375,
+            "bottom": 48,
+            "left": 593.984375
+          },
+          {
+            "id": "mobile-info-open",
+            "class": "",
+            "x": 403.671875,
+            "y": 91,
+            "width": 44,
+            "height": 44,
+            "top": 91,
+            "right": 447.671875,
+            "bottom": 135,
+            "left": 403.671875
+          },
+          {
+            "id": "history-toggle",
+            "class": "quiet",
+            "x": 450.671875,
+            "y": 91,
+            "width": 44,
+            "height": 44,
+            "top": 91,
+            "right": 494.671875,
+            "bottom": 135,
+            "left": 450.671875
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 659.84375,
+            "y": 193.984375,
+            "width": 48,
+            "height": 48,
+            "top": 193.984375,
+            "right": 707.84375,
+            "bottom": 241.984375,
+            "left": 659.84375
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 659.84375,
+            "y": 257.59375,
+            "width": 48,
+            "height": 48,
+            "top": 257.59375,
+            "right": 707.84375,
+            "bottom": 305.59375,
+            "left": 659.84375
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 659.84375,
+            "y": 321.1875,
+            "width": 48,
+            "height": 48,
+            "top": 321.1875,
+            "right": 707.84375,
+            "bottom": 369.1875,
+            "left": 659.84375
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 788,
+            "y": 96,
+            "width": 44,
+            "height": 44,
+            "top": 96,
+            "right": 832,
+            "bottom": 140,
+            "left": 788
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 788,
+            "y": 142,
+            "width": 44,
+            "height": 44,
+            "top": 142,
+            "right": 832,
+            "bottom": 186,
+            "left": 788
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 740,
+      "height": 360,
+      "code": "3317",
+      "preparePurchase": {
+        "id": "mOnZPrvWx-offer-0",
+        "kind": "warden",
+        "cost": 2,
+        "sold": false
+      },
+      "combatPurchase": {
+        "id": "mOnZPrvWx-offer-1",
+        "kind": "mage",
+        "cost": 3,
+        "sold": false
+      },
+      "matchingDuration": 5000,
+      "matchingDeadline": 1792558579426,
+      "combatNow": 1792558580179,
+      "geometry": {
+        "board": {
+          "x": 93.5,
+          "y": 113,
+          "width": 145,
+          "height": 145,
+          "top": 113,
+          "right": 238.5,
+          "bottom": 258,
+          "left": 93.5
+        },
+        "bench": {
+          "x": 13,
+          "y": 262,
+          "width": 306,
+          "height": 87,
+          "top": 262,
+          "right": 319,
+          "bottom": 349,
+          "left": 13
+        },
+        "shop": {
+          "x": 464,
+          "y": 52,
+          "width": 208,
+          "height": 302,
+          "top": 52,
+          "right": 672,
+          "bottom": 354,
+          "left": 464
+        },
+        "ranking": {
+          "x": 678,
+          "y": 52,
+          "width": 56,
+          "height": 142,
+          "top": 52,
+          "right": 734,
+          "bottom": 194,
+          "left": 678
+        },
+        "banner": {
+          "x": 13,
+          "y": 57,
+          "width": 306,
+          "height": 48,
+          "top": 57,
+          "right": 319,
+          "bottom": 105,
+          "left": 13
+        },
+        "overflow": false,
+        "targets": [
+          {
+            "id": "room-code-toggle",
+            "class": "",
+            "x": 493.984375,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "top": 4,
+            "right": 537.984375,
+            "bottom": 48,
+            "left": 493.984375
+          },
+          {
+            "id": "room-code-copy",
+            "class": "",
+            "x": 541.984375,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "top": 4,
+            "right": 585.984375,
+            "bottom": 48,
+            "left": 541.984375
+          },
+          {
+            "id": "mobile-info-open",
+            "class": "",
+            "x": 328,
+            "y": 91,
+            "width": 44,
+            "height": 44,
+            "top": 91,
+            "right": 372,
+            "bottom": 135,
+            "left": 328
+          },
+          {
+            "id": "history-toggle",
+            "class": "quiet",
+            "x": 375,
+            "y": 91,
+            "width": 44,
+            "height": 44,
+            "top": 91,
+            "right": 419,
+            "bottom": 135,
+            "left": 375
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 571,
+            "y": 179.984375,
+            "width": 46,
+            "height": 46,
+            "top": 179.984375,
+            "right": 617,
+            "bottom": 225.984375,
+            "left": 571
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 571,
+            "y": 237.59375,
+            "width": 46,
+            "height": 46,
+            "top": 237.59375,
+            "right": 617,
+            "bottom": 283.59375,
+            "left": 571
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 571,
+            "y": 295.1875,
+            "width": 46,
+            "height": 46,
+            "top": 295.1875,
+            "right": 617,
+            "bottom": 341.1875,
+            "left": 571
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 684,
+            "y": 96,
+            "width": 44,
+            "height": 44,
+            "top": 96,
+            "right": 728,
+            "bottom": 140,
+            "left": 684
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 684,
+            "y": 142,
+            "width": 44,
+            "height": 44,
+            "top": 142,
+            "right": 728,
+            "bottom": 186,
+            "left": 684
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 667,
+      "height": 375,
+      "code": "1F10",
+      "preparePurchase": {
+        "id": "6EmTB7M2M-offer-0",
+        "kind": "oracle",
+        "cost": 2,
+        "sold": false
+      },
+      "combatPurchase": {
+        "id": "6EmTB7M2M-offer-1",
+        "kind": "warden",
+        "cost": 2,
+        "sold": false
+      },
+      "matchingDuration": 5000,
+      "matchingDeadline": 1792558587750,
+      "combatNow": 1792558588414,
+      "geometry": {
+        "board": {
+          "x": 71.5,
+          "y": 113,
+          "width": 160,
+          "height": 160,
+          "top": 113,
+          "right": 231.5,
+          "bottom": 273,
+          "left": 71.5
+        },
+        "bench": {
+          "x": 13,
+          "y": 277,
+          "width": 277,
+          "height": 87,
+          "top": 277,
+          "right": 290,
+          "bottom": 364,
+          "left": 13
+        },
+        "shop": {
+          "x": 391,
+          "y": 52,
+          "width": 208,
+          "height": 317,
+          "top": 52,
+          "right": 599,
+          "bottom": 369,
+          "left": 391
+        },
+        "ranking": {
+          "x": 605,
+          "y": 52,
+          "width": 56,
+          "height": 142,
+          "top": 52,
+          "right": 661,
+          "bottom": 194,
+          "left": 605
+        },
+        "banner": {
+          "x": 13,
+          "y": 57,
+          "width": 277,
+          "height": 48,
+          "top": 57,
+          "right": 290,
+          "bottom": 105,
+          "left": 13
+        },
+        "overflow": false,
+        "targets": [
+          {
+            "id": "room-code-toggle",
+            "class": "",
+            "x": 444.984375,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "top": 4,
+            "right": 488.984375,
+            "bottom": 48,
+            "left": 444.984375
+          },
+          {
+            "id": "room-code-copy",
+            "class": "",
+            "x": 492.984375,
+            "y": 4,
+            "width": 44,
+            "height": 44,
+            "top": 4,
+            "right": 536.984375,
+            "bottom": 48,
+            "left": 492.984375
+          },
+          {
+            "id": "mobile-info-open",
+            "class": "",
+            "x": 299,
+            "y": 105,
+            "width": 44,
+            "height": 44,
+            "top": 105,
+            "right": 343,
+            "bottom": 149,
+            "left": 299
+          },
+          {
+            "id": "history-toggle",
+            "class": "quiet",
+            "x": 299,
+            "y": 152,
+            "width": 44,
+            "height": 44,
+            "top": 152,
+            "right": 343,
+            "bottom": 196,
+            "left": 299
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 498,
+            "y": 187.484375,
+            "width": 46,
+            "height": 46,
+            "top": 187.484375,
+            "right": 544,
+            "bottom": 233.484375,
+            "left": 498
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 498,
+            "y": 248.09375,
+            "width": 46,
+            "height": 46,
+            "top": 248.09375,
+            "right": 544,
+            "bottom": 294.09375,
+            "left": 498
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 498,
+            "y": 308.6875,
+            "width": 46,
+            "height": 46,
+            "top": 308.6875,
+            "right": 544,
+            "bottom": 354.6875,
+            "left": 498
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 611,
+            "y": 96,
+            "width": 44,
+            "height": 44,
+            "top": 96,
+            "right": 655,
+            "bottom": 140,
+            "left": 611
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 611,
+            "y": 142,
+            "width": 44,
+            "height": 44,
+            "top": 142,
+            "right": 655,
+            "bottom": 186,
+            "left": 611
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 480,
+      "height": 320,
+      "code": "4956",
+      "preparePurchase": {
+        "id": "BXSl0bwsp-offer-0",
+        "kind": "mage",
+        "cost": 3,
+        "sold": false
+      },
+      "combatPurchase": {
+        "id": "BXSl0bwsp-offer-1",
+        "kind": "ranger",
+        "cost": 2,
+        "sold": false
+      },
+      "matchingDuration": 5000,
+      "matchingDeadline": 1792558596055,
+      "combatNow": 1792558596858,
+      "geometry": {
+        "board": {
+          "x": 39,
+          "y": 117,
+          "width": 62,
+          "height": 62,
+          "top": 117,
+          "right": 101,
+          "bottom": 179,
+          "left": 39
+        },
+        "bench": {
+          "x": 13,
+          "y": 183,
+          "width": 114,
+          "height": 87,
+          "top": 183,
+          "right": 127,
+          "bottom": 270,
+          "left": 13
+        },
+        "shop": {
+          "x": 204,
+          "y": 56,
+          "width": 208,
+          "height": 258,
+          "top": 56,
+          "right": 412,
+          "bottom": 314,
+          "left": 204
+        },
+        "ranking": {
+          "x": 418,
+          "y": 56,
+          "width": 56,
+          "height": 106,
+          "top": 56,
+          "right": 474,
+          "bottom": 162,
+          "left": 418
+        },
+        "banner": {
+          "x": 13,
+          "y": 61,
+          "width": 114,
+          "height": 48,
+          "top": 61,
+          "right": 127,
+          "bottom": 109,
+          "left": 13
+        },
+        "overflow": false,
+        "targets": [
+          {
+            "id": "room-code-toggle",
+            "class": "",
+            "x": 257.984375,
+            "y": 6,
+            "width": 44,
+            "height": 44,
+            "top": 6,
+            "right": 301.984375,
+            "bottom": 50,
+            "left": 257.984375
+          },
+          {
+            "id": "room-code-copy",
+            "class": "",
+            "x": 305.984375,
+            "y": 6,
+            "width": 44,
+            "height": 44,
+            "top": 6,
+            "right": 349.984375,
+            "bottom": 50,
+            "left": 305.984375
+          },
+          {
+            "id": "mobile-info-open",
+            "class": "",
+            "x": 136,
+            "y": 89,
+            "width": 44,
+            "height": 44,
+            "top": 89,
+            "right": 180,
+            "bottom": 133,
+            "left": 136
+          },
+          {
+            "id": "history-toggle",
+            "class": "quiet",
+            "x": 136,
+            "y": 136,
+            "width": 44,
+            "height": 44,
+            "top": 136,
+            "right": 180,
+            "bottom": 180,
+            "left": 136
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 311,
+            "y": 162,
+            "width": 46,
+            "height": 46,
+            "top": 162,
+            "right": 357,
+            "bottom": 208,
+            "left": 311
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 311,
+            "y": 210.796875,
+            "width": 46,
+            "height": 46,
+            "top": 210.796875,
+            "right": 357,
+            "bottom": 256.796875,
+            "left": 311
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 311,
+            "y": 259.59375,
+            "width": 46,
+            "height": 46,
+            "top": 259.59375,
+            "right": 357,
+            "bottom": 305.59375,
+            "left": 311
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 424,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "top": 64,
+            "right": 468,
+            "bottom": 108,
+            "left": 424
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 424,
+            "y": 110,
+            "width": 44,
+            "height": 44,
+            "top": 110,
+            "right": 468,
+            "bottom": 154,
+            "left": 424
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "code": "DA3B",
+      "preparePurchase": {
+        "id": "btsiZZwLW-offer-0",
+        "kind": "knight",
+        "cost": 1,
+        "sold": false
+      },
+      "combatPurchase": {
+        "id": "btsiZZwLW-offer-1",
+        "kind": "knight",
+        "cost": 1,
+        "sold": false
+      },
+      "matchingDuration": 5000,
+      "matchingDeadline": 1792558604981,
+      "combatNow": 1792558605625,
+      "geometry": {
+        "board": {
+          "x": 39.4375,
+          "y": 206,
+          "width": 251.109375,
+          "height": 251.109375,
+          "top": 206,
+          "right": 290.546875,
+          "bottom": 457.109375,
+          "left": 39.4375
+        },
+        "bench": {
+          "x": 7,
+          "y": 457.109375,
+          "width": 316,
+          "height": 94,
+          "top": 457.109375,
+          "right": 323,
+          "bottom": 551.109375,
+          "left": 7
+        },
+        "shop": {
+          "x": 6,
+          "y": 622,
+          "width": 378,
+          "height": 216,
+          "top": 622,
+          "right": 384,
+          "bottom": 838,
+          "left": 6
+        },
+        "ranking": {
+          "x": 328,
+          "y": 56,
+          "width": 56,
+          "height": 152,
+          "top": 56,
+          "right": 384,
+          "bottom": 208,
+          "left": 328
+        },
+        "banner": {
+          "x": 67,
+          "y": 156,
+          "width": 256,
+          "height": 46,
+          "top": 156,
+          "right": 323,
+          "bottom": 202,
+          "left": 67
+        },
+        "overflow": false,
+        "targets": [
+          {
+            "id": "room-code-toggle",
+            "class": "",
+            "x": 167.984375,
+            "y": 6,
+            "width": 44,
+            "height": 44,
+            "top": 6,
+            "right": 211.984375,
+            "bottom": 50,
+            "left": 167.984375
+          },
+          {
+            "id": "room-code-copy",
+            "class": "",
+            "x": 215.984375,
+            "y": 6,
+            "width": 44,
+            "height": 44,
+            "top": 6,
+            "right": 259.984375,
+            "bottom": 50,
+            "left": 215.984375
+          },
+          {
+            "id": "mobile-info-open",
+            "class": "",
+            "x": 187.71875,
+            "y": 63,
+            "width": 44,
+            "height": 44,
+            "top": 63,
+            "right": 231.71875,
+            "bottom": 107,
+            "left": 187.71875
+          },
+          {
+            "id": "history-toggle",
+            "class": "quiet",
+            "x": 235.71875,
+            "y": 63,
+            "width": 44,
+            "height": 44,
+            "top": 63,
+            "right": 279.71875,
+            "bottom": 107,
+            "left": 235.71875
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 153,
+            "y": 698,
+            "width": 64,
+            "height": 64,
+            "top": 698,
+            "right": 217,
+            "bottom": 762,
+            "left": 153
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 245,
+            "y": 698,
+            "width": 64,
+            "height": 64,
+            "top": 698,
+            "right": 309,
+            "bottom": 762,
+            "left": 245
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 153,
+            "y": 765.328125,
+            "width": 64,
+            "height": 64,
+            "top": 765.328125,
+            "right": 217,
+            "bottom": 829.328125,
+            "left": 153
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 334,
+            "y": 100,
+            "width": 44,
+            "height": 48,
+            "top": 100,
+            "right": 378,
+            "bottom": 148,
+            "left": 334
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 334,
+            "y": 152,
+            "width": 44,
+            "height": 48,
+            "top": 152,
+            "right": 378,
+            "bottom": 200,
+            "left": 334
+          }
+        ]
+      }
+    }
+  ],
+  "errors": []
+}

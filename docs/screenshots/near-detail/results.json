@@ -1,0 +1,30 @@
+{
+  "browser": "138.0.7204.0",
+  "results": [
+    {
+      "mode": "pc",
+      "gap": 13,
+      "width": 560,
+      "oldRow": "none",
+      "oldCaption": false,
+      "parent": "MAIN",
+      "previous": "arena-panel",
+      "managementInPanel": true,
+      "overflow": false,
+      "version": "v0.17.4"
+    },
+    {
+      "mode": "mobile",
+      "gap": 11,
+      "width": 376,
+      "oldRow": "none",
+      "oldCaption": false,
+      "parent": "MAIN",
+      "previous": "arena-panel",
+      "managementInPanel": true,
+      "overflow": false,
+      "version": "v0.17.4"
+    }
+  ],
+  "errors": []
+}

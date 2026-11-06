@@ -1,0 +1,727 @@
+{
+  "version": "0.20.34",
+  "browser": "155.0.8059.84",
+  "results": [
+    {
+      "mode": "pc",
+      "width": 1400,
+      "height": 1000,
+      "dialog": {
+        "x": 191,
+        "y": 350,
+        "width": 336,
+        "height": 487.296875,
+        "top": 350,
+        "right": 527,
+        "bottom": 837.296875,
+        "left": 191
+      },
+      "footer": {
+        "x": 192,
+        "y": 751.796875,
+        "width": 334,
+        "height": 84.5,
+        "top": 751.796875,
+        "right": 526,
+        "bottom": 836.296875,
+        "left": 192
+      },
+      "submit": {
+        "x": 204,
+        "y": 784.296875,
+        "width": 310,
+        "height": 44,
+        "top": 784.296875,
+        "right": 514,
+        "bottom": 828.296875,
+        "left": 204
+      },
+      "close": {
+        "x": 470,
+        "y": 359,
+        "width": 44,
+        "height": 44,
+        "top": 359,
+        "right": 514,
+        "bottom": 403,
+        "left": 470
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "layout": {
+        "board": {
+          "x": 279,
+          "y": 121,
+          "width": 594,
+          "height": 594,
+          "top": 121,
+          "right": 873,
+          "bottom": 715,
+          "left": 279
+        },
+        "bench": {
+          "x": 203,
+          "y": 715,
+          "width": 746,
+          "height": 102,
+          "top": 715,
+          "right": 949,
+          "bottom": 817,
+          "left": 203
+        },
+        "dock": {
+          "x": 24,
+          "y": 852,
+          "width": 1352,
+          "height": 130,
+          "top": 852,
+          "right": 1376,
+          "bottom": 982,
+          "left": 24
+        },
+        "ranking": {
+          "x": 1294,
+          "y": 56,
+          "width": 76,
+          "height": 182,
+          "top": 56,
+          "right": 1370,
+          "bottom": 238,
+          "left": 1294
+        }
+      }
+    },
+    {
+      "mode": "pc",
+      "width": 1024,
+      "height": 768,
+      "dialog": {
+        "x": 153,
+        "y": 273,
+        "width": 336,
+        "height": 487.296875,
+        "top": 273,
+        "right": 489,
+        "bottom": 760.296875,
+        "left": 153
+      },
+      "footer": {
+        "x": 154,
+        "y": 674.796875,
+        "width": 334,
+        "height": 84.5,
+        "top": 674.796875,
+        "right": 488,
+        "bottom": 759.296875,
+        "left": 154
+      },
+      "submit": {
+        "x": 166,
+        "y": 707.296875,
+        "width": 310,
+        "height": 44,
+        "top": 707.296875,
+        "right": 476,
+        "bottom": 751.296875,
+        "left": 166
+      },
+      "close": {
+        "x": 432,
+        "y": 282,
+        "width": 44,
+        "height": 44,
+        "top": 282,
+        "right": 476,
+        "bottom": 326,
+        "left": 432
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "layout": {
+        "board": {
+          "x": 242,
+          "y": 165,
+          "width": 324,
+          "height": 324,
+          "top": 165,
+          "right": 566,
+          "bottom": 489,
+          "left": 242
+        },
+        "bench": {
+          "x": 165,
+          "y": 489,
+          "width": 478,
+          "height": 102,
+          "top": 489,
+          "right": 643,
+          "bottom": 591,
+          "left": 165
+        },
+        "dock": {
+          "x": 12,
+          "y": 626,
+          "width": 1000,
+          "height": 130,
+          "top": 626,
+          "right": 1012,
+          "bottom": 756,
+          "left": 12
+        },
+        "ranking": {
+          "x": 948,
+          "y": 56,
+          "width": 64,
+          "height": 182,
+          "top": 56,
+          "right": 1012,
+          "bottom": 238,
+          "left": 948
+        }
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "dialog": {
+        "x": 13,
+        "y": 271.25,
+        "width": 336,
+        "height": 482.046875,
+        "top": 271.25,
+        "right": 349,
+        "bottom": 753.296875,
+        "left": 13
+      },
+      "footer": {
+        "x": 14,
+        "y": 667.796875,
+        "width": 334,
+        "height": 84.5,
+        "top": 667.796875,
+        "right": 348,
+        "bottom": 752.296875,
+        "left": 14
+      },
+      "submit": {
+        "x": 26,
+        "y": 700.296875,
+        "width": 310,
+        "height": 44,
+        "top": 700.296875,
+        "right": 336,
+        "bottom": 744.296875,
+        "left": 26
+      },
+      "close": {
+        "x": 292,
+        "y": 280.25,
+        "width": 44,
+        "height": 44,
+        "top": 280.25,
+        "right": 336,
+        "bottom": 324.25,
+        "left": 292
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "layout": {
+        "board": {
+          "x": 18,
+          "y": 190.25,
+          "width": 294,
+          "height": 294,
+          "top": 190.25,
+          "right": 312,
+          "bottom": 484.25,
+          "left": 18
+        },
+        "bench": {
+          "x": 7,
+          "y": 484.25,
+          "width": 316,
+          "height": 102,
+          "top": 484.25,
+          "right": 323,
+          "bottom": 586.25,
+          "left": 7
+        },
+        "dock": {
+          "x": 6,
+          "y": 622,
+          "width": 378,
+          "height": 216,
+          "top": 622,
+          "right": 384,
+          "bottom": 838,
+          "left": 6
+        },
+        "ranking": {
+          "x": 328,
+          "y": 56,
+          "width": 56,
+          "height": 152,
+          "top": 56,
+          "right": 384,
+          "bottom": 208,
+          "left": 328
+        }
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 320,
+      "height": 740,
+      "dialog": {
+        "x": 8,
+        "y": 250,
+        "width": 304,
+        "height": 482.046875,
+        "top": 250,
+        "right": 312,
+        "bottom": 732.046875,
+        "left": 8
+      },
+      "footer": {
+        "x": 9,
+        "y": 646.546875,
+        "width": 302,
+        "height": 84.5,
+        "top": 646.546875,
+        "right": 311,
+        "bottom": 731.046875,
+        "left": 9
+      },
+      "submit": {
+        "x": 21,
+        "y": 679.046875,
+        "width": 278,
+        "height": 44,
+        "top": 679.046875,
+        "right": 299,
+        "bottom": 723.046875,
+        "left": 21
+      },
+      "close": {
+        "x": 255,
+        "y": 259,
+        "width": 44,
+        "height": 44,
+        "top": 259,
+        "right": 299,
+        "bottom": 303,
+        "left": 255
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "layout": {
+        "board": {
+          "x": 45,
+          "y": 210.25,
+          "width": 170,
+          "height": 170,
+          "top": 210.25,
+          "right": 215,
+          "bottom": 380.25,
+          "left": 45
+        },
+        "bench": {
+          "x": 7,
+          "y": 380.25,
+          "width": 246,
+          "height": 102,
+          "top": 380.25,
+          "right": 253,
+          "bottom": 482.25,
+          "left": 7
+        },
+        "dock": {
+          "x": 6,
+          "y": 518,
+          "width": 308,
+          "height": 216,
+          "top": 518,
+          "right": 314,
+          "bottom": 734,
+          "left": 6
+        },
+        "ranking": {
+          "x": 258,
+          "y": 56,
+          "width": 56,
+          "height": 152,
+          "top": 56,
+          "right": 314,
+          "bottom": 208,
+          "left": 258
+        }
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 844,
+      "height": 390,
+      "dialog": {
+        "x": 314.671875,
+        "y": 8,
+        "width": 336,
+        "height": 374,
+        "top": 8,
+        "right": 650.671875,
+        "bottom": 382,
+        "left": 314.671875
+      },
+      "footer": {
+        "x": 315.671875,
+        "y": 296.5,
+        "width": 334,
+        "height": 84.5,
+        "top": 296.5,
+        "right": 649.671875,
+        "bottom": 381,
+        "left": 315.671875
+      },
+      "submit": {
+        "x": 327.671875,
+        "y": 329,
+        "width": 310,
+        "height": 44,
+        "top": 329,
+        "right": 637.671875,
+        "bottom": 373,
+        "left": 327.671875
+      },
+      "close": {
+        "x": 593.671875,
+        "y": 17,
+        "width": 44,
+        "height": 44,
+        "top": 17,
+        "right": 637.671875,
+        "bottom": 61,
+        "left": 593.671875
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "layout": {
+        "board": {
+          "x": 90.328125,
+          "y": 57,
+          "width": 227,
+          "height": 227,
+          "top": 57,
+          "right": 317.328125,
+          "bottom": 284,
+          "left": 90.328125
+        },
+        "bench": {
+          "x": 13,
+          "y": 288,
+          "width": 381.671875,
+          "height": 91,
+          "top": 288,
+          "right": 394.671875,
+          "bottom": 379,
+          "left": 13
+        },
+        "dock": {
+          "x": 539.6875,
+          "y": 52,
+          "width": 236.3125,
+          "height": 332,
+          "top": 52,
+          "right": 776,
+          "bottom": 384,
+          "left": 539.6875
+        },
+        "ranking": {
+          "x": 782,
+          "y": 52,
+          "width": 56,
+          "height": 142,
+          "top": 52,
+          "right": 838,
+          "bottom": 194,
+          "left": 782
+        }
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 740,
+      "height": 360,
+      "dialog": {
+        "x": 239,
+        "y": 8,
+        "width": 336,
+        "height": 344,
+        "top": 8,
+        "right": 575,
+        "bottom": 352,
+        "left": 239
+      },
+      "footer": {
+        "x": 240,
+        "y": 266.5,
+        "width": 334,
+        "height": 84.5,
+        "top": 266.5,
+        "right": 574,
+        "bottom": 351,
+        "left": 240
+      },
+      "submit": {
+        "x": 252,
+        "y": 299,
+        "width": 310,
+        "height": 44,
+        "top": 299,
+        "right": 562,
+        "bottom": 343,
+        "left": 252
+      },
+      "close": {
+        "x": 518,
+        "y": 17,
+        "width": 44,
+        "height": 44,
+        "top": 17,
+        "right": 562,
+        "bottom": 61,
+        "left": 518
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "layout": {
+        "board": {
+          "x": 67.5,
+          "y": 57,
+          "width": 197,
+          "height": 197,
+          "top": 57,
+          "right": 264.5,
+          "bottom": 254,
+          "left": 67.5
+        },
+        "bench": {
+          "x": 13,
+          "y": 258,
+          "width": 306,
+          "height": 91,
+          "top": 258,
+          "right": 319,
+          "bottom": 349,
+          "left": 13
+        },
+        "dock": {
+          "x": 464,
+          "y": 52,
+          "width": 208,
+          "height": 302,
+          "top": 52,
+          "right": 672,
+          "bottom": 354,
+          "left": 464
+        },
+        "ranking": {
+          "x": 678,
+          "y": 52,
+          "width": 56,
+          "height": 142,
+          "top": 52,
+          "right": 734,
+          "bottom": 194,
+          "left": 678
+        }
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 667,
+      "height": 375,
+      "dialog": {
+        "x": 166,
+        "y": 8,
+        "width": 336,
+        "height": 359,
+        "top": 8,
+        "right": 502,
+        "bottom": 367,
+        "left": 166
+      },
+      "footer": {
+        "x": 167,
+        "y": 281.5,
+        "width": 334,
+        "height": 84.5,
+        "top": 281.5,
+        "right": 501,
+        "bottom": 366,
+        "left": 167
+      },
+      "submit": {
+        "x": 179,
+        "y": 314,
+        "width": 310,
+        "height": 44,
+        "top": 314,
+        "right": 489,
+        "bottom": 358,
+        "left": 179
+      },
+      "close": {
+        "x": 445,
+        "y": 17,
+        "width": 44,
+        "height": 44,
+        "top": 17,
+        "right": 489,
+        "bottom": 61,
+        "left": 445
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "layout": {
+        "board": {
+          "x": 45.5,
+          "y": 57,
+          "width": 212,
+          "height": 212,
+          "top": 57,
+          "right": 257.5,
+          "bottom": 269,
+          "left": 45.5
+        },
+        "bench": {
+          "x": 13,
+          "y": 273,
+          "width": 277,
+          "height": 91,
+          "top": 273,
+          "right": 290,
+          "bottom": 364,
+          "left": 13
+        },
+        "dock": {
+          "x": 391,
+          "y": 52,
+          "width": 208,
+          "height": 317,
+          "top": 52,
+          "right": 599,
+          "bottom": 369,
+          "left": 391
+        },
+        "ranking": {
+          "x": 605,
+          "y": 52,
+          "width": 56,
+          "height": 142,
+          "top": 52,
+          "right": 661,
+          "bottom": 194,
+          "left": 605
+        }
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 480,
+      "height": 320,
+      "dialog": {
+        "x": 19,
+        "y": 8,
+        "width": 336,
+        "height": 304,
+        "top": 8,
+        "right": 355,
+        "bottom": 312,
+        "left": 19
+      },
+      "footer": {
+        "x": 20,
+        "y": 226.5,
+        "width": 334,
+        "height": 84.5,
+        "top": 226.5,
+        "right": 354,
+        "bottom": 311,
+        "left": 20
+      },
+      "submit": {
+        "x": 32,
+        "y": 259,
+        "width": 310,
+        "height": 44,
+        "top": 259,
+        "right": 342,
+        "bottom": 303,
+        "left": 32
+      },
+      "close": {
+        "x": 298,
+        "y": 17,
+        "width": 44,
+        "height": 44,
+        "top": 17,
+        "right": 342,
+        "bottom": 61,
+        "left": 298
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "layout": {
+        "board": {
+          "x": 13,
+          "y": 61,
+          "width": 98,
+          "height": 98,
+          "top": 61,
+          "right": 111,
+          "bottom": 159,
+          "left": 13
+        },
+        "bench": {
+          "x": 13,
+          "y": 163,
+          "width": 98,
+          "height": 91,
+          "top": 163,
+          "right": 111,
+          "bottom": 254,
+          "left": 13
+        },
+        "dock": {
+          "x": 204,
+          "y": 56,
+          "width": 208,
+          "height": 258,
+          "top": 56,
+          "right": 412,
+          "bottom": 314,
+          "left": 204
+        },
+        "ranking": {
+          "x": 418,
+          "y": 56,
+          "width": 56,
+          "height": 106,
+          "top": 56,
+          "right": 474,
+          "bottom": 162,
+          "left": 418
+        }
+      }
+    }
+  ],
+  "errors": []
+}

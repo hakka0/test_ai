@@ -1,0 +1,60 @@
+{
+  "browser": "138.0.7204.0",
+  "results": [
+    {
+      "mode": "pc",
+      "afterGame": true,
+      "beforeFooter": true,
+      "stats": [
+        {
+          "x": 460,
+          "y": 287,
+          "bottom": 353,
+          "width": 520
+        },
+        {
+          "x": 460,
+          "y": 361,
+          "bottom": 427,
+          "width": 520
+        },
+        {
+          "x": 460,
+          "y": 435,
+          "bottom": 501,
+          "width": 520
+        }
+      ],
+      "overflow": false,
+      "version": "v0.17.2"
+    },
+    {
+      "mode": "mobile",
+      "afterGame": true,
+      "beforeFooter": true,
+      "stats": [
+        {
+          "x": 21,
+          "y": 203.75,
+          "bottom": 272.5,
+          "width": 348
+        },
+        {
+          "x": 21,
+          "y": 280.5,
+          "bottom": 349.25,
+          "width": 348
+        },
+        {
+          "x": 21,
+          "y": 357.25,
+          "bottom": 426,
+          "width": 348
+        }
+      ],
+      "overflow": false,
+      "version": "v0.17.2"
+    }
+  ],
+  "errors": []
+}

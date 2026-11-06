@@ -1,0 +1,1554 @@
+{
+  "version": "0.20.46",
+  "browser": "155.0.8059.84",
+  "results": [
+    {
+      "mode": "pc",
+      "width": 1400,
+      "height": 1000,
+      "cards": [
+        {
+          "id": "ironWard",
+          "width": 281,
+          "scroll": 281,
+          "rect": {
+            "x": 973,
+            "y": 468,
+            "width": 283,
+            "height": 142.78125,
+            "top": 468,
+            "right": 1256,
+            "bottom": 610.78125,
+            "left": 973
+          }
+        },
+        {
+          "id": "steadfast",
+          "width": 281,
+          "scroll": 281,
+          "rect": {
+            "x": 973,
+            "y": 617.78125,
+            "width": 283,
+            "height": 92.78125,
+            "top": 617.78125,
+            "right": 1256,
+            "bottom": 710.5625,
+            "left": 973
+          }
+        }
+      ],
+      "tip": {
+        "x": 867,
+        "y": 476,
+        "width": 320,
+        "height": 218.171875
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 278.5,
+          "y": 118,
+          "width": 595,
+          "height": 595,
+          "top": 118,
+          "right": 873.5,
+          "bottom": 713,
+          "left": 278.5
+        },
+        "bench": {
+          "x": 203,
+          "y": 713,
+          "width": 746,
+          "height": 103.171875,
+          "top": 713,
+          "right": 949,
+          "bottom": 816.171875,
+          "left": 203
+        },
+        "shop": {
+          "x": 24,
+          "y": 852,
+          "width": 1352,
+          "height": 130,
+          "top": 852,
+          "right": 1376,
+          "bottom": 982,
+          "left": 24
+        },
+        "ranking": {
+          "x": 1294,
+          "y": 56,
+          "width": 76,
+          "height": 182,
+          "top": 56,
+          "right": 1370,
+          "bottom": 238,
+          "left": 1294
+        },
+        "targets": [
+          {
+            "x": 755.484375,
+            "y": 65,
+            "width": 44,
+            "height": 44,
+            "top": 65,
+            "right": 799.484375,
+            "bottom": 109,
+            "left": 755.484375
+          },
+          {
+            "x": 246.390625,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 358.390625,
+            "bottom": 973,
+            "left": 246.390625
+          },
+          {
+            "x": 459.1875,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 571.1875,
+            "bottom": 973,
+            "left": 459.1875
+          },
+          {
+            "x": 671.984375,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 783.984375,
+            "bottom": 973,
+            "left": 671.984375
+          },
+          {
+            "x": 884.78125,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 996.78125,
+            "bottom": 973,
+            "left": 884.78125
+          },
+          {
+            "x": 1097.59375,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 1209.59375,
+            "bottom": 973,
+            "left": 1097.59375
+          },
+          {
+            "x": 1300,
+            "y": 106,
+            "width": 64,
+            "height": 60,
+            "top": 106,
+            "right": 1364,
+            "bottom": 166,
+            "left": 1300
+          },
+          {
+            "x": 1300,
+            "y": 170,
+            "width": 64,
+            "height": 60,
+            "top": 170,
+            "right": 1364,
+            "bottom": 230,
+            "left": 1300
+          }
+        ]
+      }
+    },
+    {
+      "mode": "pc",
+      "width": 1024,
+      "height": 768,
+      "cards": [
+        {
+          "id": "ironWard",
+          "width": 241,
+          "scroll": 241,
+          "rect": {
+            "x": 667,
+            "y": 264,
+            "width": 243,
+            "height": 142.78125,
+            "top": 264,
+            "right": 910,
+            "bottom": 406.78125,
+            "left": 667
+          }
+        },
+        {
+          "id": "steadfast",
+          "width": 241,
+          "scroll": 241,
+          "rect": {
+            "x": 667,
+            "y": 413.78125,
+            "width": 243,
+            "height": 92.78125,
+            "top": 413.78125,
+            "right": 910,
+            "bottom": 506.5625,
+            "left": 667
+          }
+        }
+      ],
+      "tip": {
+        "x": 561,
+        "y": 476,
+        "width": 320,
+        "height": 218.171875
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 212.5,
+          "y": 118,
+          "width": 383,
+          "height": 383,
+          "top": 118,
+          "right": 595.5,
+          "bottom": 501,
+          "left": 212.5
+        },
+        "bench": {
+          "x": 165,
+          "y": 501,
+          "width": 478,
+          "height": 90,
+          "top": 501,
+          "right": 643,
+          "bottom": 591,
+          "left": 165
+        },
+        "shop": {
+          "x": 12,
+          "y": 626,
+          "width": 1000,
+          "height": 130,
+          "top": 626,
+          "right": 1012,
+          "bottom": 756,
+          "left": 12
+        },
+        "ranking": {
+          "x": 948,
+          "y": 56,
+          "width": 64,
+          "height": 182,
+          "top": 56,
+          "right": 1012,
+          "bottom": 238,
+          "left": 948
+        },
+        "targets": [
+          {
+            "x": 449.484375,
+            "y": 65,
+            "width": 44,
+            "height": 44,
+            "top": 65,
+            "right": 493.484375,
+            "bottom": 109,
+            "left": 449.484375
+          },
+          {
+            "x": 199.1875,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 311.1875,
+            "bottom": 747,
+            "left": 199.1875
+          },
+          {
+            "x": 341.59375,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 453.59375,
+            "bottom": 747,
+            "left": 341.59375
+          },
+          {
+            "x": 483.984375,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 595.984375,
+            "bottom": 747,
+            "left": 483.984375
+          },
+          {
+            "x": 626.390625,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 738.390625,
+            "bottom": 747,
+            "left": 626.390625
+          },
+          {
+            "x": 768.78125,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 880.78125,
+            "bottom": 747,
+            "left": 768.78125
+          },
+          {
+            "x": 954,
+            "y": 106,
+            "width": 52,
+            "height": 60,
+            "top": 106,
+            "right": 1006,
+            "bottom": 166,
+            "left": 954
+          },
+          {
+            "x": 954,
+            "y": 170,
+            "width": 52,
+            "height": 60,
+            "top": 170,
+            "right": 1006,
+            "bottom": 230,
+            "left": 954
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "cards": [
+        {
+          "id": "ironWard",
+          "width": 324,
+          "scroll": 324,
+          "rect": {
+            "x": 32,
+            "y": 229.03125,
+            "width": 326,
+            "height": 160.59375,
+            "top": 229.03125,
+            "right": 358,
+            "bottom": 389.625,
+            "left": 32
+          }
+        },
+        {
+          "id": "steadfast",
+          "width": 324,
+          "scroll": 324,
+          "rect": {
+            "x": 32,
+            "y": 389.625,
+            "width": 326,
+            "height": 113.59375,
+            "top": 389.625,
+            "right": 358,
+            "bottom": 503.21875,
+            "left": 32
+          }
+        }
+      ],
+      "tip": {
+        "x": 8,
+        "y": 448,
+        "width": 320,
+        "height": 218.171875
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 39.4375,
+          "y": 156,
+          "width": 251.109375,
+          "height": 251.109375,
+          "top": 156,
+          "right": 290.546875,
+          "bottom": 407.109375,
+          "left": 39.4375
+        },
+        "bench": {
+          "x": 7,
+          "y": 407.109375,
+          "width": 316,
+          "height": 94,
+          "top": 407.109375,
+          "right": 323,
+          "bottom": 501.109375,
+          "left": 7
+        },
+        "shop": {
+          "x": 6,
+          "y": 622,
+          "width": 378,
+          "height": 216,
+          "top": 622,
+          "right": 384,
+          "bottom": 838,
+          "left": 6
+        },
+        "ranking": {
+          "x": 328,
+          "y": 56,
+          "width": 56,
+          "height": 152,
+          "top": 56,
+          "right": 384,
+          "bottom": 208,
+          "left": 328
+        },
+        "targets": [
+          {
+            "x": 187.71875,
+            "y": 63,
+            "width": 44,
+            "height": 44,
+            "top": 63,
+            "right": 231.71875,
+            "bottom": 107,
+            "left": 187.71875
+          },
+          {
+            "x": 153,
+            "y": 630.671875,
+            "width": 64,
+            "height": 64,
+            "top": 630.671875,
+            "right": 217,
+            "bottom": 694.671875,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 630.671875,
+            "width": 64,
+            "height": 64,
+            "top": 630.671875,
+            "right": 309,
+            "bottom": 694.671875,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 698,
+            "width": 64,
+            "height": 64,
+            "top": 698,
+            "right": 217,
+            "bottom": 762,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 698,
+            "width": 64,
+            "height": 64,
+            "top": 698,
+            "right": 309,
+            "bottom": 762,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 765.328125,
+            "width": 64,
+            "height": 64,
+            "top": 765.328125,
+            "right": 217,
+            "bottom": 829.328125,
+            "left": 153
+          },
+          {
+            "x": 334,
+            "y": 100,
+            "width": 44,
+            "height": 48,
+            "top": 100,
+            "right": 378,
+            "bottom": 148,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 152,
+            "width": 44,
+            "height": 48,
+            "top": 152,
+            "right": 378,
+            "bottom": 200,
+            "left": 334
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 320,
+      "height": 740,
+      "cards": [
+        {
+          "id": "ironWard",
+          "width": 254,
+          "scroll": 254,
+          "rect": {
+            "x": 32,
+            "y": 156.828125,
+            "width": 256,
+            "height": 181.390625,
+            "top": 156.828125,
+            "right": 288,
+            "bottom": 338.21875,
+            "left": 32
+          }
+        },
+        {
+          "id": "steadfast",
+          "width": 254,
+          "scroll": 254,
+          "rect": {
+            "x": 32,
+            "y": 338.21875,
+            "width": 256,
+            "height": 113.59375,
+            "top": 338.21875,
+            "right": 288,
+            "bottom": 451.8125,
+            "left": 32
+          }
+        }
+      ],
+      "tip": {
+        "x": 8,
+        "y": 396,
+        "width": 304,
+        "height": 218.171875
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 33.140625,
+          "y": 177.25,
+          "width": 193.71875,
+          "height": 193.71875,
+          "top": 177.25,
+          "right": 226.859375,
+          "bottom": 370.96875,
+          "left": 33.140625
+        },
+        "bench": {
+          "x": 7,
+          "y": 370.96875,
+          "width": 246,
+          "height": 94,
+          "top": 370.96875,
+          "right": 253,
+          "bottom": 464.96875,
+          "left": 7
+        },
+        "shop": {
+          "x": 6,
+          "y": 518,
+          "width": 308,
+          "height": 216,
+          "top": 518,
+          "right": 314,
+          "bottom": 734,
+          "left": 6
+        },
+        "ranking": {
+          "x": 258,
+          "y": 56,
+          "width": 56,
+          "height": 152,
+          "top": 56,
+          "right": 314,
+          "bottom": 208,
+          "left": 258
+        },
+        "targets": [
+          {
+            "x": 117.71875,
+            "y": 63.625,
+            "width": 44,
+            "height": 44,
+            "top": 63.625,
+            "right": 161.71875,
+            "bottom": 107.625,
+            "left": 117.71875
+          },
+          {
+            "x": 141,
+            "y": 532.15625,
+            "width": 53,
+            "height": 53,
+            "top": 532.15625,
+            "right": 194,
+            "bottom": 585.15625,
+            "left": 141
+          },
+          {
+            "x": 198,
+            "y": 532.15625,
+            "width": 53,
+            "height": 53,
+            "top": 532.15625,
+            "right": 251,
+            "bottom": 585.15625,
+            "left": 198
+          },
+          {
+            "x": 141,
+            "y": 599.484375,
+            "width": 53,
+            "height": 53,
+            "top": 599.484375,
+            "right": 194,
+            "bottom": 652.484375,
+            "left": 141
+          },
+          {
+            "x": 198,
+            "y": 599.484375,
+            "width": 53,
+            "height": 53,
+            "top": 599.484375,
+            "right": 251,
+            "bottom": 652.484375,
+            "left": 198
+          },
+          {
+            "x": 141,
+            "y": 666.8125,
+            "width": 53,
+            "height": 53,
+            "top": 666.8125,
+            "right": 194,
+            "bottom": 719.8125,
+            "left": 141
+          },
+          {
+            "x": 264,
+            "y": 100,
+            "width": 44,
+            "height": 48,
+            "top": 100,
+            "right": 308,
+            "bottom": 148,
+            "left": 264
+          },
+          {
+            "x": 264,
+            "y": 152,
+            "width": 44,
+            "height": 48,
+            "top": 152,
+            "right": 308,
+            "bottom": 200,
+            "left": 264
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 844,
+      "height": 390,
+      "cards": [
+        {
+          "id": "ironWard",
+          "width": 392,
+          "scroll": 392,
+          "rect": {
+            "x": 225,
+            "y": 2.328125,
+            "width": 394,
+            "height": 160.59375,
+            "top": 2.328125,
+            "right": 619,
+            "bottom": 162.921875,
+            "left": 225
+          }
+        },
+        {
+          "id": "steadfast",
+          "width": 392,
+          "scroll": 392,
+          "rect": {
+            "x": 225,
+            "y": 162.921875,
+            "width": 394,
+            "height": 92.796875,
+            "top": 162.921875,
+            "right": 619,
+            "bottom": 255.71875,
+            "left": 225
+          }
+        }
+      ],
+      "tip": {
+        "x": 130,
+        "y": 164,
+        "width": 320,
+        "height": 218.171875
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 88.328125,
+          "y": 57,
+          "width": 231,
+          "height": 231,
+          "top": 57,
+          "right": 319.328125,
+          "bottom": 288,
+          "left": 88.328125
+        },
+        "bench": {
+          "x": 13,
+          "y": 292,
+          "width": 381.671875,
+          "height": 87,
+          "top": 292,
+          "right": 394.671875,
+          "bottom": 379,
+          "left": 13
+        },
+        "shop": {
+          "x": 539.6875,
+          "y": 52,
+          "width": 236.3125,
+          "height": 332,
+          "top": 52,
+          "right": 776,
+          "bottom": 384,
+          "left": 539.6875
+        },
+        "ranking": {
+          "x": 782,
+          "y": 52,
+          "width": 56,
+          "height": 142,
+          "top": 52,
+          "right": 838,
+          "bottom": 194,
+          "left": 782
+        },
+        "targets": [
+          {
+            "x": 403.671875,
+            "y": 91,
+            "width": 44,
+            "height": 44,
+            "top": 91,
+            "right": 447.671875,
+            "bottom": 135,
+            "left": 403.671875
+          },
+          {
+            "x": 659.84375,
+            "y": 66.796875,
+            "width": 48,
+            "height": 48,
+            "top": 66.796875,
+            "right": 707.84375,
+            "bottom": 114.796875,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 130.390625,
+            "width": 48,
+            "height": 48,
+            "top": 130.390625,
+            "right": 707.84375,
+            "bottom": 178.390625,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 193.984375,
+            "width": 48,
+            "height": 48,
+            "top": 193.984375,
+            "right": 707.84375,
+            "bottom": 241.984375,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 257.59375,
+            "width": 48,
+            "height": 48,
+            "top": 257.59375,
+            "right": 707.84375,
+            "bottom": 305.59375,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 321.1875,
+            "width": 48,
+            "height": 48,
+            "top": 321.1875,
+            "right": 707.84375,
+            "bottom": 369.1875,
+            "left": 659.84375
+          },
+          {
+            "x": 788,
+            "y": 96,
+            "width": 44,
+            "height": 44,
+            "top": 96,
+            "right": 832,
+            "bottom": 140,
+            "left": 788
+          },
+          {
+            "x": 788,
+            "y": 142,
+            "width": 44,
+            "height": 44,
+            "top": 142,
+            "right": 832,
+            "bottom": 186,
+            "left": 788
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 740,
+      "height": 360,
+      "cards": [
+        {
+          "id": "ironWard",
+          "width": 392,
+          "scroll": 392,
+          "rect": {
+            "x": 173,
+            "y": -12.171875,
+            "width": 394,
+            "height": 160.59375,
+            "top": -12.171875,
+            "right": 567,
+            "bottom": 148.421875,
+            "left": 173
+          }
+        },
+        {
+          "id": "steadfast",
+          "width": 392,
+          "scroll": 392,
+          "rect": {
+            "x": 173,
+            "y": 148.421875,
+            "width": 394,
+            "height": 92.796875,
+            "top": 148.421875,
+            "right": 567,
+            "bottom": 241.21875,
+            "left": 173
+          }
+        }
+      ],
+      "tip": {
+        "x": 78,
+        "y": 134,
+        "width": 320,
+        "height": 218.171875
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 65.5,
+          "y": 57,
+          "width": 201,
+          "height": 201,
+          "top": 57,
+          "right": 266.5,
+          "bottom": 258,
+          "left": 65.5
+        },
+        "bench": {
+          "x": 13,
+          "y": 262,
+          "width": 306,
+          "height": 87,
+          "top": 262,
+          "right": 319,
+          "bottom": 349,
+          "left": 13
+        },
+        "shop": {
+          "x": 464,
+          "y": 52,
+          "width": 208,
+          "height": 302,
+          "top": 52,
+          "right": 672,
+          "bottom": 354,
+          "left": 464
+        },
+        "ranking": {
+          "x": 678,
+          "y": 52,
+          "width": 56,
+          "height": 142,
+          "top": 52,
+          "right": 734,
+          "bottom": 194,
+          "left": 678
+        },
+        "targets": [
+          {
+            "x": 328,
+            "y": 91,
+            "width": 44,
+            "height": 44,
+            "top": 91,
+            "right": 372,
+            "bottom": 135,
+            "left": 328
+          },
+          {
+            "x": 571,
+            "y": 64.796875,
+            "width": 46,
+            "height": 46,
+            "top": 64.796875,
+            "right": 617,
+            "bottom": 110.796875,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 122.390625,
+            "width": 46,
+            "height": 46,
+            "top": 122.390625,
+            "right": 617,
+            "bottom": 168.390625,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 179.984375,
+            "width": 46,
+            "height": 46,
+            "top": 179.984375,
+            "right": 617,
+            "bottom": 225.984375,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 237.59375,
+            "width": 46,
+            "height": 46,
+            "top": 237.59375,
+            "right": 617,
+            "bottom": 283.59375,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 295.1875,
+            "width": 46,
+            "height": 46,
+            "top": 295.1875,
+            "right": 617,
+            "bottom": 341.1875,
+            "left": 571
+          },
+          {
+            "x": 684,
+            "y": 96,
+            "width": 44,
+            "height": 44,
+            "top": 96,
+            "right": 728,
+            "bottom": 140,
+            "left": 684
+          },
+          {
+            "x": 684,
+            "y": 142,
+            "width": 44,
+            "height": 44,
+            "top": 142,
+            "right": 728,
+            "bottom": 186,
+            "left": 684
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 667,
+      "height": 375,
+      "cards": [
+        {
+          "id": "ironWard",
+          "width": 392,
+          "scroll": 392,
+          "rect": {
+            "x": 136.5,
+            "y": -5.421875,
+            "width": 394,
+            "height": 160.59375,
+            "top": -5.421875,
+            "right": 530.5,
+            "bottom": 155.171875,
+            "left": 136.5
+          }
+        },
+        {
+          "id": "steadfast",
+          "width": 392,
+          "scroll": 392,
+          "rect": {
+            "x": 136.5,
+            "y": 155.171875,
+            "width": 394,
+            "height": 92.796875,
+            "top": 155.171875,
+            "right": 530.5,
+            "bottom": 247.96875,
+            "left": 136.5
+          }
+        }
+      ],
+      "tip": {
+        "x": 42,
+        "y": 149,
+        "width": 320,
+        "height": 218.171875
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 43.5,
+          "y": 57,
+          "width": 216,
+          "height": 216,
+          "top": 57,
+          "right": 259.5,
+          "bottom": 273,
+          "left": 43.5
+        },
+        "bench": {
+          "x": 13,
+          "y": 277,
+          "width": 277,
+          "height": 87,
+          "top": 277,
+          "right": 290,
+          "bottom": 364,
+          "left": 13
+        },
+        "shop": {
+          "x": 391,
+          "y": 52,
+          "width": 208,
+          "height": 317,
+          "top": 52,
+          "right": 599,
+          "bottom": 369,
+          "left": 391
+        },
+        "ranking": {
+          "x": 605,
+          "y": 52,
+          "width": 56,
+          "height": 142,
+          "top": 52,
+          "right": 661,
+          "bottom": 194,
+          "left": 605
+        },
+        "targets": [
+          {
+            "x": 299,
+            "y": 105,
+            "width": 44,
+            "height": 44,
+            "top": 105,
+            "right": 343,
+            "bottom": 149,
+            "left": 299
+          },
+          {
+            "x": 498,
+            "y": 66.296875,
+            "width": 46,
+            "height": 46,
+            "top": 66.296875,
+            "right": 544,
+            "bottom": 112.296875,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 126.890625,
+            "width": 46,
+            "height": 46,
+            "top": 126.890625,
+            "right": 544,
+            "bottom": 172.890625,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 187.484375,
+            "width": 46,
+            "height": 46,
+            "top": 187.484375,
+            "right": 544,
+            "bottom": 233.484375,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 248.09375,
+            "width": 46,
+            "height": 46,
+            "top": 248.09375,
+            "right": 544,
+            "bottom": 294.09375,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 308.6875,
+            "width": 46,
+            "height": 46,
+            "top": 308.6875,
+            "right": 544,
+            "bottom": 354.6875,
+            "left": 498
+          },
+          {
+            "x": 611,
+            "y": 96,
+            "width": 44,
+            "height": 44,
+            "top": 96,
+            "right": 655,
+            "bottom": 140,
+            "left": 611
+          },
+          {
+            "x": 611,
+            "y": 142,
+            "width": 44,
+            "height": 44,
+            "top": 142,
+            "right": 655,
+            "bottom": 186,
+            "left": 611
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 480,
+      "height": 320,
+      "cards": [
+        {
+          "id": "ironWard",
+          "width": 392,
+          "scroll": 392,
+          "rect": {
+            "x": 43,
+            "y": -32.171875,
+            "width": 394,
+            "height": 160.59375,
+            "top": -32.171875,
+            "right": 437,
+            "bottom": 128.421875,
+            "left": 43
+          }
+        },
+        {
+          "id": "steadfast",
+          "width": 392,
+          "scroll": 392,
+          "rect": {
+            "x": 43,
+            "y": 128.421875,
+            "width": 394,
+            "height": 92.796875,
+            "top": 128.421875,
+            "right": 437,
+            "bottom": 221.21875,
+            "left": 43
+          }
+        }
+      ],
+      "tip": {
+        "x": 8,
+        "y": 94,
+        "width": 320,
+        "height": 218.171875
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 39,
+          "y": 61,
+          "width": 62,
+          "height": 62,
+          "top": 61,
+          "right": 101,
+          "bottom": 123,
+          "left": 39
+        },
+        "bench": {
+          "x": 13,
+          "y": 127,
+          "width": 114,
+          "height": 87,
+          "top": 127,
+          "right": 127,
+          "bottom": 214,
+          "left": 13
+        },
+        "shop": {
+          "x": 204,
+          "y": 56,
+          "width": 208,
+          "height": 258,
+          "top": 56,
+          "right": 412,
+          "bottom": 314,
+          "left": 204
+        },
+        "ranking": {
+          "x": 418,
+          "y": 56,
+          "width": 56,
+          "height": 106,
+          "top": 56,
+          "right": 474,
+          "bottom": 162,
+          "left": 418
+        },
+        "targets": [
+          {
+            "x": 136,
+            "y": 89,
+            "width": 44,
+            "height": 44,
+            "top": 89,
+            "right": 180,
+            "bottom": 133,
+            "left": 136
+          },
+          {
+            "x": 311,
+            "y": 64.40625,
+            "width": 46,
+            "height": 46,
+            "top": 64.40625,
+            "right": 357,
+            "bottom": 110.40625,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 113.203125,
+            "width": 46,
+            "height": 46,
+            "top": 113.203125,
+            "right": 357,
+            "bottom": 159.203125,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 162,
+            "width": 46,
+            "height": 46,
+            "top": 162,
+            "right": 357,
+            "bottom": 208,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 210.796875,
+            "width": 46,
+            "height": 46,
+            "top": 210.796875,
+            "right": 357,
+            "bottom": 256.796875,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 259.59375,
+            "width": 46,
+            "height": 46,
+            "top": 259.59375,
+            "right": 357,
+            "bottom": 305.59375,
+            "left": 311
+          },
+          {
+            "x": 424,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "top": 64,
+            "right": 468,
+            "bottom": 108,
+            "left": 424
+          },
+          {
+            "x": 424,
+            "y": 110,
+            "width": 44,
+            "height": 44,
+            "top": 110,
+            "right": 468,
+            "bottom": 154,
+            "left": 424
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "cards": [
+        {
+          "id": "ironWard",
+          "width": 324,
+          "scroll": 324,
+          "rect": {
+            "x": 32,
+            "y": 229.03125,
+            "width": 326,
+            "height": 160.59375,
+            "top": 229.03125,
+            "right": 358,
+            "bottom": 389.625,
+            "left": 32
+          }
+        },
+        {
+          "id": "steadfast",
+          "width": 324,
+          "scroll": 324,
+          "rect": {
+            "x": 32,
+            "y": 389.625,
+            "width": 326,
+            "height": 113.59375,
+            "top": 389.625,
+            "right": 358,
+            "bottom": 503.21875,
+            "left": 32
+          }
+        }
+      ],
+      "tip": {
+        "x": 8,
+        "y": 448,
+        "width": 320,
+        "height": 218.171875
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 39.4375,
+          "y": 156,
+          "width": 251.109375,
+          "height": 251.109375,
+          "top": 156,
+          "right": 290.546875,
+          "bottom": 407.109375,
+          "left": 39.4375
+        },
+        "bench": {
+          "x": 7,
+          "y": 407.109375,
+          "width": 316,
+          "height": 94,
+          "top": 407.109375,
+          "right": 323,
+          "bottom": 501.109375,
+          "left": 7
+        },
+        "shop": {
+          "x": 6,
+          "y": 622,
+          "width": 378,
+          "height": 216,
+          "top": 622,
+          "right": 384,
+          "bottom": 838,
+          "left": 6
+        },
+        "ranking": {
+          "x": 328,
+          "y": 56,
+          "width": 56,
+          "height": 152,
+          "top": 56,
+          "right": 384,
+          "bottom": 208,
+          "left": 328
+        },
+        "targets": [
+          {
+            "x": 187.71875,
+            "y": 63,
+            "width": 44,
+            "height": 44,
+            "top": 63,
+            "right": 231.71875,
+            "bottom": 107,
+            "left": 187.71875
+          },
+          {
+            "x": 153,
+            "y": 630.671875,
+            "width": 64,
+            "height": 64,
+            "top": 630.671875,
+            "right": 217,
+            "bottom": 694.671875,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 630.671875,
+            "width": 64,
+            "height": 64,
+            "top": 630.671875,
+            "right": 309,
+            "bottom": 694.671875,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 698,
+            "width": 64,
+            "height": 64,
+            "top": 698,
+            "right": 217,
+            "bottom": 762,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 698,
+            "width": 64,
+            "height": 64,
+            "top": 698,
+            "right": 309,
+            "bottom": 762,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 765.328125,
+            "width": 64,
+            "height": 64,
+            "top": 765.328125,
+            "right": 217,
+            "bottom": 829.328125,
+            "left": 153
+          },
+          {
+            "x": 334,
+            "y": 100,
+            "width": 44,
+            "height": 48,
+            "top": 100,
+            "right": 378,
+            "bottom": 148,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 152,
+            "width": 44,
+            "height": 48,
+            "top": 152,
+            "right": 378,
+            "bottom": 200,
+            "left": 334
+          }
+        ]
+      }
+    }
+  ],
+  "feedback": [
+    {
+      "mode": "pc",
+      "pulse": {
+        "strength": 0.59,
+        "overlay": "rgba(244, 206, 73, 0.22)"
+      },
+      "usedBox": {
+        "x": 1210,
+        "y": 599.78125,
+        "width": 44,
+        "height": 44
+      },
+      "activeColor": "rgb(20, 46, 41)",
+      "opponent": true,
+      "reducedMotion": true
+    },
+    {
+      "mode": "mobile",
+      "pulse": {
+        "strength": 0.629,
+        "overlay": "rgba(244, 206, 73, 0.22)"
+      },
+      "usedBox": {
+        "x": 308,
+        "y": 395.625,
+        "width": 44,
+        "height": 44
+      },
+      "activeColor": "rgb(20, 46, 41)",
+      "opponent": true,
+      "reducedMotion": true
+    }
+  ],
+  "errors": [],
+  "fixture": "Real two-player room with controlled receive-side skill states"
+}

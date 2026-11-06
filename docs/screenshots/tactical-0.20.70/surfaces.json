@@ -1,0 +1,54 @@
+{
+  "version": "0.20.70",
+  "results": [
+    {
+      "name": "home",
+      "dark": []
+    },
+    {
+      "name": "unit-panel",
+      "dark": []
+    },
+    {
+      "name": "unit-dialog",
+      "dark": []
+    },
+    {
+      "name": "skill-tooltip",
+      "dark": []
+    },
+    {
+      "name": "info-connection",
+      "dark": []
+    },
+    {
+      "name": "info-help",
+      "dark": []
+    },
+    {
+      "name": "info-debug",
+      "dark": []
+    },
+    {
+      "name": "history",
+      "dark": []
+    },
+    {
+      "name": "history-result",
+      "dark": []
+    },
+    {
+      "name": "reward",
+      "dark": []
+    },
+    {
+      "name": "reward-peek",
+      "dark": []
+    },
+    {
+      "name": "item-recipes",
+      "dark": []
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,663 @@
+{
+  "source": "Actual one human + five server bots; real exchanges and sales. Mobile captures use explicit mode on desktop. Touch behavior checked by separate browser suites.",
+  "result": [
+    {
+      "mode": "pc",
+      "width": 1400,
+      "height": 1000,
+      "scrollY": 0,
+      "gameTop": "67px",
+      "rankingStyle": {
+        "position": "sticky",
+        "top": "6px",
+        "bottom": "auto",
+        "height": "582px",
+        "minHeight": "auto",
+        "maxHeight": "777px",
+        "marginTop": "0px",
+        "marginBottom": "0px",
+        "padding": "7px 5px",
+        "boxSizing": "border-box",
+        "transform": "none",
+        "alignSelf": "start",
+        "overflow": "visible"
+      },
+      "header": {
+        "x": 30,
+        "y": 12,
+        "width": 1340,
+        "height": 47,
+        "top": 12,
+        "right": 1370,
+        "bottom": 59,
+        "left": 30
+      },
+      "arena": {
+        "x": 202,
+        "y": 67,
+        "width": 712,
+        "height": 750.171875,
+        "top": 67,
+        "right": 914,
+        "bottom": 817.171875,
+        "left": 202
+      },
+      "ranking": {
+        "x": 1258,
+        "y": 67,
+        "width": 112,
+        "height": 582,
+        "top": 67,
+        "right": 1370,
+        "bottom": 649,
+        "left": 1258
+      },
+      "shop": {
+        "x": 24,
+        "y": 852,
+        "width": 1352,
+        "height": 130,
+        "top": 852,
+        "right": 1376,
+        "bottom": 982,
+        "left": 24
+      },
+      "room": "90F0",
+      "overflow": false,
+      "labels": [
+        "체력",
+        "공격력",
+        "방어력",
+        "치명타 확률",
+        "치명타 피해",
+        "공격 속도",
+        "사거리"
+      ]
+    },
+    {
+      "mode": "pc",
+      "width": 1024,
+      "height": 768,
+      "scrollY": 0,
+      "gameTop": "67px",
+      "rankingStyle": {
+        "position": "sticky",
+        "top": "6px",
+        "bottom": "auto",
+        "height": "438px",
+        "minHeight": "auto",
+        "maxHeight": "551px",
+        "marginTop": "0px",
+        "marginBottom": "0px",
+        "padding": "7px 5px",
+        "boxSizing": "border-box",
+        "transform": "none",
+        "alignSelf": "start",
+        "overflow": "visible"
+      },
+      "header": {
+        "x": 12,
+        "y": 12,
+        "width": 1000,
+        "height": 47,
+        "top": 12,
+        "right": 1012,
+        "bottom": 59,
+        "left": 12
+      },
+      "arena": {
+        "x": 164,
+        "y": 67,
+        "width": 480,
+        "height": 525,
+        "top": 67,
+        "right": 644,
+        "bottom": 592,
+        "left": 164
+      },
+      "ranking": {
+        "x": 948,
+        "y": 67,
+        "width": 64,
+        "height": 438,
+        "top": 67,
+        "right": 1012,
+        "bottom": 505,
+        "left": 948
+      },
+      "shop": {
+        "x": 12,
+        "y": 626,
+        "width": 1000,
+        "height": 130,
+        "top": 626,
+        "right": 1012,
+        "bottom": 756,
+        "left": 12
+      },
+      "room": "90F0",
+      "overflow": false,
+      "labels": [
+        "체력",
+        "공격력",
+        "방어력",
+        "치명타 확률",
+        "치명타 피해",
+        "공격 속도",
+        "사거리"
+      ]
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "scrollY": 0,
+      "gameTop": "59px",
+      "rankingStyle": {
+        "position": "sticky",
+        "top": "6px",
+        "bottom": "auto",
+        "height": "360px",
+        "minHeight": "auto",
+        "maxHeight": "555px",
+        "marginTop": "0px",
+        "marginBottom": "0px",
+        "padding": "7px 5px",
+        "boxSizing": "border-box",
+        "transform": "none",
+        "alignSelf": "start",
+        "overflow": "visible"
+      },
+      "header": {
+        "x": 6,
+        "y": 6,
+        "width": 378,
+        "height": 47,
+        "top": 6,
+        "right": 384,
+        "bottom": 53,
+        "left": 6
+      },
+      "arena": {
+        "x": 6,
+        "y": 59,
+        "width": 318,
+        "height": 529,
+        "top": 59,
+        "right": 324,
+        "bottom": 588,
+        "left": 6
+      },
+      "ranking": {
+        "x": 328,
+        "y": 59,
+        "width": 56,
+        "height": 360,
+        "top": 59,
+        "right": 384,
+        "bottom": 419,
+        "left": 328
+      },
+      "shop": {
+        "x": 6,
+        "y": 622,
+        "width": 378,
+        "height": 216,
+        "top": 622,
+        "right": 384,
+        "bottom": 838,
+        "left": 6
+      },
+      "room": "90F0",
+      "overflow": false,
+      "labels": [
+        "체력",
+        "공격력",
+        "방어력",
+        "치명타 확률",
+        "치명타 피해",
+        "공격 속도",
+        "사거리"
+      ]
+    },
+    {
+      "mode": "mobile",
+      "width": 320,
+      "height": 740,
+      "scrollY": 0,
+      "gameTop": "59px",
+      "rankingStyle": {
+        "position": "sticky",
+        "top": "6px",
+        "bottom": "auto",
+        "height": "360px",
+        "minHeight": "auto",
+        "maxHeight": "451px",
+        "marginTop": "0px",
+        "marginBottom": "0px",
+        "padding": "7px 5px",
+        "boxSizing": "border-box",
+        "transform": "none",
+        "alignSelf": "start",
+        "overflow": "visible"
+      },
+      "header": {
+        "x": 6,
+        "y": 6,
+        "width": 308,
+        "height": 47,
+        "top": 6,
+        "right": 314,
+        "bottom": 53,
+        "left": 6
+      },
+      "arena": {
+        "x": 6,
+        "y": 59,
+        "width": 248,
+        "height": 424.25,
+        "top": 59,
+        "right": 254,
+        "bottom": 483.25,
+        "left": 6
+      },
+      "ranking": {
+        "x": 258,
+        "y": 59,
+        "width": 56,
+        "height": 360,
+        "top": 59,
+        "right": 314,
+        "bottom": 419,
+        "left": 258
+      },
+      "shop": {
+        "x": 6,
+        "y": 518,
+        "width": 308,
+        "height": 216,
+        "top": 518,
+        "right": 314,
+        "bottom": 734,
+        "left": 6
+      },
+      "room": "90F0",
+      "overflow": false,
+      "labels": [
+        "체력",
+        "공격력",
+        "방어력",
+        "치명타 확률",
+        "치명타 피해",
+        "공격 속도",
+        "사거리"
+      ]
+    },
+    {
+      "mode": "mobile",
+      "width": 844,
+      "height": 390,
+      "scrollY": 0,
+      "gameTop": "55px",
+      "rankingStyle": {
+        "position": "fixed",
+        "top": "55px",
+        "bottom": "6px",
+        "height": "329px",
+        "minHeight": "0px",
+        "maxHeight": "none",
+        "marginTop": "0px",
+        "marginBottom": "0px",
+        "padding": "7px 5px",
+        "boxSizing": "border-box",
+        "transform": "none",
+        "alignSelf": "start",
+        "overflow": "hidden"
+      },
+      "header": {
+        "x": 82,
+        "y": 4,
+        "width": 680,
+        "height": 47,
+        "top": 4,
+        "right": 762,
+        "bottom": 51,
+        "left": 82
+      },
+      "arena": {
+        "x": 12,
+        "y": 55,
+        "width": 515.671875,
+        "height": 325,
+        "top": 55,
+        "right": 527.671875,
+        "bottom": 380,
+        "left": 12
+      },
+      "ranking": {
+        "x": 782,
+        "y": 55,
+        "width": 56,
+        "height": 329,
+        "top": 55,
+        "right": 838,
+        "bottom": 384,
+        "left": 782
+      },
+      "shop": {
+        "x": 539.6875,
+        "y": 55,
+        "width": 236.3125,
+        "height": 329,
+        "top": 55,
+        "right": 776,
+        "bottom": 384,
+        "left": 539.6875
+      },
+      "room": "90F0",
+      "overflow": false,
+      "labels": [
+        "체력",
+        "공격력",
+        "방어력",
+        "치명타 확률",
+        "치명타 피해",
+        "공격 속도",
+        "사거리"
+      ]
+    },
+    {
+      "mode": "mobile",
+      "width": 740,
+      "height": 360,
+      "scrollY": 0,
+      "gameTop": "55px",
+      "rankingStyle": {
+        "position": "fixed",
+        "top": "55px",
+        "bottom": "6px",
+        "height": "299px",
+        "minHeight": "0px",
+        "maxHeight": "none",
+        "marginTop": "0px",
+        "marginBottom": "0px",
+        "padding": "7px 5px",
+        "boxSizing": "border-box",
+        "transform": "none",
+        "alignSelf": "start",
+        "overflow": "hidden"
+      },
+      "header": {
+        "x": 30,
+        "y": 4,
+        "width": 680,
+        "height": 47,
+        "top": 4,
+        "right": 710,
+        "bottom": 51,
+        "left": 30
+      },
+      "arena": {
+        "x": 12,
+        "y": 55,
+        "width": 440,
+        "height": 295,
+        "top": 55,
+        "right": 452,
+        "bottom": 350,
+        "left": 12
+      },
+      "ranking": {
+        "x": 678,
+        "y": 55,
+        "width": 56,
+        "height": 299,
+        "top": 55,
+        "right": 734,
+        "bottom": 354,
+        "left": 678
+      },
+      "shop": {
+        "x": 464,
+        "y": 55,
+        "width": 208,
+        "height": 299,
+        "top": 55,
+        "right": 672,
+        "bottom": 354,
+        "left": 464
+      },
+      "room": "90F0",
+      "overflow": false,
+      "labels": [
+        "체력",
+        "공격력",
+        "방어력",
+        "치명타 확률",
+        "치명타 피해",
+        "공격 속도",
+        "사거리"
+      ]
+    },
+    {
+      "mode": "mobile",
+      "width": 667,
+      "height": 375,
+      "scrollY": 0,
+      "gameTop": "55px",
+      "rankingStyle": {
+        "position": "fixed",
+        "top": "55px",
+        "bottom": "6px",
+        "height": "314px",
+        "minHeight": "0px",
+        "maxHeight": "none",
+        "marginTop": "0px",
+        "marginBottom": "0px",
+        "padding": "7px 5px",
+        "boxSizing": "border-box",
+        "transform": "none",
+        "alignSelf": "start",
+        "overflow": "hidden"
+      },
+      "header": {
+        "x": 6,
+        "y": 4,
+        "width": 655,
+        "height": 47,
+        "top": 4,
+        "right": 661,
+        "bottom": 51,
+        "left": 6
+      },
+      "arena": {
+        "x": 12,
+        "y": 55,
+        "width": 367,
+        "height": 310,
+        "top": 55,
+        "right": 379,
+        "bottom": 365,
+        "left": 12
+      },
+      "ranking": {
+        "x": 605,
+        "y": 55,
+        "width": 56,
+        "height": 314,
+        "top": 55,
+        "right": 661,
+        "bottom": 369,
+        "left": 605
+      },
+      "shop": {
+        "x": 391,
+        "y": 55,
+        "width": 208,
+        "height": 314,
+        "top": 55,
+        "right": 599,
+        "bottom": 369,
+        "left": 391
+      },
+      "room": "90F0",
+      "overflow": false,
+      "labels": [
+        "체력",
+        "공격력",
+        "방어력",
+        "치명타 확률",
+        "치명타 피해",
+        "공격 속도",
+        "사거리"
+      ]
+    },
+    {
+      "mode": "mobile",
+      "width": 480,
+      "height": 320,
+      "scrollY": 0,
+      "gameTop": "59px",
+      "rankingStyle": {
+        "position": "fixed",
+        "top": "59px",
+        "bottom": "6px",
+        "height": "255px",
+        "minHeight": "0px",
+        "maxHeight": "none",
+        "marginTop": "0px",
+        "marginBottom": "0px",
+        "padding": "7px 5px",
+        "boxSizing": "border-box",
+        "transform": "none",
+        "alignSelf": "start",
+        "overflow": "hidden"
+      },
+      "header": {
+        "x": 6,
+        "y": 6,
+        "width": 468,
+        "height": 47,
+        "top": 6,
+        "right": 474,
+        "bottom": 53,
+        "left": 6
+      },
+      "arena": {
+        "x": 12,
+        "y": 59,
+        "width": 180,
+        "height": 211,
+        "top": 59,
+        "right": 192,
+        "bottom": 270,
+        "left": 12
+      },
+      "ranking": {
+        "x": 418,
+        "y": 59,
+        "width": 56,
+        "height": 255,
+        "top": 59,
+        "right": 474,
+        "bottom": 314,
+        "left": 418
+      },
+      "shop": {
+        "x": 204,
+        "y": 59,
+        "width": 208,
+        "height": 255,
+        "top": 59,
+        "right": 412,
+        "bottom": 314,
+        "left": 204
+      },
+      "room": "90F0",
+      "overflow": false,
+      "labels": [
+        "체력",
+        "공격력",
+        "방어력",
+        "치명타 확률",
+        "치명타 피해",
+        "공격 속도",
+        "사거리"
+      ]
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "scrollY": 0,
+      "gameTop": "59px",
+      "rankingStyle": {
+        "position": "sticky",
+        "top": "6px",
+        "bottom": "auto",
+        "height": "360px",
+        "minHeight": "auto",
+        "maxHeight": "555px",
+        "marginTop": "0px",
+        "marginBottom": "0px",
+        "padding": "7px 5px",
+        "boxSizing": "border-box",
+        "transform": "none",
+        "alignSelf": "start",
+        "overflow": "visible"
+      },
+      "header": {
+        "x": 6,
+        "y": 6,
+        "width": 378,
+        "height": 47,
+        "top": 6,
+        "right": 384,
+        "bottom": 53,
+        "left": 6
+      },
+      "arena": {
+        "x": 6,
+        "y": 59,
+        "width": 318,
+        "height": 529,
+        "top": 59,
+        "right": 324,
+        "bottom": 588,
+        "left": 6
+      },
+      "ranking": {
+        "x": 328,
+        "y": 59,
+        "width": 56,
+        "height": 360,
+        "top": 59,
+        "right": 384,
+        "bottom": 419,
+        "left": 328
+      },
+      "shop": {
+        "x": 6,
+        "y": 622,
+        "width": 378,
+        "height": 216,
+        "top": 622,
+        "right": 384,
+        "bottom": 838,
+        "left": 6
+      },
+      "room": "90F0",
+      "overflow": false,
+      "labels": [
+        "체력",
+        "공격력",
+        "방어력",
+        "치명타 확률",
+        "치명타 피해",
+        "공격 속도",
+        "사거리"
+      ]
+    }
+  ],
+  "errors": []
+}

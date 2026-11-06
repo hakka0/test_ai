@@ -1,0 +1,345 @@
+{
+  "version": "0.20.72",
+  "results": [
+    {
+      "name": "home",
+      "contrast": [],
+      "palette": {}
+    },
+    {
+      "name": "home",
+      "dark": []
+    },
+    {
+      "name": "unit-panel",
+      "contrast": [],
+      "palette": {
+        ".arena-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#pc-play-dock": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#selected-unit-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#player-ranking": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#ready": {
+          "background": "rgb(173, 199, 189)",
+          "color": "rgb(37, 70, 77)"
+        }
+      }
+    },
+    {
+      "name": "unit-panel",
+      "dark": []
+    },
+    {
+      "name": "unit-dialog",
+      "contrast": [],
+      "palette": {
+        ".arena-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#pc-play-dock": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#selected-unit-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#player-ranking": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#ready": {
+          "background": "rgb(173, 199, 189)",
+          "color": "rgb(37, 70, 77)"
+        }
+      }
+    },
+    {
+      "name": "unit-dialog",
+      "dark": []
+    },
+    {
+      "name": "skill-tooltip",
+      "contrast": [],
+      "palette": {
+        ".arena-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#pc-play-dock": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#selected-unit-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#player-ranking": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#ready": {
+          "background": "rgb(173, 199, 189)",
+          "color": "rgb(37, 70, 77)"
+        }
+      }
+    },
+    {
+      "name": "skill-tooltip",
+      "dark": []
+    },
+    {
+      "name": "info-connection",
+      "contrast": [],
+      "palette": {
+        ".arena-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#pc-play-dock": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#selected-unit-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#player-ranking": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#ready": {
+          "background": "rgb(173, 199, 189)",
+          "color": "rgb(37, 70, 77)"
+        }
+      }
+    },
+    {
+      "name": "info-connection",
+      "dark": []
+    },
+    {
+      "name": "info-help",
+      "contrast": [],
+      "palette": {
+        ".arena-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#pc-play-dock": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#selected-unit-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#player-ranking": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#ready": {
+          "background": "rgb(173, 199, 189)",
+          "color": "rgb(37, 70, 77)"
+        }
+      }
+    },
+    {
+      "name": "info-help",
+      "dark": []
+    },
+    {
+      "name": "info-debug",
+      "contrast": [],
+      "palette": {
+        ".arena-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#pc-play-dock": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#selected-unit-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#player-ranking": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#ready": {
+          "background": "rgb(173, 199, 189)",
+          "color": "rgb(37, 70, 77)"
+        }
+      }
+    },
+    {
+      "name": "info-debug",
+      "dark": []
+    },
+    {
+      "name": "history",
+      "contrast": [],
+      "palette": {
+        ".arena-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#pc-play-dock": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#selected-unit-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#player-ranking": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#ready": {
+          "background": "rgb(173, 199, 189)",
+          "color": "rgb(37, 70, 77)"
+        }
+      }
+    },
+    {
+      "name": "history",
+      "dark": []
+    },
+    {
+      "name": "history-result",
+      "contrast": [],
+      "palette": {
+        ".arena-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#pc-play-dock": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#selected-unit-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#player-ranking": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#ready": {
+          "background": "rgb(173, 199, 189)",
+          "color": "rgb(37, 70, 77)"
+        }
+      }
+    },
+    {
+      "name": "history-result",
+      "dark": []
+    },
+    {
+      "name": "reward",
+      "contrast": [],
+      "palette": {
+        ".arena-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#pc-play-dock": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#selected-unit-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#player-ranking": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#ready": {
+          "background": "rgb(173, 199, 189)",
+          "color": "rgb(37, 70, 77)"
+        }
+      }
+    },
+    {
+      "name": "reward",
+      "dark": []
+    },
+    {
+      "name": "reward-peek",
+      "contrast": [],
+      "palette": {
+        ".arena-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#pc-play-dock": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#selected-unit-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#player-ranking": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#ready": {
+          "background": "rgb(173, 199, 189)",
+          "color": "rgb(37, 70, 77)"
+        }
+      }
+    },
+    {
+      "name": "reward-peek",
+      "dark": []
+    },
+    {
+      "name": "item-recipes",
+      "contrast": [],
+      "palette": {
+        ".arena-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#pc-play-dock": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#selected-unit-panel": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#player-ranking": {
+          "background": "rgb(220, 227, 223)",
+          "color": "rgb(33, 57, 76)"
+        },
+        "#ready": {
+          "background": "rgb(173, 199, 189)",
+          "color": "rgb(37, 70, 77)"
+        }
+      }
+    },
+    {
+      "name": "item-recipes",
+      "dark": []
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,2017 @@
+{
+  "version": "0.20.45",
+  "browser": "155.0.8059.84",
+  "results": [
+    {
+      "mode": "pc",
+      "width": 1400,
+      "height": 1000,
+      "panel": {
+        "x": 30,
+        "y": 56,
+        "width": 160,
+        "height": 79,
+        "top": 56,
+        "right": 190,
+        "bottom": 135,
+        "left": 30
+      },
+      "parent": "pc-left-rail",
+      "gear": {
+        "x": 30,
+        "y": 145,
+        "width": 160,
+        "height": 262,
+        "top": 145,
+        "right": 190,
+        "bottom": 407,
+        "left": 30
+      },
+      "board": {
+        "x": 276.5,
+        "y": 114,
+        "width": 599,
+        "height": 599,
+        "top": 114,
+        "right": 875.5,
+        "bottom": 713,
+        "left": 276.5
+      },
+      "bench": {
+        "x": 203,
+        "y": 713,
+        "width": 746,
+        "height": 103.171875,
+        "top": 713,
+        "right": 949,
+        "bottom": 816.171875,
+        "left": 203
+      },
+      "dock": {
+        "x": 24,
+        "y": 852,
+        "width": 1352,
+        "height": 130,
+        "top": 852,
+        "right": 1376,
+        "bottom": 982,
+        "left": 24
+      },
+      "gold": {
+        "x": 25,
+        "y": 853,
+        "width": 167,
+        "height": 32,
+        "top": 853,
+        "right": 192,
+        "bottom": 885,
+        "left": 25
+      },
+      "xp": {
+        "x": 25,
+        "y": 885,
+        "width": 87,
+        "height": 96,
+        "top": 885,
+        "right": 112,
+        "bottom": 981,
+        "left": 25
+      },
+      "roll": {
+        "x": 113,
+        "y": 885,
+        "width": 79,
+        "height": 96,
+        "top": 885,
+        "right": 192,
+        "bottom": 981,
+        "left": 113
+      },
+      "ready": {
+        "x": 1263,
+        "y": 885,
+        "width": 112,
+        "height": 96,
+        "top": 885,
+        "right": 1375,
+        "bottom": 981,
+        "left": 1263
+      },
+      "streak": {
+        "x": 1263,
+        "y": 853,
+        "width": 112,
+        "height": 32,
+        "top": 853,
+        "right": 1375,
+        "bottom": 885,
+        "left": 1263
+      },
+      "help": {
+        "x": 98.59375,
+        "y": 67,
+        "width": 20,
+        "height": 20,
+        "top": 67,
+        "right": 118.59375,
+        "bottom": 87,
+        "left": 98.59375
+      },
+      "cards": [
+        {
+          "rect": {
+            "x": 39,
+            "y": 94,
+            "width": 142,
+            "height": 30,
+            "top": 94,
+            "right": 181,
+            "bottom": 124,
+            "left": 39
+          },
+          "fits": true
+        }
+      ],
+      "overflow": false,
+      "duplicateIDs": [],
+      "inDialog": false
+    },
+    {
+      "mode": "pc",
+      "width": 1920,
+      "height": 1080,
+      "panel": {
+        "x": 290,
+        "y": 56,
+        "width": 160,
+        "height": 79,
+        "top": 56,
+        "right": 450,
+        "bottom": 135,
+        "left": 290
+      },
+      "parent": "pc-left-rail",
+      "gear": {
+        "x": 290,
+        "y": 145,
+        "width": 160,
+        "height": 262,
+        "top": 145,
+        "right": 450,
+        "bottom": 407,
+        "left": 290
+      },
+      "board": {
+        "x": 523,
+        "y": 114,
+        "width": 626,
+        "height": 626,
+        "top": 114,
+        "right": 1149,
+        "bottom": 740,
+        "left": 523
+      },
+      "bench": {
+        "x": 463,
+        "y": 740,
+        "width": 746,
+        "height": 103.171875,
+        "top": 740,
+        "right": 1209,
+        "bottom": 843.171875,
+        "left": 463
+      },
+      "dock": {
+        "x": 284,
+        "y": 932,
+        "width": 1352,
+        "height": 130,
+        "top": 932,
+        "right": 1636,
+        "bottom": 1062,
+        "left": 284
+      },
+      "gold": {
+        "x": 285,
+        "y": 933,
+        "width": 167,
+        "height": 32,
+        "top": 933,
+        "right": 452,
+        "bottom": 965,
+        "left": 285
+      },
+      "xp": {
+        "x": 285,
+        "y": 965,
+        "width": 87,
+        "height": 96,
+        "top": 965,
+        "right": 372,
+        "bottom": 1061,
+        "left": 285
+      },
+      "roll": {
+        "x": 373,
+        "y": 965,
+        "width": 79,
+        "height": 96,
+        "top": 965,
+        "right": 452,
+        "bottom": 1061,
+        "left": 373
+      },
+      "ready": {
+        "x": 1523,
+        "y": 965,
+        "width": 112,
+        "height": 96,
+        "top": 965,
+        "right": 1635,
+        "bottom": 1061,
+        "left": 1523
+      },
+      "streak": {
+        "x": 1523,
+        "y": 933,
+        "width": 112,
+        "height": 32,
+        "top": 933,
+        "right": 1635,
+        "bottom": 965,
+        "left": 1523
+      },
+      "help": {
+        "x": 358.59375,
+        "y": 67,
+        "width": 20,
+        "height": 20,
+        "top": 67,
+        "right": 378.59375,
+        "bottom": 87,
+        "left": 358.59375
+      },
+      "cards": [
+        {
+          "rect": {
+            "x": 299,
+            "y": 94,
+            "width": 142,
+            "height": 30,
+            "top": 94,
+            "right": 441,
+            "bottom": 124,
+            "left": 299
+          },
+          "fits": true
+        }
+      ],
+      "overflow": false,
+      "duplicateIDs": [],
+      "inDialog": false
+    },
+    {
+      "mode": "pc",
+      "width": 1366,
+      "height": 768,
+      "panel": {
+        "x": 13,
+        "y": 56,
+        "width": 160,
+        "height": 79,
+        "top": 56,
+        "right": 173,
+        "bottom": 135,
+        "left": 13
+      },
+      "parent": "pc-left-rail",
+      "gear": {
+        "x": 13,
+        "y": 145,
+        "width": 160,
+        "height": 262,
+        "top": 145,
+        "right": 173,
+        "bottom": 407,
+        "left": 13
+      },
+      "board": {
+        "x": 375.5,
+        "y": 114,
+        "width": 367,
+        "height": 367,
+        "top": 114,
+        "right": 742.5,
+        "bottom": 481,
+        "left": 375.5
+      },
+      "bench": {
+        "x": 186,
+        "y": 481,
+        "width": 746,
+        "height": 103.171875,
+        "top": 481,
+        "right": 932,
+        "bottom": 584.171875,
+        "left": 186
+      },
+      "dock": {
+        "x": 24,
+        "y": 620,
+        "width": 1318,
+        "height": 130,
+        "top": 620,
+        "right": 1342,
+        "bottom": 750,
+        "left": 24
+      },
+      "gold": {
+        "x": 25,
+        "y": 621,
+        "width": 167,
+        "height": 32,
+        "top": 621,
+        "right": 192,
+        "bottom": 653,
+        "left": 25
+      },
+      "xp": {
+        "x": 25,
+        "y": 653,
+        "width": 87,
+        "height": 96,
+        "top": 653,
+        "right": 112,
+        "bottom": 749,
+        "left": 25
+      },
+      "roll": {
+        "x": 113,
+        "y": 653,
+        "width": 79,
+        "height": 96,
+        "top": 653,
+        "right": 192,
+        "bottom": 749,
+        "left": 113
+      },
+      "ready": {
+        "x": 1229,
+        "y": 653,
+        "width": 112,
+        "height": 96,
+        "top": 653,
+        "right": 1341,
+        "bottom": 749,
+        "left": 1229
+      },
+      "streak": {
+        "x": 1229,
+        "y": 621,
+        "width": 112,
+        "height": 32,
+        "top": 621,
+        "right": 1341,
+        "bottom": 653,
+        "left": 1229
+      },
+      "help": {
+        "x": 81.59375,
+        "y": 67,
+        "width": 20,
+        "height": 20,
+        "top": 67,
+        "right": 101.59375,
+        "bottom": 87,
+        "left": 81.59375
+      },
+      "cards": [
+        {
+          "rect": {
+            "x": 22,
+            "y": 94,
+            "width": 142,
+            "height": 30,
+            "top": 94,
+            "right": 164,
+            "bottom": 124,
+            "left": 22
+          },
+          "fits": true
+        }
+      ],
+      "overflow": false,
+      "duplicateIDs": [],
+      "inDialog": false
+    },
+    {
+      "mode": "pc",
+      "width": 1024,
+      "height": 768,
+      "panel": {
+        "x": 12,
+        "y": 56,
+        "width": 140,
+        "height": 79,
+        "top": 56,
+        "right": 152,
+        "bottom": 135,
+        "left": 12
+      },
+      "parent": "pc-left-rail",
+      "gear": {
+        "x": 12,
+        "y": 145,
+        "width": 140,
+        "height": 262,
+        "top": 145,
+        "right": 152,
+        "bottom": 407,
+        "left": 12
+      },
+      "board": {
+        "x": 212.015625,
+        "y": 114,
+        "width": 383.953125,
+        "height": 383.953125,
+        "top": 114,
+        "right": 595.96875,
+        "bottom": 497.953125,
+        "left": 212.015625
+      },
+      "bench": {
+        "x": 165,
+        "y": 497.953125,
+        "width": 478,
+        "height": 90,
+        "top": 497.953125,
+        "right": 643,
+        "bottom": 587.953125,
+        "left": 165
+      },
+      "dock": {
+        "x": 12,
+        "y": 626,
+        "width": 1000,
+        "height": 130,
+        "top": 626,
+        "right": 1012,
+        "bottom": 756,
+        "left": 12
+      },
+      "gold": {
+        "x": 13,
+        "y": 627,
+        "width": 167,
+        "height": 32,
+        "top": 627,
+        "right": 180,
+        "bottom": 659,
+        "left": 13
+      },
+      "xp": {
+        "x": 13,
+        "y": 659,
+        "width": 87,
+        "height": 96,
+        "top": 659,
+        "right": 100,
+        "bottom": 755,
+        "left": 13
+      },
+      "roll": {
+        "x": 101,
+        "y": 659,
+        "width": 79,
+        "height": 96,
+        "top": 659,
+        "right": 180,
+        "bottom": 755,
+        "left": 101
+      },
+      "ready": {
+        "x": 899,
+        "y": 659,
+        "width": 112,
+        "height": 96,
+        "top": 659,
+        "right": 1011,
+        "bottom": 755,
+        "left": 899
+      },
+      "streak": {
+        "x": 899,
+        "y": 627,
+        "width": 112,
+        "height": 32,
+        "top": 627,
+        "right": 1011,
+        "bottom": 659,
+        "left": 899
+      },
+      "help": {
+        "x": 80.59375,
+        "y": 67,
+        "width": 20,
+        "height": 20,
+        "top": 67,
+        "right": 100.59375,
+        "bottom": 87,
+        "left": 80.59375
+      },
+      "cards": [
+        {
+          "rect": {
+            "x": 21,
+            "y": 94,
+            "width": 122,
+            "height": 30,
+            "top": 94,
+            "right": 143,
+            "bottom": 124,
+            "left": 21
+          },
+          "fits": true
+        }
+      ],
+      "overflow": false,
+      "duplicateIDs": [],
+      "inDialog": false
+    },
+    {
+      "mode": "pc",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 13,
+        "y": 160,
+        "width": 304,
+        "height": 38,
+        "top": 160,
+        "right": 317,
+        "bottom": 198,
+        "left": 13
+      },
+      "parent": "arena-panel",
+      "gear": {
+        "x": 12,
+        "y": 202,
+        "width": 56,
+        "height": 54,
+        "top": 202,
+        "right": 68,
+        "bottom": 256,
+        "left": 12
+      },
+      "board": {
+        "x": 44.359375,
+        "y": 202,
+        "width": 241.265625,
+        "height": 241.265625,
+        "top": 202,
+        "right": 285.625,
+        "bottom": 443.265625,
+        "left": 44.359375
+      },
+      "bench": {
+        "x": 13,
+        "y": 443.265625,
+        "width": 304,
+        "height": 90,
+        "top": 443.265625,
+        "right": 317,
+        "bottom": 533.265625,
+        "left": 13
+      },
+      "dock": {
+        "x": 6,
+        "y": 622,
+        "width": 378,
+        "height": 216,
+        "top": 622,
+        "right": 384,
+        "bottom": 838,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 623,
+        "width": 125,
+        "height": 30,
+        "top": 623,
+        "right": 132,
+        "bottom": 653,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 653,
+        "width": 63,
+        "height": 184,
+        "top": 653,
+        "right": 70,
+        "bottom": 837,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 653,
+        "width": 61,
+        "height": 184,
+        "top": 653,
+        "right": 132,
+        "bottom": 837,
+        "left": 71
+      },
+      "ready": {
+        "x": 329,
+        "y": 653,
+        "width": 54,
+        "height": 184,
+        "top": 653,
+        "right": 383,
+        "bottom": 837,
+        "left": 329
+      },
+      "streak": {
+        "x": 329,
+        "y": 623,
+        "width": 54,
+        "height": 30,
+        "top": 623,
+        "right": 383,
+        "bottom": 653,
+        "left": 329
+      },
+      "help": {
+        "x": 73.3125,
+        "y": 163,
+        "width": 16,
+        "height": 14,
+        "top": 163,
+        "right": 89.3125,
+        "bottom": 177,
+        "left": 73.3125
+      },
+      "cards": [
+        {
+          "rect": {
+            "x": 20,
+            "y": 179,
+            "width": 290,
+            "height": 16,
+            "top": 179,
+            "right": 310,
+            "bottom": 195,
+            "left": 20
+          },
+          "fits": true
+        }
+      ],
+      "overflow": false,
+      "duplicateIDs": [],
+      "inDialog": false
+    },
+    {
+      "mode": "pc",
+      "width": 320,
+      "height": 740,
+      "panel": {
+        "x": 9,
+        "y": 160,
+        "width": 242,
+        "height": 38,
+        "top": 160,
+        "right": 251,
+        "bottom": 198,
+        "left": 9
+      },
+      "parent": "arena-panel",
+      "gear": {
+        "x": 12,
+        "y": 202,
+        "width": 56,
+        "height": 54,
+        "top": 202,
+        "right": 68,
+        "bottom": 256,
+        "left": 12
+      },
+      "board": {
+        "x": 35,
+        "y": 202,
+        "width": 190,
+        "height": 190,
+        "top": 202,
+        "right": 225,
+        "bottom": 392,
+        "left": 35
+      },
+      "bench": {
+        "x": 9,
+        "y": 392,
+        "width": 242,
+        "height": 90,
+        "top": 392,
+        "right": 251,
+        "bottom": 482,
+        "left": 9
+      },
+      "dock": {
+        "x": 6,
+        "y": 518,
+        "width": 308,
+        "height": 216,
+        "top": 518,
+        "right": 314,
+        "bottom": 734,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 519,
+        "width": 125,
+        "height": 30,
+        "top": 519,
+        "right": 132,
+        "bottom": 549,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 549,
+        "width": 63,
+        "height": 184,
+        "top": 549,
+        "right": 70,
+        "bottom": 733,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 549,
+        "width": 61,
+        "height": 184,
+        "top": 549,
+        "right": 132,
+        "bottom": 733,
+        "left": 71
+      },
+      "ready": {
+        "x": 259,
+        "y": 549,
+        "width": 54,
+        "height": 184,
+        "top": 549,
+        "right": 313,
+        "bottom": 733,
+        "left": 259
+      },
+      "streak": {
+        "x": 259,
+        "y": 519,
+        "width": 54,
+        "height": 30,
+        "top": 519,
+        "right": 313,
+        "bottom": 549,
+        "left": 259
+      },
+      "help": {
+        "x": 69.3125,
+        "y": 163,
+        "width": 16,
+        "height": 14,
+        "top": 163,
+        "right": 85.3125,
+        "bottom": 177,
+        "left": 69.3125
+      },
+      "cards": [
+        {
+          "rect": {
+            "x": 16,
+            "y": 179,
+            "width": 228,
+            "height": 16,
+            "top": 179,
+            "right": 244,
+            "bottom": 195,
+            "left": 16
+          },
+          "fits": true
+        }
+      ],
+      "overflow": false,
+      "duplicateIDs": [],
+      "inDialog": false
+    },
+    {
+      "mode": "pc",
+      "width": 844,
+      "height": 390,
+      "panel": {
+        "x": 392.671875,
+        "y": 173,
+        "width": 128,
+        "height": 42,
+        "top": 173,
+        "right": 520.671875,
+        "bottom": 215,
+        "left": 392.671875
+      },
+      "parent": "arena-panel",
+      "gear": {
+        "x": 393.671875,
+        "y": 220,
+        "width": 128,
+        "height": 54,
+        "top": 220,
+        "right": 521.671875,
+        "bottom": 274,
+        "left": 393.671875
+      },
+      "board": {
+        "x": 90.328125,
+        "y": 61,
+        "width": 227,
+        "height": 227,
+        "top": 61,
+        "right": 317.328125,
+        "bottom": 288,
+        "left": 90.328125
+      },
+      "bench": {
+        "x": 19,
+        "y": 292,
+        "width": 369.671875,
+        "height": 87,
+        "top": 292,
+        "right": 388.671875,
+        "bottom": 379,
+        "left": 19
+      },
+      "dock": {
+        "x": 539.6875,
+        "y": 56,
+        "width": 236.3125,
+        "height": 328,
+        "top": 56,
+        "right": 776,
+        "bottom": 384,
+        "left": 539.6875
+      },
+      "gold": {
+        "x": 540.6875,
+        "y": 57,
+        "width": 97,
+        "height": 30,
+        "top": 57,
+        "right": 637.6875,
+        "bottom": 87,
+        "left": 540.6875
+      },
+      "xp": {
+        "x": 540.6875,
+        "y": 87,
+        "width": 51,
+        "height": 296,
+        "top": 87,
+        "right": 591.6875,
+        "bottom": 383,
+        "left": 540.6875
+      },
+      "roll": {
+        "x": 592.6875,
+        "y": 87,
+        "width": 45,
+        "height": 296,
+        "top": 87,
+        "right": 637.6875,
+        "bottom": 383,
+        "left": 592.6875
+      },
+      "ready": {
+        "x": 729,
+        "y": 87,
+        "width": 46,
+        "height": 296,
+        "top": 87,
+        "right": 775,
+        "bottom": 383,
+        "left": 729
+      },
+      "streak": {
+        "x": 729,
+        "y": 57,
+        "width": 46,
+        "height": 30,
+        "top": 57,
+        "right": 775,
+        "bottom": 87,
+        "left": 729
+      },
+      "help": {
+        "x": 421.671875,
+        "y": 178,
+        "width": 16,
+        "height": 14,
+        "top": 178,
+        "right": 437.671875,
+        "bottom": 192,
+        "left": 421.671875
+      },
+      "cards": [
+        {
+          "rect": {
+            "x": 397.671875,
+            "y": 194,
+            "width": 118,
+            "height": 16,
+            "top": 194,
+            "right": 515.671875,
+            "bottom": 210,
+            "left": 397.671875
+          },
+          "fits": true
+        }
+      ],
+      "overflow": false,
+      "duplicateIDs": [],
+      "inDialog": false
+    },
+    {
+      "mode": "pc",
+      "width": 480,
+      "height": 320,
+      "panel": {
+        "x": 125,
+        "y": 221,
+        "width": 60,
+        "height": 38,
+        "top": 221,
+        "right": 185,
+        "bottom": 259,
+        "left": 125
+      },
+      "parent": "arena-panel",
+      "gear": {
+        "x": 126,
+        "y": 264,
+        "width": 60,
+        "height": 46,
+        "top": 264,
+        "right": 186,
+        "bottom": 310,
+        "left": 126
+      },
+      "board": {
+        "x": 45,
+        "y": 98,
+        "width": 50,
+        "height": 50,
+        "top": 98,
+        "right": 95,
+        "bottom": 148,
+        "left": 45
+      },
+      "bench": {
+        "x": 19,
+        "y": 152,
+        "width": 102,
+        "height": 87,
+        "top": 152,
+        "right": 121,
+        "bottom": 239,
+        "left": 19
+      },
+      "dock": {
+        "x": 204,
+        "y": 93,
+        "width": 208,
+        "height": 221,
+        "top": 93,
+        "right": 412,
+        "bottom": 314,
+        "left": 204
+      },
+      "gold": {
+        "x": 205,
+        "y": 94,
+        "width": 97,
+        "height": 30,
+        "top": 94,
+        "right": 302,
+        "bottom": 124,
+        "left": 205
+      },
+      "xp": {
+        "x": 205,
+        "y": 124,
+        "width": 51,
+        "height": 189,
+        "top": 124,
+        "right": 256,
+        "bottom": 313,
+        "left": 205
+      },
+      "roll": {
+        "x": 257,
+        "y": 124,
+        "width": 45,
+        "height": 189,
+        "top": 124,
+        "right": 302,
+        "bottom": 313,
+        "left": 257
+      },
+      "ready": {
+        "x": 365,
+        "y": 124,
+        "width": 46,
+        "height": 189,
+        "top": 124,
+        "right": 411,
+        "bottom": 313,
+        "left": 365
+      },
+      "streak": {
+        "x": 365,
+        "y": 94,
+        "width": 46,
+        "height": 30,
+        "top": 94,
+        "right": 411,
+        "bottom": 124,
+        "left": 365
+      },
+      "help": {
+        "x": 154,
+        "y": 226,
+        "width": 16,
+        "height": 14,
+        "top": 226,
+        "right": 170,
+        "bottom": 240,
+        "left": 154
+      },
+      "cards": [
+        {
+          "rect": {
+            "x": 130,
+            "y": 242,
+            "width": 50,
+            "height": 16,
+            "top": 242,
+            "right": 180,
+            "bottom": 258,
+            "left": 130
+          },
+          "fits": true
+        }
+      ],
+      "overflow": false,
+      "duplicateIDs": [],
+      "inDialog": false
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 7,
+        "y": 114,
+        "width": 316,
+        "height": 38,
+        "top": 114,
+        "right": 323,
+        "bottom": 152,
+        "left": 7
+      },
+      "parent": "arena-panel",
+      "gear": {
+        "x": 6,
+        "y": 156,
+        "width": 56,
+        "height": 50,
+        "top": 156,
+        "right": 62,
+        "bottom": 206,
+        "left": 6
+      },
+      "board": {
+        "x": 39.4375,
+        "y": 156,
+        "width": 251.109375,
+        "height": 251.109375,
+        "top": 156,
+        "right": 290.546875,
+        "bottom": 407.109375,
+        "left": 39.4375
+      },
+      "bench": {
+        "x": 7,
+        "y": 407.109375,
+        "width": 316,
+        "height": 94,
+        "top": 407.109375,
+        "right": 323,
+        "bottom": 501.109375,
+        "left": 7
+      },
+      "dock": {
+        "x": 6,
+        "y": 622,
+        "width": 378,
+        "height": 216,
+        "top": 622,
+        "right": 384,
+        "bottom": 838,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 623,
+        "width": 125,
+        "height": 30,
+        "top": 623,
+        "right": 132,
+        "bottom": 653,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 653,
+        "width": 63,
+        "height": 184,
+        "top": 653,
+        "right": 70,
+        "bottom": 837,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 653,
+        "width": 61,
+        "height": 184,
+        "top": 653,
+        "right": 132,
+        "bottom": 837,
+        "left": 71
+      },
+      "ready": {
+        "x": 329,
+        "y": 653,
+        "width": 54,
+        "height": 184,
+        "top": 653,
+        "right": 383,
+        "bottom": 837,
+        "left": 329
+      },
+      "streak": {
+        "x": 329,
+        "y": 623,
+        "width": 54,
+        "height": 30,
+        "top": 623,
+        "right": 383,
+        "bottom": 653,
+        "left": 329
+      },
+      "help": {
+        "x": 67.3125,
+        "y": 117,
+        "width": 16,
+        "height": 14,
+        "top": 117,
+        "right": 83.3125,
+        "bottom": 131,
+        "left": 67.3125
+      },
+      "cards": [
+        {
+          "rect": {
+            "x": 14,
+            "y": 133,
+            "width": 302,
+            "height": 16,
+            "top": 133,
+            "right": 316,
+            "bottom": 149,
+            "left": 14
+          },
+          "fits": true
+        }
+      ],
+      "overflow": false,
+      "duplicateIDs": [],
+      "inDialog": false
+    },
+    {
+      "mode": "mobile",
+      "width": 320,
+      "height": 740,
+      "panel": {
+        "x": 7,
+        "y": 114,
+        "width": 246,
+        "height": 38,
+        "top": 114,
+        "right": 253,
+        "bottom": 152,
+        "left": 7
+      },
+      "parent": "arena-panel",
+      "gear": {
+        "x": 6,
+        "y": 156,
+        "width": 56,
+        "height": 50,
+        "top": 156,
+        "right": 62,
+        "bottom": 206,
+        "left": 6
+      },
+      "board": {
+        "x": 33.140625,
+        "y": 156,
+        "width": 193.71875,
+        "height": 193.71875,
+        "top": 156,
+        "right": 226.859375,
+        "bottom": 349.71875,
+        "left": 33.140625
+      },
+      "bench": {
+        "x": 7,
+        "y": 349.71875,
+        "width": 246,
+        "height": 94,
+        "top": 349.71875,
+        "right": 253,
+        "bottom": 443.71875,
+        "left": 7
+      },
+      "dock": {
+        "x": 6,
+        "y": 518,
+        "width": 308,
+        "height": 216,
+        "top": 518,
+        "right": 314,
+        "bottom": 734,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 519,
+        "width": 125,
+        "height": 30,
+        "top": 519,
+        "right": 132,
+        "bottom": 549,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 549,
+        "width": 63,
+        "height": 184,
+        "top": 549,
+        "right": 70,
+        "bottom": 733,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 549,
+        "width": 61,
+        "height": 184,
+        "top": 549,
+        "right": 132,
+        "bottom": 733,
+        "left": 71
+      },
+      "ready": {
+        "x": 259,
+        "y": 549,
+        "width": 54,
+        "height": 184,
+        "top": 549,
+        "right": 313,
+        "bottom": 733,
+        "left": 259
+      },
+      "streak": {
+        "x": 259,
+        "y": 519,
+        "width": 54,
+        "height": 30,
+        "top": 519,
+        "right": 313,
+        "bottom": 549,
+        "left": 259
+      },
+      "help": {
+        "x": 67.3125,
+        "y": 117,
+        "width": 16,
+        "height": 14,
+        "top": 117,
+        "right": 83.3125,
+        "bottom": 131,
+        "left": 67.3125
+      },
+      "cards": [
+        {
+          "rect": {
+            "x": 14,
+            "y": 133,
+            "width": 232,
+            "height": 16,
+            "top": 133,
+            "right": 246,
+            "bottom": 149,
+            "left": 14
+          },
+          "fits": true
+        }
+      ],
+      "overflow": false,
+      "duplicateIDs": [],
+      "inDialog": false
+    },
+    {
+      "mode": "mobile",
+      "width": 360,
+      "height": 640,
+      "panel": {
+        "x": 7,
+        "y": 114,
+        "width": 286,
+        "height": 38,
+        "top": 114,
+        "right": 293,
+        "bottom": 152,
+        "left": 7
+      },
+      "parent": "arena-panel",
+      "gear": {
+        "x": 6,
+        "y": 156,
+        "width": 56,
+        "height": 50,
+        "top": 156,
+        "right": 62,
+        "bottom": 206,
+        "left": 6
+      },
+      "board": {
+        "x": 83.5,
+        "y": 156,
+        "width": 133,
+        "height": 133,
+        "top": 156,
+        "right": 216.5,
+        "bottom": 289,
+        "left": 83.5
+      },
+      "bench": {
+        "x": 7,
+        "y": 289,
+        "width": 286,
+        "height": 94,
+        "top": 289,
+        "right": 293,
+        "bottom": 383,
+        "left": 7
+      },
+      "dock": {
+        "x": 6,
+        "y": 418,
+        "width": 348,
+        "height": 216,
+        "top": 418,
+        "right": 354,
+        "bottom": 634,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 419,
+        "width": 125,
+        "height": 30,
+        "top": 419,
+        "right": 132,
+        "bottom": 449,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 449,
+        "width": 63,
+        "height": 184,
+        "top": 449,
+        "right": 70,
+        "bottom": 633,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 449,
+        "width": 61,
+        "height": 184,
+        "top": 449,
+        "right": 132,
+        "bottom": 633,
+        "left": 71
+      },
+      "ready": {
+        "x": 299,
+        "y": 449,
+        "width": 54,
+        "height": 184,
+        "top": 449,
+        "right": 353,
+        "bottom": 633,
+        "left": 299
+      },
+      "streak": {
+        "x": 299,
+        "y": 419,
+        "width": 54,
+        "height": 30,
+        "top": 419,
+        "right": 353,
+        "bottom": 449,
+        "left": 299
+      },
+      "help": {
+        "x": 67.3125,
+        "y": 117,
+        "width": 16,
+        "height": 14,
+        "top": 117,
+        "right": 83.3125,
+        "bottom": 131,
+        "left": 67.3125
+      },
+      "cards": [
+        {
+          "rect": {
+            "x": 14,
+            "y": 133,
+            "width": 272,
+            "height": 16,
+            "top": 133,
+            "right": 286,
+            "bottom": 149,
+            "left": 14
+          },
+          "fits": true
+        }
+      ],
+      "overflow": false,
+      "duplicateIDs": [],
+      "inDialog": false
+    },
+    {
+      "mode": "mobile",
+      "width": 414,
+      "height": 896,
+      "panel": {
+        "x": 7,
+        "y": 114,
+        "width": 340,
+        "height": 38,
+        "top": 114,
+        "right": 347,
+        "bottom": 152,
+        "left": 7
+      },
+      "parent": "arena-panel",
+      "gear": {
+        "x": 6,
+        "y": 156,
+        "width": 56,
+        "height": 50,
+        "top": 156,
+        "right": 62,
+        "bottom": 206,
+        "left": 6
+      },
+      "board": {
+        "x": 41.59375,
+        "y": 156,
+        "width": 270.796875,
+        "height": 270.796875,
+        "top": 156,
+        "right": 312.390625,
+        "bottom": 426.796875,
+        "left": 41.59375
+      },
+      "bench": {
+        "x": 7,
+        "y": 426.796875,
+        "width": 340,
+        "height": 94,
+        "top": 426.796875,
+        "right": 347,
+        "bottom": 520.796875,
+        "left": 7
+      },
+      "dock": {
+        "x": 6,
+        "y": 674,
+        "width": 402,
+        "height": 216,
+        "top": 674,
+        "right": 408,
+        "bottom": 890,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 675,
+        "width": 125,
+        "height": 30,
+        "top": 675,
+        "right": 132,
+        "bottom": 705,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 705,
+        "width": 63,
+        "height": 184,
+        "top": 705,
+        "right": 70,
+        "bottom": 889,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 705,
+        "width": 61,
+        "height": 184,
+        "top": 705,
+        "right": 132,
+        "bottom": 889,
+        "left": 71
+      },
+      "ready": {
+        "x": 353,
+        "y": 705,
+        "width": 54,
+        "height": 184,
+        "top": 705,
+        "right": 407,
+        "bottom": 889,
+        "left": 353
+      },
+      "streak": {
+        "x": 353,
+        "y": 675,
+        "width": 54,
+        "height": 30,
+        "top": 675,
+        "right": 407,
+        "bottom": 705,
+        "left": 353
+      },
+      "help": {
+        "x": 67.3125,
+        "y": 117,
+        "width": 16,
+        "height": 14,
+        "top": 117,
+        "right": 83.3125,
+        "bottom": 131,
+        "left": 67.3125
+      },
+      "cards": [
+        {
+          "rect": {
+            "x": 14,
+            "y": 133,
+            "width": 326,
+            "height": 16,
+            "top": 133,
+            "right": 340,
+            "bottom": 149,
+            "left": 14
+          },
+          "fits": true
+        }
+      ],
+      "overflow": false,
+      "duplicateIDs": [],
+      "inDialog": false
+    },
+    {
+      "mode": "mobile",
+      "width": 768,
+      "height": 1024,
+      "panel": {
+        "x": 45,
+        "y": 114,
+        "width": 618,
+        "height": 38,
+        "top": 114,
+        "right": 663,
+        "bottom": 152,
+        "left": 45
+      },
+      "parent": "arena-panel",
+      "gear": {
+        "x": 50,
+        "y": 156,
+        "width": 56,
+        "height": 50,
+        "top": 156,
+        "right": 106,
+        "bottom": 206,
+        "left": 50
+      },
+      "board": {
+        "x": 114,
+        "y": 156,
+        "width": 480,
+        "height": 480,
+        "top": 156,
+        "right": 594,
+        "bottom": 636,
+        "left": 114
+      },
+      "bench": {
+        "x": 45,
+        "y": 636,
+        "width": 618,
+        "height": 94,
+        "top": 636,
+        "right": 663,
+        "bottom": 730,
+        "left": 45
+      },
+      "dock": {
+        "x": 44,
+        "y": 888,
+        "width": 680,
+        "height": 130,
+        "top": 888,
+        "right": 724,
+        "bottom": 1018,
+        "left": 44
+      },
+      "gold": {
+        "x": 45,
+        "y": 889,
+        "width": 167,
+        "height": 32,
+        "top": 889,
+        "right": 212,
+        "bottom": 921,
+        "left": 45
+      },
+      "xp": {
+        "x": 45,
+        "y": 921,
+        "width": 87,
+        "height": 96,
+        "top": 921,
+        "right": 132,
+        "bottom": 1017,
+        "left": 45
+      },
+      "roll": {
+        "x": 133,
+        "y": 921,
+        "width": 79,
+        "height": 96,
+        "top": 921,
+        "right": 212,
+        "bottom": 1017,
+        "left": 133
+      },
+      "ready": {
+        "x": 611,
+        "y": 921,
+        "width": 112,
+        "height": 96,
+        "top": 921,
+        "right": 723,
+        "bottom": 1017,
+        "left": 611
+      },
+      "streak": {
+        "x": 611,
+        "y": 889,
+        "width": 112,
+        "height": 32,
+        "top": 889,
+        "right": 723,
+        "bottom": 921,
+        "left": 611
+      },
+      "help": {
+        "x": 105.3125,
+        "y": 117,
+        "width": 16,
+        "height": 14,
+        "top": 117,
+        "right": 121.3125,
+        "bottom": 131,
+        "left": 105.3125
+      },
+      "cards": [
+        {
+          "rect": {
+            "x": 52,
+            "y": 133,
+            "width": 604,
+            "height": 16,
+            "top": 133,
+            "right": 656,
+            "bottom": 149,
+            "left": 52
+          },
+          "fits": true
+        }
+      ],
+      "overflow": false,
+      "duplicateIDs": [],
+      "inDialog": false
+    },
+    {
+      "mode": "mobile",
+      "width": 844,
+      "height": 390,
+      "panel": {
+        "x": 398.671875,
+        "y": 167,
+        "width": 128,
+        "height": 42,
+        "top": 167,
+        "right": 526.671875,
+        "bottom": 209,
+        "left": 398.671875
+      },
+      "parent": "arena-panel",
+      "gear": {
+        "x": 399.671875,
+        "y": 214,
+        "width": 128,
+        "height": 50,
+        "top": 214,
+        "right": 527.671875,
+        "bottom": 264,
+        "left": 399.671875
+      },
+      "board": {
+        "x": 88.328125,
+        "y": 57,
+        "width": 231,
+        "height": 231,
+        "top": 57,
+        "right": 319.328125,
+        "bottom": 288,
+        "left": 88.328125
+      },
+      "bench": {
+        "x": 13,
+        "y": 292,
+        "width": 381.671875,
+        "height": 87,
+        "top": 292,
+        "right": 394.671875,
+        "bottom": 379,
+        "left": 13
+      },
+      "dock": {
+        "x": 539.6875,
+        "y": 52,
+        "width": 236.3125,
+        "height": 332,
+        "top": 52,
+        "right": 776,
+        "bottom": 384,
+        "left": 539.6875
+      },
+      "gold": {
+        "x": 540.6875,
+        "y": 53,
+        "width": 97,
+        "height": 30,
+        "top": 53,
+        "right": 637.6875,
+        "bottom": 83,
+        "left": 540.6875
+      },
+      "xp": {
+        "x": 540.6875,
+        "y": 83,
+        "width": 51,
+        "height": 300,
+        "top": 83,
+        "right": 591.6875,
+        "bottom": 383,
+        "left": 540.6875
+      },
+      "roll": {
+        "x": 592.6875,
+        "y": 83,
+        "width": 45,
+        "height": 300,
+        "top": 83,
+        "right": 637.6875,
+        "bottom": 383,
+        "left": 592.6875
+      },
+      "ready": {
+        "x": 729,
+        "y": 83,
+        "width": 46,
+        "height": 300,
+        "top": 83,
+        "right": 775,
+        "bottom": 383,
+        "left": 729
+      },
+      "streak": {
+        "x": 729,
+        "y": 53,
+        "width": 46,
+        "height": 30,
+        "top": 53,
+        "right": 775,
+        "bottom": 83,
+        "left": 729
+      },
+      "help": {
+        "x": 427.671875,
+        "y": 172,
+        "width": 16,
+        "height": 14,
+        "top": 172,
+        "right": 443.671875,
+        "bottom": 186,
+        "left": 427.671875
+      },
+      "cards": [
+        {
+          "rect": {
+            "x": 403.671875,
+            "y": 188,
+            "width": 118,
+            "height": 16,
+            "top": 188,
+            "right": 521.671875,
+            "bottom": 204,
+            "left": 403.671875
+          },
+          "fits": true
+        }
+      ],
+      "overflow": false,
+      "duplicateIDs": [],
+      "inDialog": false
+    },
+    {
+      "mode": "mobile",
+      "width": 480,
+      "height": 320,
+      "panel": {
+        "x": 131,
+        "y": 184,
+        "width": 60,
+        "height": 42,
+        "top": 184,
+        "right": 191,
+        "bottom": 226,
+        "left": 131
+      },
+      "parent": "arena-panel",
+      "gear": {
+        "x": 132,
+        "y": 231,
+        "width": 60,
+        "height": 50,
+        "top": 231,
+        "right": 192,
+        "bottom": 281,
+        "left": 132
+      },
+      "board": {
+        "x": 39,
+        "y": 61,
+        "width": 62,
+        "height": 62,
+        "top": 61,
+        "right": 101,
+        "bottom": 123,
+        "left": 39
+      },
+      "bench": {
+        "x": 13,
+        "y": 127,
+        "width": 114,
+        "height": 87,
+        "top": 127,
+        "right": 127,
+        "bottom": 214,
+        "left": 13
+      },
+      "dock": {
+        "x": 204,
+        "y": 56,
+        "width": 208,
+        "height": 258,
+        "top": 56,
+        "right": 412,
+        "bottom": 314,
+        "left": 204
+      },
+      "gold": {
+        "x": 205,
+        "y": 57,
+        "width": 97,
+        "height": 30,
+        "top": 57,
+        "right": 302,
+        "bottom": 87,
+        "left": 205
+      },
+      "xp": {
+        "x": 205,
+        "y": 87,
+        "width": 51,
+        "height": 226,
+        "top": 87,
+        "right": 256,
+        "bottom": 313,
+        "left": 205
+      },
+      "roll": {
+        "x": 257,
+        "y": 87,
+        "width": 45,
+        "height": 226,
+        "top": 87,
+        "right": 302,
+        "bottom": 313,
+        "left": 257
+      },
+      "ready": {
+        "x": 365,
+        "y": 87,
+        "width": 46,
+        "height": 226,
+        "top": 87,
+        "right": 411,
+        "bottom": 313,
+        "left": 365
+      },
+      "streak": {
+        "x": 365,
+        "y": 57,
+        "width": 46,
+        "height": 30,
+        "top": 57,
+        "right": 411,
+        "bottom": 87,
+        "left": 365
+      },
+      "help": {
+        "x": 160,
+        "y": 189,
+        "width": 16,
+        "height": 14,
+        "top": 189,
+        "right": 176,
+        "bottom": 203,
+        "left": 160
+      },
+      "cards": [
+        {
+          "rect": {
+            "x": 136,
+            "y": 205,
+            "width": 50,
+            "height": 16,
+            "top": 205,
+            "right": 186,
+            "bottom": 221,
+            "left": 136
+          },
+          "fits": true
+        }
+      ],
+      "overflow": false,
+      "duplicateIDs": [],
+      "inDialog": false
+    }
+  ],
+  "errors": []
+}

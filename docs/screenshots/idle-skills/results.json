@@ -1,0 +1,303 @@
+{
+  "version": "0.20.17",
+  "browser": "155.0.8059.41",
+  "results": [
+    {
+      "mode": "pc",
+      "reverse": false,
+      "attribute": "red",
+      "skill": "nova"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "attribute": "red",
+      "skill": "ironWard"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "attribute": "red",
+      "skill": "starlightHeal"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "attribute": "yellow",
+      "skill": "nova"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "attribute": "yellow",
+      "skill": "ironWard"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "attribute": "yellow",
+      "skill": "starlightHeal"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "attribute": "blue",
+      "skill": "nova"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "attribute": "blue",
+      "skill": "ironWard"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "attribute": "blue",
+      "skill": "starlightHeal"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "attribute": "purple",
+      "skill": "nova"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "attribute": "purple",
+      "skill": "ironWard"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "attribute": "purple",
+      "skill": "starlightHeal"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "attribute": "red",
+      "skill": "nova"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "attribute": "red",
+      "skill": "ironWard"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "attribute": "red",
+      "skill": "starlightHeal"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "attribute": "yellow",
+      "skill": "nova"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "attribute": "yellow",
+      "skill": "ironWard"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "attribute": "yellow",
+      "skill": "starlightHeal"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "attribute": "blue",
+      "skill": "nova"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "attribute": "blue",
+      "skill": "ironWard"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "attribute": "blue",
+      "skill": "starlightHeal"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "attribute": "purple",
+      "skill": "nova"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "attribute": "purple",
+      "skill": "ironWard"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "attribute": "purple",
+      "skill": "starlightHeal"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "attribute": "red",
+      "skill": "nova"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "attribute": "red",
+      "skill": "ironWard"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "attribute": "red",
+      "skill": "starlightHeal"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "attribute": "yellow",
+      "skill": "nova"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "attribute": "yellow",
+      "skill": "ironWard"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "attribute": "yellow",
+      "skill": "starlightHeal"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "attribute": "blue",
+      "skill": "nova"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "attribute": "blue",
+      "skill": "ironWard"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "attribute": "blue",
+      "skill": "starlightHeal"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "attribute": "purple",
+      "skill": "nova"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "attribute": "purple",
+      "skill": "ironWard"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "attribute": "purple",
+      "skill": "starlightHeal"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "attribute": "red",
+      "skill": "nova"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "attribute": "red",
+      "skill": "ironWard"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "attribute": "red",
+      "skill": "starlightHeal"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "attribute": "yellow",
+      "skill": "nova"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "attribute": "yellow",
+      "skill": "ironWard"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "attribute": "yellow",
+      "skill": "starlightHeal"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "attribute": "blue",
+      "skill": "nova"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "attribute": "blue",
+      "skill": "ironWard"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "attribute": "blue",
+      "skill": "starlightHeal"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "attribute": "purple",
+      "skill": "nova"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "attribute": "purple",
+      "skill": "ironWard"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "attribute": "purple",
+      "skill": "starlightHeal"
+    }
+  ],
+  "idle": true,
+  "readiness": true,
+  "sustain": true,
+  "end": true,
+  "healing": true,
+  "labelReplacement": true,
+  "reducedMotion": true,
+  "cleanup": true,
+  "errors": []
+}

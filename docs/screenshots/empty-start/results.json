@@ -1,0 +1,25 @@
+{
+  "version": "0.19.1",
+  "browser": "138.0.7204.0",
+  "results": [
+    {
+      "mode": "pc",
+      "practiceEmpty": true,
+      "firstPurchaseAndPlacement": true,
+      "reconnectPreservesOwnedUnit": true,
+      "newGameEmpty": true,
+      "duelBothPlayersEmpty": true,
+      "startingGold": 10
+    },
+    {
+      "mode": "mobile",
+      "practiceEmpty": true,
+      "firstPurchaseAndPlacement": true,
+      "reconnectPreservesOwnedUnit": true,
+      "newGameEmpty": true,
+      "duelBothPlayersEmpty": true,
+      "startingGold": 10
+    }
+  ],
+  "errors": []
+}

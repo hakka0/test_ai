@@ -1,0 +1,5030 @@
+{
+  "version": "0.20.41",
+  "browser": "155.0.8059.84",
+  "sixPlayerData": "UI test snapshot fixture; live gameplay server is two-player",
+  "results": [
+    {
+      "mode": "pc",
+      "width": 1400,
+      "height": 1000,
+      "compact": false,
+      "parent": "game-view",
+      "orientation": "landscape",
+      "landscape": false,
+      "ranking": {
+        "x": 1294,
+        "y": 56,
+        "width": 76,
+        "height": 438,
+        "top": 56,
+        "right": 1370,
+        "bottom": 494,
+        "left": 1294
+      },
+      "arena": {
+        "x": 202,
+        "y": 56,
+        "width": 748,
+        "height": 761.171875,
+        "top": 56,
+        "right": 950,
+        "bottom": 817.171875,
+        "left": 202
+      },
+      "information": {
+        "x": 962,
+        "y": 56,
+        "width": 320,
+        "height": 764,
+        "top": 56,
+        "right": 1282,
+        "bottom": 820,
+        "left": 962
+      },
+      "banner": {
+        "x": 278,
+        "y": 125,
+        "width": 596,
+        "height": 40,
+        "top": 125,
+        "right": 874,
+        "bottom": 165,
+        "left": 278
+      },
+      "board": {
+        "x": 274,
+        "y": 121,
+        "width": 604,
+        "height": 604,
+        "top": 121,
+        "right": 878,
+        "bottom": 725,
+        "left": 274
+      },
+      "deployment": {
+        "x": 526.859375,
+        "y": 393,
+        "width": 98.28125,
+        "height": 60,
+        "top": 393,
+        "right": 625.140625,
+        "bottom": 453,
+        "left": 526.859375
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 211,
+          "y": 753,
+          "width": 57.15625,
+          "height": 57.15625,
+          "top": 753,
+          "right": 268.15625,
+          "bottom": 810.15625,
+          "left": 211
+        },
+        {
+          "x": 272.15625,
+          "y": 753,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 753,
+          "right": 329.328125,
+          "bottom": 810.171875,
+          "left": 272.15625
+        },
+        {
+          "x": 333.328125,
+          "y": 753,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 753,
+          "right": 390.5,
+          "bottom": 810.171875,
+          "left": 333.328125
+        },
+        {
+          "x": 394.5,
+          "y": 753,
+          "width": 57.15625,
+          "height": 57.15625,
+          "top": 753,
+          "right": 451.65625,
+          "bottom": 810.15625,
+          "left": 394.5
+        },
+        {
+          "x": 455.65625,
+          "y": 753,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 753,
+          "right": 512.828125,
+          "bottom": 810.171875,
+          "left": 455.65625
+        },
+        {
+          "x": 516.828125,
+          "y": 753,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 753,
+          "right": 574,
+          "bottom": 810.171875,
+          "left": 516.828125
+        },
+        {
+          "x": 578,
+          "y": 753,
+          "width": 57.15625,
+          "height": 57.15625,
+          "top": 753,
+          "right": 635.15625,
+          "bottom": 810.15625,
+          "left": 578
+        },
+        {
+          "x": 639.15625,
+          "y": 753,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 753,
+          "right": 696.328125,
+          "bottom": 810.171875,
+          "left": 639.15625
+        },
+        {
+          "x": 700.328125,
+          "y": 753,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 753,
+          "right": 757.5,
+          "bottom": 810.171875,
+          "left": 700.328125
+        },
+        {
+          "x": 761.5,
+          "y": 753,
+          "width": 57.15625,
+          "height": 57.15625,
+          "top": 753,
+          "right": 818.65625,
+          "bottom": 810.15625,
+          "left": 761.5
+        },
+        {
+          "x": 822.65625,
+          "y": 753,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 753,
+          "right": 879.828125,
+          "bottom": 810.171875,
+          "left": 822.65625
+        },
+        {
+          "x": 883.828125,
+          "y": 753,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 753,
+          "right": 941,
+          "bottom": 810.171875,
+          "left": 883.828125
+        }
+      ],
+      "bench": {
+        "x": 203,
+        "y": 725,
+        "width": 746,
+        "height": 91.171875,
+        "top": 725,
+        "right": 949,
+        "bottom": 816.171875,
+        "left": 203
+      },
+      "dock": {
+        "x": 24,
+        "y": 852,
+        "width": 1352,
+        "height": 130,
+        "top": 852,
+        "right": 1376,
+        "bottom": 982,
+        "left": 24
+      },
+      "cards": [
+        {
+          "x": 1300,
+          "y": 106,
+          "width": 64,
+          "height": 60,
+          "top": 106,
+          "right": 1364,
+          "bottom": 166,
+          "left": 1300
+        },
+        {
+          "x": 1300,
+          "y": 170,
+          "width": 64,
+          "height": 60,
+          "top": 170,
+          "right": 1364,
+          "bottom": 230,
+          "left": 1300
+        },
+        {
+          "x": 1300,
+          "y": 234,
+          "width": 64,
+          "height": 60,
+          "top": 234,
+          "right": 1364,
+          "bottom": 294,
+          "left": 1300
+        },
+        {
+          "x": 1300,
+          "y": 298,
+          "width": 64,
+          "height": 60,
+          "top": 298,
+          "right": 1364,
+          "bottom": 358,
+          "left": 1300
+        },
+        {
+          "x": 1300,
+          "y": 362,
+          "width": 64,
+          "height": 60,
+          "top": 362,
+          "right": 1364,
+          "bottom": 422,
+          "left": 1300
+        },
+        {
+          "x": 1300,
+          "y": 426,
+          "width": 64,
+          "height": 60,
+          "top": 426,
+          "right": 1364,
+          "bottom": 486,
+          "left": 1300
+        }
+      ],
+      "scrollWidth": 64,
+      "clientWidth": 64,
+      "overflow": false,
+      "ids": []
+    },
+    {
+      "mode": "pc",
+      "width": 1920,
+      "height": 1080,
+      "compact": false,
+      "parent": "game-view",
+      "orientation": "landscape",
+      "landscape": false,
+      "ranking": {
+        "x": 1554,
+        "y": 56,
+        "width": 76,
+        "height": 438,
+        "top": 56,
+        "right": 1630,
+        "bottom": 494,
+        "left": 1554
+      },
+      "arena": {
+        "x": 462,
+        "y": 56,
+        "width": 748,
+        "height": 797.171875,
+        "top": 56,
+        "right": 1210,
+        "bottom": 853.171875,
+        "left": 462
+      },
+      "information": {
+        "x": 1222,
+        "y": 56,
+        "width": 320,
+        "height": 807.34375,
+        "top": 56,
+        "right": 1542,
+        "bottom": 863.34375,
+        "left": 1222
+      },
+      "banner": {
+        "x": 520,
+        "y": 125,
+        "width": 632,
+        "height": 40,
+        "top": 125,
+        "right": 1152,
+        "bottom": 165,
+        "left": 520
+      },
+      "board": {
+        "x": 516,
+        "y": 121,
+        "width": 640,
+        "height": 640,
+        "top": 121,
+        "right": 1156,
+        "bottom": 761,
+        "left": 516
+      },
+      "deployment": {
+        "x": 786.859375,
+        "y": 411,
+        "width": 98.28125,
+        "height": 60,
+        "top": 411,
+        "right": 885.140625,
+        "bottom": 471,
+        "left": 786.859375
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 471,
+          "y": 789,
+          "width": 57.15625,
+          "height": 57.15625,
+          "top": 789,
+          "right": 528.15625,
+          "bottom": 846.15625,
+          "left": 471
+        },
+        {
+          "x": 532.15625,
+          "y": 789,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 789,
+          "right": 589.328125,
+          "bottom": 846.171875,
+          "left": 532.15625
+        },
+        {
+          "x": 593.328125,
+          "y": 789,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 789,
+          "right": 650.5,
+          "bottom": 846.171875,
+          "left": 593.328125
+        },
+        {
+          "x": 654.5,
+          "y": 789,
+          "width": 57.15625,
+          "height": 57.15625,
+          "top": 789,
+          "right": 711.65625,
+          "bottom": 846.15625,
+          "left": 654.5
+        },
+        {
+          "x": 715.65625,
+          "y": 789,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 789,
+          "right": 772.828125,
+          "bottom": 846.171875,
+          "left": 715.65625
+        },
+        {
+          "x": 776.828125,
+          "y": 789,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 789,
+          "right": 834,
+          "bottom": 846.171875,
+          "left": 776.828125
+        },
+        {
+          "x": 838,
+          "y": 789,
+          "width": 57.15625,
+          "height": 57.15625,
+          "top": 789,
+          "right": 895.15625,
+          "bottom": 846.15625,
+          "left": 838
+        },
+        {
+          "x": 899.15625,
+          "y": 789,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 789,
+          "right": 956.328125,
+          "bottom": 846.171875,
+          "left": 899.15625
+        },
+        {
+          "x": 960.328125,
+          "y": 789,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 789,
+          "right": 1017.5,
+          "bottom": 846.171875,
+          "left": 960.328125
+        },
+        {
+          "x": 1021.5,
+          "y": 789,
+          "width": 57.15625,
+          "height": 57.15625,
+          "top": 789,
+          "right": 1078.65625,
+          "bottom": 846.15625,
+          "left": 1021.5
+        },
+        {
+          "x": 1082.65625,
+          "y": 789,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 789,
+          "right": 1139.828125,
+          "bottom": 846.171875,
+          "left": 1082.65625
+        },
+        {
+          "x": 1143.828125,
+          "y": 789,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 789,
+          "right": 1201,
+          "bottom": 846.171875,
+          "left": 1143.828125
+        }
+      ],
+      "bench": {
+        "x": 463,
+        "y": 761,
+        "width": 746,
+        "height": 91.171875,
+        "top": 761,
+        "right": 1209,
+        "bottom": 852.171875,
+        "left": 463
+      },
+      "dock": {
+        "x": 284,
+        "y": 932,
+        "width": 1352,
+        "height": 130,
+        "top": 932,
+        "right": 1636,
+        "bottom": 1062,
+        "left": 284
+      },
+      "cards": [
+        {
+          "x": 1560,
+          "y": 106,
+          "width": 64,
+          "height": 60,
+          "top": 106,
+          "right": 1624,
+          "bottom": 166,
+          "left": 1560
+        },
+        {
+          "x": 1560,
+          "y": 170,
+          "width": 64,
+          "height": 60,
+          "top": 170,
+          "right": 1624,
+          "bottom": 230,
+          "left": 1560
+        },
+        {
+          "x": 1560,
+          "y": 234,
+          "width": 64,
+          "height": 60,
+          "top": 234,
+          "right": 1624,
+          "bottom": 294,
+          "left": 1560
+        },
+        {
+          "x": 1560,
+          "y": 298,
+          "width": 64,
+          "height": 60,
+          "top": 298,
+          "right": 1624,
+          "bottom": 358,
+          "left": 1560
+        },
+        {
+          "x": 1560,
+          "y": 362,
+          "width": 64,
+          "height": 60,
+          "top": 362,
+          "right": 1624,
+          "bottom": 422,
+          "left": 1560
+        },
+        {
+          "x": 1560,
+          "y": 426,
+          "width": 64,
+          "height": 60,
+          "top": 426,
+          "right": 1624,
+          "bottom": 486,
+          "left": 1560
+        }
+      ],
+      "scrollWidth": 64,
+      "clientWidth": 64,
+      "overflow": false,
+      "ids": []
+    },
+    {
+      "mode": "pc",
+      "width": 1366,
+      "height": 768,
+      "compact": false,
+      "parent": "game-view",
+      "orientation": "landscape",
+      "landscape": false,
+      "ranking": {
+        "x": 1277,
+        "y": 56,
+        "width": 76,
+        "height": 438,
+        "top": 56,
+        "right": 1353,
+        "bottom": 494,
+        "left": 1277
+      },
+      "arena": {
+        "x": 185,
+        "y": 56,
+        "width": 748,
+        "height": 529.171875,
+        "top": 56,
+        "right": 933,
+        "bottom": 585.171875,
+        "left": 185
+      },
+      "information": {
+        "x": 945,
+        "y": 56,
+        "width": 320,
+        "height": 532,
+        "top": 56,
+        "right": 1265,
+        "bottom": 588,
+        "left": 945
+      },
+      "banner": {
+        "x": 377,
+        "y": 125,
+        "width": 364,
+        "height": 40,
+        "top": 125,
+        "right": 741,
+        "bottom": 165,
+        "left": 377
+      },
+      "board": {
+        "x": 373,
+        "y": 121,
+        "width": 372,
+        "height": 372,
+        "top": 121,
+        "right": 745,
+        "bottom": 493,
+        "left": 373
+      },
+      "deployment": {
+        "x": 525.4921875,
+        "y": 286.5390625,
+        "width": 67.015625,
+        "height": 40.921875,
+        "top": 286.5390625,
+        "right": 592.5078125,
+        "bottom": 327.4609375,
+        "left": 525.4921875
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 194,
+          "y": 521,
+          "width": 57.15625,
+          "height": 57.15625,
+          "top": 521,
+          "right": 251.15625,
+          "bottom": 578.15625,
+          "left": 194
+        },
+        {
+          "x": 255.15625,
+          "y": 521,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 521,
+          "right": 312.328125,
+          "bottom": 578.171875,
+          "left": 255.15625
+        },
+        {
+          "x": 316.328125,
+          "y": 521,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 521,
+          "right": 373.5,
+          "bottom": 578.171875,
+          "left": 316.328125
+        },
+        {
+          "x": 377.5,
+          "y": 521,
+          "width": 57.15625,
+          "height": 57.15625,
+          "top": 521,
+          "right": 434.65625,
+          "bottom": 578.15625,
+          "left": 377.5
+        },
+        {
+          "x": 438.65625,
+          "y": 521,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 521,
+          "right": 495.828125,
+          "bottom": 578.171875,
+          "left": 438.65625
+        },
+        {
+          "x": 499.828125,
+          "y": 521,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 521,
+          "right": 557,
+          "bottom": 578.171875,
+          "left": 499.828125
+        },
+        {
+          "x": 561,
+          "y": 521,
+          "width": 57.15625,
+          "height": 57.15625,
+          "top": 521,
+          "right": 618.15625,
+          "bottom": 578.15625,
+          "left": 561
+        },
+        {
+          "x": 622.15625,
+          "y": 521,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 521,
+          "right": 679.328125,
+          "bottom": 578.171875,
+          "left": 622.15625
+        },
+        {
+          "x": 683.328125,
+          "y": 521,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 521,
+          "right": 740.5,
+          "bottom": 578.171875,
+          "left": 683.328125
+        },
+        {
+          "x": 744.5,
+          "y": 521,
+          "width": 57.15625,
+          "height": 57.15625,
+          "top": 521,
+          "right": 801.65625,
+          "bottom": 578.15625,
+          "left": 744.5
+        },
+        {
+          "x": 805.65625,
+          "y": 521,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 521,
+          "right": 862.828125,
+          "bottom": 578.171875,
+          "left": 805.65625
+        },
+        {
+          "x": 866.828125,
+          "y": 521,
+          "width": 57.171875,
+          "height": 57.171875,
+          "top": 521,
+          "right": 924,
+          "bottom": 578.171875,
+          "left": 866.828125
+        }
+      ],
+      "bench": {
+        "x": 186,
+        "y": 493,
+        "width": 746,
+        "height": 91.171875,
+        "top": 493,
+        "right": 932,
+        "bottom": 584.171875,
+        "left": 186
+      },
+      "dock": {
+        "x": 24,
+        "y": 620,
+        "width": 1318,
+        "height": 130,
+        "top": 620,
+        "right": 1342,
+        "bottom": 750,
+        "left": 24
+      },
+      "cards": [
+        {
+          "x": 1283,
+          "y": 106,
+          "width": 64,
+          "height": 60,
+          "top": 106,
+          "right": 1347,
+          "bottom": 166,
+          "left": 1283
+        },
+        {
+          "x": 1283,
+          "y": 170,
+          "width": 64,
+          "height": 60,
+          "top": 170,
+          "right": 1347,
+          "bottom": 230,
+          "left": 1283
+        },
+        {
+          "x": 1283,
+          "y": 234,
+          "width": 64,
+          "height": 60,
+          "top": 234,
+          "right": 1347,
+          "bottom": 294,
+          "left": 1283
+        },
+        {
+          "x": 1283,
+          "y": 298,
+          "width": 64,
+          "height": 60,
+          "top": 298,
+          "right": 1347,
+          "bottom": 358,
+          "left": 1283
+        },
+        {
+          "x": 1283,
+          "y": 362,
+          "width": 64,
+          "height": 60,
+          "top": 362,
+          "right": 1347,
+          "bottom": 422,
+          "left": 1283
+        },
+        {
+          "x": 1283,
+          "y": 426,
+          "width": 64,
+          "height": 60,
+          "top": 426,
+          "right": 1347,
+          "bottom": 486,
+          "left": 1283
+        }
+      ],
+      "scrollWidth": 64,
+      "clientWidth": 64,
+      "overflow": false,
+      "ids": []
+    },
+    {
+      "mode": "pc",
+      "width": 1024,
+      "height": 768,
+      "compact": false,
+      "parent": "game-view",
+      "orientation": "landscape",
+      "landscape": false,
+      "ranking": {
+        "x": 948,
+        "y": 56,
+        "width": 64,
+        "height": 438,
+        "top": 56,
+        "right": 1012,
+        "bottom": 494,
+        "left": 948
+      },
+      "arena": {
+        "x": 164,
+        "y": 56,
+        "width": 480,
+        "height": 536,
+        "top": 56,
+        "right": 644,
+        "bottom": 592,
+        "left": 164
+      },
+      "information": {
+        "x": 656,
+        "y": 56,
+        "width": 280,
+        "height": 538,
+        "top": 56,
+        "right": 936,
+        "bottom": 594,
+        "left": 656
+      },
+      "banner": {
+        "x": 218,
+        "y": 137,
+        "width": 372,
+        "height": 40,
+        "top": 137,
+        "right": 590,
+        "bottom": 177,
+        "left": 218
+      },
+      "board": {
+        "x": 214,
+        "y": 133,
+        "width": 380,
+        "height": 380,
+        "top": 133,
+        "right": 594,
+        "bottom": 513,
+        "left": 214
+      },
+      "deployment": {
+        "x": 369.765625,
+        "y": 302.1015625,
+        "width": 68.46875,
+        "height": 41.796875,
+        "top": 302.1015625,
+        "right": 438.234375,
+        "bottom": 343.8984375,
+        "left": 369.765625
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 173,
+          "y": 541,
+          "width": 44,
+          "height": 44,
+          "top": 541,
+          "right": 217,
+          "bottom": 585,
+          "left": 173
+        },
+        {
+          "x": 221,
+          "y": 541,
+          "width": 44,
+          "height": 44,
+          "top": 541,
+          "right": 265,
+          "bottom": 585,
+          "left": 221
+        },
+        {
+          "x": 269,
+          "y": 541,
+          "width": 44,
+          "height": 44,
+          "top": 541,
+          "right": 313,
+          "bottom": 585,
+          "left": 269
+        },
+        {
+          "x": 317,
+          "y": 541,
+          "width": 44,
+          "height": 44,
+          "top": 541,
+          "right": 361,
+          "bottom": 585,
+          "left": 317
+        },
+        {
+          "x": 365,
+          "y": 541,
+          "width": 44,
+          "height": 44,
+          "top": 541,
+          "right": 409,
+          "bottom": 585,
+          "left": 365
+        },
+        {
+          "x": 413,
+          "y": 541,
+          "width": 44,
+          "height": 44,
+          "top": 541,
+          "right": 457,
+          "bottom": 585,
+          "left": 413
+        },
+        {
+          "x": 461,
+          "y": 541,
+          "width": 44,
+          "height": 44,
+          "top": 541,
+          "right": 505,
+          "bottom": 585,
+          "left": 461
+        },
+        {
+          "x": 509,
+          "y": 541,
+          "width": 44,
+          "height": 44,
+          "top": 541,
+          "right": 553,
+          "bottom": 585,
+          "left": 509
+        },
+        {
+          "x": 557,
+          "y": 541,
+          "width": 44,
+          "height": 44,
+          "top": 541,
+          "right": 601,
+          "bottom": 585,
+          "left": 557
+        },
+        {
+          "x": 605,
+          "y": 541,
+          "width": 44,
+          "height": 44,
+          "top": 541,
+          "right": 649,
+          "bottom": 585,
+          "left": 605
+        },
+        {
+          "x": 653,
+          "y": 541,
+          "width": 44,
+          "height": 44,
+          "top": 541,
+          "right": 697,
+          "bottom": 585,
+          "left": 653
+        },
+        {
+          "x": 701,
+          "y": 541,
+          "width": 44,
+          "height": 44,
+          "top": 541,
+          "right": 745,
+          "bottom": 585,
+          "left": 701
+        }
+      ],
+      "bench": {
+        "x": 165,
+        "y": 513,
+        "width": 478,
+        "height": 78,
+        "top": 513,
+        "right": 643,
+        "bottom": 591,
+        "left": 165
+      },
+      "dock": {
+        "x": 12,
+        "y": 626,
+        "width": 1000,
+        "height": 130,
+        "top": 626,
+        "right": 1012,
+        "bottom": 756,
+        "left": 12
+      },
+      "cards": [
+        {
+          "x": 954,
+          "y": 106,
+          "width": 52,
+          "height": 60,
+          "top": 106,
+          "right": 1006,
+          "bottom": 166,
+          "left": 954
+        },
+        {
+          "x": 954,
+          "y": 170,
+          "width": 52,
+          "height": 60,
+          "top": 170,
+          "right": 1006,
+          "bottom": 230,
+          "left": 954
+        },
+        {
+          "x": 954,
+          "y": 234,
+          "width": 52,
+          "height": 60,
+          "top": 234,
+          "right": 1006,
+          "bottom": 294,
+          "left": 954
+        },
+        {
+          "x": 954,
+          "y": 298,
+          "width": 52,
+          "height": 60,
+          "top": 298,
+          "right": 1006,
+          "bottom": 358,
+          "left": 954
+        },
+        {
+          "x": 954,
+          "y": 362,
+          "width": 52,
+          "height": 60,
+          "top": 362,
+          "right": 1006,
+          "bottom": 422,
+          "left": 954
+        },
+        {
+          "x": 954,
+          "y": 426,
+          "width": 52,
+          "height": 60,
+          "top": 426,
+          "right": 1006,
+          "bottom": 486,
+          "left": 954
+        }
+      ],
+      "scrollWidth": 52,
+      "clientWidth": 52,
+      "overflow": false,
+      "ids": []
+    },
+    {
+      "mode": "pc",
+      "width": 390,
+      "height": 844,
+      "compact": true,
+      "parent": "game-view",
+      "orientation": "portrait",
+      "landscape": false,
+      "ranking": {
+        "x": 322,
+        "y": 56,
+        "width": 56,
+        "height": 360,
+        "top": 56,
+        "right": 378,
+        "bottom": 416,
+        "left": 322
+      },
+      "arena": {
+        "x": 12,
+        "y": 56,
+        "width": 306,
+        "height": 529,
+        "top": 56,
+        "right": 318,
+        "bottom": 585,
+        "left": 12
+      },
+      "information": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "banner": {
+        "x": 17,
+        "y": 206,
+        "width": 296,
+        "height": 40,
+        "top": 206,
+        "right": 313,
+        "bottom": 246,
+        "left": 17
+      },
+      "board": {
+        "x": 13,
+        "y": 202,
+        "width": 304,
+        "height": 304,
+        "top": 202,
+        "right": 317,
+        "bottom": 506,
+        "left": 13
+      },
+      "deployment": {
+        "x": 137.6171875,
+        "y": 337.28125,
+        "width": 54.765625,
+        "height": 33.4375,
+        "top": 337.28125,
+        "right": 192.3828125,
+        "bottom": 370.71875,
+        "left": 137.6171875
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 52,
+          "y": 534,
+          "width": 44,
+          "height": 44,
+          "top": 534,
+          "right": 96,
+          "bottom": 578,
+          "left": 52
+        },
+        {
+          "x": 100,
+          "y": 534,
+          "width": 44,
+          "height": 44,
+          "top": 534,
+          "right": 144,
+          "bottom": 578,
+          "left": 100
+        },
+        {
+          "x": 148,
+          "y": 534,
+          "width": 44,
+          "height": 44,
+          "top": 534,
+          "right": 192,
+          "bottom": 578,
+          "left": 148
+        },
+        {
+          "x": 196,
+          "y": 534,
+          "width": 44,
+          "height": 44,
+          "top": 534,
+          "right": 240,
+          "bottom": 578,
+          "left": 196
+        },
+        {
+          "x": 244,
+          "y": 534,
+          "width": 44,
+          "height": 44,
+          "top": 534,
+          "right": 288,
+          "bottom": 578,
+          "left": 244
+        },
+        {
+          "x": 292,
+          "y": 534,
+          "width": 44,
+          "height": 44,
+          "top": 534,
+          "right": 336,
+          "bottom": 578,
+          "left": 292
+        },
+        {
+          "x": 340,
+          "y": 534,
+          "width": 44,
+          "height": 44,
+          "top": 534,
+          "right": 384,
+          "bottom": 578,
+          "left": 340
+        },
+        {
+          "x": 388,
+          "y": 534,
+          "width": 44,
+          "height": 44,
+          "top": 534,
+          "right": 432,
+          "bottom": 578,
+          "left": 388
+        },
+        {
+          "x": 436,
+          "y": 534,
+          "width": 44,
+          "height": 44,
+          "top": 534,
+          "right": 480,
+          "bottom": 578,
+          "left": 436
+        },
+        {
+          "x": 484,
+          "y": 534,
+          "width": 44,
+          "height": 44,
+          "top": 534,
+          "right": 528,
+          "bottom": 578,
+          "left": 484
+        },
+        {
+          "x": 532,
+          "y": 534,
+          "width": 44,
+          "height": 44,
+          "top": 534,
+          "right": 576,
+          "bottom": 578,
+          "left": 532
+        },
+        {
+          "x": 580,
+          "y": 534,
+          "width": 44,
+          "height": 44,
+          "top": 534,
+          "right": 624,
+          "bottom": 578,
+          "left": 580
+        }
+      ],
+      "bench": {
+        "x": 13,
+        "y": 506,
+        "width": 304,
+        "height": 78,
+        "top": 506,
+        "right": 317,
+        "bottom": 584,
+        "left": 13
+      },
+      "dock": {
+        "x": 6,
+        "y": 622,
+        "width": 378,
+        "height": 216,
+        "top": 622,
+        "right": 384,
+        "bottom": 838,
+        "left": 6
+      },
+      "cards": [
+        {
+          "x": 328,
+          "y": 100,
+          "width": 44,
+          "height": 48,
+          "top": 100,
+          "right": 372,
+          "bottom": 148,
+          "left": 328
+        },
+        {
+          "x": 328,
+          "y": 152,
+          "width": 44,
+          "height": 48,
+          "top": 152,
+          "right": 372,
+          "bottom": 200,
+          "left": 328
+        },
+        {
+          "x": 328,
+          "y": 204,
+          "width": 44,
+          "height": 48,
+          "top": 204,
+          "right": 372,
+          "bottom": 252,
+          "left": 328
+        },
+        {
+          "x": 328,
+          "y": 256,
+          "width": 44,
+          "height": 48,
+          "top": 256,
+          "right": 372,
+          "bottom": 304,
+          "left": 328
+        },
+        {
+          "x": 328,
+          "y": 308,
+          "width": 44,
+          "height": 48,
+          "top": 308,
+          "right": 372,
+          "bottom": 356,
+          "left": 328
+        },
+        {
+          "x": 328,
+          "y": 360,
+          "width": 44,
+          "height": 48,
+          "top": 360,
+          "right": 372,
+          "bottom": 408,
+          "left": 328
+        }
+      ],
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "overflow": false,
+      "ids": []
+    },
+    {
+      "mode": "pc",
+      "width": 320,
+      "height": 740,
+      "compact": true,
+      "parent": "game-view",
+      "orientation": "portrait",
+      "landscape": false,
+      "ranking": {
+        "x": 256,
+        "y": 56,
+        "width": 56,
+        "height": 360,
+        "top": 56,
+        "right": 312,
+        "bottom": 416,
+        "left": 256
+      },
+      "arena": {
+        "x": 8,
+        "y": 56,
+        "width": 244,
+        "height": 428,
+        "top": 56,
+        "right": 252,
+        "bottom": 484,
+        "left": 8
+      },
+      "information": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "banner": {
+        "x": 32.5,
+        "y": 206,
+        "width": 195,
+        "height": 40,
+        "top": 206,
+        "right": 227.5,
+        "bottom": 246,
+        "left": 32.5
+      },
+      "board": {
+        "x": 28.5,
+        "y": 202,
+        "width": 203,
+        "height": 203,
+        "top": 202,
+        "right": 231.5,
+        "bottom": 405,
+        "left": 28.5
+      },
+      "deployment": {
+        "x": 111.7109375,
+        "y": 292.3359375,
+        "width": 36.578125,
+        "height": 22.328125,
+        "top": 292.3359375,
+        "right": 148.2890625,
+        "bottom": 314.6640625,
+        "left": 111.7109375
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 48,
+          "y": 433,
+          "width": 44,
+          "height": 44,
+          "top": 433,
+          "right": 92,
+          "bottom": 477,
+          "left": 48
+        },
+        {
+          "x": 96,
+          "y": 433,
+          "width": 44,
+          "height": 44,
+          "top": 433,
+          "right": 140,
+          "bottom": 477,
+          "left": 96
+        },
+        {
+          "x": 144,
+          "y": 433,
+          "width": 44,
+          "height": 44,
+          "top": 433,
+          "right": 188,
+          "bottom": 477,
+          "left": 144
+        },
+        {
+          "x": 192,
+          "y": 433,
+          "width": 44,
+          "height": 44,
+          "top": 433,
+          "right": 236,
+          "bottom": 477,
+          "left": 192
+        },
+        {
+          "x": 240,
+          "y": 433,
+          "width": 44,
+          "height": 44,
+          "top": 433,
+          "right": 284,
+          "bottom": 477,
+          "left": 240
+        },
+        {
+          "x": 288,
+          "y": 433,
+          "width": 44,
+          "height": 44,
+          "top": 433,
+          "right": 332,
+          "bottom": 477,
+          "left": 288
+        },
+        {
+          "x": 336,
+          "y": 433,
+          "width": 44,
+          "height": 44,
+          "top": 433,
+          "right": 380,
+          "bottom": 477,
+          "left": 336
+        },
+        {
+          "x": 384,
+          "y": 433,
+          "width": 44,
+          "height": 44,
+          "top": 433,
+          "right": 428,
+          "bottom": 477,
+          "left": 384
+        },
+        {
+          "x": 432,
+          "y": 433,
+          "width": 44,
+          "height": 44,
+          "top": 433,
+          "right": 476,
+          "bottom": 477,
+          "left": 432
+        },
+        {
+          "x": 480,
+          "y": 433,
+          "width": 44,
+          "height": 44,
+          "top": 433,
+          "right": 524,
+          "bottom": 477,
+          "left": 480
+        },
+        {
+          "x": 528,
+          "y": 433,
+          "width": 44,
+          "height": 44,
+          "top": 433,
+          "right": 572,
+          "bottom": 477,
+          "left": 528
+        },
+        {
+          "x": 576,
+          "y": 433,
+          "width": 44,
+          "height": 44,
+          "top": 433,
+          "right": 620,
+          "bottom": 477,
+          "left": 576
+        }
+      ],
+      "bench": {
+        "x": 9,
+        "y": 405,
+        "width": 242,
+        "height": 78,
+        "top": 405,
+        "right": 251,
+        "bottom": 483,
+        "left": 9
+      },
+      "dock": {
+        "x": 6,
+        "y": 518,
+        "width": 308,
+        "height": 216,
+        "top": 518,
+        "right": 314,
+        "bottom": 734,
+        "left": 6
+      },
+      "cards": [
+        {
+          "x": 262,
+          "y": 100,
+          "width": 44,
+          "height": 48,
+          "top": 100,
+          "right": 306,
+          "bottom": 148,
+          "left": 262
+        },
+        {
+          "x": 262,
+          "y": 152,
+          "width": 44,
+          "height": 48,
+          "top": 152,
+          "right": 306,
+          "bottom": 200,
+          "left": 262
+        },
+        {
+          "x": 262,
+          "y": 204,
+          "width": 44,
+          "height": 48,
+          "top": 204,
+          "right": 306,
+          "bottom": 252,
+          "left": 262
+        },
+        {
+          "x": 262,
+          "y": 256,
+          "width": 44,
+          "height": 48,
+          "top": 256,
+          "right": 306,
+          "bottom": 304,
+          "left": 262
+        },
+        {
+          "x": 262,
+          "y": 308,
+          "width": 44,
+          "height": 48,
+          "top": 308,
+          "right": 306,
+          "bottom": 356,
+          "left": 262
+        },
+        {
+          "x": 262,
+          "y": 360,
+          "width": 44,
+          "height": 48,
+          "top": 360,
+          "right": 306,
+          "bottom": 408,
+          "left": 262
+        }
+      ],
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "overflow": false,
+      "ids": []
+    },
+    {
+      "mode": "pc",
+      "width": 844,
+      "height": 390,
+      "compact": true,
+      "parent": "game-view",
+      "orientation": "landscape",
+      "landscape": true,
+      "ranking": {
+        "x": 782,
+        "y": 56,
+        "width": 56,
+        "height": 326,
+        "top": 56,
+        "right": 838,
+        "bottom": 382,
+        "left": 782
+      },
+      "arena": {
+        "x": 18,
+        "y": 56,
+        "width": 503.671875,
+        "height": 324,
+        "top": 56,
+        "right": 521.671875,
+        "bottom": 380,
+        "left": 18
+      },
+      "information": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "banner": {
+        "x": 86.328125,
+        "y": 63,
+        "width": 235,
+        "height": 32,
+        "top": 63,
+        "right": 321.328125,
+        "bottom": 95,
+        "left": 86.328125
+      },
+      "board": {
+        "x": 84.328125,
+        "y": 61,
+        "width": 239,
+        "height": 239,
+        "top": 61,
+        "right": 323.328125,
+        "bottom": 300,
+        "left": 84.328125
+      },
+      "deployment": {
+        "x": 182.2890625,
+        "y": 167.3515625,
+        "width": 43.078125,
+        "height": 26.296875,
+        "top": 167.3515625,
+        "right": 225.3671875,
+        "bottom": 193.6484375,
+        "left": 182.2890625
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 45,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 89,
+          "bottom": 375,
+          "left": 45
+        },
+        {
+          "x": 92,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 136,
+          "bottom": 375,
+          "left": 92
+        },
+        {
+          "x": 139,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 183,
+          "bottom": 375,
+          "left": 139
+        },
+        {
+          "x": 186,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 230,
+          "bottom": 375,
+          "left": 186
+        },
+        {
+          "x": 233,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 277,
+          "bottom": 375,
+          "left": 233
+        },
+        {
+          "x": 280,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 324,
+          "bottom": 375,
+          "left": 280
+        },
+        {
+          "x": 327,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 371,
+          "bottom": 375,
+          "left": 327
+        },
+        {
+          "x": 374,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 418,
+          "bottom": 375,
+          "left": 374
+        },
+        {
+          "x": 421,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 465,
+          "bottom": 375,
+          "left": 421
+        },
+        {
+          "x": 468,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 512,
+          "bottom": 375,
+          "left": 468
+        },
+        {
+          "x": 515,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 559,
+          "bottom": 375,
+          "left": 515
+        },
+        {
+          "x": 562,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 606,
+          "bottom": 375,
+          "left": 562
+        }
+      ],
+      "bench": {
+        "x": 19,
+        "y": 304,
+        "width": 369.671875,
+        "height": 75,
+        "top": 304,
+        "right": 388.671875,
+        "bottom": 379,
+        "left": 19
+      },
+      "dock": {
+        "x": 539.6875,
+        "y": 56,
+        "width": 236.3125,
+        "height": 328,
+        "top": 56,
+        "right": 776,
+        "bottom": 384,
+        "left": 539.6875
+      },
+      "cards": [
+        {
+          "x": 788,
+          "y": 100,
+          "width": 44,
+          "height": 44,
+          "top": 100,
+          "right": 832,
+          "bottom": 144,
+          "left": 788
+        },
+        {
+          "x": 788,
+          "y": 146,
+          "width": 44,
+          "height": 44,
+          "top": 146,
+          "right": 832,
+          "bottom": 190,
+          "left": 788
+        },
+        {
+          "x": 788,
+          "y": 192,
+          "width": 44,
+          "height": 44,
+          "top": 192,
+          "right": 832,
+          "bottom": 236,
+          "left": 788
+        },
+        {
+          "x": 788,
+          "y": 238,
+          "width": 44,
+          "height": 44,
+          "top": 238,
+          "right": 832,
+          "bottom": 282,
+          "left": 788
+        },
+        {
+          "x": 788,
+          "y": 284,
+          "width": 44,
+          "height": 44,
+          "top": 284,
+          "right": 832,
+          "bottom": 328,
+          "left": 788
+        },
+        {
+          "x": 788,
+          "y": 330,
+          "width": 44,
+          "height": 44,
+          "top": 330,
+          "right": 832,
+          "bottom": 374,
+          "left": 788
+        }
+      ],
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "overflow": false,
+      "ids": []
+    },
+    {
+      "mode": "pc",
+      "width": 480,
+      "height": 320,
+      "compact": true,
+      "parent": "game-view",
+      "orientation": "landscape",
+      "landscape": true,
+      "ranking": {
+        "x": 418,
+        "y": 30,
+        "width": 56,
+        "height": 290,
+        "top": 30,
+        "right": 474,
+        "bottom": 320,
+        "left": 418
+      },
+      "arena": {
+        "x": 18,
+        "y": 93,
+        "width": 168,
+        "height": 171,
+        "top": 93,
+        "right": 186,
+        "bottom": 264,
+        "left": 18
+      },
+      "information": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "banner": {
+        "x": 21,
+        "y": 100,
+        "width": 82,
+        "height": 32,
+        "top": 100,
+        "right": 103,
+        "bottom": 132,
+        "left": 21
+      },
+      "board": {
+        "x": 19,
+        "y": 98,
+        "width": 86,
+        "height": 86,
+        "top": 98,
+        "right": 105,
+        "bottom": 184,
+        "left": 19
+      },
+      "deployment": {
+        "x": 47.2578125,
+        "y": 132,
+        "width": 29.484375,
+        "height": 18,
+        "top": 132,
+        "right": 76.7421875,
+        "bottom": 150,
+        "left": 47.2578125
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 45,
+          "y": 215,
+          "width": 44,
+          "height": 44,
+          "top": 215,
+          "right": 89,
+          "bottom": 259,
+          "left": 45
+        },
+        {
+          "x": 92,
+          "y": 215,
+          "width": 44,
+          "height": 44,
+          "top": 215,
+          "right": 136,
+          "bottom": 259,
+          "left": 92
+        },
+        {
+          "x": 139,
+          "y": 215,
+          "width": 44,
+          "height": 44,
+          "top": 215,
+          "right": 183,
+          "bottom": 259,
+          "left": 139
+        },
+        {
+          "x": 186,
+          "y": 215,
+          "width": 44,
+          "height": 44,
+          "top": 215,
+          "right": 230,
+          "bottom": 259,
+          "left": 186
+        },
+        {
+          "x": 233,
+          "y": 215,
+          "width": 44,
+          "height": 44,
+          "top": 215,
+          "right": 277,
+          "bottom": 259,
+          "left": 233
+        },
+        {
+          "x": 280,
+          "y": 215,
+          "width": 44,
+          "height": 44,
+          "top": 215,
+          "right": 324,
+          "bottom": 259,
+          "left": 280
+        },
+        {
+          "x": 327,
+          "y": 215,
+          "width": 44,
+          "height": 44,
+          "top": 215,
+          "right": 371,
+          "bottom": 259,
+          "left": 327
+        },
+        {
+          "x": 374,
+          "y": 215,
+          "width": 44,
+          "height": 44,
+          "top": 215,
+          "right": 418,
+          "bottom": 259,
+          "left": 374
+        },
+        {
+          "x": 421,
+          "y": 215,
+          "width": 44,
+          "height": 44,
+          "top": 215,
+          "right": 465,
+          "bottom": 259,
+          "left": 421
+        },
+        {
+          "x": 468,
+          "y": 215,
+          "width": 44,
+          "height": 44,
+          "top": 215,
+          "right": 512,
+          "bottom": 259,
+          "left": 468
+        },
+        {
+          "x": 515,
+          "y": 215,
+          "width": 44,
+          "height": 44,
+          "top": 215,
+          "right": 559,
+          "bottom": 259,
+          "left": 515
+        },
+        {
+          "x": 562,
+          "y": 215,
+          "width": 44,
+          "height": 44,
+          "top": 215,
+          "right": 606,
+          "bottom": 259,
+          "left": 562
+        }
+      ],
+      "bench": {
+        "x": 19,
+        "y": 188,
+        "width": 86,
+        "height": 75,
+        "top": 188,
+        "right": 105,
+        "bottom": 263,
+        "left": 19
+      },
+      "dock": {
+        "x": 204,
+        "y": 93,
+        "width": 208,
+        "height": 221,
+        "top": 93,
+        "right": 412,
+        "bottom": 314,
+        "left": 204
+      },
+      "cards": [
+        {
+          "x": 424,
+          "y": 38,
+          "width": 44,
+          "height": 44,
+          "top": 38,
+          "right": 468,
+          "bottom": 82,
+          "left": 424
+        },
+        {
+          "x": 424,
+          "y": 84,
+          "width": 44,
+          "height": 44,
+          "top": 84,
+          "right": 468,
+          "bottom": 128,
+          "left": 424
+        },
+        {
+          "x": 424,
+          "y": 130,
+          "width": 44,
+          "height": 44,
+          "top": 130,
+          "right": 468,
+          "bottom": 174,
+          "left": 424
+        },
+        {
+          "x": 424,
+          "y": 176,
+          "width": 44,
+          "height": 44,
+          "top": 176,
+          "right": 468,
+          "bottom": 220,
+          "left": 424
+        },
+        {
+          "x": 424,
+          "y": 222,
+          "width": 44,
+          "height": 44,
+          "top": 222,
+          "right": 468,
+          "bottom": 266,
+          "left": 424
+        },
+        {
+          "x": 424,
+          "y": 268,
+          "width": 44,
+          "height": 44,
+          "top": 268,
+          "right": 468,
+          "bottom": 312,
+          "left": 424
+        }
+      ],
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "overflow": false,
+      "ids": []
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "compact": true,
+      "parent": "game-view",
+      "orientation": "portrait",
+      "landscape": false,
+      "ranking": {
+        "x": 328,
+        "y": 56,
+        "width": 56,
+        "height": 360,
+        "top": 56,
+        "right": 384,
+        "bottom": 416,
+        "left": 328
+      },
+      "arena": {
+        "x": 6,
+        "y": 56,
+        "width": 318,
+        "height": 499,
+        "top": 56,
+        "right": 324,
+        "bottom": 555,
+        "left": 6
+      },
+      "information": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "banner": {
+        "x": 11,
+        "y": 160,
+        "width": 308,
+        "height": 40,
+        "top": 160,
+        "right": 319,
+        "bottom": 200,
+        "left": 11
+      },
+      "board": {
+        "x": 7,
+        "y": 156,
+        "width": 316,
+        "height": 316,
+        "top": 156,
+        "right": 323,
+        "bottom": 472,
+        "left": 7
+      },
+      "deployment": {
+        "x": 136.5390625,
+        "y": 296.6171875,
+        "width": 56.921875,
+        "height": 34.765625,
+        "top": 296.6171875,
+        "right": 193.4609375,
+        "bottom": 331.3828125,
+        "left": 136.5390625
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 46,
+          "y": 500,
+          "width": 48,
+          "height": 48,
+          "top": 500,
+          "right": 94,
+          "bottom": 548,
+          "left": 46
+        },
+        {
+          "x": 98,
+          "y": 500,
+          "width": 48,
+          "height": 48,
+          "top": 500,
+          "right": 146,
+          "bottom": 548,
+          "left": 98
+        },
+        {
+          "x": 150,
+          "y": 500,
+          "width": 48,
+          "height": 48,
+          "top": 500,
+          "right": 198,
+          "bottom": 548,
+          "left": 150
+        },
+        {
+          "x": 202,
+          "y": 500,
+          "width": 48,
+          "height": 48,
+          "top": 500,
+          "right": 250,
+          "bottom": 548,
+          "left": 202
+        },
+        {
+          "x": 254,
+          "y": 500,
+          "width": 48,
+          "height": 48,
+          "top": 500,
+          "right": 302,
+          "bottom": 548,
+          "left": 254
+        },
+        {
+          "x": 306,
+          "y": 500,
+          "width": 48,
+          "height": 48,
+          "top": 500,
+          "right": 354,
+          "bottom": 548,
+          "left": 306
+        },
+        {
+          "x": 358,
+          "y": 500,
+          "width": 48,
+          "height": 48,
+          "top": 500,
+          "right": 406,
+          "bottom": 548,
+          "left": 358
+        },
+        {
+          "x": 410,
+          "y": 500,
+          "width": 48,
+          "height": 48,
+          "top": 500,
+          "right": 458,
+          "bottom": 548,
+          "left": 410
+        },
+        {
+          "x": 462,
+          "y": 500,
+          "width": 48,
+          "height": 48,
+          "top": 500,
+          "right": 510,
+          "bottom": 548,
+          "left": 462
+        },
+        {
+          "x": 514,
+          "y": 500,
+          "width": 48,
+          "height": 48,
+          "top": 500,
+          "right": 562,
+          "bottom": 548,
+          "left": 514
+        },
+        {
+          "x": 566,
+          "y": 500,
+          "width": 48,
+          "height": 48,
+          "top": 500,
+          "right": 614,
+          "bottom": 548,
+          "left": 566
+        },
+        {
+          "x": 618,
+          "y": 500,
+          "width": 48,
+          "height": 48,
+          "top": 500,
+          "right": 666,
+          "bottom": 548,
+          "left": 618
+        }
+      ],
+      "bench": {
+        "x": 7,
+        "y": 472,
+        "width": 316,
+        "height": 82,
+        "top": 472,
+        "right": 323,
+        "bottom": 554,
+        "left": 7
+      },
+      "dock": {
+        "x": 6,
+        "y": 622,
+        "width": 378,
+        "height": 216,
+        "top": 622,
+        "right": 384,
+        "bottom": 838,
+        "left": 6
+      },
+      "cards": [
+        {
+          "x": 334,
+          "y": 100,
+          "width": 44,
+          "height": 48,
+          "top": 100,
+          "right": 378,
+          "bottom": 148,
+          "left": 334
+        },
+        {
+          "x": 334,
+          "y": 152,
+          "width": 44,
+          "height": 48,
+          "top": 152,
+          "right": 378,
+          "bottom": 200,
+          "left": 334
+        },
+        {
+          "x": 334,
+          "y": 204,
+          "width": 44,
+          "height": 48,
+          "top": 204,
+          "right": 378,
+          "bottom": 252,
+          "left": 334
+        },
+        {
+          "x": 334,
+          "y": 256,
+          "width": 44,
+          "height": 48,
+          "top": 256,
+          "right": 378,
+          "bottom": 304,
+          "left": 334
+        },
+        {
+          "x": 334,
+          "y": 308,
+          "width": 44,
+          "height": 48,
+          "top": 308,
+          "right": 378,
+          "bottom": 356,
+          "left": 334
+        },
+        {
+          "x": 334,
+          "y": 360,
+          "width": 44,
+          "height": 48,
+          "top": 360,
+          "right": 378,
+          "bottom": 408,
+          "left": 334
+        }
+      ],
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "overflow": false,
+      "ids": []
+    },
+    {
+      "mode": "mobile",
+      "width": 320,
+      "height": 740,
+      "compact": true,
+      "parent": "game-view",
+      "orientation": "portrait",
+      "landscape": false,
+      "ranking": {
+        "x": 258,
+        "y": 56,
+        "width": 56,
+        "height": 360,
+        "top": 56,
+        "right": 314,
+        "bottom": 416,
+        "left": 258
+      },
+      "arena": {
+        "x": 6,
+        "y": 56,
+        "width": 248,
+        "height": 428,
+        "top": 56,
+        "right": 254,
+        "bottom": 484,
+        "left": 6
+      },
+      "information": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "banner": {
+        "x": 11.5,
+        "y": 160,
+        "width": 237,
+        "height": 40,
+        "top": 160,
+        "right": 248.5,
+        "bottom": 200,
+        "left": 11.5
+      },
+      "board": {
+        "x": 7.5,
+        "y": 156,
+        "width": 245,
+        "height": 245,
+        "top": 156,
+        "right": 252.5,
+        "bottom": 401,
+        "left": 7.5
+      },
+      "deployment": {
+        "x": 107.921875,
+        "y": 265.0234375,
+        "width": 44.15625,
+        "height": 26.953125,
+        "top": 265.0234375,
+        "right": 152.078125,
+        "bottom": 291.9765625,
+        "left": 107.921875
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 46,
+          "y": 429,
+          "width": 48,
+          "height": 48,
+          "top": 429,
+          "right": 94,
+          "bottom": 477,
+          "left": 46
+        },
+        {
+          "x": 98,
+          "y": 429,
+          "width": 48,
+          "height": 48,
+          "top": 429,
+          "right": 146,
+          "bottom": 477,
+          "left": 98
+        },
+        {
+          "x": 150,
+          "y": 429,
+          "width": 48,
+          "height": 48,
+          "top": 429,
+          "right": 198,
+          "bottom": 477,
+          "left": 150
+        },
+        {
+          "x": 202,
+          "y": 429,
+          "width": 48,
+          "height": 48,
+          "top": 429,
+          "right": 250,
+          "bottom": 477,
+          "left": 202
+        },
+        {
+          "x": 254,
+          "y": 429,
+          "width": 48,
+          "height": 48,
+          "top": 429,
+          "right": 302,
+          "bottom": 477,
+          "left": 254
+        },
+        {
+          "x": 306,
+          "y": 429,
+          "width": 48,
+          "height": 48,
+          "top": 429,
+          "right": 354,
+          "bottom": 477,
+          "left": 306
+        },
+        {
+          "x": 358,
+          "y": 429,
+          "width": 48,
+          "height": 48,
+          "top": 429,
+          "right": 406,
+          "bottom": 477,
+          "left": 358
+        },
+        {
+          "x": 410,
+          "y": 429,
+          "width": 48,
+          "height": 48,
+          "top": 429,
+          "right": 458,
+          "bottom": 477,
+          "left": 410
+        },
+        {
+          "x": 462,
+          "y": 429,
+          "width": 48,
+          "height": 48,
+          "top": 429,
+          "right": 510,
+          "bottom": 477,
+          "left": 462
+        },
+        {
+          "x": 514,
+          "y": 429,
+          "width": 48,
+          "height": 48,
+          "top": 429,
+          "right": 562,
+          "bottom": 477,
+          "left": 514
+        },
+        {
+          "x": 566,
+          "y": 429,
+          "width": 48,
+          "height": 48,
+          "top": 429,
+          "right": 614,
+          "bottom": 477,
+          "left": 566
+        },
+        {
+          "x": 618,
+          "y": 429,
+          "width": 48,
+          "height": 48,
+          "top": 429,
+          "right": 666,
+          "bottom": 477,
+          "left": 618
+        }
+      ],
+      "bench": {
+        "x": 7,
+        "y": 401,
+        "width": 246,
+        "height": 82,
+        "top": 401,
+        "right": 253,
+        "bottom": 483,
+        "left": 7
+      },
+      "dock": {
+        "x": 6,
+        "y": 518,
+        "width": 308,
+        "height": 216,
+        "top": 518,
+        "right": 314,
+        "bottom": 734,
+        "left": 6
+      },
+      "cards": [
+        {
+          "x": 264,
+          "y": 100,
+          "width": 44,
+          "height": 48,
+          "top": 100,
+          "right": 308,
+          "bottom": 148,
+          "left": 264
+        },
+        {
+          "x": 264,
+          "y": 152,
+          "width": 44,
+          "height": 48,
+          "top": 152,
+          "right": 308,
+          "bottom": 200,
+          "left": 264
+        },
+        {
+          "x": 264,
+          "y": 204,
+          "width": 44,
+          "height": 48,
+          "top": 204,
+          "right": 308,
+          "bottom": 252,
+          "left": 264
+        },
+        {
+          "x": 264,
+          "y": 256,
+          "width": 44,
+          "height": 48,
+          "top": 256,
+          "right": 308,
+          "bottom": 304,
+          "left": 264
+        },
+        {
+          "x": 264,
+          "y": 308,
+          "width": 44,
+          "height": 48,
+          "top": 308,
+          "right": 308,
+          "bottom": 356,
+          "left": 264
+        },
+        {
+          "x": 264,
+          "y": 360,
+          "width": 44,
+          "height": 48,
+          "top": 360,
+          "right": 308,
+          "bottom": 408,
+          "left": 264
+        }
+      ],
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "overflow": false,
+      "ids": []
+    },
+    {
+      "mode": "mobile",
+      "width": 360,
+      "height": 640,
+      "compact": true,
+      "parent": "game-view",
+      "orientation": "portrait",
+      "landscape": false,
+      "ranking": {
+        "x": 298,
+        "y": 56,
+        "width": 56,
+        "height": 354,
+        "top": 56,
+        "right": 354,
+        "bottom": 410,
+        "left": 298
+      },
+      "arena": {
+        "x": 6,
+        "y": 56,
+        "width": 288,
+        "height": 328,
+        "top": 56,
+        "right": 294,
+        "bottom": 384,
+        "left": 6
+      },
+      "information": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "banner": {
+        "x": 81.5,
+        "y": 160,
+        "width": 137,
+        "height": 40,
+        "top": 160,
+        "right": 218.5,
+        "bottom": 200,
+        "left": 81.5
+      },
+      "board": {
+        "x": 77.5,
+        "y": 156,
+        "width": 145,
+        "height": 145,
+        "top": 156,
+        "right": 222.5,
+        "bottom": 301,
+        "left": 77.5
+      },
+      "deployment": {
+        "x": 135.2578125,
+        "y": 219.5,
+        "width": 29.484375,
+        "height": 18,
+        "top": 219.5,
+        "right": 164.7421875,
+        "bottom": 237.5,
+        "left": 135.2578125
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 46,
+          "y": 329,
+          "width": 48,
+          "height": 48,
+          "top": 329,
+          "right": 94,
+          "bottom": 377,
+          "left": 46
+        },
+        {
+          "x": 98,
+          "y": 329,
+          "width": 48,
+          "height": 48,
+          "top": 329,
+          "right": 146,
+          "bottom": 377,
+          "left": 98
+        },
+        {
+          "x": 150,
+          "y": 329,
+          "width": 48,
+          "height": 48,
+          "top": 329,
+          "right": 198,
+          "bottom": 377,
+          "left": 150
+        },
+        {
+          "x": 202,
+          "y": 329,
+          "width": 48,
+          "height": 48,
+          "top": 329,
+          "right": 250,
+          "bottom": 377,
+          "left": 202
+        },
+        {
+          "x": 254,
+          "y": 329,
+          "width": 48,
+          "height": 48,
+          "top": 329,
+          "right": 302,
+          "bottom": 377,
+          "left": 254
+        },
+        {
+          "x": 306,
+          "y": 329,
+          "width": 48,
+          "height": 48,
+          "top": 329,
+          "right": 354,
+          "bottom": 377,
+          "left": 306
+        },
+        {
+          "x": 358,
+          "y": 329,
+          "width": 48,
+          "height": 48,
+          "top": 329,
+          "right": 406,
+          "bottom": 377,
+          "left": 358
+        },
+        {
+          "x": 410,
+          "y": 329,
+          "width": 48,
+          "height": 48,
+          "top": 329,
+          "right": 458,
+          "bottom": 377,
+          "left": 410
+        },
+        {
+          "x": 462,
+          "y": 329,
+          "width": 48,
+          "height": 48,
+          "top": 329,
+          "right": 510,
+          "bottom": 377,
+          "left": 462
+        },
+        {
+          "x": 514,
+          "y": 329,
+          "width": 48,
+          "height": 48,
+          "top": 329,
+          "right": 562,
+          "bottom": 377,
+          "left": 514
+        },
+        {
+          "x": 566,
+          "y": 329,
+          "width": 48,
+          "height": 48,
+          "top": 329,
+          "right": 614,
+          "bottom": 377,
+          "left": 566
+        },
+        {
+          "x": 618,
+          "y": 329,
+          "width": 48,
+          "height": 48,
+          "top": 329,
+          "right": 666,
+          "bottom": 377,
+          "left": 618
+        }
+      ],
+      "bench": {
+        "x": 7,
+        "y": 301,
+        "width": 286,
+        "height": 82,
+        "top": 301,
+        "right": 293,
+        "bottom": 383,
+        "left": 7
+      },
+      "dock": {
+        "x": 6,
+        "y": 418,
+        "width": 348,
+        "height": 216,
+        "top": 418,
+        "right": 354,
+        "bottom": 634,
+        "left": 6
+      },
+      "cards": [
+        {
+          "x": 304,
+          "y": 100,
+          "width": 44,
+          "height": 48,
+          "top": 100,
+          "right": 348,
+          "bottom": 148,
+          "left": 304
+        },
+        {
+          "x": 304,
+          "y": 152,
+          "width": 44,
+          "height": 48,
+          "top": 152,
+          "right": 348,
+          "bottom": 200,
+          "left": 304
+        },
+        {
+          "x": 304,
+          "y": 204,
+          "width": 44,
+          "height": 48,
+          "top": 204,
+          "right": 348,
+          "bottom": 252,
+          "left": 304
+        },
+        {
+          "x": 304,
+          "y": 256,
+          "width": 44,
+          "height": 48,
+          "top": 256,
+          "right": 348,
+          "bottom": 304,
+          "left": 304
+        },
+        {
+          "x": 304,
+          "y": 308,
+          "width": 44,
+          "height": 48,
+          "top": 308,
+          "right": 348,
+          "bottom": 356,
+          "left": 304
+        },
+        {
+          "x": 304,
+          "y": 360,
+          "width": 44,
+          "height": 48,
+          "top": 360,
+          "right": 348,
+          "bottom": 408,
+          "left": 304
+        }
+      ],
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "overflow": false,
+      "ids": []
+    },
+    {
+      "mode": "mobile",
+      "width": 414,
+      "height": 896,
+      "compact": true,
+      "parent": "game-view",
+      "orientation": "portrait",
+      "landscape": false,
+      "ranking": {
+        "x": 352,
+        "y": 56,
+        "width": 56,
+        "height": 360,
+        "top": 56,
+        "right": 408,
+        "bottom": 416,
+        "left": 352
+      },
+      "arena": {
+        "x": 6,
+        "y": 56,
+        "width": 342,
+        "height": 523,
+        "top": 56,
+        "right": 348,
+        "bottom": 579,
+        "left": 6
+      },
+      "information": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "banner": {
+        "x": 11,
+        "y": 160,
+        "width": 332,
+        "height": 40,
+        "top": 160,
+        "right": 343,
+        "bottom": 200,
+        "left": 11
+      },
+      "board": {
+        "x": 7,
+        "y": 156,
+        "width": 340,
+        "height": 340,
+        "top": 156,
+        "right": 347,
+        "bottom": 496,
+        "left": 7
+      },
+      "deployment": {
+        "x": 146.3671875,
+        "y": 307.296875,
+        "width": 61.265625,
+        "height": 37.40625,
+        "top": 307.296875,
+        "right": 207.6328125,
+        "bottom": 344.703125,
+        "left": 146.3671875
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 46,
+          "y": 524,
+          "width": 48,
+          "height": 48,
+          "top": 524,
+          "right": 94,
+          "bottom": 572,
+          "left": 46
+        },
+        {
+          "x": 98,
+          "y": 524,
+          "width": 48,
+          "height": 48,
+          "top": 524,
+          "right": 146,
+          "bottom": 572,
+          "left": 98
+        },
+        {
+          "x": 150,
+          "y": 524,
+          "width": 48,
+          "height": 48,
+          "top": 524,
+          "right": 198,
+          "bottom": 572,
+          "left": 150
+        },
+        {
+          "x": 202,
+          "y": 524,
+          "width": 48,
+          "height": 48,
+          "top": 524,
+          "right": 250,
+          "bottom": 572,
+          "left": 202
+        },
+        {
+          "x": 254,
+          "y": 524,
+          "width": 48,
+          "height": 48,
+          "top": 524,
+          "right": 302,
+          "bottom": 572,
+          "left": 254
+        },
+        {
+          "x": 306,
+          "y": 524,
+          "width": 48,
+          "height": 48,
+          "top": 524,
+          "right": 354,
+          "bottom": 572,
+          "left": 306
+        },
+        {
+          "x": 358,
+          "y": 524,
+          "width": 48,
+          "height": 48,
+          "top": 524,
+          "right": 406,
+          "bottom": 572,
+          "left": 358
+        },
+        {
+          "x": 410,
+          "y": 524,
+          "width": 48,
+          "height": 48,
+          "top": 524,
+          "right": 458,
+          "bottom": 572,
+          "left": 410
+        },
+        {
+          "x": 462,
+          "y": 524,
+          "width": 48,
+          "height": 48,
+          "top": 524,
+          "right": 510,
+          "bottom": 572,
+          "left": 462
+        },
+        {
+          "x": 514,
+          "y": 524,
+          "width": 48,
+          "height": 48,
+          "top": 524,
+          "right": 562,
+          "bottom": 572,
+          "left": 514
+        },
+        {
+          "x": 566,
+          "y": 524,
+          "width": 48,
+          "height": 48,
+          "top": 524,
+          "right": 614,
+          "bottom": 572,
+          "left": 566
+        },
+        {
+          "x": 618,
+          "y": 524,
+          "width": 48,
+          "height": 48,
+          "top": 524,
+          "right": 666,
+          "bottom": 572,
+          "left": 618
+        }
+      ],
+      "bench": {
+        "x": 7,
+        "y": 496,
+        "width": 340,
+        "height": 82,
+        "top": 496,
+        "right": 347,
+        "bottom": 578,
+        "left": 7
+      },
+      "dock": {
+        "x": 6,
+        "y": 674,
+        "width": 402,
+        "height": 216,
+        "top": 674,
+        "right": 408,
+        "bottom": 890,
+        "left": 6
+      },
+      "cards": [
+        {
+          "x": 358,
+          "y": 100,
+          "width": 44,
+          "height": 48,
+          "top": 100,
+          "right": 402,
+          "bottom": 148,
+          "left": 358
+        },
+        {
+          "x": 358,
+          "y": 152,
+          "width": 44,
+          "height": 48,
+          "top": 152,
+          "right": 402,
+          "bottom": 200,
+          "left": 358
+        },
+        {
+          "x": 358,
+          "y": 204,
+          "width": 44,
+          "height": 48,
+          "top": 204,
+          "right": 402,
+          "bottom": 252,
+          "left": 358
+        },
+        {
+          "x": 358,
+          "y": 256,
+          "width": 44,
+          "height": 48,
+          "top": 256,
+          "right": 402,
+          "bottom": 304,
+          "left": 358
+        },
+        {
+          "x": 358,
+          "y": 308,
+          "width": 44,
+          "height": 48,
+          "top": 308,
+          "right": 402,
+          "bottom": 356,
+          "left": 358
+        },
+        {
+          "x": 358,
+          "y": 360,
+          "width": 44,
+          "height": 48,
+          "top": 360,
+          "right": 402,
+          "bottom": 408,
+          "left": 358
+        }
+      ],
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "overflow": false,
+      "ids": []
+    },
+    {
+      "mode": "mobile",
+      "width": 768,
+      "height": 1024,
+      "compact": true,
+      "parent": "game-view",
+      "orientation": "portrait",
+      "landscape": false,
+      "ranking": {
+        "x": 668,
+        "y": 56,
+        "width": 56,
+        "height": 360,
+        "top": 56,
+        "right": 724,
+        "bottom": 416,
+        "left": 668
+      },
+      "arena": {
+        "x": 44,
+        "y": 56,
+        "width": 620,
+        "height": 663,
+        "top": 56,
+        "right": 664,
+        "bottom": 719,
+        "left": 44
+      },
+      "information": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "banner": {
+        "x": 118,
+        "y": 160,
+        "width": 472,
+        "height": 40,
+        "top": 160,
+        "right": 590,
+        "bottom": 200,
+        "left": 118
+      },
+      "board": {
+        "x": 114,
+        "y": 156,
+        "width": 480,
+        "height": 480,
+        "top": 156,
+        "right": 594,
+        "bottom": 636,
+        "left": 114
+      },
+      "deployment": {
+        "x": 310.75,
+        "y": 369.6015625,
+        "width": 86.5,
+        "height": 52.796875,
+        "top": 369.6015625,
+        "right": 397.25,
+        "bottom": 422.3984375,
+        "left": 310.75
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 84,
+          "y": 664,
+          "width": 48,
+          "height": 48,
+          "top": 664,
+          "right": 132,
+          "bottom": 712,
+          "left": 84
+        },
+        {
+          "x": 136,
+          "y": 664,
+          "width": 48,
+          "height": 48,
+          "top": 664,
+          "right": 184,
+          "bottom": 712,
+          "left": 136
+        },
+        {
+          "x": 188,
+          "y": 664,
+          "width": 48,
+          "height": 48,
+          "top": 664,
+          "right": 236,
+          "bottom": 712,
+          "left": 188
+        },
+        {
+          "x": 240,
+          "y": 664,
+          "width": 48,
+          "height": 48,
+          "top": 664,
+          "right": 288,
+          "bottom": 712,
+          "left": 240
+        },
+        {
+          "x": 292,
+          "y": 664,
+          "width": 48,
+          "height": 48,
+          "top": 664,
+          "right": 340,
+          "bottom": 712,
+          "left": 292
+        },
+        {
+          "x": 344,
+          "y": 664,
+          "width": 48,
+          "height": 48,
+          "top": 664,
+          "right": 392,
+          "bottom": 712,
+          "left": 344
+        },
+        {
+          "x": 396,
+          "y": 664,
+          "width": 48,
+          "height": 48,
+          "top": 664,
+          "right": 444,
+          "bottom": 712,
+          "left": 396
+        },
+        {
+          "x": 448,
+          "y": 664,
+          "width": 48,
+          "height": 48,
+          "top": 664,
+          "right": 496,
+          "bottom": 712,
+          "left": 448
+        },
+        {
+          "x": 500,
+          "y": 664,
+          "width": 48,
+          "height": 48,
+          "top": 664,
+          "right": 548,
+          "bottom": 712,
+          "left": 500
+        },
+        {
+          "x": 552,
+          "y": 664,
+          "width": 48,
+          "height": 48,
+          "top": 664,
+          "right": 600,
+          "bottom": 712,
+          "left": 552
+        },
+        {
+          "x": 604,
+          "y": 664,
+          "width": 48,
+          "height": 48,
+          "top": 664,
+          "right": 652,
+          "bottom": 712,
+          "left": 604
+        },
+        {
+          "x": 656,
+          "y": 664,
+          "width": 48,
+          "height": 48,
+          "top": 664,
+          "right": 704,
+          "bottom": 712,
+          "left": 656
+        }
+      ],
+      "bench": {
+        "x": 45,
+        "y": 636,
+        "width": 618,
+        "height": 82,
+        "top": 636,
+        "right": 663,
+        "bottom": 718,
+        "left": 45
+      },
+      "dock": {
+        "x": 44,
+        "y": 888,
+        "width": 680,
+        "height": 130,
+        "top": 888,
+        "right": 724,
+        "bottom": 1018,
+        "left": 44
+      },
+      "cards": [
+        {
+          "x": 674,
+          "y": 100,
+          "width": 44,
+          "height": 48,
+          "top": 100,
+          "right": 718,
+          "bottom": 148,
+          "left": 674
+        },
+        {
+          "x": 674,
+          "y": 152,
+          "width": 44,
+          "height": 48,
+          "top": 152,
+          "right": 718,
+          "bottom": 200,
+          "left": 674
+        },
+        {
+          "x": 674,
+          "y": 204,
+          "width": 44,
+          "height": 48,
+          "top": 204,
+          "right": 718,
+          "bottom": 252,
+          "left": 674
+        },
+        {
+          "x": 674,
+          "y": 256,
+          "width": 44,
+          "height": 48,
+          "top": 256,
+          "right": 718,
+          "bottom": 304,
+          "left": 674
+        },
+        {
+          "x": 674,
+          "y": 308,
+          "width": 44,
+          "height": 48,
+          "top": 308,
+          "right": 718,
+          "bottom": 356,
+          "left": 674
+        },
+        {
+          "x": 674,
+          "y": 360,
+          "width": 44,
+          "height": 48,
+          "top": 360,
+          "right": 718,
+          "bottom": 408,
+          "left": 674
+        }
+      ],
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "overflow": false,
+      "ids": []
+    },
+    {
+      "mode": "mobile",
+      "width": 844,
+      "height": 390,
+      "compact": true,
+      "parent": "game-view",
+      "orientation": "landscape",
+      "landscape": true,
+      "ranking": {
+        "x": 782,
+        "y": 52,
+        "width": 56,
+        "height": 326,
+        "top": 52,
+        "right": 838,
+        "bottom": 378,
+        "left": 782
+      },
+      "arena": {
+        "x": 12,
+        "y": 52,
+        "width": 515.671875,
+        "height": 328,
+        "top": 52,
+        "right": 527.671875,
+        "bottom": 380,
+        "left": 12
+      },
+      "information": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "banner": {
+        "x": 84.328125,
+        "y": 59,
+        "width": 239,
+        "height": 32,
+        "top": 59,
+        "right": 323.328125,
+        "bottom": 91,
+        "left": 84.328125
+      },
+      "board": {
+        "x": 82.328125,
+        "y": 57,
+        "width": 243,
+        "height": 243,
+        "top": 57,
+        "right": 325.328125,
+        "bottom": 300,
+        "left": 82.328125
+      },
+      "deployment": {
+        "x": 181.9296875,
+        "y": 165.1328125,
+        "width": 43.796875,
+        "height": 26.734375,
+        "top": 165.1328125,
+        "right": 225.7265625,
+        "bottom": 191.8671875,
+        "left": 181.9296875
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 39,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 83,
+          "bottom": 375,
+          "left": 39
+        },
+        {
+          "x": 86,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 130,
+          "bottom": 375,
+          "left": 86
+        },
+        {
+          "x": 133,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 177,
+          "bottom": 375,
+          "left": 133
+        },
+        {
+          "x": 180,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 224,
+          "bottom": 375,
+          "left": 180
+        },
+        {
+          "x": 227,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 271,
+          "bottom": 375,
+          "left": 227
+        },
+        {
+          "x": 274,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 318,
+          "bottom": 375,
+          "left": 274
+        },
+        {
+          "x": 321,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 365,
+          "bottom": 375,
+          "left": 321
+        },
+        {
+          "x": 368,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 412,
+          "bottom": 375,
+          "left": 368
+        },
+        {
+          "x": 415,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 459,
+          "bottom": 375,
+          "left": 415
+        },
+        {
+          "x": 462,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 506,
+          "bottom": 375,
+          "left": 462
+        },
+        {
+          "x": 509,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 553,
+          "bottom": 375,
+          "left": 509
+        },
+        {
+          "x": 556,
+          "y": 331,
+          "width": 44,
+          "height": 44,
+          "top": 331,
+          "right": 600,
+          "bottom": 375,
+          "left": 556
+        }
+      ],
+      "bench": {
+        "x": 13,
+        "y": 304,
+        "width": 381.671875,
+        "height": 75,
+        "top": 304,
+        "right": 394.671875,
+        "bottom": 379,
+        "left": 13
+      },
+      "dock": {
+        "x": 539.6875,
+        "y": 52,
+        "width": 236.3125,
+        "height": 332,
+        "top": 52,
+        "right": 776,
+        "bottom": 384,
+        "left": 539.6875
+      },
+      "cards": [
+        {
+          "x": 788,
+          "y": 96,
+          "width": 44,
+          "height": 44,
+          "top": 96,
+          "right": 832,
+          "bottom": 140,
+          "left": 788
+        },
+        {
+          "x": 788,
+          "y": 142,
+          "width": 44,
+          "height": 44,
+          "top": 142,
+          "right": 832,
+          "bottom": 186,
+          "left": 788
+        },
+        {
+          "x": 788,
+          "y": 188,
+          "width": 44,
+          "height": 44,
+          "top": 188,
+          "right": 832,
+          "bottom": 232,
+          "left": 788
+        },
+        {
+          "x": 788,
+          "y": 234,
+          "width": 44,
+          "height": 44,
+          "top": 234,
+          "right": 832,
+          "bottom": 278,
+          "left": 788
+        },
+        {
+          "x": 788,
+          "y": 280,
+          "width": 44,
+          "height": 44,
+          "top": 280,
+          "right": 832,
+          "bottom": 324,
+          "left": 788
+        },
+        {
+          "x": 788,
+          "y": 326,
+          "width": 44,
+          "height": 44,
+          "top": 326,
+          "right": 832,
+          "bottom": 370,
+          "left": 788
+        }
+      ],
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "overflow": false,
+      "ids": []
+    },
+    {
+      "mode": "mobile",
+      "width": 740,
+      "height": 360,
+      "compact": true,
+      "parent": "game-view",
+      "orientation": "landscape",
+      "landscape": true,
+      "ranking": {
+        "x": 678,
+        "y": 34,
+        "width": 56,
+        "height": 326,
+        "top": 34,
+        "right": 734,
+        "bottom": 360,
+        "left": 678
+      },
+      "arena": {
+        "x": 12,
+        "y": 52,
+        "width": 440,
+        "height": 298,
+        "top": 52,
+        "right": 452,
+        "bottom": 350,
+        "left": 12
+      },
+      "information": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "banner": {
+        "x": 61.5,
+        "y": 59,
+        "width": 209,
+        "height": 32,
+        "top": 59,
+        "right": 270.5,
+        "bottom": 91,
+        "left": 61.5
+      },
+      "board": {
+        "x": 59.5,
+        "y": 57,
+        "width": 213,
+        "height": 213,
+        "top": 57,
+        "right": 272.5,
+        "bottom": 270,
+        "left": 59.5
+      },
+      "deployment": {
+        "x": 146.8046875,
+        "y": 151.78125,
+        "width": 38.390625,
+        "height": 23.4375,
+        "top": 151.78125,
+        "right": 185.1953125,
+        "bottom": 175.21875,
+        "left": 146.8046875
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 39,
+          "y": 301,
+          "width": 44,
+          "height": 44,
+          "top": 301,
+          "right": 83,
+          "bottom": 345,
+          "left": 39
+        },
+        {
+          "x": 86,
+          "y": 301,
+          "width": 44,
+          "height": 44,
+          "top": 301,
+          "right": 130,
+          "bottom": 345,
+          "left": 86
+        },
+        {
+          "x": 133,
+          "y": 301,
+          "width": 44,
+          "height": 44,
+          "top": 301,
+          "right": 177,
+          "bottom": 345,
+          "left": 133
+        },
+        {
+          "x": 180,
+          "y": 301,
+          "width": 44,
+          "height": 44,
+          "top": 301,
+          "right": 224,
+          "bottom": 345,
+          "left": 180
+        },
+        {
+          "x": 227,
+          "y": 301,
+          "width": 44,
+          "height": 44,
+          "top": 301,
+          "right": 271,
+          "bottom": 345,
+          "left": 227
+        },
+        {
+          "x": 274,
+          "y": 301,
+          "width": 44,
+          "height": 44,
+          "top": 301,
+          "right": 318,
+          "bottom": 345,
+          "left": 274
+        },
+        {
+          "x": 321,
+          "y": 301,
+          "width": 44,
+          "height": 44,
+          "top": 301,
+          "right": 365,
+          "bottom": 345,
+          "left": 321
+        },
+        {
+          "x": 368,
+          "y": 301,
+          "width": 44,
+          "height": 44,
+          "top": 301,
+          "right": 412,
+          "bottom": 345,
+          "left": 368
+        },
+        {
+          "x": 415,
+          "y": 301,
+          "width": 44,
+          "height": 44,
+          "top": 301,
+          "right": 459,
+          "bottom": 345,
+          "left": 415
+        },
+        {
+          "x": 462,
+          "y": 301,
+          "width": 44,
+          "height": 44,
+          "top": 301,
+          "right": 506,
+          "bottom": 345,
+          "left": 462
+        },
+        {
+          "x": 509,
+          "y": 301,
+          "width": 44,
+          "height": 44,
+          "top": 301,
+          "right": 553,
+          "bottom": 345,
+          "left": 509
+        },
+        {
+          "x": 556,
+          "y": 301,
+          "width": 44,
+          "height": 44,
+          "top": 301,
+          "right": 600,
+          "bottom": 345,
+          "left": 556
+        }
+      ],
+      "bench": {
+        "x": 13,
+        "y": 274,
+        "width": 306,
+        "height": 75,
+        "top": 274,
+        "right": 319,
+        "bottom": 349,
+        "left": 13
+      },
+      "dock": {
+        "x": 464,
+        "y": 52,
+        "width": 208,
+        "height": 302,
+        "top": 52,
+        "right": 672,
+        "bottom": 354,
+        "left": 464
+      },
+      "cards": [
+        {
+          "x": 684,
+          "y": 78,
+          "width": 44,
+          "height": 44,
+          "top": 78,
+          "right": 728,
+          "bottom": 122,
+          "left": 684
+        },
+        {
+          "x": 684,
+          "y": 124,
+          "width": 44,
+          "height": 44,
+          "top": 124,
+          "right": 728,
+          "bottom": 168,
+          "left": 684
+        },
+        {
+          "x": 684,
+          "y": 170,
+          "width": 44,
+          "height": 44,
+          "top": 170,
+          "right": 728,
+          "bottom": 214,
+          "left": 684
+        },
+        {
+          "x": 684,
+          "y": 216,
+          "width": 44,
+          "height": 44,
+          "top": 216,
+          "right": 728,
+          "bottom": 260,
+          "left": 684
+        },
+        {
+          "x": 684,
+          "y": 262,
+          "width": 44,
+          "height": 44,
+          "top": 262,
+          "right": 728,
+          "bottom": 306,
+          "left": 684
+        },
+        {
+          "x": 684,
+          "y": 308,
+          "width": 44,
+          "height": 44,
+          "top": 308,
+          "right": 728,
+          "bottom": 352,
+          "left": 684
+        }
+      ],
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "overflow": false,
+      "ids": []
+    },
+    {
+      "mode": "mobile",
+      "width": 667,
+      "height": 375,
+      "compact": true,
+      "parent": "game-view",
+      "orientation": "landscape",
+      "landscape": true,
+      "ranking": {
+        "x": 605,
+        "y": 49,
+        "width": 56,
+        "height": 326,
+        "top": 49,
+        "right": 661,
+        "bottom": 375,
+        "left": 605
+      },
+      "arena": {
+        "x": 12,
+        "y": 52,
+        "width": 367,
+        "height": 313,
+        "top": 52,
+        "right": 379,
+        "bottom": 365,
+        "left": 12
+      },
+      "information": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "banner": {
+        "x": 39.5,
+        "y": 59,
+        "width": 224,
+        "height": 32,
+        "top": 59,
+        "right": 263.5,
+        "bottom": 91,
+        "left": 39.5
+      },
+      "board": {
+        "x": 37.5,
+        "y": 57,
+        "width": 228,
+        "height": 228,
+        "top": 57,
+        "right": 265.5,
+        "bottom": 285,
+        "left": 37.5
+      },
+      "deployment": {
+        "x": 130.953125,
+        "y": 158.4609375,
+        "width": 41.09375,
+        "height": 25.078125,
+        "top": 158.4609375,
+        "right": 172.046875,
+        "bottom": 183.5390625,
+        "left": 130.953125
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 39,
+          "y": 316,
+          "width": 44,
+          "height": 44,
+          "top": 316,
+          "right": 83,
+          "bottom": 360,
+          "left": 39
+        },
+        {
+          "x": 86,
+          "y": 316,
+          "width": 44,
+          "height": 44,
+          "top": 316,
+          "right": 130,
+          "bottom": 360,
+          "left": 86
+        },
+        {
+          "x": 133,
+          "y": 316,
+          "width": 44,
+          "height": 44,
+          "top": 316,
+          "right": 177,
+          "bottom": 360,
+          "left": 133
+        },
+        {
+          "x": 180,
+          "y": 316,
+          "width": 44,
+          "height": 44,
+          "top": 316,
+          "right": 224,
+          "bottom": 360,
+          "left": 180
+        },
+        {
+          "x": 227,
+          "y": 316,
+          "width": 44,
+          "height": 44,
+          "top": 316,
+          "right": 271,
+          "bottom": 360,
+          "left": 227
+        },
+        {
+          "x": 274,
+          "y": 316,
+          "width": 44,
+          "height": 44,
+          "top": 316,
+          "right": 318,
+          "bottom": 360,
+          "left": 274
+        },
+        {
+          "x": 321,
+          "y": 316,
+          "width": 44,
+          "height": 44,
+          "top": 316,
+          "right": 365,
+          "bottom": 360,
+          "left": 321
+        },
+        {
+          "x": 368,
+          "y": 316,
+          "width": 44,
+          "height": 44,
+          "top": 316,
+          "right": 412,
+          "bottom": 360,
+          "left": 368
+        },
+        {
+          "x": 415,
+          "y": 316,
+          "width": 44,
+          "height": 44,
+          "top": 316,
+          "right": 459,
+          "bottom": 360,
+          "left": 415
+        },
+        {
+          "x": 462,
+          "y": 316,
+          "width": 44,
+          "height": 44,
+          "top": 316,
+          "right": 506,
+          "bottom": 360,
+          "left": 462
+        },
+        {
+          "x": 509,
+          "y": 316,
+          "width": 44,
+          "height": 44,
+          "top": 316,
+          "right": 553,
+          "bottom": 360,
+          "left": 509
+        },
+        {
+          "x": 556,
+          "y": 316,
+          "width": 44,
+          "height": 44,
+          "top": 316,
+          "right": 600,
+          "bottom": 360,
+          "left": 556
+        }
+      ],
+      "bench": {
+        "x": 13,
+        "y": 289,
+        "width": 277,
+        "height": 75,
+        "top": 289,
+        "right": 290,
+        "bottom": 364,
+        "left": 13
+      },
+      "dock": {
+        "x": 391,
+        "y": 52,
+        "width": 208,
+        "height": 317,
+        "top": 52,
+        "right": 599,
+        "bottom": 369,
+        "left": 391
+      },
+      "cards": [
+        {
+          "x": 611,
+          "y": 93,
+          "width": 44,
+          "height": 44,
+          "top": 93,
+          "right": 655,
+          "bottom": 137,
+          "left": 611
+        },
+        {
+          "x": 611,
+          "y": 139,
+          "width": 44,
+          "height": 44,
+          "top": 139,
+          "right": 655,
+          "bottom": 183,
+          "left": 611
+        },
+        {
+          "x": 611,
+          "y": 185,
+          "width": 44,
+          "height": 44,
+          "top": 185,
+          "right": 655,
+          "bottom": 229,
+          "left": 611
+        },
+        {
+          "x": 611,
+          "y": 231,
+          "width": 44,
+          "height": 44,
+          "top": 231,
+          "right": 655,
+          "bottom": 275,
+          "left": 611
+        },
+        {
+          "x": 611,
+          "y": 277,
+          "width": 44,
+          "height": 44,
+          "top": 277,
+          "right": 655,
+          "bottom": 321,
+          "left": 611
+        },
+        {
+          "x": 611,
+          "y": 323,
+          "width": 44,
+          "height": 44,
+          "top": 323,
+          "right": 655,
+          "bottom": 367,
+          "left": 611
+        }
+      ],
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "overflow": false,
+      "ids": []
+    },
+    {
+      "mode": "mobile",
+      "width": 480,
+      "height": 320,
+      "compact": true,
+      "parent": "game-view",
+      "orientation": "landscape",
+      "landscape": true,
+      "ranking": {
+        "x": 418,
+        "y": 30,
+        "width": 56,
+        "height": 290,
+        "top": 30,
+        "right": 474,
+        "bottom": 320,
+        "left": 418
+      },
+      "arena": {
+        "x": 12,
+        "y": 56,
+        "width": 180,
+        "height": 183,
+        "top": 56,
+        "right": 192,
+        "bottom": 239,
+        "left": 12
+      },
+      "information": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "banner": {
+        "x": 15,
+        "y": 63,
+        "width": 94,
+        "height": 32,
+        "top": 63,
+        "right": 109,
+        "bottom": 95,
+        "left": 15
+      },
+      "board": {
+        "x": 13,
+        "y": 61,
+        "width": 98,
+        "height": 98,
+        "top": 61,
+        "right": 111,
+        "bottom": 159,
+        "left": 13
+      },
+      "deployment": {
+        "x": 47.2578125,
+        "y": 101,
+        "width": 29.484375,
+        "height": 18,
+        "top": 101,
+        "right": 76.7421875,
+        "bottom": 119,
+        "left": 47.2578125
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 39,
+          "y": 190,
+          "width": 44,
+          "height": 44,
+          "top": 190,
+          "right": 83,
+          "bottom": 234,
+          "left": 39
+        },
+        {
+          "x": 86,
+          "y": 190,
+          "width": 44,
+          "height": 44,
+          "top": 190,
+          "right": 130,
+          "bottom": 234,
+          "left": 86
+        },
+        {
+          "x": 133,
+          "y": 190,
+          "width": 44,
+          "height": 44,
+          "top": 190,
+          "right": 177,
+          "bottom": 234,
+          "left": 133
+        },
+        {
+          "x": 180,
+          "y": 190,
+          "width": 44,
+          "height": 44,
+          "top": 190,
+          "right": 224,
+          "bottom": 234,
+          "left": 180
+        },
+        {
+          "x": 227,
+          "y": 190,
+          "width": 44,
+          "height": 44,
+          "top": 190,
+          "right": 271,
+          "bottom": 234,
+          "left": 227
+        },
+        {
+          "x": 274,
+          "y": 190,
+          "width": 44,
+          "height": 44,
+          "top": 190,
+          "right": 318,
+          "bottom": 234,
+          "left": 274
+        },
+        {
+          "x": 321,
+          "y": 190,
+          "width": 44,
+          "height": 44,
+          "top": 190,
+          "right": 365,
+          "bottom": 234,
+          "left": 321
+        },
+        {
+          "x": 368,
+          "y": 190,
+          "width": 44,
+          "height": 44,
+          "top": 190,
+          "right": 412,
+          "bottom": 234,
+          "left": 368
+        },
+        {
+          "x": 415,
+          "y": 190,
+          "width": 44,
+          "height": 44,
+          "top": 190,
+          "right": 459,
+          "bottom": 234,
+          "left": 415
+        },
+        {
+          "x": 462,
+          "y": 190,
+          "width": 44,
+          "height": 44,
+          "top": 190,
+          "right": 506,
+          "bottom": 234,
+          "left": 462
+        },
+        {
+          "x": 509,
+          "y": 190,
+          "width": 44,
+          "height": 44,
+          "top": 190,
+          "right": 553,
+          "bottom": 234,
+          "left": 509
+        },
+        {
+          "x": 556,
+          "y": 190,
+          "width": 44,
+          "height": 44,
+          "top": 190,
+          "right": 600,
+          "bottom": 234,
+          "left": 556
+        }
+      ],
+      "bench": {
+        "x": 13,
+        "y": 163,
+        "width": 98,
+        "height": 75,
+        "top": 163,
+        "right": 111,
+        "bottom": 238,
+        "left": 13
+      },
+      "dock": {
+        "x": 204,
+        "y": 56,
+        "width": 208,
+        "height": 258,
+        "top": 56,
+        "right": 412,
+        "bottom": 314,
+        "left": 204
+      },
+      "cards": [
+        {
+          "x": 424,
+          "y": 38,
+          "width": 44,
+          "height": 44,
+          "top": 38,
+          "right": 468,
+          "bottom": 82,
+          "left": 424
+        },
+        {
+          "x": 424,
+          "y": 84,
+          "width": 44,
+          "height": 44,
+          "top": 84,
+          "right": 468,
+          "bottom": 128,
+          "left": 424
+        },
+        {
+          "x": 424,
+          "y": 130,
+          "width": 44,
+          "height": 44,
+          "top": 130,
+          "right": 468,
+          "bottom": 174,
+          "left": 424
+        },
+        {
+          "x": 424,
+          "y": 176,
+          "width": 44,
+          "height": 44,
+          "top": 176,
+          "right": 468,
+          "bottom": 220,
+          "left": 424
+        },
+        {
+          "x": 424,
+          "y": 222,
+          "width": 44,
+          "height": 44,
+          "top": 222,
+          "right": 468,
+          "bottom": 266,
+          "left": 424
+        },
+        {
+          "x": 424,
+          "y": 268,
+          "width": 44,
+          "height": 44,
+          "top": 268,
+          "right": 468,
+          "bottom": 312,
+          "left": 424
+        }
+      ],
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "overflow": false,
+      "ids": []
+    },
+    {
+      "mode": "mobile",
+      "width": 1024,
+      "height": 768,
+      "compact": true,
+      "parent": "game-view",
+      "orientation": "landscape",
+      "landscape": true,
+      "ranking": {
+        "x": 962,
+        "y": 56,
+        "width": 56,
+        "height": 326,
+        "top": 56,
+        "right": 1018,
+        "bottom": 382,
+        "left": 962
+      },
+      "arena": {
+        "x": 12,
+        "y": 56,
+        "width": 684,
+        "height": 638,
+        "top": 56,
+        "right": 696,
+        "bottom": 694,
+        "left": 12
+      },
+      "information": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "banner": {
+        "x": 17,
+        "y": 65,
+        "width": 542,
+        "height": 40,
+        "top": 65,
+        "right": 559,
+        "bottom": 105,
+        "left": 17
+      },
+      "board": {
+        "x": 13,
+        "y": 61,
+        "width": 550,
+        "height": 550,
+        "top": 61,
+        "right": 563,
+        "bottom": 611,
+        "left": 13
+      },
+      "deployment": {
+        "x": 238.859375,
+        "y": 306,
+        "width": 98.28125,
+        "height": 60,
+        "top": 306,
+        "right": 337.140625,
+        "bottom": 366,
+        "left": 238.859375
+      },
+      "deploymentPointerEvents": "none",
+      "removedCapacity": 0,
+      "benchSlots": [
+        {
+          "x": 43,
+          "y": 643,
+          "width": 44,
+          "height": 44,
+          "top": 643,
+          "right": 87,
+          "bottom": 687,
+          "left": 43
+        },
+        {
+          "x": 90,
+          "y": 643,
+          "width": 44,
+          "height": 44,
+          "top": 643,
+          "right": 134,
+          "bottom": 687,
+          "left": 90
+        },
+        {
+          "x": 137,
+          "y": 643,
+          "width": 44,
+          "height": 44,
+          "top": 643,
+          "right": 181,
+          "bottom": 687,
+          "left": 137
+        },
+        {
+          "x": 184,
+          "y": 643,
+          "width": 44,
+          "height": 44,
+          "top": 643,
+          "right": 228,
+          "bottom": 687,
+          "left": 184
+        },
+        {
+          "x": 231,
+          "y": 643,
+          "width": 44,
+          "height": 44,
+          "top": 643,
+          "right": 275,
+          "bottom": 687,
+          "left": 231
+        },
+        {
+          "x": 278,
+          "y": 643,
+          "width": 44,
+          "height": 44,
+          "top": 643,
+          "right": 322,
+          "bottom": 687,
+          "left": 278
+        },
+        {
+          "x": 325,
+          "y": 643,
+          "width": 44,
+          "height": 44,
+          "top": 643,
+          "right": 369,
+          "bottom": 687,
+          "left": 325
+        },
+        {
+          "x": 372,
+          "y": 643,
+          "width": 44,
+          "height": 44,
+          "top": 643,
+          "right": 416,
+          "bottom": 687,
+          "left": 372
+        },
+        {
+          "x": 419,
+          "y": 643,
+          "width": 44,
+          "height": 44,
+          "top": 643,
+          "right": 463,
+          "bottom": 687,
+          "left": 419
+        },
+        {
+          "x": 466,
+          "y": 643,
+          "width": 44,
+          "height": 44,
+          "top": 643,
+          "right": 510,
+          "bottom": 687,
+          "left": 466
+        },
+        {
+          "x": 513,
+          "y": 643,
+          "width": 44,
+          "height": 44,
+          "top": 643,
+          "right": 557,
+          "bottom": 687,
+          "left": 513
+        },
+        {
+          "x": 560,
+          "y": 643,
+          "width": 44,
+          "height": 44,
+          "top": 643,
+          "right": 604,
+          "bottom": 687,
+          "left": 560
+        }
+      ],
+      "bench": {
+        "x": 13,
+        "y": 615,
+        "width": 550,
+        "height": 78,
+        "top": 615,
+        "right": 563,
+        "bottom": 693,
+        "left": 13
+      },
+      "dock": {
+        "x": 708,
+        "y": 56,
+        "width": 248,
+        "height": 706,
+        "top": 56,
+        "right": 956,
+        "bottom": 762,
+        "left": 708
+      },
+      "cards": [
+        {
+          "x": 968,
+          "y": 100,
+          "width": 44,
+          "height": 44,
+          "top": 100,
+          "right": 1012,
+          "bottom": 144,
+          "left": 968
+        },
+        {
+          "x": 968,
+          "y": 146,
+          "width": 44,
+          "height": 44,
+          "top": 146,
+          "right": 1012,
+          "bottom": 190,
+          "left": 968
+        },
+        {
+          "x": 968,
+          "y": 192,
+          "width": 44,
+          "height": 44,
+          "top": 192,
+          "right": 1012,
+          "bottom": 236,
+          "left": 968
+        },
+        {
+          "x": 968,
+          "y": 238,
+          "width": 44,
+          "height": 44,
+          "top": 238,
+          "right": 1012,
+          "bottom": 282,
+          "left": 968
+        },
+        {
+          "x": 968,
+          "y": 284,
+          "width": 44,
+          "height": 44,
+          "top": 284,
+          "right": 1012,
+          "bottom": 328,
+          "left": 968
+        },
+        {
+          "x": 968,
+          "y": 330,
+          "width": 44,
+          "height": 44,
+          "top": 330,
+          "right": 1012,
+          "bottom": 374,
+          "left": 968
+        }
+      ],
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "overflow": false,
+      "ids": []
+    }
+  ],
+  "errors": []
+}

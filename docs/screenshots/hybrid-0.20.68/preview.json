@@ -1,0 +1,32 @@
+{
+  "version": "0.20.68",
+  "frames": [
+    {
+      "mode": "pc",
+      "width": 1400,
+      "height": 1000
+    },
+    {
+      "mode": "pc",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "mode": "mobile",
+      "width": 844,
+      "height": 390
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "errors": [],
+  "source": "Actual one-human/five-bot server. Real reserve/field swaps and sales arrange a 2/2/2 composition and eight reserves. Mobile previews use explicit screen-mode switching in a desktop context; dedicated browser suites verify actual touch contexts separately."
+}

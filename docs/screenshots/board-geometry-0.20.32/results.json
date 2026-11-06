@@ -1,0 +1,293 @@
+{
+  "browser": "155.0.8059.84",
+  "results": [
+    {
+      "mode": "pc",
+      "viewport": {
+        "width": 1400,
+        "height": 1000
+      },
+      "b": {
+        "x": 279,
+        "y": 121,
+        "width": 594,
+        "height": 594,
+        "bottom": 715
+      },
+      "canvas": {
+        "x": 279,
+        "y": 121,
+        "width": 594,
+        "height": 594,
+        "bottom": 715
+      },
+      "dock": {
+        "x": 24,
+        "y": 852,
+        "width": 1352,
+        "height": 130,
+        "bottom": 982
+      },
+      "ready": {
+        "x": 1263,
+        "y": 885,
+        "width": 112,
+        "height": 96,
+        "bottom": 981
+      },
+      "maxError": 0.010937500000011369,
+      "maxCellAspectError": 0,
+      "shopImagesVisible": true,
+      "scrollWidth": 1400,
+      "innerWidth": 1400,
+      "bodyScroll": 0
+    },
+    {
+      "mode": "pc",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "b": {
+        "x": 378,
+        "y": 121,
+        "width": 362,
+        "height": 362,
+        "bottom": 483
+      },
+      "canvas": {
+        "x": 378,
+        "y": 121,
+        "width": 362,
+        "height": 362,
+        "bottom": 483
+      },
+      "dock": {
+        "x": 24,
+        "y": 620,
+        "width": 1318,
+        "height": 130,
+        "bottom": 750
+      },
+      "ready": {
+        "x": 1229,
+        "y": 653,
+        "width": 112,
+        "height": 96,
+        "bottom": 749
+      },
+      "maxError": 0.009375000000005684,
+      "maxCellAspectError": 0.015625,
+      "shopImagesVisible": true,
+      "scrollWidth": 1366,
+      "innerWidth": 1366,
+      "bodyScroll": 0
+    },
+    {
+      "mode": "pc",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "b": {
+        "x": 516,
+        "y": 121,
+        "width": 640,
+        "height": 640,
+        "bottom": 761
+      },
+      "canvas": {
+        "x": 516,
+        "y": 121,
+        "width": 640,
+        "height": 640,
+        "bottom": 761
+      },
+      "dock": {
+        "x": 284,
+        "y": 932,
+        "width": 1352,
+        "height": 130,
+        "bottom": 1062
+      },
+      "ready": {
+        "x": 1523,
+        "y": 965,
+        "width": 112,
+        "height": 96,
+        "bottom": 1061
+      },
+      "maxError": 0,
+      "maxCellAspectError": 0,
+      "shopImagesVisible": true,
+      "scrollWidth": 1920,
+      "innerWidth": 1920,
+      "bodyScroll": 0
+    },
+    {
+      "mode": "pc",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "b": {
+        "x": 226,
+        "y": 133,
+        "width": 356,
+        "height": 356,
+        "bottom": 489
+      },
+      "canvas": {
+        "x": 226,
+        "y": 133,
+        "width": 356,
+        "height": 356,
+        "bottom": 489
+      },
+      "dock": {
+        "x": 12,
+        "y": 626,
+        "width": 1000,
+        "height": 130,
+        "bottom": 756
+      },
+      "ready": {
+        "x": 899,
+        "y": 659,
+        "width": 112,
+        "height": 96,
+        "bottom": 755
+      },
+      "maxError": 0.010937500000011369,
+      "maxCellAspectError": 0.015625,
+      "shopImagesVisible": true,
+      "scrollWidth": 1024,
+      "innerWidth": 1024,
+      "bodyScroll": 0
+    },
+    {
+      "mode": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "b": {
+        "x": 7,
+        "y": 156,
+        "width": 316,
+        "height": 316,
+        "bottom": 472
+      },
+      "canvas": {
+        "x": 7,
+        "y": 156,
+        "width": 316,
+        "height": 316,
+        "bottom": 472
+      },
+      "dock": {
+        "x": 6,
+        "y": 622,
+        "width": 378,
+        "height": 216,
+        "bottom": 838
+      },
+      "ready": {
+        "x": 329,
+        "y": 653,
+        "width": 54,
+        "height": 184,
+        "bottom": 837
+      },
+      "maxError": 0.010937500000011369,
+      "maxCellAspectError": 0.015625,
+      "shopImagesVisible": true,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "bodyScroll": 0
+    },
+    {
+      "mode": "mobile",
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "b": {
+        "x": 17.5,
+        "y": 156,
+        "width": 225,
+        "height": 225,
+        "bottom": 381
+      },
+      "canvas": {
+        "x": 17.5,
+        "y": 156,
+        "width": 225,
+        "height": 225,
+        "bottom": 381
+      },
+      "dock": {
+        "x": 6,
+        "y": 518,
+        "width": 308,
+        "height": 216,
+        "bottom": 734
+      },
+      "ready": {
+        "x": 259,
+        "y": 549,
+        "width": 54,
+        "height": 184,
+        "bottom": 733
+      },
+      "maxError": 0,
+      "maxCellAspectError": 0,
+      "shopImagesVisible": true,
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "bodyScroll": 0
+    },
+    {
+      "mode": "mobile",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "b": {
+        "x": 90.328125,
+        "y": 57,
+        "width": 227,
+        "height": 227,
+        "bottom": 284
+      },
+      "canvas": {
+        "x": 90.328125,
+        "y": 57,
+        "width": 227,
+        "height": 227,
+        "bottom": 284
+      },
+      "dock": {
+        "x": 539.6875,
+        "y": 52,
+        "width": 236.3125,
+        "height": 332,
+        "bottom": 384
+      },
+      "ready": {
+        "x": 729,
+        "y": 83,
+        "width": 46,
+        "height": 300,
+        "bottom": 383
+      },
+      "maxError": 0.009375000000005684,
+      "maxCellAspectError": 0.015625,
+      "shopImagesVisible": true,
+      "scrollWidth": 844,
+      "innerWidth": 844,
+      "bodyScroll": 0
+    }
+  ],
+  "errors": []
+}

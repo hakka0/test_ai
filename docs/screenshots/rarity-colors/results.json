@@ -1,0 +1,143 @@
+{
+  "version": "0.19.4",
+  "browser": "138.0.7204.0",
+  "results": [
+    {
+      "mode": "pc",
+      "shop": [
+        {
+          "kind": "knight",
+          "rarity": 1,
+          "background": "rgb(48, 55, 68)",
+          "aria": "1번 상품, 루멘 구매, 수호, 레어도 1성, 1 골드"
+        },
+        {
+          "kind": "warden",
+          "rarity": 2,
+          "background": "rgb(23, 60, 46)",
+          "aria": "2번 상품, 아르덴 구매, 수호, 레어도 2성, 2 골드"
+        },
+        {
+          "kind": "knight",
+          "rarity": 1,
+          "background": "rgb(48, 55, 68)",
+          "aria": "3번 상품, 루멘 구매, 수호, 레어도 1성, 1 골드"
+        },
+        {
+          "kind": "skirmisher",
+          "rarity": 1,
+          "background": "rgb(48, 55, 68)",
+          "aria": "4번 상품, 카이 구매, 정찰, 레어도 1성, 1 골드"
+        },
+        {
+          "kind": "mage",
+          "rarity": 3,
+          "background": "rgb(24, 47, 85)",
+          "aria": "5번 상품, 노바 구매, 비전, 레어도 3성, 3 골드"
+        }
+      ],
+      "bench": [
+        {
+          "rarity": 1,
+          "rank": "1",
+          "background": "rgb(48, 55, 68)"
+        }
+      ],
+      "palette": [
+        {
+          "rarity": 1,
+          "background": "rgb(48, 55, 68)"
+        },
+        {
+          "rarity": 2,
+          "background": "rgb(23, 60, 46)"
+        },
+        {
+          "rarity": 3,
+          "background": "rgb(24, 47, 85)"
+        },
+        {
+          "rarity": 4,
+          "background": "rgb(56, 38, 76)"
+        },
+        {
+          "rarity": 5,
+          "background": "rgb(75, 59, 29)"
+        }
+      ],
+      "purchase": true,
+      "reroll": true,
+      "selection": true,
+      "reload": true
+    },
+    {
+      "mode": "mobile",
+      "shop": [
+        {
+          "kind": "ranger",
+          "rarity": 2,
+          "background": "rgb(23, 60, 46)",
+          "aria": "1번 상품, 실바 구매, 정찰, 레어도 2성, 2 골드"
+        },
+        {
+          "kind": "mage",
+          "rarity": 3,
+          "background": "rgb(24, 47, 85)",
+          "aria": "2번 상품, 노바 구매, 비전, 레어도 3성, 3 골드"
+        },
+        {
+          "kind": "skirmisher",
+          "rarity": 1,
+          "background": "rgb(48, 55, 68)",
+          "aria": "3번 상품, 카이 구매, 정찰, 레어도 1성, 1 골드"
+        },
+        {
+          "kind": "skirmisher",
+          "rarity": 1,
+          "background": "rgb(48, 55, 68)",
+          "aria": "4번 상품, 카이 구매, 정찰, 레어도 1성, 1 골드"
+        },
+        {
+          "kind": "warden",
+          "rarity": 2,
+          "background": "rgb(23, 60, 46)",
+          "aria": "5번 상품, 아르덴 구매, 수호, 레어도 2성, 2 골드"
+        }
+      ],
+      "bench": [
+        {
+          "rarity": 2,
+          "rank": "1",
+          "background": "rgb(23, 60, 46)"
+        }
+      ],
+      "palette": [
+        {
+          "rarity": 1,
+          "background": "rgb(48, 55, 68)"
+        },
+        {
+          "rarity": 2,
+          "background": "rgb(23, 60, 46)"
+        },
+        {
+          "rarity": 3,
+          "background": "rgb(24, 47, 85)"
+        },
+        {
+          "rarity": 4,
+          "background": "rgb(56, 38, 76)"
+        },
+        {
+          "rarity": 5,
+          "background": "rgb(75, 59, 29)"
+        }
+      ],
+      "purchase": true,
+      "reroll": true,
+      "selection": true,
+      "reload": true
+    }
+  ],
+  "errors": []
+}

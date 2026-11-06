@@ -1,0 +1,94 @@
+{
+  "browser": "138.0.7204.0",
+  "results": [
+    {
+      "columns": [
+        {
+          "x": 75,
+          "y": 390,
+          "right": 448.375
+        },
+        {
+          "x": 468.375,
+          "y": 390,
+          "right": 1020.3125
+        },
+        {
+          "x": 1040.3125,
+          "y": 390,
+          "right": 1365
+        }
+      ],
+      "mode": "pc",
+      "afterGame": true,
+      "beforeFooter": true,
+      "stats": [
+        {
+          "x": 75,
+          "y": 554,
+          "bottom": 614,
+          "width": 120.453125
+        },
+        {
+          "x": 201.453125,
+          "y": 554,
+          "bottom": 614,
+          "width": 120.453125
+        },
+        {
+          "x": 327.90625,
+          "y": 554,
+          "bottom": 614,
+          "width": 120.46875
+        }
+      ],
+      "overflow": false,
+      "version": "v0.17.3"
+    },
+    {
+      "columns": [
+        {
+          "x": 21,
+          "y": 85.5,
+          "right": 369
+        },
+        {
+          "x": 21,
+          "y": 347,
+          "right": 369
+        },
+        {
+          "x": 21,
+          "y": 673.140625,
+          "right": 369
+        }
+      ],
+      "mode": "mobile",
+      "afterGame": true,
+      "beforeFooter": true,
+      "stats": [
+        {
+          "x": 21,
+          "y": 256.75,
+          "bottom": 319,
+          "width": 112
+        },
+        {
+          "x": 139,
+          "y": 256.75,
+          "bottom": 319,
+          "width": 112
+        },
+        {
+          "x": 257,
+          "y": 256.75,
+          "bottom": 319,
+          "width": 112
+        }
+      ],
+      "overflow": false,
+      "version": "v0.17.3"
+    }
+  ],
+  "errors": []
+}

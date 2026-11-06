@@ -1,0 +1,1411 @@
+{
+  "version": "0.20.40",
+  "browser": "155.0.8059.84",
+  "results": [
+    {
+      "mode": "pc",
+      "width": 1400,
+      "height": 1000,
+      "before": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": "cafa3yke0-offer-6",
+          "revision": "3",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "cafa3yke0-offer-7",
+          "revision": "3",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "cafa3yke0-offer-8",
+          "revision": "3",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "cafa3yke0-offer-9",
+          "revision": "3",
+          "sold": false
+        }
+      ],
+      "result": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": "cafa3yke0-offer-11",
+          "revision": "6",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "cafa3yke0-offer-12",
+          "revision": "6",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "cafa3yke0-offer-13",
+          "revision": "6",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "cafa3yke0-offer-14",
+          "revision": "6",
+          "sold": false
+        }
+      ],
+      "next": [
+        {
+          "slot": "0",
+          "id": "cafa3yke0-offer-15",
+          "revision": "7",
+          "sold": false
+        },
+        {
+          "slot": "1",
+          "id": "cafa3yke0-offer-16",
+          "revision": "7",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "cafa3yke0-offer-17",
+          "revision": "7",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "cafa3yke0-offer-18",
+          "revision": "7",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "cafa3yke0-offer-19",
+          "revision": "7",
+          "sold": false
+        }
+      ],
+      "layout": {
+        "overflow": false,
+        "cards": [
+          {
+            "x": 246.390625,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 358.390625,
+            "bottom": 973,
+            "left": 246.390625
+          },
+          {
+            "x": 459.1875,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 571.1875,
+            "bottom": 973,
+            "left": 459.1875
+          },
+          {
+            "x": 671.984375,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 783.984375,
+            "bottom": 973,
+            "left": 671.984375
+          },
+          {
+            "x": 884.78125,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 996.78125,
+            "bottom": 973,
+            "left": 884.78125
+          },
+          {
+            "x": 1097.59375,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 1209.59375,
+            "bottom": 973,
+            "left": 1097.59375
+          }
+        ]
+      }
+    },
+    {
+      "mode": "pc",
+      "width": 1024,
+      "height": 768,
+      "before": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": "cafa3yke0-offer-21",
+          "revision": "9",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "cafa3yke0-offer-22",
+          "revision": "9",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "cafa3yke0-offer-23",
+          "revision": "9",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "cafa3yke0-offer-24",
+          "revision": "9",
+          "sold": false
+        }
+      ],
+      "result": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "2",
+          "id": "cafa3yke0-offer-22",
+          "revision": "10",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "cafa3yke0-offer-23",
+          "revision": "10",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "cafa3yke0-offer-24",
+          "revision": "10",
+          "sold": false
+        }
+      ],
+      "next": [
+        {
+          "slot": "0",
+          "id": "cafa3yke0-offer-25",
+          "revision": "11",
+          "sold": false
+        },
+        {
+          "slot": "1",
+          "id": "cafa3yke0-offer-26",
+          "revision": "11",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "cafa3yke0-offer-27",
+          "revision": "11",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "cafa3yke0-offer-28",
+          "revision": "11",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "cafa3yke0-offer-29",
+          "revision": "11",
+          "sold": false
+        }
+      ],
+      "layout": {
+        "overflow": false,
+        "cards": [
+          {
+            "x": 199.1875,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 311.1875,
+            "bottom": 747,
+            "left": 199.1875
+          },
+          {
+            "x": 341.59375,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 453.59375,
+            "bottom": 747,
+            "left": 341.59375
+          },
+          {
+            "x": 483.984375,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 595.984375,
+            "bottom": 747,
+            "left": 483.984375
+          },
+          {
+            "x": 626.390625,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 738.390625,
+            "bottom": 747,
+            "left": 626.390625
+          },
+          {
+            "x": 768.78125,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 880.78125,
+            "bottom": 747,
+            "left": 768.78125
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "before": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": "mftYhHp5n-offer-6",
+          "revision": "3",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-7",
+          "revision": "3",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-8",
+          "revision": "3",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-9",
+          "revision": "3",
+          "sold": false
+        }
+      ],
+      "result": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": "mftYhHp5n-offer-11",
+          "revision": "6",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-12",
+          "revision": "6",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-13",
+          "revision": "6",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-14",
+          "revision": "6",
+          "sold": false
+        }
+      ],
+      "next": [
+        {
+          "slot": "0",
+          "id": "mftYhHp5n-offer-15",
+          "revision": "7",
+          "sold": false
+        },
+        {
+          "slot": "1",
+          "id": "mftYhHp5n-offer-16",
+          "revision": "7",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-17",
+          "revision": "7",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-18",
+          "revision": "7",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-19",
+          "revision": "7",
+          "sold": false
+        }
+      ],
+      "layout": {
+        "overflow": false,
+        "cards": [
+          {
+            "x": 153,
+            "y": 630.671875,
+            "width": 64,
+            "height": 64,
+            "top": 630.671875,
+            "right": 217,
+            "bottom": 694.671875,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 630.671875,
+            "width": 64,
+            "height": 64,
+            "top": 630.671875,
+            "right": 309,
+            "bottom": 694.671875,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 698,
+            "width": 64,
+            "height": 64,
+            "top": 698,
+            "right": 217,
+            "bottom": 762,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 698,
+            "width": 64,
+            "height": 64,
+            "top": 698,
+            "right": 309,
+            "bottom": 762,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 765.328125,
+            "width": 64,
+            "height": 64,
+            "top": 765.328125,
+            "right": 217,
+            "bottom": 829.328125,
+            "left": 153
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 320,
+      "height": 740,
+      "before": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": "mftYhHp5n-offer-21",
+          "revision": "9",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-22",
+          "revision": "9",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-23",
+          "revision": "9",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-24",
+          "revision": "9",
+          "sold": false
+        }
+      ],
+      "result": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-22",
+          "revision": "10",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-23",
+          "revision": "10",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-24",
+          "revision": "10",
+          "sold": false
+        }
+      ],
+      "next": [
+        {
+          "slot": "0",
+          "id": "mftYhHp5n-offer-25",
+          "revision": "11",
+          "sold": false
+        },
+        {
+          "slot": "1",
+          "id": "mftYhHp5n-offer-26",
+          "revision": "11",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-27",
+          "revision": "11",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-28",
+          "revision": "11",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-29",
+          "revision": "11",
+          "sold": false
+        }
+      ],
+      "layout": {
+        "overflow": false,
+        "cards": [
+          {
+            "x": 141,
+            "y": 532.15625,
+            "width": 53,
+            "height": 53,
+            "top": 532.15625,
+            "right": 194,
+            "bottom": 585.15625,
+            "left": 141
+          },
+          {
+            "x": 198,
+            "y": 532.15625,
+            "width": 53,
+            "height": 53,
+            "top": 532.15625,
+            "right": 251,
+            "bottom": 585.15625,
+            "left": 198
+          },
+          {
+            "x": 141,
+            "y": 599.484375,
+            "width": 53,
+            "height": 53,
+            "top": 599.484375,
+            "right": 194,
+            "bottom": 652.484375,
+            "left": 141
+          },
+          {
+            "x": 198,
+            "y": 599.484375,
+            "width": 53,
+            "height": 53,
+            "top": 599.484375,
+            "right": 251,
+            "bottom": 652.484375,
+            "left": 198
+          },
+          {
+            "x": 141,
+            "y": 666.8125,
+            "width": 53,
+            "height": 53,
+            "top": 666.8125,
+            "right": 194,
+            "bottom": 719.8125,
+            "left": 141
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 844,
+      "height": 390,
+      "before": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": "mftYhHp5n-offer-31",
+          "revision": "13",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-32",
+          "revision": "13",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-33",
+          "revision": "13",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-34",
+          "revision": "13",
+          "sold": false
+        }
+      ],
+      "result": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-32",
+          "revision": "14",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-33",
+          "revision": "14",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-34",
+          "revision": "14",
+          "sold": false
+        }
+      ],
+      "next": [
+        {
+          "slot": "0",
+          "id": "mftYhHp5n-offer-35",
+          "revision": "15",
+          "sold": false
+        },
+        {
+          "slot": "1",
+          "id": "mftYhHp5n-offer-36",
+          "revision": "15",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-37",
+          "revision": "15",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-38",
+          "revision": "15",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-39",
+          "revision": "15",
+          "sold": false
+        }
+      ],
+      "layout": {
+        "overflow": false,
+        "cards": [
+          {
+            "x": 659.84375,
+            "y": 66.796875,
+            "width": 48,
+            "height": 48,
+            "top": 66.796875,
+            "right": 707.84375,
+            "bottom": 114.796875,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 130.390625,
+            "width": 48,
+            "height": 48,
+            "top": 130.390625,
+            "right": 707.84375,
+            "bottom": 178.390625,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 193.984375,
+            "width": 48,
+            "height": 48,
+            "top": 193.984375,
+            "right": 707.84375,
+            "bottom": 241.984375,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 257.59375,
+            "width": 48,
+            "height": 48,
+            "top": 257.59375,
+            "right": 707.84375,
+            "bottom": 305.59375,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 321.1875,
+            "width": 48,
+            "height": 48,
+            "top": 321.1875,
+            "right": 707.84375,
+            "bottom": 369.1875,
+            "left": 659.84375
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 740,
+      "height": 360,
+      "before": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": "mftYhHp5n-offer-41",
+          "revision": "17",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-42",
+          "revision": "17",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-43",
+          "revision": "17",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-44",
+          "revision": "17",
+          "sold": false
+        }
+      ],
+      "result": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-42",
+          "revision": "18",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-43",
+          "revision": "18",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-44",
+          "revision": "18",
+          "sold": false
+        }
+      ],
+      "next": [
+        {
+          "slot": "0",
+          "id": "mftYhHp5n-offer-45",
+          "revision": "19",
+          "sold": false
+        },
+        {
+          "slot": "1",
+          "id": "mftYhHp5n-offer-46",
+          "revision": "19",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-47",
+          "revision": "19",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-48",
+          "revision": "19",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-49",
+          "revision": "19",
+          "sold": false
+        }
+      ],
+      "layout": {
+        "overflow": false,
+        "cards": [
+          {
+            "x": 571,
+            "y": 64.796875,
+            "width": 46,
+            "height": 46,
+            "top": 64.796875,
+            "right": 617,
+            "bottom": 110.796875,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 122.390625,
+            "width": 46,
+            "height": 46,
+            "top": 122.390625,
+            "right": 617,
+            "bottom": 168.390625,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 179.984375,
+            "width": 46,
+            "height": 46,
+            "top": 179.984375,
+            "right": 617,
+            "bottom": 225.984375,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 237.59375,
+            "width": 46,
+            "height": 46,
+            "top": 237.59375,
+            "right": 617,
+            "bottom": 283.59375,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 295.1875,
+            "width": 46,
+            "height": 46,
+            "top": 295.1875,
+            "right": 617,
+            "bottom": 341.1875,
+            "left": 571
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 667,
+      "height": 375,
+      "before": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": "mftYhHp5n-offer-51",
+          "revision": "21",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-52",
+          "revision": "21",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-53",
+          "revision": "21",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-54",
+          "revision": "21",
+          "sold": false
+        }
+      ],
+      "result": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-52",
+          "revision": "22",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-53",
+          "revision": "22",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-54",
+          "revision": "22",
+          "sold": false
+        }
+      ],
+      "next": [
+        {
+          "slot": "0",
+          "id": "mftYhHp5n-offer-55",
+          "revision": "23",
+          "sold": false
+        },
+        {
+          "slot": "1",
+          "id": "mftYhHp5n-offer-56",
+          "revision": "23",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-57",
+          "revision": "23",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-58",
+          "revision": "23",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-59",
+          "revision": "23",
+          "sold": false
+        }
+      ],
+      "layout": {
+        "overflow": false,
+        "cards": [
+          {
+            "x": 498,
+            "y": 66.296875,
+            "width": 46,
+            "height": 46,
+            "top": 66.296875,
+            "right": 544,
+            "bottom": 112.296875,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 126.890625,
+            "width": 46,
+            "height": 46,
+            "top": 126.890625,
+            "right": 544,
+            "bottom": 172.890625,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 187.484375,
+            "width": 46,
+            "height": 46,
+            "top": 187.484375,
+            "right": 544,
+            "bottom": 233.484375,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 248.09375,
+            "width": 46,
+            "height": 46,
+            "top": 248.09375,
+            "right": 544,
+            "bottom": 294.09375,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 308.6875,
+            "width": 46,
+            "height": 46,
+            "top": 308.6875,
+            "right": 544,
+            "bottom": 354.6875,
+            "left": 498
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 480,
+      "height": 320,
+      "before": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": "mftYhHp5n-offer-61",
+          "revision": "25",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-62",
+          "revision": "25",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-63",
+          "revision": "25",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-64",
+          "revision": "25",
+          "sold": false
+        }
+      ],
+      "result": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-62",
+          "revision": "26",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-63",
+          "revision": "26",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-64",
+          "revision": "26",
+          "sold": false
+        }
+      ],
+      "next": [
+        {
+          "slot": "0",
+          "id": "mftYhHp5n-offer-65",
+          "revision": "27",
+          "sold": false
+        },
+        {
+          "slot": "1",
+          "id": "mftYhHp5n-offer-66",
+          "revision": "27",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-67",
+          "revision": "27",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-68",
+          "revision": "27",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-69",
+          "revision": "27",
+          "sold": false
+        }
+      ],
+      "layout": {
+        "overflow": false,
+        "cards": [
+          {
+            "x": 311,
+            "y": 64.40625,
+            "width": 46,
+            "height": 46,
+            "top": 64.40625,
+            "right": 357,
+            "bottom": 110.40625,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 113.203125,
+            "width": 46,
+            "height": 46,
+            "top": 113.203125,
+            "right": 357,
+            "bottom": 159.203125,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 162,
+            "width": 46,
+            "height": 46,
+            "top": 162,
+            "right": 357,
+            "bottom": 208,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 210.796875,
+            "width": 46,
+            "height": 46,
+            "top": 210.796875,
+            "right": 357,
+            "bottom": 256.796875,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 259.59375,
+            "width": 46,
+            "height": 46,
+            "top": 259.59375,
+            "right": 357,
+            "bottom": 305.59375,
+            "left": 311
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "before": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": "mftYhHp5n-offer-71",
+          "revision": "29",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-72",
+          "revision": "29",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-73",
+          "revision": "29",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-74",
+          "revision": "29",
+          "sold": false
+        }
+      ],
+      "result": [
+        {
+          "slot": "0",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "1",
+          "id": null,
+          "revision": null,
+          "sold": true
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-72",
+          "revision": "30",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-73",
+          "revision": "30",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-74",
+          "revision": "30",
+          "sold": false
+        }
+      ],
+      "next": [
+        {
+          "slot": "0",
+          "id": "mftYhHp5n-offer-75",
+          "revision": "31",
+          "sold": false
+        },
+        {
+          "slot": "1",
+          "id": "mftYhHp5n-offer-76",
+          "revision": "31",
+          "sold": false
+        },
+        {
+          "slot": "2",
+          "id": "mftYhHp5n-offer-77",
+          "revision": "31",
+          "sold": false
+        },
+        {
+          "slot": "3",
+          "id": "mftYhHp5n-offer-78",
+          "revision": "31",
+          "sold": false
+        },
+        {
+          "slot": "4",
+          "id": "mftYhHp5n-offer-79",
+          "revision": "31",
+          "sold": false
+        }
+      ],
+      "layout": {
+        "overflow": false,
+        "cards": [
+          {
+            "x": 153,
+            "y": 630.671875,
+            "width": 64,
+            "height": 64,
+            "top": 630.671875,
+            "right": 217,
+            "bottom": 694.671875,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 630.671875,
+            "width": 64,
+            "height": 64,
+            "top": 630.671875,
+            "right": 309,
+            "bottom": 694.671875,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 698,
+            "width": 64,
+            "height": 64,
+            "top": 698,
+            "right": 217,
+            "bottom": 762,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 698,
+            "width": 64,
+            "height": 64,
+            "top": 698,
+            "right": 309,
+            "bottom": 762,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 765.328125,
+            "width": 64,
+            "height": 64,
+            "top": 765.328125,
+            "right": 217,
+            "bottom": 829.328125,
+            "left": 153
+          }
+        ]
+      }
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,22 @@
+{
+  "browser": "138.0.7204.0",
+  "results": [
+    {
+      "mode": "pc",
+      "contentTopGap": 13,
+      "boardGap": 13,
+      "buttons": 0,
+      "overflow": false,
+      "version": "v0.17.5"
+    },
+    {
+      "mode": "mobile",
+      "contentTopGap": 11,
+      "boardGap": 11,
+      "buttons": 0,
+      "overflow": false,
+      "version": "v0.17.5"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,378 @@
+{
+  "version": "0.20.31",
+  "browser": "155.0.8059.84",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "note": "Render-only mobile previews. Six-player data is a UI fixture; actual game server remains two-player. Tab option adapts to a mobile bottom sheet. Production files unchanged.",
+  "results": [
+    {
+      "variant": "right",
+      "file": "C:\\Users\\tyapt\\Documents\\Git\\autochess-web\\docs\\screenshots\\ranking-placement-options\\mobile-right.png",
+      "ranking": {
+        "x": 328,
+        "y": 56,
+        "width": 56,
+        "height": 358,
+        "top": 56,
+        "right": 384,
+        "bottom": 414,
+        "left": 328
+      },
+      "board": {
+        "x": 7,
+        "y": 156,
+        "width": 316,
+        "height": 316,
+        "top": 156,
+        "right": 323,
+        "bottom": 472,
+        "left": 7
+      },
+      "bench": {
+        "x": 7,
+        "y": 472,
+        "width": 316,
+        "height": 102,
+        "top": 472,
+        "right": 323,
+        "bottom": 574,
+        "left": 7
+      },
+      "shop": {
+        "x": 6,
+        "y": 622,
+        "width": 378,
+        "height": 216,
+        "top": 622,
+        "right": 384,
+        "bottom": 838,
+        "left": 6
+      },
+      "arena": {
+        "x": 6,
+        "y": 56,
+        "width": 318,
+        "height": 519,
+        "top": 56,
+        "right": 324,
+        "bottom": 575,
+        "left": 6
+      },
+      "sheet": null,
+      "rows": [
+        {
+          "x": 332,
+          "y": 99,
+          "width": 48,
+          "height": 48,
+          "top": 99,
+          "right": 380,
+          "bottom": 147,
+          "left": 332
+        },
+        {
+          "x": 332,
+          "y": 151,
+          "width": 48,
+          "height": 48,
+          "top": 151,
+          "right": 380,
+          "bottom": 199,
+          "left": 332
+        },
+        {
+          "x": 332,
+          "y": 203,
+          "width": 48,
+          "height": 48,
+          "top": 203,
+          "right": 380,
+          "bottom": 251,
+          "left": 332
+        },
+        {
+          "x": 332,
+          "y": 255,
+          "width": 48,
+          "height": 48,
+          "top": 255,
+          "right": 380,
+          "bottom": 303,
+          "left": 332
+        },
+        {
+          "x": 332,
+          "y": 307,
+          "width": 48,
+          "height": 48,
+          "top": 307,
+          "right": 380,
+          "bottom": 355,
+          "left": 332
+        },
+        {
+          "x": 332,
+          "y": 359,
+          "width": 48,
+          "height": 48,
+          "top": 359,
+          "right": 380,
+          "bottom": 407,
+          "left": 332
+        }
+      ],
+      "overflow": false,
+      "scrollY": 0
+    },
+    {
+      "variant": "left",
+      "file": "C:\\Users\\tyapt\\Documents\\Git\\autochess-web\\docs\\screenshots\\ranking-placement-options\\mobile-left.png",
+      "ranking": {
+        "x": 6,
+        "y": 56,
+        "width": 56,
+        "height": 358,
+        "top": 56,
+        "right": 62,
+        "bottom": 414,
+        "left": 6
+      },
+      "board": {
+        "x": 67,
+        "y": 156,
+        "width": 316,
+        "height": 316,
+        "top": 156,
+        "right": 383,
+        "bottom": 472,
+        "left": 67
+      },
+      "bench": {
+        "x": 67,
+        "y": 472,
+        "width": 316,
+        "height": 102,
+        "top": 472,
+        "right": 383,
+        "bottom": 574,
+        "left": 67
+      },
+      "shop": {
+        "x": 6,
+        "y": 622,
+        "width": 378,
+        "height": 216,
+        "top": 622,
+        "right": 384,
+        "bottom": 838,
+        "left": 6
+      },
+      "arena": {
+        "x": 66,
+        "y": 56,
+        "width": 318,
+        "height": 519,
+        "top": 56,
+        "right": 384,
+        "bottom": 575,
+        "left": 66
+      },
+      "sheet": null,
+      "rows": [
+        {
+          "x": 10,
+          "y": 99,
+          "width": 48,
+          "height": 48,
+          "top": 99,
+          "right": 58,
+          "bottom": 147,
+          "left": 10
+        },
+        {
+          "x": 10,
+          "y": 151,
+          "width": 48,
+          "height": 48,
+          "top": 151,
+          "right": 58,
+          "bottom": 199,
+          "left": 10
+        },
+        {
+          "x": 10,
+          "y": 203,
+          "width": 48,
+          "height": 48,
+          "top": 203,
+          "right": 58,
+          "bottom": 251,
+          "left": 10
+        },
+        {
+          "x": 10,
+          "y": 255,
+          "width": 48,
+          "height": 48,
+          "top": 255,
+          "right": 58,
+          "bottom": 303,
+          "left": 10
+        },
+        {
+          "x": 10,
+          "y": 307,
+          "width": 48,
+          "height": 48,
+          "top": 307,
+          "right": 58,
+          "bottom": 355,
+          "left": 10
+        },
+        {
+          "x": 10,
+          "y": 359,
+          "width": 48,
+          "height": 48,
+          "top": 359,
+          "right": 58,
+          "bottom": 407,
+          "left": 10
+        }
+      ],
+      "overflow": false,
+      "scrollY": 0
+    },
+    {
+      "variant": "tabs",
+      "file": "C:\\Users\\tyapt\\Documents\\Git\\autochess-web\\docs\\screenshots\\ranking-placement-options\\mobile-tabs.png",
+      "ranking": {
+        "x": 7,
+        "y": 514,
+        "width": 376,
+        "height": 329,
+        "top": 514,
+        "right": 383,
+        "bottom": 843,
+        "left": 7
+      },
+      "board": {
+        "x": 39,
+        "y": 172.5,
+        "width": 312,
+        "height": 312,
+        "top": 172.5,
+        "right": 351,
+        "bottom": 484.5,
+        "left": 39
+      },
+      "bench": {
+        "x": 7,
+        "y": 484.5,
+        "width": 376,
+        "height": 102,
+        "top": 484.5,
+        "right": 383,
+        "bottom": 586.5,
+        "left": 7
+      },
+      "shop": {
+        "x": 6,
+        "y": 622,
+        "width": 378,
+        "height": 216,
+        "top": 622,
+        "right": 384,
+        "bottom": 838,
+        "left": 6
+      },
+      "arena": {
+        "x": 6,
+        "y": 56,
+        "width": 378,
+        "height": 531.5,
+        "top": 56,
+        "right": 384,
+        "bottom": 587.5,
+        "left": 6
+      },
+      "sheet": {
+        "x": 6,
+        "y": 391,
+        "width": 378,
+        "height": 453,
+        "top": 391,
+        "right": 384,
+        "bottom": 844,
+        "left": 6
+      },
+      "rows": [
+        {
+          "x": 17,
+          "y": 545,
+          "width": 356,
+          "height": 44,
+          "top": 545,
+          "right": 373,
+          "bottom": 589,
+          "left": 17
+        },
+        {
+          "x": 17,
+          "y": 593,
+          "width": 356,
+          "height": 44,
+          "top": 593,
+          "right": 373,
+          "bottom": 637,
+          "left": 17
+        },
+        {
+          "x": 17,
+          "y": 641,
+          "width": 356,
+          "height": 44,
+          "top": 641,
+          "right": 373,
+          "bottom": 685,
+          "left": 17
+        },
+        {
+          "x": 17,
+          "y": 689,
+          "width": 356,
+          "height": 44,
+          "top": 689,
+          "right": 373,
+          "bottom": 733,
+          "left": 17
+        },
+        {
+          "x": 17,
+          "y": 737,
+          "width": 356,
+          "height": 44,
+          "top": 737,
+          "right": 373,
+          "bottom": 781,
+          "left": 17
+        },
+        {
+          "x": 17,
+          "y": 785,
+          "width": 356,
+          "height": 44,
+          "top": 785,
+          "right": 373,
+          "bottom": 829,
+          "left": 17
+        }
+      ],
+      "overflow": false,
+      "scrollY": 0
+    }
+  ],
+  "errors": []
+}

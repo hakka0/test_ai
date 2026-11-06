@@ -1,0 +1,365 @@
+/* 0.20.72: muted sage, blue-grey and pastel semantic surfaces.
+   PC borrows the reference's shared status strip and two-row supply station. */
+:root {
+ color-scheme:light; color:#21394c; background:#cbd6d6;
+ --ui-paper:#dce3df; --ui-surface:#d1dcdb; --ui-raised:#c5d2d4;
+ --ui-ink:#21394c; --ui-muted:#415662; --ui-edge:#b8c8ce;
+ --ui-accent:#2f606a; --panel:#dce3df; --line:#b8c8ce; --muted:#415662;
+ --gold:#795306; --mint:#2f606a; --ui-shadow:0 3px 14px #20344808;
+}
+#app { background:linear-gradient(150deg,#d1dad7,#c5d2d4); }
+button,input,select,textarea { color:var(--ui-ink); background:var(--ui-surface); border-color:var(--ui-edge); }
+button:hover { background:#cadade; }
+button:focus-visible,input:focus-visible,select:focus-visible { outline-color:#2f606a; }
+.primary { color:#25464d; background:#adc7bd; border-color:#7fa69f; }
+.primary:hover { background:#9cbbb2; }
+.eyebrow { color:#445e71; }
+.muted,.small.muted,.help { color:var(--muted); }
+#app > header { color:var(--ui-ink); border-bottom:1px solid #c0ced3; }
+.brand > span:first-child { color:var(--ui-accent); }
+.brand .eyebrow { color:#445e71; letter-spacing:1.5px; }
+.header-actions button,.room-code-control {
+ color:#30485b; background:var(--ui-paper); border:1px solid var(--ui-edge); border-radius:8px;
+}
+.header-actions button:hover { background:#cedcdf; border-color:#8dbcd5; }
+.room-code-control #room-code { color:#203448; }
+.room-code-label { color:#465e6e; }
+.header-actions #room-code-toggle[aria-pressed='true'] { background:#c8dadf; color:#086a94; }
+
+/* Structural panels share soft sage paper and blue-grey boundaries. */
+#game-view { color:var(--ui-ink); }
+#game-view :is(.arena-panel,.matchbar,#synergy-panel,.equipment-sidebar,#selected-unit-panel),
+#game-view > #player-ranking {
+ color:var(--ui-ink); background:var(--ui-paper); border:1px solid var(--ui-edge);
+ border-radius:12px; box-shadow:var(--ui-shadow);
+}
+#game-view .matchbar :is(h1,.eyebrow) { color:#29475f; }
+#game-view .matchbar .eyebrow { letter-spacing:.5px; }
+#game-view .matchbar #pc-match-tools button { color:#3b5368; background:#d1dad9; border-color:#c1ced3; border-radius:8px; }
+#game-view .matchbar #pc-match-tools button:hover { color:#265b73; background:#c8d9de; }
+#game-view .matchbar .timer { color:#265b73; background:#cddcdf; border-radius:8px; text-shadow:none; font-variant-numeric:tabular-nums; }
+#game-view :is(.section-title,.equipment-heading) { color:#304b60; }
+#game-view #scout-banner { color:#145779; background:#c8dadf; border-color:#97becd; }
+#game-view #scout-return { color:#075985; background:var(--ui-paper); border-color:#97becd; }
+
+/* Grade is a light tint + colored edge; current milestone is dark and bold. */
+#synergy-panel button.synergy-card.synergy-compact {
+ display:flex; align-items:center; gap:7px; border-radius:8px;
+ color:#344e63; background:#d3dcdd; border-color:#bbc9cf; box-shadow:none;
+}
+#synergy-panel button.synergy-compact[data-synergy-grade='bronze'] { --synergy-surface:#ead4bd; --synergy-edge:#c78d53; --synergy-glow:#d5a06d16; }
+#synergy-panel button.synergy-compact[data-synergy-grade='silver'] { --synergy-surface:#ccd6df; --synergy-edge:#91a9bf; --synergy-glow:#9fb6cb16; }
+#synergy-panel button.synergy-compact[data-synergy-grade='gold'] { --synergy-surface:#e9ddac; --synergy-edge:#c9a13c; --synergy-glow:#d6b34b16; }
+#synergy-panel button.synergy-compact[data-synergy-grade='purple'] { --synergy-surface:#dacee6; --synergy-edge:#ac84ce; --synergy-glow:#ac84ce16; }
+#synergy-panel button.synergy-compact[data-synergy-grade]:not([data-synergy-grade='inactive']) { color:#344e63; background:var(--synergy-surface); border-color:var(--synergy-edge); box-shadow:inset 3px 0 0 var(--synergy-edge); }
+#synergy-panel .synergy-current { flex:1; min-width:0; }
+#synergy-panel .synergy-name,#synergy-panel .synergy-name strong { color:#35546a; }
+.synergy-emblem { display:grid; place-items:center; flex:none; width:24px; height:24px; border:1px solid #a5b9ca80; border-radius:6px; color:#56748b; background:var(--ui-paper)90; }
+.synergy-emblem svg { display:block; width:17px; height:17px; }
+#synergy-panel .synergy-emblem { color:#56748b; }
+:is(#synergy-panel,#game-help-tooltip) .synergy-count-now { color:#29475f; }
+:is(#synergy-panel,#game-help-tooltip) :is(.synergy-tier,.synergy-separator) { color:#46596b; }
+:is(#synergy-panel,#game-help-tooltip) .synergy-tier[data-current='true'] { color:#17394f; font-weight:900; }
+:is(#synergy-panel,#game-help-tooltip) .synergy-effect-label { color:#536d82; }
+.synergy-empty { color:#415662; }
+
+#game-view .equipment-heading { background:var(--ui-paper); border-bottom-color:#c3d0d4; }
+#game-view .equipment-heading button { color:#344f65; border-color:transparent; }
+#equipment-count { padding:1px 5px; border-radius:4px; color:#265b73; background:#cadade; }
+#game-view #equipment-stash .equipment-source { color:#314c63; background:#ccd7d8; border-color:#bcccd2; border-radius:8px; }
+#game-view #equipment-stash .equipment-source:hover { background:#c9dade; border-color:#8dbbd6; }
+#game-view .equipment-icon { color:#735409; background:#ccd8db; }
+#game-view .equipment-source[data-category='material'] .equipment-icon { color:#286375; }
+#game-view .equipment-sidebar .empty { color:#415662; }
+#game-view .equipment-subtitle { color:#415662; }
+#game-view .equipment-group h3 { color:#415662; }
+#game-view #equipment-close { color:#536c80; }
+
+body:not(.combat-overtime) #board-wrap { background:var(--ui-surface); border-radius:12px; box-shadow:inset 0 0 0 1px #bbc9cf; }
+#deployment-overlay { opacity:.38; }
+#deployment-overlay #deployed { color:#52748e; text-shadow:none; }
+#game-view #pc-bench .bench { color:#304c62; background:#d1dad9; border-color:#beccd1; border-radius:9px; box-shadow:none; }
+#pc-bench .section-title { color:#3d566b; }
+:is(html.pc-layout,html.mobile-layout) #pc-bench .bench-slot { border-radius:7px; background:var(--ui-paper); border-color:#b8c8ce; }
+:is(html.pc-layout,html.mobile-layout) #pc-bench .bench-slot[data-unit] { display:block; position:relative; overflow:visible; padding:0; }
+:is(html.pc-layout,html.mobile-layout) #pc-bench .bench-slot[data-unit] img { position:absolute; inset:0; display:block; width:100%; height:100%; max-width:none; padding:2px 2px 13px; margin:0; object-fit:contain; aspect-ratio:auto; }
+:is(html.pc-layout,html.mobile-layout) #pc-bench .bench-slot[data-unit] strong {
+ position:absolute; left:1px; right:1px; bottom:1px; z-index:1; display:block; margin:0; padding:1px 0;
+ color:#233f55; background:#d6dfe1eb; text-shadow:none; font-size:10px; line-height:12px; text-align:center;
+ white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+:is(html.pc-layout,html.mobile-layout) #pc-bench .pc-bench-rank { color:#365f79; }
+#pc-bench .empty-slot { color:#486575; background:#d6dfdf; border-color:#aec0c9; }
+#pc-bench .empty-slot:hover { background:#cadadf; }
+#pc-bench :is(.slot-number,.pc-bench-rank,.pc-bench-equipment) { z-index:2; color:#365f79; text-shadow:none; }
+#pc-bench .mobile-bench-nav { color:#466b86; background:#ccd8db; border-color:#b6c8d0; }
+
+/* Rarity colors are now edge markers, instead of dark card fills. */
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock { color:#21394c; --muted:#415662; background:var(--ui-paper); border-color:#b2c4cc; border-radius:12px; box-shadow:0 5px 22px #21394c17; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #shop-panel { background:transparent; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #shop-economy { border-color:#bbc9ce; border-radius:9px; box-shadow:none; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #dock-gold { color:#233f55; background:#d0dcde; border-color:#bcccd2; }
+#pc-play-dock .dock-gold-label { color:#465e6e; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #dock-gold #gold { color:#795306; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #pc-growth { border-color:#bcccd2; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #buy-experience { color:#21394c; background:#d2dcde; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #buy-experience:disabled { background:#d0dadb; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #buy-experience:hover:not(:disabled) { background:#c7d8de; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #experience-track { background:#c1d1d7; }
+#pc-play-dock #experience-fill { background:#6a999d; }
+#pc-play-dock :is(#experience-label,.xp-gain) { color:#375d75; }
+#pc-play-dock .xp-price { color:#725006; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #shop-control-column #reroll { color:#22516f; background:#cedbde; border-color:#b1c8d2; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #shop-control-column #reroll:hover:not(:disabled) { background:#c0d6de; }
+#pc-play-dock .reroll-icon { color:#2f606a; }
+#pc-play-dock #reroll .reroll-price { color:#725006; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #dock-ready { background:#ccd7d8; border-color:#adc3cc; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #dock-streak { color:#435d70; background:#d1dbdd; border-color:#bdcdd3; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #dock-streak[data-streak='win'] { color:#9a3f28; background:#e7d3cb; border-color:#d9b5a7; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #dock-streak[data-streak='loss'] { color:#2f5e7d; background:#cbd9df; border-color:#b0c8d5; }
+#pc-play-dock #dock-streak[data-streak='win'] .streak-icon { color:#c85c29; }
+#pc-play-dock #dock-streak[data-streak='loss'] .streak-icon { color:#2584b7; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #dock-ready #ready { color:#25464d; background:#adc7bd; text-shadow:none; font-weight:800; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #dock-ready #ready:hover:not(:disabled) { background:#9cbbb2; }
+:is(html.pc-layout,html.mobile-layout) #shop-panel .shop-card,
+:is(html.pc-layout,html.mobile-layout) #shop-panel .shop-card[data-rarity]:hover:not(:disabled) {
+ color:#233f55; background:#d4dedb; border-color:#a3b6bf; border-radius:8px; filter:none;
+ box-shadow:inset 0 3px 0 var(--rarity-border,#a3bac3);
+}
+:is(html.pc-layout,html.mobile-layout) #shop-panel .shop-card[data-merge-ready='true'] { border-color:#259acb; box-shadow:inset 0 0 0 2px #57b6dd,0 0 8px #41acd62b; }
+:is(html.pc-layout,html.mobile-layout) #shop-panel .shop-portrait { background:#cad8d7; }
+:is(html.pc-layout,html.mobile-layout) #shop-panel .shop-portrait::after { background:linear-gradient(0deg,#d8e0e1ef,transparent 65%); }
+:is(html.pc-layout,html.mobile-layout) #shop-panel .shop-unit-info strong { color:#173c55; text-shadow:none; font-size:clamp(12px,1.1vw,15px); line-height:1.2; letter-spacing:-.3px; }
+:is(html.pc-layout,html.mobile-layout) #shop-panel .shop-traits .trait-badge { color:#24604f; background:#c6dcd1; box-shadow:none; }
+:is(html.pc-layout,html.mobile-layout) #shop-panel .shop-traits .trait-badge[data-trait='arcane'] { color:#654487; background:#d8cce5; }
+[data-rarity] { --rarity-bg:#d4dedb; --rarity-portrait:#cad8d7; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #shop-panel .shop-traits .trait-badge { color:#24604f; background:#c6dcd1; text-shadow:none; box-shadow:none; }
+:is(html.pc-layout,html.mobile-layout) #pc-play-dock #shop-panel .shop-traits .trait-badge[data-trait='arcane'] { color:#654487; background:#d8cce5; }
+:is(html.pc-layout,html.mobile-layout) #shop-panel .shop-price { color:#755207!important; background:#e7e0c7; border:1px solid #d3c79d; box-shadow:none; }
+
+/* Inspector, dialogs and tooltips all use the same light surfaces. */
+#selected-unit-panel > #inspection-tabs { border-color:#bcccd1; background:var(--ui-surface); }
+#inspection-tabs button { display:flex; align-items:center; justify-content:center; gap:6px; min-height:44px; border-radius:8px; color:#465e6e; background:transparent; border-color:transparent; }
+#inspection-tabs button[aria-selected='true'] { color:#265b73; background:#c6d9df; border-color:#96bccc; box-shadow:none; }
+#inspection-tabs .panel-icon { width:17px; height:17px; flex:none; }
+:is(#selected-unit-content,#unit-dialog)[data-unit-side] { --unit-surface:#cbdadb; --unit-ink:#21394c; --unit-border:#b0c6d0; --muted:#415662; --gold:#795306; --line:#b8c8ce; color:var(--unit-ink); background:var(--unit-surface); border-color:var(--unit-border); }
+:is(#selected-unit-content,#unit-dialog)[data-unit-side='enemy'] { --unit-surface:#e5d3d1; --unit-border:#d6b5b4; }
+:is(#selected-unit-content,#unit-dialog)[data-unit-side] :is(.stat,.skill-card,.selected-unit-equipment,.item) { --muted:#415662; --gold:#795306; --line:#b8c8ce; color:#21394c; }
+#selected-unit-content[data-unit-side] { border-radius:9px; box-shadow:inset 0 0 0 1px var(--unit-border); }
+:is(#selected-unit-content,#unit-detail) .selection > img { border-radius:9px; background:#c8d6da; box-shadow:inset 0 0 0 1px #aec3cc; }
+:is(#selected-unit-content,#unit-detail) .selection .eyebrow { color:#435f73; }
+:is(#selected-unit-content,#unit-dialog)[data-unit-side] .unit-upgrade { color:#285e83; }
+:is(#selected-unit-content,#unit-dialog)[data-unit-side] .unit-rarity { color:#795306; }
+:is(#selected-unit-content,#unit-detail) .stats .stat.help-trigger {
+ position:relative; grid-template-columns:18px minmax(0,1fr); min-height:62px; gap:4px; padding:25px 6px 7px;
+ color:#233f55; background:var(--ui-paper); border:1px solid #becdd2; border-radius:8px; box-shadow:none;
+}
+:is(#selected-unit-content,#unit-detail) .stats .stat.help-trigger:hover,
+:is(#selected-unit-content,#unit-detail) .stats .stat.help-trigger[aria-expanded='true'] { background:#cbdadf; border-color:#8fbfdc; }
+:is(#selected-unit-content,#unit-detail) .stat-icon { width:18px; height:18px; }
+:is(#selected-unit-content,#unit-detail) [data-stat='hp'] .stat-icon { color:#28825a!important; }
+:is(#selected-unit-content,#unit-detail) [data-stat='attack'] .stat-icon { color:#cd4056!important; }
+:is(#selected-unit-content,#unit-detail) [data-stat='defense'] .stat-icon { color:#257bb9!important; }
+:is(#selected-unit-content,#unit-detail) :is([data-stat='crit-chance'],[data-stat='crit-damage'],[data-stat='attack-speed']) .stat-icon { color:#a77908!important; }
+:is(#selected-unit-content,#unit-detail) [data-stat='range'] .stat-icon { color:#476c85!important; }
+:is(#selected-unit-content,#unit-detail) .stat-value { display:flex; flex-direction:column; align-items:flex-start; gap:2px; min-width:0; }
+.stat-label { display:none; }
+:is(#selected-unit-content,#unit-detail) .stat-label { position:absolute; top:7px; left:7px; right:7px; display:block; color:#465e6e; font-size:11px; line-height:14px; font-weight:400; white-space:nowrap; }
+:is(#selected-unit-content,#unit-detail) .stats .stat.help-trigger strong { color:#213c52; font-size:16px; line-height:19px; }
+:is(#selected-unit-content,#unit-detail) .stats .stat.help-trigger[data-stat='range'] { grid-column:1/-1; display:flex; min-height:44px; padding:7px 10px; }
+:is(#selected-unit-content,#unit-detail) [data-stat='range'] .stat-value { display:contents; }
+:is(#selected-unit-content,#unit-detail) [data-stat='range'] .stat-label { position:static; font-size:12px; }
+:is(#selected-unit-content,#unit-detail) [data-stat='range'] strong { margin-left:auto; }
+:is(#selected-unit-content,#unit-detail) .attack-speed-grade { display:none; }
+:is(#selected-unit-content,#unit-detail) .combat-attribute { border-radius:6px; background:var(--ui-paper); }
+:is(#selected-unit-content,#unit-detail) .combat-attribute[data-combat-attribute='red'] { --attribute-color:#b52d46!important; color:#b52d46; border-color:#df8b9a; }
+:is(#selected-unit-content,#unit-detail) .combat-attribute[data-combat-attribute='blue'] { --attribute-color:#165f96!important; color:#165f96; border-color:#87b9dd; }
+:is(#selected-unit-content,#unit-detail) .combat-attribute[data-combat-attribute='yellow'] { --attribute-color:#765800!important; color:#765800; border-color:#ceb464; }
+:is(#selected-unit-content,#unit-detail) .combat-attribute[data-combat-attribute='purple'] { --attribute-color:#7e45b4!important; color:#7e45b4; border-color:#bd98da; }
+:is(#selected-unit-content,#unit-detail) .selected-unit-section { border-top-color:#b9c9cf; }
+:is(#selected-unit-content,#unit-detail) [data-skill-cards] > .skill-summary-card:not(.skill-running) { color:#27465d; background:var(--ui-paper); border-color:#b0c4ce; }
+:is(#selected-unit-content,#unit-detail) .skill-summary > strong { font-size:13px; line-height:18px; word-break:keep-all; }
+:is(#selected-unit-content,#unit-detail) .skill-summary-card[data-skill-kind='active'] { border-left-color:#2e95c5; }
+:is(#selected-unit-content,#unit-detail) .skill-summary-card[data-skill-kind='passive'] { border-left-color:#b79440; }
+.skill-summary-card .skill-kind { color:#2c6277; }
+.skill-summary-card .skill-meta,.skill-meta { color:#415662; }
+:is(#selected-unit-content,#unit-detail) .skill-summary-card.skill-running { color:#275b49; background:#c9dfd0; border-color:#8cbea7; }
+:is(#selected-unit-content,#unit-detail) .skill-image { color:#225579; background:#cddadd; border:1px solid #b7cad1; padding:2px; }
+:is(#selected-unit-content,#unit-dialog)[data-unit-side] .selected-unit-equipment { color:#2d4c63; background:var(--ui-paper); border-color:#b8cad1; }
+.unit-meta .unit-meta-divider { color:#526573; }
+.unit-quick-sell,#unit-title-sell { color:#95363f; background:#e7d4d1; border-color:#d0a7a8; }
+
+#player-ranking .ranking-heading { color:#3d566c; }
+#player-ranking #ranking-count { color:#415662; }
+#player-ranking .ranking-row { color:#263e52; background:#d1dad9; border-color:#bfced2; border-radius:8px; box-shadow:none; }
+#player-ranking .ranking-row:hover { background:#cbdbdf; border-color:#96bccb; }
+#player-ranking .ranking-avatar { color:#31546c; background:hsl(var(--avatar-hue) 20% 80%); border:1px solid #a6bac2; box-shadow:none; }
+#player-ranking .ranking-row[data-self='true'] { border-color:#87bfdc; }
+#player-ranking .ranking-row[data-watching='true'] { background:#c6dae0; border-color:#507f89; box-shadow:inset 3px 0 0 #507f89; }
+#player-ranking .ranking-row[data-opponent='true']:not([data-watching='true']) { border-color:#d6a2aa; }
+#player-ranking .ranking-place { color:#3c556b; background:transparent; }
+#player-ranking .ranking-tag { color:#11618a; }
+#player-ranking .ranking-row[data-opponent='true'] .ranking-tag { color:#a2354b; }
+#player-ranking .ranking-health { color:#243e51; }
+#player-ranking .ranking-level { display:none; }
+#player-ranking .ranking-health-track { background:#c2d1d5; border-radius:4px; }
+#player-ranking .ranking-health-track > span { background:#6a999d; }
+
+dialog,.help-tooltip,#shop-unit-tooltip,#skill-detail-tooltip {
+ color-scheme:light; --muted:#415662; --gold:#795306; --mint:#2f606a; --line:#b8c8ce;
+ color:#29465c; background:var(--ui-paper); border-color:#aec1ca; border-radius:12px; box-shadow:0 12px 36px #28425829;
+}
+dialog:is(#craft-dialog,#unit-dialog,#combat-record-dialog,#pc-info-dialog,#reward-dialog,#final-dialog) { background:var(--ui-paper); color:#29465c; }
+:is(#unit-dialog,#reward-dialog,#pc-info-dialog,#final-dialog,#combat-record-dialog)::backdrop { background:#25496740; }
+dialog#reward-dialog { background:transparent; border-color:transparent; box-shadow:none; }
+.help-tooltip > strong,.help-tooltip h3,#skill-detail-name { color:#15678e; }
+.help-tooltip p,.skill-detail-body,#skill-detail-status { color:#36596f; }
+.skill-detail-heading { border-bottom-color:#beccd2; }
+dialog :is(.pc-info-heading,.pc-info-tabs,.dialog-heading,.sale-controls,.craft-heading,.craft-footer,.combat-sheet-heading,.final-heading),
+#unit-dialog[data-unit-side] :is(.dialog-heading,.sale-controls),#pc-info-dialog #pc-info-tabs { color:#29465c; background:#d5dede; border-color:#bcccd1; }
+dialog :is(button,input,select,summary) { color:#33536a; background:#ccd7d8; border-color:#b5c7ce; }
+dialog .primary { color:#25464d; background:#adc7bd; border-color:#7fa69f; }
+#pc-info-dialog #pc-info-tabs button[aria-pressed='true'] { color:#265b73; background:#c6d9df; border-color:#96bbcb; }
+#debug-panel,#debug-panel .debug-controls select { color:#36566d; background:#d3ddde; border-color:#b8cad0; }
+#debug-panel summary { background:transparent; }
+dialog :is(.item,.recipe-card,.recipe-material,.final-players > *, .history-detail-body > *, .history-fighter,.history-contribution,.contribution-row),
+#recipe-book :is(button,.recipe-card),#pc-info-body :is(details,summary),#combat-content :is(.history-fighter,.contribution-row) { color:#304f66; background:var(--ui-surface); border-color:#b8cad0; }
+dialog :is(.equipment-icon,.recipe-icon),#recipe-book .equipment-icon { color:#735409; background:#cad7db; }
+#reward-dialog #reward-panel { color:#2a485e; background:var(--ui-paper); border-color:#abc0c8; box-shadow:0 8px 24px #28425822; }
+#reward-options button { color:#28465d; background:#d3ddde; border-color:#b3c8d0; }
+#reward-peek { color:#166a91; background:#ccdbdf; border-color:#8bb8d2; }
+#reward-peek[aria-pressed='true'] { color:#09668f; background:#bbd4de; border-color:#72afce; }
+#reward-peek-help { color:#375e78; background:#d0dcdf; }
+#reward-peek-row,#reward-peek-help { color:#375e78; }
+#craft-dialog #craft-footer { color:#36566d; background:#d3ddde; border-color:#b8cad0; }
+#craft-dialog :is(#item-kind,#item-no-recipes,#craft-preview) { color:#415662; }
+#recipe-book .item-recipe > span { color:#465e6e; }
+#recipe-book .item-recipe > .recipe-state { color:#2b694c; }
+#recipe-book [data-available='false'] .recipe-state { color:#415662; }
+#recipe-book [aria-pressed='true'] { background:#c9dadf; border-color:#7eb6d5; }
+#recipe-book button:disabled { color:#415662; background:#cbd6d6; }
+#craft-dialog #craft-footer .primary { color:#25464d; background:#adc7bd; border-color:#7fa69f; }
+#history-rounds .history-round { color:#526c82; background:#d1dbdc; border-color:#b8cad1; }
+#history-rounds .history-round:is([data-status='current'],[data-status='prepare']) { color:#265b73; background:#c5d9df; border-color:#8abddc; }
+#history-rounds .history-round[data-status='win'] { color:#2e7758; background:#c9dfd0; }
+#history-rounds .history-round[data-status='loss'] { color:#903949; background:#e6cfd3; }
+#history-rounds .history-round[data-status='draw'] { color:#5b6482; background:#d0d8dc; }
+.final-summary { color:#80651e; background:#e7dfcb; border-color:#ddc888; }
+#final-dialog .final-player { color:#33536b; background:#d3ddde; border-color:#b8cad1; }
+#history-section .history-result-summary[data-outcome='win'] { color:#2e7758; background:#c9dfd0; }
+#history-section .history-result-summary[data-outcome='loss'] { color:#903949; background:#e6cfd3; }
+#unit-dialog .sale-buttons button { color:#8e422d; background:#e7dacf; border-color:#cfb7a1; }
+#notice,#round-result-summary { color:#26485f; background:#d3dfe1; border-color:#a1beca; }
+#round-result-summary[data-outcome='win'] { color:#2e7758; border-color:#8bbca2; background:#d2e3d8; }
+#round-result-summary[data-outcome='loss'] { color:#903949; border-color:#cb9da5; background:#e7d5d8; }
+.contribution-track,.cost-track { background:#c4d2d6; }
+#history-section :is(.history-result-summary,.history-detail-body > div),#combat-content .history-panel { color:#304f66; background:#d3ddde; border-color:#b9cad1; }
+#game-help-tooltip .help-stat-grid > div { color:#304f66; background:#cad8d7; }
+.help-tooltip .skill-image { background:#cddadd; border-color:#b7cad1; }
+.shop-drag-ghost { background:#d3dedf; border-color:#a0b8c4; box-shadow:0 5px 18px #29465c26; }
+.shop-drag-portrait { background:#cad8d7; }
+.shop-drag-ghost .shop-unit-info,.shop-drag-label { color:#224b68; background:#cfdde1ed; }
+.shop-drag-ghost .shop-price { color:#755207!important; background:#e7dfc7; }
+#shop-sell-overlay { color:#92383f; background:#e7d3d3ed; border-color:#d98e96; }
+#equipment-drag-ghost { color:#234d65; background:#d0dfe1; border-color:#4fa4c6; box-shadow:0 5px 18px #29465c26; }
+#equipment-drag-ghost[data-valid='false'] { color:#9a4051; background:#e6cfd3; border-color:#d793a1; }
+#equipment-drag-item { color:#7e650e; }
+:is(#combat-content,#combat-sheet-body) .history-result-summary { color:#36556d; background:#d0dbde; }
+:is(#combat-content,#combat-sheet-body) .history-result-summary[data-outcome='win'] { color:#2e7758; background:#c9dfd0; }
+:is(#combat-content,#combat-sheet-body) .history-result-summary[data-outcome='loss'] { color:#903949; background:#e6cfd3; }
+:is(#contribution-metrics,#contribution-teams) [aria-pressed='true'] { color:#265b73; background:#c5d9df; border-color:#8abddc; }
+.contribution-unit > img { background:#ccd8dc; }
+#recent-results [data-outcome='win'] { color:#2e7758; background:#c9dfd0; }
+#recent-results [data-outcome='loss'] { color:#903949; background:#e6cfd3; }
+
+/* Home and the screen-mode footer belong to the same palette too. */
+body.home-active #app,body.home-active .home-page { background:#ccd7d8; }
+#lobby,.home-intro,.home-card,.home-actions,.home-join { color:#29485f; background:var(--ui-paper); border-color:#b7cad0; }
+#lobby :is(h1,h2,h3,strong) { color:#24465e; }
+#lobby :is(p,.muted,.home-kicker) { color:#415662; }
+#lobby .home-action { color:#2d5069; background:#d3ddde; border-color:#b8cbd3; }
+#lobby .home-action:hover { background:#cadadf; }
+#lobby .home-action.primary { color:#25464d; background:#adc7bd; border-color:#7fa69f; }
+#lobby .home-action.primary :is(strong,span) { color:#25464d; }
+#screen-mode-footer { color:#415c6c; background:var(--ui-raised); border-color:#b6c8cf; }
+.screen-mode-footer :is(button,#screen-mode-auto) { color:#365c76; background:var(--ui-paper); border-color:#aec3cb; }
+.screen-mode-footer button[aria-pressed='true'] { color:#096d9a; background:#c3d8e0; border-color:#8dbdd7; }
+
+/* PC: shared status above the field, then reserve + shop as one supply station. */
+html.tactical-desktop #game-view.layout {
+ grid-template-columns:160px minmax(0,1fr) 300px var(--ranking-width);
+ grid-template-areas:'status status status status' 'equipment arena inspection ranking';
+ row-gap:10px; align-items:start;
+}
+html.tactical-desktop #game-view > .matchbar {
+ grid-area:status; position:static; min-height:62px; width:100%; padding:8px 14px;
+ display:flex; align-items:center; gap:16px;
+}
+html.tactical-desktop #game-view > .matchbar > div:first-child { display:flex; align-items:center; gap:16px; min-width:0; }
+html.tactical-desktop #game-view > .matchbar .eyebrow { font-size:14px; line-height:20px; }
+html.tactical-desktop #game-view > .matchbar h1 { margin:0; font-size:16px; line-height:22px; }
+html.tactical-desktop #game-view > .matchbar .timer { min-width:76px; padding:4px 12px; text-align:center; font-size:30px; }
+html.tactical-desktop #pc-left-rail,html.tactical-desktop #selected-unit-panel,html.tactical-desktop #player-ranking { top:8px; }
+html.tactical-desktop #pc-play-dock {
+ --reserve-cell:clamp(44px,4vw,52px);
+ display:grid; grid-template-columns:100px 100px minmax(0,1fr) 104px;
+ /* 16px title + 4px gap + 12px marker clearance + 12px padding + 2px border. */
+ grid-template-rows:calc(var(--reserve-cell) + 46px) 108px; gap:8px; padding:10px;
+}
+html.tactical-desktop #pc-play-dock #shop-economy { display:contents; }
+html.tactical-desktop #pc-play-dock #dock-gold { grid-column:1; grid-row:1; flex-wrap:wrap; gap:3px; padding:8px; border:1px solid #b7cad2; border-radius:8px; }
+html.tactical-desktop #pc-play-dock .dock-gold-label { width:100%; text-align:center; font-size:12px; }
+html.tactical-desktop #pc-play-dock #dock-gold #gold { font-size:26px; line-height:28px; }
+html.tactical-desktop #pc-play-dock #pc-growth { grid-column:2; grid-row:1; border:1px solid #b7cad2; border-radius:8px; overflow:hidden; }
+html.tactical-desktop #pc-play-dock #buy-experience { gap:2px; padding:5px 5px 5px 12px; border-radius:0; }
+html.tactical-desktop #pc-play-dock #level-label { font-size:15px; line-height:19px; }
+html.tactical-desktop #pc-play-dock #experience-label { font-size:11px; line-height:14px; }
+html.tactical-desktop #pc-play-dock #experience-label > span:first-child { display:none; }
+html.tactical-desktop #pc-play-dock #experience-purchase { flex-direction:row; justify-content:center; gap:6px; }
+html.tactical-desktop #pc-play-dock #pc-bench { grid-column:3; grid-row:1; align-self:stretch; }
+html.tactical-desktop #pc-play-dock #pc-bench .bench { height:100%; padding:6px 8px; border:1px solid #beccd1; }
+html.tactical-desktop #pc-play-dock #pc-bench .section-title { height:16px; margin:0 0 4px; font-size:12px; line-height:16px; }
+html.tactical-desktop #pc-play-dock #pc-bench .bench-list { grid-template-columns:repeat(12,var(--reserve-cell)); justify-content:space-between; gap:4px; }
+html.tactical-desktop #pc-play-dock #pc-bench .bench-slot { width:var(--reserve-cell); height:var(--reserve-cell); min-height:44px; aspect-ratio:1; }
+html.tactical-desktop #pc-play-dock #shop-control-column { grid-column:1/3; grid-row:2; border-radius:8px; overflow:hidden; }
+html.tactical-desktop #pc-play-dock #shop-control-column #reroll { flex-direction:row; gap:12px; padding:8px; border:1px solid #b0c8d1; border-radius:8px; font-size:16px; }
+html.tactical-desktop #pc-play-dock #pc-dock-reserve { grid-column:3; grid-row:2; height:108px; min-height:0; }
+html.tactical-desktop #pc-play-dock #shop-panel { height:100%; padding:0; }
+html.tactical-desktop #pc-play-dock #shop-offers { height:108px; min-height:0; grid-template-columns:repeat(5,minmax(0,1fr)); grid-template-rows:minmax(0,1fr); gap:8px; }
+html.tactical-desktop #pc-play-dock #shop-panel .shop-card { --shop-card-limit:108px; }
+html.tactical-desktop #pc-play-dock #dock-ready { grid-column:4; grid-row:1/3; grid-template-rows:44px minmax(0,1fr); border-radius:8px; }
+html.tactical-desktop #pc-play-dock #dock-ready #ready { border-radius:0 0 7px 7px; }
+html.tactical-desktop #pc-play-dock #dock-streak { min-height:44px; border-radius:7px 7px 0 0; }
+html.tactical-desktop #selected-unit-content .selection > img { width:64px; height:72px; object-fit:contain; }
+html.tactical-desktop #selected-unit-content .selection h2 { font-size:21px; line-height:26px; }
+html.tactical-desktop #inspection-tabs button { font-size:14px; }
+html.tactical-desktop #synergy-panel .synergy-current strong { font-size:13px; }
+html.tactical-desktop #synergy-panel .synergy-thresholds { font-size:12px; }
+
+@media(min-width:1280px) and (min-height:541px) {
+ html.tactical-desktop #game-view.layout { --ranking-width:170px; }
+ html.tactical-desktop #player-ranking .ranking-heading { flex-direction:row; padding:3px 4px; }
+ html.tactical-desktop #player-ranking .ranking-row { display:grid; grid-template-columns:32px minmax(0,1fr) 32px; grid-template-rows:22px 18px; gap:2px 6px; min-height:66px; padding:9px 7px 11px; text-align:left; }
+ html.tactical-desktop #player-ranking .ranking-avatar { grid-column:1; grid-row:1/3; width:30px; height:30px; font-size:13px; }
+ html.tactical-desktop #player-ranking .ranking-name { display:block; grid-column:2/4; grid-row:1; width:100%; padding-right:12px; font-size:12px; line-height:20px; color:#36566e; }
+ html.tactical-desktop #player-ranking .ranking-level { display:block; grid-column:2; grid-row:2; font-size:11px; color:#415662; }
+ html.tactical-desktop #player-ranking .ranking-health { grid-column:3; grid-row:2; font-size:16px; line-height:18px; text-align:right; }
+ html.tactical-desktop #player-ranking .ranking-tag { font-size:9px; }
+}
+@media(max-width:1100px) {
+ html.tactical-desktop #game-view.layout { --ranking-width:64px; grid-template-columns:132px minmax(0,1fr) 270px var(--ranking-width); }
+ html.tactical-desktop #pc-play-dock { grid-template-columns:76px 84px minmax(0,1fr) 80px; }
+ html.tactical-desktop #pc-play-dock #shop-control-column #reroll { font-size:14px; gap:8px; }
+ html.pc-layout #selected-unit-content .stats .stat.help-trigger strong { font-size:14px; }
+ .synergy-emblem { width:20px; height:20px; }
+ .synergy-emblem svg { width:14px; height:14px; }
+ #synergy-panel button.synergy-card.synergy-compact { gap:5px; }
+}
+html.mobile-layout .equipment-panel-icon,html.landscape-layout .equipment-panel-icon { display:none; }
+html.landscape-layout .synergy-emblem { display:none; }
+html.landscape-layout #game-view .matchbar { background:transparent; border-radius:8px; box-shadow:none; border-color:#b8c8ce; }
+html.landscape-layout #synergy-panel { box-shadow:none; }
+html.landscape-layout #inspection-tabs { position:static; }
+html.landscape-layout #shop-panel .shop-unit-info strong { font-size:11px; line-height:13px; }
+@media(prefers-reduced-motion:no-preference) { #inspection-tabs button,#player-ranking .ranking-row { transition:background-color .12s,border-color .12s; } }
+html[data-reduced-motion='true'] :is(#inspection-tabs button,#player-ranking .ranking-row) { transition:none; }

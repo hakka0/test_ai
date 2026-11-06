@@ -1,0 +1,47 @@
+{
+  "version": "0.20.72",
+  "states": [
+    "home",
+    "unit-panel",
+    "unit-dialog",
+    "skill-tooltip",
+    "info-connection",
+    "info-help",
+    "info-debug",
+    "history",
+    "history-result",
+    "reward",
+    "reward-peek",
+    "item-recipes"
+  ],
+  "normalTextMinimumContrast": 4.5,
+  "largeTextAndSymbolMinimumContrast": 3,
+  "contrastFailures": [],
+  "opaqueDarkSurfaceFailures": [],
+  "palette": {
+    ".arena-panel": {
+      "background": "rgb(220, 227, 223)",
+      "color": "rgb(33, 57, 76)"
+    },
+    "#pc-play-dock": {
+      "background": "rgb(220, 227, 223)",
+      "color": "rgb(33, 57, 76)"
+    },
+    "#selected-unit-panel": {
+      "background": "rgb(220, 227, 223)",
+      "color": "rgb(33, 57, 76)"
+    },
+    "#player-ranking": {
+      "background": "rgb(220, 227, 223)",
+      "color": "rgb(33, 57, 76)"
+    },
+    "#ready": {
+      "background": "rgb(173, 199, 189)",
+      "color": "rgb(37, 70, 77)"
+    }
+  },
+  "paperRelativeLuminance": 0.7548152702324861,
+  "reductionFromPreviousWhitePaper": 0.24518472976751393,
+  "errors": [],
+  "scope": "Computed DOM colors at 1400x1000; disabled controls omitted. Artwork/canvas and photographic textures are outside text contrast measurement."
+}

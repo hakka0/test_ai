@@ -1,0 +1,1675 @@
+{
+  "version": "0.20.49",
+  "browser": "155.0.8059.85",
+  "results": [
+    {
+      "mode": "pc",
+      "width": 1400,
+      "height": 1000,
+      "profile": {
+        "x": 503,
+        "y": 160,
+        "width": 58,
+        "height": 68
+      },
+      "button": {
+        "x": 737.90625,
+        "y": 59,
+        "width": 58,
+        "height": 68
+      },
+      "colors": {
+        "upgrade": "rgb(121, 186, 255)",
+        "rarity": "rgb(255, 216, 74)",
+        "text": "★·★3·3G"
+      },
+      "overlay": {
+        "text": "판매",
+        "color": "rgba(139, 32, 32, 0.91)",
+        "rect": {
+          "x": 193,
+          "y": 853,
+          "width": 1070,
+          "height": 128,
+          "top": 853,
+          "right": 1263,
+          "bottom": 981,
+          "left": 193
+        },
+        "label": {
+          "x": 697.046875,
+          "y": 896.59375,
+          "width": 61.890625,
+          "height": 40.796875,
+          "top": 896.59375,
+          "right": 758.9375,
+          "bottom": 937.390625,
+          "left": 697.046875
+        },
+        "ghost": {
+          "x": 688.3775024414062,
+          "y": 763.921875,
+          "width": 79.234375,
+          "height": 121.078125,
+          "top": 763.921875,
+          "right": 767.6118774414062,
+          "bottom": 885,
+          "left": 688.3775024414062
+        }
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 282.5,
+          "y": 126,
+          "width": 587,
+          "height": 587,
+          "top": 126,
+          "right": 869.5,
+          "bottom": 713,
+          "left": 282.5
+        },
+        "shop": {
+          "x": 24,
+          "y": 852,
+          "width": 1352,
+          "height": 130,
+          "top": 852,
+          "right": 1376,
+          "bottom": 982,
+          "left": 24
+        },
+        "bench": {
+          "x": 203,
+          "y": 713,
+          "width": 746,
+          "height": 103.171875,
+          "top": 713,
+          "right": 949,
+          "bottom": 816.171875,
+          "left": 203
+        },
+        "rank": {
+          "x": 1294,
+          "y": 64,
+          "width": 76,
+          "height": 182,
+          "top": 64,
+          "right": 1370,
+          "bottom": 246,
+          "left": 1294
+        },
+        "targets": [
+          {
+            "x": 246.390625,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 358.390625,
+            "bottom": 973,
+            "left": 246.390625
+          },
+          {
+            "x": 459.1875,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 571.1875,
+            "bottom": 973,
+            "left": 459.1875
+          },
+          {
+            "x": 671.984375,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 783.984375,
+            "bottom": 973,
+            "left": 671.984375
+          },
+          {
+            "x": 884.78125,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 996.78125,
+            "bottom": 973,
+            "left": 884.78125
+          },
+          {
+            "x": 1097.59375,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 1209.59375,
+            "bottom": 973,
+            "left": 1097.59375
+          },
+          {
+            "x": 1300,
+            "y": 114,
+            "width": 64,
+            "height": 60,
+            "top": 114,
+            "right": 1364,
+            "bottom": 174,
+            "left": 1300
+          },
+          {
+            "x": 1300,
+            "y": 178,
+            "width": 64,
+            "height": 60,
+            "top": 178,
+            "right": 1364,
+            "bottom": 238,
+            "left": 1300
+          }
+        ],
+        "blueStars": []
+      }
+    },
+    {
+      "mode": "pc",
+      "width": 1024,
+      "height": 768,
+      "profile": {
+        "x": 315,
+        "y": 148.40625,
+        "width": 58,
+        "height": 68
+      },
+      "button": {
+        "x": 549.90625,
+        "y": 47.40625,
+        "width": 58,
+        "height": 68
+      },
+      "colors": {
+        "upgrade": "rgb(121, 186, 255)",
+        "rarity": "rgb(255, 216, 74)",
+        "text": "★·★3·3G"
+      },
+      "overlay": {
+        "text": "판매",
+        "color": "rgba(139, 32, 32, 0.91)",
+        "rect": {
+          "x": 181,
+          "y": 627,
+          "width": 718,
+          "height": 128,
+          "top": 627,
+          "right": 899,
+          "bottom": 755,
+          "left": 181
+        },
+        "label": {
+          "x": 512.03125,
+          "y": 672.5625,
+          "width": 55.921875,
+          "height": 36.859375,
+          "top": 672.5625,
+          "right": 567.953125,
+          "bottom": 709.421875,
+          "left": 512.03125
+        },
+        "ghost": {
+          "x": 511,
+          "y": 563.40625,
+          "width": 58,
+          "height": 95.59375,
+          "top": 563.40625,
+          "right": 569,
+          "bottom": 659,
+          "left": 511
+        }
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 216.5,
+          "y": 126,
+          "width": 375,
+          "height": 375,
+          "top": 126,
+          "right": 591.5,
+          "bottom": 501,
+          "left": 216.5
+        },
+        "shop": {
+          "x": 12,
+          "y": 626,
+          "width": 1000,
+          "height": 130,
+          "top": 626,
+          "right": 1012,
+          "bottom": 756,
+          "left": 12
+        },
+        "bench": {
+          "x": 165,
+          "y": 501,
+          "width": 478,
+          "height": 90,
+          "top": 501,
+          "right": 643,
+          "bottom": 591,
+          "left": 165
+        },
+        "rank": {
+          "x": 948,
+          "y": 64,
+          "width": 64,
+          "height": 182,
+          "top": 64,
+          "right": 1012,
+          "bottom": 246,
+          "left": 948
+        },
+        "targets": [
+          {
+            "x": 199.1875,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 311.1875,
+            "bottom": 747,
+            "left": 199.1875
+          },
+          {
+            "x": 341.59375,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 453.59375,
+            "bottom": 747,
+            "left": 341.59375
+          },
+          {
+            "x": 483.984375,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 595.984375,
+            "bottom": 747,
+            "left": 483.984375
+          },
+          {
+            "x": 626.390625,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 738.390625,
+            "bottom": 747,
+            "left": 626.390625
+          },
+          {
+            "x": 768.78125,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 880.78125,
+            "bottom": 747,
+            "left": 768.78125
+          },
+          {
+            "x": 954,
+            "y": 114,
+            "width": 52,
+            "height": 60,
+            "top": 114,
+            "right": 1006,
+            "bottom": 174,
+            "left": 954
+          },
+          {
+            "x": 954,
+            "y": 178,
+            "width": 52,
+            "height": 60,
+            "top": 178,
+            "right": 1006,
+            "bottom": 238,
+            "left": 954
+          }
+        ],
+        "blueStars": []
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "profile": {
+        "x": 32,
+        "y": 152.203125,
+        "width": 58,
+        "height": 68
+      },
+      "button": {
+        "x": 198.90625,
+        "y": 51.203125,
+        "width": 58,
+        "height": 68
+      },
+      "colors": {
+        "upgrade": "rgb(121, 186, 255)",
+        "rarity": "rgb(255, 216, 74)",
+        "text": "★·★3·3G"
+      },
+      "overlay": {
+        "text": "판매",
+        "color": "rgba(139, 32, 32, 0.91)",
+        "rect": {
+          "x": 133,
+          "y": 623,
+          "width": 196,
+          "height": 214,
+          "top": 623,
+          "right": 329,
+          "bottom": 837,
+          "left": 133
+        },
+        "label": {
+          "x": 212.796875,
+          "y": 718,
+          "width": 36.40625,
+          "height": 24,
+          "top": 718,
+          "right": 249.203125,
+          "bottom": 742,
+          "left": 212.796875
+        },
+        "ghost": {
+          "x": 202,
+          "y": 602.40625,
+          "width": 58,
+          "height": 95.59375,
+          "top": 602.40625,
+          "right": 260,
+          "bottom": 698,
+          "left": 202
+        }
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 39.4375,
+          "y": 156,
+          "width": 251.109375,
+          "height": 251.109375,
+          "top": 156,
+          "right": 290.546875,
+          "bottom": 407.109375,
+          "left": 39.4375
+        },
+        "shop": {
+          "x": 6,
+          "y": 622,
+          "width": 378,
+          "height": 216,
+          "top": 622,
+          "right": 384,
+          "bottom": 838,
+          "left": 6
+        },
+        "bench": {
+          "x": 7,
+          "y": 407.109375,
+          "width": 316,
+          "height": 94,
+          "top": 407.109375,
+          "right": 323,
+          "bottom": 501.109375,
+          "left": 7
+        },
+        "rank": {
+          "x": 328,
+          "y": 56,
+          "width": 56,
+          "height": 152,
+          "top": 56,
+          "right": 384,
+          "bottom": 208,
+          "left": 328
+        },
+        "targets": [
+          {
+            "x": 153,
+            "y": 630.671875,
+            "width": 64,
+            "height": 64,
+            "top": 630.671875,
+            "right": 217,
+            "bottom": 694.671875,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 630.671875,
+            "width": 64,
+            "height": 64,
+            "top": 630.671875,
+            "right": 309,
+            "bottom": 694.671875,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 698,
+            "width": 64,
+            "height": 64,
+            "top": 698,
+            "right": 217,
+            "bottom": 762,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 698,
+            "width": 64,
+            "height": 64,
+            "top": 698,
+            "right": 309,
+            "bottom": 762,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 765.328125,
+            "width": 64,
+            "height": 64,
+            "top": 765.328125,
+            "right": 217,
+            "bottom": 829.328125,
+            "left": 153
+          },
+          {
+            "x": 334,
+            "y": 100,
+            "width": 44,
+            "height": 48,
+            "top": 100,
+            "right": 378,
+            "bottom": 148,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 152,
+            "width": 44,
+            "height": 48,
+            "top": 152,
+            "right": 378,
+            "bottom": 200,
+            "left": 334
+          }
+        ],
+        "blueStars": []
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 320,
+      "height": 740,
+      "profile": {
+        "x": 32,
+        "y": 147,
+        "width": 58,
+        "height": 68
+      },
+      "button": {
+        "x": 128.90625,
+        "y": 46,
+        "width": 58,
+        "height": 68
+      },
+      "colors": {
+        "upgrade": "rgb(121, 186, 255)",
+        "rarity": "rgb(255, 216, 74)",
+        "text": "★·★3·3G"
+      },
+      "overlay": {
+        "text": "판매",
+        "color": "rgba(139, 32, 32, 0.91)",
+        "rect": {
+          "x": 133,
+          "y": 519,
+          "width": 126,
+          "height": 214,
+          "top": 519,
+          "right": 259,
+          "bottom": 733,
+          "left": 133
+        },
+        "label": {
+          "x": 177.796875,
+          "y": 614,
+          "width": 36.40625,
+          "height": 24,
+          "top": 614,
+          "right": 214.203125,
+          "bottom": 638,
+          "left": 177.796875
+        },
+        "ghost": {
+          "x": 167,
+          "y": 498.40625,
+          "width": 58,
+          "height": 95.59375,
+          "top": 498.40625,
+          "right": 225,
+          "bottom": 594,
+          "left": 167
+        }
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 33.140625,
+          "y": 156,
+          "width": 193.71875,
+          "height": 193.71875,
+          "top": 156,
+          "right": 226.859375,
+          "bottom": 349.71875,
+          "left": 33.140625
+        },
+        "shop": {
+          "x": 6,
+          "y": 518,
+          "width": 308,
+          "height": 216,
+          "top": 518,
+          "right": 314,
+          "bottom": 734,
+          "left": 6
+        },
+        "bench": {
+          "x": 7,
+          "y": 349.71875,
+          "width": 246,
+          "height": 94,
+          "top": 349.71875,
+          "right": 253,
+          "bottom": 443.71875,
+          "left": 7
+        },
+        "rank": {
+          "x": 258,
+          "y": 56,
+          "width": 56,
+          "height": 152,
+          "top": 56,
+          "right": 314,
+          "bottom": 208,
+          "left": 258
+        },
+        "targets": [
+          {
+            "x": 141,
+            "y": 532.15625,
+            "width": 53,
+            "height": 53,
+            "top": 532.15625,
+            "right": 194,
+            "bottom": 585.15625,
+            "left": 141
+          },
+          {
+            "x": 198,
+            "y": 532.15625,
+            "width": 53,
+            "height": 53,
+            "top": 532.15625,
+            "right": 251,
+            "bottom": 585.15625,
+            "left": 198
+          },
+          {
+            "x": 141,
+            "y": 599.484375,
+            "width": 53,
+            "height": 53,
+            "top": 599.484375,
+            "right": 194,
+            "bottom": 652.484375,
+            "left": 141
+          },
+          {
+            "x": 198,
+            "y": 599.484375,
+            "width": 53,
+            "height": 53,
+            "top": 599.484375,
+            "right": 251,
+            "bottom": 652.484375,
+            "left": 198
+          },
+          {
+            "x": 141,
+            "y": 666.8125,
+            "width": 53,
+            "height": 53,
+            "top": 666.8125,
+            "right": 194,
+            "bottom": 719.8125,
+            "left": 141
+          },
+          {
+            "x": 264,
+            "y": 100,
+            "width": 44,
+            "height": 48,
+            "top": 100,
+            "right": 308,
+            "bottom": 148,
+            "left": 264
+          },
+          {
+            "x": 264,
+            "y": 152,
+            "width": 44,
+            "height": 48,
+            "top": 152,
+            "right": 308,
+            "bottom": 200,
+            "left": 264
+          }
+        ],
+        "blueStars": []
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 844,
+      "height": 390,
+      "profile": {
+        "x": 225,
+        "y": 25.5,
+        "width": 58,
+        "height": 68
+      },
+      "button": {
+        "x": 459.90625,
+        "y": 28.5,
+        "width": 58,
+        "height": 68
+      },
+      "colors": {
+        "upgrade": "rgb(121, 186, 255)",
+        "rarity": "rgb(255, 216, 74)",
+        "text": "★·★3·3G"
+      },
+      "overlay": {
+        "text": "판매",
+        "color": "rgba(139, 32, 32, 0.91)",
+        "rect": {
+          "x": 638.6875,
+          "y": 53,
+          "width": 90.3125,
+          "height": 330,
+          "top": 53,
+          "right": 729,
+          "bottom": 383,
+          "left": 638.6875
+        },
+        "label": {
+          "x": 660.796875,
+          "y": 202.8125,
+          "width": 46.09375,
+          "height": 30.375,
+          "top": 202.8125,
+          "right": 706.890625,
+          "bottom": 233.1875,
+          "left": 660.796875
+        },
+        "ghost": {
+          "x": 654.84375,
+          "y": 90.40625,
+          "width": 58,
+          "height": 95.59375,
+          "top": 90.40625,
+          "right": 712.84375,
+          "bottom": 186,
+          "left": 654.84375
+        }
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 88.328125,
+          "y": 57,
+          "width": 231,
+          "height": 231,
+          "top": 57,
+          "right": 319.328125,
+          "bottom": 288,
+          "left": 88.328125
+        },
+        "shop": {
+          "x": 539.6875,
+          "y": 52,
+          "width": 236.3125,
+          "height": 332,
+          "top": 52,
+          "right": 776,
+          "bottom": 384,
+          "left": 539.6875
+        },
+        "bench": {
+          "x": 13,
+          "y": 292,
+          "width": 381.671875,
+          "height": 87,
+          "top": 292,
+          "right": 394.671875,
+          "bottom": 379,
+          "left": 13
+        },
+        "rank": {
+          "x": 782,
+          "y": 52,
+          "width": 56,
+          "height": 142,
+          "top": 52,
+          "right": 838,
+          "bottom": 194,
+          "left": 782
+        },
+        "targets": [
+          {
+            "x": 659.84375,
+            "y": 66.796875,
+            "width": 48,
+            "height": 48,
+            "top": 66.796875,
+            "right": 707.84375,
+            "bottom": 114.796875,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 130.390625,
+            "width": 48,
+            "height": 48,
+            "top": 130.390625,
+            "right": 707.84375,
+            "bottom": 178.390625,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 193.984375,
+            "width": 48,
+            "height": 48,
+            "top": 193.984375,
+            "right": 707.84375,
+            "bottom": 241.984375,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 257.59375,
+            "width": 48,
+            "height": 48,
+            "top": 257.59375,
+            "right": 707.84375,
+            "bottom": 305.59375,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 321.1875,
+            "width": 48,
+            "height": 48,
+            "top": 321.1875,
+            "right": 707.84375,
+            "bottom": 369.1875,
+            "left": 659.84375
+          },
+          {
+            "x": 788,
+            "y": 96,
+            "width": 44,
+            "height": 44,
+            "top": 96,
+            "right": 832,
+            "bottom": 140,
+            "left": 788
+          },
+          {
+            "x": 788,
+            "y": 142,
+            "width": 44,
+            "height": 44,
+            "top": 142,
+            "right": 832,
+            "bottom": 186,
+            "left": 788
+          }
+        ],
+        "blueStars": []
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 740,
+      "height": 360,
+      "profile": {
+        "x": 173,
+        "y": -283,
+        "width": 58,
+        "height": 68
+      },
+      "button": {
+        "x": 407.90625,
+        "y": 27,
+        "width": 58,
+        "height": 68
+      },
+      "colors": {
+        "upgrade": "rgb(121, 186, 255)",
+        "rarity": "rgb(255, 216, 74)",
+        "text": "★·★3·3G"
+      },
+      "overlay": {
+        "text": "판매",
+        "color": "rgba(139, 32, 32, 0.91)",
+        "rect": {
+          "x": 563,
+          "y": 53,
+          "width": 62,
+          "height": 300,
+          "top": 53,
+          "right": 625,
+          "bottom": 353,
+          "left": 563
+        },
+        "label": {
+          "x": 573.796875,
+          "y": 189.671875,
+          "width": 40.40625,
+          "height": 26.640625,
+          "top": 189.671875,
+          "right": 614.203125,
+          "bottom": 216.3125,
+          "left": 573.796875
+        },
+        "ghost": {
+          "x": 565,
+          "y": 75.40625,
+          "width": 58,
+          "height": 95.59375,
+          "top": 75.40625,
+          "right": 623,
+          "bottom": 171,
+          "left": 565
+        }
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 65.5,
+          "y": 57,
+          "width": 201,
+          "height": 201,
+          "top": 57,
+          "right": 266.5,
+          "bottom": 258,
+          "left": 65.5
+        },
+        "shop": {
+          "x": 464,
+          "y": 52,
+          "width": 208,
+          "height": 302,
+          "top": 52,
+          "right": 672,
+          "bottom": 354,
+          "left": 464
+        },
+        "bench": {
+          "x": 13,
+          "y": 262,
+          "width": 306,
+          "height": 87,
+          "top": 262,
+          "right": 319,
+          "bottom": 349,
+          "left": 13
+        },
+        "rank": {
+          "x": 678,
+          "y": 52,
+          "width": 56,
+          "height": 142,
+          "top": 52,
+          "right": 734,
+          "bottom": 194,
+          "left": 678
+        },
+        "targets": [
+          {
+            "x": 571,
+            "y": 64.796875,
+            "width": 46,
+            "height": 46,
+            "top": 64.796875,
+            "right": 617,
+            "bottom": 110.796875,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 122.390625,
+            "width": 46,
+            "height": 46,
+            "top": 122.390625,
+            "right": 617,
+            "bottom": 168.390625,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 179.984375,
+            "width": 46,
+            "height": 46,
+            "top": 179.984375,
+            "right": 617,
+            "bottom": 225.984375,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 237.59375,
+            "width": 46,
+            "height": 46,
+            "top": 237.59375,
+            "right": 617,
+            "bottom": 283.59375,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 295.1875,
+            "width": 46,
+            "height": 46,
+            "top": 295.1875,
+            "right": 617,
+            "bottom": 341.1875,
+            "left": 571
+          },
+          {
+            "x": 684,
+            "y": 96,
+            "width": 44,
+            "height": 44,
+            "top": 96,
+            "right": 728,
+            "bottom": 140,
+            "left": 684
+          },
+          {
+            "x": 684,
+            "y": 142,
+            "width": 44,
+            "height": 44,
+            "top": 142,
+            "right": 728,
+            "bottom": 186,
+            "left": 684
+          }
+        ],
+        "blueStars": []
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 667,
+      "height": 375,
+      "profile": {
+        "x": 136.5,
+        "y": -302.25,
+        "width": 58,
+        "height": 68
+      },
+      "button": {
+        "x": 371.40625,
+        "y": 27.75,
+        "width": 58,
+        "height": 68
+      },
+      "colors": {
+        "upgrade": "rgb(121, 186, 255)",
+        "rarity": "rgb(255, 216, 74)",
+        "text": "★·★3·3G"
+      },
+      "overlay": {
+        "text": "판매",
+        "color": "rgba(139, 32, 32, 0.91)",
+        "rect": {
+          "x": 490,
+          "y": 53,
+          "width": 62,
+          "height": 315,
+          "top": 53,
+          "right": 552,
+          "bottom": 368,
+          "left": 490
+        },
+        "label": {
+          "x": 502.78125,
+          "y": 198.484375,
+          "width": 36.421875,
+          "height": 24.015625,
+          "top": 198.484375,
+          "right": 539.203125,
+          "bottom": 222.5,
+          "left": 502.78125
+        },
+        "ghost": {
+          "x": 492,
+          "y": 82.90625,
+          "width": 58,
+          "height": 95.59375,
+          "top": 82.90625,
+          "right": 550,
+          "bottom": 178.5,
+          "left": 492
+        }
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 43.5,
+          "y": 57,
+          "width": 216,
+          "height": 216,
+          "top": 57,
+          "right": 259.5,
+          "bottom": 273,
+          "left": 43.5
+        },
+        "shop": {
+          "x": 391,
+          "y": 52,
+          "width": 208,
+          "height": 317,
+          "top": 52,
+          "right": 599,
+          "bottom": 369,
+          "left": 391
+        },
+        "bench": {
+          "x": 13,
+          "y": 277,
+          "width": 277,
+          "height": 87,
+          "top": 277,
+          "right": 290,
+          "bottom": 364,
+          "left": 13
+        },
+        "rank": {
+          "x": 605,
+          "y": 52,
+          "width": 56,
+          "height": 142,
+          "top": 52,
+          "right": 661,
+          "bottom": 194,
+          "left": 605
+        },
+        "targets": [
+          {
+            "x": 498,
+            "y": 66.296875,
+            "width": 46,
+            "height": 46,
+            "top": 66.296875,
+            "right": 544,
+            "bottom": 112.296875,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 126.890625,
+            "width": 46,
+            "height": 46,
+            "top": 126.890625,
+            "right": 544,
+            "bottom": 172.890625,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 187.484375,
+            "width": 46,
+            "height": 46,
+            "top": 187.484375,
+            "right": 544,
+            "bottom": 233.484375,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 248.09375,
+            "width": 46,
+            "height": 46,
+            "top": 248.09375,
+            "right": 544,
+            "bottom": 294.09375,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 308.6875,
+            "width": 46,
+            "height": 46,
+            "top": 308.6875,
+            "right": 544,
+            "bottom": 354.6875,
+            "left": 498
+          },
+          {
+            "x": 611,
+            "y": 96,
+            "width": 44,
+            "height": 44,
+            "top": 96,
+            "right": 655,
+            "bottom": 140,
+            "left": 611
+          },
+          {
+            "x": 611,
+            "y": 142,
+            "width": 44,
+            "height": 44,
+            "top": 142,
+            "right": 655,
+            "bottom": 186,
+            "left": 611
+          }
+        ],
+        "blueStars": []
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 480,
+      "height": 320,
+      "profile": {
+        "x": 43,
+        "y": -316,
+        "width": 58,
+        "height": 68
+      },
+      "button": {
+        "x": 277.90625,
+        "y": 25,
+        "width": 58,
+        "height": 68
+      },
+      "colors": {
+        "upgrade": "rgb(121, 186, 255)",
+        "rarity": "rgb(255, 216, 74)",
+        "text": "★·★3·3G"
+      },
+      "overlay": {
+        "text": "판매",
+        "color": "rgba(139, 32, 32, 0.91)",
+        "rect": {
+          "x": 303,
+          "y": 57,
+          "width": 62,
+          "height": 256,
+          "top": 57,
+          "right": 365,
+          "bottom": 313,
+          "left": 303
+        },
+        "label": {
+          "x": 315.796875,
+          "y": 173,
+          "width": 36.40625,
+          "height": 24,
+          "top": 173,
+          "right": 352.203125,
+          "bottom": 197,
+          "left": 315.796875
+        },
+        "ghost": {
+          "x": 305,
+          "y": 57.40625,
+          "width": 58,
+          "height": 95.59375,
+          "top": 57.40625,
+          "right": 363,
+          "bottom": 153,
+          "left": 305
+        }
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 39,
+          "y": 61,
+          "width": 62,
+          "height": 62,
+          "top": 61,
+          "right": 101,
+          "bottom": 123,
+          "left": 39
+        },
+        "shop": {
+          "x": 204,
+          "y": 56,
+          "width": 208,
+          "height": 258,
+          "top": 56,
+          "right": 412,
+          "bottom": 314,
+          "left": 204
+        },
+        "bench": {
+          "x": 13,
+          "y": 127,
+          "width": 114,
+          "height": 87,
+          "top": 127,
+          "right": 127,
+          "bottom": 214,
+          "left": 13
+        },
+        "rank": {
+          "x": 418,
+          "y": 56,
+          "width": 56,
+          "height": 106,
+          "top": 56,
+          "right": 474,
+          "bottom": 162,
+          "left": 418
+        },
+        "targets": [
+          {
+            "x": 311,
+            "y": 64.40625,
+            "width": 46,
+            "height": 46,
+            "top": 64.40625,
+            "right": 357,
+            "bottom": 110.40625,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 113.203125,
+            "width": 46,
+            "height": 46,
+            "top": 113.203125,
+            "right": 357,
+            "bottom": 159.203125,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 162,
+            "width": 46,
+            "height": 46,
+            "top": 162,
+            "right": 357,
+            "bottom": 208,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 210.796875,
+            "width": 46,
+            "height": 46,
+            "top": 210.796875,
+            "right": 357,
+            "bottom": 256.796875,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 259.59375,
+            "width": 46,
+            "height": 46,
+            "top": 259.59375,
+            "right": 357,
+            "bottom": 305.59375,
+            "left": 311
+          },
+          {
+            "x": 424,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "top": 64,
+            "right": 468,
+            "bottom": 108,
+            "left": 424
+          },
+          {
+            "x": 424,
+            "y": 110,
+            "width": 44,
+            "height": 44,
+            "top": 110,
+            "right": 468,
+            "bottom": 154,
+            "left": 424
+          }
+        ],
+        "blueStars": []
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "profile": {
+        "x": 32,
+        "y": 152.203125,
+        "width": 58,
+        "height": 68
+      },
+      "button": {
+        "x": 198.90625,
+        "y": 51.203125,
+        "width": 58,
+        "height": 68
+      },
+      "colors": {
+        "upgrade": "rgb(121, 186, 255)",
+        "rarity": "rgb(255, 216, 74)",
+        "text": "★·★3·3G"
+      },
+      "overlay": {
+        "text": "판매",
+        "color": "rgba(139, 32, 32, 0.91)",
+        "rect": {
+          "x": 133,
+          "y": 623,
+          "width": 196,
+          "height": 214,
+          "top": 623,
+          "right": 329,
+          "bottom": 837,
+          "left": 133
+        },
+        "label": {
+          "x": 212.796875,
+          "y": 718,
+          "width": 36.40625,
+          "height": 24,
+          "top": 718,
+          "right": 249.203125,
+          "bottom": 742,
+          "left": 212.796875
+        },
+        "ghost": {
+          "x": 202,
+          "y": 602.40625,
+          "width": 58,
+          "height": 95.59375,
+          "top": 602.40625,
+          "right": 260,
+          "bottom": 698,
+          "left": 202
+        }
+      },
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 39.4375,
+          "y": 156,
+          "width": 251.109375,
+          "height": 251.109375,
+          "top": 156,
+          "right": 290.546875,
+          "bottom": 407.109375,
+          "left": 39.4375
+        },
+        "shop": {
+          "x": 6,
+          "y": 622,
+          "width": 378,
+          "height": 216,
+          "top": 622,
+          "right": 384,
+          "bottom": 838,
+          "left": 6
+        },
+        "bench": {
+          "x": 7,
+          "y": 407.109375,
+          "width": 316,
+          "height": 94,
+          "top": 407.109375,
+          "right": 323,
+          "bottom": 501.109375,
+          "left": 7
+        },
+        "rank": {
+          "x": 328,
+          "y": 56,
+          "width": 56,
+          "height": 152,
+          "top": 56,
+          "right": 384,
+          "bottom": 208,
+          "left": 328
+        },
+        "targets": [
+          {
+            "x": 153,
+            "y": 630.671875,
+            "width": 64,
+            "height": 64,
+            "top": 630.671875,
+            "right": 217,
+            "bottom": 694.671875,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 630.671875,
+            "width": 64,
+            "height": 64,
+            "top": 630.671875,
+            "right": 309,
+            "bottom": 694.671875,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 698,
+            "width": 64,
+            "height": 64,
+            "top": 698,
+            "right": 217,
+            "bottom": 762,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 698,
+            "width": 64,
+            "height": 64,
+            "top": 698,
+            "right": 309,
+            "bottom": 762,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 765.328125,
+            "width": 64,
+            "height": 64,
+            "top": 765.328125,
+            "right": 217,
+            "bottom": 829.328125,
+            "left": 153
+          },
+          {
+            "x": 334,
+            "y": 100,
+            "width": 44,
+            "height": 48,
+            "top": 100,
+            "right": 378,
+            "bottom": 148,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 152,
+            "width": 44,
+            "height": 48,
+            "top": 152,
+            "right": 378,
+            "bottom": 200,
+            "left": 334
+          }
+        ],
+        "blueStars": []
+      }
+    }
+  ],
+  "extra": [
+    {
+      "mode": "pc",
+      "width": 1400,
+      "height": 1000,
+      "maxKinds": [
+        "knight",
+        "ranger"
+      ],
+      "soldRank": 3,
+      "opponentLocked": true,
+      "combatSale": true,
+      "frozenFighters": true
+    },
+    {
+      "mode": "pc",
+      "width": 1024,
+      "height": 768,
+      "maxKinds": [
+        "knight",
+        "ranger"
+      ],
+      "soldRank": 3,
+      "opponentLocked": true,
+      "combatSale": true,
+      "frozenFighters": true
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "maxKinds": [
+        "knight",
+        "ranger"
+      ],
+      "soldRank": 3,
+      "opponentLocked": true,
+      "combatSale": true,
+      "frozenFighters": true
+    },
+    {
+      "mode": "mobile",
+      "width": 320,
+      "height": 740,
+      "maxKinds": [
+        "knight",
+        "ranger"
+      ],
+      "soldRank": 3,
+      "opponentLocked": true,
+      "combatSale": true,
+      "frozenFighters": true
+    },
+    {
+      "mode": "mobile",
+      "width": 844,
+      "height": 390,
+      "maxKinds": [
+        "knight",
+        "ranger"
+      ],
+      "soldRank": 3,
+      "opponentLocked": true,
+      "combatSale": true,
+      "frozenFighters": true
+    },
+    {
+      "mode": "mobile",
+      "width": 740,
+      "height": 360,
+      "maxKinds": [
+        "knight",
+        "ranger"
+      ],
+      "soldRank": 3,
+      "opponentLocked": true,
+      "combatSale": true,
+      "frozenFighters": true
+    },
+    {
+      "mode": "mobile",
+      "width": 667,
+      "height": 375,
+      "maxKinds": [
+        "knight",
+        "ranger"
+      ],
+      "soldRank": 3,
+      "opponentLocked": true,
+      "combatSale": true,
+      "frozenFighters": true
+    },
+    {
+      "mode": "mobile",
+      "width": 480,
+      "height": 320,
+      "maxKinds": [
+        "knight",
+        "ranger"
+      ],
+      "soldRank": 3,
+      "opponentLocked": true,
+      "combatSale": true,
+      "frozenFighters": true
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "maxKinds": [
+        "knight",
+        "ranger"
+      ],
+      "soldRank": 3,
+      "opponentLocked": true,
+      "combatSale": true,
+      "frozenFighters": true
+    }
+  ],
+  "errors": [],
+  "fixture": "Real two-player server, no modified snapshots"
+}

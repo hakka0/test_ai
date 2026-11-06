@@ -1,0 +1,298 @@
+{
+  "version": "0.20.15",
+  "browser": "155.0.8059.41",
+  "results": [
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "red",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "yellow",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "blue",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "purple",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "red",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "red",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "yellow",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "blue",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "purple",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "red",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "red",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "yellow",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "blue",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "purple",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "red",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "red",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "yellow",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "blue",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "purple",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "red",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "layers": true,
+      "taper": true,
+      "directionalSparks": true
+    }
+  ],
+  "reducedMotion": true,
+  "cleanup": true,
+  "particleLimit": true,
+  "errors": []
+}

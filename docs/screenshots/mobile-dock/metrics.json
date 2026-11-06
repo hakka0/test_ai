@@ -1,0 +1,76 @@
+{
+  "browser": "138.0.7204.0",
+  "measurements": [
+    {
+      "width": 390,
+      "height": 844,
+      "board": 376,
+      "boardBottom": 506.5,
+      "arenaBottom": 528,
+      "dockTop": 570.25,
+      "dockHeight": 273.75,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "board": 306,
+      "boardBottom": 436.5,
+      "arenaBottom": 458,
+      "dockTop": 466.25,
+      "dockHeight": 273.75,
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "board": 216,
+      "boardBottom": 346.5,
+      "arenaBottom": 360,
+      "dockTop": 366.25,
+      "dockHeight": 273.75,
+      "overflow": false
+    },
+    {
+      "width": 414,
+      "height": 896,
+      "board": 400,
+      "boardBottom": 530.5,
+      "arenaBottom": 552,
+      "dockTop": 622.25,
+      "dockHeight": 273.75,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "board": 480,
+      "boardBottom": 610.5,
+      "arenaBottom": 632,
+      "dockTop": 750.25,
+      "dockHeight": 273.75,
+      "overflow": false
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "board": 180,
+      "boardBottom": 306.5,
+      "arenaBottom": 245,
+      "dockTop": 249.25,
+      "dockHeight": 140.75,
+      "overflow": false
+    },
+    {
+      "width": 480,
+      "height": 320,
+      "board": 180,
+      "boardBottom": 310.5,
+      "arenaBottom": 122,
+      "dockTop": 128,
+      "dockHeight": 192,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,907 @@
+{
+  "version": "0.20.16",
+  "browser": "155.0.8059.41",
+  "results": [
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "red",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "red",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "red",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "red",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "yellow",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "yellow",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "yellow",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "yellow",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "blue",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "blue",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "blue",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "blue",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "purple",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "purple",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "purple",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "purple",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "red",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "red",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "red",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "red",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "red",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "red",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "red",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "red",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "yellow",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "yellow",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "yellow",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "yellow",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "blue",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "blue",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "blue",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "blue",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "purple",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "purple",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "purple",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "purple",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "red",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "red",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "red",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "red",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "red",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "red",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "red",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "red",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "yellow",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "yellow",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "yellow",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "yellow",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "blue",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "blue",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "blue",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "blue",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "purple",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "purple",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "purple",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "attack",
+      "attribute": "purple",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "red",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "red",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "red",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "red",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "red",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "red",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "red",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "red",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "yellow",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "yellow",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "yellow",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "yellow",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "blue",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "blue",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "blue",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "blue",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "purple",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "purple",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "purple",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "attack",
+      "attribute": "purple",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "red",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "red",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "red",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "red",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "yellow",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "blue",
+      "scenario": "renewed"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "scenario": "absorb"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "scenario": "exact-break"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "scenario": "overflow"
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "type": "skillDamage",
+      "attribute": "purple",
+      "scenario": "renewed"
+    }
+  ],
+  "healthTrail": true,
+  "healing": true,
+  "reducedMotion": true,
+  "cleanup": true,
+  "errors": []
+}

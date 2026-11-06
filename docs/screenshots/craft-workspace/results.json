@@ -1,0 +1,1492 @@
+{
+  "version": "0.20.27",
+  "browser": "155.0.8059.84",
+  "results": [
+    {
+      "mode": "pc",
+      "width": 1400,
+      "height": 1000,
+      "placement": "side",
+      "dialog": {
+        "x": 200,
+        "y": 56,
+        "width": 400,
+        "height": 936.1875,
+        "top": 56,
+        "right": 600,
+        "bottom": 992.1875,
+        "left": 200
+      },
+      "footer": {
+        "x": 201,
+        "y": 930.1875,
+        "width": 398,
+        "height": 61,
+        "top": 930.1875,
+        "right": 599,
+        "bottom": 991.1875,
+        "left": 201
+      },
+      "submit": {
+        "x": 341.65625,
+        "y": 939.1875,
+        "width": 245.34375,
+        "height": 44,
+        "top": 939.1875,
+        "right": 587,
+        "bottom": 983.1875,
+        "left": 341.65625
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "dock": {
+        "x": 24,
+        "y": 852,
+        "width": 1352,
+        "height": 130,
+        "top": 852,
+        "right": 1376,
+        "bottom": 982,
+        "left": 24
+      },
+      "gold": {
+        "x": 25,
+        "y": 853,
+        "width": 167,
+        "height": 32,
+        "top": 853,
+        "right": 192,
+        "bottom": 885,
+        "left": 25
+      },
+      "xp": {
+        "x": 25,
+        "y": 885,
+        "width": 87,
+        "height": 96,
+        "top": 885,
+        "right": 112,
+        "bottom": 981,
+        "left": 25
+      },
+      "roll": {
+        "x": 113,
+        "y": 885,
+        "width": 79,
+        "height": 96,
+        "top": 885,
+        "right": 192,
+        "bottom": 981,
+        "left": 113
+      },
+      "ready": {
+        "x": 1263,
+        "y": 885,
+        "width": 112,
+        "height": 96,
+        "top": 885,
+        "right": 1375,
+        "bottom": 981,
+        "left": 1263
+      },
+      "streak": {
+        "x": 1263,
+        "y": 853,
+        "width": 112,
+        "height": 32,
+        "top": 853,
+        "right": 1375,
+        "bottom": 885,
+        "left": 1263
+      }
+    },
+    {
+      "mode": "pc",
+      "width": 1920,
+      "height": 1080,
+      "placement": "side",
+      "dialog": {
+        "x": 460,
+        "y": 136,
+        "width": 400,
+        "height": 936.1875,
+        "top": 136,
+        "right": 860,
+        "bottom": 1072.1875,
+        "left": 460
+      },
+      "footer": {
+        "x": 461,
+        "y": 1010.1875,
+        "width": 398,
+        "height": 61,
+        "top": 1010.1875,
+        "right": 859,
+        "bottom": 1071.1875,
+        "left": 461
+      },
+      "submit": {
+        "x": 601.65625,
+        "y": 1019.1875,
+        "width": 245.34375,
+        "height": 44,
+        "top": 1019.1875,
+        "right": 847,
+        "bottom": 1063.1875,
+        "left": 601.65625
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "dock": {
+        "x": 284,
+        "y": 932,
+        "width": 1352,
+        "height": 130,
+        "top": 932,
+        "right": 1636,
+        "bottom": 1062,
+        "left": 284
+      },
+      "gold": {
+        "x": 285,
+        "y": 933,
+        "width": 167,
+        "height": 32,
+        "top": 933,
+        "right": 452,
+        "bottom": 965,
+        "left": 285
+      },
+      "xp": {
+        "x": 285,
+        "y": 965,
+        "width": 87,
+        "height": 96,
+        "top": 965,
+        "right": 372,
+        "bottom": 1061,
+        "left": 285
+      },
+      "roll": {
+        "x": 373,
+        "y": 965,
+        "width": 79,
+        "height": 96,
+        "top": 965,
+        "right": 452,
+        "bottom": 1061,
+        "left": 373
+      },
+      "ready": {
+        "x": 1523,
+        "y": 965,
+        "width": 112,
+        "height": 96,
+        "top": 965,
+        "right": 1635,
+        "bottom": 1061,
+        "left": 1523
+      },
+      "streak": {
+        "x": 1523,
+        "y": 933,
+        "width": 112,
+        "height": 32,
+        "top": 933,
+        "right": 1635,
+        "bottom": 965,
+        "left": 1523
+      }
+    },
+    {
+      "mode": "pc",
+      "width": 1366,
+      "height": 768,
+      "placement": "side",
+      "dialog": {
+        "x": 183,
+        "y": 8,
+        "width": 400,
+        "height": 752,
+        "top": 8,
+        "right": 583,
+        "bottom": 760,
+        "left": 183
+      },
+      "footer": {
+        "x": 184,
+        "y": 698,
+        "width": 398,
+        "height": 61,
+        "top": 698,
+        "right": 582,
+        "bottom": 759,
+        "left": 184
+      },
+      "submit": {
+        "x": 324.65625,
+        "y": 707,
+        "width": 245.34375,
+        "height": 44,
+        "top": 707,
+        "right": 570,
+        "bottom": 751,
+        "left": 324.65625
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "dock": {
+        "x": 24,
+        "y": 620,
+        "width": 1318,
+        "height": 130,
+        "top": 620,
+        "right": 1342,
+        "bottom": 750,
+        "left": 24
+      },
+      "gold": {
+        "x": 25,
+        "y": 621,
+        "width": 167,
+        "height": 32,
+        "top": 621,
+        "right": 192,
+        "bottom": 653,
+        "left": 25
+      },
+      "xp": {
+        "x": 25,
+        "y": 653,
+        "width": 87,
+        "height": 96,
+        "top": 653,
+        "right": 112,
+        "bottom": 749,
+        "left": 25
+      },
+      "roll": {
+        "x": 113,
+        "y": 653,
+        "width": 79,
+        "height": 96,
+        "top": 653,
+        "right": 192,
+        "bottom": 749,
+        "left": 113
+      },
+      "ready": {
+        "x": 1229,
+        "y": 653,
+        "width": 112,
+        "height": 96,
+        "top": 653,
+        "right": 1341,
+        "bottom": 749,
+        "left": 1229
+      },
+      "streak": {
+        "x": 1229,
+        "y": 621,
+        "width": 112,
+        "height": 32,
+        "top": 621,
+        "right": 1341,
+        "bottom": 653,
+        "left": 1229
+      }
+    },
+    {
+      "mode": "pc",
+      "width": 1024,
+      "height": 768,
+      "placement": "side",
+      "dialog": {
+        "x": 162,
+        "y": 8,
+        "width": 400,
+        "height": 752,
+        "top": 8,
+        "right": 562,
+        "bottom": 760,
+        "left": 162
+      },
+      "footer": {
+        "x": 163,
+        "y": 698,
+        "width": 398,
+        "height": 61,
+        "top": 698,
+        "right": 561,
+        "bottom": 759,
+        "left": 163
+      },
+      "submit": {
+        "x": 303.65625,
+        "y": 707,
+        "width": 245.34375,
+        "height": 44,
+        "top": 707,
+        "right": 549,
+        "bottom": 751,
+        "left": 303.65625
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "dock": {
+        "x": 12,
+        "y": 626,
+        "width": 1000,
+        "height": 130,
+        "top": 626,
+        "right": 1012,
+        "bottom": 756,
+        "left": 12
+      },
+      "gold": {
+        "x": 13,
+        "y": 627,
+        "width": 167,
+        "height": 32,
+        "top": 627,
+        "right": 180,
+        "bottom": 659,
+        "left": 13
+      },
+      "xp": {
+        "x": 13,
+        "y": 659,
+        "width": 87,
+        "height": 96,
+        "top": 659,
+        "right": 100,
+        "bottom": 755,
+        "left": 13
+      },
+      "roll": {
+        "x": 101,
+        "y": 659,
+        "width": 79,
+        "height": 96,
+        "top": 659,
+        "right": 180,
+        "bottom": 755,
+        "left": 101
+      },
+      "ready": {
+        "x": 899,
+        "y": 659,
+        "width": 112,
+        "height": 96,
+        "top": 659,
+        "right": 1011,
+        "bottom": 755,
+        "left": 899
+      },
+      "streak": {
+        "x": 899,
+        "y": 627,
+        "width": 112,
+        "height": 32,
+        "top": 627,
+        "right": 1011,
+        "bottom": 659,
+        "left": 899
+      }
+    },
+    {
+      "mode": "pc",
+      "width": 390,
+      "height": 844,
+      "placement": "sheet",
+      "dialog": {
+        "x": 6,
+        "y": 126.609375,
+        "width": 378,
+        "height": 717.390625,
+        "top": 126.609375,
+        "right": 384,
+        "bottom": 844,
+        "left": 6
+      },
+      "footer": {
+        "x": 7,
+        "y": 782,
+        "width": 376,
+        "height": 61,
+        "top": 782,
+        "right": 383,
+        "bottom": 843,
+        "left": 7
+      },
+      "submit": {
+        "x": 140.328125,
+        "y": 791,
+        "width": 230.671875,
+        "height": 44,
+        "top": 791,
+        "right": 371,
+        "bottom": 835,
+        "left": 140.328125
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "dock": {
+        "x": 6,
+        "y": 622,
+        "width": 378,
+        "height": 216,
+        "top": 622,
+        "right": 384,
+        "bottom": 838,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 623,
+        "width": 125,
+        "height": 30,
+        "top": 623,
+        "right": 132,
+        "bottom": 653,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 653,
+        "width": 63,
+        "height": 184,
+        "top": 653,
+        "right": 70,
+        "bottom": 837,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 653,
+        "width": 61,
+        "height": 184,
+        "top": 653,
+        "right": 132,
+        "bottom": 837,
+        "left": 71
+      },
+      "ready": {
+        "x": 329,
+        "y": 653,
+        "width": 54,
+        "height": 184,
+        "top": 653,
+        "right": 383,
+        "bottom": 837,
+        "left": 329
+      },
+      "streak": {
+        "x": 329,
+        "y": 623,
+        "width": 54,
+        "height": 30,
+        "top": 623,
+        "right": 383,
+        "bottom": 653,
+        "left": 329
+      }
+    },
+    {
+      "mode": "pc",
+      "width": 320,
+      "height": 740,
+      "placement": "sheet",
+      "dialog": {
+        "x": 6,
+        "y": 111,
+        "width": 308,
+        "height": 629,
+        "top": 111,
+        "right": 314,
+        "bottom": 740,
+        "left": 6
+      },
+      "footer": {
+        "x": 7,
+        "y": 678,
+        "width": 306,
+        "height": 61,
+        "top": 678,
+        "right": 313,
+        "bottom": 739,
+        "left": 7
+      },
+      "submit": {
+        "x": 117,
+        "y": 687,
+        "width": 184,
+        "height": 44,
+        "top": 687,
+        "right": 301,
+        "bottom": 731,
+        "left": 117
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "dock": {
+        "x": 6,
+        "y": 518,
+        "width": 308,
+        "height": 216,
+        "top": 518,
+        "right": 314,
+        "bottom": 734,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 519,
+        "width": 125,
+        "height": 30,
+        "top": 519,
+        "right": 132,
+        "bottom": 549,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 549,
+        "width": 63,
+        "height": 184,
+        "top": 549,
+        "right": 70,
+        "bottom": 733,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 549,
+        "width": 61,
+        "height": 184,
+        "top": 549,
+        "right": 132,
+        "bottom": 733,
+        "left": 71
+      },
+      "ready": {
+        "x": 259,
+        "y": 549,
+        "width": 54,
+        "height": 184,
+        "top": 549,
+        "right": 313,
+        "bottom": 733,
+        "left": 259
+      },
+      "streak": {
+        "x": 259,
+        "y": 519,
+        "width": 54,
+        "height": 30,
+        "top": 519,
+        "right": 313,
+        "bottom": 549,
+        "left": 259
+      }
+    },
+    {
+      "mode": "pc",
+      "width": 844,
+      "height": 390,
+      "placement": "sheet",
+      "dialog": {
+        "x": 82,
+        "y": 12,
+        "width": 680,
+        "height": 378,
+        "top": 12,
+        "right": 762,
+        "bottom": 390,
+        "left": 82
+      },
+      "footer": {
+        "x": 83,
+        "y": 328,
+        "width": 678,
+        "height": 61,
+        "top": 328,
+        "right": 761,
+        "bottom": 389,
+        "left": 83
+      },
+      "submit": {
+        "x": 317,
+        "y": 337,
+        "width": 432,
+        "height": 44,
+        "top": 337,
+        "right": 749,
+        "bottom": 381,
+        "left": 317
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "dock": {
+        "x": 564,
+        "y": 110,
+        "width": 274,
+        "height": 274,
+        "top": 110,
+        "right": 838,
+        "bottom": 384,
+        "left": 564
+      },
+      "gold": {
+        "x": 565,
+        "y": 111,
+        "width": 125,
+        "height": 30,
+        "top": 111,
+        "right": 690,
+        "bottom": 141,
+        "left": 565
+      },
+      "xp": {
+        "x": 565,
+        "y": 141,
+        "width": 63,
+        "height": 242,
+        "top": 141,
+        "right": 628,
+        "bottom": 383,
+        "left": 565
+      },
+      "roll": {
+        "x": 629,
+        "y": 141,
+        "width": 61,
+        "height": 242,
+        "top": 141,
+        "right": 690,
+        "bottom": 383,
+        "left": 629
+      },
+      "ready": {
+        "x": 783,
+        "y": 141,
+        "width": 54,
+        "height": 242,
+        "top": 141,
+        "right": 837,
+        "bottom": 383,
+        "left": 783
+      },
+      "streak": {
+        "x": 783,
+        "y": 111,
+        "width": 54,
+        "height": 30,
+        "top": 111,
+        "right": 837,
+        "bottom": 141,
+        "left": 783
+      }
+    },
+    {
+      "mode": "pc",
+      "width": 480,
+      "height": 320,
+      "placement": "sheet",
+      "dialog": {
+        "x": 6,
+        "y": 12,
+        "width": 468,
+        "height": 308,
+        "top": 12,
+        "right": 474,
+        "bottom": 320,
+        "left": 6
+      },
+      "footer": {
+        "x": 7,
+        "y": 258,
+        "width": 466,
+        "height": 61,
+        "top": 258,
+        "right": 473,
+        "bottom": 319,
+        "left": 7
+      },
+      "submit": {
+        "x": 170.328125,
+        "y": 267,
+        "width": 290.671875,
+        "height": 44,
+        "top": 267,
+        "right": 461,
+        "bottom": 311,
+        "left": 170.328125
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "dock": {
+        "x": 200,
+        "y": 40,
+        "width": 274,
+        "height": 274,
+        "top": 40,
+        "right": 474,
+        "bottom": 314,
+        "left": 200
+      },
+      "gold": {
+        "x": 201,
+        "y": 41,
+        "width": 125,
+        "height": 30,
+        "top": 41,
+        "right": 326,
+        "bottom": 71,
+        "left": 201
+      },
+      "xp": {
+        "x": 201,
+        "y": 71,
+        "width": 63,
+        "height": 242,
+        "top": 71,
+        "right": 264,
+        "bottom": 313,
+        "left": 201
+      },
+      "roll": {
+        "x": 265,
+        "y": 71,
+        "width": 61,
+        "height": 242,
+        "top": 71,
+        "right": 326,
+        "bottom": 313,
+        "left": 265
+      },
+      "ready": {
+        "x": 419,
+        "y": 71,
+        "width": 54,
+        "height": 242,
+        "top": 71,
+        "right": 473,
+        "bottom": 313,
+        "left": 419
+      },
+      "streak": {
+        "x": 419,
+        "y": 41,
+        "width": 54,
+        "height": 30,
+        "top": 41,
+        "right": 473,
+        "bottom": 71,
+        "left": 419
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "placement": "sheet",
+      "dialog": {
+        "x": 6,
+        "y": 126.609375,
+        "width": 378,
+        "height": 717.390625,
+        "top": 126.609375,
+        "right": 384,
+        "bottom": 844,
+        "left": 6
+      },
+      "footer": {
+        "x": 7,
+        "y": 782,
+        "width": 376,
+        "height": 61,
+        "top": 782,
+        "right": 383,
+        "bottom": 843,
+        "left": 7
+      },
+      "submit": {
+        "x": 140.328125,
+        "y": 791,
+        "width": 230.671875,
+        "height": 44,
+        "top": 791,
+        "right": 371,
+        "bottom": 835,
+        "left": 140.328125
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "dock": {
+        "x": 6,
+        "y": 622,
+        "width": 378,
+        "height": 216,
+        "top": 622,
+        "right": 384,
+        "bottom": 838,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 623,
+        "width": 125,
+        "height": 30,
+        "top": 623,
+        "right": 132,
+        "bottom": 653,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 653,
+        "width": 63,
+        "height": 184,
+        "top": 653,
+        "right": 70,
+        "bottom": 837,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 653,
+        "width": 61,
+        "height": 184,
+        "top": 653,
+        "right": 132,
+        "bottom": 837,
+        "left": 71
+      },
+      "ready": {
+        "x": 329,
+        "y": 653,
+        "width": 54,
+        "height": 184,
+        "top": 653,
+        "right": 383,
+        "bottom": 837,
+        "left": 329
+      },
+      "streak": {
+        "x": 329,
+        "y": 623,
+        "width": 54,
+        "height": 30,
+        "top": 623,
+        "right": 383,
+        "bottom": 653,
+        "left": 329
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 320,
+      "height": 740,
+      "placement": "sheet",
+      "dialog": {
+        "x": 6,
+        "y": 111,
+        "width": 308,
+        "height": 629,
+        "top": 111,
+        "right": 314,
+        "bottom": 740,
+        "left": 6
+      },
+      "footer": {
+        "x": 7,
+        "y": 678,
+        "width": 306,
+        "height": 61,
+        "top": 678,
+        "right": 313,
+        "bottom": 739,
+        "left": 7
+      },
+      "submit": {
+        "x": 117,
+        "y": 687,
+        "width": 184,
+        "height": 44,
+        "top": 687,
+        "right": 301,
+        "bottom": 731,
+        "left": 117
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "dock": {
+        "x": 6,
+        "y": 518,
+        "width": 308,
+        "height": 216,
+        "top": 518,
+        "right": 314,
+        "bottom": 734,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 519,
+        "width": 125,
+        "height": 30,
+        "top": 519,
+        "right": 132,
+        "bottom": 549,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 549,
+        "width": 63,
+        "height": 184,
+        "top": 549,
+        "right": 70,
+        "bottom": 733,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 549,
+        "width": 61,
+        "height": 184,
+        "top": 549,
+        "right": 132,
+        "bottom": 733,
+        "left": 71
+      },
+      "ready": {
+        "x": 259,
+        "y": 549,
+        "width": 54,
+        "height": 184,
+        "top": 549,
+        "right": 313,
+        "bottom": 733,
+        "left": 259
+      },
+      "streak": {
+        "x": 259,
+        "y": 519,
+        "width": 54,
+        "height": 30,
+        "top": 519,
+        "right": 313,
+        "bottom": 549,
+        "left": 259
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 360,
+      "height": 640,
+      "placement": "sheet",
+      "dialog": {
+        "x": 6,
+        "y": 96,
+        "width": 348,
+        "height": 544,
+        "top": 96,
+        "right": 354,
+        "bottom": 640,
+        "left": 6
+      },
+      "footer": {
+        "x": 7,
+        "y": 578,
+        "width": 346,
+        "height": 61,
+        "top": 578,
+        "right": 353,
+        "bottom": 639,
+        "left": 7
+      },
+      "submit": {
+        "x": 130.328125,
+        "y": 587,
+        "width": 210.671875,
+        "height": 44,
+        "top": 587,
+        "right": 341,
+        "bottom": 631,
+        "left": 130.328125
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "dock": {
+        "x": 6,
+        "y": 418,
+        "width": 348,
+        "height": 216,
+        "top": 418,
+        "right": 354,
+        "bottom": 634,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 419,
+        "width": 125,
+        "height": 30,
+        "top": 419,
+        "right": 132,
+        "bottom": 449,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 449,
+        "width": 63,
+        "height": 184,
+        "top": 449,
+        "right": 70,
+        "bottom": 633,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 449,
+        "width": 61,
+        "height": 184,
+        "top": 449,
+        "right": 132,
+        "bottom": 633,
+        "left": 71
+      },
+      "ready": {
+        "x": 299,
+        "y": 449,
+        "width": 54,
+        "height": 184,
+        "top": 449,
+        "right": 353,
+        "bottom": 633,
+        "left": 299
+      },
+      "streak": {
+        "x": 299,
+        "y": 419,
+        "width": 54,
+        "height": 30,
+        "top": 419,
+        "right": 353,
+        "bottom": 449,
+        "left": 299
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 414,
+      "height": 896,
+      "placement": "sheet",
+      "dialog": {
+        "x": 6,
+        "y": 134.40625,
+        "width": 402,
+        "height": 761.59375,
+        "top": 134.40625,
+        "right": 408,
+        "bottom": 896,
+        "left": 6
+      },
+      "footer": {
+        "x": 7,
+        "y": 834,
+        "width": 400,
+        "height": 61,
+        "top": 834,
+        "right": 407,
+        "bottom": 895,
+        "left": 7
+      },
+      "submit": {
+        "x": 148.328125,
+        "y": 843,
+        "width": 246.671875,
+        "height": 44,
+        "top": 843,
+        "right": 395,
+        "bottom": 887,
+        "left": 148.328125
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "dock": {
+        "x": 6,
+        "y": 674,
+        "width": 402,
+        "height": 216,
+        "top": 674,
+        "right": 408,
+        "bottom": 890,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 675,
+        "width": 125,
+        "height": 30,
+        "top": 675,
+        "right": 132,
+        "bottom": 705,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 705,
+        "width": 63,
+        "height": 184,
+        "top": 705,
+        "right": 70,
+        "bottom": 889,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 705,
+        "width": 61,
+        "height": 184,
+        "top": 705,
+        "right": 132,
+        "bottom": 889,
+        "left": 71
+      },
+      "ready": {
+        "x": 353,
+        "y": 705,
+        "width": 54,
+        "height": 184,
+        "top": 705,
+        "right": 407,
+        "bottom": 889,
+        "left": 353
+      },
+      "streak": {
+        "x": 353,
+        "y": 675,
+        "width": 54,
+        "height": 30,
+        "top": 675,
+        "right": 407,
+        "bottom": 705,
+        "left": 353
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 768,
+      "height": 1024,
+      "placement": "sheet",
+      "dialog": {
+        "x": 44,
+        "y": 153.609375,
+        "width": 680,
+        "height": 870.390625,
+        "top": 153.609375,
+        "right": 724,
+        "bottom": 1024,
+        "left": 44
+      },
+      "footer": {
+        "x": 45,
+        "y": 962,
+        "width": 678,
+        "height": 61,
+        "top": 962,
+        "right": 723,
+        "bottom": 1023,
+        "left": 45
+      },
+      "submit": {
+        "x": 279,
+        "y": 971,
+        "width": 432,
+        "height": 44,
+        "top": 971,
+        "right": 711,
+        "bottom": 1015,
+        "left": 279
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "dock": {
+        "x": 44,
+        "y": 888,
+        "width": 680,
+        "height": 130,
+        "top": 888,
+        "right": 724,
+        "bottom": 1018,
+        "left": 44
+      },
+      "gold": {
+        "x": 45,
+        "y": 889,
+        "width": 167,
+        "height": 32,
+        "top": 889,
+        "right": 212,
+        "bottom": 921,
+        "left": 45
+      },
+      "xp": {
+        "x": 45,
+        "y": 921,
+        "width": 87,
+        "height": 96,
+        "top": 921,
+        "right": 132,
+        "bottom": 1017,
+        "left": 45
+      },
+      "roll": {
+        "x": 133,
+        "y": 921,
+        "width": 79,
+        "height": 96,
+        "top": 921,
+        "right": 212,
+        "bottom": 1017,
+        "left": 133
+      },
+      "ready": {
+        "x": 611,
+        "y": 921,
+        "width": 112,
+        "height": 96,
+        "top": 921,
+        "right": 723,
+        "bottom": 1017,
+        "left": 611
+      },
+      "streak": {
+        "x": 611,
+        "y": 889,
+        "width": 112,
+        "height": 32,
+        "top": 889,
+        "right": 723,
+        "bottom": 921,
+        "left": 611
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 844,
+      "height": 390,
+      "placement": "sheet",
+      "dialog": {
+        "x": 82,
+        "y": 12,
+        "width": 680,
+        "height": 378,
+        "top": 12,
+        "right": 762,
+        "bottom": 390,
+        "left": 82
+      },
+      "footer": {
+        "x": 83,
+        "y": 328,
+        "width": 678,
+        "height": 61,
+        "top": 328,
+        "right": 761,
+        "bottom": 389,
+        "left": 83
+      },
+      "submit": {
+        "x": 317,
+        "y": 337,
+        "width": 432,
+        "height": 44,
+        "top": 337,
+        "right": 749,
+        "bottom": 381,
+        "left": 317
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "dock": {
+        "x": 564,
+        "y": 110,
+        "width": 274,
+        "height": 274,
+        "top": 110,
+        "right": 838,
+        "bottom": 384,
+        "left": 564
+      },
+      "gold": {
+        "x": 565,
+        "y": 111,
+        "width": 125,
+        "height": 30,
+        "top": 111,
+        "right": 690,
+        "bottom": 141,
+        "left": 565
+      },
+      "xp": {
+        "x": 565,
+        "y": 141,
+        "width": 63,
+        "height": 242,
+        "top": 141,
+        "right": 628,
+        "bottom": 383,
+        "left": 565
+      },
+      "roll": {
+        "x": 629,
+        "y": 141,
+        "width": 61,
+        "height": 242,
+        "top": 141,
+        "right": 690,
+        "bottom": 383,
+        "left": 629
+      },
+      "ready": {
+        "x": 783,
+        "y": 141,
+        "width": 54,
+        "height": 242,
+        "top": 141,
+        "right": 837,
+        "bottom": 383,
+        "left": 783
+      },
+      "streak": {
+        "x": 783,
+        "y": 111,
+        "width": 54,
+        "height": 30,
+        "top": 111,
+        "right": 837,
+        "bottom": 141,
+        "left": 783
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 480,
+      "height": 320,
+      "placement": "sheet",
+      "dialog": {
+        "x": 6,
+        "y": 12,
+        "width": 468,
+        "height": 308,
+        "top": 12,
+        "right": 474,
+        "bottom": 320,
+        "left": 6
+      },
+      "footer": {
+        "x": 7,
+        "y": 258,
+        "width": 466,
+        "height": 61,
+        "top": 258,
+        "right": 473,
+        "bottom": 319,
+        "left": 7
+      },
+      "submit": {
+        "x": 170.328125,
+        "y": 267,
+        "width": 290.671875,
+        "height": 44,
+        "top": 267,
+        "right": 461,
+        "bottom": 311,
+        "left": 170.328125
+      },
+      "insideOverflow": false,
+      "overflow": false,
+      "ids": [],
+      "dock": {
+        "x": 200,
+        "y": 40,
+        "width": 274,
+        "height": 274,
+        "top": 40,
+        "right": 474,
+        "bottom": 314,
+        "left": 200
+      },
+      "gold": {
+        "x": 201,
+        "y": 41,
+        "width": 125,
+        "height": 30,
+        "top": 41,
+        "right": 326,
+        "bottom": 71,
+        "left": 201
+      },
+      "xp": {
+        "x": 201,
+        "y": 71,
+        "width": 63,
+        "height": 242,
+        "top": 71,
+        "right": 264,
+        "bottom": 313,
+        "left": 201
+      },
+      "roll": {
+        "x": 265,
+        "y": 71,
+        "width": 61,
+        "height": 242,
+        "top": 71,
+        "right": 326,
+        "bottom": 313,
+        "left": 265
+      },
+      "ready": {
+        "x": 419,
+        "y": 71,
+        "width": 54,
+        "height": 242,
+        "top": 71,
+        "right": 473,
+        "bottom": 313,
+        "left": 419
+      },
+      "streak": {
+        "x": 419,
+        "y": 41,
+        "width": 54,
+        "height": 30,
+        "top": 41,
+        "right": 473,
+        "bottom": 71,
+        "left": 419
+      }
+    }
+  ],
+  "errors": []
+}

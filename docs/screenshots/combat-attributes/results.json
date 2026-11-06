@@ -1,0 +1,1264 @@
+{
+  "version": "0.20.38",
+  "browser": "155.0.8059.84",
+  "results": [
+    {
+      "attack": "red",
+      "defense": "red",
+      "type": "attack",
+      "reverse": false
+    },
+    {
+      "attack": "red",
+      "defense": "yellow",
+      "type": "attack",
+      "reverse": false
+    },
+    {
+      "attack": "red",
+      "defense": "blue",
+      "type": "attack",
+      "reverse": false
+    },
+    {
+      "attack": "red",
+      "defense": "purple",
+      "type": "attack",
+      "reverse": false
+    },
+    {
+      "attack": "yellow",
+      "defense": "red",
+      "type": "attack",
+      "reverse": false
+    },
+    {
+      "attack": "yellow",
+      "defense": "yellow",
+      "type": "attack",
+      "reverse": false
+    },
+    {
+      "attack": "yellow",
+      "defense": "blue",
+      "type": "attack",
+      "reverse": false
+    },
+    {
+      "attack": "yellow",
+      "defense": "purple",
+      "type": "attack",
+      "reverse": false
+    },
+    {
+      "attack": "blue",
+      "defense": "red",
+      "type": "attack",
+      "reverse": false
+    },
+    {
+      "attack": "blue",
+      "defense": "yellow",
+      "type": "attack",
+      "reverse": false
+    },
+    {
+      "attack": "blue",
+      "defense": "blue",
+      "type": "attack",
+      "reverse": false
+    },
+    {
+      "attack": "blue",
+      "defense": "purple",
+      "type": "attack",
+      "reverse": false
+    },
+    {
+      "attack": "purple",
+      "defense": "red",
+      "type": "attack",
+      "reverse": false
+    },
+    {
+      "attack": "purple",
+      "defense": "yellow",
+      "type": "attack",
+      "reverse": false
+    },
+    {
+      "attack": "purple",
+      "defense": "blue",
+      "type": "attack",
+      "reverse": false
+    },
+    {
+      "attack": "purple",
+      "defense": "purple",
+      "type": "attack",
+      "reverse": false
+    },
+    {
+      "attack": "red",
+      "defense": "red",
+      "type": "skillDamage",
+      "reverse": false
+    },
+    {
+      "attack": "red",
+      "defense": "yellow",
+      "type": "skillDamage",
+      "reverse": false
+    },
+    {
+      "attack": "red",
+      "defense": "blue",
+      "type": "skillDamage",
+      "reverse": false
+    },
+    {
+      "attack": "red",
+      "defense": "purple",
+      "type": "skillDamage",
+      "reverse": false
+    },
+    {
+      "attack": "yellow",
+      "defense": "red",
+      "type": "skillDamage",
+      "reverse": false
+    },
+    {
+      "attack": "yellow",
+      "defense": "yellow",
+      "type": "skillDamage",
+      "reverse": false
+    },
+    {
+      "attack": "yellow",
+      "defense": "blue",
+      "type": "skillDamage",
+      "reverse": false
+    },
+    {
+      "attack": "yellow",
+      "defense": "purple",
+      "type": "skillDamage",
+      "reverse": false
+    },
+    {
+      "attack": "blue",
+      "defense": "red",
+      "type": "skillDamage",
+      "reverse": false
+    },
+    {
+      "attack": "blue",
+      "defense": "yellow",
+      "type": "skillDamage",
+      "reverse": false
+    },
+    {
+      "attack": "blue",
+      "defense": "blue",
+      "type": "skillDamage",
+      "reverse": false
+    },
+    {
+      "attack": "blue",
+      "defense": "purple",
+      "type": "skillDamage",
+      "reverse": false
+    },
+    {
+      "attack": "purple",
+      "defense": "red",
+      "type": "skillDamage",
+      "reverse": false
+    },
+    {
+      "attack": "purple",
+      "defense": "yellow",
+      "type": "skillDamage",
+      "reverse": false
+    },
+    {
+      "attack": "purple",
+      "defense": "blue",
+      "type": "skillDamage",
+      "reverse": false
+    },
+    {
+      "attack": "purple",
+      "defense": "purple",
+      "type": "skillDamage",
+      "reverse": false
+    },
+    {
+      "attack": "red",
+      "defense": "red",
+      "type": "attack",
+      "reverse": true
+    },
+    {
+      "attack": "red",
+      "defense": "yellow",
+      "type": "attack",
+      "reverse": true
+    },
+    {
+      "attack": "red",
+      "defense": "blue",
+      "type": "attack",
+      "reverse": true
+    },
+    {
+      "attack": "red",
+      "defense": "purple",
+      "type": "attack",
+      "reverse": true
+    },
+    {
+      "attack": "yellow",
+      "defense": "red",
+      "type": "attack",
+      "reverse": true
+    },
+    {
+      "attack": "yellow",
+      "defense": "yellow",
+      "type": "attack",
+      "reverse": true
+    },
+    {
+      "attack": "yellow",
+      "defense": "blue",
+      "type": "attack",
+      "reverse": true
+    },
+    {
+      "attack": "yellow",
+      "defense": "purple",
+      "type": "attack",
+      "reverse": true
+    },
+    {
+      "attack": "blue",
+      "defense": "red",
+      "type": "attack",
+      "reverse": true
+    },
+    {
+      "attack": "blue",
+      "defense": "yellow",
+      "type": "attack",
+      "reverse": true
+    },
+    {
+      "attack": "blue",
+      "defense": "blue",
+      "type": "attack",
+      "reverse": true
+    },
+    {
+      "attack": "blue",
+      "defense": "purple",
+      "type": "attack",
+      "reverse": true
+    },
+    {
+      "attack": "purple",
+      "defense": "red",
+      "type": "attack",
+      "reverse": true
+    },
+    {
+      "attack": "purple",
+      "defense": "yellow",
+      "type": "attack",
+      "reverse": true
+    },
+    {
+      "attack": "purple",
+      "defense": "blue",
+      "type": "attack",
+      "reverse": true
+    },
+    {
+      "attack": "purple",
+      "defense": "purple",
+      "type": "attack",
+      "reverse": true
+    },
+    {
+      "attack": "red",
+      "defense": "red",
+      "type": "skillDamage",
+      "reverse": true
+    },
+    {
+      "attack": "red",
+      "defense": "yellow",
+      "type": "skillDamage",
+      "reverse": true
+    },
+    {
+      "attack": "red",
+      "defense": "blue",
+      "type": "skillDamage",
+      "reverse": true
+    },
+    {
+      "attack": "red",
+      "defense": "purple",
+      "type": "skillDamage",
+      "reverse": true
+    },
+    {
+      "attack": "yellow",
+      "defense": "red",
+      "type": "skillDamage",
+      "reverse": true
+    },
+    {
+      "attack": "yellow",
+      "defense": "yellow",
+      "type": "skillDamage",
+      "reverse": true
+    },
+    {
+      "attack": "yellow",
+      "defense": "blue",
+      "type": "skillDamage",
+      "reverse": true
+    },
+    {
+      "attack": "yellow",
+      "defense": "purple",
+      "type": "skillDamage",
+      "reverse": true
+    },
+    {
+      "attack": "blue",
+      "defense": "red",
+      "type": "skillDamage",
+      "reverse": true
+    },
+    {
+      "attack": "blue",
+      "defense": "yellow",
+      "type": "skillDamage",
+      "reverse": true
+    },
+    {
+      "attack": "blue",
+      "defense": "blue",
+      "type": "skillDamage",
+      "reverse": true
+    },
+    {
+      "attack": "blue",
+      "defense": "purple",
+      "type": "skillDamage",
+      "reverse": true
+    },
+    {
+      "attack": "purple",
+      "defense": "red",
+      "type": "skillDamage",
+      "reverse": true
+    },
+    {
+      "attack": "purple",
+      "defense": "yellow",
+      "type": "skillDamage",
+      "reverse": true
+    },
+    {
+      "attack": "purple",
+      "defense": "blue",
+      "type": "skillDamage",
+      "reverse": true
+    },
+    {
+      "attack": "purple",
+      "defense": "purple",
+      "type": "skillDamage",
+      "reverse": true
+    }
+  ],
+  "damageResults": [
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "health"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "absorbed"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "exact-break"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "overflow"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "lethal-overflow"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "later-shield"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "critical-health"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "critical-absorbed"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "critical-overflow"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "health"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "absorbed"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "exact-break"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "overflow"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "lethal-overflow"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "later-shield"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "critical-health"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "critical-absorbed"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "critical-overflow"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "health"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "absorbed"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "exact-break"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "overflow"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "lethal-overflow"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "later-shield"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "critical-health"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "critical-absorbed"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "critical-overflow"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "health"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "absorbed"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "exact-break"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "overflow"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "lethal-overflow"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "later-shield"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "critical-health"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "critical-absorbed"
+    },
+    {
+      "width": 600,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "critical-overflow"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "health"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "absorbed"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "exact-break"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "overflow"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "lethal-overflow"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "later-shield"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "critical-health"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "critical-absorbed"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "critical-overflow"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "health"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "absorbed"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "exact-break"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "overflow"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "lethal-overflow"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "later-shield"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "critical-health"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "critical-absorbed"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "critical-overflow"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "health"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "absorbed"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "exact-break"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "overflow"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "lethal-overflow"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "later-shield"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "critical-health"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "critical-absorbed"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "critical-overflow"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "health"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "absorbed"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "exact-break"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "overflow"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "lethal-overflow"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "later-shield"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "critical-health"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "critical-absorbed"
+    },
+    {
+      "width": 600,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "critical-overflow"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "health"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "absorbed"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "exact-break"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "overflow"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "lethal-overflow"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "later-shield"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "critical-health"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "critical-absorbed"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "red",
+      "scenario": "critical-overflow"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "health"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "absorbed"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "exact-break"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "overflow"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "lethal-overflow"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "later-shield"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "critical-health"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "critical-absorbed"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "yellow",
+      "scenario": "critical-overflow"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "health"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "absorbed"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "exact-break"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "overflow"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "lethal-overflow"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "later-shield"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "critical-health"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "critical-absorbed"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "blue",
+      "scenario": "critical-overflow"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "health"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "absorbed"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "exact-break"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "overflow"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "lethal-overflow"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "later-shield"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "critical-health"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "critical-absorbed"
+    },
+    {
+      "width": 390,
+      "type": "attack",
+      "attack": "purple",
+      "scenario": "critical-overflow"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "health"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "absorbed"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "exact-break"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "overflow"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "lethal-overflow"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "later-shield"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "critical-health"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "critical-absorbed"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "red",
+      "scenario": "critical-overflow"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "health"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "absorbed"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "exact-break"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "overflow"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "lethal-overflow"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "later-shield"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "critical-health"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "critical-absorbed"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "yellow",
+      "scenario": "critical-overflow"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "health"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "absorbed"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "exact-break"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "overflow"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "lethal-overflow"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "later-shield"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "critical-health"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "critical-absorbed"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "blue",
+      "scenario": "critical-overflow"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "health"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "absorbed"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "exact-break"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "overflow"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "lethal-overflow"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "later-shield"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "critical-health"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "critical-absorbed"
+    },
+    {
+      "width": 390,
+      "type": "skillDamage",
+      "attack": "purple",
+      "scenario": "critical-overflow"
+    }
+  ],
+  "errors": [],
+  "lethal": true,
+  "reducedMotion": true,
+  "cleanup": true,
+  "inspection": [
+    "pc",
+    "mobile"
+  ]
+}

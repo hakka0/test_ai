@@ -1,0 +1,376 @@
+{
+  "version": "0.20.53",
+  "browser": "155.0.8059.85",
+  "fixture": "Actual two-player PvP server; received snapshots are unchanged",
+  "results": [
+    {
+      "mode": "pc",
+      "width": 1400,
+      "height": 1000,
+      "code": "7DDA",
+      "preparePurchase": {
+        "id": "LdDVpmG8R-offer-15",
+        "kind": "oracle",
+        "cost": 2,
+        "sold": false
+      },
+      "combatPurchase": {
+        "id": "LdDVpmG8R-offer-16",
+        "kind": "oracle",
+        "cost": 2,
+        "sold": false
+      },
+      "matchingDuration": 5000,
+      "matchingDeadline": 1792686262119,
+      "combatNow": 1792686262600,
+      "geometry": {
+        "board": {
+          "x": 310,
+          "y": 181,
+          "width": 532,
+          "height": 532,
+          "top": 181,
+          "right": 842,
+          "bottom": 713,
+          "left": 310
+        },
+        "bench": {
+          "x": 203,
+          "y": 713,
+          "width": 746,
+          "height": 103.171875,
+          "top": 713,
+          "right": 949,
+          "bottom": 816.171875,
+          "left": 203
+        },
+        "shop": {
+          "x": 24,
+          "y": 852,
+          "width": 1352,
+          "height": 130,
+          "top": 852,
+          "right": 1376,
+          "bottom": 982,
+          "left": 24
+        },
+        "ranking": {
+          "x": 1294,
+          "y": 64,
+          "width": 76,
+          "height": 182,
+          "top": 64,
+          "right": 1370,
+          "bottom": 246,
+          "left": 1294
+        },
+        "banner": {
+          "x": 256,
+          "y": 131,
+          "width": 640,
+          "height": 46,
+          "top": 131,
+          "right": 896,
+          "bottom": 177,
+          "left": 256
+        },
+        "overflow": false,
+        "targets": [
+          {
+            "id": "room-code-toggle",
+            "class": "",
+            "x": 1130.703125,
+            "y": 12,
+            "width": 44,
+            "height": 44,
+            "top": 12,
+            "right": 1174.703125,
+            "bottom": 56,
+            "left": 1130.703125
+          },
+          {
+            "id": "room-code-copy",
+            "class": "",
+            "x": 1178.703125,
+            "y": 12,
+            "width": 44,
+            "height": 44,
+            "top": 12,
+            "right": 1222.703125,
+            "bottom": 56,
+            "left": 1178.703125
+          },
+          {
+            "id": "mobile-info-open",
+            "class": "",
+            "x": 755.484375,
+            "y": 73.5,
+            "width": 44,
+            "height": 44,
+            "top": 73.5,
+            "right": 799.484375,
+            "bottom": 117.5,
+            "left": 755.484375
+          },
+          {
+            "id": "history-toggle",
+            "class": "quiet",
+            "x": 805.484375,
+            "y": 73.5,
+            "width": 86.578125,
+            "height": 44,
+            "top": 73.5,
+            "right": 892.0625,
+            "bottom": 117.5,
+            "left": 805.484375
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 671.984375,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 783.984375,
+            "bottom": 973,
+            "left": 671.984375
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 884.78125,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 996.78125,
+            "bottom": 973,
+            "left": 884.78125
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 1097.59375,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 1209.59375,
+            "bottom": 973,
+            "left": 1097.59375
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 1300,
+            "y": 114,
+            "width": 64,
+            "height": 60,
+            "top": 114,
+            "right": 1364,
+            "bottom": 174,
+            "left": 1300
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 1300,
+            "y": 178,
+            "width": 64,
+            "height": 60,
+            "top": 178,
+            "right": 1364,
+            "bottom": 238,
+            "left": 1300
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 480,
+      "height": 320,
+      "code": "FC2E",
+      "preparePurchase": {
+        "id": "EDNta8oEm-offer-15",
+        "kind": "knight",
+        "cost": 1,
+        "sold": false
+      },
+      "combatPurchase": {
+        "id": "EDNta8oEm-offer-16",
+        "kind": "skirmisher",
+        "cost": 1,
+        "sold": false
+      },
+      "matchingDuration": 5000,
+      "matchingDeadline": 1792686288921,
+      "combatNow": 1792686289590,
+      "geometry": {
+        "board": {
+          "x": 39,
+          "y": 117,
+          "width": 62,
+          "height": 62,
+          "top": 117,
+          "right": 101,
+          "bottom": 179,
+          "left": 39
+        },
+        "bench": {
+          "x": 13,
+          "y": 183,
+          "width": 114,
+          "height": 87,
+          "top": 183,
+          "right": 127,
+          "bottom": 270,
+          "left": 13
+        },
+        "shop": {
+          "x": 204,
+          "y": 56,
+          "width": 208,
+          "height": 258,
+          "top": 56,
+          "right": 412,
+          "bottom": 314,
+          "left": 204
+        },
+        "ranking": {
+          "x": 418,
+          "y": 56,
+          "width": 56,
+          "height": 106,
+          "top": 56,
+          "right": 474,
+          "bottom": 162,
+          "left": 418
+        },
+        "banner": {
+          "x": 13,
+          "y": 61,
+          "width": 114,
+          "height": 48,
+          "top": 61,
+          "right": 127,
+          "bottom": 109,
+          "left": 13
+        },
+        "overflow": false,
+        "targets": [
+          {
+            "id": "room-code-toggle",
+            "class": "",
+            "x": 257.984375,
+            "y": 6,
+            "width": 44,
+            "height": 44,
+            "top": 6,
+            "right": 301.984375,
+            "bottom": 50,
+            "left": 257.984375
+          },
+          {
+            "id": "room-code-copy",
+            "class": "",
+            "x": 305.984375,
+            "y": 6,
+            "width": 44,
+            "height": 44,
+            "top": 6,
+            "right": 349.984375,
+            "bottom": 50,
+            "left": 305.984375
+          },
+          {
+            "id": "mobile-info-open",
+            "class": "",
+            "x": 136,
+            "y": 89,
+            "width": 44,
+            "height": 44,
+            "top": 89,
+            "right": 180,
+            "bottom": 133,
+            "left": 136
+          },
+          {
+            "id": "history-toggle",
+            "class": "quiet",
+            "x": 136,
+            "y": 136,
+            "width": 44,
+            "height": 44,
+            "top": 136,
+            "right": 180,
+            "bottom": 180,
+            "left": 136
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 311,
+            "y": 162,
+            "width": 46,
+            "height": 46,
+            "top": 162,
+            "right": 357,
+            "bottom": 208,
+            "left": 311
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 311,
+            "y": 210.796875,
+            "width": 46,
+            "height": 46,
+            "top": 210.796875,
+            "right": 357,
+            "bottom": 256.796875,
+            "left": 311
+          },
+          {
+            "id": "",
+            "class": "shop-card",
+            "x": 311,
+            "y": 259.59375,
+            "width": 46,
+            "height": 46,
+            "top": 259.59375,
+            "right": 357,
+            "bottom": 305.59375,
+            "left": 311
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 424,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "top": 64,
+            "right": 468,
+            "bottom": 108,
+            "left": 424
+          },
+          {
+            "id": "",
+            "class": "ranking-row",
+            "x": 424,
+            "y": 110,
+            "width": 44,
+            "height": 44,
+            "top": 110,
+            "right": 468,
+            "bottom": 154,
+            "left": 424
+          }
+        ]
+      }
+    }
+  ],
+  "errors": []
+}

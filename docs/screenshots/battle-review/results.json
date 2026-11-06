@@ -1,0 +1,1859 @@
+{
+  "version": "0.20.26",
+  "browser": "155.0.8059.84",
+  "results": [
+    {
+      "mode": "pc",
+      "metric": "damageDealt",
+      "team": "self",
+      "values": [
+        460.95,
+        438,
+        183,
+        149,
+        138,
+        108
+      ],
+      "widths": [
+        80.445,
+        76.4398,
+        31.9372,
+        26.0035,
+        24.0838,
+        18.8482
+      ],
+      "total": 1477
+    },
+    {
+      "mode": "pc",
+      "metric": "damageDealt",
+      "team": "opponent",
+      "values": [
+        573,
+        439.25,
+        214,
+        138,
+        126,
+        62
+      ],
+      "widths": [
+        100,
+        76.6579,
+        37.3473,
+        24.0838,
+        21.9895,
+        10.8202
+      ],
+      "total": 1552.3
+    },
+    {
+      "mode": "pc",
+      "metric": "damageTaken",
+      "team": "self",
+      "values": [
+        481.25,
+        299,
+        272,
+        190,
+        165,
+        145
+      ],
+      "widths": [
+        87.1909,
+        54.1716,
+        49.2798,
+        34.4234,
+        29.894,
+        26.2705
+      ],
+      "total": 1552.3
+    },
+    {
+      "mode": "pc",
+      "metric": "damageTaken",
+      "team": "opponent",
+      "values": [
+        551.95,
+        299,
+        290,
+        190,
+        87,
+        59
+      ],
+      "widths": [
+        100,
+        54.1716,
+        52.541,
+        34.4234,
+        15.7623,
+        10.6894
+      ],
+      "total": 1477
+    },
+    {
+      "mode": "pc",
+      "metric": "healing",
+      "team": "self",
+      "values": [
+        88.7,
+        53.55,
+        24,
+        0,
+        0,
+        0
+      ],
+      "widths": [
+        45.9824,
+        27.7605,
+        12.4417,
+        0,
+        0,
+        0
+      ],
+      "total": 166.3
+    },
+    {
+      "mode": "pc",
+      "metric": "healing",
+      "team": "opponent",
+      "values": [
+        192.9,
+        60,
+        53.55,
+        0,
+        0,
+        0
+      ],
+      "widths": [
+        100,
+        31.1042,
+        27.7605,
+        0,
+        0,
+        0
+      ],
+      "total": 306.5
+    },
+    {
+      "mode": "pc",
+      "metric": "shieldBlocked",
+      "team": "self",
+      "values": [
+        210,
+        85,
+        55,
+        45,
+        0,
+        0
+      ],
+      "widths": [
+        75,
+        30.3571,
+        19.6429,
+        16.0714,
+        0,
+        0
+      ],
+      "total": 395
+    },
+    {
+      "mode": "pc",
+      "metric": "shieldBlocked",
+      "team": "opponent",
+      "values": [
+        280,
+        85,
+        55,
+        45,
+        0,
+        0
+      ],
+      "widths": [
+        100,
+        30.3571,
+        19.6429,
+        16.0714,
+        0,
+        0
+      ],
+      "total": 465
+    },
+    {
+      "mode": "pc",
+      "width": 1400,
+      "height": 1000,
+      "wide": true,
+      "sheetOpen": false,
+      "sheet": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "history": {
+        "x": 1061,
+        "y": 120,
+        "width": 283,
+        "height": 753,
+        "top": 120,
+        "right": 1344,
+        "bottom": 873,
+        "left": 1061
+      },
+      "overflow": false,
+      "innerOverflow": false,
+      "bench": {
+        "x": 203,
+        "y": 731,
+        "width": 834,
+        "height": 86,
+        "top": 731,
+        "right": 1037,
+        "bottom": 817,
+        "left": 203
+      },
+      "dock": {
+        "x": 24,
+        "y": 852,
+        "width": 1352,
+        "height": 130,
+        "top": 852,
+        "right": 1376,
+        "bottom": 982,
+        "left": 24
+      },
+      "gold": {
+        "x": 25,
+        "y": 853,
+        "width": 167,
+        "height": 32,
+        "top": 853,
+        "right": 192,
+        "bottom": 885,
+        "left": 25
+      },
+      "xp": {
+        "x": 25,
+        "y": 885,
+        "width": 87,
+        "height": 96,
+        "top": 885,
+        "right": 112,
+        "bottom": 981,
+        "left": 25
+      },
+      "roll": {
+        "x": 113,
+        "y": 885,
+        "width": 79,
+        "height": 96,
+        "top": 885,
+        "right": 192,
+        "bottom": 981,
+        "left": 113
+      },
+      "ready": {
+        "x": 1263,
+        "y": 885,
+        "width": 112,
+        "height": 96,
+        "top": 885,
+        "right": 1375,
+        "bottom": 981,
+        "left": 1263
+      },
+      "streak": {
+        "x": 1263,
+        "y": 853,
+        "width": 112,
+        "height": 32,
+        "top": 853,
+        "right": 1375,
+        "bottom": 885,
+        "left": 1263
+      },
+      "ids": []
+    },
+    {
+      "mode": "pc",
+      "width": 1920,
+      "height": 1080,
+      "wide": true,
+      "sheetOpen": false,
+      "sheet": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "history": {
+        "x": 1321,
+        "y": 120,
+        "width": 283,
+        "height": 753,
+        "top": 120,
+        "right": 1604,
+        "bottom": 873,
+        "left": 1321
+      },
+      "overflow": false,
+      "innerOverflow": false,
+      "bench": {
+        "x": 463,
+        "y": 775,
+        "width": 834,
+        "height": 86,
+        "top": 775,
+        "right": 1297,
+        "bottom": 861,
+        "left": 463
+      },
+      "dock": {
+        "x": 284,
+        "y": 932,
+        "width": 1352,
+        "height": 130,
+        "top": 932,
+        "right": 1636,
+        "bottom": 1062,
+        "left": 284
+      },
+      "gold": {
+        "x": 285,
+        "y": 933,
+        "width": 167,
+        "height": 32,
+        "top": 933,
+        "right": 452,
+        "bottom": 965,
+        "left": 285
+      },
+      "xp": {
+        "x": 285,
+        "y": 965,
+        "width": 87,
+        "height": 96,
+        "top": 965,
+        "right": 372,
+        "bottom": 1061,
+        "left": 285
+      },
+      "roll": {
+        "x": 373,
+        "y": 965,
+        "width": 79,
+        "height": 96,
+        "top": 965,
+        "right": 452,
+        "bottom": 1061,
+        "left": 373
+      },
+      "ready": {
+        "x": 1523,
+        "y": 965,
+        "width": 112,
+        "height": 96,
+        "top": 965,
+        "right": 1635,
+        "bottom": 1061,
+        "left": 1523
+      },
+      "streak": {
+        "x": 1523,
+        "y": 933,
+        "width": 112,
+        "height": 32,
+        "top": 933,
+        "right": 1635,
+        "bottom": 965,
+        "left": 1523
+      },
+      "ids": []
+    },
+    {
+      "mode": "pc",
+      "width": 1366,
+      "height": 768,
+      "wide": true,
+      "sheetOpen": false,
+      "sheet": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "history": {
+        "x": 1044,
+        "y": 120,
+        "width": 283,
+        "height": 753,
+        "top": 120,
+        "right": 1327,
+        "bottom": 873,
+        "left": 1044
+      },
+      "overflow": false,
+      "innerOverflow": false,
+      "bench": {
+        "x": 186,
+        "y": 499,
+        "width": 834,
+        "height": 86,
+        "top": 499,
+        "right": 1020,
+        "bottom": 585,
+        "left": 186
+      },
+      "dock": {
+        "x": 24,
+        "y": 620,
+        "width": 1318,
+        "height": 130,
+        "top": 620,
+        "right": 1342,
+        "bottom": 750,
+        "left": 24
+      },
+      "gold": {
+        "x": 25,
+        "y": 621,
+        "width": 167,
+        "height": 32,
+        "top": 621,
+        "right": 192,
+        "bottom": 653,
+        "left": 25
+      },
+      "xp": {
+        "x": 25,
+        "y": 653,
+        "width": 87,
+        "height": 96,
+        "top": 653,
+        "right": 112,
+        "bottom": 749,
+        "left": 25
+      },
+      "roll": {
+        "x": 113,
+        "y": 653,
+        "width": 79,
+        "height": 96,
+        "top": 653,
+        "right": 192,
+        "bottom": 749,
+        "left": 113
+      },
+      "ready": {
+        "x": 1229,
+        "y": 653,
+        "width": 112,
+        "height": 96,
+        "top": 653,
+        "right": 1341,
+        "bottom": 749,
+        "left": 1229
+      },
+      "streak": {
+        "x": 1229,
+        "y": 621,
+        "width": 112,
+        "height": 32,
+        "top": 621,
+        "right": 1341,
+        "bottom": 653,
+        "left": 1229
+      },
+      "ids": []
+    },
+    {
+      "mode": "pc",
+      "width": 1024,
+      "height": 768,
+      "wide": true,
+      "sheetOpen": false,
+      "sheet": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "history": {
+        "x": 743,
+        "y": 120,
+        "width": 243,
+        "height": 753,
+        "top": 120,
+        "right": 986,
+        "bottom": 873,
+        "left": 743
+      },
+      "overflow": false,
+      "innerOverflow": false,
+      "bench": {
+        "x": 165,
+        "y": 505,
+        "width": 554,
+        "height": 86,
+        "top": 505,
+        "right": 719,
+        "bottom": 591,
+        "left": 165
+      },
+      "dock": {
+        "x": 12,
+        "y": 626,
+        "width": 1000,
+        "height": 130,
+        "top": 626,
+        "right": 1012,
+        "bottom": 756,
+        "left": 12
+      },
+      "gold": {
+        "x": 13,
+        "y": 627,
+        "width": 167,
+        "height": 32,
+        "top": 627,
+        "right": 180,
+        "bottom": 659,
+        "left": 13
+      },
+      "xp": {
+        "x": 13,
+        "y": 659,
+        "width": 87,
+        "height": 96,
+        "top": 659,
+        "right": 100,
+        "bottom": 755,
+        "left": 13
+      },
+      "roll": {
+        "x": 101,
+        "y": 659,
+        "width": 79,
+        "height": 96,
+        "top": 659,
+        "right": 180,
+        "bottom": 755,
+        "left": 101
+      },
+      "ready": {
+        "x": 899,
+        "y": 659,
+        "width": 112,
+        "height": 96,
+        "top": 659,
+        "right": 1011,
+        "bottom": 755,
+        "left": 899
+      },
+      "streak": {
+        "x": 899,
+        "y": 627,
+        "width": 112,
+        "height": 32,
+        "top": 627,
+        "right": 1011,
+        "bottom": 659,
+        "left": 899
+      },
+      "ids": []
+    },
+    {
+      "mode": "pc",
+      "width": 390,
+      "height": 844,
+      "wide": false,
+      "sheetOpen": true,
+      "sheet": {
+        "x": 6,
+        "y": 168.8125,
+        "width": 378,
+        "height": 675.1875,
+        "top": 168.8125,
+        "right": 384,
+        "bottom": 844,
+        "left": 6
+      },
+      "history": {
+        "x": 17,
+        "y": 240.8125,
+        "width": 356,
+        "height": 713,
+        "top": 240.8125,
+        "right": 373,
+        "bottom": 953.8125,
+        "left": 17
+      },
+      "overflow": false,
+      "innerOverflow": false,
+      "bench": {
+        "x": 13,
+        "y": 501,
+        "width": 364,
+        "height": 86,
+        "top": 501,
+        "right": 377,
+        "bottom": 587,
+        "left": 13
+      },
+      "dock": {
+        "x": 6,
+        "y": 622,
+        "width": 378,
+        "height": 216,
+        "top": 622,
+        "right": 384,
+        "bottom": 838,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 623,
+        "width": 125,
+        "height": 30,
+        "top": 623,
+        "right": 132,
+        "bottom": 653,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 653,
+        "width": 63,
+        "height": 184,
+        "top": 653,
+        "right": 70,
+        "bottom": 837,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 653,
+        "width": 61,
+        "height": 184,
+        "top": 653,
+        "right": 132,
+        "bottom": 837,
+        "left": 71
+      },
+      "ready": {
+        "x": 329,
+        "y": 653,
+        "width": 54,
+        "height": 184,
+        "top": 653,
+        "right": 383,
+        "bottom": 837,
+        "left": 329
+      },
+      "streak": {
+        "x": 329,
+        "y": 623,
+        "width": 54,
+        "height": 30,
+        "top": 623,
+        "right": 383,
+        "bottom": 653,
+        "left": 329
+      },
+      "ids": []
+    },
+    {
+      "mode": "pc",
+      "width": 320,
+      "height": 740,
+      "wide": false,
+      "sheetOpen": true,
+      "sheet": {
+        "x": 6,
+        "y": 148,
+        "width": 308,
+        "height": 592,
+        "top": 148,
+        "right": 314,
+        "bottom": 740,
+        "left": 6
+      },
+      "history": {
+        "x": 17,
+        "y": 220,
+        "width": 286,
+        "height": 753,
+        "top": 220,
+        "right": 303,
+        "bottom": 973,
+        "left": 17
+      },
+      "overflow": false,
+      "innerOverflow": false,
+      "bench": {
+        "x": 9,
+        "y": 415,
+        "width": 302,
+        "height": 86,
+        "top": 415,
+        "right": 311,
+        "bottom": 501,
+        "left": 9
+      },
+      "dock": {
+        "x": 6,
+        "y": 518,
+        "width": 308,
+        "height": 216,
+        "top": 518,
+        "right": 314,
+        "bottom": 734,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 519,
+        "width": 125,
+        "height": 30,
+        "top": 519,
+        "right": 132,
+        "bottom": 549,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 549,
+        "width": 63,
+        "height": 184,
+        "top": 549,
+        "right": 70,
+        "bottom": 733,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 549,
+        "width": 61,
+        "height": 184,
+        "top": 549,
+        "right": 132,
+        "bottom": 733,
+        "left": 71
+      },
+      "ready": {
+        "x": 259,
+        "y": 549,
+        "width": 54,
+        "height": 184,
+        "top": 549,
+        "right": 313,
+        "bottom": 733,
+        "left": 259
+      },
+      "streak": {
+        "x": 259,
+        "y": 519,
+        "width": 54,
+        "height": 30,
+        "top": 519,
+        "right": 313,
+        "bottom": 549,
+        "left": 259
+      },
+      "ids": []
+    },
+    {
+      "mode": "pc",
+      "width": 844,
+      "height": 390,
+      "wide": false,
+      "sheetOpen": true,
+      "sheet": {
+        "x": 82,
+        "y": 12,
+        "width": 680,
+        "height": 378,
+        "top": 12,
+        "right": 762,
+        "bottom": 390,
+        "left": 82
+      },
+      "history": {
+        "x": 93,
+        "y": 84,
+        "width": 658,
+        "height": 713,
+        "top": 84,
+        "right": 751,
+        "bottom": 797,
+        "left": 93
+      },
+      "overflow": false,
+      "innerOverflow": false,
+      "bench": {
+        "x": 19,
+        "y": 286,
+        "width": 386,
+        "height": 75,
+        "top": 286,
+        "right": 405,
+        "bottom": 361,
+        "left": 19
+      },
+      "dock": {
+        "x": 564,
+        "y": 110,
+        "width": 274,
+        "height": 274,
+        "top": 110,
+        "right": 838,
+        "bottom": 384,
+        "left": 564
+      },
+      "gold": {
+        "x": 565,
+        "y": 111,
+        "width": 125,
+        "height": 30,
+        "top": 111,
+        "right": 690,
+        "bottom": 141,
+        "left": 565
+      },
+      "xp": {
+        "x": 565,
+        "y": 141,
+        "width": 63,
+        "height": 242,
+        "top": 141,
+        "right": 628,
+        "bottom": 383,
+        "left": 565
+      },
+      "roll": {
+        "x": 629,
+        "y": 141,
+        "width": 61,
+        "height": 242,
+        "top": 141,
+        "right": 690,
+        "bottom": 383,
+        "left": 629
+      },
+      "ready": {
+        "x": 783,
+        "y": 141,
+        "width": 54,
+        "height": 242,
+        "top": 141,
+        "right": 837,
+        "bottom": 383,
+        "left": 783
+      },
+      "streak": {
+        "x": 783,
+        "y": 111,
+        "width": 54,
+        "height": 30,
+        "top": 111,
+        "right": 837,
+        "bottom": 141,
+        "left": 783
+      },
+      "ids": []
+    },
+    {
+      "mode": "pc",
+      "width": 480,
+      "height": 320,
+      "wide": false,
+      "sheetOpen": true,
+      "sheet": {
+        "x": 6,
+        "y": 12,
+        "width": 468,
+        "height": 308,
+        "top": 12,
+        "right": 474,
+        "bottom": 320,
+        "left": 6
+      },
+      "history": {
+        "x": 17,
+        "y": 84,
+        "width": 446,
+        "height": 713,
+        "top": 84,
+        "right": 463,
+        "bottom": 797,
+        "left": 17
+      },
+      "overflow": false,
+      "innerOverflow": false,
+      "bench": {
+        "x": 19,
+        "y": 239,
+        "width": 84,
+        "height": 75,
+        "top": 239,
+        "right": 103,
+        "bottom": 314,
+        "left": 19
+      },
+      "dock": {
+        "x": 200,
+        "y": 40,
+        "width": 274,
+        "height": 274,
+        "top": 40,
+        "right": 474,
+        "bottom": 314,
+        "left": 200
+      },
+      "gold": {
+        "x": 201,
+        "y": 41,
+        "width": 125,
+        "height": 30,
+        "top": 41,
+        "right": 326,
+        "bottom": 71,
+        "left": 201
+      },
+      "xp": {
+        "x": 201,
+        "y": 71,
+        "width": 63,
+        "height": 242,
+        "top": 71,
+        "right": 264,
+        "bottom": 313,
+        "left": 201
+      },
+      "roll": {
+        "x": 265,
+        "y": 71,
+        "width": 61,
+        "height": 242,
+        "top": 71,
+        "right": 326,
+        "bottom": 313,
+        "left": 265
+      },
+      "ready": {
+        "x": 419,
+        "y": 71,
+        "width": 54,
+        "height": 242,
+        "top": 71,
+        "right": 473,
+        "bottom": 313,
+        "left": 419
+      },
+      "streak": {
+        "x": 419,
+        "y": 41,
+        "width": 54,
+        "height": 30,
+        "top": 41,
+        "right": 473,
+        "bottom": 71,
+        "left": 419
+      },
+      "ids": []
+    },
+    {
+      "mode": "mobile",
+      "metric": "damageDealt",
+      "team": "self",
+      "values": [
+        460.95,
+        438,
+        183,
+        149,
+        138,
+        108
+      ],
+      "widths": [
+        80.445,
+        76.4398,
+        31.9372,
+        26.0035,
+        24.0838,
+        18.8482
+      ],
+      "total": 1477
+    },
+    {
+      "mode": "mobile",
+      "metric": "damageDealt",
+      "team": "opponent",
+      "values": [
+        573,
+        439.25,
+        214,
+        138,
+        126,
+        62
+      ],
+      "widths": [
+        100,
+        76.6579,
+        37.3473,
+        24.0838,
+        21.9895,
+        10.8202
+      ],
+      "total": 1552.3
+    },
+    {
+      "mode": "mobile",
+      "metric": "damageTaken",
+      "team": "self",
+      "values": [
+        481.25,
+        299,
+        272,
+        190,
+        165,
+        145
+      ],
+      "widths": [
+        87.1909,
+        54.1716,
+        49.2798,
+        34.4234,
+        29.894,
+        26.2705
+      ],
+      "total": 1552.3
+    },
+    {
+      "mode": "mobile",
+      "metric": "damageTaken",
+      "team": "opponent",
+      "values": [
+        551.95,
+        299,
+        290,
+        190,
+        87,
+        59
+      ],
+      "widths": [
+        100,
+        54.1716,
+        52.541,
+        34.4234,
+        15.7623,
+        10.6894
+      ],
+      "total": 1477
+    },
+    {
+      "mode": "mobile",
+      "metric": "healing",
+      "team": "self",
+      "values": [
+        88.7,
+        53.55,
+        24,
+        0,
+        0,
+        0
+      ],
+      "widths": [
+        45.9824,
+        27.7605,
+        12.4417,
+        0,
+        0,
+        0
+      ],
+      "total": 166.3
+    },
+    {
+      "mode": "mobile",
+      "metric": "healing",
+      "team": "opponent",
+      "values": [
+        192.9,
+        60,
+        53.55,
+        0,
+        0,
+        0
+      ],
+      "widths": [
+        100,
+        31.1042,
+        27.7605,
+        0,
+        0,
+        0
+      ],
+      "total": 306.5
+    },
+    {
+      "mode": "mobile",
+      "metric": "shieldBlocked",
+      "team": "self",
+      "values": [
+        210,
+        85,
+        55,
+        45,
+        0,
+        0
+      ],
+      "widths": [
+        75,
+        30.3571,
+        19.6429,
+        16.0714,
+        0,
+        0
+      ],
+      "total": 395
+    },
+    {
+      "mode": "mobile",
+      "metric": "shieldBlocked",
+      "team": "opponent",
+      "values": [
+        280,
+        85,
+        55,
+        45,
+        0,
+        0
+      ],
+      "widths": [
+        100,
+        30.3571,
+        19.6429,
+        16.0714,
+        0,
+        0
+      ],
+      "total": 465
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "wide": false,
+      "sheetOpen": true,
+      "sheet": {
+        "x": 6,
+        "y": 168.8125,
+        "width": 378,
+        "height": 675.1875,
+        "top": 168.8125,
+        "right": 384,
+        "bottom": 844,
+        "left": 6
+      },
+      "history": {
+        "x": 17,
+        "y": 240.8125,
+        "width": 356,
+        "height": 711,
+        "top": 240.8125,
+        "right": 373,
+        "bottom": 951.8125,
+        "left": 17
+      },
+      "overflow": false,
+      "innerOverflow": false,
+      "bench": {
+        "x": 7,
+        "y": 500.5,
+        "width": 376,
+        "height": 86,
+        "top": 500.5,
+        "right": 383,
+        "bottom": 586.5,
+        "left": 7
+      },
+      "dock": {
+        "x": 6,
+        "y": 622,
+        "width": 378,
+        "height": 216,
+        "top": 622,
+        "right": 384,
+        "bottom": 838,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 623,
+        "width": 125,
+        "height": 30,
+        "top": 623,
+        "right": 132,
+        "bottom": 653,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 653,
+        "width": 63,
+        "height": 184,
+        "top": 653,
+        "right": 70,
+        "bottom": 837,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 653,
+        "width": 61,
+        "height": 184,
+        "top": 653,
+        "right": 132,
+        "bottom": 837,
+        "left": 71
+      },
+      "ready": {
+        "x": 329,
+        "y": 653,
+        "width": 54,
+        "height": 184,
+        "top": 653,
+        "right": 383,
+        "bottom": 837,
+        "left": 329
+      },
+      "streak": {
+        "x": 329,
+        "y": 623,
+        "width": 54,
+        "height": 30,
+        "top": 623,
+        "right": 383,
+        "bottom": 653,
+        "left": 329
+      },
+      "ids": []
+    },
+    {
+      "mode": "mobile",
+      "width": 320,
+      "height": 740,
+      "wide": false,
+      "sheetOpen": true,
+      "sheet": {
+        "x": 6,
+        "y": 148,
+        "width": 308,
+        "height": 592,
+        "top": 148,
+        "right": 314,
+        "bottom": 740,
+        "left": 6
+      },
+      "history": {
+        "x": 17,
+        "y": 220,
+        "width": 286,
+        "height": 751,
+        "top": 220,
+        "right": 303,
+        "bottom": 971,
+        "left": 17
+      },
+      "overflow": false,
+      "innerOverflow": false,
+      "bench": {
+        "x": 7,
+        "y": 396.5,
+        "width": 306,
+        "height": 86,
+        "top": 396.5,
+        "right": 313,
+        "bottom": 482.5,
+        "left": 7
+      },
+      "dock": {
+        "x": 6,
+        "y": 518,
+        "width": 308,
+        "height": 216,
+        "top": 518,
+        "right": 314,
+        "bottom": 734,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 519,
+        "width": 125,
+        "height": 30,
+        "top": 519,
+        "right": 132,
+        "bottom": 549,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 549,
+        "width": 63,
+        "height": 184,
+        "top": 549,
+        "right": 70,
+        "bottom": 733,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 549,
+        "width": 61,
+        "height": 184,
+        "top": 549,
+        "right": 132,
+        "bottom": 733,
+        "left": 71
+      },
+      "ready": {
+        "x": 259,
+        "y": 549,
+        "width": 54,
+        "height": 184,
+        "top": 549,
+        "right": 313,
+        "bottom": 733,
+        "left": 259
+      },
+      "streak": {
+        "x": 259,
+        "y": 519,
+        "width": 54,
+        "height": 30,
+        "top": 519,
+        "right": 313,
+        "bottom": 549,
+        "left": 259
+      },
+      "ids": []
+    },
+    {
+      "mode": "mobile",
+      "width": 360,
+      "height": 640,
+      "wide": false,
+      "sheetOpen": true,
+      "sheet": {
+        "x": 6,
+        "y": 128,
+        "width": 348,
+        "height": 512,
+        "top": 128,
+        "right": 354,
+        "bottom": 640,
+        "left": 6
+      },
+      "history": {
+        "x": 17,
+        "y": 200,
+        "width": 326,
+        "height": 751,
+        "top": 200,
+        "right": 343,
+        "bottom": 951,
+        "left": 17
+      },
+      "overflow": false,
+      "innerOverflow": false,
+      "bench": {
+        "x": 7,
+        "y": 308.5,
+        "width": 346,
+        "height": 86,
+        "top": 308.5,
+        "right": 353,
+        "bottom": 394.5,
+        "left": 7
+      },
+      "dock": {
+        "x": 6,
+        "y": 418,
+        "width": 348,
+        "height": 216,
+        "top": 418,
+        "right": 354,
+        "bottom": 634,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 419,
+        "width": 125,
+        "height": 30,
+        "top": 419,
+        "right": 132,
+        "bottom": 449,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 449,
+        "width": 63,
+        "height": 184,
+        "top": 449,
+        "right": 70,
+        "bottom": 633,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 449,
+        "width": 61,
+        "height": 184,
+        "top": 449,
+        "right": 132,
+        "bottom": 633,
+        "left": 71
+      },
+      "ready": {
+        "x": 299,
+        "y": 449,
+        "width": 54,
+        "height": 184,
+        "top": 449,
+        "right": 353,
+        "bottom": 633,
+        "left": 299
+      },
+      "streak": {
+        "x": 299,
+        "y": 419,
+        "width": 54,
+        "height": 30,
+        "top": 419,
+        "right": 353,
+        "bottom": 449,
+        "left": 299
+      },
+      "ids": []
+    },
+    {
+      "mode": "mobile",
+      "width": 414,
+      "height": 896,
+      "wide": false,
+      "sheetOpen": true,
+      "sheet": {
+        "x": 6,
+        "y": 179.203125,
+        "width": 402,
+        "height": 716.796875,
+        "top": 179.203125,
+        "right": 408,
+        "bottom": 896,
+        "left": 6
+      },
+      "history": {
+        "x": 17,
+        "y": 251.203125,
+        "width": 380,
+        "height": 711,
+        "top": 251.203125,
+        "right": 397,
+        "bottom": 962.203125,
+        "left": 17
+      },
+      "overflow": false,
+      "innerOverflow": false,
+      "bench": {
+        "x": 7,
+        "y": 552.5,
+        "width": 400,
+        "height": 86,
+        "top": 552.5,
+        "right": 407,
+        "bottom": 638.5,
+        "left": 7
+      },
+      "dock": {
+        "x": 6,
+        "y": 674,
+        "width": 402,
+        "height": 216,
+        "top": 674,
+        "right": 408,
+        "bottom": 890,
+        "left": 6
+      },
+      "gold": {
+        "x": 7,
+        "y": 675,
+        "width": 125,
+        "height": 30,
+        "top": 675,
+        "right": 132,
+        "bottom": 705,
+        "left": 7
+      },
+      "xp": {
+        "x": 7,
+        "y": 705,
+        "width": 63,
+        "height": 184,
+        "top": 705,
+        "right": 70,
+        "bottom": 889,
+        "left": 7
+      },
+      "roll": {
+        "x": 71,
+        "y": 705,
+        "width": 61,
+        "height": 184,
+        "top": 705,
+        "right": 132,
+        "bottom": 889,
+        "left": 71
+      },
+      "ready": {
+        "x": 353,
+        "y": 705,
+        "width": 54,
+        "height": 184,
+        "top": 705,
+        "right": 407,
+        "bottom": 889,
+        "left": 353
+      },
+      "streak": {
+        "x": 353,
+        "y": 675,
+        "width": 54,
+        "height": 30,
+        "top": 675,
+        "right": 407,
+        "bottom": 705,
+        "left": 353
+      },
+      "ids": []
+    },
+    {
+      "mode": "mobile",
+      "width": 768,
+      "height": 1024,
+      "wide": false,
+      "sheetOpen": true,
+      "sheet": {
+        "x": 44,
+        "y": 228,
+        "width": 680,
+        "height": 796,
+        "top": 228,
+        "right": 724,
+        "bottom": 1024,
+        "left": 44
+      },
+      "history": {
+        "x": 55,
+        "y": 300,
+        "width": 658,
+        "height": 711,
+        "top": 300,
+        "right": 713,
+        "bottom": 1011,
+        "left": 55
+      },
+      "overflow": false,
+      "innerOverflow": false,
+      "bench": {
+        "x": 45,
+        "y": 668.5,
+        "width": 678,
+        "height": 86,
+        "top": 668.5,
+        "right": 723,
+        "bottom": 754.5,
+        "left": 45
+      },
+      "dock": {
+        "x": 44,
+        "y": 888,
+        "width": 680,
+        "height": 130,
+        "top": 888,
+        "right": 724,
+        "bottom": 1018,
+        "left": 44
+      },
+      "gold": {
+        "x": 45,
+        "y": 889,
+        "width": 167,
+        "height": 32,
+        "top": 889,
+        "right": 212,
+        "bottom": 921,
+        "left": 45
+      },
+      "xp": {
+        "x": 45,
+        "y": 921,
+        "width": 87,
+        "height": 96,
+        "top": 921,
+        "right": 132,
+        "bottom": 1017,
+        "left": 45
+      },
+      "roll": {
+        "x": 133,
+        "y": 921,
+        "width": 79,
+        "height": 96,
+        "top": 921,
+        "right": 212,
+        "bottom": 1017,
+        "left": 133
+      },
+      "ready": {
+        "x": 611,
+        "y": 921,
+        "width": 112,
+        "height": 96,
+        "top": 921,
+        "right": 723,
+        "bottom": 1017,
+        "left": 611
+      },
+      "streak": {
+        "x": 611,
+        "y": 889,
+        "width": 112,
+        "height": 32,
+        "top": 889,
+        "right": 723,
+        "bottom": 921,
+        "left": 611
+      },
+      "ids": []
+    },
+    {
+      "mode": "mobile",
+      "width": 844,
+      "height": 390,
+      "wide": false,
+      "sheetOpen": true,
+      "sheet": {
+        "x": 82,
+        "y": 12,
+        "width": 680,
+        "height": 378,
+        "top": 12,
+        "right": 762,
+        "bottom": 390,
+        "left": 82
+      },
+      "history": {
+        "x": 93,
+        "y": 84,
+        "width": 658,
+        "height": 711,
+        "top": 84,
+        "right": 751,
+        "bottom": 795,
+        "left": 93
+      },
+      "overflow": false,
+      "innerOverflow": false,
+      "bench": {
+        "x": 13,
+        "y": 286,
+        "width": 398,
+        "height": 75,
+        "top": 286,
+        "right": 411,
+        "bottom": 361,
+        "left": 13
+      },
+      "dock": {
+        "x": 564,
+        "y": 110,
+        "width": 274,
+        "height": 274,
+        "top": 110,
+        "right": 838,
+        "bottom": 384,
+        "left": 564
+      },
+      "gold": {
+        "x": 565,
+        "y": 111,
+        "width": 125,
+        "height": 30,
+        "top": 111,
+        "right": 690,
+        "bottom": 141,
+        "left": 565
+      },
+      "xp": {
+        "x": 565,
+        "y": 141,
+        "width": 63,
+        "height": 242,
+        "top": 141,
+        "right": 628,
+        "bottom": 383,
+        "left": 565
+      },
+      "roll": {
+        "x": 629,
+        "y": 141,
+        "width": 61,
+        "height": 242,
+        "top": 141,
+        "right": 690,
+        "bottom": 383,
+        "left": 629
+      },
+      "ready": {
+        "x": 783,
+        "y": 141,
+        "width": 54,
+        "height": 242,
+        "top": 141,
+        "right": 837,
+        "bottom": 383,
+        "left": 783
+      },
+      "streak": {
+        "x": 783,
+        "y": 111,
+        "width": 54,
+        "height": 30,
+        "top": 111,
+        "right": 837,
+        "bottom": 141,
+        "left": 783
+      },
+      "ids": []
+    },
+    {
+      "mode": "mobile",
+      "width": 480,
+      "height": 320,
+      "wide": false,
+      "sheetOpen": true,
+      "sheet": {
+        "x": 6,
+        "y": 12,
+        "width": 468,
+        "height": 308,
+        "top": 12,
+        "right": 474,
+        "bottom": 320,
+        "left": 6
+      },
+      "history": {
+        "x": 17,
+        "y": 84,
+        "width": 446,
+        "height": 711,
+        "top": 84,
+        "right": 463,
+        "bottom": 795,
+        "left": 17
+      },
+      "overflow": false,
+      "innerOverflow": false,
+      "bench": {
+        "x": 13,
+        "y": 245,
+        "width": 96,
+        "height": 75,
+        "top": 245,
+        "right": 109,
+        "bottom": 320,
+        "left": 13
+      },
+      "dock": {
+        "x": 200,
+        "y": 40,
+        "width": 274,
+        "height": 274,
+        "top": 40,
+        "right": 474,
+        "bottom": 314,
+        "left": 200
+      },
+      "gold": {
+        "x": 201,
+        "y": 41,
+        "width": 125,
+        "height": 30,
+        "top": 41,
+        "right": 326,
+        "bottom": 71,
+        "left": 201
+      },
+      "xp": {
+        "x": 201,
+        "y": 71,
+        "width": 63,
+        "height": 242,
+        "top": 71,
+        "right": 264,
+        "bottom": 313,
+        "left": 201
+      },
+      "roll": {
+        "x": 265,
+        "y": 71,
+        "width": 61,
+        "height": 242,
+        "top": 71,
+        "right": 326,
+        "bottom": 313,
+        "left": 265
+      },
+      "ready": {
+        "x": 419,
+        "y": 71,
+        "width": 54,
+        "height": 242,
+        "top": 71,
+        "right": 473,
+        "bottom": 313,
+        "left": 419
+      },
+      "streak": {
+        "x": 419,
+        "y": 41,
+        "width": 54,
+        "height": 30,
+        "top": 41,
+        "right": 473,
+        "bottom": 71,
+        "left": 419
+      },
+      "ids": []
+    }
+  ],
+  "errors": []
+}

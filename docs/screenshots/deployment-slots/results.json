@@ -1,0 +1,3677 @@
+{
+  "version": "0.19.5",
+  "browser": "138.0.7204.0",
+  "results": [
+    {
+      "mode": "pc",
+      "records": [
+        {
+          "deployed": 0,
+          "cap": 1,
+          "slots": [
+            {
+              "state": "available",
+              "background": "rgb(105, 116, 130)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 가능",
+              "rect": {
+                "x": 359,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 380.59375,
+                "bottom": 762,
+                "left": 359
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "2번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 385.59375,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 407.1875,
+                "bottom": 762,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "3번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 412.1875,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 433.796875,
+                "bottom": 762,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 438.796875,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 460.390625,
+                "bottom": 762,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 465.390625,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 487,
+                "bottom": 762,
+                "left": 465.390625
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 359,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 380.59375,
+                "bottom": 779,
+                "left": 359
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 385.59375,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 407.1875,
+                "bottom": 779,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 412.1875,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 433.796875,
+                "bottom": 779,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 438.796875,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 460.390625,
+                "bottom": 779,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 465.390625,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 487,
+                "bottom": 779,
+                "left": 465.390625
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 1,
+          "cap": 1,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 359,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 380.59375,
+                "bottom": 762,
+                "left": 359
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "2번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 385.59375,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 407.1875,
+                "bottom": 762,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "3번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 412.1875,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 433.796875,
+                "bottom": 762,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 438.796875,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 460.390625,
+                "bottom": 762,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 465.390625,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 487,
+                "bottom": 762,
+                "left": 465.390625
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 359,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 380.59375,
+                "bottom": 779,
+                "left": 359
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 385.59375,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 407.1875,
+                "bottom": 779,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 412.1875,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 433.796875,
+                "bottom": 779,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 438.796875,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 460.390625,
+                "bottom": 779,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 465.390625,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 487,
+                "bottom": 779,
+                "left": 465.390625
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 1,
+          "cap": 3,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 359,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 380.59375,
+                "bottom": 762,
+                "left": 359
+              }
+            },
+            {
+              "state": "available",
+              "background": "rgb(105, 116, 130)",
+              "border": "solid",
+              "title": "2번 출전 칸 · 출전 가능",
+              "rect": {
+                "x": 385.59375,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 407.1875,
+                "bottom": 762,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "available",
+              "background": "rgb(105, 116, 130)",
+              "border": "solid",
+              "title": "3번 출전 칸 · 출전 가능",
+              "rect": {
+                "x": 412.1875,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 433.796875,
+                "bottom": 762,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 438.796875,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 460.390625,
+                "bottom": 762,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 465.390625,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 487,
+                "bottom": 762,
+                "left": 465.390625
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 359,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 380.59375,
+                "bottom": 779,
+                "left": 359
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 385.59375,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 407.1875,
+                "bottom": 779,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 412.1875,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 433.796875,
+                "bottom": 779,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 438.796875,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 460.390625,
+                "bottom": 779,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 465.390625,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 487,
+                "bottom": 779,
+                "left": 465.390625
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 1,
+          "cap": 3,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 359,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 380.59375,
+                "bottom": 762,
+                "left": 359
+              }
+            },
+            {
+              "state": "available",
+              "background": "rgb(105, 116, 130)",
+              "border": "solid",
+              "title": "2번 출전 칸 · 출전 가능",
+              "rect": {
+                "x": 385.59375,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 407.1875,
+                "bottom": 762,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "available",
+              "background": "rgb(105, 116, 130)",
+              "border": "solid",
+              "title": "3번 출전 칸 · 출전 가능",
+              "rect": {
+                "x": 412.1875,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 433.796875,
+                "bottom": 762,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 438.796875,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 460.390625,
+                "bottom": 762,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 465.390625,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 487,
+                "bottom": 762,
+                "left": 465.390625
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 359,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 380.59375,
+                "bottom": 779,
+                "left": 359
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 385.59375,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 407.1875,
+                "bottom": 779,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 412.1875,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 433.796875,
+                "bottom": 779,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 438.796875,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 460.390625,
+                "bottom": 779,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 465.390625,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 487,
+                "bottom": 779,
+                "left": 465.390625
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 0,
+          "cap": 3,
+          "slots": [
+            {
+              "state": "available",
+              "background": "rgb(105, 116, 130)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 가능",
+              "rect": {
+                "x": 359,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 380.59375,
+                "bottom": 762,
+                "left": 359
+              }
+            },
+            {
+              "state": "available",
+              "background": "rgb(105, 116, 130)",
+              "border": "solid",
+              "title": "2번 출전 칸 · 출전 가능",
+              "rect": {
+                "x": 385.59375,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 407.1875,
+                "bottom": 762,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "available",
+              "background": "rgb(105, 116, 130)",
+              "border": "solid",
+              "title": "3번 출전 칸 · 출전 가능",
+              "rect": {
+                "x": 412.1875,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 433.796875,
+                "bottom": 762,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 438.796875,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 460.390625,
+                "bottom": 762,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 465.390625,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 487,
+                "bottom": 762,
+                "left": 465.390625
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 359,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 380.59375,
+                "bottom": 779,
+                "left": 359
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 385.59375,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 407.1875,
+                "bottom": 779,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 412.1875,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 433.796875,
+                "bottom": 779,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 438.796875,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 460.390625,
+                "bottom": 779,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 465.390625,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 487,
+                "bottom": 779,
+                "left": 465.390625
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 7,
+          "cap": 7,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 359,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 380.59375,
+                "bottom": 762,
+                "left": 359
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "2번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 385.59375,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 407.1875,
+                "bottom": 762,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "3번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 412.1875,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 433.796875,
+                "bottom": 762,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "4번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 438.796875,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 460.390625,
+                "bottom": 762,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "5번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 465.390625,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 487,
+                "bottom": 762,
+                "left": 465.390625
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "6번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 359,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 380.59375,
+                "bottom": 779,
+                "left": 359
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "7번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 385.59375,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 407.1875,
+                "bottom": 779,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 412.1875,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 433.796875,
+                "bottom": 779,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 438.796875,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 460.390625,
+                "bottom": 779,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 465.390625,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 487,
+                "bottom": 779,
+                "left": 465.390625
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 10,
+          "cap": 10,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 359,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 380.59375,
+                "bottom": 762,
+                "left": 359
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "2번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 385.59375,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 407.1875,
+                "bottom": 762,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "3번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 412.1875,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 433.796875,
+                "bottom": 762,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "4번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 438.796875,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 460.390625,
+                "bottom": 762,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "5번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 465.390625,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 487,
+                "bottom": 762,
+                "left": 465.390625
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "6번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 359,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 380.59375,
+                "bottom": 779,
+                "left": 359
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "7번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 385.59375,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 407.1875,
+                "bottom": 779,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "8번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 412.1875,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 433.796875,
+                "bottom": 779,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "9번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 438.796875,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 460.390625,
+                "bottom": 779,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "10번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 465.390625,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 487,
+                "bottom": 779,
+                "left": 465.390625
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 1,
+          "cap": 1,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 359,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 380.59375,
+                "bottom": 762,
+                "left": 359
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "2번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 385.59375,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 407.1875,
+                "bottom": 762,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "3번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 412.1875,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 433.796875,
+                "bottom": 762,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 438.796875,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 460.390625,
+                "bottom": 762,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 465.390625,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 487,
+                "bottom": 762,
+                "left": 465.390625
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 359,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 380.59375,
+                "bottom": 779,
+                "left": 359
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 385.59375,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 407.1875,
+                "bottom": 779,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 412.1875,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 433.796875,
+                "bottom": 779,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 438.796875,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 460.390625,
+                "bottom": 779,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 465.390625,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 487,
+                "bottom": 779,
+                "left": 465.390625
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 1,
+          "cap": 1,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 359,
+                "y": 936,
+                "width": 21.59375,
+                "height": 12,
+                "top": 936,
+                "right": 380.59375,
+                "bottom": 948,
+                "left": 359
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "2번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 385.59375,
+                "y": 936,
+                "width": 21.59375,
+                "height": 12,
+                "top": 936,
+                "right": 407.1875,
+                "bottom": 948,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "3번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 412.1875,
+                "y": 936,
+                "width": 21.609375,
+                "height": 12,
+                "top": 936,
+                "right": 433.796875,
+                "bottom": 948,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 438.796875,
+                "y": 936,
+                "width": 21.59375,
+                "height": 12,
+                "top": 936,
+                "right": 460.390625,
+                "bottom": 948,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 465.390625,
+                "y": 936,
+                "width": 21.609375,
+                "height": 12,
+                "top": 936,
+                "right": 487,
+                "bottom": 948,
+                "left": 465.390625
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 359,
+                "y": 953,
+                "width": 21.59375,
+                "height": 12,
+                "top": 953,
+                "right": 380.59375,
+                "bottom": 965,
+                "left": 359
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 385.59375,
+                "y": 953,
+                "width": 21.59375,
+                "height": 12,
+                "top": 953,
+                "right": 407.1875,
+                "bottom": 965,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 412.1875,
+                "y": 953,
+                "width": 21.609375,
+                "height": 12,
+                "top": 953,
+                "right": 433.796875,
+                "bottom": 965,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 438.796875,
+                "y": 953,
+                "width": 21.59375,
+                "height": 12,
+                "top": 953,
+                "right": 460.390625,
+                "bottom": 965,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 465.390625,
+                "y": 953,
+                "width": 21.609375,
+                "height": 12,
+                "top": 953,
+                "right": 487,
+                "bottom": 965,
+                "left": 465.390625
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 1,
+          "cap": 1,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 359,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 380.59375,
+                "bottom": 762,
+                "left": 359
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "2번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 385.59375,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 407.1875,
+                "bottom": 762,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "3번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 412.1875,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 433.796875,
+                "bottom": 762,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 438.796875,
+                "y": 750,
+                "width": 21.59375,
+                "height": 12,
+                "top": 750,
+                "right": 460.390625,
+                "bottom": 762,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 465.390625,
+                "y": 750,
+                "width": 21.609375,
+                "height": 12,
+                "top": 750,
+                "right": 487,
+                "bottom": 762,
+                "left": 465.390625
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 359,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 380.59375,
+                "bottom": 779,
+                "left": 359
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 385.59375,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 407.1875,
+                "bottom": 779,
+                "left": 385.59375
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 412.1875,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 433.796875,
+                "bottom": 779,
+                "left": 412.1875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 438.796875,
+                "y": 767,
+                "width": 21.59375,
+                "height": 12,
+                "top": 767,
+                "right": 460.390625,
+                "bottom": 779,
+                "left": 438.796875
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 465.390625,
+                "y": 767,
+                "width": 21.609375,
+                "height": 12,
+                "top": 767,
+                "right": 487,
+                "bottom": 779,
+                "left": 465.390625
+              }
+            }
+          ]
+        }
+      ],
+      "levelPurchase": true,
+      "placementAndRemoval": true,
+      "reload": true,
+      "shopBenchAndFold": true
+    },
+    {
+      "mode": "mobile",
+      "records": [
+        {
+          "deployed": 0,
+          "cap": 1,
+          "slots": [
+            {
+              "state": "available",
+              "background": "rgb(105, 116, 130)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 가능",
+              "rect": {
+                "x": 17,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 35,
+                "bottom": 682.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "2번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 38,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 56,
+                "bottom": 682.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "3번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 59,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 77,
+                "bottom": 682.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 98,
+                "bottom": 682.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 119,
+                "bottom": 682.5,
+                "left": 101
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 17,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 35,
+                "bottom": 695.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 38,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 56,
+                "bottom": 695.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 59,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 77,
+                "bottom": 695.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 98,
+                "bottom": 695.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 119,
+                "bottom": 695.5,
+                "left": 101
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 1,
+          "cap": 1,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 17,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 35,
+                "bottom": 682.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "2번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 38,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 56,
+                "bottom": 682.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "3번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 59,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 77,
+                "bottom": 682.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 98,
+                "bottom": 682.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 119,
+                "bottom": 682.5,
+                "left": 101
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 17,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 35,
+                "bottom": 695.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 38,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 56,
+                "bottom": 695.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 59,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 77,
+                "bottom": 695.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 98,
+                "bottom": 695.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 119,
+                "bottom": 695.5,
+                "left": 101
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 1,
+          "cap": 3,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 17,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 35,
+                "bottom": 682.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "available",
+              "background": "rgb(105, 116, 130)",
+              "border": "solid",
+              "title": "2번 출전 칸 · 출전 가능",
+              "rect": {
+                "x": 38,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 56,
+                "bottom": 682.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "available",
+              "background": "rgb(105, 116, 130)",
+              "border": "solid",
+              "title": "3번 출전 칸 · 출전 가능",
+              "rect": {
+                "x": 59,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 77,
+                "bottom": 682.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 98,
+                "bottom": 682.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 119,
+                "bottom": 682.5,
+                "left": 101
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 17,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 35,
+                "bottom": 695.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 38,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 56,
+                "bottom": 695.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 59,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 77,
+                "bottom": 695.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 98,
+                "bottom": 695.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 119,
+                "bottom": 695.5,
+                "left": 101
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 1,
+          "cap": 3,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 17,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 35,
+                "bottom": 682.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "available",
+              "background": "rgb(105, 116, 130)",
+              "border": "solid",
+              "title": "2번 출전 칸 · 출전 가능",
+              "rect": {
+                "x": 38,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 56,
+                "bottom": 682.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "available",
+              "background": "rgb(105, 116, 130)",
+              "border": "solid",
+              "title": "3번 출전 칸 · 출전 가능",
+              "rect": {
+                "x": 59,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 77,
+                "bottom": 682.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 98,
+                "bottom": 682.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 119,
+                "bottom": 682.5,
+                "left": 101
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 17,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 35,
+                "bottom": 695.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 38,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 56,
+                "bottom": 695.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 59,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 77,
+                "bottom": 695.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 98,
+                "bottom": 695.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 119,
+                "bottom": 695.5,
+                "left": 101
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 0,
+          "cap": 3,
+          "slots": [
+            {
+              "state": "available",
+              "background": "rgb(105, 116, 130)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 가능",
+              "rect": {
+                "x": 17,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 35,
+                "bottom": 682.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "available",
+              "background": "rgb(105, 116, 130)",
+              "border": "solid",
+              "title": "2번 출전 칸 · 출전 가능",
+              "rect": {
+                "x": 38,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 56,
+                "bottom": 682.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "available",
+              "background": "rgb(105, 116, 130)",
+              "border": "solid",
+              "title": "3번 출전 칸 · 출전 가능",
+              "rect": {
+                "x": 59,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 77,
+                "bottom": 682.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 98,
+                "bottom": 682.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 119,
+                "bottom": 682.5,
+                "left": 101
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 17,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 35,
+                "bottom": 695.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 38,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 56,
+                "bottom": 695.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 59,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 77,
+                "bottom": 695.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 98,
+                "bottom": 695.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 119,
+                "bottom": 695.5,
+                "left": 101
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 7,
+          "cap": 7,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 17,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 35,
+                "bottom": 682.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "2번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 38,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 56,
+                "bottom": 682.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "3번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 59,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 77,
+                "bottom": 682.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "4번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 80,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 98,
+                "bottom": 682.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "5번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 101,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 119,
+                "bottom": 682.5,
+                "left": 101
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "6번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 17,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 35,
+                "bottom": 695.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "7번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 38,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 56,
+                "bottom": 695.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 59,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 77,
+                "bottom": 695.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 98,
+                "bottom": 695.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 119,
+                "bottom": 695.5,
+                "left": 101
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 10,
+          "cap": 10,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 17,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 35,
+                "bottom": 682.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "2번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 38,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 56,
+                "bottom": 682.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "3번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 59,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 77,
+                "bottom": 682.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "4번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 80,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 98,
+                "bottom": 682.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "5번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 101,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 119,
+                "bottom": 682.5,
+                "left": 101
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "6번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 17,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 35,
+                "bottom": 695.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "7번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 38,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 56,
+                "bottom": 695.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "8번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 59,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 77,
+                "bottom": 695.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "9번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 80,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 98,
+                "bottom": 695.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "10번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 101,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 119,
+                "bottom": 695.5,
+                "left": 101
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 1,
+          "cap": 1,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 17,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 35,
+                "bottom": 682.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "2번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 38,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 56,
+                "bottom": 682.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "3번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 59,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 77,
+                "bottom": 682.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 98,
+                "bottom": 682.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 119,
+                "bottom": 682.5,
+                "left": 101
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 17,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 35,
+                "bottom": 695.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 38,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 56,
+                "bottom": 695.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 59,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 77,
+                "bottom": 695.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 98,
+                "bottom": 695.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 119,
+                "bottom": 695.5,
+                "left": 101
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 1,
+          "cap": 1,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 17,
+                "y": 806.5,
+                "width": 18,
+                "height": 10,
+                "top": 806.5,
+                "right": 35,
+                "bottom": 816.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "2번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 38,
+                "y": 806.5,
+                "width": 18,
+                "height": 10,
+                "top": 806.5,
+                "right": 56,
+                "bottom": 816.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "3번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 59,
+                "y": 806.5,
+                "width": 18,
+                "height": 10,
+                "top": 806.5,
+                "right": 77,
+                "bottom": 816.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 806.5,
+                "width": 18,
+                "height": 10,
+                "top": 806.5,
+                "right": 98,
+                "bottom": 816.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 806.5,
+                "width": 18,
+                "height": 10,
+                "top": 806.5,
+                "right": 119,
+                "bottom": 816.5,
+                "left": 101
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 17,
+                "y": 819.5,
+                "width": 18,
+                "height": 10,
+                "top": 819.5,
+                "right": 35,
+                "bottom": 829.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 38,
+                "y": 819.5,
+                "width": 18,
+                "height": 10,
+                "top": 819.5,
+                "right": 56,
+                "bottom": 829.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 59,
+                "y": 819.5,
+                "width": 18,
+                "height": 10,
+                "top": 819.5,
+                "right": 77,
+                "bottom": 829.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 819.5,
+                "width": 18,
+                "height": 10,
+                "top": 819.5,
+                "right": 98,
+                "bottom": 829.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 819.5,
+                "width": 18,
+                "height": 10,
+                "top": 819.5,
+                "right": 119,
+                "bottom": 829.5,
+                "left": 101
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 1,
+          "cap": 1,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 17,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 35,
+                "bottom": 682.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "2번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 38,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 56,
+                "bottom": 682.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "3번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 59,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 77,
+                "bottom": 682.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 98,
+                "bottom": 682.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 672.5,
+                "width": 18,
+                "height": 10,
+                "top": 672.5,
+                "right": 119,
+                "bottom": 682.5,
+                "left": 101
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 17,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 35,
+                "bottom": 695.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 38,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 56,
+                "bottom": 695.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 59,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 77,
+                "bottom": 695.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 98,
+                "bottom": 695.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 685.5,
+                "width": 18,
+                "height": 10,
+                "top": 685.5,
+                "right": 119,
+                "bottom": 695.5,
+                "left": 101
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 1,
+          "cap": 1,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 17,
+                "y": 568.5,
+                "width": 18,
+                "height": 10,
+                "top": 568.5,
+                "right": 35,
+                "bottom": 578.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "2번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 38,
+                "y": 568.5,
+                "width": 18,
+                "height": 10,
+                "top": 568.5,
+                "right": 56,
+                "bottom": 578.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "3번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 59,
+                "y": 568.5,
+                "width": 18,
+                "height": 10,
+                "top": 568.5,
+                "right": 77,
+                "bottom": 578.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 568.5,
+                "width": 18,
+                "height": 10,
+                "top": 568.5,
+                "right": 98,
+                "bottom": 578.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 568.5,
+                "width": 18,
+                "height": 10,
+                "top": 568.5,
+                "right": 119,
+                "bottom": 578.5,
+                "left": 101
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 17,
+                "y": 581.5,
+                "width": 18,
+                "height": 10,
+                "top": 581.5,
+                "right": 35,
+                "bottom": 591.5,
+                "left": 17
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 38,
+                "y": 581.5,
+                "width": 18,
+                "height": 10,
+                "top": 581.5,
+                "right": 56,
+                "bottom": 591.5,
+                "left": 38
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 59,
+                "y": 581.5,
+                "width": 18,
+                "height": 10,
+                "top": 581.5,
+                "right": 77,
+                "bottom": 591.5,
+                "left": 59
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 80,
+                "y": 581.5,
+                "width": 18,
+                "height": 10,
+                "top": 581.5,
+                "right": 98,
+                "bottom": 591.5,
+                "left": 80
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 101,
+                "y": 581.5,
+                "width": 18,
+                "height": 10,
+                "top": 581.5,
+                "right": 119,
+                "bottom": 591.5,
+                "left": 101
+              }
+            }
+          ]
+        },
+        {
+          "deployed": 1,
+          "cap": 1,
+          "slots": [
+            {
+              "state": "occupied",
+              "background": "rgb(102, 168, 232)",
+              "border": "solid",
+              "title": "1번 출전 칸 · 출전 중",
+              "rect": {
+                "x": 271,
+                "y": 210.5,
+                "width": 16,
+                "height": 10,
+                "top": 210.5,
+                "right": 287,
+                "bottom": 220.5,
+                "left": 271
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "2번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 290,
+                "y": 210.5,
+                "width": 16,
+                "height": 10,
+                "top": 210.5,
+                "right": 306,
+                "bottom": 220.5,
+                "left": 290
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "3번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 309,
+                "y": 210.5,
+                "width": 16,
+                "height": 10,
+                "top": 210.5,
+                "right": 325,
+                "bottom": 220.5,
+                "left": 309
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "4번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 328,
+                "y": 210.5,
+                "width": 16,
+                "height": 10,
+                "top": 210.5,
+                "right": 344,
+                "bottom": 220.5,
+                "left": 328
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "5번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 347,
+                "y": 210.5,
+                "width": 16,
+                "height": 10,
+                "top": 210.5,
+                "right": 363,
+                "bottom": 220.5,
+                "left": 347
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "6번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 271,
+                "y": 223.5,
+                "width": 16,
+                "height": 10,
+                "top": 223.5,
+                "right": 287,
+                "bottom": 233.5,
+                "left": 271
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "7번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 290,
+                "y": 223.5,
+                "width": 16,
+                "height": 10,
+                "top": 223.5,
+                "right": 306,
+                "bottom": 233.5,
+                "left": 290
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "8번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 309,
+                "y": 223.5,
+                "width": 16,
+                "height": 10,
+                "top": 223.5,
+                "right": 325,
+                "bottom": 233.5,
+                "left": 309
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "9번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 328,
+                "y": 223.5,
+                "width": 16,
+                "height": 10,
+                "top": 223.5,
+                "right": 344,
+                "bottom": 233.5,
+                "left": 328
+              }
+            },
+            {
+              "state": "locked",
+              "background": "rgba(0, 0, 0, 0)",
+              "border": "dashed",
+              "title": "10번 출전 칸 · 아직 잠김",
+              "rect": {
+                "x": 347,
+                "y": 223.5,
+                "width": 16,
+                "height": 10,
+                "top": 223.5,
+                "right": 363,
+                "bottom": 233.5,
+                "left": 347
+              }
+            }
+          ]
+        }
+      ],
+      "levelPurchase": true,
+      "placementAndRemoval": true,
+      "reload": true,
+      "shopBenchAndFold": true
+    }
+  ],
+  "errors": []
+}

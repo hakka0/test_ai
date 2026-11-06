@@ -1,0 +1,56 @@
+{
+  "browser": "138.0.7204.0",
+  "measurements": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "board": 560,
+      "boardBottom": 685,
+      "dockTop": 838,
+      "dockHeight": 162,
+      "arenaBottom": 715,
+      "overflow": false
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "board": 560,
+      "boardBottom": 685,
+      "dockTop": 918,
+      "dockHeight": 162,
+      "arenaBottom": 715,
+      "overflow": false
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "board": 460,
+      "boardBottom": 585,
+      "dockTop": 606,
+      "dockHeight": 162,
+      "arenaBottom": 586,
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "board": 461,
+      "boardBottom": 586,
+      "dockTop": 607,
+      "dockHeight": 161,
+      "arenaBottom": 587,
+      "overflow": false
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "board": 420,
+      "boardBottom": 549,
+      "dockTop": 156,
+      "dockHeight": 234,
+      "arenaBottom": 136,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

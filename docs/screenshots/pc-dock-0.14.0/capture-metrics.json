@@ -1,0 +1,335 @@
+{
+  "browser": "138.0.7204.0",
+  "screens": [
+    {
+      "name": "pc-screen-0.14.0",
+      "width": 1440,
+      "height": 1000,
+      "mode": "pc",
+      "elements": {
+        "#pc-play-dock": {
+          "top": 848,
+          "height": 152,
+          "width": 1120
+        },
+        ".pc-dock-bar": {
+          "top": 849,
+          "height": 57,
+          "width": 1118
+        },
+        "#bench": {
+          "top": 906,
+          "height": 93,
+          "width": 585.609375
+        },
+        "#shop-panel": {
+          "top": 906,
+          "height": 93,
+          "width": 532.390625
+        },
+        ".matchbar": {
+          "top": 57,
+          "height": 68,
+          "width": 851
+        },
+        ".players": {
+          "top": 65,
+          "height": 51,
+          "width": 242.75
+        },
+        ".history-toggle-row": {
+          "top": 0,
+          "height": 0,
+          "width": 0
+        },
+        "#board-wrap": {
+          "top": 125,
+          "height": 560,
+          "width": 560
+        },
+        ".arena-panel": {
+          "top": 56,
+          "height": 659,
+          "width": 868
+        }
+      },
+      "boardWidth": 560,
+      "overflow": false
+    },
+    {
+      "name": "pc-1366x768",
+      "width": 1366,
+      "height": 768,
+      "mode": "pc",
+      "elements": {
+        "#pc-play-dock": {
+          "top": 616,
+          "height": 152,
+          "width": 1120
+        },
+        ".pc-dock-bar": {
+          "top": 617,
+          "height": 57,
+          "width": 1118
+        },
+        "#bench": {
+          "top": 674,
+          "height": 93,
+          "width": 585.609375
+        },
+        "#shop-panel": {
+          "top": 674,
+          "height": 93,
+          "width": 532.390625
+        },
+        ".matchbar": {
+          "top": 57,
+          "height": 68,
+          "width": 851
+        },
+        ".players": {
+          "top": 65,
+          "height": 51,
+          "width": 242.75
+        },
+        ".history-toggle-row": {
+          "top": 0,
+          "height": 0,
+          "width": 0
+        },
+        "#board-wrap": {
+          "top": 125,
+          "height": 470,
+          "width": 470
+        },
+        ".arena-panel": {
+          "top": 56,
+          "height": 540,
+          "width": 868
+        }
+      },
+      "boardWidth": 470,
+      "overflow": false
+    },
+    {
+      "name": "pc-1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "mode": "pc",
+      "elements": {
+        "#pc-play-dock": {
+          "top": 928,
+          "height": 152,
+          "width": 1120
+        },
+        ".pc-dock-bar": {
+          "top": 929,
+          "height": 57,
+          "width": 1118
+        },
+        "#bench": {
+          "top": 986,
+          "height": 93,
+          "width": 585.609375
+        },
+        "#shop-panel": {
+          "top": 986,
+          "height": 93,
+          "width": 532.390625
+        },
+        ".matchbar": {
+          "top": 57,
+          "height": 68,
+          "width": 851
+        },
+        ".players": {
+          "top": 65,
+          "height": 51,
+          "width": 242.75
+        },
+        ".history-toggle-row": {
+          "top": 0,
+          "height": 0,
+          "width": 0
+        },
+        "#board-wrap": {
+          "top": 125,
+          "height": 560,
+          "width": 560
+        },
+        ".arena-panel": {
+          "top": 56,
+          "height": 659,
+          "width": 868
+        }
+      },
+      "boardWidth": 560,
+      "overflow": false
+    },
+    {
+      "name": "pc-1024x768",
+      "width": 1024,
+      "height": 768,
+      "mode": "pc",
+      "elements": {
+        "#pc-play-dock": {
+          "top": 616,
+          "height": 152,
+          "width": 1000
+        },
+        ".pc-dock-bar": {
+          "top": 617,
+          "height": 57,
+          "width": 998
+        },
+        "#bench": {
+          "top": 674,
+          "height": 93,
+          "width": 522.75
+        },
+        "#shop-panel": {
+          "top": 674,
+          "height": 93,
+          "width": 475.25
+        },
+        ".matchbar": {
+          "top": 57,
+          "height": 68,
+          "width": 771
+        },
+        ".players": {
+          "top": 65,
+          "height": 51,
+          "width": 234.75
+        },
+        ".history-toggle-row": {
+          "top": 0,
+          "height": 0,
+          "width": 0
+        },
+        "#board-wrap": {
+          "top": 125,
+          "height": 470,
+          "width": 470
+        },
+        ".arena-panel": {
+          "top": 56,
+          "height": 540,
+          "width": 788
+        }
+      },
+      "boardWidth": 470,
+      "overflow": false
+    },
+    {
+      "name": "pc-short",
+      "width": 844,
+      "height": 390,
+      "mode": "pc",
+      "elements": {
+        "#pc-play-dock": {
+          "top": 156,
+          "height": 234,
+          "width": 820
+        },
+        ".pc-dock-bar": {
+          "top": 157,
+          "height": 83,
+          "width": 818
+        },
+        "#bench": {
+          "top": 240,
+          "height": 158,
+          "width": 428.46875
+        },
+        "#shop-panel": {
+          "top": 240,
+          "height": 93,
+          "width": 389.53125
+        },
+        ".matchbar": {
+          "top": 57,
+          "height": 72,
+          "width": 591
+        },
+        ".players": {
+          "top": 67,
+          "height": 51,
+          "width": 232.40625
+        },
+        ".history-toggle-row": {
+          "top": 0,
+          "height": 0,
+          "width": 0
+        },
+        "#board-wrap": {
+          "top": 129,
+          "height": 420,
+          "width": 420
+        },
+        ".arena-panel": {
+          "top": 56,
+          "height": 80,
+          "width": 608
+        }
+      },
+      "boardWidth": 420,
+      "overflow": false
+    },
+    {
+      "name": "mobile-screen-0.14.0",
+      "width": 390,
+      "height": 844,
+      "mode": "mobile",
+      "elements": {
+        "#pc-play-dock": {
+          "top": 0,
+          "height": 0,
+          "width": 0
+        },
+        ".pc-dock-bar": {
+          "top": 0,
+          "height": 0,
+          "width": 0
+        },
+        "#bench": {
+          "top": 1624.796875,
+          "height": 202,
+          "width": 364
+        },
+        "#shop-panel": {
+          "top": 0,
+          "height": 0,
+          "width": 0
+        },
+        ".matchbar": {
+          "top": 69,
+          "height": 91,
+          "width": 364
+        },
+        ".players": {
+          "top": 226,
+          "height": 76,
+          "width": 364
+        },
+        ".history-toggle-row": {
+          "top": 170,
+          "height": 44,
+          "width": 364
+        },
+        "#board-wrap": {
+          "top": 302,
+          "height": 364,
+          "width": 364
+        },
+        ".arena-panel": {
+          "top": 68,
+          "height": 1759.796875,
+          "width": 366
+        }
+      },
+      "boardWidth": 364,
+      "overflow": false
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "version": "0.18.0",
+  "browser": "138.0.7204.0",
+  "results": [
+    {
+      "mode": "pc",
+      "combatXP": true,
+      "resultXP": true,
+      "combatShop": true,
+      "resultShop": true,
+      "resultReroll": true,
+      "combatEquipUnequip": true,
+      "resultDragKeyboardEquipUnequip": true,
+      "placementSaleLocked": true,
+      "dockHeight": 270
+    },
+    {
+      "mode": "mobile",
+      "combatXP": true,
+      "resultXP": true,
+      "combatShop": true,
+      "resultShop": true,
+      "resultReroll": true,
+      "combatEquipUnequip": true,
+      "resultDragKeyboardEquipUnequip": true,
+      "placementSaleLocked": true,
+      "dockHeight": 242
+    }
+  ],
+  "errors": []
+}

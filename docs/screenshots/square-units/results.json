@@ -1,0 +1,91 @@
+{
+  "version": "0.20.18",
+  "browser": "155.0.8059.41",
+  "results": [
+    {
+      "mode": "pc",
+      "reverse": false,
+      "texture": "square-500",
+      "displayWidth": 81,
+      "displayHeight": 81
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "texture": "knight",
+      "displayWidth": 67.5,
+      "displayHeight": 81
+    },
+    {
+      "mode": "pc",
+      "reverse": false,
+      "texture": "wide-1000",
+      "displayWidth": 81,
+      "displayHeight": 40.5
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "texture": "square-500",
+      "displayWidth": 81,
+      "displayHeight": 81
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "texture": "knight",
+      "displayWidth": 67.5,
+      "displayHeight": 81
+    },
+    {
+      "mode": "pc",
+      "reverse": true,
+      "texture": "wide-1000",
+      "displayWidth": 81,
+      "displayHeight": 40.5
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "texture": "square-500",
+      "displayWidth": 81,
+      "displayHeight": 81
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "texture": "knight",
+      "displayWidth": 67.5,
+      "displayHeight": 81
+    },
+    {
+      "mode": "mobile",
+      "reverse": false,
+      "texture": "wide-1000",
+      "displayWidth": 81,
+      "displayHeight": 40.5
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "texture": "square-500",
+      "displayWidth": 81,
+      "displayHeight": 81
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "texture": "knight",
+      "displayWidth": 67.5,
+      "displayHeight": 81
+    },
+    {
+      "mode": "mobile",
+      "reverse": true,
+      "texture": "wide-1000",
+      "displayWidth": 81,
+      "displayHeight": 40.5
+    }
+  ],
+  "errors": []
+}

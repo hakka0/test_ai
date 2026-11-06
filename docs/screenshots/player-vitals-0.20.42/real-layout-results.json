@@ -1,0 +1,674 @@
+{
+  "version": "0.20.42",
+  "browser": "155.0.8059.84",
+  "results": [
+    {
+      "mode": "pc",
+      "width": 480,
+      "height": 320,
+      "html": "pc-layout landscape-layout",
+      "room": "132px",
+      "shopWidth": "196px",
+      "statusWidth": "60px",
+      "nodes": {
+        "#game-view": {
+          "rect": {
+            "x": 18,
+            "y": 93,
+            "width": 180,
+            "height": 147,
+            "top": 93,
+            "right": 198,
+            "bottom": 240,
+            "left": 18
+          },
+          "width": "180px",
+          "height": "147px",
+          "padding": "0px",
+          "margin": "0px 0px 0px 6px",
+          "fontSize": "16px",
+          "lineHeight": "normal",
+          "minHeight": "0px",
+          "display": "block",
+          "position": "relative"
+        },
+        ".arena-panel": {
+          "rect": {
+            "x": 18,
+            "y": 93,
+            "width": 180,
+            "height": 147,
+            "top": 93,
+            "right": 198,
+            "bottom": 240,
+            "left": 18
+          },
+          "width": "180px",
+          "height": "147px",
+          "padding": "0px 64px 0px 0px",
+          "margin": "0px",
+          "fontSize": "16px",
+          "lineHeight": "normal",
+          "minHeight": "0px",
+          "display": "block",
+          "position": "relative"
+        },
+        "#battlefield-stage": {
+          "rect": {
+            "x": 19,
+            "y": 94,
+            "width": 114,
+            "height": 70,
+            "top": 94,
+            "right": 133,
+            "bottom": 164,
+            "left": 19
+          },
+          "width": "114px",
+          "height": "70px",
+          "padding": "0px",
+          "margin": "0px",
+          "fontSize": "16px",
+          "lineHeight": "normal",
+          "minHeight": "0px",
+          "display": "block",
+          "position": "relative"
+        },
+        "#board-wrap": {
+          "rect": {
+            "x": 45,
+            "y": 98,
+            "width": 62,
+            "height": 62,
+            "top": 98,
+            "right": 107,
+            "bottom": 160,
+            "left": 45
+          },
+          "width": "62px",
+          "height": "62px",
+          "padding": "0px",
+          "margin": "4px 26px",
+          "fontSize": "16px",
+          "lineHeight": "normal",
+          "minHeight": "0px",
+          "display": "block",
+          "position": "relative"
+        },
+        "#my-vitals": {
+          "rect": {
+            "x": 19,
+            "y": 94.5,
+            "width": 22,
+            "height": 69,
+            "top": 94.5,
+            "right": 41,
+            "bottom": 163.5,
+            "left": 19
+          },
+          "width": "22px",
+          "height": "69px",
+          "padding": "4px 0px",
+          "margin": "0px",
+          "fontSize": "16px",
+          "lineHeight": "normal",
+          "minHeight": "0px",
+          "display": "flex",
+          "position": "absolute"
+        },
+        "#enemy-vitals": {
+          "rect": {
+            "x": 111,
+            "y": 85,
+            "width": 22,
+            "height": 88,
+            "top": 85,
+            "right": 133,
+            "bottom": 173,
+            "left": 111
+          },
+          "width": "22px",
+          "height": "88px",
+          "padding": "4px 0px",
+          "margin": "0px",
+          "fontSize": "16px",
+          "lineHeight": "normal",
+          "minHeight": "0px",
+          "display": "flex",
+          "position": "absolute"
+        },
+        "#enemy-ready": {
+          "rect": {
+            "x": 118.25,
+            "y": 152,
+            "width": 7.5,
+            "height": 16,
+            "top": 152,
+            "right": 125.75,
+            "bottom": 168,
+            "left": 118.25
+          },
+          "width": "7.5px",
+          "height": "16px",
+          "padding": "0px",
+          "margin": "0px",
+          "fontSize": "0px",
+          "lineHeight": "12px",
+          "minHeight": "0px",
+          "display": "block",
+          "position": "static"
+        },
+        "#enemy-score": {
+          "rect": {
+            "x": 115.84375,
+            "y": 139,
+            "width": 12.3125,
+            "height": 10,
+            "top": 139,
+            "right": 128.15625,
+            "bottom": 149,
+            "left": 115.84375
+          },
+          "width": "12.3125px",
+          "height": "10px",
+          "padding": "0px",
+          "margin": "0px",
+          "fontSize": "8px",
+          "lineHeight": "10px",
+          "minHeight": "auto",
+          "display": "block",
+          "position": "static"
+        },
+        ".player-health": {
+          "rect": {
+            "x": 20.5,
+            "y": 112.5,
+            "width": 18.984375,
+            "height": 26,
+            "top": 112.5,
+            "right": 39.484375,
+            "bottom": 138.5,
+            "left": 20.5
+          },
+          "width": "18.9844px",
+          "height": "26px",
+          "padding": "0px",
+          "margin": "0px",
+          "fontSize": "16px",
+          "lineHeight": "normal",
+          "minHeight": "auto",
+          "display": "flex",
+          "position": "static"
+        },
+        "#pc-bench": {
+          "rect": {
+            "x": 19,
+            "y": 164,
+            "width": 114,
+            "height": 75,
+            "top": 164,
+            "right": 133,
+            "bottom": 239,
+            "left": 19
+          },
+          "width": "114px",
+          "height": "75px",
+          "padding": "0px",
+          "margin": "0px",
+          "fontSize": "16px",
+          "lineHeight": "normal",
+          "minHeight": "0px",
+          "display": "block",
+          "position": "static"
+        },
+        "#pc-play-dock": {
+          "rect": {
+            "x": 216,
+            "y": 93,
+            "width": 196,
+            "height": 221,
+            "top": 93,
+            "right": 412,
+            "bottom": 314,
+            "left": 216
+          },
+          "width": "196px",
+          "height": "221px",
+          "padding": "0px",
+          "margin": "0px",
+          "fontSize": "16px",
+          "lineHeight": "normal",
+          "minHeight": "0px",
+          "display": "grid",
+          "position": "fixed"
+        }
+      },
+      "cardChildren": [
+        {
+          "class": "player-side",
+          "rect": {
+            "x": 114,
+            "y": 90,
+            "width": 16,
+            "height": 10,
+            "top": 90,
+            "right": 130,
+            "bottom": 100,
+            "left": 114
+          },
+          "fontSize": "8px",
+          "display": "block"
+        },
+        {
+          "class": "player-name",
+          "rect": {
+            "x": 121.5,
+            "y": 90,
+            "width": 1,
+            "height": 1,
+            "top": 90,
+            "right": 122.5,
+            "bottom": 91,
+            "left": 121.5
+          },
+          "fontSize": "11px",
+          "display": "block"
+        },
+        {
+          "class": "player-health",
+          "rect": {
+            "x": 112.5,
+            "y": 103,
+            "width": 18.984375,
+            "height": 26,
+            "top": 103,
+            "right": 131.484375,
+            "bottom": 129,
+            "left": 112.5
+          },
+          "fontSize": "16px",
+          "display": "flex"
+        },
+        {
+          "class": "player-health-track",
+          "rect": {
+            "x": 115,
+            "y": 132,
+            "width": 14,
+            "height": 4,
+            "top": 132,
+            "right": 129,
+            "bottom": 136,
+            "left": 115
+          },
+          "fontSize": "16px",
+          "display": "block"
+        },
+        {
+          "class": "player-score",
+          "rect": {
+            "x": 115.84375,
+            "y": 139,
+            "width": 12.3125,
+            "height": 10,
+            "top": 139,
+            "right": 128.15625,
+            "bottom": 149,
+            "left": 115.84375
+          },
+          "fontSize": "8px",
+          "display": "block"
+        },
+        {
+          "class": "ready-status",
+          "rect": {
+            "x": 118.25,
+            "y": 152,
+            "width": 7.5,
+            "height": 16,
+            "top": 152,
+            "right": 125.75,
+            "bottom": 168,
+            "left": 118.25
+          },
+          "fontSize": "0px",
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "mode": "mobile",
+      "width": 480,
+      "height": 320,
+      "html": "mobile-layout landscape-layout",
+      "room": "169px",
+      "shopWidth": "196px",
+      "statusWidth": "60px",
+      "nodes": {
+        "#game-view": {
+          "rect": {
+            "x": 12,
+            "y": 56,
+            "width": 192,
+            "height": 159,
+            "top": 56,
+            "right": 204,
+            "bottom": 215,
+            "left": 12
+          },
+          "width": "192px",
+          "height": "159px",
+          "padding": "0px",
+          "margin": "0px 0px 0px 6px",
+          "fontSize": "16px",
+          "lineHeight": "20px",
+          "minHeight": "0px",
+          "display": "block",
+          "position": "relative"
+        },
+        ".arena-panel": {
+          "rect": {
+            "x": 12,
+            "y": 56,
+            "width": 192,
+            "height": 159,
+            "top": 56,
+            "right": 204,
+            "bottom": 215,
+            "left": 12
+          },
+          "width": "192px",
+          "height": "159px",
+          "padding": "0px 64px 0px 0px",
+          "margin": "0px",
+          "fontSize": "16px",
+          "lineHeight": "20px",
+          "minHeight": "0px",
+          "display": "block",
+          "position": "relative"
+        },
+        "#battlefield-stage": {
+          "rect": {
+            "x": 13,
+            "y": 57,
+            "width": 126,
+            "height": 82,
+            "top": 57,
+            "right": 139,
+            "bottom": 139,
+            "left": 13
+          },
+          "width": "126px",
+          "height": "82px",
+          "padding": "0px",
+          "margin": "0px",
+          "fontSize": "16px",
+          "lineHeight": "20px",
+          "minHeight": "0px",
+          "display": "block",
+          "position": "relative"
+        },
+        "#board-wrap": {
+          "rect": {
+            "x": 39,
+            "y": 61,
+            "width": 74,
+            "height": 74,
+            "top": 61,
+            "right": 113,
+            "bottom": 135,
+            "left": 39
+          },
+          "width": "74px",
+          "height": "74px",
+          "padding": "0px",
+          "margin": "4px 0px",
+          "fontSize": "16px",
+          "lineHeight": "20px",
+          "minHeight": "0px",
+          "display": "block",
+          "position": "relative"
+        },
+        "#my-vitals": {
+          "rect": {
+            "x": 13,
+            "y": 63.5,
+            "width": 22,
+            "height": 69,
+            "top": 63.5,
+            "right": 35,
+            "bottom": 132.5,
+            "left": 13
+          },
+          "width": "22px",
+          "height": "69px",
+          "padding": "4px 0px",
+          "margin": "0px",
+          "fontSize": "16px",
+          "lineHeight": "20px",
+          "minHeight": "0px",
+          "display": "flex",
+          "position": "absolute"
+        },
+        "#enemy-vitals": {
+          "rect": {
+            "x": 117,
+            "y": 63.5,
+            "width": 22,
+            "height": 69,
+            "top": 63.5,
+            "right": 139,
+            "bottom": 132.5,
+            "left": 117
+          },
+          "width": "22px",
+          "height": "69px",
+          "padding": "4px 0px",
+          "margin": "0px",
+          "fontSize": "16px",
+          "lineHeight": "20px",
+          "minHeight": "0px",
+          "display": "flex",
+          "position": "absolute"
+        },
+        "#enemy-ready": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "width": "auto",
+          "height": "auto",
+          "padding": "0px",
+          "margin": "0px",
+          "fontSize": "0px",
+          "lineHeight": "12px",
+          "minHeight": "0px",
+          "display": "none",
+          "position": "static"
+        },
+        "#enemy-score": {
+          "rect": {
+            "x": 121.84375,
+            "y": 117.5,
+            "width": 12.3125,
+            "height": 10,
+            "top": 117.5,
+            "right": 134.15625,
+            "bottom": 127.5,
+            "left": 121.84375
+          },
+          "width": "12.3125px",
+          "height": "10px",
+          "padding": "0px",
+          "margin": "0px",
+          "fontSize": "8px",
+          "lineHeight": "10px",
+          "minHeight": "auto",
+          "display": "block",
+          "position": "static"
+        },
+        ".player-health": {
+          "rect": {
+            "x": 14.5,
+            "y": 81.5,
+            "width": 18.984375,
+            "height": 26,
+            "top": 81.5,
+            "right": 33.484375,
+            "bottom": 107.5,
+            "left": 14.5
+          },
+          "width": "18.9844px",
+          "height": "26px",
+          "padding": "0px",
+          "margin": "0px",
+          "fontSize": "16px",
+          "lineHeight": "20px",
+          "minHeight": "auto",
+          "display": "flex",
+          "position": "static"
+        },
+        "#pc-bench": {
+          "rect": {
+            "x": 13,
+            "y": 139,
+            "width": 126,
+            "height": 75,
+            "top": 139,
+            "right": 139,
+            "bottom": 214,
+            "left": 13
+          },
+          "width": "126px",
+          "height": "75px",
+          "padding": "0px",
+          "margin": "0px",
+          "fontSize": "16px",
+          "lineHeight": "20px",
+          "minHeight": "0px",
+          "display": "block",
+          "position": "static"
+        },
+        "#pc-play-dock": {
+          "rect": {
+            "x": 216,
+            "y": 56,
+            "width": 196,
+            "height": 258,
+            "top": 56,
+            "right": 412,
+            "bottom": 314,
+            "left": 216
+          },
+          "width": "196px",
+          "height": "258px",
+          "padding": "0px",
+          "margin": "0px",
+          "fontSize": "16px",
+          "lineHeight": "20px",
+          "minHeight": "0px",
+          "display": "grid",
+          "position": "fixed"
+        }
+      },
+      "cardChildren": [
+        {
+          "class": "player-side",
+          "rect": {
+            "x": 120,
+            "y": 68.5,
+            "width": 16,
+            "height": 10,
+            "top": 68.5,
+            "right": 136,
+            "bottom": 78.5,
+            "left": 120
+          },
+          "fontSize": "8px",
+          "display": "block"
+        },
+        {
+          "class": "player-name",
+          "rect": {
+            "x": 127.5,
+            "y": 68.5,
+            "width": 1,
+            "height": 1,
+            "top": 68.5,
+            "right": 128.5,
+            "bottom": 69.5,
+            "left": 127.5
+          },
+          "fontSize": "11px",
+          "display": "block"
+        },
+        {
+          "class": "player-health",
+          "rect": {
+            "x": 118.5,
+            "y": 81.5,
+            "width": 18.984375,
+            "height": 26,
+            "top": 81.5,
+            "right": 137.484375,
+            "bottom": 107.5,
+            "left": 118.5
+          },
+          "fontSize": "16px",
+          "display": "flex"
+        },
+        {
+          "class": "player-health-track",
+          "rect": {
+            "x": 121,
+            "y": 110.5,
+            "width": 14,
+            "height": 4,
+            "top": 110.5,
+            "right": 135,
+            "bottom": 114.5,
+            "left": 121
+          },
+          "fontSize": "16px",
+          "display": "block"
+        },
+        {
+          "class": "player-score",
+          "rect": {
+            "x": 121.84375,
+            "y": 117.5,
+            "width": 12.3125,
+            "height": 10,
+            "top": 117.5,
+            "right": 134.15625,
+            "bottom": 127.5,
+            "left": 121.84375
+          },
+          "fontSize": "8px",
+          "display": "block"
+        },
+        {
+          "class": "ready-status",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "fontSize": "0px",
+          "display": "none"
+        }
+      ]
+    }
+  ]
+}

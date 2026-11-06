@@ -1,0 +1,1567 @@
+{
+  "version": "0.20.68",
+  "browser": "151.0.7922.34",
+  "results": [
+    {
+      "mode": "pc",
+      "width": 1400,
+      "height": 1000,
+      "hoverEffectsOnly": true,
+      "passiveBeforeActive": true,
+      "immediateClickOrTap": true,
+      "dragBuysOnce": true,
+      "noPlacementOrSaleSideEffects": true,
+      "mergeHint": true,
+      "actualMerge": true,
+      "allCardDimensionsStable": true,
+      "ghostMatchesCardAndFillsBorder": true,
+      "noInfoIcons": true,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 268,
+          "y": 128,
+          "width": 588,
+          "height": 588,
+          "top": 128,
+          "right": 856,
+          "bottom": 716,
+          "left": 268
+        },
+        "bench": {
+          "x": 203,
+          "y": 716,
+          "width": 718,
+          "height": 100.84375,
+          "top": 716,
+          "right": 921,
+          "bottom": 816.84375,
+          "left": 203
+        },
+        "shop": {
+          "x": 24,
+          "y": 852,
+          "width": 1352,
+          "height": 130,
+          "top": 852,
+          "right": 1376,
+          "bottom": 982,
+          "left": 24
+        },
+        "rank": {
+          "x": 1266,
+          "y": 65,
+          "width": 104,
+          "height": 534,
+          "top": 65,
+          "right": 1370,
+          "bottom": 599,
+          "left": 1266
+        },
+        "targets": [
+          {
+            "x": 777.0625,
+            "y": 75,
+            "width": 86.578125,
+            "height": 44,
+            "top": 75,
+            "right": 863.640625,
+            "bottom": 119,
+            "left": 777.0625
+          },
+          {
+            "x": 671.984375,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 783.984375,
+            "bottom": 973,
+            "left": 671.984375
+          },
+          {
+            "x": 884.78125,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 996.78125,
+            "bottom": 973,
+            "left": 884.78125
+          },
+          {
+            "x": 1097.59375,
+            "y": 861,
+            "width": 112,
+            "height": 112,
+            "top": 861,
+            "right": 1209.59375,
+            "bottom": 973,
+            "left": 1097.59375
+          },
+          {
+            "x": 1264,
+            "y": 898,
+            "width": 110,
+            "height": 82,
+            "top": 898,
+            "right": 1374,
+            "bottom": 980,
+            "left": 1264
+          },
+          {
+            "x": 1272,
+            "y": 115,
+            "width": 92,
+            "height": 76,
+            "top": 115,
+            "right": 1364,
+            "bottom": 191,
+            "left": 1272
+          },
+          {
+            "x": 1272,
+            "y": 195,
+            "width": 92,
+            "height": 76,
+            "top": 195,
+            "right": 1364,
+            "bottom": 271,
+            "left": 1272
+          },
+          {
+            "x": 1272,
+            "y": 275,
+            "width": 92,
+            "height": 76,
+            "top": 275,
+            "right": 1364,
+            "bottom": 351,
+            "left": 1272
+          },
+          {
+            "x": 1272,
+            "y": 355,
+            "width": 92,
+            "height": 76,
+            "top": 355,
+            "right": 1364,
+            "bottom": 431,
+            "left": 1272
+          },
+          {
+            "x": 1272,
+            "y": 435,
+            "width": 92,
+            "height": 76,
+            "top": 435,
+            "right": 1364,
+            "bottom": 511,
+            "left": 1272
+          },
+          {
+            "x": 1272,
+            "y": 515,
+            "width": 92,
+            "height": 76,
+            "top": 515,
+            "right": 1364,
+            "bottom": 591,
+            "left": 1272
+          }
+        ]
+      }
+    },
+    {
+      "mode": "pc",
+      "width": 1024,
+      "height": 768,
+      "hoverEffectsOnly": true,
+      "passiveBeforeActive": true,
+      "immediateClickOrTap": true,
+      "dragBuysOnce": true,
+      "noPlacementOrSaleSideEffects": true,
+      "mergeHint": true,
+      "actualMerge": true,
+      "allCardDimensionsStable": true,
+      "ghostMatchesCardAndFillsBorder": true,
+      "noInfoIcons": true,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 217.5,
+          "y": 128,
+          "width": 373,
+          "height": 373,
+          "top": 128,
+          "right": 590.5,
+          "bottom": 501,
+          "left": 217.5
+        },
+        "bench": {
+          "x": 165,
+          "y": 501,
+          "width": 478,
+          "height": 90,
+          "top": 501,
+          "right": 643,
+          "bottom": 591,
+          "left": 165
+        },
+        "shop": {
+          "x": 12,
+          "y": 626,
+          "width": 1000,
+          "height": 130,
+          "top": 626,
+          "right": 1012,
+          "bottom": 756,
+          "left": 12
+        },
+        "rank": {
+          "x": 948,
+          "y": 65,
+          "width": 64,
+          "height": 438,
+          "top": 65,
+          "right": 1012,
+          "bottom": 503,
+          "left": 948
+        },
+        "targets": [
+          {
+            "x": 499.0625,
+            "y": 75,
+            "width": 86.578125,
+            "height": 44,
+            "top": 75,
+            "right": 585.640625,
+            "bottom": 119,
+            "left": 499.0625
+          },
+          {
+            "x": 483.984375,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 595.984375,
+            "bottom": 747,
+            "left": 483.984375
+          },
+          {
+            "x": 626.390625,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 738.390625,
+            "bottom": 747,
+            "left": 626.390625
+          },
+          {
+            "x": 768.78125,
+            "y": 635,
+            "width": 112,
+            "height": 112,
+            "top": 635,
+            "right": 880.78125,
+            "bottom": 747,
+            "left": 768.78125
+          },
+          {
+            "x": 900,
+            "y": 672,
+            "width": 110,
+            "height": 82,
+            "top": 672,
+            "right": 1010,
+            "bottom": 754,
+            "left": 900
+          },
+          {
+            "x": 954,
+            "y": 115,
+            "width": 52,
+            "height": 60,
+            "top": 115,
+            "right": 1006,
+            "bottom": 175,
+            "left": 954
+          },
+          {
+            "x": 954,
+            "y": 179,
+            "width": 52,
+            "height": 60,
+            "top": 179,
+            "right": 1006,
+            "bottom": 239,
+            "left": 954
+          },
+          {
+            "x": 954,
+            "y": 243,
+            "width": 52,
+            "height": 60,
+            "top": 243,
+            "right": 1006,
+            "bottom": 303,
+            "left": 954
+          },
+          {
+            "x": 954,
+            "y": 307,
+            "width": 52,
+            "height": 60,
+            "top": 307,
+            "right": 1006,
+            "bottom": 367,
+            "left": 954
+          },
+          {
+            "x": 954,
+            "y": 371,
+            "width": 52,
+            "height": 60,
+            "top": 371,
+            "right": 1006,
+            "bottom": 431,
+            "left": 954
+          },
+          {
+            "x": 954,
+            "y": 435,
+            "width": 52,
+            "height": 60,
+            "top": 435,
+            "right": 1006,
+            "bottom": 495,
+            "left": 954
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "hoverEffectsOnly": false,
+      "passiveBeforeActive": false,
+      "immediateClickOrTap": true,
+      "dragBuysOnce": true,
+      "noPlacementOrSaleSideEffects": true,
+      "mergeHint": true,
+      "actualMerge": true,
+      "allCardDimensionsStable": true,
+      "ghostMatchesCardAndFillsBorder": true,
+      "noInfoIcons": true,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 11,
+          "y": 185,
+          "width": 308,
+          "height": 308,
+          "top": 185,
+          "right": 319,
+          "bottom": 493,
+          "left": 11
+        },
+        "bench": {
+          "x": 7,
+          "y": 493,
+          "width": 316,
+          "height": 94,
+          "top": 493,
+          "right": 323,
+          "bottom": 587,
+          "left": 7
+        },
+        "shop": {
+          "x": 6,
+          "y": 622,
+          "width": 378,
+          "height": 216,
+          "top": 622,
+          "right": 384,
+          "bottom": 838,
+          "left": 6
+        },
+        "rank": {
+          "x": 328,
+          "y": 57,
+          "width": 56,
+          "height": 360,
+          "top": 57,
+          "right": 384,
+          "bottom": 417,
+          "left": 328
+        },
+        "targets": [
+          {
+            "x": 236.234375,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "top": 64,
+            "right": 280.234375,
+            "bottom": 108,
+            "left": 236.234375
+          },
+          {
+            "x": 153,
+            "y": 698.328125,
+            "width": 64,
+            "height": 63.328125,
+            "top": 698.328125,
+            "right": 217,
+            "bottom": 761.65625,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 698.328125,
+            "width": 64,
+            "height": 63.328125,
+            "top": 698.328125,
+            "right": 309,
+            "bottom": 761.65625,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 765.65625,
+            "width": 64,
+            "height": 63.328125,
+            "top": 765.65625,
+            "right": 217,
+            "bottom": 828.984375,
+            "left": 153
+          },
+          {
+            "x": 330,
+            "y": 668,
+            "width": 52,
+            "height": 168,
+            "top": 668,
+            "right": 382,
+            "bottom": 836,
+            "left": 330
+          },
+          {
+            "x": 334,
+            "y": 101,
+            "width": 44,
+            "height": 48,
+            "top": 101,
+            "right": 378,
+            "bottom": 149,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 153,
+            "width": 44,
+            "height": 48,
+            "top": 153,
+            "right": 378,
+            "bottom": 201,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 205,
+            "width": 44,
+            "height": 48,
+            "top": 205,
+            "right": 378,
+            "bottom": 253,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 257,
+            "width": 44,
+            "height": 48,
+            "top": 257,
+            "right": 378,
+            "bottom": 305,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 309,
+            "width": 44,
+            "height": 48,
+            "top": 309,
+            "right": 378,
+            "bottom": 357,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 361,
+            "width": 44,
+            "height": 48,
+            "top": 361,
+            "right": 378,
+            "bottom": 409,
+            "left": 334
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 320,
+      "height": 740,
+      "hoverEffectsOnly": false,
+      "passiveBeforeActive": false,
+      "immediateClickOrTap": true,
+      "dragBuysOnce": true,
+      "noPlacementOrSaleSideEffects": true,
+      "mergeHint": true,
+      "actualMerge": true,
+      "allCardDimensionsStable": true,
+      "ghostMatchesCardAndFillsBorder": true,
+      "noInfoIcons": true,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 28,
+          "y": 185,
+          "width": 204,
+          "height": 204,
+          "top": 185,
+          "right": 232,
+          "bottom": 389,
+          "left": 28
+        },
+        "bench": {
+          "x": 7,
+          "y": 389,
+          "width": 246,
+          "height": 94,
+          "top": 389,
+          "right": 253,
+          "bottom": 483,
+          "left": 7
+        },
+        "shop": {
+          "x": 6,
+          "y": 518,
+          "width": 308,
+          "height": 216,
+          "top": 518,
+          "right": 314,
+          "bottom": 734,
+          "left": 6
+        },
+        "rank": {
+          "x": 258,
+          "y": 57,
+          "width": 56,
+          "height": 360,
+          "top": 57,
+          "right": 314,
+          "bottom": 417,
+          "left": 258
+        },
+        "targets": [
+          {
+            "x": 166.234375,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "top": 64,
+            "right": 210.234375,
+            "bottom": 108,
+            "left": 166.234375
+          },
+          {
+            "x": 141,
+            "y": 599.484375,
+            "width": 53,
+            "height": 53,
+            "top": 599.484375,
+            "right": 194,
+            "bottom": 652.484375,
+            "left": 141
+          },
+          {
+            "x": 198,
+            "y": 599.484375,
+            "width": 53,
+            "height": 53,
+            "top": 599.484375,
+            "right": 251,
+            "bottom": 652.484375,
+            "left": 198
+          },
+          {
+            "x": 141,
+            "y": 666.8125,
+            "width": 53,
+            "height": 53,
+            "top": 666.8125,
+            "right": 194,
+            "bottom": 719.8125,
+            "left": 141
+          },
+          {
+            "x": 260,
+            "y": 564,
+            "width": 52,
+            "height": 168,
+            "top": 564,
+            "right": 312,
+            "bottom": 732,
+            "left": 260
+          },
+          {
+            "x": 264,
+            "y": 101,
+            "width": 44,
+            "height": 48,
+            "top": 101,
+            "right": 308,
+            "bottom": 149,
+            "left": 264
+          },
+          {
+            "x": 264,
+            "y": 153,
+            "width": 44,
+            "height": 48,
+            "top": 153,
+            "right": 308,
+            "bottom": 201,
+            "left": 264
+          },
+          {
+            "x": 264,
+            "y": 205,
+            "width": 44,
+            "height": 48,
+            "top": 205,
+            "right": 308,
+            "bottom": 253,
+            "left": 264
+          },
+          {
+            "x": 264,
+            "y": 257,
+            "width": 44,
+            "height": 48,
+            "top": 257,
+            "right": 308,
+            "bottom": 305,
+            "left": 264
+          },
+          {
+            "x": 264,
+            "y": 309,
+            "width": 44,
+            "height": 48,
+            "top": 309,
+            "right": 308,
+            "bottom": 357,
+            "left": 264
+          },
+          {
+            "x": 264,
+            "y": 361,
+            "width": 44,
+            "height": 48,
+            "top": 361,
+            "right": 308,
+            "bottom": 409,
+            "left": 264
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 844,
+      "height": 390,
+      "hoverEffectsOnly": false,
+      "passiveBeforeActive": false,
+      "immediateClickOrTap": true,
+      "dragBuysOnce": true,
+      "noPlacementOrSaleSideEffects": true,
+      "mergeHint": true,
+      "actualMerge": true,
+      "allCardDimensionsStable": true,
+      "ghostMatchesCardAndFillsBorder": true,
+      "noInfoIcons": true,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 88.828125,
+          "y": 58,
+          "width": 230,
+          "height": 230,
+          "top": 58,
+          "right": 318.828125,
+          "bottom": 288,
+          "left": 88.828125
+        },
+        "bench": {
+          "x": 13,
+          "y": 292,
+          "width": 381.671875,
+          "height": 87,
+          "top": 292,
+          "right": 394.671875,
+          "bottom": 379,
+          "left": 13
+        },
+        "shop": {
+          "x": 539.6875,
+          "y": 53,
+          "width": 236.3125,
+          "height": 331,
+          "top": 53,
+          "right": 776,
+          "bottom": 384,
+          "left": 539.6875
+        },
+        "rank": {
+          "x": 782,
+          "y": 53,
+          "width": 56,
+          "height": 326,
+          "top": 53,
+          "right": 838,
+          "bottom": 379,
+          "left": 782
+        },
+        "targets": [
+          {
+            "x": 450.671875,
+            "y": 92,
+            "width": 44,
+            "height": 44,
+            "top": 92,
+            "right": 494.671875,
+            "bottom": 136,
+            "left": 450.671875
+          },
+          {
+            "x": 659.84375,
+            "y": 194.484375,
+            "width": 48,
+            "height": 48,
+            "top": 194.484375,
+            "right": 707.84375,
+            "bottom": 242.484375,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 257.890625,
+            "width": 48,
+            "height": 48,
+            "top": 257.890625,
+            "right": 707.84375,
+            "bottom": 305.890625,
+            "left": 659.84375
+          },
+          {
+            "x": 659.84375,
+            "y": 321.296875,
+            "width": 48,
+            "height": 48,
+            "top": 321.296875,
+            "right": 707.84375,
+            "bottom": 369.296875,
+            "left": 659.84375
+          },
+          {
+            "x": 730,
+            "y": 99,
+            "width": 44,
+            "height": 283,
+            "top": 99,
+            "right": 774,
+            "bottom": 382,
+            "left": 730
+          },
+          {
+            "x": 788,
+            "y": 97,
+            "width": 44,
+            "height": 44,
+            "top": 97,
+            "right": 832,
+            "bottom": 141,
+            "left": 788
+          },
+          {
+            "x": 788,
+            "y": 143,
+            "width": 44,
+            "height": 44,
+            "top": 143,
+            "right": 832,
+            "bottom": 187,
+            "left": 788
+          },
+          {
+            "x": 788,
+            "y": 189,
+            "width": 44,
+            "height": 44,
+            "top": 189,
+            "right": 832,
+            "bottom": 233,
+            "left": 788
+          },
+          {
+            "x": 788,
+            "y": 235,
+            "width": 44,
+            "height": 44,
+            "top": 235,
+            "right": 832,
+            "bottom": 279,
+            "left": 788
+          },
+          {
+            "x": 788,
+            "y": 281,
+            "width": 44,
+            "height": 44,
+            "top": 281,
+            "right": 832,
+            "bottom": 325,
+            "left": 788
+          },
+          {
+            "x": 788,
+            "y": 327,
+            "width": 44,
+            "height": 44,
+            "top": 327,
+            "right": 832,
+            "bottom": 371,
+            "left": 788
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 740,
+      "height": 360,
+      "hoverEffectsOnly": false,
+      "passiveBeforeActive": false,
+      "immediateClickOrTap": true,
+      "dragBuysOnce": true,
+      "noPlacementOrSaleSideEffects": true,
+      "mergeHint": true,
+      "actualMerge": true,
+      "allCardDimensionsStable": true,
+      "ghostMatchesCardAndFillsBorder": true,
+      "noInfoIcons": true,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 66,
+          "y": 58,
+          "width": 200,
+          "height": 200,
+          "top": 58,
+          "right": 266,
+          "bottom": 258,
+          "left": 66
+        },
+        "bench": {
+          "x": 13,
+          "y": 262,
+          "width": 306,
+          "height": 87,
+          "top": 262,
+          "right": 319,
+          "bottom": 349,
+          "left": 13
+        },
+        "shop": {
+          "x": 464,
+          "y": 53,
+          "width": 208,
+          "height": 301,
+          "top": 53,
+          "right": 672,
+          "bottom": 354,
+          "left": 464
+        },
+        "rank": {
+          "x": 678,
+          "y": 34,
+          "width": 56,
+          "height": 326,
+          "top": 34,
+          "right": 734,
+          "bottom": 360,
+          "left": 678
+        },
+        "targets": [
+          {
+            "x": 375,
+            "y": 92,
+            "width": 44,
+            "height": 44,
+            "top": 92,
+            "right": 419,
+            "bottom": 136,
+            "left": 375
+          },
+          {
+            "x": 571,
+            "y": 180.484375,
+            "width": 46,
+            "height": 46,
+            "top": 180.484375,
+            "right": 617,
+            "bottom": 226.484375,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 237.890625,
+            "width": 46,
+            "height": 46,
+            "top": 237.890625,
+            "right": 617,
+            "bottom": 283.890625,
+            "left": 571
+          },
+          {
+            "x": 571,
+            "y": 295.296875,
+            "width": 46,
+            "height": 46,
+            "top": 295.296875,
+            "right": 617,
+            "bottom": 341.296875,
+            "left": 571
+          },
+          {
+            "x": 626,
+            "y": 99,
+            "width": 44,
+            "height": 253,
+            "top": 99,
+            "right": 670,
+            "bottom": 352,
+            "left": 626
+          },
+          {
+            "x": 684,
+            "y": 78,
+            "width": 44,
+            "height": 44,
+            "top": 78,
+            "right": 728,
+            "bottom": 122,
+            "left": 684
+          },
+          {
+            "x": 684,
+            "y": 124,
+            "width": 44,
+            "height": 44,
+            "top": 124,
+            "right": 728,
+            "bottom": 168,
+            "left": 684
+          },
+          {
+            "x": 684,
+            "y": 170,
+            "width": 44,
+            "height": 44,
+            "top": 170,
+            "right": 728,
+            "bottom": 214,
+            "left": 684
+          },
+          {
+            "x": 684,
+            "y": 216,
+            "width": 44,
+            "height": 44,
+            "top": 216,
+            "right": 728,
+            "bottom": 260,
+            "left": 684
+          },
+          {
+            "x": 684,
+            "y": 262,
+            "width": 44,
+            "height": 44,
+            "top": 262,
+            "right": 728,
+            "bottom": 306,
+            "left": 684
+          },
+          {
+            "x": 684,
+            "y": 308,
+            "width": 44,
+            "height": 44,
+            "top": 308,
+            "right": 728,
+            "bottom": 352,
+            "left": 684
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 667,
+      "height": 375,
+      "hoverEffectsOnly": false,
+      "passiveBeforeActive": false,
+      "immediateClickOrTap": true,
+      "dragBuysOnce": true,
+      "noPlacementOrSaleSideEffects": true,
+      "mergeHint": true,
+      "actualMerge": true,
+      "allCardDimensionsStable": true,
+      "ghostMatchesCardAndFillsBorder": true,
+      "noInfoIcons": true,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 44,
+          "y": 58,
+          "width": 215,
+          "height": 215,
+          "top": 58,
+          "right": 259,
+          "bottom": 273,
+          "left": 44
+        },
+        "bench": {
+          "x": 13,
+          "y": 277,
+          "width": 277,
+          "height": 87,
+          "top": 277,
+          "right": 290,
+          "bottom": 364,
+          "left": 13
+        },
+        "shop": {
+          "x": 391,
+          "y": 53,
+          "width": 208,
+          "height": 316,
+          "top": 53,
+          "right": 599,
+          "bottom": 369,
+          "left": 391
+        },
+        "rank": {
+          "x": 605,
+          "y": 49,
+          "width": 56,
+          "height": 326,
+          "top": 49,
+          "right": 661,
+          "bottom": 375,
+          "left": 605
+        },
+        "targets": [
+          {
+            "x": 299,
+            "y": 153,
+            "width": 44,
+            "height": 44,
+            "top": 153,
+            "right": 343,
+            "bottom": 197,
+            "left": 299
+          },
+          {
+            "x": 498,
+            "y": 187.984375,
+            "width": 46,
+            "height": 46,
+            "top": 187.984375,
+            "right": 544,
+            "bottom": 233.984375,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 248.390625,
+            "width": 46,
+            "height": 46,
+            "top": 248.390625,
+            "right": 544,
+            "bottom": 294.390625,
+            "left": 498
+          },
+          {
+            "x": 498,
+            "y": 308.796875,
+            "width": 46,
+            "height": 46,
+            "top": 308.796875,
+            "right": 544,
+            "bottom": 354.796875,
+            "left": 498
+          },
+          {
+            "x": 553,
+            "y": 99,
+            "width": 44,
+            "height": 268,
+            "top": 99,
+            "right": 597,
+            "bottom": 367,
+            "left": 553
+          },
+          {
+            "x": 611,
+            "y": 93,
+            "width": 44,
+            "height": 44,
+            "top": 93,
+            "right": 655,
+            "bottom": 137,
+            "left": 611
+          },
+          {
+            "x": 611,
+            "y": 139,
+            "width": 44,
+            "height": 44,
+            "top": 139,
+            "right": 655,
+            "bottom": 183,
+            "left": 611
+          },
+          {
+            "x": 611,
+            "y": 185,
+            "width": 44,
+            "height": 44,
+            "top": 185,
+            "right": 655,
+            "bottom": 229,
+            "left": 611
+          },
+          {
+            "x": 611,
+            "y": 231,
+            "width": 44,
+            "height": 44,
+            "top": 231,
+            "right": 655,
+            "bottom": 275,
+            "left": 611
+          },
+          {
+            "x": 611,
+            "y": 277,
+            "width": 44,
+            "height": 44,
+            "top": 277,
+            "right": 655,
+            "bottom": 321,
+            "left": 611
+          },
+          {
+            "x": 611,
+            "y": 323,
+            "width": 44,
+            "height": 44,
+            "top": 323,
+            "right": 655,
+            "bottom": 367,
+            "left": 611
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 480,
+      "height": 320,
+      "hoverEffectsOnly": false,
+      "passiveBeforeActive": false,
+      "immediateClickOrTap": true,
+      "dragBuysOnce": true,
+      "noPlacementOrSaleSideEffects": true,
+      "mergeHint": true,
+      "actualMerge": true,
+      "allCardDimensionsStable": true,
+      "ghostMatchesCardAndFillsBorder": true,
+      "noInfoIcons": true,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 13,
+          "y": 62,
+          "width": 114,
+          "height": 114,
+          "top": 62,
+          "right": 127,
+          "bottom": 176,
+          "left": 13
+        },
+        "bench": {
+          "x": 13,
+          "y": 180,
+          "width": 114,
+          "height": 87,
+          "top": 180,
+          "right": 127,
+          "bottom": 267,
+          "left": 13
+        },
+        "shop": {
+          "x": 204,
+          "y": 57,
+          "width": 208,
+          "height": 257,
+          "top": 57,
+          "right": 412,
+          "bottom": 314,
+          "left": 204
+        },
+        "rank": {
+          "x": 418,
+          "y": 30,
+          "width": 56,
+          "height": 290,
+          "top": 30,
+          "right": 474,
+          "bottom": 320,
+          "left": 418
+        },
+        "targets": [
+          {
+            "x": 136,
+            "y": 137,
+            "width": 44,
+            "height": 44,
+            "top": 137,
+            "right": 180,
+            "bottom": 181,
+            "left": 136
+          },
+          {
+            "x": 311,
+            "y": 163.1875,
+            "width": 46,
+            "height": 44.609375,
+            "top": 163.1875,
+            "right": 357,
+            "bottom": 207.796875,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 211.796875,
+            "width": 46,
+            "height": 44.59375,
+            "top": 211.796875,
+            "right": 357,
+            "bottom": 256.390625,
+            "left": 311
+          },
+          {
+            "x": 311,
+            "y": 260.390625,
+            "width": 46,
+            "height": 44.59375,
+            "top": 260.390625,
+            "right": 357,
+            "bottom": 304.984375,
+            "left": 311
+          },
+          {
+            "x": 366,
+            "y": 103,
+            "width": 44,
+            "height": 209,
+            "top": 103,
+            "right": 410,
+            "bottom": 312,
+            "left": 366
+          },
+          {
+            "x": 424,
+            "y": 38,
+            "width": 44,
+            "height": 44,
+            "top": 38,
+            "right": 468,
+            "bottom": 82,
+            "left": 424
+          },
+          {
+            "x": 424,
+            "y": 84,
+            "width": 44,
+            "height": 44,
+            "top": 84,
+            "right": 468,
+            "bottom": 128,
+            "left": 424
+          },
+          {
+            "x": 424,
+            "y": 130,
+            "width": 44,
+            "height": 44,
+            "top": 130,
+            "right": 468,
+            "bottom": 174,
+            "left": 424
+          },
+          {
+            "x": 424,
+            "y": 176,
+            "width": 44,
+            "height": 44,
+            "top": 176,
+            "right": 468,
+            "bottom": 220,
+            "left": 424
+          },
+          {
+            "x": 424,
+            "y": 222,
+            "width": 44,
+            "height": 44,
+            "top": 222,
+            "right": 468,
+            "bottom": 266,
+            "left": 424
+          },
+          {
+            "x": 424,
+            "y": 268,
+            "width": 44,
+            "height": 44,
+            "top": 268,
+            "right": 468,
+            "bottom": 312,
+            "left": 424
+          }
+        ]
+      }
+    },
+    {
+      "mode": "mobile",
+      "width": 390,
+      "height": 844,
+      "hoverEffectsOnly": false,
+      "passiveBeforeActive": false,
+      "immediateClickOrTap": true,
+      "dragBuysOnce": true,
+      "noPlacementOrSaleSideEffects": true,
+      "mergeHint": true,
+      "actualMerge": true,
+      "allCardDimensionsStable": true,
+      "ghostMatchesCardAndFillsBorder": true,
+      "noInfoIcons": true,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 11,
+          "y": 185,
+          "width": 308,
+          "height": 308,
+          "top": 185,
+          "right": 319,
+          "bottom": 493,
+          "left": 11
+        },
+        "bench": {
+          "x": 7,
+          "y": 493,
+          "width": 316,
+          "height": 94,
+          "top": 493,
+          "right": 323,
+          "bottom": 587,
+          "left": 7
+        },
+        "shop": {
+          "x": 6,
+          "y": 622,
+          "width": 378,
+          "height": 216,
+          "top": 622,
+          "right": 384,
+          "bottom": 838,
+          "left": 6
+        },
+        "rank": {
+          "x": 328,
+          "y": 57,
+          "width": 56,
+          "height": 360,
+          "top": 57,
+          "right": 384,
+          "bottom": 417,
+          "left": 328
+        },
+        "targets": [
+          {
+            "x": 236.234375,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "top": 64,
+            "right": 280.234375,
+            "bottom": 108,
+            "left": 236.234375
+          },
+          {
+            "x": 153,
+            "y": 698.328125,
+            "width": 64,
+            "height": 63.328125,
+            "top": 698.328125,
+            "right": 217,
+            "bottom": 761.65625,
+            "left": 153
+          },
+          {
+            "x": 245,
+            "y": 698.328125,
+            "width": 64,
+            "height": 63.328125,
+            "top": 698.328125,
+            "right": 309,
+            "bottom": 761.65625,
+            "left": 245
+          },
+          {
+            "x": 153,
+            "y": 765.65625,
+            "width": 64,
+            "height": 63.328125,
+            "top": 765.65625,
+            "right": 217,
+            "bottom": 828.984375,
+            "left": 153
+          },
+          {
+            "x": 330,
+            "y": 668,
+            "width": 52,
+            "height": 168,
+            "top": 668,
+            "right": 382,
+            "bottom": 836,
+            "left": 330
+          },
+          {
+            "x": 334,
+            "y": 101,
+            "width": 44,
+            "height": 48,
+            "top": 101,
+            "right": 378,
+            "bottom": 149,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 153,
+            "width": 44,
+            "height": 48,
+            "top": 153,
+            "right": 378,
+            "bottom": 201,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 205,
+            "width": 44,
+            "height": 48,
+            "top": 205,
+            "right": 378,
+            "bottom": 253,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 257,
+            "width": 44,
+            "height": 48,
+            "top": 257,
+            "right": 378,
+            "bottom": 305,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 309,
+            "width": 44,
+            "height": 48,
+            "top": 309,
+            "right": 378,
+            "bottom": 357,
+            "left": 334
+          },
+          {
+            "x": 334,
+            "y": 361,
+            "width": 44,
+            "height": 48,
+            "top": 361,
+            "right": 378,
+            "bottom": 409,
+            "left": 334
+          }
+        ]
+      }
+    }
+  ],
+  "behavior": [
+    {
+      "mode": "pc",
+      "outsideAndEscapeCancel": true,
+      "goldAndCapacityBlocked": true,
+      "matchingBlocked": true,
+      "mergeHintUpdatesOnSale": true,
+      "combatMergeDeferred": true,
+      "frozenFighters": true,
+      "scoutingClickPurchase": true,
+      "opponentBenchDropBlocked": true,
+      "equipmentAndHistory": true,
+      "rotationAndReload": true
+    },
+    {
+      "mode": "mobile",
+      "outsideAndEscapeCancel": true,
+      "goldAndCapacityBlocked": true,
+      "matchingBlocked": true,
+      "mergeHintUpdatesOnSale": true,
+      "combatMergeDeferred": true,
+      "frozenFighters": true,
+      "scoutingClickPurchase": true,
+      "opponentBenchDropBlocked": true,
+      "equipmentAndHistory": true,
+      "rotationAndReload": true
+    }
+  ],
+  "errors": [],
+  "completeLayoutRun": true,
+  "scope": "Actual one-human/five-bot rooms, real pointer/touch gestures and server purchases/merges. No modified snapshots or synthetic six-human claim."
+}

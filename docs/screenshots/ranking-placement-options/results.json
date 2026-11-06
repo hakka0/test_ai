@@ -1,0 +1,240 @@
+{
+  "version": "0.20.31",
+  "browser": "155.0.8059.84",
+  "viewport": {
+    "width": 1400,
+    "height": 1000
+  },
+  "note": "Render-only previews. Six-player data is a UI fixture; actual game server remains two-player. No production client files changed.",
+  "results": [
+    {
+      "variant": "right",
+      "file": "C:\\Users\\tyapt\\Documents\\Git\\autochess-web\\docs\\screenshots\\ranking-placement-options\\right.png",
+      "ranking": {
+        "x": 1294,
+        "y": 56,
+        "width": 76,
+        "height": 436,
+        "top": 56,
+        "right": 1370,
+        "bottom": 492,
+        "left": 1294
+      },
+      "left": {
+        "x": 30,
+        "y": 56,
+        "width": 160,
+        "height": 448,
+        "top": 56,
+        "right": 190,
+        "bottom": 504,
+        "left": 30
+      },
+      "board": {
+        "x": 279,
+        "y": 121,
+        "width": 594,
+        "height": 594,
+        "top": 121,
+        "right": 873,
+        "bottom": 715,
+        "left": 279
+      },
+      "information": {
+        "x": 962,
+        "y": 56,
+        "width": 320,
+        "height": 714.34375,
+        "top": 56,
+        "right": 1282,
+        "bottom": 770.34375,
+        "left": 962
+      },
+      "tabs": {
+        "x": 963,
+        "y": 57,
+        "width": 303,
+        "height": 53,
+        "top": 57,
+        "right": 1266,
+        "bottom": 110,
+        "left": 963
+      },
+      "bench": {
+        "x": 203,
+        "y": 715,
+        "width": 746,
+        "height": 102,
+        "top": 715,
+        "right": 949,
+        "bottom": 817,
+        "left": 203
+      },
+      "shop": {
+        "x": 24,
+        "y": 852,
+        "width": 1352,
+        "height": 130,
+        "top": 852,
+        "right": 1376,
+        "bottom": 982,
+        "left": 24
+      },
+      "overflow": false,
+      "visibleRows": 6
+    },
+    {
+      "variant": "left",
+      "file": "C:\\Users\\tyapt\\Documents\\Git\\autochess-web\\docs\\screenshots\\ranking-placement-options\\left.png",
+      "ranking": {
+        "x": 30,
+        "y": 56,
+        "width": 76,
+        "height": 436,
+        "top": 56,
+        "right": 106,
+        "bottom": 492,
+        "left": 30
+      },
+      "left": {
+        "x": 118,
+        "y": 56,
+        "width": 160,
+        "height": 448,
+        "top": 56,
+        "right": 278,
+        "bottom": 504,
+        "left": 118
+      },
+      "board": {
+        "x": 367,
+        "y": 121,
+        "width": 594,
+        "height": 594,
+        "top": 121,
+        "right": 961,
+        "bottom": 715,
+        "left": 367
+      },
+      "information": {
+        "x": 1050,
+        "y": 56,
+        "width": 320,
+        "height": 714.34375,
+        "top": 56,
+        "right": 1370,
+        "bottom": 770.34375,
+        "left": 1050
+      },
+      "tabs": {
+        "x": 1051,
+        "y": 57,
+        "width": 303,
+        "height": 53,
+        "top": 57,
+        "right": 1354,
+        "bottom": 110,
+        "left": 1051
+      },
+      "bench": {
+        "x": 291,
+        "y": 715,
+        "width": 746,
+        "height": 102,
+        "top": 715,
+        "right": 1037,
+        "bottom": 817,
+        "left": 291
+      },
+      "shop": {
+        "x": 24,
+        "y": 852,
+        "width": 1352,
+        "height": 130,
+        "top": 852,
+        "right": 1376,
+        "bottom": 982,
+        "left": 24
+      },
+      "overflow": false,
+      "visibleRows": 6
+    },
+    {
+      "variant": "tabs",
+      "file": "C:\\Users\\tyapt\\Documents\\Git\\autochess-web\\docs\\screenshots\\ranking-placement-options\\tabs.png",
+      "ranking": {
+        "x": 1061,
+        "y": 120,
+        "width": 283,
+        "height": 286,
+        "top": 120,
+        "right": 1344,
+        "bottom": 406,
+        "left": 1061
+      },
+      "left": {
+        "x": 30,
+        "y": 56,
+        "width": 160,
+        "height": 448,
+        "top": 56,
+        "right": 190,
+        "bottom": 504,
+        "left": 30
+      },
+      "board": {
+        "x": 323,
+        "y": 121,
+        "width": 594,
+        "height": 594,
+        "top": 121,
+        "right": 917,
+        "bottom": 715,
+        "left": 323
+      },
+      "information": {
+        "x": 1050,
+        "y": 56,
+        "width": 320,
+        "height": 361,
+        "top": 56,
+        "right": 1370,
+        "bottom": 417,
+        "left": 1050
+      },
+      "tabs": {
+        "x": 1051,
+        "y": 57,
+        "width": 303,
+        "height": 53,
+        "top": 57,
+        "right": 1354,
+        "bottom": 110,
+        "left": 1051
+      },
+      "bench": {
+        "x": 203,
+        "y": 715,
+        "width": 834,
+        "height": 102,
+        "top": 715,
+        "right": 1037,
+        "bottom": 817,
+        "left": 203
+      },
+      "shop": {
+        "x": 24,
+        "y": 852,
+        "width": 1352,
+        "height": 130,
+        "top": 852,
+        "right": 1376,
+        "bottom": 982,
+        "left": 24
+      },
+      "overflow": false,
+      "visibleRows": 6
+    }
+  ],
+  "errors": []
+}

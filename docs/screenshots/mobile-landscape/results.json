@@ -1,0 +1,877 @@
+{
+  "version": "0.20.70",
+  "browser": "151.0.7922.34",
+  "results": [
+    {
+      "width": 844,
+      "height": 390,
+      "board": {
+        "x": 89.828125,
+        "y": 60,
+        "width": 228,
+        "height": 228,
+        "top": 60,
+        "right": 317.828125,
+        "bottom": 288,
+        "left": 89.828125
+      },
+      "bench": {
+        "x": 13,
+        "y": 292,
+        "width": 381.671875,
+        "height": 87,
+        "top": 292,
+        "right": 394.671875,
+        "bottom": 379,
+        "left": 13
+      },
+      "shop": {
+        "x": 539.6875,
+        "y": 55,
+        "width": 236.3125,
+        "height": 329,
+        "top": 55,
+        "right": 776,
+        "bottom": 384,
+        "left": 539.6875
+      },
+      "ranking": {
+        "x": 782,
+        "y": 55,
+        "width": 56,
+        "height": 329,
+        "top": 55,
+        "right": 838,
+        "bottom": 384,
+        "left": 782
+      },
+      "gear": {
+        "x": 402.671875,
+        "y": 250,
+        "width": 122,
+        "height": 44,
+        "top": 250,
+        "right": 524.671875,
+        "bottom": 294,
+        "left": 402.671875
+      },
+      "controls": [
+        {
+          "id": "buy-experience",
+          "rect": {
+            "x": 540.6875,
+            "y": 86,
+            "width": 51,
+            "height": 297,
+            "top": 86,
+            "right": 591.6875,
+            "bottom": 383,
+            "left": 540.6875
+          }
+        },
+        {
+          "id": "reroll",
+          "rect": {
+            "x": 592.6875,
+            "y": 86,
+            "width": 45,
+            "height": 297,
+            "top": 86,
+            "right": 637.6875,
+            "bottom": 383,
+            "left": 592.6875
+          }
+        },
+        {
+          "id": "ready",
+          "rect": {
+            "x": 730,
+            "y": 101,
+            "width": 44,
+            "height": 281,
+            "top": 101,
+            "right": 774,
+            "bottom": 382,
+            "left": 730
+          }
+        },
+        {
+          "id": "mobile-info-open",
+          "rect": {
+            "x": 403.671875,
+            "y": 95,
+            "width": 44,
+            "height": 44,
+            "top": 95,
+            "right": 447.671875,
+            "bottom": 139,
+            "left": 403.671875
+          }
+        },
+        {
+          "id": "history-toggle",
+          "rect": {
+            "x": 450.671875,
+            "y": 95,
+            "width": 44,
+            "height": 44,
+            "top": 95,
+            "right": 494.671875,
+            "bottom": 139,
+            "left": 450.671875
+          }
+        }
+      ],
+      "offers": [
+        {
+          "x": 659.84375,
+          "y": 69.5,
+          "width": 48,
+          "height": 48,
+          "top": 69.5,
+          "right": 707.84375,
+          "bottom": 117.5,
+          "left": 659.84375
+        },
+        {
+          "x": 659.84375,
+          "y": 132.5,
+          "width": 48,
+          "height": 48,
+          "top": 132.5,
+          "right": 707.84375,
+          "bottom": 180.5,
+          "left": 659.84375
+        },
+        {
+          "x": 659.84375,
+          "y": 195.5,
+          "width": 48,
+          "height": 48,
+          "top": 195.5,
+          "right": 707.84375,
+          "bottom": 243.5,
+          "left": 659.84375
+        },
+        {
+          "x": 659.84375,
+          "y": 258.5,
+          "width": 48,
+          "height": 48,
+          "top": 258.5,
+          "right": 707.84375,
+          "bottom": 306.5,
+          "left": 659.84375
+        },
+        {
+          "x": 659.84375,
+          "y": 321.5,
+          "width": 48,
+          "height": 48,
+          "top": 321.5,
+          "right": 707.84375,
+          "bottom": 369.5,
+          "left": 659.84375
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 740,
+      "height": 360,
+      "board": {
+        "x": 67,
+        "y": 60,
+        "width": 198,
+        "height": 198,
+        "top": 60,
+        "right": 265,
+        "bottom": 258,
+        "left": 67
+      },
+      "bench": {
+        "x": 13,
+        "y": 262,
+        "width": 306,
+        "height": 87,
+        "top": 262,
+        "right": 319,
+        "bottom": 349,
+        "left": 13
+      },
+      "shop": {
+        "x": 464,
+        "y": 55,
+        "width": 208,
+        "height": 299,
+        "top": 55,
+        "right": 672,
+        "bottom": 354,
+        "left": 464
+      },
+      "ranking": {
+        "x": 678,
+        "y": 55,
+        "width": 56,
+        "height": 299,
+        "top": 55,
+        "right": 734,
+        "bottom": 354,
+        "left": 678
+      },
+      "gear": {
+        "x": 327,
+        "y": 250,
+        "width": 122,
+        "height": 44,
+        "top": 250,
+        "right": 449,
+        "bottom": 294,
+        "left": 327
+      },
+      "controls": [
+        {
+          "id": "buy-experience",
+          "rect": {
+            "x": 465,
+            "y": 86,
+            "width": 51,
+            "height": 267,
+            "top": 86,
+            "right": 516,
+            "bottom": 353,
+            "left": 465
+          }
+        },
+        {
+          "id": "reroll",
+          "rect": {
+            "x": 517,
+            "y": 86,
+            "width": 45,
+            "height": 267,
+            "top": 86,
+            "right": 562,
+            "bottom": 353,
+            "left": 517
+          }
+        },
+        {
+          "id": "ready",
+          "rect": {
+            "x": 626,
+            "y": 101,
+            "width": 44,
+            "height": 251,
+            "top": 101,
+            "right": 670,
+            "bottom": 352,
+            "left": 626
+          }
+        },
+        {
+          "id": "mobile-info-open",
+          "rect": {
+            "x": 328,
+            "y": 95,
+            "width": 44,
+            "height": 44,
+            "top": 95,
+            "right": 372,
+            "bottom": 139,
+            "left": 328
+          }
+        },
+        {
+          "id": "history-toggle",
+          "rect": {
+            "x": 375,
+            "y": 95,
+            "width": 44,
+            "height": 44,
+            "top": 95,
+            "right": 419,
+            "bottom": 139,
+            "left": 375
+          }
+        }
+      ],
+      "offers": [
+        {
+          "x": 571,
+          "y": 67.5,
+          "width": 46,
+          "height": 46,
+          "top": 67.5,
+          "right": 617,
+          "bottom": 113.5,
+          "left": 571
+        },
+        {
+          "x": 571,
+          "y": 124.5,
+          "width": 46,
+          "height": 46,
+          "top": 124.5,
+          "right": 617,
+          "bottom": 170.5,
+          "left": 571
+        },
+        {
+          "x": 571,
+          "y": 181.5,
+          "width": 46,
+          "height": 46,
+          "top": 181.5,
+          "right": 617,
+          "bottom": 227.5,
+          "left": 571
+        },
+        {
+          "x": 571,
+          "y": 238.5,
+          "width": 46,
+          "height": 46,
+          "top": 238.5,
+          "right": 617,
+          "bottom": 284.5,
+          "left": 571
+        },
+        {
+          "x": 571,
+          "y": 295.5,
+          "width": 46,
+          "height": 46,
+          "top": 295.5,
+          "right": 617,
+          "bottom": 341.5,
+          "left": 571
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "board": {
+        "x": 45,
+        "y": 60,
+        "width": 213,
+        "height": 213,
+        "top": 60,
+        "right": 258,
+        "bottom": 273,
+        "left": 45
+      },
+      "bench": {
+        "x": 13,
+        "y": 277,
+        "width": 277,
+        "height": 87,
+        "top": 277,
+        "right": 290,
+        "bottom": 364,
+        "left": 13
+      },
+      "shop": {
+        "x": 391,
+        "y": 55,
+        "width": 208,
+        "height": 314,
+        "top": 55,
+        "right": 599,
+        "bottom": 369,
+        "left": 391
+      },
+      "ranking": {
+        "x": 605,
+        "y": 55,
+        "width": 56,
+        "height": 314,
+        "top": 55,
+        "right": 661,
+        "bottom": 369,
+        "left": 605
+      },
+      "gear": {
+        "x": 298,
+        "y": 311,
+        "width": 78,
+        "height": 44,
+        "top": 311,
+        "right": 376,
+        "bottom": 355,
+        "left": 298
+      },
+      "controls": [
+        {
+          "id": "buy-experience",
+          "rect": {
+            "x": 392,
+            "y": 86,
+            "width": 51,
+            "height": 282,
+            "top": 86,
+            "right": 443,
+            "bottom": 368,
+            "left": 392
+          }
+        },
+        {
+          "id": "reroll",
+          "rect": {
+            "x": 444,
+            "y": 86,
+            "width": 45,
+            "height": 282,
+            "top": 86,
+            "right": 489,
+            "bottom": 368,
+            "left": 444
+          }
+        },
+        {
+          "id": "ready",
+          "rect": {
+            "x": 553,
+            "y": 101,
+            "width": 44,
+            "height": 266,
+            "top": 101,
+            "right": 597,
+            "bottom": 367,
+            "left": 553
+          }
+        },
+        {
+          "id": "mobile-info-open",
+          "rect": {
+            "x": 299,
+            "y": 109,
+            "width": 44,
+            "height": 44,
+            "top": 109,
+            "right": 343,
+            "bottom": 153,
+            "left": 299
+          }
+        },
+        {
+          "id": "history-toggle",
+          "rect": {
+            "x": 299,
+            "y": 156,
+            "width": 44,
+            "height": 44,
+            "top": 156,
+            "right": 343,
+            "bottom": 200,
+            "left": 299
+          }
+        }
+      ],
+      "offers": [
+        {
+          "x": 498,
+          "y": 69,
+          "width": 46,
+          "height": 46,
+          "top": 69,
+          "right": 544,
+          "bottom": 115,
+          "left": 498
+        },
+        {
+          "x": 498,
+          "y": 129,
+          "width": 46,
+          "height": 46,
+          "top": 129,
+          "right": 544,
+          "bottom": 175,
+          "left": 498
+        },
+        {
+          "x": 498,
+          "y": 189,
+          "width": 46,
+          "height": 46,
+          "top": 189,
+          "right": 544,
+          "bottom": 235,
+          "left": 498
+        },
+        {
+          "x": 498,
+          "y": 249,
+          "width": 46,
+          "height": 46,
+          "top": 249,
+          "right": 544,
+          "bottom": 295,
+          "left": 498
+        },
+        {
+          "x": 498,
+          "y": 309,
+          "width": 46,
+          "height": 46,
+          "top": 309,
+          "right": 544,
+          "bottom": 355,
+          "left": 498
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 480,
+      "height": 320,
+      "board": {
+        "x": 13,
+        "y": 64,
+        "width": 114,
+        "height": 114,
+        "top": 64,
+        "right": 127,
+        "bottom": 178,
+        "left": 13
+      },
+      "bench": {
+        "x": 13,
+        "y": 182,
+        "width": 114,
+        "height": 87,
+        "top": 182,
+        "right": 127,
+        "bottom": 269,
+        "left": 13
+      },
+      "shop": {
+        "x": 204,
+        "y": 59,
+        "width": 208,
+        "height": 255,
+        "top": 59,
+        "right": 412,
+        "bottom": 314,
+        "left": 204
+      },
+      "ranking": {
+        "x": 418,
+        "y": 59,
+        "width": 56,
+        "height": 255,
+        "top": 59,
+        "right": 474,
+        "bottom": 314,
+        "left": 418
+      },
+      "gear": {
+        "x": 135,
+        "y": 267,
+        "width": 54,
+        "height": 44,
+        "top": 267,
+        "right": 189,
+        "bottom": 311,
+        "left": 135
+      },
+      "controls": [
+        {
+          "id": "buy-experience",
+          "rect": {
+            "x": 205,
+            "y": 90,
+            "width": 51,
+            "height": 223,
+            "top": 90,
+            "right": 256,
+            "bottom": 313,
+            "left": 205
+          }
+        },
+        {
+          "id": "reroll",
+          "rect": {
+            "x": 257,
+            "y": 90,
+            "width": 45,
+            "height": 223,
+            "top": 90,
+            "right": 302,
+            "bottom": 313,
+            "left": 257
+          }
+        },
+        {
+          "id": "ready",
+          "rect": {
+            "x": 366,
+            "y": 105,
+            "width": 44,
+            "height": 207,
+            "top": 105,
+            "right": 410,
+            "bottom": 312,
+            "left": 366
+          }
+        },
+        {
+          "id": "mobile-info-open",
+          "rect": {
+            "x": 136,
+            "y": 93,
+            "width": 44,
+            "height": 44,
+            "top": 93,
+            "right": 180,
+            "bottom": 137,
+            "left": 136
+          }
+        },
+        {
+          "id": "history-toggle",
+          "rect": {
+            "x": 136,
+            "y": 140,
+            "width": 44,
+            "height": 44,
+            "top": 140,
+            "right": 180,
+            "bottom": 184,
+            "left": 136
+          }
+        }
+      ],
+      "offers": [
+        {
+          "x": 311,
+          "y": 68,
+          "width": 46,
+          "height": 44.1875,
+          "top": 68,
+          "right": 357,
+          "bottom": 112.1875,
+          "left": 311
+        },
+        {
+          "x": 311,
+          "y": 116.1875,
+          "width": 46,
+          "height": 44.203125,
+          "top": 116.1875,
+          "right": 357,
+          "bottom": 160.390625,
+          "left": 311
+        },
+        {
+          "x": 311,
+          "y": 164.390625,
+          "width": 46,
+          "height": 44.203125,
+          "top": 164.390625,
+          "right": 357,
+          "bottom": 208.59375,
+          "left": 311
+        },
+        {
+          "x": 311,
+          "y": 212.59375,
+          "width": 46,
+          "height": 44.203125,
+          "top": 212.59375,
+          "right": 357,
+          "bottom": 256.796875,
+          "left": 311
+        },
+        {
+          "x": 311,
+          "y": 260.796875,
+          "width": 46,
+          "height": 44.203125,
+          "top": 260.796875,
+          "right": 357,
+          "bottom": 305,
+          "left": 311
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "board": {
+        "x": 48,
+        "y": 64,
+        "width": 480,
+        "height": 480,
+        "top": 64,
+        "right": 528,
+        "bottom": 544,
+        "left": 48
+      },
+      "bench": {
+        "x": 13,
+        "y": 548,
+        "width": 550,
+        "height": 90,
+        "top": 548,
+        "right": 563,
+        "bottom": 638,
+        "left": 13
+      },
+      "shop": {
+        "x": 708,
+        "y": 59,
+        "width": 248,
+        "height": 703,
+        "top": 59,
+        "right": 956,
+        "bottom": 762,
+        "left": 708
+      },
+      "ranking": {
+        "x": 962,
+        "y": 59,
+        "width": 56,
+        "height": 703,
+        "top": 59,
+        "right": 1018,
+        "bottom": 762,
+        "left": 962
+      },
+      "gear": {
+        "x": 571,
+        "y": 254,
+        "width": 122,
+        "height": 44,
+        "top": 254,
+        "right": 693,
+        "bottom": 298,
+        "left": 571
+      },
+      "controls": [
+        {
+          "id": "buy-experience",
+          "rect": {
+            "x": 709,
+            "y": 90,
+            "width": 51,
+            "height": 671,
+            "top": 90,
+            "right": 760,
+            "bottom": 761,
+            "left": 709
+          }
+        },
+        {
+          "id": "reroll",
+          "rect": {
+            "x": 761,
+            "y": 90,
+            "width": 45,
+            "height": 671,
+            "top": 90,
+            "right": 806,
+            "bottom": 761,
+            "left": 761
+          }
+        },
+        {
+          "id": "ready",
+          "rect": {
+            "x": 910,
+            "y": 105,
+            "width": 44,
+            "height": 655,
+            "top": 105,
+            "right": 954,
+            "bottom": 760,
+            "left": 910
+          }
+        },
+        {
+          "id": "mobile-info-open",
+          "rect": {
+            "x": 572,
+            "y": 99,
+            "width": 44,
+            "height": 44,
+            "top": 99,
+            "right": 616,
+            "bottom": 143,
+            "left": 572
+          }
+        },
+        {
+          "id": "history-toggle",
+          "rect": {
+            "x": 619,
+            "y": 99,
+            "width": 44,
+            "height": 44,
+            "top": 99,
+            "right": 663,
+            "bottom": 143,
+            "left": 619
+          }
+        }
+      ],
+      "offers": [
+        {
+          "x": 834,
+          "y": 109.296875,
+          "width": 48,
+          "height": 48,
+          "top": 109.296875,
+          "right": 882,
+          "bottom": 157.296875,
+          "left": 834
+        },
+        {
+          "x": 834,
+          "y": 247.890625,
+          "width": 48,
+          "height": 48,
+          "top": 247.890625,
+          "right": 882,
+          "bottom": 295.890625,
+          "left": 834
+        },
+        {
+          "x": 834,
+          "y": 386.484375,
+          "width": 48,
+          "height": 48,
+          "top": 386.484375,
+          "right": 882,
+          "bottom": 434.484375,
+          "left": 834
+        },
+        {
+          "x": 834,
+          "y": 525.09375,
+          "width": 48,
+          "height": 48,
+          "top": 525.09375,
+          "right": 882,
+          "bottom": 573.09375,
+          "left": 834
+        },
+        {
+          "x": 834,
+          "y": 663.6875,
+          "width": 48,
+          "height": 48,
+          "top": 663.6875,
+          "right": 882,
+          "bottom": 711.6875,
+          "left": 834
+        }
+      ],
+      "overflow": false
+    }
+  ],
+  "errors": []
+}
