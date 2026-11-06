@@ -42,25 +42,46 @@ async function main() {
         if (path.includes("/units/blue-archive/") && !loaded) errors.push(path + " HTTP " + response.status());
       });
       await page.goto(url);
-      await activate(page.locator("#blue-archive-practice"));
-      await page.waitForFunction(() => document.querySelector("#deployed").textContent === "8/10");
-      await debugClick(page, "debug-pause");
-      assert.match(await page.locator("#level-label").textContent(), /레벨 10/);
-      assert.equal(await page.locator("#units [data-unit]").count(), 12);
-      assert.equal(await page.locator("#shop-offers .shop-portrait img[src^='/units/blue-archive/']").count(), 5);
-      assert.equal(await page.locator("#gold").textContent(), "30");
-
-      const roomCode = await page.locator("#room-code").textContent();
-      const enemy = page.locator("#player-ranking [data-self='false']");
+      const portraits = await page.locator("#lobby .heroes img").evaluateAll(async images => {
+        await Promise.all(images.map(image => image.decode()));
+        return images.map(image => image.getAttribute("src"));
+      });
+      assert.equal(portraits.length, 3);
+      assert.ok(portraits.every(path => path.startsWith("/units/blue-archive/icons/")));
       const sizes = mobile ? [[390,844], [320,740], [844,390], [740,360], [667,375], [480,320], [390,844]]
         : [[1400,1000], [1024,768]];
-      if (mobile) await activate(enemy);
-      for (const [width, height] of sizes) {
+      const resize = async (width, height) => {
         await page.setViewportSize({ width, height });
         await page.waitForFunction(({ mobile, width, height }) =>
           document.documentElement.dataset.screenMode === (mobile ? "mobile" : "pc")
           && document.documentElement.dataset.screenOrientation === (width > height ? "landscape" : "portrait"),
         { mobile, width, height });
+      };
+      for (const [width, height] of sizes) {
+        await resize(width, height);
+        assert.deepEqual(await page.locator("#lobby .home-action").evaluateAll(buttons => buttons.map(button => button.id)),
+          ["practice", "create", "pvp-practice"]);
+        assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+        for (const id of ["practice", "create", "pvp-practice", "join"]) {
+          const rect = await page.locator(`#${id}`).boundingBox();
+          assert.ok(rect && rect.width >= 44 && rect.height >= 44, `${width}×${height} #${id}`);
+        }
+        await page.screenshot({ path: `${screenshots}/home-${width}-${height}.png`, fullPage: true, animations: "disabled" });
+      }
+      await resize(...sizes[0]);
+      await activate(page.locator("#practice"));
+      await page.waitForFunction(() => document.querySelector("#deployed").textContent === "0/1");
+      await debugClick(page, "debug-pause");
+      assert.match(await page.locator("#level-label").textContent(), /레벨 1 \/ 10/);
+      assert.equal(await page.locator("#units [data-unit]").count(), 0);
+      assert.equal(await page.locator("#shop-offers .shop-portrait img[src^='/units/blue-archive/']").count(), 5);
+      assert.equal(await page.locator("#gold").textContent(), "10");
+
+      const roomCode = await page.locator("#room-code").textContent();
+      const enemy = page.locator("#player-ranking [data-self='false']");
+      if (mobile) await activate(enemy);
+      for (const [width, height] of sizes) {
+        await resize(width, height);
         assert.equal(await page.locator("#room-code").textContent(), roomCode);
         if (mobile) assert.equal(await enemy.getAttribute("aria-pressed"), "true");
         const geometry = await page.evaluate(() => {
@@ -76,31 +97,31 @@ async function main() {
         await page.screenshot({ path: `${screenshots}/${width}-${height}.png`, animations: "disabled" });
       }
       if (mobile) {
+        await resize(844, 390);
         const viewed = page.locator("#cells button[aria-label*='관전 칸,']:not([aria-label*='빈 칸'])").first();
         await activate(viewed);
         assert.equal(await page.locator("#unit-dialog").getAttribute("data-read-only"), "true");
         await activate(page.locator("#close-unit-dialog"));
         await activate(page.locator("#scout-return"));
-        await page.setViewportSize({ width: 844, height: 390 });
-        await page.waitForFunction(() => document.documentElement.dataset.screenOrientation === "landscape");
       }
 
-      const deploy = async (slot, x, expected) => {
-        await selectDock(page, "bench");
-        const reserve = page.locator(`#units [data-bench-slot="${slot}"]`);
-        const cell = page.locator(`#cells button[data-x="${x}"][data-y="6"]`);
-        await activate(reserve);
-        if (await page.locator("#unit-dialog").isVisible()) await activate(page.locator("#close-unit-dialog"));
-        await activate(cell);
-        await page.waitForFunction(({ x, expected }) => document.querySelector(`#cells button[data-x="${x}"][data-y="6"]`).getAttribute("aria-label").includes(expected), { x, expected });
-      };
-      await deploy(0, 0, "아루");
-      await deploy(1, 1, "하루나");
-      assert.equal(await page.locator("#deployed").textContent(), "10/10");
-      assert.equal(await page.locator("#units [data-unit]").count(), 10);
-      assert.match(await page.locator("#selected-unit-content").textContent(), /미식가의 정밀탄/);
+      await selectDock(page, "shop");
+      const offer = page.locator("#shop-offers [data-offer]").first();
+      const name = await offer.locator(".shop-unit-info strong").textContent();
+      await activate(offer);
+      await selectDock(page, "bench");
+      const cell = '#cells button[data-x="0"][data-y="6"]';
+      await activate(page.locator("#units [data-bench-slot='0'][data-unit]"));
+      if (await page.locator("#unit-dialog").isVisible()) await activate(page.locator("#close-unit-dialog"));
+      await activate(page.locator(cell));
+      const waitForPlacement = () => page.waitForFunction(({ cell, name }) =>
+        document.querySelector(cell)?.getAttribute("aria-label")?.includes(name), { cell, name });
+      await waitForPlacement();
+      assert.equal(await page.locator("#deployed").textContent(), "1/1");
+      assert.equal(await page.locator("#units [data-unit]").count(), 0);
+      assert.equal(await page.locator("#selected-unit-content .skill-card").count(), 1);
       await page.reload();
-      await page.waitForFunction(() => document.querySelector("#deployed").textContent === "10/10");
+      await waitForPlacement();
       assert.equal(await page.locator("#room-code").textContent(), roomCode);
 
       const ready = page.locator("#ready");
@@ -113,7 +134,7 @@ async function main() {
       assert.equal(textures.size, 20);
       assert.deepEqual(errors, []);
       await context.close();
-      console.log(mobile ? "Mobile" : "Desktop", "20 textures, requested viewports, deployment, skill details, reconnect and bot battle verified.");
+      console.log(mobile ? "Mobile" : "Desktop", "home, default roster, 20 textures, purchase, deployment, skill details, reconnect and bot battle verified.");
     }
   } finally {
     await browser?.close();

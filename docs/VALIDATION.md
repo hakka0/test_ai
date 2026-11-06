@@ -1,3 +1,8 @@
+# 블루 아카이브 20인 기본 유닛
+
+- `npm run build`, 단위 테스트 321개, 네트워크 테스트 16개가 통과했습니다. 실제 서버에서 혼자 연습, 사용자 2인 방 생성·참가, 사용자 1명과 서버 봇 5명의 PvP 연습을 각각 확인했습니다. 새 카탈로그의 초기 상점, 봇 편성, 유닛 보상, 합성, 조합 프리셋과 재접속을 검사했습니다.
+- `npm run test:blue-archive:browser`, `npm run test:home:browser`, `npm run test:mobile-landscape:browser`, `npm run test:expanded-catalog:browser`로 홈, 새 유닛 이미지, 일반 연습의 구매·배치, 가로 터치 교환, 관전, 장비와 전투 기록을 확인했습니다. [화면 검사 범위](SCREEN_QA.md)
+
 # v0.21.1 블루 아카이브 20인 테스트
 
 - 복구한 v0.20.72의 Vite 자바스크립트·CSS 해시를 이전 배포 산출물과 대조했습니다. 두 파일이 바이트 단위로 일치했고, 통합 전에 기존 단위 테스트 318개를 확인했습니다.

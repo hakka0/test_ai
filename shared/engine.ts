@@ -80,7 +80,7 @@ export function newPlayer(id: string, name: string, roster?: Roster): Player {
     units: [],
     inventory: [],
   };
-  if (!roster) refreshShop(player);
+  refreshShop(player);
   return player;
 }
 export function prepare(m: Match, now: number) {

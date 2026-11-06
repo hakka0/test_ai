@@ -4,6 +4,7 @@ import { spawn } from "node:child_process";
 import { Client, type Room } from "colyseus.js";
 import type { Snapshot, SelfPlayerSnapshot } from "../shared/model";
 import { COLS } from "../shared/model";
+import { UNITS } from "../shared/catalog";
 function ownPlayer(s: Snapshot, id: string): SelfPlayerSnapshot {
   const p = s.players.find((p): p is SelfPlayerSnapshot => p.id === id && p.visibility === "self");
   assert.ok(p);
@@ -78,6 +79,13 @@ test(
       b = await c2.joinById(a.roomId, { name: "테스트 B" });
       const [s, t] = await Promise.all([state(a, s => s.phase === "prepare"), state(b, s => s.phase === "prepare")]);
       assert.equal(s.players.length, 2);
+      for (const [snapshot, id] of [[s, a.sessionId], [t, b.sessionId]] as const) {
+        assert.equal(snapshot.roster, "blueArchive");
+        const player = ownPlayer(snapshot, id);
+        assert.equal(player.level, 1);
+        assert.equal(player.shop.length, 5);
+        assert.ok(player.shop.every(offer => UNITS[offer.kind].spriteSheet));
+      }
       privateViews(s, t, a.sessionId);
       privateViews(t, s, b.sessionId);
       const denied = new Promise<string>((resolve) =>
@@ -139,7 +147,7 @@ test(
       const [x, y] = await Promise.all([sa, sb]);
       assert.equal(x.deadline, y.deadline);
       assert.deepEqual(x.fighters, y.fighters);
-      assert.ok(x.fighters.every((f) => f.skills.length === (f.minion?0:2)));
+      assert.ok(x.fighters.every((f) => f.skills.length === (f.minion ? 0 : UNITS[f.kind].skills.length)));
       privateViews(x, y, a.sessionId);
       privateViews(y, x, b.sessionId);
       // Real two-player rooms allow trading after both players are ready.
@@ -161,8 +169,7 @@ test(
         a,
         (s) => s.phase === "combat" && s.fighters[0].skills[0].cost > 0,
       );
-      const beforeCost = charged.fighters.find((f) => f.owner === a!.sessionId)!
-        .skills[0].cost;
+      const beforeSkill = charged.fighters.find((f) => f.owner === a!.sessionId)!.skills[0];
       const token = a.reconnectionToken,
         session = a.sessionId;
       a.connection.close();
@@ -178,10 +185,10 @@ test(
       assert.deepEqual(ownPlayer(recovered, session).shop, ownPlayer(bought, session).shop);
       const opponentAfterReconnect = await state(b, s => s.players.some(p => p.id === session && p.connected));
       privateViews(recovered, opponentAfterReconnect, session);
-      assert.ok(
-        recovered.fighters.find((f) => f.owner === session)!.skills[0].cost >=
-          beforeCost,
-      );
+      const recoveredSkill = recovered.fighters.find(f => f.owner === session)!.skills[0];
+      assert.equal(recoveredSkill.id, beforeSkill.id);
+      assert.ok(recoveredSkill.activations >= beforeSkill.activations);
+      if (recoveredSkill.activations === beforeSkill.activations) assert.ok(recoveredSkill.cost >= beforeSkill.cost);
       await a.leave();
       a = undefined;
       const final = await state(b, (s) => s.phase === "finished");
@@ -196,10 +203,15 @@ test(
       b = undefined;
       a = await c1.create("duel", {name: "봇 검증", practice: true});
       const practice = await state(a, s => s.phase === "prepare");
-      assert.equal(ownPlayer(practice, a.sessionId).visibility, "self");
+      const trainee = ownPlayer(practice, a.sessionId);
+      assert.equal(trainee.level, 1);
+      assert.equal(trainee.units.length, 0);
+      assert.equal(trainee.shop.length, 5);
+      assert.ok(trainee.shop.every(offer => UNITS[offer.kind].spriteSheet));
       const bot = practice.players.find(p => p.id === "practice-bot")!;
       assert.equal(bot.visibility, "opponent");
       assert.equal(bot.units.length, 1);
+      assert.ok(UNITS[bot.units[0].kind].spriteSheet);
       assert.ok(!("shop" in bot) && !("gold" in bot));
     } finally {
       await a?.leave();

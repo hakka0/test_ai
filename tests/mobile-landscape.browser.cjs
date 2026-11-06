@@ -1,7 +1,7 @@
 const {chromium,browserOptions}=require('./browser-runtime.cjs');
 const {debugClick,debugPreset}=require('./ui-helpers.cjs');
 const {spawn}=require('node:child_process'),fs=require('node:fs'),assert=require('node:assert/strict');
-const version=require('../package.json').version,shots='docs/screenshots/mobile-landscape';
+const version=require('../package.json').version,shots='test-results/mobile-landscape';
 const url='http://127.0.0.1:2660',server=spawn(process.execPath,['--import','tsx','server/index.ts'],{env:{...process.env,PORT:'2660',DEBUG_GAME:'1',NODE_ENV:'development'},stdio:'pipe'});
 fs.mkdirSync(shots,{recursive:true});
 (async()=>{let browser;try{
@@ -16,10 +16,10 @@ fs.mkdirSync(shots,{recursive:true});
  async function closeUnit(){if(await p.locator('#unit-dialog').evaluate(e=>e.open))await p.locator('#close-unit-dialog').tap();}
  async function drag(source,target){const a=await p.locator(source).boundingBox(),b=await p.locator(target).boundingBox();assert.ok(a&&b);const cdp=await context.newCDPSession(p);await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:a.x+a.width/2,y:a.y+a.height/2,id:1}]});await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:b.x+b.width/2,y:b.y+b.height/2,id:1}]});await p.waitForTimeout(80);await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await cdp.detach();}
  await rotate(844,390);
- const original=p.locator('#cells button[aria-label*="아군 칸, 루멘,"]').first(),cell=await original.evaluate(e=>`#cells button[data-x="${e.dataset.x}"][data-y="${e.dataset.y}"]`),destination='#cells button[data-x="7"][data-y="7"]';
- await drag('[data-bench-slot="0"]',cell);await p.waitForFunction(sel=>document.querySelector(sel).getAttribute('aria-label').includes('실바'),cell);
+ const original=p.locator('#cells button[aria-label*="아군 칸, 시로코,"]').first(),cell=await original.evaluate(e=>`#cells button[data-x="${e.dataset.x}"][data-y="${e.dataset.y}"]`),destination='#cells button[data-x="7"][data-y="7"]';
+ await drag('[data-bench-slot="0"]',cell);await p.waitForFunction(sel=>document.querySelector(sel).getAttribute('aria-label').includes('유우카'),cell);
  await drag(cell,'[data-bench-slot="2"]');await p.waitForFunction(()=>document.getElementById('deployed').textContent==='0/1');
- await drag('[data-bench-slot="2"]',destination);await p.waitForFunction(sel=>document.querySelector(sel).getAttribute('aria-label').includes('실바'),destination);
+ await drag('[data-bench-slot="2"]',destination);await p.waitForFunction(sel=>document.querySelector(sel).getAttribute('aria-label').includes('유우카'),destination);
  await enemy.tap();assert.equal(await enemy.getAttribute('aria-pressed'),'true');
  await rotate(390,844);assert.equal(await enemy.getAttribute('aria-pressed'),'true');await rotate(844,390);assert.equal(await enemy.getAttribute('aria-pressed'),'true');
  await p.locator('#cells button[aria-label*="관전 칸,"]:not([aria-label*="빈 칸"])').first().tap();await p.locator('#unit-dialog').waitFor({state:'visible'});assert.equal(await p.locator('#unit-dialog').getAttribute('data-read-only'),'true');await closeUnit();await p.locator('#scout-return').tap();assert.equal(await own.getAttribute('aria-pressed'),'true');
@@ -38,7 +38,7 @@ fs.mkdirSync(shots,{recursive:true});
   for(const offer of m.offers)assert.ok(offer.width>=44&&offer.height>=44,JSON.stringify({width,height,offer}));
   await p.locator('#mobile-info-open').tap();await p.locator('#pc-info-dialog').waitFor({state:'visible'});await p.locator('#pc-info-close').tap();
   await p.locator('#history-toggle').tap();await p.locator('#combat-record-dialog').waitFor({state:'visible'});await p.locator('#combat-sheet-close').tap();
-  await p.locator('#cells button[aria-label*="아군 칸, 루멘,"]').first().tap();await p.locator('#unit-dialog').waitFor({state:'visible'});await closeUnit();
+  await p.locator('#cells button[aria-label*="아군 칸, 시로코,"]').first().tap();await p.locator('#unit-dialog').waitFor({state:'visible'});await closeUnit();
   await p.screenshot({path:`${shots}/${width}-${height}.png`,animations:'disabled'});results.push({width,height,...m});
  }
  await rotate(390,844);assert.equal(await p.locator('#player-ranking').evaluate(e=>e.parentElement.id),'game-view');assert.equal(await p.locator('#player-ranking [data-self="true"]').getAttribute('data-player-id'),viewer);assert.equal(await p.evaluate(()=>localStorage.getItem('autochess-screen-mode')),null);

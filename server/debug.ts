@@ -1,14 +1,20 @@
 import { createOffer, SHOP_SIZE, removeMaxRankOffers } from "../shared/shop";
-import type { DebugAction, DebugState, Match, Player, Trait } from "../shared/model";
-import { PREP_MS } from "../shared/model";
+import type { DebugAction, DebugState, Kind, Match, Player, Trait } from "../shared/model";
+import { BENCH_SIZE, PREP_MS } from "../shared/model";
 import { newMatch, newPlayer, botSetup, tick } from "../shared/engine";
 import { GameClock, advanceMatch } from "../shared/game-time";
 import { unitPrice } from "../shared/shop";
 import { grantItem } from "../shared/crafting";
 import { offerRoundReward, autoClaimReward } from "../shared/rewards";
-import { UNIT_KINDS, CORE_UNIT_KINDS, UNITS } from "../shared/catalog";
+import { CORE_UNIT_KINDS, UNITS, unitKindsFor } from "../shared/catalog";
 import {createMinionBattles} from '../shared/minions';
 import {isBot} from '../shared/bot-practice';
+
+const blueArchivePreset = {
+  regular: ["shiroko", "yuuka", "hifumi"],
+  synergy: ["yuuka", "shiroko", "hifumi", "hoshino", "neru", "koharu"],
+  overtime: "yuuka",
+} as const satisfies { regular: readonly Kind[]; synergy: readonly Kind[]; overtime: Kind };
 
 export function debugAllowed(enabled: boolean, practice: boolean, viewerId: string, m: Match): boolean {
   return enabled && practice && m.players.some(p => p.id === viewerId && !isBot(p));
@@ -52,7 +58,6 @@ export class DebugSession {
         }
         return null;
       case "preset": {
-        if (m.players.some(p => p.roster === "blueArchive")) return "블루 아카이브 테스트에서는 기본 유닛 프리셋을 사용할 수 없습니다.";
         const configs = {
           overtime: {round:4,level:1,gold:30,health:100},
           minion: {round: 1, level: 1, gold: 10, health: 100},
@@ -71,10 +76,18 @@ export class DebugSession {
         const config = configs[action.preset];
         const focus:Partial<Record<string,Trait>>={synergyBulwark:'bulwark',synergyScout:'scout',synergyArcane:'arcane'};
         const focusedTrait=focus[action.preset];
-        // Six unique deployed kinds, with all other twelve kinds on the bench.
-        const roster=focusedTrait?[...UNIT_KINDS.filter(k=>UNITS[k].trait===focusedTrait),...UNIT_KINDS.filter(k=>UNITS[k].trait!==focusedTrait)]:null;
+        const catalog = m.players[0]?.roster;
+        const kinds = unitKindsFor(catalog);
+        const regular: readonly Kind[] = catalog === "blueArchive" ? blueArchivePreset.regular : ["knight", "ranger", "mage"];
+        const balanced = catalog === "blueArchive" ? blueArchivePreset.synergy : CORE_UNIT_KINDS;
+        const mergeKind = regular[0];
+        // Prioritize the focused trait, then fill the remaining field and reserve slots.
+        const focusedKinds = focusedTrait
+          ? [...kinds.filter(k => UNITS[k].trait === focusedTrait), ...kinds.filter(k => UNITS[k].trait !== focusedTrait)]
+            .slice(0, config.level + BENCH_SIZE)
+          : null;
         const players = m.players.map(p => {
-          const fresh = newPlayer(p.id, p.name);
+          const fresh = newPlayer(p.id, p.name, p.roster);
           fresh.bot=p.bot;
           fresh.connected = p.connected;
           Object.assign(fresh, {level: config.level, gold: config.gold, health: config.health});
@@ -90,19 +103,22 @@ export class DebugSession {
           fresh.shop.forEach(o => o.id = `${p.id}-offer-${fresh.nextOfferId++}`);
           fresh.units = [];
           // Fixtures already contain upgraded units; ordinary acquisitions still merge.
-          for (let i = 0; i < (roster?.length??Math.max(3, config.level)); i++) fresh.units.push({
+          for (let i = 0; i < (focusedKinds?.length ?? Math.max(3, config.level)); i++) fresh.units.push({
             id: `${fresh.id}-${fresh.nextUnitId++}`, owner: fresh.id,
-            kind: roster?.[i]??(action.preset === "synergy" ? CORE_UNIT_KINDS[i] : (["knight", "ranger", "mage"] as const)[i % 3]),
-            rank: roster||action.preset === "synergy" ? 1 : (Math.min(3, 1 + Math.floor(i / 3))) as 1 | 2 | 3,
+            kind: focusedKinds?.[i] ?? (action.preset === "synergy" ? balanced[i] : regular[i % regular.length]),
+            rank: focusedKinds || action.preset === "synergy" ? 1 : (Math.min(3, 1 + Math.floor(i / 3))) as 1 | 2 | 3,
             x: -1, y: -1, benchSlot: i, equipment: [],
           });
-          if(action.preset==='overtime')fresh.units.forEach(u=>{u.kind='warden';u.rank=1;});
+          if (action.preset === "overtime") fresh.units.forEach(u => {
+            u.kind = catalog === "blueArchive" ? blueArchivePreset.overtime : "warden";
+            u.rank = 1;
+          });
           arrange(fresh);
           if (action.preset === "merge") {
-            fresh.units[1].kind = "knight";
+            fresh.units[1].kind = mergeKind;
             fresh.units[1].x = fresh.units[1].y = -1; fresh.units[1].benchSlot = 0;
             fresh.units[2].x = fresh.units[2].y = -1; fresh.units[2].benchSlot = 1;
-            Object.assign(fresh.shop[0], {kind: "knight", cost: unitPrice("knight"), sold: false});
+            Object.assign(fresh.shop[0], {kind: mergeKind, cost: unitPrice(mergeKind), sold: false});
           }
           if (config.level > 1) fresh.inventory.forEach((item, i) => {
             const unit = fresh.units[i]; item.unitId = unit.id; unit.equipment.push(item.id);
@@ -118,7 +134,7 @@ export class DebugSession {
           // reserve offers together after every roster exists, not independently.
           for(const player of players)player.shop=[];
           if(action.preset==='merge')for(const player of players)player.shop.push({
-            id:`${player.id}-offer-${player.nextOfferId++}`,kind:'knight',cost:unitPrice('knight'),sold:false,
+            id:`${player.id}-offer-${player.nextOfferId++}`,kind:mergeKind,cost:unitPrice(mergeKind),sold:false,
           });
           for(const player of players){
             while(player.shop.length<SHOP_SIZE){const offer=createOffer(player,Math.random,players);if(!offer)break;player.shop.push(offer);}

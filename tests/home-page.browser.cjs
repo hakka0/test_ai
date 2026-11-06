@@ -6,7 +6,7 @@ const proc=spawn(process.execPath,['--import','tsx','server/index.ts'],{env:{...
 let output='';proc.stderr.on('data',d=>output+=d);
 (async()=>{let browser;try{
  let healthy=false;for(let i=0;i<60;i++){try{if((await fetch(url+'/health')).ok){healthy=true;break;}}catch{}await new Promise(r=>setTimeout(r,100));}assert.ok(healthy,output);
- browser=await chromium.launch(browserOptions());const errors=[],results=[];fs.mkdirSync('docs/screenshots/home-page',{recursive:true});
+ browser=await chromium.launch(browserOptions());const errors=[],results=[];fs.mkdirSync('test-results/home-page',{recursive:true});
  for(const mode of ['pc','mobile']){
   const viewport=mode==='pc'?{width:1440,height:1000}:{width:390,height:844};
   const ctx=await browser.newContext({viewport,isMobile:mode==='mobile',hasTouch:mode==='mobile',userAgent:mode==='pc'?'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/138.0.0.0 Safari/537.36':'Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/138.0.0.0 Mobile Safari/537.36'});
@@ -16,7 +16,7 @@ let output='';proc.stderr.on('data',d=>output+=d);
   async function game(){await p.locator('#game-view').waitFor({state:'visible'});await p.locator('#lobby').waitFor({state:'hidden'});assert.equal(await p.locator('#pc-play-dock').isVisible(),true);assert.equal(await p.locator('#game-view').evaluate(e=>e.inert),false);}
   await p.goto(url);await home();await p.waitForFunction(()=>document.documentElement.classList.contains('pc-layout')||document.documentElement.classList.contains('mobile-layout'));
   const geometry=await p.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,home:document.querySelector('#lobby').getBoundingClientRect().toJSON(),footer:document.querySelector('#screen-mode-footer').getBoundingClientRect().toJSON(),pageHeight:document.documentElement.scrollHeight}));assert.equal(geometry.overflow,false);assert.ok(geometry.footer.y>=geometry.home.y+geometry.home.height);
-  await p.evaluate(()=>document.fonts.ready);await p.screenshot({path:`docs/screenshots/home-page/${mode}-home-0.19.0.png`,fullPage:true,animations:'disabled'});
+  await p.evaluate(()=>document.fonts.ready);await p.screenshot({path:`test-results/home-page/${mode}-home-0.19.0.png`,fullPage:true,animations:'disabled'});
   // Footer mode controls are usable before joining a room.
   await click(mode==='pc'?'#screen-mode-mobile':'#screen-mode-pc');await p.waitForFunction(mode=>document.documentElement.dataset.screenMode===mode,mode==='pc'?'mobile':'pc');await home();
   await click('#screen-mode-auto');await p.waitForFunction(mode=>document.documentElement.dataset.screenMode===mode,mode);await home();
@@ -38,5 +38,5 @@ let output='';proc.stderr.on('data',d=>output+=d);
   }
   results.push({mode,viewport,homeGeometry:geometry,boardWidth:width,entryModes:true,inlineErrors:true,modeBeforeEntry:true,reloadRestore:true,lobbyReturn:true,keyboard:true});await ctx.close();console.log('PASS:',mode,'inline main page, practice/create/join, error feedback, mode switching, keyboard, restore and return');
  }
- assert.deepEqual(errors,[]);fs.writeFileSync('docs/screenshots/home-page/results.json',JSON.stringify({version:require('../package.json').version,browser:browser.version(),results,errors},null,2));
+ assert.deepEqual(errors,[]);fs.writeFileSync('test-results/home-page/results.json',JSON.stringify({version:require('../package.json').version,browser:browser.version(),results,errors},null,2));
  }finally{await browser?.close();proc.kill('SIGTERM');}})().catch(e=>{console.error(e.stack||e);process.exitCode=1});

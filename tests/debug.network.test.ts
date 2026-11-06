@@ -27,10 +27,10 @@ test('실제 디버깅 서버: 대전 거부·배속·정지·단계·프리셋�
   const paused=await command(room,{type:'pause',paused:true},s=>s.timeScale===0);await wait(200);
   const frozen=await state(room,s=>s.timeScale===0);assert.equal(frozen.gameNow,paused.gameNow);assert.ok(frozen.serverNow>paused.serverNow);
   const step=await command(room,{type:'step',ms:100},s=>s.gameNow===frozen.gameNow+100);assert.equal(step.timeScale,0);
-  const mergePreset=await command(room,{type:'preset',preset:'merge'},s=>s.phase==='prepare'&&s.players.some(p=>p.visibility==='self'&&p.level===3&&p.units.filter(u=>u.kind==='knight').length===2));
+  const mergePreset=await command(room,{type:'preset',preset:'merge'},s=>s.phase==='prepare'&&s.players.some(p=>p.visibility==='self'&&p.level===3&&p.units.filter(u=>u.kind==='shiroko').length===2));
   const mergeOwn=mergePreset.players.find((p):p is SelfPlayerSnapshot=>p.visibility==='self')!;
   const mergeBuy={type:'buy',offerId:mergeOwn.shop[0].id,revision:mergeOwn.shopRevision,rank:3,cost:0};
-  const mergePending=state(room,s=>s.players.some(p=>p.visibility==='self'&&p.units.some(u=>u.kind==='knight'&&u.rank===2)));
+  const mergePending=state(room,s=>s.players.some(p=>p.visibility==='self'&&p.units.some(u=>u.kind==='shiroko'&&u.rank===2)));
   room.send('action',mergeBuy);const merged=await mergePending;
   const upgraded=merged.players.find((p):p is SelfPlayerSnapshot=>p.visibility==='self')!;
   assert.equal(upgraded.gold,9);assert.equal(upgraded.units.length,2);assert.equal(upgraded.units[0].equipment.length,2);
@@ -40,7 +40,7 @@ test('실제 디버깅 서버: 대전 거부·배속·정지·단계·프리셋�
   assert.deepEqual(unchanged.players.find(p=>p.visibility==='self'),upgraded);
   await command(room,{type:'save'},s=>!!s.debug?.hasCheckpoint);
   const mergeCombat=await command(room,{type:'nextPhase'},s=>s.phase==='combat');
-  assert.equal(mergeCombat.fighters.find(f=>f.id===upgraded.units[0].id)!.maxHp,456);
+  assert.equal(mergeCombat.fighters.find(f=>f.id===upgraded.units[0].id)!.maxHp,402);
   const mergeLoaded=await command(room,{type:'load'},s=>s.phase==='prepare');assert.deepEqual(mergeLoaded.players.find(p=>p.visibility==='self'),upgraded);
   const mergeToken=room.reconnectionToken;room.connection.close();await wait(300);room=await client.reconnect(mergeToken);
   const mergeRecovered=await state(room,s=>s.players.some(p=>p.visibility==='self'&&p.connected));
@@ -54,8 +54,8 @@ test('실제 디버깅 서버: 대전 거부·배속·정지·단계·프리셋�
   assert.ok(synergyOwn.units.every(u=>u.x>=0&&u.rank===1));
   const synergyCombat=await command(room,{type:'nextPhase'},s=>s.phase==='combat');
   assert.equal(synergyCombat.fighters.length,12);
-  assert.equal(synergyCombat.fighters.find(f=>f.owner===room!.sessionId&&f.kind==='knight')!.maxHp,253);
-  assert.equal(synergyCombat.fighters.find(f=>f.owner===room!.sessionId&&f.kind==='mage')!.shield,85);
+  assert.equal(synergyCombat.fighters.find(f=>f.owner===room!.sessionId&&f.kind==='yuuka')!.maxHp,374);
+  assert.equal(synergyCombat.fighters.find(f=>f.owner===room!.sessionId&&f.kind==='hifumi')!.shield,65);
   const synergyBot=synergyCombat.players.find(p=>p.visibility==='opponent')!;
   assert.ok(!('gold'in synergyBot)&&!('shop'in synergyBot)&&!('lastMerge'in synergyBot));
   await command(room,{type:'save'},s=>!!s.debug?.hasCheckpoint);

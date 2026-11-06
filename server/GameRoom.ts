@@ -7,9 +7,6 @@ import { DebugSession, debugAllowed } from "./debug";
 import { RECONNECT_GRACE_SECONDS } from "../shared/connection-policy";
 import {INTRO_MINION_ROUNDS} from '../shared/minions';
 import {isBot} from '../shared/bot-practice';
-import { BLUE_ARCHIVE_KINDS, BLUE_ARCHIVE_UNITS, type BlueArchiveKind } from "../shared/blue-archive";
-import { COLS, ROWS, type Player, type Roster } from "../shared/model";
-import { MAX_LEVEL } from "../shared/progression";
 import {
   newMatch,
   newPlayer,
@@ -25,21 +22,16 @@ export class GameRoom extends Room {
   game = newMatch('duel',INTRO_MINION_ROUNDS);
   practice = false;
   botPractice = false;
-  roster?: Roster;
   gameClock = new GameClock(serverNow());
   debugger = new DebugSession();
   debugEnabled = process.env.DEBUG_GAME === "1" && process.env.NODE_ENV !== "production";
   rates = new Map<string, { at: number; count: number }>();
-  onCreate(options: { practice?: boolean; botPractice?: boolean; roster?: unknown }) {
+  onCreate(options: { practice?: boolean; botPractice?: boolean }) {
     this.roomId = reserveRoomCode();
     this.practice = options?.practice === true;
     this.botPractice=options?.botPractice===true;
     if(this.botPractice)this.maxClients=1;
     this.game.mode=this.botPractice?'botPractice':this.practice?'practice':'duel';
-    if (this.game.mode === "practice" && options?.roster === "blueArchive") {
-      this.roster = "blueArchive";
-      this.game.minionRounds = 0;
-    }
     this.onMessage("ping", (client, data) => {
       if (typeof data === "number" && Number.isFinite(data))
         client.send("pong", { sent: data, serverNow: serverNow() });
@@ -82,19 +74,16 @@ export class GameRoom extends Room {
     if (this.game.phase !== "waiting") throw new Error("이미 시작한 방입니다.");
     const name =
       typeof options?.name === "string" ? options.name.trim().slice(0, 16) : "";
-    const player = newPlayer(client.sessionId, name || `플레이어 ${this.game.players.length + 1}`, this.roster);
+    const player = newPlayer(client.sessionId, name || `플레이어 ${this.game.players.length + 1}`, "blueArchive");
     this.game.players.push(player);
     if (this.practice&&!this.botPractice) {
-      const bot = newPlayer("practice-bot", "연습 상대", this.roster);
+      const bot = newPlayer("practice-bot", "연습 상대", player.roster);
       this.game.players.push(bot);
-      if (this.roster === "blueArchive") {
-        seedBlueArchive(player);
-        seedBlueArchive(bot, true);
-      } else botSetup(bot,this.game.players);
+      botSetup(bot,this.game.players);
     }
     if(this.botPractice){
       for(let i=1;i<=5;i++){
-        const bot=newPlayer(`pvp-bot-${i}`,`연습 봇 ${i}`);bot.bot=true;this.game.players.push(bot);
+        const bot=newPlayer(`pvp-bot-${i}`,`연습 봇 ${i}`,player.roster);bot.bot=true;this.game.players.push(bot);
       }
       // Reserve initial offers against all six participants, then prepare lets bots buy.
       for(const p of this.game.players)p.shop=[];
@@ -152,25 +141,4 @@ export class GameRoom extends Room {
     }
   }
   onDispose(){releaseRoomCode(this.roomId);}
-}
-
-const BLUE_ARCHIVE_BOT: readonly BlueArchiveKind[] = ["hoshino", "natsu", "neru", "mika", "aru", "hina", "aris", "noa"];
-
-function seedBlueArchive(player: Player, bot = false) {
-  const deployedCount = BLUE_ARCHIVE_BOT.length;
-  const kinds = bot ? BLUE_ARCHIVE_BOT : BLUE_ARCHIVE_KINDS;
-  player.level = MAX_LEVEL;
-  player.gold = bot ? 0 : 30;
-  let front = 0;
-  let back = 0;
-  for (const [index, kind] of kinds.entries()) {
-    const deployed = index < deployedCount;
-    const near = BLUE_ARCHIVE_UNITS[kind].stats.range <= 2;
-    player.units.push({
-      id: `${player.id}-${player.nextUnitId++}`, owner: player.id, kind, rank: 1,
-      x: deployed ? (near ? front++ : back++) % COLS : -1,
-      y: deployed ? ROWS / 2 - (near ? 1 : 2) : -1,
-      benchSlot: deployed ? null : index - deployedCount, equipment: [],
-    });
-  }
 }

@@ -2,13 +2,14 @@ const {chromium,browserOptions}=require('./browser-runtime.cjs');
 const {debugClick,debugPreset}=require('./ui-helpers.cjs');
 const {decode}=require('@colyseus/schema'),{unpack}=require('@colyseus/msgpackr');
 const {spawn}=require('node:child_process'),fs=require('node:fs'),assert=require('node:assert/strict');
-const version=require('../package.json').version,shots=`docs/screenshots/expanded-${version}`,url='http://127.0.0.1:2696';
+const version=require('../package.json').version,shots='test-results/expanded-catalog',url='http://127.0.0.1:2696';
 const server=spawn(process.execPath,['--import','tsx','server/index.ts'],{env:{...process.env,PORT:'2696',DEBUG_GAME:'0',NODE_ENV:'production'},stdio:'pipe'});
 fs.mkdirSync(shots,{recursive:true});
 function snapshot(raw){if(typeof raw==='string')return;const b=Buffer.from(raw);if(b[0]!==13)return;const it={offset:1},type=decode.stringCheck(b,it)?decode.string(b,it):decode.number(b,it);if(type==='snapshot')return unpack(b,{start:it.offset});}
 (async()=>{let browser;try{
  for(let i=0;i<90;i++){try{if((await fetch(url+'/health')).ok)break;}catch{}await new Promise(r=>setTimeout(r,100));}
- const {UNITS,UNIT_KINDS,CORE_UNIT_KINDS}=await import('../shared/catalog.ts');
+ const {UNITS}=await import('../shared/catalog.ts');
+ const {BLUE_ARCHIVE_KINDS,SPRITE_FRAME_SIZE}=await import('../shared/blue-archive.ts');
  browser=await chromium.launch(browserOptions());const results=[],errors=[],presets=['synergyBulwark','synergyScout','synergyArcane'],traits=['bulwark','scout','arcane'];let step=0;
  for(const mode of ['pc','mobile']){
   const ctx=await browser.newContext({viewport:mode==='pc'?{width:1400,height:1000}:{width:390,height:844},isMobile:mode==='mobile',hasTouch:mode==='mobile',userAgent:mode==='pc'?'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/151.0.0.0 Safari/537.36':'Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/151.0.0.0 Mobile Safari/537.36'});
@@ -21,21 +22,23 @@ function snapshot(raw){if(typeof raw==='string')return;const b=Buffer.from(raw);
   const reset=async preset=>{const g=last.debug.generation;await debugPreset(p,preset);await fresh(()=>last.debug.generation>g&&last.phase==='prepare');};
   await p.goto(url);await press('#pvp-practice');await fresh(()=>last?.debug);await debugClick(p,'debug-pause');await fresh(()=>last.debug.paused);
   const room=last.roomId,bot=last.players.find(v=>v.bot).id;
-  const assets=await p.evaluate(async entries=>Promise.all(entries.map(async([kind,src])=>{const img=new Image();img.src=src;await img.decode();return{kind,width:img.naturalWidth,height:img.naturalHeight};})),UNIT_KINDS.map(k=>[k,UNITS[k].image]));
-  assert.equal(assets.length,18);assert.ok(assets.filter(a=>!CORE_UNIT_KINDS.includes(a.kind)).every(a=>a.width===500&&a.height===500));
+  const assets=await p.evaluate(async entries=>Promise.all(entries.map(async([kind,src])=>{const img=new Image();img.src=src;await img.decode();return{kind,width:img.naturalWidth,height:img.naturalHeight};})),BLUE_ARCHIVE_KINDS.map(k=>[k,UNITS[k].image]));
+  assert.equal(assets.length,20);assert.ok(assets.every(a=>a.width===SPRITE_FRAME_SIZE&&a.height===SPRITE_FRAME_SIZE));
   const frames=mode==='pc'?[[1400,1000],[1024,768]]:[[390,844],[320,740],[844,390],[740,360],[667,375],[480,320],[390,844]];
   for(const [width,height] of frames){
    console.log('CHECK expanded catalogue',mode,width,height);await p.setViewportSize({width,height});await p.waitForTimeout(150);
    assert.equal(last.roomId,room);assert.equal(await p.locator('html').getAttribute('data-screen-mode'),mode);
    if(step>0&&await p.locator('#scout-return').isVisible()){assert.equal(await p.locator(`[data-player-id="${bot}"]`).getAttribute('aria-pressed'),'true');await press('#scout-return');}
    const i=step++%3;await reset(presets[i]);assert.equal(own().units.length,18);assert.equal(new Set(own().units.map(u=>u.kind)).size,18);
-   const u=own().units.find(u=>u.x>=0&&!CORE_UNIT_KINDS.includes(u.kind));await press(`#cells [data-board-unit="${u.id}"]`);
-   const detail=p.locator(mode==='pc'?'#selected-unit-content':'#unit-dialog');await detail.locator('.selection h2').filter({hasText:UNITS[u.kind].name}).waitFor();assert.equal(await detail.locator('.skill-card').count(),2);
+   assert.ok(own().units.every(u=>BLUE_ARCHIVE_KINDS.includes(u.kind)));
+   const u=own().units.find(u=>u.x>=0);await press(`#cells [data-board-unit="${u.id}"]`);
+   const detail=p.locator(mode==='pc'?'#selected-unit-content':'#unit-dialog');await detail.locator('.selection h2').filter({hasText:UNITS[u.kind].name}).waitFor();assert.equal(await detail.locator('.skill-card').count(),1);
    if(mode==='mobile')await press('#close-unit-dialog');
    await p.screenshot({path:`${shots}/${mode}-${width}-${height}-interface.png`});
    await press(`[data-player-id="${bot}"]`);
-   const card=p.locator(`#my-synergies [data-trait="${traits[i]}"]`);await assertColors(card,6);await press(card);
-   const tip=p.locator('#game-help-tooltip');await tip.waitFor({state:'visible'});await assertColors(tip,6,true);
+   const focusedCount=Math.min(6,BLUE_ARCHIVE_KINDS.filter(kind=>UNITS[kind].trait===traits[i]).length);
+   const card=p.locator(`#my-synergies [data-trait="${traits[i]}"]`);await assertColors(card,focusedCount);await press(card);
+   const tip=p.locator('#game-help-tooltip');await tip.waitFor({state:'visible'});await assertColors(tip,focusedCount,true);
    const box=await tip.boundingBox();assert.ok(box.x>=0&&box.y>=0&&box.x+box.width<=width&&box.y+box.height<=height);
    await p.screenshot({path:`${shots}/${mode}-${width}-${height}-${traits[i]}.png`});await press(card);await tip.waitFor({state:'hidden'});
    const g=await p.evaluate(()=>{if(document.getElementById('player-ranking').parentElement.id!=='game-view')throw new Error('ranking must remain independent');for(const e of document.querySelectorAll('#units [data-bench-slot]')){const b=e.getBoundingClientRect();if(Math.abs(b.width-b.height)>1)throw new Error('reserve slots must remain square');}const r=id=>document.getElementById(id).getBoundingClientRect().toJSON();return{overflow:document.documentElement.scrollWidth>innerWidth,board:r('board-wrap'),bench:r('bench'),shop:r('pc-dock-reserve'),rank:r('player-ranking'),targets:[...document.querySelectorAll('.ranking-row,#shop-offers [data-offer],#my-synergies button')].filter(e=>e.getClientRects().length).map(e=>e.getBoundingClientRect().toJSON())};});
@@ -53,23 +56,23 @@ function snapshot(raw){if(typeof raw==='string')return;const b=Buffer.from(raw);
     const rail=await p.locator('#ranking-list').evaluate(e=>{e.scrollTop=e.scrollHeight;const last=e.lastElementChild.getBoundingClientRect(),r=e.getBoundingClientRect();return {scroll:e.scrollTop,inside:last.top>=r.top&&last.bottom<=r.bottom+1};});
     assert.ok(rail.scroll>0&&rail.inside,'six-player ranking scrolls inside the short landscape rail');
    }
-   results.push({mode,width,height,preset:presets[i],actualTypes:18,focusedDeployed:6,reserves:12,geometry:g,assets:assets.length,countBeforeName:true,onlyCurrentTierEmphasized:6,helpExplanationRemoved:true});
+   results.push({mode,width,height,preset:presets[i],actualTypes:18,focusedDeployed:focusedCount,reserves:12,geometry:g,assets:assets.length,countBeforeName:true,onlyCurrentTierEmphasized:true,helpExplanationRemoved:true});
   }
   // Real exchanges allow tier testing even with all twelve reserve slots filled.
   await press('#scout-return');await reset('synergyBulwark');await p.setViewportSize(mode==='pc'?{width:1400,height:1000}:{width:844,height:390});await p.waitForTimeout(150);
   const focused=own().units.filter(u=>u.x>=0),cdp=mode==='mobile'?await ctx.newCDPSession(p):null;
-  for(let i=0;i<5;i++){
+  for(let i=0;i<4;i++){
    const a=await p.locator(`#cells [data-board-unit="${focused[i].id}"]`).boundingBox(),b=await p.locator(`[data-bench-slot="${i}"]`).boundingBox();assert.ok(a&&b);
    const from={x:a.x+a.width/2,y:a.y+a.height/2},to={x:b.x+b.width/2,y:b.y+b.height/2};
    if(cdp){await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{...from,id:1}]});await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{...to,id:1}]});await p.waitForTimeout(80);await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});}
    else{await p.mouse.move(from.x,from.y);await p.mouse.down();await p.mouse.move(to.x,to.y,{steps:10});await p.mouse.up();}
    await fresh(()=>own().units.find(u=>u.id===focused[i].id).x<0);
-   const count=5-i;await p.waitForFunction(n=>document.querySelector('#my-synergies [data-trait="bulwark"]').dataset.synergyCount===String(n),count);
+   const count=4-i;await p.waitForFunction(n=>document.querySelector('#my-synergies [data-trait="bulwark"]').dataset.synergyCount===String(n),count);
    const card=p.locator('#my-synergies [data-trait="bulwark"]');await assertColors(card,count);await press(card);await p.locator('#game-help-tooltip').waitFor({state:'visible'});await assertColors(p.locator('#game-help-tooltip'),count,true);await p.screenshot({path:`${shots}/${mode}-actual-${count}-bulwark.png`});await press(card);
   }
   await press('#ready');await fresh(()=>last.phase==='matching');await debugClick(p,'debug-next');await fresh(()=>last.phase==='combat');assert.equal(last.fighters.length,36);
   await debugClick(p,'debug-second');await p.screenshot({path:`${shots}/${mode}-combat.png`});await p.reload();await p.locator('#game-view').waitFor({state:'visible'});assert.equal(last.roomId,room);await press('#leave');await p.locator('#lobby').waitFor({state:'visible'});
-  results.push({mode,actualTierExchanges:[6,5,4,3,2,1],mobileLandscapeTouch:mode==='mobile',combatFighters:36,reload:true});await ctx.close();
+  results.push({mode,actualTierExchanges:[5,4,3,2,1],mobileLandscapeTouch:mode==='mobile',combatFighters:36,reload:true});await ctx.close();
  }
  // Future fourth-tier presentation only: no server, units or effects are changed.
  const {TRAITS}=await import('../shared/synergy.ts'),{synergyCards}=await import('../client/synergy-ui.ts');
@@ -82,7 +85,7 @@ function snapshot(raw){if(typeof raw==='string')return;const b=Buffer.from(raw);
   assert.equal(color,'rgb(218, 206, 230)');assert.notEqual(shadow,'none');
   await preview.screenshot({path:`${shots}/future-fourth-tier-fixture.png`});futureTierFixture={grade:'purple',color,glow:true,gameplayTierAdded:false};
  }finally{tiers.pop();await preview.close();}
- assert.deepEqual(errors,[]);fs.writeFileSync(`${shots}/results.json`,JSON.stringify({version,browser:browser.version(),results,futureTierFixture,errors,source:'Actual one-human/five-bot room snapshots, 18 real catalogue kinds. No synthetic extra units or snapshot alterations. Separate renderer-only future fourth-tier fixture.'},null,2));console.log('PASS expanded catalogue: 18 images, nine layouts/rotation, actual 6-to-1 exchanges, light inactive surface, three tinted stages, future purple fixture, skills, combat and reload');
+ assert.deepEqual(errors,[]);fs.writeFileSync(`${shots}/results.json`,JSON.stringify({version,browser:browser.version(),results,futureTierFixture,errors,source:'Actual one-human/five-bot room snapshots using the 20-unit Blue Archive catalogue. Separate renderer-only future fourth-tier fixture.'},null,2));console.log('PASS Blue Archive catalogue: 20 portraits, nine layouts/rotation, actual 5-to-1 Bulwark exchanges, trait stages, skills, combat and reload');
 }finally{await browser?.close();server.kill();}})().catch(e=>{console.error(e.stack||e);process.exitCode=1;});
 async function assertColors(root,count,effect=false){
  if(!effect){

@@ -133,6 +133,7 @@ const ORIGINAL_UNITS: Record<Exclude<Kind, BlueArchiveKind>, UnitDefinition> = {
 export const CORE_UNIT_KINDS = ["knight","ranger","mage","warden","skirmisher","oracle"] as const satisfies readonly Kind[];
 export const UNIT_KINDS = Object.keys(ORIGINAL_UNITS) as Kind[];
 export const UNITS: Record<Kind, UnitDefinition> = { ...ORIGINAL_UNITS, ...BLUE_ARCHIVE_UNITS };
+// Older match data has no roster marker. New rooms explicitly select Blue Archive.
 export function unitKindsFor(roster?: Roster): readonly Kind[] {
   return roster === "blueArchive" ? BLUE_ARCHIVE_KINDS : UNIT_KINDS;
 }

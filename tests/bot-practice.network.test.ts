@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
 import {Client,type Room} from 'colyseus.js';
 import type {Snapshot,DebugAction,SelfPlayerSnapshot} from '../shared/model';
+import {UNITS} from '../shared/catalog';
 const wait=(ms:number)=>new Promise(r=>setTimeout(r,ms));
 function state(room:Room,predicate:(s:Snapshot)=>boolean):Promise<Snapshot>{return new Promise((resolve,reject)=>{
  const timer=setTimeout(()=>{off();reject(new Error('snapshot timeout'));},6000);
@@ -18,6 +19,9 @@ test('실제 6인 봇 방: 일반 실행에서 디버깅·미니언 3회·5초 �
   const initial=await state(room,s=>s.phase==='prepare'&&!!s.debug);assert.equal(initial.mode,'botPractice');assert.equal(initial.players.length,6);assert.equal(initial.players.filter(p=>p.bot).length,5);
   assert.ok(initial.players.slice(1).every(p=>p.ready&&p.visibility==='opponent'&&p.rosterVisible&&!('shop'in p)&&!('gold'in p)));
   assert.ok(initial.players[0].units.length===0);assert.ok(initial.players[0].visibility==='self'&&initial.players[0].shop.length>0);
+  assert.equal(initial.roster,'blueArchive');
+  assert.ok(initial.players[0].shop.every(offer=>UNITS[offer.kind].spriteSheet));
+  assert.ok(initial.players.slice(1).every(p=>p.units.length>0&&p.units.every(unit=>UNITS[unit.kind].spriteSheet)));
   await assert.rejects(client.joinById(room.roomId,{name:'추가 접속'}));
   await command(room,{type:'pause',paused:true},s=>s.timeScale===0);
   for(let round=1;round<=3;round++){
@@ -29,6 +33,7 @@ test('실제 6인 봇 방: 일반 실행에서 디버깅·미니언 3회·5초 �
    const expanded=await command(room,{type:'preset',preset},s=>s.phase==='prepare'&&s.players.some(p=>p.visibility==='self'&&p.units.length===18));
    const own=expanded.players.find((p):p is SelfPlayerSnapshot=>p.visibility==='self')!;
    assert.equal(new Set(own.units.map(u=>u.kind)).size,18);assert.equal(own.units.filter(u=>u.x>=0).length,6);assert.equal(own.units.filter(u=>u.x<0).length,12);
+   assert.ok(own.units.every(unit=>UNITS[unit.kind].spriteSheet));
    assert.ok(expanded.players.slice(1).every(p=>p.visibility==='opponent'&&p.units.length===6&&p.bench.length===12));
    await command(room,{type:'nextPhase'},s=>s.phase==='matching');
    const fighting=await command(room,{type:'nextPhase'},s=>s.phase==='combat');assert.equal(fighting.fighters.length,36);assert.equal(fighting.battlePairs!.length,3);

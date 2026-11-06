@@ -4,7 +4,7 @@ import type { Snapshot, Action, DebugAction } from "../shared/model";
 import { RECONNECT_GRACE_SECONDS, CONNECTION_STALE_MS, HEARTBEAT_INTERVAL_MS } from "../shared/connection-policy";
 type RoomClient = Pick<Client, "create" | "joinById" | "reconnect">;
 type TokenStorage = Pick<Storage, "getItem" | "setItem" | "removeItem">;
-export type ConnectionMode = "create" | "join" | "practice" | "botPractice" | "blueArchive";
+export type ConnectionMode = "create" | "join" | "practice" | "botPractice";
 function defaultClient() {
  const endpoint = import.meta.env?.VITE_SERVER_URL ||
   (location.port === "5173" ? `${location.protocol}//${location.hostname}:2567` : location.origin);
@@ -48,9 +48,8 @@ export class Connection {
     this.storage.removeItem("duel-token");this.onStatus("연결 중");
     const room = mode === "join" ? await this.client.joinById(code.trim().toUpperCase(), {name})
       : await this.client.create("duel", {
-        name, practice: mode === "practice" || mode === "blueArchive",
+        name, practice: mode === "practice",
         ...(mode === "botPractice" ? { botPractice: true } : {}),
-        ...(mode === "blueArchive" ? { roster: "blueArchive" } : {}),
       });
     if(!this.current(generation)) {await room.leave();throw new Error("취소된 연결입니다.");}
     this.attach(room,generation);

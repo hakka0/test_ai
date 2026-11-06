@@ -43,6 +43,8 @@ test("all 20 characters have a six-direction sheet, portrait, stats and a workin
 
 test("Blue Archive draws from its own roster in the shop and rewards", () => {
   const player = newPlayer("p", "Player", "blueArchive");
+  assert.equal(player.shop.length, 5);
+  assert.ok(player.shop.every(o => unitKindsFor(player.roster).includes(o.kind)));
   const match = newMatch("practice");
   match.players = [player];
   prepare(match, 100);
