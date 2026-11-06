@@ -1,3 +1,24 @@
+# GitHub Pages 1인 연습 (v0.21.2)
+
+휴대폰 브라우저에서 별도 게임 서버 없이 **혼자 연습하기**, **봇 5명과 연습**, **블루 아카이브 20인 테스트**를 플레이할 수 있습니다. Pages 버전에는 친구 방 만들기·참가와 공유 방 코드가 표시되지 않습니다. 기존 Node.js 서버용 실행은 유지합니다.
+
+게임 규칙·상점·전투·보상은 서버와 같은 공통 엔진을 사용합니다. 새로고침하면 같은 탭의 경기를 이어가며, 앱 전환 중에는 진행을 멈춥니다. 로비로 나가면 저장한 경기가 지워집니다. 저장은 현재 탭의 브라우저 저장소를 사용하며 브라우저 데이터 삭제·저장 공간 제한 시 유지되지 않을 수 있습니다. 처음 페이지와 이미지를 읽는 데는 인터넷 연결이 필요합니다.
+
+## Pages 활성화
+
+배포용 파일은 `gh-pages` 브랜치에 저장합니다. 저장소 **Settings → Pages → Build and deployment**에서 **Source: Deploy from a branch**, **Branch: gh-pages**, **Folder: / (root)**를 선택하고 저장합니다. GitHub의 배포 완료 후 저장소 Pages 주소로 접속합니다. 이 저장소의 기본 주소는 `https://hakka0.github.io/test_ai/`입니다. Pages 사용 가능 여부는 저장소 공개 범위와 GitHub 요금제에 따릅니다.
+
+## 개발·배포
+
+- `npm ci` 후 `npm run build:pages`: `/test_ai/` 경로용 로컬 연습판을 `dist-pages/`에 생성합니다. 다른 저장소/도메인 경로는 빌드할 때 `PAGES_BASE_PATH`로 지정합니다.
+- `CHROME_PATH=/usr/bin/chromium npm run test:pages:browser`: 게임 백엔드 없이 정적 파일만 제공하여 PC·모바일을 검증합니다. 다른 환경에서는 `CHROME_PATH`를 해당 Chromium 경로로 지정하거나 `npm run setup:browser`를 먼저 실행합니다.
+- 소스 변경을 커밋·푸시한 다음 `npm run publish:pages`: Pages 빌드를 생성하고 `gh-pages`를 일반 push로 갱신합니다. 기존 배포 브랜치가 있으면 그 커밋 위에 추가하며 강제 push를 사용하지 않습니다. `source-version.json`에 배포 소스 커밋을 기록합니다. 이 명령은 Pages 설정 자체를 활성화하지 않습니다.
+- `npm run build`, `npm start`, `npm run dev`: 기존 서버용 실행입니다. Pages 산출물과 서버용 산출물은 별도 디렉터리에 보관합니다.
+
+검증 범위는 [VALIDATION.md](docs/VALIDATION.md)와 [SCREEN_QA.md](docs/SCREEN_QA.md)를 참고하세요.
+
+---
+
 # 블루 아카이브 20인 테스트 (v0.21.1)
 
 새 폴더에 배포 ZIP을 풀고 Node.js 22 이상에서 `START-WINDOWS.cmd`를 실행합니다. macOS·Linux에서는 `npm ci` 후 `npm start`를 실행합니다. 브라우저에서 [게임 화면](http://localhost:2567)을 열고 **블루 아카이브 20인 테스트**를 선택합니다.

@@ -1,31 +1,32 @@
+import { assetUrl } from "./assets";
 import type { SkillDefinition } from "./skill-types";
 import { BLUE_ARCHIVE_SKILLS } from "./blue-archive";
 // Author skills here; clients receive state, never permission to select or cast arbitrary skills.
 export const SKILLS: Record<string, SkillDefinition> = {
   ...BLUE_ARCHIVE_SKILLS,
   ironWard: {
-    id: "ironWard", image: "/skills/ironWard.svg", name: "철벽 방패", kind: "active",
+    id: "ironWard", image: assetUrl("/skills/ironWard.svg"), name: "철벽 방패", kind: "active",
     description: "초당 코스트 10, 피격 시 추가 10 회복. 80에서 자신에게 보호막 70 지급 후 전부 소모.",
     triggers: [{ on: "costFull" }], resource: { max: 80, regenPerSecond: 10, perDamaged: 10 },
     cooldownMs: 1000, target: { kind: "self" }, effects: [{ type: "shield", amount: 70 }],
     activation: { mode: "instant", spend: "all" },
   },
   steadfast: {
-    id: "steadfast", image: "/skills/steadfast.svg", name: "버티기", kind: "passive",
+    id: "steadfast", image: assetUrl("/skills/steadfast.svg"), name: "버티기", kind: "passive",
     description: "피격 후 체력 40% 이하에서 최대 체력의 15% 회복. 전투당 한 번.",
     triggers: [{ on: "onDamaged", when: { type: "hpBelow", ratio: 0.4 } }],
     cooldownMs: 0, maxActivationsPerBattle: 1, target: { kind: "self" },
     effects: [{ type: "heal", amount: 0, maxHpRatio: 0.15 }], activation: { mode: "instant" },
   },
   doubleStrike: {
-    id: "doubleStrike", image: "/skills/doubleStrike.svg", name: "쌍검 베기", kind: "active",
+    id: "doubleStrike", image: assetUrl("/skills/doubleStrike.svg"), name: "쌍검 베기", kind: "active",
     description: "기본 공격 시 추가 코스트 20 회복. 60에서 1칸 내 적에게 공격력 1.6배 피해 후 전부 소모.",
     triggers: [{ on: "costFull" }], resource: { max: 60, perBasicAttack: 20 },
     cooldownMs: 500, target: { kind: "nearestEnemy", range: 1 },
     effects: [{ type: "damage", amount: 0, attackScale: 1.6 }], activation: { mode: "instant", spend: "all" },
   },
   quickstep: {
-    id: "quickstep", image: "/skills/quickstep.svg", name: "재빠른 발걸음", kind: "passive",
+    id: "quickstep", image: assetUrl("/skills/quickstep.svg"), name: "재빠른 발걸음", kind: "passive",
     description: "기본 공격 4회마다 3초 동안 공격 주기 −150ms, 이동 주기 −100ms.",
     triggers: [{ on: "afterBasicAttack", when: { type: "attacksEvery", count: 4 } }],
     cooldownMs: 0, target: { kind: "self" },
@@ -33,20 +34,20 @@ export const SKILLS: Record<string, SkillDefinition> = {
     activation: { mode: "instant" },
   },
   starlightHeal: {
-    id: "starlightHeal", image: "/skills/starlightHeal.svg", name: "별빛 치유", kind: "active",
+    id: "starlightHeal", image: assetUrl("/skills/starlightHeal.svg"), name: "별빛 치유", kind: "active",
     description: "초당 코스트 15 회복. 75에서 4칸 내 체력 비율이 가장 낮은 아군(자신 포함)을 35 + 대상 최대 체력의 10% 회복하고 전부 소모.",
     triggers: [{ on: "costFull" }], resource: { max: 75, regenPerSecond: 15 },
     cooldownMs: 1000, target: { kind: "lowestHealthAlly", range: 4 },
     effects: [{ type: "heal", amount: 35, maxHpRatio: 0.1 }], activation: { mode: "instant", spend: "all" },
   },
   gentleWard: {
-    id: "gentleWard", image: "/skills/gentleWard.svg", name: "치유사의 가호", kind: "passive",
+    id: "gentleWard", image: assetUrl("/skills/gentleWard.svg"), name: "치유사의 가호", kind: "passive",
     description: "전투 시작 시 자신에게 보호막 15.",
     triggers: [{ on: "battleStart" }], cooldownMs: 0, maxActivationsPerBattle: 1,
     target: { kind: "self" }, effects: [{ type: "shield", amount: 15 }], activation: { mode: "instant" },
   },
   guardian: {
-    id: "guardian", image: "/skills/guardian.svg",
+    id: "guardian", image: assetUrl("/skills/guardian.svg"),
     name: "여명의 수호",
     kind: "active",
     description:
@@ -63,7 +64,7 @@ export const SKILLS: Record<string, SkillDefinition> = {
     },
   },
   lastStand: {
-    id: "lastStand", image: "/skills/lastStand.svg",
+    id: "lastStand", image: assetUrl("/skills/lastStand.svg"),
     name: "불굴",
     kind: "passive",
     description: "피격 후 체력이 35% 이하일 때 보호막 55. 전투당 한 번.",
@@ -75,7 +76,7 @@ export const SKILLS: Record<string, SkillDefinition> = {
     activation: { mode: "instant" },
   },
   piercingArrow: {
-    id: "piercingArrow", image: "/skills/piercingArrow.svg",
+    id: "piercingArrow", image: assetUrl("/skills/piercingArrow.svg"),
     name: "관통 사격",
     kind: "active",
     description:
@@ -88,7 +89,7 @@ export const SKILLS: Record<string, SkillDefinition> = {
     activation: { mode: "instant", spend: "all" },
   },
   forestBreath: {
-    id: "forestBreath", image: "/skills/forestBreath.svg",
+    id: "forestBreath", image: assetUrl("/skills/forestBreath.svg"),
     name: "숲의 호흡",
     kind: "passive",
     description: "기본 공격을 3회 할 때마다 체력 12 회복.",
@@ -101,7 +102,7 @@ export const SKILLS: Record<string, SkillDefinition> = {
     activation: { mode: "instant" },
   },
   nova: {
-    id: "nova", image: "/skills/nova.svg",
+    id: "nova", image: assetUrl("/skills/nova.svg"),
     name: "별빛 폭발",
     kind: "active",
     description:
@@ -114,7 +115,7 @@ export const SKILLS: Record<string, SkillDefinition> = {
     activation: { mode: "instant", spend: "all" },
   },
   starWard: {
-    id: "starWard", image: "/skills/starWard.svg",
+    id: "starWard", image: assetUrl("/skills/starWard.svg"),
     name: "별의 가호",
     kind: "passive",
     description: "전투 시작 시 보호막 20.",

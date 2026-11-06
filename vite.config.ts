@@ -1,7 +1,8 @@
 import { readFileSync } from "node:fs";
 import { defineConfig } from "vite";
 const version=JSON.parse(readFileSync(new URL("./package.json",import.meta.url),"utf8")).version;
-export default defineConfig({
+export default defineConfig(({mode}) => ({
+  base: mode === "pages" ? (process.env.PAGES_BASE_PATH || "/test_ai/") : "/",
   define: {__APP_VERSION__:JSON.stringify(version)},
   server: {
     host: "0.0.0.0",
@@ -17,5 +18,5 @@ export default defineConfig({
       },
     },
   },
-  build: { chunkSizeWarningLimit: 1600 },
-});
+  build: { outDir: mode === "pages" ? "dist-pages" : "dist", chunkSizeWarningLimit: 1600 },
+}));

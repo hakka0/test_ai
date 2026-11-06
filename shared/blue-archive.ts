@@ -1,3 +1,4 @@
+import { assetUrl } from "./assets";
 import type { Rarity, Stats, Trait } from "./model";
 import type { ResourceDefinition, SkillDefinition, SkillEffect, TargetRule } from "./skill-types";
 import type { CombatAttribute } from "./combat-attributes";
@@ -34,8 +35,8 @@ function unit(id: string, name: string, role: string, rarity: Rarity, trait: Tra
     name, role, rarity, trait, attackAttribute, defenseAttribute,
     stats: { ...BASE_COMBAT_STATS, ...stats, defense },
     skills: [`ba-${id}`],
-    image: `/units/blue-archive/icons/${id}.png`,
-    spriteSheet: `/units/blue-archive/${id}.png`,
+    image: assetUrl(`/units/blue-archive/icons/${id}.png`),
+    spriteSheet: assetUrl(`/units/blue-archive/${id}.png`),
   };
 }
 

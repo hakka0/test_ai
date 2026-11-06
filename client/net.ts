@@ -1,17 +1,20 @@
 import { snapshotGameNow } from "../shared/view-clock";
-import { Client, ErrorCode, type Room } from "colyseus.js";
+import { Client, ErrorCode } from "colyseus.js";
 import type { Snapshot, Action, DebugAction } from "../shared/model";
 import { RECONNECT_GRACE_SECONDS, CONNECTION_STALE_MS, HEARTBEAT_INTERVAL_MS } from "../shared/connection-policy";
-type RoomClient = Pick<Client, "create" | "joinById" | "reconnect">;
+import type { PlayRoom, RoomClient } from "./room-client";
+import { LocalPracticeClient } from "./local-practice";
+export const LOCAL_PLAY = import.meta.env?.MODE === "pages";
 type TokenStorage = Pick<Storage, "getItem" | "setItem" | "removeItem">;
 export type ConnectionMode = "create" | "join" | "practice" | "botPractice" | "blueArchive";
-function defaultClient() {
+function defaultClient(): RoomClient {
+ if (LOCAL_PLAY) return new LocalPracticeClient(sessionStorage);
  const endpoint = import.meta.env?.VITE_SERVER_URL ||
   (location.port === "5173" ? `${location.protocol}//${location.hostname}:2567` : location.origin);
  return new Client(endpoint);
 }
 export class Connection {
-  room: Room | null = null;
+  room: PlayRoom | null = null;
   offset = Date.now() - performance.now();
   latency = 0;
   connected = false;
@@ -60,7 +63,7 @@ export class Connection {
     const generation = this.begin();
     return this.retry(token,generation);
   }
-  private attach(room: Room, generation: number) {
+  private attach(room: PlayRoom, generation: number) {
     this.room = room;this.connected = true;this.synced = false;this.bestRTT = Infinity;
     this.lastReceived = performance.now();
     this.storage.setItem("duel-token", room.reconnectionToken);
@@ -81,7 +84,7 @@ export class Connection {
         this.offset = p.serverNow - (p.sent + performance.now()) / 2;
         this.bestRTT = Math.min(this.bestRTT,rtt);this.synced = true;
       }
-      this.onStatus(`연결됨 · ${this.latency}ms`);
+      this.onStatus(LOCAL_PLAY ? "이 기기에서 연습 중" : `연결됨 · ${this.latency}ms`);
     });
     room.onError((_code,message) => {if(current())this.onNotice(message || "연결 오류");});
     room.onLeave((code) => {
@@ -101,7 +104,7 @@ export class Connection {
     this.wakeRetry();
     if(this.room && this.connected)this.checkConnection(this.room,this.generation);
   }
-  private checkConnection(room: Room, generation: number) {
+  private checkConnection(room: PlayRoom, generation: number) {
     if(!this.current(generation) || this.room !== room || !this.connected)return;
     if(performance.now()-this.lastReceived < CONNECTION_STALE_MS && room.connection.isOpen) {
       room.send("ping",performance.now());return;

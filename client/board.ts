@@ -1,3 +1,4 @@
+import { assetUrl } from "../shared/assets";
 import {unitDefinition} from "../shared/minions";
 import { SKILLS } from "../shared/skill-catalog";
 import Phaser from "phaser";
@@ -63,7 +64,7 @@ export class Board extends Phaser.Scene {
         this.load.spritesheet(id, def.spriteSheet, { frameWidth: SPRITE_FRAME_SIZE, frameHeight: SPRITE_FRAME_SIZE });
       } else this.load.image(id, def.image);
     }
-    for(const variant of ["sentry","drone"])this.load.image(`minion-${variant}`,`/units/minion-${variant}.svg`);
+    for(const variant of ["sentry","drone"])this.load.image(`minion-${variant}`,assetUrl(`/units/minion-${variant}.svg`));
   }
   create() {
     for (const kind of BLUE_ARCHIVE_KINDS) {

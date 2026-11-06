@@ -1,10 +1,11 @@
+import { assetUrl } from "../shared/assets";
 import type { Stats, FighterSnapshot } from '../shared/model';
 import type { SkillDefinition } from '../shared/skill-types';
 import { skillDescriptionFor } from '../shared/skill-description';
 import { skillCardState } from './skill-presentation';
 
 const escape=(value:string)=>value.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
-const imageFor=(skill:SkillDefinition)=>skill.image??'/skills/default.svg';
+const imageFor=(skill:SkillDefinition)=>skill.image??assetUrl('/skills/default.svg');
 const kindFor=(skill:SkillDefinition)=>skill.kind==='active'?'액티브':'패시브';
 const costFor=(skill:SkillDefinition)=>skill.resource?.max??0;
 

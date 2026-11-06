@@ -1,6 +1,6 @@
 {
   "name": "autochess-web-starter",
-  "version": "0.21.1",
+  "version": "0.21.2",
   "private": true,
   "type": "module",
   "engines": {
@@ -13,7 +13,7 @@
     "check": "tsc --noEmit",
     "build": "npm run check && vite build",
     "start": "node --import tsx server/index.ts",
-    "test": "node --import tsx --test tests/engine.test.ts tests/skills.test.ts tests/shop.test.ts tests/bench.test.ts tests/sell.test.ts tests/progression.test.ts tests/snapshot.test.ts tests/match-rules.test.ts tests/debug.test.ts tests/merge.test.ts tests/interaction.test.ts tests/synergy.test.ts tests/rewards.test.ts tests/combat-shop.test.ts tests/swap.test.ts tests/history.test.ts tests/contributions.test.ts tests/results.test.ts tests/connection.test.ts tests/reward-popup.test.ts tests/screen-mode.test.ts tests/equipment-intent.test.ts tests/unit-inspection.test.ts tests/supply-actions.test.ts tests/empty-start.test.ts tests/board-geometry.test.ts tests/unit-motion.test.ts tests/damage-display.test.ts tests/health-trail.test.ts tests/skill-indicator.test.ts tests/unit-appearance.test.ts tests/scouting.test.ts tests/combat-damage.test.ts tests/attack-speed.test.ts tests/skill-presentation.test.ts tests/unit-pool.test.ts tests/matching.test.ts tests/room-code.test.ts tests/deferred-merge.test.ts tests/room-lifecycle.test.ts tests/minions.test.ts tests/bot-practice.test.ts tests/overtime.test.ts tests/refinements56.test.ts tests/expanded-catalog.test.ts tests/blue-archive.test.ts",
+    "test": "node --import tsx --test tests/engine.test.ts tests/skills.test.ts tests/shop.test.ts tests/bench.test.ts tests/sell.test.ts tests/progression.test.ts tests/snapshot.test.ts tests/match-rules.test.ts tests/debug.test.ts tests/merge.test.ts tests/interaction.test.ts tests/synergy.test.ts tests/rewards.test.ts tests/combat-shop.test.ts tests/swap.test.ts tests/history.test.ts tests/contributions.test.ts tests/results.test.ts tests/connection.test.ts tests/reward-popup.test.ts tests/screen-mode.test.ts tests/equipment-intent.test.ts tests/unit-inspection.test.ts tests/supply-actions.test.ts tests/empty-start.test.ts tests/board-geometry.test.ts tests/unit-motion.test.ts tests/damage-display.test.ts tests/health-trail.test.ts tests/skill-indicator.test.ts tests/unit-appearance.test.ts tests/scouting.test.ts tests/combat-damage.test.ts tests/attack-speed.test.ts tests/skill-presentation.test.ts tests/unit-pool.test.ts tests/matching.test.ts tests/room-code.test.ts tests/deferred-merge.test.ts tests/room-lifecycle.test.ts tests/minions.test.ts tests/bot-practice.test.ts tests/overtime.test.ts tests/refinements56.test.ts tests/expanded-catalog.test.ts tests/blue-archive.test.ts tests/local-practice.test.ts",
     "test:network": "node --import tsx --test tests/network.test.ts tests/debug.network.test.ts tests/rewards.network.test.ts tests/swap.network.test.ts tests/history.network.test.ts tests/results.network.test.ts tests/scouting-sale.network.test.ts tests/reconnection.network.test.ts tests/minions.network.test.ts tests/bot-practice.network.test.ts",
     "test:browser": "node tests/bench.browser.cjs",
     "dev:debug": "node scripts/dev-debug.mjs",
@@ -74,7 +74,10 @@
     "test:combat-reserve-sale:browser": "node --import tsx tests/combat-reserve-sale.browser.cjs",
     "test:skill-details:browser": "node --import tsx tests/skill-details.browser.cjs",
     "test:shop-preview:browser": "node --import tsx tests/shop-preview.browser.cjs",
-    "test:blue-archive:browser": "node tests/blue-archive.browser.cjs"
+    "test:blue-archive:browser": "node tests/blue-archive.browser.cjs",
+    "build:pages": "npm run check && vite build --mode pages",
+    "test:pages:browser": "node tests/pages.browser.cjs",
+    "publish:pages": "node scripts/publish-pages.mjs"
   },
   "dependencies": {
     "@colyseus/core": "~0.16.0",

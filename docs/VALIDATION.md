@@ -1,3 +1,13 @@
+# v0.21.2 GitHub Pages 1인 연습 — 2026-11-07
+
+- `npm run build:pages` 및 `npm run build` 통과: Pages용 `dist-pages/`와 기존 서버용 `dist/`를 분리했습니다. 기존 큰 번들 경고는 유지합니다.
+- `npm test`: 326개 통과, 실패·건너뜀 0개. 새 로컬 연습 5개는 실제 배치·구매·보상·전투 결과, 6명 봇/3개 전장, 저장 복원·긴 모바일 중단 후 시간 유지·명시적 떠나기·온라인 참가 거부·손상된 저장을 검사합니다.
+- `npm run test:network`: 기존 실제 서버 통신 테스트 16개 통과, 실패·건너뜀 0개. 사람 2인과 1명+서버 봇 5명의 범위를 유지합니다.
+- `CHROME_PATH=/usr/bin/chromium npm run test:pages:browser` 통과: 게임 백엔드를 시작하지 않고 정적 파일만 `/test_ai/` 아래에서 제공합니다. 브라우저의 게임 HTTP 요청과 WebSocket 생성을 예외로 차단한 상태에서 20종 텍스처, 10명 배치·스킬 상세·새로고침 복원·봇 전투 결과, 일반 모드 구매/복원/로비 복귀, 6명 봇 모드·회전을 확인했습니다. 누락된 정적 자원·페이지 오류 0개입니다.
+- `CHROME_PATH=/usr/bin/chromium npm run test:blue-archive:browser`: 기존 서버용 PC·모바일 20인 모드도 통과했습니다.
+- Linux Chromium 156의 PC/모바일 터치 에뮬레이션입니다. 실제 iOS/Android 기기와 공개 Pages URL의 검증은 포함하지 않습니다. GitHub Pages의 브랜치 활성화 설정은 별도로 필요하며, GitHub API 접근 제한으로 이 환경에서 자동 활성화는 확인하지 못했습니다.
+- 재현 명령·Pages 설정: [README](../README.md). 캡처는 무시되는 `test-results/pages/`에 생성합니다. 공개 사이트에 배포된 소스 커밋은 `source-version.json`으로 확인할 수 있습니다.
+
 # v0.21.1 블루 아카이브 20인 테스트
 
 - 복구한 v0.20.72의 Vite 자바스크립트·CSS 해시를 이전 배포 산출물과 대조했습니다. 두 파일이 바이트 단위로 일치했고, 통합 전에 기존 단위 테스트 318개를 확인했습니다.

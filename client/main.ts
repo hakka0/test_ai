@@ -1,3 +1,4 @@
+import { assetUrl } from "../shared/assets";
 declare const __APP_VERSION__:string;
 import {createEquipmentUI} from "./equipment-ui";
 import {createCraftUI} from "./craft-ui";
@@ -29,7 +30,7 @@ import './interface-theme.css';
 import { createBoard } from "./board";
 import { COMBAT_ATTRIBUTES } from "../shared/combat-attributes";
 import { CELL, WIDTH, MARGIN, BOARD_ASPECT } from "./board-geometry";
-import { Connection, type ConnectionMode } from "./net";
+import { Connection, LOCAL_PLAY, type ConnectionMode } from "./net";
 import {unitDefinition,minionStats} from "../shared/minions";
 import { UNITS, EQUIPMENT, statsFor, unitKindsFor } from "../shared/catalog";
 import { unitStatsMarkup } from "./unit-stats";
@@ -86,7 +87,7 @@ document.querySelector("#app")!.innerHTML = `
  <div id="selection"><div class="empty">캐릭터를 선택하면 능력치와 장비를 확인할 수 있습니다.</div></div>
  <details id="skills-panel" open><summary>스킬</summary><div id="skill-list" class="skill-list"></div></details>
  <details id="equipment-panel"><summary>아이템 보관 · 재료와 장비</summary><p class="help">캐릭터당 2개까지 장착할 수 있습니다. 전투 중 변경한 장비는 다음 전투부터 반영됩니다.</p><div class="inventory" id="inventory"></div></details>
- <details><summary>플레이 방법</summary><div class="help">① 한 번 터치해 유닛을 선택한 뒤 빈 아군 칸을 누르세요. 드래그도 가능합니다. 다른 내 유닛 위에 드롭하면 서로 자리를 바꿉니다. 상세·장비 버튼으로 정보를 엽니다.<br>② 장비를 장착하고 준비 완료를 누르세요.<br>③ 양쪽 준비가 끝나거나 30초가 지나면 자동 전투합니다.<br>④ 체력 100으로 시작하며 체력이 0이 되면 경기에서 탈락합니다. 후반으로 갈수록 패배 피해가 커집니다. 최대 ${MAX_ROUNDS}라운드에서 체력, 승수 순으로 승자를 정합니다.<br>같은 종류·같은 강화 등급 3개는 자동 합성됩니다. 레어도는 가격, 강화 등급은 능력치를 나타냅니다. 같은 계열의 서로 다른 2·4·6종마다 조합 효과가 강해지며, 달성한 가장 높은 단계의 효과를 적용합니다. 전투 시작 조합은 그 전투 동안 유지됩니다. 합성 후 빈 출전 자리는 직접 채우세요.<br>대기석 캐릭터는 전투에 참가하지 않습니다. 빈 전장은 패배하며, 양쪽이 비어 있거나 전투 시간이 초과되면 무승부이며 양쪽 체력이 줄어듭니다.<br>연결이 끊기면 최대 60초 동안 재접속합니다. 그동안 경기는 계속 진행됩니다.<br>상단 전투 기록 버튼을 열어 지난 라운드를 누르면 상대·승패·체력 감소를 확인할 수 있습니다. 닫아도 기록은 계속 쌓입니다.<br>키보드: Tab으로 캐릭터와 칸을 선택하고 Enter로 조작할 수 있습니다.</div></details>
+ <details><summary>플레이 방법</summary><div class="help">① 한 번 터치해 유닛을 선택한 뒤 빈 아군 칸을 누르세요. 드래그도 가능합니다. 다른 내 유닛 위에 드롭하면 서로 자리를 바꿉니다. 상세·장비 버튼으로 정보를 엽니다.<br>② 장비를 장착하고 준비 완료를 누르세요.<br>③ 양쪽 준비가 끝나거나 30초가 지나면 자동 전투합니다.<br>④ 체력 100으로 시작하며 체력이 0이 되면 경기에서 탈락합니다. 후반으로 갈수록 패배 피해가 커집니다. 최대 ${MAX_ROUNDS}라운드에서 체력, 승수 순으로 승자를 정합니다.<br>같은 종류·같은 강화 등급 3개는 자동 합성됩니다. 레어도는 가격, 강화 등급은 능력치를 나타냅니다. 같은 계열의 서로 다른 2·4·6종마다 조합 효과가 강해지며, 달성한 가장 높은 단계의 효과를 적용합니다. 전투 시작 조합은 그 전투 동안 유지됩니다. 합성 후 빈 출전 자리는 직접 채우세요.<br>대기석 캐릭터는 전투에 참가하지 않습니다. 빈 전장은 패배하며, 양쪽이 비어 있거나 전투 시간이 초과되면 무승부이며 양쪽 체력이 줄어듭니다.<br>${LOCAL_PLAY ? "새로고침하면 같은 탭의 연습 경기를 이어갑니다. 앱을 전환한 동안에는 경기가 진행되지 않습니다. 로비로 나가거나 탭을 닫으면 저장한 연습 경기를 종료합니다." : "연결이 끊기면 최대 60초 동안 재접속합니다. 그동안 경기는 계속 진행됩니다."}<br>상단 전투 기록 버튼을 열어 지난 라운드를 누르면 상대·승패·체력 감소를 확인할 수 있습니다. 닫아도 기록은 계속 쌓입니다.<br>키보드: Tab으로 캐릭터와 칸을 선택하고 Enter로 조작할 수 있습니다.</div></details>
 </aside></main>
 <section id="selected-unit-panel" class="selected-unit-panel" aria-label="선택한 캐릭터 정보" inert>
  <div id="selected-unit-content"><div class="empty">캐릭터를 선택하세요.</div></div>
@@ -96,7 +97,7 @@ document.querySelector("#app")!.innerHTML = `
   <div class="eyebrow">STARLIGHT TACTICS</div>
   <h1 id="lobby-title">작은 전장,<br>당신만의 한 수.</h1>
   <p>기사·궁수·마법사로 나만의 진형을 만들고,<br>별빛 아래 자동 전투를 시작하세요.</p>
-  <div class="heroes" aria-hidden="true"><img src="/units/knight.svg" alt=""><img src="/units/ranger.svg" alt=""><img src="/units/mage.svg" alt=""></div>
+  <div class="heroes" aria-hidden="true"><img src="${assetUrl("/units/knight.svg")}" alt=""><img src="${assetUrl("/units/ranger.svg")}" alt=""><img src="${assetUrl("/units/mage.svg")}" alt=""></div>
  </section>
  <section class="home-play" aria-labelledby="home-play-title">
   <h2 id="home-play-title">게임 시작</h2>
@@ -697,7 +698,7 @@ function render() {
   $("phase").dataset.compactLabel = s.phase==='combat'&&s.overtime?'피버':{waiting:"대기",prepare:"준비",matching:"매칭",combat:"전투",result:"결과",finished:"종료"}[s.phase];
   $("phase").setAttribute("aria-label",$("phase").textContent!);
   $("game-view").classList.toggle('combat-overtime',s.phase==='combat'&&!!s.overtime);
-  roomCodeUI.render(s.roomId);
+  roomCodeUI.render(LOCAL_PLAY ? "" : s.roomId);
   $("result").textContent = s.result;
   pcUI.setStreak(p.streak, p.streakCount);
   $("income-label").textContent = `최근 지급 +${p.lastIncome.total} G · 기본 ${p.lastIncome.base} + 이자 ${p.lastIncome.interest} + 연속 ${p.lastIncome.streak}`;
@@ -957,6 +958,14 @@ setInterval(() => {
   rewardUI.render();
   if (seconds === 0) { endDrag(); cancelSale(); render(); }
 }, 100);
+const localLobbyMessage = "이 기기에서 혼자 플레이합니다. 새로고침하면 같은 탭의 경기를 이어갑니다.";
+if (LOCAL_PLAY) {
+  $("create").classList.add("hidden");
+  $("join-form").classList.add("hidden");
+  $("home-play-title").textContent = "1인 연습 시작";
+  $("lobby-status").textContent = localLobbyMessage;
+  $("pvp-practice").querySelector("strong")!.textContent = "봇 5명과 연습";
+}
 let busy = false;
 function navigationBusy(value: boolean) {
   busy = value;
@@ -989,7 +998,7 @@ function resetMatchView() {
 async function returnToLobby() {
   if (busy) return;
   navigationBusy(true);resetMatchView();$("lobby-status").textContent = "로비로 돌아가는 중…";
-  try { await net.leave(); $("lobby-status").textContent = "새 연습 경기나 친구 대전을 시작하세요."; }
+  try { await net.leave(); $("lobby-status").textContent = LOCAL_PLAY ? localLobbyMessage : "새 연습 경기나 친구 대전을 시작하세요."; }
   catch { $("lobby-status").textContent = "로비로 돌아왔습니다. 새 경기를 시작하세요."; }
   finally {navigationBusy(false);$("nickname").focus();}
 }
@@ -1009,7 +1018,7 @@ async function connect(mode: ConnectionMode, replace = false) {
   }
   $("code").removeAttribute("aria-invalid");
   navigationBusy(true);
-  $("lobby-status").textContent = "서버에 연결하고 있습니다…";
+  $("lobby-status").textContent = LOCAL_PLAY ? "연습을 준비하고 있습니다…" : "서버에 연결하고 있습니다…";
   try {
     if (replace) {resetMatchView();await net.leave();$("lobby-status").textContent = "새 경기에 연결하고 있습니다…";}
     await net.connect(mode, ($("nickname") as HTMLInputElement).value, code);

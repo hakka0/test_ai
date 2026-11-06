@@ -4,9 +4,9 @@ const { spawn } = require("node:child_process");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
 
-const url = "http://127.0.0.1:2644";
-const screenshots = "test-results/blue-archive";
-const processServer = spawn(process.execPath, ["--import", "tsx", "server/index.ts"], {
+const url = process.env.GAME_URL || "http://127.0.0.1:2644";
+const screenshots = process.env.PAGES_TEST ? "test-results/pages" : "test-results/blue-archive";
+const processServer = process.env.GAME_URL ? null : spawn(process.execPath, ["--import", "tsx", "server/index.ts"], {
   env: { ...process.env, PORT: "2644", DEBUG_GAME: "1", NODE_ENV: "development" },
   stdio: "ignore",
 });
@@ -15,7 +15,7 @@ async function main() {
   let browser;
   try {
     fs.mkdirSync(screenshots, { recursive: true });
-    let healthy = false;
+    let healthy = !!process.env.PAGES_TEST;
     for (let i = 0; i < 80 && !healthy; i++) {
       try { healthy = (await fetch(url + "/health")).ok; } catch { /* starting */ }
       if (!healthy) await new Promise(resolve => setTimeout(resolve, 100));
@@ -29,6 +29,10 @@ async function main() {
         hasTouch: mobile,
         ...(mobile ? { userAgent: "Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/155.0.0.0 Mobile Safari/537.36" } : {}),
       });
+      if (process.env.PAGES_TEST) await context.addInitScript(() => {
+        window.WebSocket = class { constructor() { throw new Error("Pages must not open a WebSocket"); } };
+        window.fetch = () => { throw new Error("Pages must not request a game server"); };
+      });
       const page = await context.newPage();
       page.setDefaultTimeout(12000);
       const activate = locator => mobile ? locator.tap() : locator.click();
@@ -38,7 +42,7 @@ async function main() {
       page.on("response", response => {
         const path = new URL(response.url()).pathname;
         const loaded = response.ok() || response.status() === 304;
-        if (/^\/units\/blue-archive\/\w+\.png$/.test(path) && loaded) textures.add(path);
+        if (/\/units\/blue-archive\/\w+\.png$/.test(path) && loaded) textures.add(path);
         if (path.includes("/units/blue-archive/") && !loaded) errors.push(path + " HTTP " + response.status());
       });
       await page.goto(url);
@@ -47,7 +51,7 @@ async function main() {
       await debugClick(page, "debug-pause");
       assert.match(await page.locator("#level-label").textContent(), /레벨 10/);
       assert.equal(await page.locator("#units [data-unit]").count(), 12);
-      assert.equal(await page.locator("#shop-offers .shop-portrait img[src^='/units/blue-archive/']").count(), 5);
+      assert.equal(await page.locator("#shop-offers .shop-portrait img[src*='/units/blue-archive/']").count(), 5);
       assert.equal(await page.locator("#gold").textContent(), "30");
 
       const roomCode = await page.locator("#room-code").textContent();
@@ -117,8 +121,9 @@ async function main() {
     }
   } finally {
     await browser?.close();
-    processServer.kill("SIGTERM");
+    processServer?.kill("SIGTERM");
   }
 }
 
-main().catch(error => { console.error(error); process.exitCode = 1; });
+module.exports = { main };
+if (require.main === module) main().catch(error => { console.error(error); process.exitCode = 1; });
