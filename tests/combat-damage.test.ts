@@ -22,7 +22,7 @@ function fixture() {
 }
 
 test("six units: 10% chance, 150% total critical damage, positive armor and tougher tanks at all ranks", () => {
-  const tanks = ["knight", "warden"] as const;
+  const tanks = ["yuuka", "natsu"] as const;
   for (const kind of CORE_UNIT_KINDS) for (const rank of [1, 2, 3] as const) {
     const s = statsFor({ kind, rank, equipment: [] }, []);
     assert.equal(s.critChance, 10); assert.equal(s.critDamage, 150); assert.equal(s.weaponPower, 10);
@@ -46,7 +46,7 @@ test("direct armor division: doubling defense halves damage; weapon power scales
 });
 
 test("critical thresholds, 150% total multiplier and one final rounding after all mitigation", () => {
-  const s = { ...UNITS.ranger.stats };
+  const s = { ...UNITS.shiroko.stats };
   assert.deepEqual(calculateDamage(20, s, 10, 1, 0.099999), { incoming: 30, critical: true });
   assert.deepEqual(calculateDamage(20, s, 10, 1, 0.1), { incoming: 20, critical: false });
   s.critChance = 0; assert.equal(calculateDamage(20, s, 10, 1, 0).incoming, 20);

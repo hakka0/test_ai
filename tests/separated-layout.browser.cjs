@@ -60,7 +60,7 @@ const version=require('../package.json').version,shots='docs/screenshots/shop-st
    if(cdp){await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{...start,id:1}]});await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{...end,id:1}]});await p.waitForTimeout(80);await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});}
    else{await p.mouse.move(start.x,start.y);await p.mouse.down();await p.mouse.move(end.x,end.y,{steps:10});await p.mouse.up();}
   }
-  // Capacity is one: swapping the original knight into the bench makes the purchase deployable.
+  // Capacity is one: swapping the original yuuka into the bench makes the purchase deployable.
   const sourceSlot=await unit.getAttribute('data-bench-slot'),boughtId=await unit.getAttribute('data-unit'),target=await p.locator('#cells button[aria-label*="아군 칸, 루멘,"]').first().evaluate(e=>`#cells button[data-x="${e.dataset.x}"][data-y="${e.dataset.y}"]`);
   await drag(`[data-bench-slot="${sourceSlot}"]`,target);
   await p.waitForFunction(id=>!document.querySelector(`[data-bench-slot][data-unit="${id}"]`),boughtId);

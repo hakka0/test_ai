@@ -46,7 +46,7 @@ test('위조·타인 보상·중복 수령·다른 후보 추가 수령은 무�
 });
 test('골드·유닛·아이템은 한 가지만 실제 지급, 서버 후보가 지급량 결정',()=>{
  for(const type of ['gold','unit','item']) {const {m,p}=setup(),r=p.pendingReward!,o=r.options.find(o=>o.type===type)!,gold=p.gold,units=p.units.length,items=p.inventory.length;
-  assert.equal(applyAction(m,p.id,{type:'chooseReward',rewardId:r.id,optionId:o.id,kind:'mage',definition:'plate-t5',amount:99999},1100),null);
+  assert.equal(applyAction(m,p.id,{type:'chooseReward',rewardId:r.id,optionId:o.id,kind:'hifumi',definition:'plate-t5',amount:99999},1100),null);
   assert.equal(p.pendingReward,null);assert.equal(p.lastReward!.automatic,false);
   assert.equal(p.gold,gold+(o.type==='gold'?o.amount:0));assert.equal(p.inventory.length,items+(type==='item'?1:0));
   // Starting copies can merge, so count represented originals instead of physical instances.

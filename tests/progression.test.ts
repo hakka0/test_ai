@@ -17,9 +17,9 @@ test('레벨 1~10 출전 정원, 10명까지만 배치 및 전투 참여',()=>{
  const {m,p}=setup();p.units=[];
  for(let level=1;level<=MAX_LEVEL;level++){
   p.level=level;assert.equal(deploymentLimit(p),level);
-  const u=acquireUnit(p,'knight')!;u.rank=3;
+  const u=acquireUnit(p,'yuuka')!;u.rank=3;
   assert.equal(applyAction(m,p.id,{type:'place',unitId:u.id,x:(level-1)%6,y:Math.floor((level-1)/6)},1),null);
-  const blocked=acquireUnit(p,'mage')!;const before=structuredClone(p);
+  const blocked=acquireUnit(p,'hifumi')!;const before=structuredClone(p);
   assert.ok(applyAction(m,p.id,{type:'place',unitId:blocked.id,x:5,y:2},1));assert.deepEqual(p,before);
   assert.equal(applyAction(m,p.id,{type:'sell',unitId:blocked.id},1),null);
  }

@@ -64,11 +64,11 @@ test('서버 거부·연결 해제 시 재시도, 단계·체크포인트 변경
 test('판매 확인은 대상·강화 등급·가격에 묶이며 선택 변경·합성·취소 시 무효',()=>{
  const {p}=setup(),sale=new SaleConfirmation();const u=p.units[0];assert.ok(!sale.matches(u));sale.arm(u);assert.ok(sale.matches(u));assert.ok(!sale.matches(p.units[1]));
  u.rank=2;assert.ok(!sale.matches(u));sale.arm(u);assert.ok(sale.matches(u));sale.clear();assert.ok(!sale.matches(u));assert.ok(!sale.matches(undefined));
- const rarity=UNITS.knight.rarity;try{sale.arm(u);UNITS.knight.rarity=2;assert.ok(!sale.matches(u));}finally{UNITS.knight.rarity=rarity;}
+ const rarity=UNITS.yuuka.rarity;try{sale.arm(u);UNITS.yuuka.rarity=3;assert.ok(!sale.matches(u));}finally{UNITS.yuuka.rarity=rarity;}
 });
 test('판매 확인 후 서버 거래·장비 반환·응답 해제, 삭제된 선택은 추가 거래 불가',()=>{
  const {m,p,view,own}=setup(),sale=new SaleConfirmation(),gate=new MutationGate();const unit=p.units[0];
  applyAction(m,p.id,{type:'equip',unitId:unit.id,itemId:p.inventory[0].id},1);sale.arm(unit);assert.ok(sale.matches(unit));gate.start(view());
- const gold=p.gold;assert.equal(applyAction(m,p.id,{type:'sell',unitId:unit.id},1),null);gate.observe(view());assert.ok(!gate.busy);assert.equal(p.gold,gold+1);assert.equal(p.inventory[0].unitId,null);
+ const gold=p.gold;assert.equal(applyAction(m,p.id,{type:'sell',unitId:unit.id},1),null);gate.observe(view());assert.ok(!gate.busy);assert.equal(p.gold,gold+2);assert.equal(p.inventory[0].unitId,null);
  assert.ok(!sale.matches(p.units.find(u=>u.id===unit.id)));assert.equal(placementIntent(own(),unit.id,{kind:'bench',slot:10},true).action,null);
 });

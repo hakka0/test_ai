@@ -18,9 +18,9 @@ fs.mkdirSync(shots,{recursive:true});
         g.fillStyle='#203c51';g.beginPath();g.arc(w/2,h/2,h*.25,0,Math.PI*2);g.fill();t.refresh();
       }
     });
-    for(const reverse of [false,true])for(const texture of ['square-500','knight','wide-1000']){
+    for(const reverse of [false,true])for(const texture of ['square-500','yuuka','wide-1000']){
       const r=await p.evaluate(({reverse,texture})=>{
-        const f=window.combatFixture,s=f.scene;f.pair('knight','mage',{reverse,reduced:true,sourcePosition:{x:7,y:4},targetPosition:{x:0,y:2}});
+        const f=window.combatFixture,s=f.scene;f.pair('yuuka','hifumi',{reverse,reduced:true,sourcePosition:{x:7,y:4},targetPosition:{x:0,y:2}});
         const source=s.snapshot.fighters[0],sprite=s.sprites.get(source.id);sprite.setTexture(texture);s.update(s.time.now,16);
         const first=f.unitVisuals()[0],point=s.displayPosition(source),before=JSON.stringify(s.snapshot);
         s.reduced=false;for(let i=1;i<=60;i++)s.update(s.time.now+i*16,16);
@@ -41,7 +41,7 @@ fs.mkdirSync(shots,{recursive:true});
       results.push({mode,reverse,texture,displayWidth:u.displayWidth,displayHeight:u.displayHeight});
     }
     await p.evaluate(()=>{
-      const f=window.combatFixture,s=f.scene;f.pair('knight','mage',{reduced:true,sourcePosition:{x:1,y:5},targetPosition:{x:6,y:2}});
+      const f=window.combatFixture,s=f.scene;f.pair('yuuka','hifumi',{reduced:true,sourcePosition:{x:1,y:5},targetPosition:{x:6,y:2}});
       for(const unit of s.snapshot.fighters)s.sprites.get(unit.id).setTexture('square-500');s.update(s.time.now,16);
     });await p.waitForTimeout(40);await p.locator('#board').screenshot({path:`${shots}/${mode}-500-square.png`});
     await ctx.close();

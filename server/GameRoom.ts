@@ -7,7 +7,6 @@ import { DebugSession, debugAllowed } from "./debug";
 import { RECONNECT_GRACE_SECONDS } from "../shared/connection-policy";
 import {INTRO_MINION_ROUNDS} from '../shared/minions';
 import {isBot} from '../shared/bot-practice';
-import { seedBlueArchive } from "../shared/practice-roster";
 import type { Roster } from "../shared/model";
 import {
   newMatch,
@@ -35,10 +34,6 @@ export class GameRoom extends Room {
     this.botPractice=options?.botPractice===true;
     if(this.botPractice)this.maxClients=1;
     this.game.mode=this.botPractice?'botPractice':this.practice?'practice':'duel';
-    if (this.game.mode === "practice" && options?.roster === "blueArchive") {
-      this.roster = "blueArchive";
-      this.game.minionRounds = 0;
-    }
     this.onMessage("ping", (client, data) => {
       if (typeof data === "number" && Number.isFinite(data))
         client.send("pong", { sent: data, serverNow: serverNow() });
@@ -86,10 +81,7 @@ export class GameRoom extends Room {
     if (this.practice&&!this.botPractice) {
       const bot = newPlayer("practice-bot", "연습 상대", this.roster);
       this.game.players.push(bot);
-      if (this.roster === "blueArchive") {
-        seedBlueArchive(player);
-        seedBlueArchive(bot, true);
-      } else botSetup(bot,this.game.players);
+      botSetup(bot,this.game.players);
     }
     if(this.botPractice){
       for(let i=1;i<=5;i++){

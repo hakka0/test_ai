@@ -18,7 +18,7 @@ export function createMinionBattles(players:readonly Player[],round:number):Mini
  return players.map(player=>{
   const id=`minions:${player.id}`;
   return {owner:player.id,opponent:{id,name:'미니언 부대',units:Array.from({length:Math.min(3,round)},(_,i)=>({
-   id:`${id}:${round}:${i}`,owner:id,kind:i%2?'ranger' as const:'knight' as const,rank:1 as const,
+   id:`${id}:${round}:${i}`,owner:id,kind:i%2?'shiroko' as const:'yuuka' as const,rank:1 as const,
    x:COLS-3-i,y:2,benchSlot:null,equipment:[],minion:{wave:round,variant:i%2?'drone' as const:'sentry' as const},
   }))}};
  });

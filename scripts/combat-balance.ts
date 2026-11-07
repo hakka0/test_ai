@@ -6,10 +6,10 @@ import type { Kind, Match, UnitRank } from "../shared/model";
 // Real combat/skills/synergies, no browser or wall-clock waits. Mirror sides to
 // expose turn-order bias; vary formation and the saved combat RNG independently.
 const teams: Record<string, Kind[]> = {
-  balanced: ["knight", "ranger", "mage"],
-  sustain: ["warden", "skirmisher", "oracle"],
-  frontline: ["knight", "warden", "ranger"],
-  backline: ["ranger", "mage", "oracle"],
+  balanced: ["yuuka", "shiroko", "hifumi"],
+  sustain: ["natsu", "neru", "koharu"],
+  frontline: ["yuuka", "natsu", "shiroko"],
+  backline: ["shiroko", "hifumi", "koharu"],
   full: UNIT_KINDS,
 };
 function fight(a: Kind[], b: Kind[], rank: UnitRank, seed: number, mirror: boolean) {

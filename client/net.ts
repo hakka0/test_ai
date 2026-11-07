@@ -6,7 +6,7 @@ import type { PlayRoom, RoomClient } from "./room-client";
 import { LocalPracticeClient } from "./local-practice";
 export const LOCAL_PLAY = import.meta.env?.MODE === "pages";
 type TokenStorage = Pick<Storage, "getItem" | "setItem" | "removeItem">;
-export type ConnectionMode = "create" | "join" | "practice" | "botPractice" | "blueArchive";
+export type ConnectionMode = "create" | "join" | "practice" | "botPractice";
 function defaultClient(): RoomClient {
  if (LOCAL_PLAY) return new LocalPracticeClient(sessionStorage);
  const endpoint = import.meta.env?.VITE_SERVER_URL ||
@@ -51,9 +51,8 @@ export class Connection {
     this.storage.removeItem("duel-token");this.onStatus("연결 중");
     const room = mode === "join" ? await this.client.joinById(code.trim().toUpperCase(), {name})
       : await this.client.create("duel", {
-        name, practice: mode === "practice" || mode === "blueArchive",
+        name, practice: mode === "practice",
         ...(mode === "botPractice" ? { botPractice: true } : {}),
-        ...(mode === "blueArchive" ? { roster: "blueArchive" } : {}),
       });
     if(!this.current(generation)) {await room.leave();throw new Error("취소된 연결입니다.");}
     this.attach(room,generation);

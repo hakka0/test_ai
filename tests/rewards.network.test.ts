@@ -51,10 +51,10 @@ test('실제 서버: 전투 중 합성 보류·리롤·배치 거부·저장 복
   let alive=false;for(let i=0;i<60;i++){try{if((await fetch(`http://127.0.0.1:${port}/health`)).ok){alive=true;break;}}catch{}await wait(100);}assert.ok(alive);
   const client=new Client(`http://127.0.0.1:${port}`);room=await client.create('duel',{practice:true,name:'전투 중 상점'});await state(room,s=>s.phase==='prepare');
   await send(room,'debug',{type:'pause',paused:true},s=>s.timeScale===0);
-  await send(room,'debug',{type:'preset',preset:'merge'},s=>own(s).units.filter(u=>u.kind==='knight'&&u.rank===1).length===2);
+  await send(room,'debug',{type:'preset',preset:'merge'},s=>own(s).units.filter(u=>u.kind==='yuuka'&&u.rank===1).length===2);
   let s=await send(room,'action',{type:'ready'},s=>s.phase==='combat');assert.equal(own(s).ready,true);
   const fighters=s.fighters,unit=own(s).units[0],before=own(s),buy={type:'buy',offerId:before.shop[0].id,revision:before.shopRevision};
-  s=await send(room,'action',buy,s=>own(s).units.filter(u=>u.kind==='knight'&&u.rank===1).length===3);assert.equal(own(s).gold,before.gold-1);assert.equal(own(s).mergeRevision,before.mergeRevision);assert.deepEqual(s.fighters,fighters);
+  s=await send(room,'action',buy,s=>own(s).units.filter(u=>u.kind==='yuuka'&&u.rank===1).length===3);assert.equal(own(s).gold,before.gold-before.shop[0].cost);assert.equal(own(s).mergeRevision,before.mergeRevision);assert.deepEqual(s.fighters,fighters);
   assert.match(await rejected(room,buy),/갱신|구매/);assert.match(await rejected(room,{type:'place',unitId:unit.id,x:0,y:0}),/배치/);
   // Restore a funded checkpoint later: result-phase reroll must not depend on
   // earning the one-gold victory bonus, since board changes can alter the winner.
@@ -68,11 +68,11 @@ test('실제 서버: 전투 중 합성 보류·리롤·배치 거부·저장 복
   s=await state(room,s=>own(s).connected);assert.equal(s.phase,'combat');assert.deepEqual(own(s),saved);assert.deepEqual(s.fighters,fighters);
   const gameNow=s.gameNow;await send(room,'debug',{type:'step',ms:1000},s=>s.gameNow>gameNow);
   s=await send(room,'debug',{type:'load'},s=>s.phase==='combat'&&JSON.stringify(s.fighters)===JSON.stringify(fighters));assert.deepEqual(own(s),checkpoint);
-  s=await send(room,'debug',{type:'nextPhase'},s=>s.phase==='result');assert.equal(own(s).units.filter(u=>u.kind==='knight'&&u.rank===1).length,3);const resultRevision=own(s).shopRevision;
+  s=await send(room,'debug',{type:'nextPhase'},s=>s.phase==='result');assert.equal(own(s).units.filter(u=>u.kind==='yuuka'&&u.rank===1).length,3);const resultRevision=own(s).shopRevision;
   const resultGold=own(s).gold;assert.ok(resultGold>=5);
   s=await send(room,'action',{type:'reroll',revision:resultRevision},s=>own(s).shopRevision>resultRevision);assert.equal(own(s).gold,resultGold-5);const resultShop=own(s).shop;
   s=await send(room,'debug',{type:'nextPhase'},s=>s.phase==='prepare');
-  assert.equal(own(s).units.find(u=>u.id===unit.id)!.rank,2);assert.equal(own(s).units.filter(u=>u.kind==='knight').length,1);
+  assert.equal(own(s).units.find(u=>u.id===unit.id)!.rank,2);assert.equal(own(s).units.filter(u=>u.kind==='yuuka').length,1);
   assert.ok(own(s).shop.every(o=>!o.sold&&!resultShop.some(old=>old.id===o.id)));
   s=await send(room,'action',{type:'ready'},s=>s.phase==='combat');assert.equal(s.fighters.find(f=>f.id===unit.id)!.rank,2);
  }finally{await room?.leave();proc.kill('SIGTERM');}

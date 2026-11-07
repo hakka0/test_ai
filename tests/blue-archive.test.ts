@@ -41,7 +41,7 @@ test("all 20 characters have a six-direction sheet, portrait, stats and a workin
   }
 });
 
-test("Blue Archive draws from its own roster in the shop and rewards", () => {
+test("the twenty characters are the default shop and reward pool", () => {
   const player = newPlayer("p", "Player", "blueArchive");
   const match = newMatch("practice");
   match.players = [player];
@@ -55,8 +55,9 @@ test("Blue Archive draws from its own roster in the shop and rewards", () => {
   offerRoundReward(player, 5, () => 0);
   const reward = player.pendingReward?.options.find(o => o.type === "unit");
   assert.ok(reward && unitKindsFor(player.roster).includes(reward.kind));
-  assert.equal(unitKindsFor().length, 18);
-  assert.ok(BLUE_ARCHIVE_KINDS.every(kind => !unitKindsFor().includes(kind)));
+  assert.equal(unitKindsFor().length, 20);
+  assert.deepEqual(unitKindsFor(), BLUE_ARCHIVE_KINDS);
+  assert.deepEqual(Object.keys(UNITS), BLUE_ARCHIVE_KINDS);
 });
 
 test("direction selection maps the six frames and defaults to front or back in preparation", () => {

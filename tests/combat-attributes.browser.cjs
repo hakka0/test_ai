@@ -8,8 +8,8 @@ const proc=spawn(process.execPath,['--import','tsx','server/index.ts'],{env:{...
 let output='';proc.stderr.on('data',d=>output+=d);
 const palette={red:0xff667a,yellow:0xffd45c,blue:0x66baff,purple:0xc58aff};
 const css={red:'#ff667a',yellow:'#ffd45c',blue:'#66baff',purple:'#c58aff'};
-const attacks={red:'knight',yellow:'ranger',blue:'mage',purple:'skirmisher'};
-const defenses={red:'ranger',yellow:'skirmisher',blue:'knight',purple:'mage'};
+const attacks={red:'yuuka',yellow:'shiroko',blue:'hifumi',purple:'neru'};
+const defenses={red:'shiroko',yellow:'neru',blue:'yuuka',purple:'hifumi'};
 fs.mkdirSync(shots,{recursive:true});
 (async()=>{let browser,vite;try{
   const {createServer}=await import('vite');
@@ -38,12 +38,12 @@ fs.mkdirSync(shots,{recursive:true});
     }
   }
   for(const [attribute,source] of Object.entries(attacks)){
-    const r=await p.evaluate(source=>{const f=window.combatFixture;f.pair(source,'mage');f.emit('skillStart');return f.inspect();},source);
+    const r=await p.evaluate(source=>{const f=window.combatFixture;f.pair(source,'hifumi');f.emit('skillStart');return f.inspect();},source);
     assert.equal(r.effects.find(e=>e.role==='cast').attribute,attribute);
     assert.equal(r.effects.find(e=>e.role==='skill-label').color,css[attribute]);
   }
   for(const [attribute,target] of Object.entries(defenses)){
-    const r=await p.evaluate(target=>{const f=window.combatFixture;f.pair('knight',target);f.emit('shield');return f.inspect();},target);
+    const r=await p.evaluate(target=>{const f=window.combatFixture;f.pair('yuuka',target);f.emit('shield');return f.inspect();},target);
     assert.equal(r.effects.find(e=>e.role==='shield').attribute,attribute);
     assert.ok(r.effects.find(e=>e.role==='shield').commands.includes(palette[attribute]));
   }
@@ -62,7 +62,7 @@ fs.mkdirSync(shots,{recursive:true});
     await p.setViewportSize({width,height:780});
     for(const type of ['attack','skillDamage'])for(const attack of Object.keys(attacks))for(const c of damageCases){
       const r=await p.evaluate(({source,type,c})=>{
-        const f=window.combatFixture;f.pair(source,'mage');
+        const f=window.combatFixture;f.pair(source,'hifumi');
         const events=f.strike(c.incoming,c.shield,c.hp,type,c.shieldAfter,c.critical);
         const first=f.inspect();f.scene.update(f.scene.time.now,16);
         return {...first,events,afterRepeat:f.inspect().effects.length};
@@ -80,24 +80,24 @@ fs.mkdirSync(shots,{recursive:true});
     }
   }
   await p.setViewportSize({width:600,height:780});
-  await p.evaluate(()=>{const f=window.combatFixture;f.pair('knight','mage');f.strike(100,30);f.scene.scene.pause();});
+  await p.evaluate(()=>{const f=window.combatFixture;f.pair('yuuka','hifumi');f.strike(100,30);f.scene.scene.pause();});
   await p.waitForTimeout(40);await p.screenshot({path:`${shots}/barrier-overflow.png`});
   await p.evaluate(()=>window.combatFixture.scene.scene.resume());
-  await p.evaluate(()=>{const f=window.combatFixture;f.pair('knight','mage');f.strike(40,30,100,'attack',undefined,true);f.scene.scene.pause();});
+  await p.evaluate(()=>{const f=window.combatFixture;f.pair('yuuka','hifumi');f.strike(40,30,100,'attack',undefined,true);f.scene.scene.pause();});
   await p.waitForTimeout(40);await p.screenshot({path:`${shots}/critical-overflow.png`});
   await p.evaluate(()=>window.combatFixture.scene.scene.resume());
-  const lethal=await p.evaluate(()=>{const f=window.combatFixture;f.pair('knight','mage',{lethal:true});f.emit('attack');return f.inspect();});
+  const lethal=await p.evaluate(()=>{const f=window.combatFixture;f.pair('yuuka','hifumi',{lethal:true});f.emit('attack');return f.inspect();});
   assert.equal(lethal.effects.find(e=>e.role==='impact').attribute,'purple');
   assert.equal(lethal.targetTint,undefined,'lethal target has no live sprite');
   assert.ok(lethal.effects.every(e=>Number.isFinite(e.x)&&Number.isFinite(e.y)));
-  const reduced=await p.evaluate(()=>{const f=window.combatFixture;f.pair('knight','mage');f.emit('attack');f.scene.reduced=true;f.scene.update(f.scene.time.now,16);const cleared=f.inspect();f.emit('attack');return {cleared,current:f.inspect()};});
+  const reduced=await p.evaluate(()=>{const f=window.combatFixture;f.pair('yuuka','hifumi');f.emit('attack');f.scene.reduced=true;f.scene.update(f.scene.time.now,16);const cleared=f.inspect();f.emit('attack');return {cleared,current:f.inspect()};});
   assert.equal(reduced.cleared.effects.length,0);assert.equal(reduced.cleared.targetTint,0xffffff);
   assert.deepEqual(reduced.current.effects.map(e=>e.role),['impact']);assert.equal(reduced.current.effects[0].attribute,'purple');
-  const reset=await p.evaluate(()=>{const f=window.combatFixture;f.pair('knight','mage');f.emit('attack');f.scene.resetVisuals();return f.inspect();});
+  const reset=await p.evaluate(()=>{const f=window.combatFixture;f.pair('yuuka','hifumi');f.emit('attack');f.scene.resetVisuals();return f.inspect();});
   assert.equal(reset.effects.length,0);
-  await p.evaluate(()=>{const f=window.combatFixture;f.pair('knight','mage');f.emit('skillStart');f.emit('shield');f.emit('attack');});
+  await p.evaluate(()=>{const f=window.combatFixture;f.pair('yuuka','hifumi');f.emit('skillStart');f.emit('shield');f.emit('attack');});
   await p.waitForTimeout(1150);assert.equal((await p.evaluate(()=>window.combatFixture.inspect())).effects.length,0,'all effects expire');
-  await p.evaluate(()=>{const f=window.combatFixture;f.pair('knight','mage');f.emit('attack');f.scene.scene.pause();});
+  await p.evaluate(()=>{const f=window.combatFixture;f.pair('yuuka','hifumi');f.emit('attack');f.scene.scene.pause();});
   await p.waitForTimeout(50);await p.screenshot({path:`${shots}/red-attack-purple-defense.png`});
   await p.close();
   for(const mode of ['pc','mobile']){

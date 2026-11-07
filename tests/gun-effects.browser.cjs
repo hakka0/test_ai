@@ -1,7 +1,7 @@
 const {chromium,browserOptions}=require('./browser-runtime.cjs');
 const fs=require('node:fs'),assert=require('node:assert/strict');
 const shots='docs/screenshots/gun-effects',url='http://127.0.0.1:2650';
-const attacks={red:'knight',yellow:'ranger',blue:'mage',purple:'skirmisher'};
+const attacks={red:'yuuka',yellow:'shiroko',blue:'hifumi',purple:'neru'};
 const colors={red:0xff667a,yellow:0xffd45c,blue:0x66baff,purple:0xc58aff};
 const fillAlphas=(commands,color)=>commands.flatMap((v,i)=>v===7&&commands[i+1]===color?[commands[i+2]]:[]);
 fs.mkdirSync(shots,{recursive:true});
@@ -15,7 +15,7 @@ fs.mkdirSync(shots,{recursive:true});
     await p.goto(url+'/tests/combat-attributes.fixture.html');await p.waitForFunction(()=>window.combatFixture?.scene.sys.isActive());
     for(const reverse of [false,true])for(const type of ['attack','skillDamage'])for(const [attribute,kind] of Object.entries(attacks)){
       const r=await p.evaluate(async({kind,reverse,type})=>{
-        const f=window.combatFixture;f.pair(kind,'mage',{reverse,sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
+        const f=window.combatFixture;f.pair(kind,'hifumi',{reverse,sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
         f.emit(type);const before=f.inspect(),state=JSON.stringify(f.scene.snapshot);
         await new Promise(r=>setTimeout(r,60));
         return {before,after:f.inspect(),unchanged:state===JSON.stringify(f.scene.snapshot)};
@@ -40,25 +40,25 @@ fs.mkdirSync(shots,{recursive:true});
       results.push({mode,reverse,type,attribute,layers:true,taper:true,directionalSparks:true});
     }
     const varied=await p.evaluate(()=>{
-      const f=window.combatFixture;f.pair('knight','mage');f.emit('attack');const a=f.inspect().effects.find(e=>e.role==='muzzle').commands;
+      const f=window.combatFixture;f.pair('yuuka','hifumi');f.emit('attack');const a=f.inspect().effects.find(e=>e.role==='muzzle').commands;
       f.emit('attack');return {a,b:f.inspect().effects.filter(e=>e.role==='muzzle').at(-1).commands};
     });assert.notDeepEqual(varied.a,varied.b,'successive shots vary their flame shape');
     const coincident=await p.evaluate(()=>{
-      const f=window.combatFixture;f.pair('knight','mage',{sourcePosition:{x:2,y:3},targetPosition:{x:2,y:3}});f.emit('attack');return f.inspect();
+      const f=window.combatFixture;f.pair('yuuka','hifumi',{sourcePosition:{x:2,y:3},targetPosition:{x:2,y:3}});f.emit('attack');return f.inspect();
     });
     assert.equal(coincident.effects.some(e=>e.role==='muzzle'||e.role==='tracer'),false);
     assert.ok(coincident.effects.every(e=>Number.isFinite(e.x)&&Number.isFinite(e.y)&&Number.isFinite(e.rotation)));
     const load=await p.evaluate(()=>{
-      const f=window.combatFixture;f.pair('knight','mage');for(let i=0;i<40;i++)f.emit('attack');
+      const f=window.combatFixture;f.pair('yuuka','hifumi');for(let i=0;i<40;i++)f.emit('attack');
       const e=f.inspect().effects;return {total:e.length,damage:e.filter(e=>e.role==='damage').length};
     });assert.equal(load.damage,40,'particle limit preserves every damage number');assert.ok(load.total<=320,'secondary particles are bounded');
     await p.waitForTimeout(700);assert.equal((await p.evaluate(()=>window.combatFixture.inspect())).effects.length,0);
     const reduced=await p.evaluate(()=>{
-      const f=window.combatFixture;f.pair('knight','mage');f.emit('attack');f.scene.reduced=true;f.scene.update(f.scene.time.now,16);f.emit('attack');return f.inspect();
+      const f=window.combatFixture;f.pair('yuuka','hifumi');f.emit('attack');f.scene.reduced=true;f.scene.update(f.scene.time.now,16);f.emit('attack');return f.inspect();
     });assert.deepEqual(reduced.effects.map(e=>e.role),['impact']);assert.equal(reduced.targetTint,0xffffff);
     // A freeze at mid-effect makes screenshots useful for visual inspection.
     const captured=await p.evaluate(async()=>{
-      const f=window.combatFixture;f.pair('knight','mage',{sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});f.strike(100,30);
+      const f=window.combatFixture;f.pair('yuuka','hifumi',{sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});f.strike(100,30);
       await new Promise(r=>setTimeout(r,35));f.scene.scene.pause();return f.inspect();
     });assert.ok(captured.effects.some(e=>e.role==='tracer'),'preview captures the live tracer');
     await p.locator('#board').screenshot({path:`${shots}/${mode}-shot.png`});
@@ -73,11 +73,11 @@ fs.mkdirSync(shots,{recursive:true});
     recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};window.shotRecording={stream,chunks,recorder};recorder.start();
   });
   for(const kind of Object.values(attacks)){
-    await page.evaluate(kind=>window.combatFixture.pair(kind,'mage',{sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}}),kind);
+    await page.evaluate(kind=>window.combatFixture.pair(kind,'hifumi',{sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}}),kind);
     await page.waitForTimeout(120);await page.evaluate(()=>window.combatFixture.strike(18,0));
     await page.waitForTimeout(280);await page.evaluate(()=>window.combatFixture.strike(18,0,82));await page.waitForTimeout(260);
   }
-  await page.evaluate(()=>{const f=window.combatFixture;f.pair('knight','mage',{sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});f.strike(100,30);});
+  await page.evaluate(()=>{const f=window.combatFixture;f.pair('yuuka','hifumi',{sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});f.strike(100,30);});
   await page.waitForTimeout(650);
   const encoded=await page.evaluate(()=>new Promise(resolve=>{
     const {stream,chunks,recorder}=window.shotRecording;recorder.onstop=()=>{

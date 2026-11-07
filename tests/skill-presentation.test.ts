@@ -61,13 +61,13 @@ test('cooldown and one-battle limit are distinct from ongoing sustain and death'
 });
 
 test('millisecond descriptions use actual scheduled intervals and preserve combat buffs', () => {
-  const stats=UNITS.skirmisher.stats,before=structuredClone(SKILLS.quickstep);
+  const stats=UNITS.neru.stats,before=structuredClone(SKILLS.quickstep);
   const text=skillDescriptionFor(SKILLS.quickstep,stats);
-  assert.match(text,/공격 주기 22\.2% 감소/);assert.match(text,/이동 주기 25% 감소/);assert.doesNotMatch(text,/ms/);
+  assert.match(text,/공격 주기 28\.6% 감소/);assert.match(text,/이동 주기 25% 감소/);assert.doesNotMatch(text,/ms/);
   const {m}=setup(),f=m.fighters[0];f.stats={...stats};
   f.buffs=[{key:'quickstep',source:f.id,skillId:'quickstep',expiresAt:5000,modifiers:SKILLS.quickstep.effects.find(e=>e.type==='buff')!.modifiers}];
   const adjusted=combatStats(f,2000).stats;
-  assert.equal(Number(((1-attackIntervalMs(adjusted.interval)/attackIntervalMs(stats.interval))*100).toFixed(1)),22.2);
+  assert.equal(Number(((1-attackIntervalMs(adjusted.interval)/attackIntervalMs(stats.interval))*100).toFixed(1)),28.6);
   assert.equal(Number(((1-attackIntervalMs(adjusted.moveMs)/attackIntervalMs(stats.moveMs))*100).toFixed(1)),25);
   assert.match(skillDescriptionFor(SKILLS.quickstep,{interval:1000,moveMs:500}),/공격 주기 10% 감소, 이동 주기 20% 감소/);
   assert.match(skillDescriptionFor(SKILLS.quickstep,{interval:100,moveMs:100}),/공격 주기 0% 감소, 이동 주기 0% 감소/);

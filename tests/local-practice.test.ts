@@ -26,12 +26,15 @@ test("local Blue Archive plays a real battle and preserves deployment through re
   const room = await client.create("duel", {name: "모바일", practice: true, roster: "blueArchive"});
   t.after(() => room.leave());
   const state = await observe(room);
+  room.send("debug", {type: "preset", preset: "catalog"});
   room.send("debug", {type: "pause", paused: true});
   assert.equal(state.own().units.length, 20);
+  assert.equal(state.own().units.filter(u => u.x >= 0).length, 8);
   assert.equal(state.own().gold, 30);
   const reserve = state.own().units.find(u => u.benchSlot === 0)!;
   room.send("action", {type: "place", unitId: reserve.id, x: 0, y: 1});
   assert.equal(state.own().units.find(u => u.id === reserve.id)!.x, 0);
+  assert.equal(state.own().units.filter(u => u.x >= 0).length, 9);
   room.connection.close();
   now += 60 * 60 * 1000;
   const restored = await client.reconnect(room.reconnectionToken);
@@ -102,9 +105,9 @@ test("Connection restores a local session and clears it on explicit leave", asyn
   t.after(() => net.leave());
   let first!: Snapshot;
   net.onSnapshot = s => { first = s; };
-  await net.connect("blueArchive", "이어하기");
+  await net.connect("practice", "이어하기");
   await Promise.resolve();
-  assert.equal(first.roster, "blueArchive");
+  assert.equal(first.mode, "practice");
   const token = store.getItem("duel-token");
   net.room!.connection.close();
   await new Promise(resolve => setImmediate(resolve));
@@ -119,6 +122,6 @@ test("local mode rejects online games and corrupted saves without starting a ser
   const store = storage(), client = new LocalPracticeClient(store);
   await assert.rejects(client.create("duel", {name: "A", practice: false}), /친구 대전/);
   await assert.rejects(client.joinById("ABCD", {name: "A"}), /참가할 수 없습니다/);
-  store.setItem("autochess-local-v1", "invalid json");
+  store.setItem("autochess-local-v2", "invalid json");
   await assert.rejects(client.reconnect("local:missing"), error => (error as {code: number}).code === 4212);
 });

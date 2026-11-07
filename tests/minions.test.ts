@@ -54,10 +54,10 @@ test('빈 전장/실패는 미처치 보상을 주지 않고, 한쪽 실패가 �
 });
 test('만석 유닛 보상은 골드로 전환, 공유 풀/3성 제외·전투 합성 보류 유지',()=>{
  const m=setup(),p=m.players[0];
- while(p.units.filter(u=>u.x<0).length<12){const slot=p.units.filter(u=>u.x<0).length;p.units.push({id:`full-${slot}`,owner:p.id,kind:'knight',rank:1,x:-1,y:-1,benchSlot:slot,equipment:[]});}
+ while(p.units.filter(u=>u.x<0).length<12){const slot=p.units.filter(u=>u.x<0).length;p.units.push({id:`full-${slot}`,owner:p.id,kind:'yuuka',rank:1,x:-1,y:-1,benchSlot:slot,equipment:[]});}
  const before=structuredClone(p.units);startCombat(m,1);defeatMinions(m);assert.deepEqual(p.units,before);assert.ok(m.events.filter(e=>e.type==='loot'&&e.source.includes('minions:a:')).every(e=>e.loot?.type==='gold'));
- const other=setup();other.players[0].units[0].rank=3;const copies=remainingCopies(other.players,'knight');startCombat(other,1);defeatMinions(other);
- assert.equal(remainingCopies(other.players,'knight'),copies);assert.ok(other.players[0].units.filter(u=>u.kind==='knight').every(u=>u.rank===3));
+ const other=setup();other.players[0].units[0].rank=3;const copies=remainingCopies(other.players,'yuuka');startCombat(other,1);defeatMinions(other);
+ assert.equal(remainingCopies(other.players,'yuuka'),copies);assert.ok(other.players[0].units.filter(u=>u.kind==='yuuka').every(u=>u.rank===3));
 });
 test('스냅샷/관전: 실제 유저 2명 유지, 각 미니언 쌍과 전장만 표시·준비 타인 배치 공개',()=>{
  const m=setup(),preview=snapshotFor(m,'a',0,'TEST');assert.equal(preview.players.length,2);assert.equal(preview.encounter,'minion');assert.equal(preview.neutralOpponents?.length,2);

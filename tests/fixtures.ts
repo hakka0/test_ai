@@ -13,7 +13,7 @@ export function neutralDamage(...fighters: Fighter[]) {
 // separate from the real, empty startup state and test that state independently.
 export function newTestPlayer(id: string, name: string) {
   const player = newPlayer(id, name);
-  for (const kind of ["knight", "ranger", "mage"] as const) acquireUnit(player, kind);
+  for (const kind of ["yuuka", "shiroko", "hifumi"] as const) acquireUnit(player, kind);
   player.units.forEach((unit, i) => Object.assign(unit, {
     x: i === 0 ? 2 : -1, y: i === 0 ? 1 : -1, benchSlot: i === 0 ? null : i - 1,
   }));

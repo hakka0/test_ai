@@ -65,7 +65,7 @@ test('판매 권한 표: 전투 대기석만 허용, 죽었거나 좌표가 잘�
 });
 
 test('출전 유닛과 같은 종류여도 별도 대기석 유닛은 상점 드래그로 판매할 수 있고 배치는 잠김',()=>{
- const m=newMatch();m.players=[newPlayer('a','A'),newPlayer('b','B')];prepare(m,0);const p=m.players[0],reserve=acquireUnit(p,'knight',false)!;startCombat(m,10);
+ const m=newMatch();m.players=[newPlayer('a','A'),newPlayer('b','B')];prepare(m,0);const p=m.players[0],reserve=acquireUnit(p,'yuuka',false)!;startCombat(m,10);
  const s=snapshotFor(m,p.id,11,'TEST'),self=s.players.find(p=>p.visibility==='self')!;
  const allowed=sellActionOpen(m.phase,p.ready,11,m.deadline,reserve,m.fighters),fighters=structuredClone(m.fighters);
  assert.equal(allowed,true);const intent=placementIntent(self,reserve.id,{kind:'shop'},false,allowed);assert.equal(intent.valid,true);assert.equal(intent.action?.type,'sell');
@@ -76,10 +76,10 @@ test('출전 유닛과 같은 종류여도 별도 대기석 유닛은 상점 드
 
 test('레어도 1~5: 구매·판매 가격 동일, 클라이언트 임의 가격 무시',async()=>{
  const {UNITS}=await import('../shared/catalog');const {refreshShop,rarityPrice}=await import('../shared/shop');
- const original=UNITS.knight.rarity;
+ const original=UNITS.yuuka.rarity;
  try {
   for(const rarity of [1,2,3,4,5] as const){
-   UNITS.knight.rarity=rarity;
+   UNITS.yuuka.rarity=rarity;
    const m=newMatch();m.players=[newPlayer('a','A')];prepare(m,0);const p=m.players[0];refreshShop(p,()=>0);
    assert.equal(p.shop[0].cost,rarity);assert.equal(rarityPrice(rarity),rarity);
    assert.equal(applyAction(m,p.id,{type:'buy',offerId:p.shop[0].id,revision:p.shopRevision,cost:0},1),null);
@@ -87,5 +87,5 @@ test('레어도 1~5: 구매·판매 가격 동일, 클라이언트 임의 가격
    assert.equal(applyAction(m,p.id,{type:'sell',unitId:u.id,price:999,rarity:5},2),null);assert.equal(p.gold,10);
   }
   for(const bad of [0,6,1.5,NaN,Infinity]) assert.throws(()=>rarityPrice(bad as 1));
- } finally { UNITS.knight.rarity=original; }
+ } finally { UNITS.yuuka.rarity=original; }
 });

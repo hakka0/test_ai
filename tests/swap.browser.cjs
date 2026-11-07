@@ -28,20 +28,20 @@ const proc=spawn(process.execPath,['--import','tsx','server/index.ts'],{env:{...
   await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
  }
  const cell='#cells button[data-x="2"][data-y="6"]',slot0='[data-bench-slot="0"]',slot1='[data-bench-slot="1"]';
- const ranger=await page.locator(slot0).getAttribute('data-unit'),mage=await page.locator(slot1).getAttribute('data-unit');
+ const shiroko=await page.locator(slot0).getAttribute('data-unit'),hifumi=await page.locator(slot1).getAttribute('data-unit');
  await drag(slot0,cell);await page.waitForFunction(()=>document.querySelector('#cells button[data-x="2"][data-y="6"]').getAttribute('aria-label').includes('실바'));
- const knight=await page.locator(slot0).getAttribute('data-unit');assert.notEqual(knight,ranger);assert.equal(await page.locator('#deployed').textContent(),'출전 1 / 1명');
+ const yuuka=await page.locator(slot0).getAttribute('data-unit');assert.notEqual(yuuka,shiroko);assert.equal(await page.locator('#deployed').textContent(),'출전 1 / 1명');
  assert.equal(await page.locator('#unit-dialog').evaluate(el=>el.open),false);
- await drag(slot0,slot1);await page.waitForFunction(id=>document.querySelector('[data-bench-slot="0"]').dataset.unit===id,mage);
- assert.equal(await page.locator(slot1).getAttribute('data-unit'),knight);
- await drag(cell,slot1);await page.waitForFunction(id=>document.querySelector('[data-bench-slot="1"]').dataset.unit===id,ranger);
+ await drag(slot0,slot1);await page.waitForFunction(id=>document.querySelector('[data-bench-slot="0"]').dataset.unit===id,hifumi);
+ assert.equal(await page.locator(slot1).getAttribute('data-unit'),yuuka);
+ await drag(cell,slot1);await page.waitForFunction(id=>document.querySelector('[data-bench-slot="1"]').dataset.unit===id,shiroko);
  assert.match(await page.locator(cell).getAttribute('aria-label'),/루멘/);assert.equal(await page.locator('#deployed').textContent(),'출전 1 / 1명');
- await page.reload();await page.waitForFunction(id=>document.querySelector('[data-bench-slot="1"]')?.dataset.unit===id,ranger);assert.match(await page.locator(cell).getAttribute('aria-label'),/루멘/);
+ await page.reload();await page.waitForFunction(id=>document.querySelector('[data-bench-slot="1"]')?.dataset.unit===id,shiroko);assert.match(await page.locator(cell).getAttribute('aria-label'),/루멘/);
  await page.locator('#ready').tap();await page.waitForFunction(()=>document.querySelector('#phase').textContent.startsWith('전투'));
  const a=await center(slot1),b=await center(cell);
  await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{...a,id:1}]});
  await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{...b,id:1}]});
  await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
- assert.equal(await page.locator('.unit-drag-ghost.hidden').count(),1);assert.equal(await page.locator(slot1).getAttribute('data-unit'),ranger);
+ assert.equal(await page.locator('.unit-drag-ghost.hidden').count(),1);assert.equal(await page.locator(slot1).getAttribute('data-unit'),shiroko);
  assert.deepEqual(errors,[]);console.log('PASS: mobile swap highlights, both directions, bench swap, reconnect, combat lock');
  }finally{await browser?.close();proc.kill('SIGTERM');}})().catch(e=>{console.error(e.stack||e);process.exitCode=1});

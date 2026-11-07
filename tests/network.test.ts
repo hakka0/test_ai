@@ -139,7 +139,7 @@ test(
       const [x, y] = await Promise.all([sa, sb]);
       assert.equal(x.deadline, y.deadline);
       assert.deepEqual(x.fighters, y.fighters);
-      assert.ok(x.fighters.every((f) => f.skills.length === (f.minion?0:2)));
+      assert.ok(x.fighters.every((f) => f.skills.length === (f.minion?0:1)));
       privateViews(x, y, a.sessionId);
       privateViews(y, x, b.sessionId);
       // Real two-player rooms allow trading after both players are ready.

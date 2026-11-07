@@ -18,9 +18,9 @@ test("attack speed: five grade boundaries are inclusive at the start of each ban
 });
 
 test("all six catalog speeds use the real step-aligned interval, with two decimals", () => {
-  const expected = { knight: ["1.00", "보통"], ranger: ["1.25", "빠름"],
-    mage: ["0.71", "느림"], warden: ["0.83", "느림"],
-    skirmisher: ["1.11", "빠름"], oracle: ["0.91", "보통"] };
+  const expected = { yuuka: ["1.11", "빠름"], shiroko: ["1.25", "빠름"],
+    hifumi: ["1.00", "보통"], natsu: ["1.00", "보통"],
+    neru: ["1.43", "매우 빠름"], koharu: ["0.91", "보통"] };
   for (const kind of CORE_UNIT_KINDS) {
     const s = attackSpeedFor(UNITS[kind].stats.interval);
     assert.deepEqual([s.text, s.grade], expected[kind]);
@@ -50,15 +50,15 @@ test("gear and temporary speed modifiers derive their rates without changing bas
   EQUIPMENT.testSpeed = { tier: 2, category: "equipment", name: "Test", description: "Test", modifiers: { interval: -300 } };
   try {
     const m = newMatch(); m.players = [newTestPlayer("a", "A"), newTestPlayer("b", "B")];
-    const u = m.players[0].units[0]; u.kind = "skirmisher"; u.equipment = ["speed"];
+    const u = m.players[0].units[0]; u.kind = "neru"; u.equipment = ["speed"];
     m.players[0].inventory.push({ id: "speed", definition: "testSpeed", unitId: u.id });
     const gearStats = statsFor(u, m.players[0].inventory);
-    assert.equal(attackSpeedFor(gearStats.interval).text, "1.67");
+    assert.equal(attackSpeedFor(gearStats.interval).text, "2.50");
     startCombat(m, 1); const f = m.fighters[0];
     f.buffs = [{ key: "quickstep", source: f.id, skillId: "quickstep", expiresAt: 1000,
       modifiers: { stats: { interval: -150 } } }];
-    assert.equal(attackSpeedFor(combatStats(f, 999).stats.interval).text, "2.50");
-    assert.equal(attackSpeedFor(combatStats(f, 1000).stats.interval).text, "1.67");
-    assert.equal(UNITS.skirmisher.stats.interval, 850);
+    assert.equal(attackSpeedFor(combatStats(f, 999).stats.interval).text, "5.00");
+    assert.equal(attackSpeedFor(combatStats(f, 1000).stats.interval).text, "2.50");
+    assert.equal(UNITS.neru.stats.interval, 640);
   } finally { delete EQUIPMENT.testSpeed; }
 });

@@ -9,7 +9,7 @@ import {stageLabel} from '../shared/match-rules';
 const wait=(ms:number)=>new Promise(r=>setTimeout(r,ms));
 const own=(s:Snapshot)=>s.players.find((p):p is SelfPlayerSnapshot=>p.visibility==='self')!;
 function storage(){const data=new Map<string,string>();return {getItem:(k:string)=>data.get(k)??null,setItem:(k:string,v:string)=>{data.set(k,v);},removeItem:(k:string)=>{data.delete(k);}};}
-function tracker(net:Connection){
+function izuna(net:Connection){
  const subscribers=new Set<(s:Snapshot)=>void>();net.onSnapshot=s=>{for(const cb of subscribers)cb(s);};
  return (predicate:(s:Snapshot)=>boolean):Promise<Snapshot>=>new Promise((resolve,reject)=>{
   const timer=setTimeout(()=>{subscribers.delete(cb);reject(new Error('snapshot timeout'));},6000);
@@ -18,7 +18,7 @@ function tracker(net:Connection){
 }
 async function boot(port:number){const proc=spawn(process.execPath,['--import','tsx','server/index.ts'],{env:{...process.env,PORT:String(port),DEBUG_GAME:'1',NODE_ENV:'development'},stdio:'pipe'});for(let i=0;i<60;i++){try{if((await fetch(`http://127.0.0.1:${port}/health`)).ok)return proc;}catch{}await wait(100);}proc.kill();throw new Error('server unavailable');}
 test('실제 서버/클라이언트: 연습 경기 최종 결과·재접속·저장 복원·다시 플레이·로비 후 재시작', {timeout:30000},async()=>{
- const port=2593,proc=await boot(port),store=storage(),net=new Connection({client:new Client(`http://127.0.0.1:${port}`),storage:store}),state=tracker(net);
+ const port=2593,proc=await boot(port),store=storage(),net=new Connection({client:new Client(`http://127.0.0.1:${port}`),storage:store}),state=izuna(net);
  try{
   let pending=state(s=>s.phase==='prepare');await net.connect('practice','결과 검사');let s=await pending;assert.equal(s.mode,'practice');const oldId=s.roomId;
   pending=state(s=>s.timeScale===0);net.debug({type:'pause',paused:true});s=await pending;
@@ -44,7 +44,7 @@ test('실제 서버/클라이언트: 연습 경기 최종 결과·재접속·저
  }finally{await net.leave();proc.kill('SIGTERM');}
 });
 test('실제 2인 서버/클라이언트: 연결 종료 최종 승패·미완료 기록 제외·새 방에서 친구와 재시작', {timeout:20000},async()=>{
- const port=2594,proc=await boot(port),url=`http://127.0.0.1:${port}`,a=new Connection({client:new Client(url),storage:storage()}),b=new Connection({client:new Client(url),storage:storage()}),sa=tracker(a),sb=tracker(b);
+ const port=2594,proc=await boot(port),url=`http://127.0.0.1:${port}`,a=new Connection({client:new Client(url),storage:storage()}),b=new Connection({client:new Client(url),storage:storage()}),sa=izuna(a),sb=izuna(b);
  try{
   let pending=sa(s=>s.phase==='waiting');await a.connect('create','친구 A');let s=await pending;const oldId=s.roomId;
   const pa=sa(s=>s.phase==='prepare'),pb=sb(s=>s.phase==='prepare');await b.connect('join','친구 B',oldId);const [x,y]=await Promise.all([pa,pb]);const bId=b.room!.sessionId;assert.equal(x.mode,'duel');assert.equal(y.mode,'duel');assert.ok(!x.debug);

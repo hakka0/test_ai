@@ -73,7 +73,7 @@ document.querySelector("#app")!.innerHTML = `
   </div>
  </section>
  <div class="battlefield-stage" id="battlefield-stage"><div class="board-wrap" id="board-wrap"><div id="board" aria-hidden="true"></div><div id="cells" role="group" aria-label="${ROWS}행 ${COLS}열 전장. 아래 ${ROWS / 2}행이 내 배치 영역입니다."></div><div id="deployment-overlay"></div></div></div>
- <details id="debug-panel" class="debug-panel hidden"><summary>개발 디버깅</summary><div class="debug-controls"><label>배속 <select id="debug-speed"><option value="1">1배</option><option value="2">2배</option><option value="5">5배</option><option value="10">10배</option></select></label><button id="debug-pause" aria-pressed="false">일시정지</button><button id="debug-step">0.1초 진행</button><button id="debug-second">1초 진행</button><button id="debug-next">다음 단계</button><label>시작 상태 <select id="debug-preset"><option value="minion">미니언전 시작</option><option value="overtime">피버타임 · 방패 대결</option><option value="early">처음 · 1레벨</option><option value="mid">중반 · 7레벨</option><option value="late">후반 · 8레벨</option><option value="level10">최대 · 10레벨</option><option value="merge">합성 · 기사 2개</option><option value="synergy">조합 · 기본 6종 (2/2/2)</option><option value="synergyBulwark">조합 · 수호 6종 / 전체 18종</option><option value="synergyScout">조합 · 정찰 6종 / 전체 18종</option><option value="synergyArcane">조합 · 비전 6종 / 전체 18종</option><option value="reward">보상 · 5라운드 / 재료 4개</option></select></label><button id="debug-apply">시작 상태 적용</button><button id="debug-save">상태 저장</button><button id="debug-load">저장 상태 복원</button></div><p id="debug-status" class="small muted" role="status"></p></details>
+ <details id="debug-panel" class="debug-panel hidden"><summary>개발 디버깅</summary><div class="debug-controls"><label>배속 <select id="debug-speed"><option value="1">1배</option><option value="2">2배</option><option value="5">5배</option><option value="10">10배</option></select></label><button id="debug-pause" aria-pressed="false">일시정지</button><button id="debug-step">0.1초 진행</button><button id="debug-second">1초 진행</button><button id="debug-next">다음 단계</button><label>시작 상태 <select id="debug-preset"><option value="catalog">기본 20종 배치 확인</option><option value="minion">미니언전 시작</option><option value="overtime">피버타임 · 방패 대결</option><option value="early">처음 · 1레벨</option><option value="mid">중반 · 7레벨</option><option value="late">후반 · 8레벨</option><option value="level10">최대 · 10레벨</option><option value="merge">합성 · 유우카 2개</option><option value="synergy">조합 · 기본 6종 (2/2/2)</option><option value="synergyBulwark">조합 · 수호 중심 / 전체 20종</option><option value="synergyScout">조합 · 정찰 중심 / 전체 20종</option><option value="synergyArcane">조합 · 비전 중심 / 전체 20종</option><option value="reward">보상 · 5라운드 / 재료 4개</option></select></label><button id="debug-apply">시작 상태 적용</button><button id="debug-save">상태 저장</button><button id="debug-load">저장 상태 복원</button></div><p id="debug-status" class="small muted" role="status"></p></details>
  <section class="action-dock" aria-label="선택 유닛과 빠른 조작"><div class="dock-heading"><div><strong id="selection-name">유닛을 선택하세요</strong><p id="selected-help" class="selection-hint"></p></div><button id="clear-selection" class="quiet" aria-label="유닛 선택 해제">해제</button></div><div class="controls"><button id="inspect-button">상세</button><button id="equipment-shortcut">장비</button><button id="bench-button">대기석</button><button id="ready" class="primary">준비 완료</button></div><span id="action-status" class="small muted" role="status"></span></section>
  <section class="progression-panel" aria-label="레벨과 출전 정원"><div class="progression-heading"><span id="deployed" aria-live="polite">출전 0 / 1</span><span id="progression-gold">0 G</span></div><button id="buy-experience" type="button"><strong id="level-label">레벨 1 / 10</strong><span id="experience-track" class="experience-track" role="progressbar" aria-label="레벨 경험치" aria-orientation="vertical" aria-valuemin="0" aria-valuemax="2" aria-valuenow="0"><span id="experience-fill"></span></span><span id="experience-label">경험치 0 / 2</span><span id="experience-purchase"><span class="xp-gain">+${EXPERIENCE_BUY_AMOUNT} XP</span><span class="xp-price"><span class="currency-coin" aria-hidden="true"></span>${EXPERIENCE_BUY_COST}</span></span></button><p class="small muted">레벨당 출전 1명 · 다음 라운드 경험치 +${ROUND_EXPERIENCE}</p><p id="income-label" class="small muted"></p></section>
  <section id="reward-summary" class="reward-panel" aria-label="라운드 보상 내역"><div class="section-title"><strong id="reward-summary-title">라운드 보상</strong></div><p id="reward-summary-help" class="help"></p><p id="reward-receipt" class="small" role="status"></p><details><summary>등급 확률</summary><div id="reward-odds" class="small"></div></details></section>
@@ -96,8 +96,8 @@ document.querySelector("#app")!.innerHTML = `
  <section class="home-intro">
   <div class="eyebrow">STARLIGHT TACTICS</div>
   <h1 id="lobby-title">작은 전장,<br>당신만의 한 수.</h1>
-  <p>기사·궁수·마법사로 나만의 진형을 만들고,<br>별빛 아래 자동 전투를 시작하세요.</p>
-  <div class="heroes" aria-hidden="true"><img src="${assetUrl("/units/knight.svg")}" alt=""><img src="${assetUrl("/units/ranger.svg")}" alt=""><img src="${assetUrl("/units/mage.svg")}" alt=""></div>
+  <p>20명의 유닛으로 나만의 진형을 만들고,<br>별빛 아래 자동 전투를 시작하세요.</p>
+  <div class="heroes" aria-hidden="true"><img src="${assetUrl("/units/blue-archive/icons/yuuka.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/shiroko.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/hifumi.png")}" alt=""></div>
  </section>
  <section class="home-play" aria-labelledby="home-play-title">
   <h2 id="home-play-title">게임 시작</h2>
@@ -106,7 +106,6 @@ document.querySelector("#app")!.innerHTML = `
    <button class="home-action primary" id="practice" type="button"><strong>혼자 연습하기</strong><span>연습 상대와 부담 없이 시작하세요.</span></button>
    <button class="home-action" id="create" type="button"><strong>친구와 대전 · 방 만들기</strong><span>방 코드를 친구에게 공유하세요.</span></button>
    <button class="home-action" id="pvp-practice" type="button"><strong>PvP 연습 · 봇 5명</strong><span>6인 대전과 관전 · 배속·단계 진행으로 디버깅</span></button>
-   <button class="home-action" id="blue-archive-practice" type="button"><strong>블루 아카이브 20인 테스트</strong><span>20명을 보유한 상태로 배치와 전투를 시험하세요.</span></button>
   </div>
   <form id="join-form" class="home-join">
    <label for="code">친구의 방 코드</label>
@@ -711,8 +710,8 @@ function render() {
     $<HTMLButtonElement>("debug-load").disabled = !net.connected || !s.debug.hasCheckpoint;
     $<HTMLButtonElement>("debug-next").disabled = !net.connected || !s.deadline;
     for (const id of ["debug-pause", "debug-save"]) $<HTMLButtonElement>(id).disabled = !net.connected;
-    $<HTMLSelectElement>("debug-preset").disabled = !net.connected || s.roster === "blueArchive";
-    $<HTMLButtonElement>("debug-apply").disabled = !net.connected || s.roster === "blueArchive";
+    $<HTMLSelectElement>("debug-preset").disabled = !net.connected;
+    $<HTMLButtonElement>("debug-apply").disabled = !net.connected;
     $<HTMLSelectElement>("debug-speed").disabled = !net.connected;
     $("debug-status").textContent = `${s.debug.paused ? "일시정지" : `${s.debug.speed}배 진행`} · ${s.debug.hasCheckpoint ? "저장 상태 있음" : "저장 상태 없음"} · ${s.mode==='botPractice'?'봇 5명 PvP 연습':'혼자 연습 전용'}`;
   }
@@ -969,7 +968,7 @@ if (LOCAL_PLAY) {
 let busy = false;
 function navigationBusy(value: boolean) {
   busy = value;
-  for (const id of ["practice", "pvp-practice", "blue-archive-practice", "create", "join", "leave"]) $<HTMLButtonElement>(id).disabled = value;
+  for (const id of ["practice", "pvp-practice", "create", "join", "leave"]) $<HTMLButtonElement>(id).disabled = value;
   finalUI.render();
 }
 function resetMatchView() {
@@ -1004,8 +1003,7 @@ async function returnToLobby() {
 }
 async function replayMatch() {
   if (busy || snapshot?.phase !== "finished") return;
-  const mode = snapshot.roster === "blueArchive" ? "blueArchive"
-    : snapshot.mode === "duel" ? "create" : snapshot.mode;
+  const mode = snapshot.mode === "duel" ? "create" : snapshot.mode;
   await connect(mode, true);
 }
 async function connect(mode: ConnectionMode, replace = false) {
@@ -1031,7 +1029,6 @@ async function connect(mode: ConnectionMode, replace = false) {
 }
 $("practice").onclick = () => void connect("practice");
 $("pvp-practice").onclick = () => void connect("botPractice");
-$("blue-archive-practice").onclick = () => void connect("blueArchive");
 $("create").onclick = () => void connect("create");
 $("join-form").onsubmit = event => { event.preventDefault(); void connect("join"); };
 $("code").oninput = () => $("code").removeAttribute("aria-invalid");

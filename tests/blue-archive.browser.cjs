@@ -1,5 +1,5 @@
 const { chromium, browserOptions } = require("./browser-runtime.cjs");
-const { debugClick, selectDock } = require("./ui-helpers.cjs");
+const { debugClick, selectDock, debugPreset } = require("./ui-helpers.cjs");
 const { spawn } = require("node:child_process");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
@@ -46,7 +46,14 @@ async function main() {
         if (path.includes("/units/blue-archive/") && !loaded) errors.push(path + " HTTP " + response.status());
       });
       await page.goto(url);
-      await activate(page.locator("#blue-archive-practice"));
+      assert.equal(await page.locator("#blue-archive-practice").count(), 0);
+      await activate(page.locator("#practice"));
+      await page.waitForFunction(() => document.querySelector("#phase").textContent.startsWith("준비"));
+      assert.match(await page.locator("#level-label").textContent(), /레벨 1/);
+      assert.equal(await page.locator("#gold").textContent(), "10");
+      assert.equal(await page.locator("#units [data-unit]").count(), 0);
+      assert.equal(await page.locator("#shop-offers .shop-portrait img[src*='/units/blue-archive/']").count(), 5);
+      await debugPreset(page, "catalog");
       await page.waitForFunction(() => document.querySelector("#deployed").textContent === "8/10");
       await debugClick(page, "debug-pause");
       assert.match(await page.locator("#level-label").textContent(), /레벨 10/);

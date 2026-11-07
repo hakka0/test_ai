@@ -40,7 +40,7 @@ test('대기석끼리·전장끼리 교환, 같은 위치 드롭은 변경 없�
  assert.equal(applyAction(m,p.id,{type:'bench',unitId:c.id,slot:c.benchSlot!},1),null);assert.deepEqual(m,before);
 });
 test('대기석 12칸·출전 정원 만석이어도 양방향 자리 교환 가능',()=>{
- const {m,p}=setup();while(freeBenchSlot(p)>=0)acquireUnit(p,'mage')!.rank=3;
+ const {m,p}=setup();while(freeBenchSlot(p)>=0)acquireUnit(p,'hifumi')!.rank=3;
  const field=p.units[0],bench=p.units[1],target=position(field),slot=bench.benchSlot!;
  assert.equal(freeBenchSlot(p),-1);assert.equal(applyAction(m,p.id,{type:'bench',unitId:field.id,slot},1),null);invariant(p);assert.equal(freeBenchSlot(p),-1);
  assert.equal(applyAction(m,p.id,{type:'place',unitId:field.id,x:target.x,y:target.y},1),null);invariant(p);assert.equal(field.benchSlot,null);assert.equal(bench.benchSlot,slot);
@@ -78,7 +78,7 @@ test('전장 교환은 공개 배치와 관전 대기석을 갱신하고 출전 
  const before=structuredClone(m);assert.ok(applyAction(m,p.id,{type:'place',unitId:field.id,x:2,y:1},3));assert.deepEqual(m,before);
 });
 test('긴 교환 시퀀스: 배치/대기석 유일성·출전 수·유닛/장비 연결 보존',()=>{
- const {m,p}=setup();p.level=10;while(freeBenchSlot(p)>=0)acquireUnit(p,'mage')!.rank=3;
+ const {m,p}=setup();p.level=10;while(freeBenchSlot(p)>=0)acquireUnit(p,'hifumi')!.rank=3;
  for(const [i,u] of p.units.slice(0,3).entries())applyAction(m,p.id,{type:'equip',unitId:u.id,itemId:p.inventory[i].id},1);
  const possessions=p.units.map(({x,y,benchSlot,...rest})=>rest),inventory=structuredClone(p.inventory),gold=p.gold;let seed=17;
  for(let i=0;i<150;i++){

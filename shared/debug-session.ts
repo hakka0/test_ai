@@ -1,3 +1,4 @@
+import { seedBlueArchive } from "./practice-roster";
 import { createOffer, SHOP_SIZE, removeMaxRankOffers } from "./shop";
 import type { DebugAction, DebugState, Match, Player, Trait } from "./model";
 import { PREP_MS } from "./model";
@@ -52,15 +53,15 @@ export class DebugSession {
         }
         return null;
       case "preset": {
-        if (m.players.some(p => p.roster === "blueArchive")) return "블루 아카이브 테스트에서는 기본 유닛 프리셋을 사용할 수 없습니다.";
         const configs = {
+          catalog: {round:1,level:10,gold:30,health:100},
           overtime: {round:4,level:1,gold:30,health:100},
           minion: {round: 1, level: 1, gold: 10, health: 100},
           reward: {round: 5, level: 4, gold: 30, health: 100},
           synergy: {round: 7, level: 6, gold: 30, health: 100},
-          synergyBulwark: {round:7,level:6,gold:100,health:100},
-          synergyScout: {round:7,level:6,gold:100,health:100},
-          synergyArcane: {round:7,level:6,gold:100,health:100},
+          synergyBulwark: {round:7,level:8,gold:100,health:100},
+          synergyScout: {round:7,level:8,gold:100,health:100},
+          synergyArcane: {round:7,level:8,gold:100,health:100},
           merge: {round: 1, level: 3, gold: 10, health: 100},
           early: {round: 1, level: 1, gold: 10, health: 100},
           mid: {round: 13, level: 7, gold: 50, health: 75},
@@ -92,17 +93,18 @@ export class DebugSession {
           // Fixtures already contain upgraded units; ordinary acquisitions still merge.
           for (let i = 0; i < (roster?.length??Math.max(3, config.level)); i++) fresh.units.push({
             id: `${fresh.id}-${fresh.nextUnitId++}`, owner: fresh.id,
-            kind: roster?.[i]??(action.preset === "synergy" ? CORE_UNIT_KINDS[i] : (["knight", "ranger", "mage"] as const)[i % 3]),
+            kind: roster?.[i]??(action.preset === "synergy" ? CORE_UNIT_KINDS[i] : (["yuuka", "shiroko", "hifumi"] as const)[i % 3]),
             rank: roster||action.preset === "synergy" ? 1 : (Math.min(3, 1 + Math.floor(i / 3))) as 1 | 2 | 3,
             x: -1, y: -1, benchSlot: i, equipment: [],
           });
-          if(action.preset==='overtime')fresh.units.forEach(u=>{u.kind='warden';u.rank=1;});
-          arrange(fresh);
+          if (action.preset === "catalog") { fresh.units = []; seedBlueArchive(fresh, isBot(fresh)); }
+          if(action.preset==='overtime')fresh.units.forEach(u=>{u.kind='natsu';u.rank=1;});
+          if (action.preset !== "catalog") arrange(fresh);
           if (action.preset === "merge") {
-            fresh.units[1].kind = "knight";
+            fresh.units[1].kind = "yuuka";
             fresh.units[1].x = fresh.units[1].y = -1; fresh.units[1].benchSlot = 0;
             fresh.units[2].x = fresh.units[2].y = -1; fresh.units[2].benchSlot = 1;
-            Object.assign(fresh.shop[0], {kind: "knight", cost: unitPrice("knight"), sold: false});
+            Object.assign(fresh.shop[0], {kind: "yuuka", cost: unitPrice("yuuka"), sold: false});
           }
           if (config.level > 1) fresh.inventory.forEach((item, i) => {
             const unit = fresh.units[i]; item.unitId = unit.id; unit.equipment.push(item.id);
@@ -118,7 +120,7 @@ export class DebugSession {
           // reserve offers together after every roster exists, not independently.
           for(const player of players)player.shop=[];
           if(action.preset==='merge')for(const player of players)player.shop.push({
-            id:`${player.id}-offer-${player.nextOfferId++}`,kind:'knight',cost:unitPrice('knight'),sold:false,
+            id:`${player.id}-offer-${player.nextOfferId++}`,kind:'yuuka',cost:unitPrice('yuuka'),sold:false,
           });
           for(const player of players){
             while(player.shop.length<SHOP_SIZE){const offer=createOffer(player,Math.random,players);if(!offer)break;player.shop.push(offer);}

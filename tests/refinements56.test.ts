@@ -16,19 +16,19 @@ test('2/4/6 조합은 가장 높은 단계만 적용하고 3·5종은 이전 단
   assert.deepEqual([2,3,4,5,6,10].map(n=>synergyTier(trait,n)!.threshold),[2,2,4,4,6,6]);
   assert.deepEqual(TRAITS[trait].tiers.map(t=>t.threshold),[2,4,6]);
  }
- assert.equal(bonusFor('knight',[{trait:'bulwark',count:4,active:true}]).hpMultiplier,1.3);
- assert.equal(bonusFor('ranger',[{trait:'scout',count:6,active:true}]).attackMultiplier,1.5);
- assert.equal(bonusFor('mage',[{trait:'arcane',count:6,active:true}]).shield,100);
+ assert.equal(bonusFor('yuuka',[{trait:'bulwark',count:4,active:true}]).hpMultiplier,1.3);
+ assert.equal(bonusFor('shiroko',[{trait:'scout',count:6,active:true}]).attackMultiplier,1.5);
+ assert.equal(bonusFor('hifumi',[{trait:'arcane',count:6,active:true}]).shield,100);
 });
-test('실제 수호 6종은 종류 중복/강화/대기석을 제외하고 최상위 효과를 전투에 적용',()=>{
+test('실제 수호 5종은 종류 중복/강화/대기석을 제외하고 최상위 효과를 전투에 적용',()=>{
  const m=setup(),p=m.players[0];p.level=6;
  p.units=UNIT_KINDS.filter(k=>UNITS[k].trait==='bulwark').map((kind,i)=>({id:`a-tier-${i}`,owner:'a',kind,rank:1 as const,x:i,y:0,benchSlot:null,equipment:[]}));
- assert.equal(evaluateSynergies(p.units)[0].count,6);
+ assert.equal(evaluateSynergies(p.units)[0].count,5);
   p.units.push({...p.units[0],id:'duplicate',rank:3});p.units.push({...p.units[1],id:'reserve',x:-1,y:-1,benchSlot:0});
-  assert.equal(evaluateSynergies(p.units)[0].count,6);
+  assert.equal(evaluateSynergies(p.units)[0].count,5);
   // Matching XP changes do not change placement or bypass the actual deployment cap.
   m.players.forEach(p=>p.ready=true);tick(m,m.deadline);tick(m,m.deadline);
-  assert.equal(m.fighters.find(f=>f.id==='a-tier-0')!.maxHp,330);
+  assert.equal(m.fighters.find(f=>f.id==='a-tier-0')!.maxHp,423);
 });
 test('매칭 중 경험치/리롤/준비 재확인 허용, 5초 마감과 배치/구매/장비 제한 보존',()=>{
  const m=setup(),p=m.players[0];tick(m,m.deadline);const deadline=m.deadline,at=deadline-1,units=structuredClone(p.units);

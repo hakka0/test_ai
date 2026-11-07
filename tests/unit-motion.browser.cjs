@@ -16,7 +16,7 @@ fs.mkdirSync(shots,{recursive:true});
       const combat=await p.evaluate(reverse=>{
         const f=window.combatFixture,scene=f.scene,start=scene.time.now;
         const options={reverse,sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}};
-        f.pair('knight','mage',options);
+        f.pair('yuuka','hifumi',options);
         const before=f.unitVisuals(),positions=JSON.stringify(scene.snapshot.fighters.map(u=>[u.x,u.y]));
         f.emit('attack');scene.update(start+28,28);
         const kicked=f.unitVisuals(),point=scene.displayPosition(scene.snapshot.fighters[0]);
@@ -31,12 +31,12 @@ fs.mkdirSync(shots,{recursive:true});
       for(const u of combat.kicked){assert.equal(u.nameX,u.anchor.x);assert.equal(u.nameY,u.anchor.y+34);}
       assert.equal(combat.positions,combat.afterPositions);assert.equal(combat.hitId,combat.before[0].id);
       for(const u of combat.recovered){assert.ok(Math.abs(u.pose.x)<0.001);assert.ok(Math.abs(u.pose.scaleX-1)<=0.004);assert.ok(Math.abs(u.pose.scaleY-1)<=0.008);}
-      await p.evaluate(reverse=>{const f=window.combatFixture;f.pair('knight','mage',{reverse,sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});f.emit('attack');f.scene.update(f.scene.time.now+28,28);},reverse);
+      await p.evaluate(reverse=>{const f=window.combatFixture;f.pair('yuuka','hifumi',{reverse,sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});f.emit('attack');f.scene.update(f.scene.time.now+28,28);},reverse);
       await p.waitForTimeout(35);await p.locator('#board').screenshot({path:`${shots}/${mode}-${reverse?'reverse':'forward'}-shot.png`});
 
       const movement=await p.evaluate(reverse=>{
         const f=window.combatFixture,scene=f.scene,start=scene.time.now;
-        f.pair('knight','mage',{reverse,sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
+        f.pair('yuuka','hifumi',{reverse,sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
         scene.snapshot.fighters[0].x=2;scene.update(start+16,16);
         const travelling=f.unitVisuals()[0];
         for(let i=2;i<=65;i++)scene.update(start+i*16,16);
@@ -48,7 +48,7 @@ fs.mkdirSync(shots,{recursive:true});
 
       const dying=await p.evaluate(reverse=>{
         const f=window.combatFixture,scene=f.scene,start=scene.time.now;
-        f.pair('knight','mage',{reverse,sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
+        f.pair('yuuka','hifumi',{reverse,sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
         f.emit('attack');scene.snapshot.fighters[1].hp=0;f.emit('death');
         const point=scene.displayPosition(scene.snapshot.fighters[1]);
         scene.update(start+180,180);
@@ -64,7 +64,7 @@ fs.mkdirSync(shots,{recursive:true});
     }
     const reduced=await p.evaluate(()=>{
       const f=window.combatFixture,scene=f.scene,start=scene.time.now;
-      f.pair('knight','mage',{reduced:true,sourcePosition:{x:4,y:4},targetPosition:{x:1,y:2}});
+      f.pair('yuuka','hifumi',{reduced:true,sourcePosition:{x:4,y:4},targetPosition:{x:1,y:2}});
       f.emit('attack');scene.update(start+28,28);const units=f.unitVisuals();
       scene.snapshot.fighters[1].hp=0;f.emit('death');return {units,dead:f.unitVisuals()[1]};
     });
@@ -73,7 +73,7 @@ fs.mkdirSync(shots,{recursive:true});
     assert.equal(reduced.dead.x,undefined);
     const restored=await p.evaluate(()=>{
       const f=window.combatFixture,scene=f.scene;
-      f.pair('knight','mage');f.emit('attack');scene.reduced=true;scene.update(scene.time.now+28,28);
+      f.pair('yuuka','hifumi');f.emit('attack');scene.reduced=true;scene.update(scene.time.now+28,28);
       const reduced=f.unitVisuals();
       scene.snapshot.round++;scene.snapshot.fighters[1].hp=100;scene.reduced=false;scene.update(scene.time.now+40,12);
       return {reduced,fresh:f.unitVisuals()};
@@ -81,7 +81,7 @@ fs.mkdirSync(shots,{recursive:true});
     for(const u of restored.reduced)assert.ok(Math.abs(u.pose.x)<0.001);
     for(const u of restored.fresh){assert.equal(u.pose.dying,false);assert.ok(Math.abs(u.pose.x)<0.001);}
     const recalled=await p.evaluate(()=>{
-      const f=window.combatFixture;f.pair('knight','mage');const id=f.scene.snapshot.fighters[0].id;
+      const f=window.combatFixture;f.pair('yuuka','hifumi');const id=f.scene.snapshot.fighters[0].id;
       f.scene.snapshot.phase='prepare';f.scene.snapshot.players[0].units=[];
       f.scene.update(f.scene.time.now,16);return f.unitVisuals().find(u=>u.id===id);
     });assert.equal(recalled.x,undefined,'recall removes immediately without a death animation');
@@ -97,7 +97,7 @@ fs.mkdirSync(shots,{recursive:true});
     recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
     window.motionRecording={recorder,chunks,stream};recorder.start();
   });
-  await page.evaluate(()=>window.combatFixture.pair('knight','mage',{sourcePosition:{x:1,y:5},targetPosition:{x:4,y:2}}));
+  await page.evaluate(()=>window.combatFixture.pair('yuuka','hifumi',{sourcePosition:{x:1,y:5},targetPosition:{x:4,y:2}}));
   await page.waitForTimeout(400);await page.evaluate(()=>window.combatFixture.emit('attack'));
   await page.waitForTimeout(500);await page.evaluate(()=>{window.combatFixture.scene.snapshot.fighters[0].x=2;});
   await page.waitForTimeout(550);await page.evaluate(()=>window.combatFixture.emit('attack'));

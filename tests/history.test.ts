@@ -32,7 +32,7 @@ test('다음 준비 단계·상점 소비·이름/체력 변경·최종 승자 �
  tick(m,m.deadline);assert.equal(m.phase,'finished');assert.deepEqual(m.roundHistory.at(-1),last);assert.equal(last!.winner,null);
 });
 test('전투 중 합성 보류 구매의 대기석은 생존 수에서 제외하고 실제 참가자로 계산',()=>{
- const m=setup(),p=m.players[0];p.level=3;const extra=acquireUnit(p,'knight')!;applyAction(m,p.id,{type:'place',unitId:extra.id,x:3,y:1},1);refreshShop(p,()=>0);startCombat(m,2);
+ const m=setup(),p=m.players[0];p.level=3;const extra=acquireUnit(p,'yuuka')!;applyAction(m,p.id,{type:'place',unitId:extra.id,x:3,y:1},1);refreshShop(p,()=>0);startCombat(m,2);
  assert.equal(applyAction(m,p.id,{type:'buy',offerId:p.shop[0].id,revision:p.shopRevision},3),null);assert.equal(p.units.filter(u=>u.x>=0).length,2);
  m.fighters.filter(f=>f.owner==='b').forEach(f=>f.hp=0);tick(m,102);
  assert.equal(m.roundHistory[0].players[0].survivors,2);assert.equal(m.roundHistory[0].players[1].survivors,0);

@@ -26,12 +26,12 @@ test('실제 6인 봇 방: 일반 실행에서 디버깅·미니언 3회·5초 �
   }
   const generation=initial.debug!.generation;
   for(const preset of ['synergyBulwark','synergyScout','synergyArcane'] as const){
-   const expanded=await command(room,{type:'preset',preset},s=>s.phase==='prepare'&&s.players.some(p=>p.visibility==='self'&&p.units.length===18));
+   const expanded=await command(room,{type:'preset',preset},s=>s.phase==='prepare'&&s.players.some(p=>p.visibility==='self'&&p.units.length===20));
    const own=expanded.players.find((p):p is SelfPlayerSnapshot=>p.visibility==='self')!;
-   assert.equal(new Set(own.units.map(u=>u.kind)).size,18);assert.equal(own.units.filter(u=>u.x>=0).length,6);assert.equal(own.units.filter(u=>u.x<0).length,12);
-   assert.ok(expanded.players.slice(1).every(p=>p.visibility==='opponent'&&p.units.length===6&&p.bench.length===12));
+   assert.equal(new Set(own.units.map(u=>u.kind)).size,20);assert.equal(own.units.filter(u=>u.x>=0).length,8);assert.equal(own.units.filter(u=>u.x<0).length,12);
+   assert.ok(expanded.players.slice(1).every(p=>p.visibility==='opponent'&&p.units.length===8&&p.bench.length===12));
    await command(room,{type:'nextPhase'},s=>s.phase==='matching');
-   const fighting=await command(room,{type:'nextPhase'},s=>s.phase==='combat');assert.equal(fighting.fighters.length,36);assert.equal(fighting.battlePairs!.length,3);
+   const fighting=await command(room,{type:'nextPhase'},s=>s.phase==='combat');assert.equal(fighting.fighters.length,48);assert.equal(fighting.battlePairs!.length,3);
   }
   const mid=await command(room,{type:'preset',preset:'mid'},s=>s.round===13&&s.debug!.generation>generation);
   assert.equal(mid.mode,'botPractice');assert.equal(mid.players.filter(p=>p.bot).length,5);

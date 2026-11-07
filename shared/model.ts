@@ -13,10 +13,7 @@ export const PREP_MS = 30_000,
 // Rarity sets the purchase price; rank describes instance upgrades through merging.
 export type Rarity = 1 | 2 | 3 | 4 | 5;
 export type UnitRank = 1 | 2 | 3;
-export type Kind = "knight" | "ranger" | "mage" | "warden" | "skirmisher" | "oracle"
-  | "bastion" | "vanguard" | "sentinel" | "breacher"
-  | "marksman" | "striker" | "tracker" | "infiltrator"
-  | "channeler" | "disruptor" | "medic" | "technomancer" | BlueArchiveKind;
+export type Kind = BlueArchiveKind;
 export type Roster = "blueArchive";
 export type Trait = "bulwark" | "scout" | "arcane";
 export type Phase = "waiting" | "prepare" | "matching" | "combat" | "result" | "finished";
@@ -202,7 +199,7 @@ export type DebugAction =
   | { type: "pause"; paused: boolean }
   | { type: "step"; ms: number }
   | { type: "nextPhase" }
-  | { type: "preset"; preset: "early" | "mid" | "late" | "level10" | "merge" | "synergy" | "synergyBulwark" | "synergyScout" | "synergyArcane" | "reward" | "minion" | "overtime" }
+  | { type: "preset"; preset: "catalog" | "early" | "mid" | "late" | "level10" | "merge" | "synergy" | "synergyBulwark" | "synergyScout" | "synergyArcane" | "reward" | "minion" | "overtime" }
   | { type: "save" }
   | { type: "load" };
 export interface PublicPlayerSnapshot {

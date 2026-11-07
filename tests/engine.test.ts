@@ -53,7 +53,7 @@ test("장비 슬롯·이동·해제·타인 장비 검증과 기본 능력치 �
       1001,
     ),
   );
-  assert.equal(statsFor(u, p.inventory).hp, 280);
+  assert.equal(statsFor(u, p.inventory).hp, 385);
   assert.equal(statsFor(u, p.inventory).attack, 32);
   assert.ok(
     applyAction(
@@ -81,7 +81,7 @@ test("장비 슬롯·이동·해제·타인 장비 검증과 기본 능력치 �
     applyAction(m, "A", { type: "unequip", itemId: p.inventory[1].id }, 1001),
     null,
   );
-  assert.equal(statsFor(u, p.inventory).hp, 220);
+  assert.equal(statsFor(u, p.inventory).hp, 325);
 });
 test("준비 완료 후 수정 거부, 양쪽 완료 시 5초 매칭 후 전투", () => {
   const m = setup();

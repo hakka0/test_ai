@@ -45,10 +45,10 @@ fs.mkdirSync(shots,{recursive:true});
    await p.screenshot({path:`${shots}/${mode}-${width}-${height}.png`,animations:'disabled'});results.push({mode,width,height,...m});
   }
   await p.setViewportSize(base);await p.waitForTimeout(150);
-  const warden=await p.locator('#cells button[aria-label*="아군 칸, 아르덴,"]').evaluate(e=>`#cells button[data-x="${e.dataset.x}"][data-y="${e.dataset.y}"]`);
-  await drag(warden,'[data-bench-slot="0"]');await p.waitForFunction(()=>document.querySelector('#my-synergies [data-trait="bulwark"] .synergy-count')?.textContent==='1/2');
-  const knight=await p.locator('#cells button[aria-label*="아군 칸, 루멘,"]').evaluate(e=>`#cells button[data-x="${e.dataset.x}"][data-y="${e.dataset.y}"]`);
-  await drag(knight,'[data-bench-slot="1"]');await traits(['scout','arcane']);await next('전투');await next('라운드 결과');await traits(['scout','arcane']);
+  const natsu=await p.locator('#cells button[aria-label*="아군 칸, 아르덴,"]').evaluate(e=>`#cells button[data-x="${e.dataset.x}"][data-y="${e.dataset.y}"]`);
+  await drag(natsu,'[data-bench-slot="0"]');await p.waitForFunction(()=>document.querySelector('#my-synergies [data-trait="bulwark"] .synergy-count')?.textContent==='1/2');
+  const yuuka=await p.locator('#cells button[aria-label*="아군 칸, 루멘,"]').evaluate(e=>`#cells button[data-x="${e.dataset.x}"][data-y="${e.dataset.y}"]`);
+  await drag(yuuka,'[data-bench-slot="1"]');await traits(['scout','arcane']);await next('전투');await next('라운드 결과');await traits(['scout','arcane']);
   await debugPreset(p,'early');
   for(let round=1;round<=5;round++){
    if(round===5){await p.locator('#reward-dialog').waitFor({state:'visible'});await press(p.locator('#reward-options button').first());await p.locator('#reward-dialog').waitFor({state:'hidden'});}

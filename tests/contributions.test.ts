@@ -64,8 +64,8 @@ test('기여도: 이벤트 80개 제한과 무관하게 누적하며 전투 시�
 });
 test('기여도: 전투 중 합성 보류 후 원래 참가자·사망 기록, 대기석 제외 및 과거 값 고정',()=>{
  const m=newMatch();m.players=[newPlayer('a','A'),newPlayer('b','B')];prepare(m,0);const p=m.players[0];p.level=3;
- const extra=acquireUnit(p,'knight')!;assert.equal(applyAction(m,p.id,{type:'place',unitId:extra.id,x:3,y:1},1),null);
- const reserve=acquireUnit(p,'ranger')!;refreshShop(p,()=>0);startCombat(m,2);const ids=m.fighters.map(f=>f.id),f=m.fighters[0],t=m.fighters.find(f=>f.owner==='b')!;
+ const extra=acquireUnit(p,'yuuka')!;assert.equal(applyAction(m,p.id,{type:'place',unitId:extra.id,x:3,y:1},1),null);
+ const reserve=acquireUnit(p,'shiroko')!;refreshShop(p,()=>0);startCombat(m,2);const ids=m.fighters.map(f=>f.id),f=m.fighters[0],t=m.fighters.find(f=>f.owner==='b')!;
  m.fighters.forEach(f=>{f.skills=[];});new SkillSystem(m,3).damage(f,t,5,'basic');
  assert.equal(applyAction(m,p.id,{type:'buy',offerId:p.shop[0].id,revision:p.shopRevision},3),null);assert.equal(p.units[0].rank,1);assert.ok(p.units.some(u=>u.id===extra.id));
  new SkillSystem(m,4).damage(f,t,99999,'basic');tick(m,102);const r=m.roundHistory[0];assert.deepEqual(r.units.map(u=>u.id),ids);
@@ -73,7 +73,7 @@ test('기여도: 전투 중 합성 보류 후 원래 참가자·사망 기록, �
  const original=structuredClone(r);f.contribution.damageDealt=999;t.contribution.damageTaken=888;prepare(m,20000);startCombat(m,20001);assert.deepEqual(m.roundHistory[0],original);assert.equal(m.fighters[0].rank,2);
 });
 test('기여도: 완료 기록은 양측 동일한 허용 목록과 깊은 복사, 현재 전투/대기석 내부 값 미공개',()=>{
- const {m,f,t,at}=fixture();const reserve=acquireUnit(m.players[0],'ranger')!;at().damage(f,t,999,'skill');tick(m,101);
+ const {m,f,t,at}=fixture();const reserve=acquireUnit(m.players[0],'shiroko')!;at().damage(f,t,999,'skill');tick(m,101);
  Object.assign(m.roundHistory[0].units[0],{futurePrivate:'SECRET',equipment:['PRIVATE']});Object.assign(f.contribution,{privateFuture:'SECRET'});
  const before=structuredClone(m),a=snapshotFor(m,'a',102,'room'),b=snapshotFor(m,'b',102,'room');assert.deepEqual(a.roundHistory,b.roundHistory);
  assert.deepEqual(Object.keys(a.roundHistory[0].units[0]).sort(),['id','owner','kind','rank','damageDealt','damageTaken','healing','shieldBlocked'].sort());

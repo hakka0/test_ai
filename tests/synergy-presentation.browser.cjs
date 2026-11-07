@@ -55,8 +55,8 @@ function snapshot(raw){if(typeof raw==='string')return;const b=Buffer.from(raw);
   await press('#scout-return');await debugPreset(p,'synergy');
   await p.setViewportSize(mode==='mobile'?{width:844,height:390}:{width:1400,height:1000});
   await p.waitForTimeout(150);
-  const warden=own().units.find(u=>u.kind==='warden');
-  const origin=await p.locator(`#cells button[data-board-unit="${warden.id}"]`).evaluate(e=>`#cells button[data-x="${e.dataset.x}"][data-y="${e.dataset.y}"]`);
+  const natsu=own().units.find(u=>u.kind==='natsu');
+  const origin=await p.locator(`#cells button[data-board-unit="${natsu.id}"]`).evaluate(e=>`#cells button[data-x="${e.dataset.x}"][data-y="${e.dataset.y}"]`);
   const cdp=mode==='mobile'?await ctx.newCDPSession(p):null;
   async function drag(source,target){
    const a=await p.locator(source).boundingBox(),b=await p.locator(target).boundingBox();assert.ok(a&&b);
@@ -64,9 +64,9 @@ function snapshot(raw){if(typeof raw==='string')return;const b=Buffer.from(raw);
    if(cdp){await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{...start,id:1}]});await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{...end,id:1}]});await p.waitForTimeout(80);await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});}
    else{await p.mouse.move(start.x,start.y);await p.mouse.down();await p.mouse.move(end.x,end.y,{steps:10});await p.mouse.up();}
   }
-  await drag(origin,'[data-bench-slot="0"]');await waitState(()=>own().units.find(u=>u.id===warden.id).x<0);
+  await drag(origin,'[data-bench-slot="0"]');await waitState(()=>own().units.find(u=>u.id===natsu.id).x<0);
   const liveTrait=p.locator('#my-synergies [data-trait="bulwark"]');await checkTiers(liveTrait,1);await press(liveTrait);await p.locator('#game-help-tooltip').waitFor({state:'visible'});await checkTiers(p.locator('#game-help-tooltip'),1,true);await press(liveTrait);
-  await drag('[data-bench-slot="0"]',origin);await waitState(()=>own().units.find(u=>u.id===warden.id).x>=0);await checkTiers(liveTrait,2);
+  await drag('[data-bench-slot="0"]',origin);await waitState(()=>own().units.find(u=>u.id===natsu.id).x>=0);await checkTiers(liveTrait,2);
   await press(liveTrait);await p.locator('#game-help-tooltip').waitFor({state:'visible'});await checkTiers(p.locator('#game-help-tooltip'),2,true);await press(liveTrait);
   results.push({mode,livePlacementAndColorUpdate:true,landscapeTouch:mode==='mobile'});
   await press(`[data-player-id="${bot}"]`);await press('#ready');await waitState(()=>last.phase==='matching');

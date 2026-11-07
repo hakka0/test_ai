@@ -37,6 +37,7 @@ async function main() {
     const page = await context.newPage(), errors = [];
     page.on("pageerror", e => errors.push(e.message));
     await page.goto(process.env.GAME_URL);
+    assert.equal(await page.locator("#blue-archive-practice").count(), 0);
     assert.equal(await page.locator("#create").isVisible(), false);
     assert.equal(await page.locator("#join-form").isVisible(), false);
     await page.locator("#practice").tap();

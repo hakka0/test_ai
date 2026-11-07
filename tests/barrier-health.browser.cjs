@@ -1,7 +1,7 @@
 const {chromium,browserOptions}=require('./browser-runtime.cjs');
 const fs=require('node:fs'),assert=require('node:assert/strict');
 const shots='docs/screenshots/barrier-health',url='http://127.0.0.1:2651';
-const defenses={red:'ranger',yellow:'skirmisher',blue:'knight',purple:'mage'};
+const defenses={red:'shiroko',yellow:'neru',blue:'yuuka',purple:'hifumi'};
 const colors={red:0xff667a,yellow:0xffd45c,blue:0x66baff,purple:0xc58aff};
 const cases=[
   {name:'absorb',incoming:20,shield:80,broken:false,health:0},
@@ -19,7 +19,7 @@ fs.mkdirSync(shots,{recursive:true});
     await p.goto(url+'/tests/combat-attributes.fixture.html');await p.waitForFunction(()=>window.combatFixture?.scene.sys.isActive());
     for(const reverse of [false,true])for(const type of ['attack','skillDamage'])for(const [attribute,kind] of Object.entries(defenses))for(const c of cases){
       const r=await p.evaluate(({kind,reverse,type,c})=>{
-        const f=window.combatFixture;f.pair('knight',kind,{reverse,targetShield:c.shield,sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
+        const f=window.combatFixture;f.pair('yuuka',kind,{reverse,targetShield:c.shield,sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
         const events=f.strike(c.incoming,c.shield,100,type,c.shieldAfter),first=f.inspect();
         const [a,b]=f.scene.snapshot.fighters.map(u=>f.scene.displayPosition(u));
         f.scene.update(f.scene.time.now,16);
@@ -38,7 +38,7 @@ fs.mkdirSync(shots,{recursive:true});
     }
     // Check the arc and fragments while actually animating, then freeze for QA.
     const animated=await p.evaluate(async()=>{
-      const f=window.combatFixture;f.pair('knight','mage',{targetShield:20,sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});f.strike(50,20);
+      const f=window.combatFixture;f.pair('yuuka','hifumi',{targetShield:20,sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});f.strike(50,20);
       const first=f.inspect();await new Promise(r=>setTimeout(r,60));const later=f.inspect();f.scene.scene.pause();
       return {first,later,bar:f.unitVisuals()[1].healthBar};
     });
@@ -47,7 +47,7 @@ fs.mkdirSync(shots,{recursive:true});
     assert.ok(Math.hypot(lastShard.x-firstShard.x,lastShard.y-firstShard.y)>1,'broken panels separate');
     await p.locator('#board').screenshot({path:`${shots}/${mode}-barrier-break.png`});
     const hp=await p.evaluate(()=>{
-      const f=window.combatFixture,scene=f.scene,start=scene.time.now;f.pair('knight','mage');f.strike(40,0);
+      const f=window.combatFixture,scene=f.scene,start=scene.time.now;f.pair('yuuka','hifumi');f.strike(40,0);
       const read=()=>({bar:f.unitVisuals()[1].healthBar,painted:scene.bars.commandBuffer.includes(0xffedc2)});
       const hit=read();scene.update(start+100,100);const hold=read();scene.update(start+350,250);const chasing=read();
       scene.update(start+1500,1150);const done=read();
@@ -58,18 +58,18 @@ fs.mkdirSync(shots,{recursive:true});
     assert.ok(hp.chasing.bar.trail>0.6&&hp.chasing.bar.trail<1);assert.equal(hp.chasing.painted,true);
     assert.deepEqual(hp.done.bar,{current:0.6,trail:0.6});assert.equal(hp.done.painted,false);
     assert.deepEqual(hp.healed.bar,{current:0.9,trail:0.9});assert.equal(hp.healed.painted,false);
-    const absorbed=await p.evaluate(()=>{const f=window.combatFixture;f.pair('knight','mage',{targetShield:80});f.strike(20,80);return {bar:f.unitVisuals()[1].healthBar,painted:f.scene.bars.commandBuffer.includes(0xffedc2)};});
+    const absorbed=await p.evaluate(()=>{const f=window.combatFixture;f.pair('yuuka','hifumi',{targetShield:80});f.strike(20,80);return {bar:f.unitVisuals()[1].healthBar,painted:f.scene.bars.commandBuffer.includes(0xffedc2)};});
     assert.deepEqual(absorbed.bar,{current:1,trail:1});assert.equal(absorbed.painted,false);
     const reduced=await p.evaluate(()=>{
-      const f=window.combatFixture;f.pair('knight','mage',{reduced:true,targetShield:20});f.strike(50,20);
+      const f=window.combatFixture;f.pair('yuuka','hifumi',{reduced:true,targetShield:20});f.strike(50,20);
       return {effects:f.inspect().effects,bar:f.unitVisuals()[1].healthBar};
     });assert.deepEqual(reduced.bar,{current:0.7,trail:0.7});
     assert.deepEqual(reduced.effects.map(e=>e.role),['shield-hit','shield-break','impact']);assert.ok(reduced.effects.every(e=>e.scaleX===1&&e.scaleY===1));
-    const dead=await p.evaluate(()=>{const f=window.combatFixture;f.pair('knight','mage');f.strike(200,20);return f.unitVisuals()[1].healthBar;});assert.equal(dead,undefined);
+    const dead=await p.evaluate(()=>{const f=window.combatFixture;f.pair('yuuka','hifumi');f.strike(200,20);return f.unitVisuals()[1].healthBar;});assert.equal(dead,undefined);
     await p.evaluate(()=>window.combatFixture.scene.scene.resume());await p.waitForTimeout(750);
     assert.equal((await p.evaluate(()=>window.combatFixture.inspect())).effects.length,0);
     const reset=await p.evaluate(()=>{
-      const f=window.combatFixture;f.pair('knight','mage');f.strike(40,0);
+      const f=window.combatFixture;f.pair('yuuka','hifumi');f.strike(40,0);
       f.scene.snapshot.round++;f.scene.snapshot.events=[];f.scene.update(f.scene.time.now,16);
       return {effects:f.inspect().effects,bar:f.unitVisuals()[1].healthBar};
     });assert.equal(reset.effects.length,0);assert.deepEqual(reset.bar,{current:0.6,trail:0.6});
@@ -81,7 +81,7 @@ fs.mkdirSync(shots,{recursive:true});
     const stream=document.querySelector('#board canvas').captureStream(30),chunks=[];
     const recorder=new MediaRecorder(stream,{mimeType:'video/webm;codecs=vp8'});recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
     window.barrierRecording={stream,chunks,recorder};recorder.start();
-    window.combatFixture.pair('knight','mage',{targetShield:60,sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
+    window.combatFixture.pair('yuuka','hifumi',{targetShield:60,sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
   });
   await p.waitForTimeout(300);await p.evaluate(()=>window.combatFixture.strike(20,60));
   await p.waitForTimeout(450);await p.evaluate(()=>window.combatFixture.strike(70,40));

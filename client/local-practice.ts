@@ -1,7 +1,6 @@
 import { newMatch, newPlayer, botSetup, prepare, applyAction } from "../shared/engine";
 import { GameClock, advanceMatch } from "../shared/game-time";
 import { DebugSession } from "../shared/debug-session";
-import { seedBlueArchive } from "../shared/practice-roster";
 import { snapshotFor } from "../shared/snapshot";
 import { INTRO_MINION_ROUNDS } from "../shared/minions";
 import { isBot } from "../shared/bot-practice";
@@ -9,9 +8,9 @@ import type { Match } from "../shared/model";
 import type { PlayRoom, RoomClient } from "./room-client";
 
 type Store = Pick<Storage, "getItem" | "setItem" | "removeItem">;
-const SAVE_KEY = "autochess-local-v1";
+const SAVE_KEY = "autochess-local-v2";
 type SavedGame = {
-  version: 1;
+  version: 2;
   token: string;
   sessionId: string;
   mode: "practice" | "botPractice";
@@ -125,10 +124,9 @@ export class LocalPracticeClient implements RoomClient {
     if (!options.practice && !options.botPractice)
       throw new Error("이 버전에서는 혼자 연습과 봇 연습을 선택하세요. 친구 대전은 지원하지 않습니다.");
     const mode = options.botPractice ? "botPractice" : "practice";
-    const roster = options.practice && options.roster === "blueArchive" ? "blueArchive" : undefined;
-    const game = newMatch(mode, roster ? 0 : INTRO_MINION_ROUNDS);
+    const game = newMatch(mode, INTRO_MINION_ROUNDS);
     const sessionId = "local-player";
-    const player = newPlayer(sessionId, options.name.trim().slice(0, 16) || "여행자", roster);
+    const player = newPlayer(sessionId, options.name.trim().slice(0, 16) || "여행자");
     game.players.push(player);
     if (options.botPractice) {
       for (let i = 1; i <= 5; i++) {
@@ -138,13 +136,12 @@ export class LocalPracticeClient implements RoomClient {
       }
       for (const p of game.players) p.shop = [];
     } else {
-      const bot = newPlayer("practice-bot", "연습 상대", roster);
+      const bot = newPlayer("practice-bot", "연습 상대");
       game.players.push(bot);
-      if (roster) { seedBlueArchive(player); seedBlueArchive(bot, true); }
-      else botSetup(bot, game.players);
+      botSetup(bot, game.players);
     }
     prepare(game, this.now());
-    return new LocalPracticeRoom({ version: 1, token: `local:${crypto.randomUUID()}`, sessionId, mode,
+    return new LocalPracticeRoom({ version: 2, token: `local:${crypto.randomUUID()}`, sessionId, mode,
       game, clock: { now: this.now(), speed: 1, paused: false } }, this.storage, this.now);
   }
 
@@ -156,7 +153,7 @@ export class LocalPracticeClient implements RoomClient {
     try {
       const raw = this.storage.getItem(SAVE_KEY);
       const saved: SavedGame | null = raw ? JSON.parse(raw) : null;
-      if (!saved || saved.version !== 1 || saved.token !== token || saved.sessionId !== "local-player"
+      if (!saved || saved.version !== 2 || saved.token !== token || saved.sessionId !== "local-player"
         || !["practice", "botPractice"].includes(saved.mode)
         || !Array.isArray(saved.game?.players) || !saved.game.players.some(p => p.id === saved.sessionId)
         || !Number.isFinite(saved.clock?.now) || ![1, 2, 5, 10].includes(saved.clock.speed)

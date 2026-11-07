@@ -51,8 +51,8 @@ fs.mkdirSync(shots,{recursive:true});
    if(cdp){await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{...start,id:1}]});await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{...end,id:1}]});await p.waitForTimeout(80);await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});}
    else{await p.mouse.move(start.x,start.y);await p.mouse.down();await p.mouse.move(end.x,end.y,{steps:10});await p.mouse.up();}
   }
-  const knight=p.locator('#cells button[aria-label*="아군 칸, 루멘,"]').first(),gearTarget='#cells button[data-x="7"][data-y="6"]';
-  await drag(await knight.evaluate(e=>`#cells button[data-x="${e.dataset.x}"][data-y="${e.dataset.y}"]`),gearTarget);
+  const yuuka=p.locator('#cells button[aria-label*="아군 칸, 루멘,"]').first(),gearTarget='#cells button[data-x="7"][data-y="6"]';
+  await drag(await yuuka.evaluate(e=>`#cells button[data-x="${e.dataset.x}"][data-y="${e.dataset.y}"]`),gearTarget);
   await p.waitForFunction(sel=>document.querySelector(sel).getAttribute('aria-label').includes('루멘'),gearTarget);
   if(await p.locator('#equipment-toggle').getAttribute('aria-expanded')!=='true')await p.locator('#equipment-toggle').click();
   assert.equal(await p.locator('[data-equipment-item]').count(),3);const item=await p.locator('[data-equipment-item]').first().getAttribute('data-equipment-item');await drag(`[data-equipment-item="${item}"]`,gearTarget);
@@ -63,7 +63,7 @@ fs.mkdirSync(shots,{recursive:true});
   await p.mouse.move(0,0);await p.screenshot({path:`${shots}/${mode}-active.png`,animations:'disabled'});
   if(mode==='pc')await p.locator('#pc-left-rail').screenshot({path:`${shots}/pc-composition-equipment.png`,animations:'disabled'});
   else await p.locator('#synergy-panel').screenshot({path:`${shots}/mobile-composition.png`,animations:'disabled'});
-  const warden=p.locator('#cells button[aria-label*="아군 칸, 아르덴,"]').first(),origin=await warden.evaluate(e=>`#cells button[data-x="${e.dataset.x}"][data-y="${e.dataset.y}"]`);
+  const natsu=p.locator('#cells button[aria-label*="아군 칸, 아르덴,"]').first(),origin=await natsu.evaluate(e=>`#cells button[data-x="${e.dataset.x}"][data-y="${e.dataset.y}"]`);
   await drag(origin,'[data-bench-slot="0"]');
   await p.waitForFunction(()=>document.querySelector('#my-synergies [data-trait="bulwark"]').dataset.active==='false');
   assert.equal(await p.locator('#my-synergies [data-trait="bulwark"] .synergy-count').textContent(),'1/2');assert.equal(await p.locator('dialog[open]').count(),0);

@@ -1,7 +1,7 @@
 const {chromium,browserOptions}=require('./browser-runtime.cjs');
 const fs=require('node:fs'),assert=require('node:assert/strict');
 const shots='docs/screenshots/idle-skills',url='http://127.0.0.1:2652';
-const attacks={red:'knight',yellow:'ranger',blue:'mage',purple:'skirmisher'};
+const attacks={red:'yuuka',yellow:'shiroko',blue:'hifumi',purple:'neru'};
 const colors={red:0xff667a,yellow:0xffd45c,blue:0x66baff,purple:0xc58aff};
 const cases=[{id:'nova',effect:'skillDamage'},{id:'ironWard',effect:'shield'},{id:'starlightHeal',effect:'heal'}];
 fs.mkdirSync(shots,{recursive:true});
@@ -17,7 +17,7 @@ fs.mkdirSync(shots,{recursive:true});
     for(const reverse of [false,true])for(const [attribute,kind] of Object.entries(attacks))for(const c of cases){
       const r=await p.evaluate(({reverse,kind,c})=>{
         const f=window.combatFixture,s=f.scene,start=s.time.now;
-        f.pair(kind,'mage',{reverse,sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
+        f.pair(kind,'hifumi',{reverse,sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
         const snapshot=JSON.stringify(s.snapshot);
         for(let i=1;i<=50;i++)s.update(start+i*16,16);
         const idle=f.unitVisuals();s.update(start+1100,300);const breathed=f.unitVisuals();
@@ -49,7 +49,7 @@ fs.mkdirSync(shots,{recursive:true});
     }
     const stages=await p.evaluate(()=>{
       const f=window.combatFixture,s=f.scene,start=s.time.now;
-      f.pair('warden','mage');f.skill('guardian',50);const low=f.unitVisuals()[0].skillIndicator;
+      f.pair('natsu','hifumi');f.skill('guardian',50);const low=f.unitVisuals()[0].skillIndicator;
       f.skill('guardian',80);const ready=f.unitVisuals()[0].skillIndicator;
       const before=JSON.stringify(s.snapshot);s.update(start+500,500);const waited=f.unitVisuals()[0].skillIndicator;
       const unchanged=before===JSON.stringify(s.snapshot);
@@ -68,7 +68,7 @@ fs.mkdirSync(shots,{recursive:true});
     assert.equal(stages.labels.length,1,'repeated activations replace the caster label');assert.equal(stages.dead.skillIndicator,undefined);
     const reduced=await p.evaluate(()=>{
       const f=window.combatFixture,s=f.scene,start=s.time.now;
-      f.pair('warden','mage',{reduced:true});f.skill('guardian',50,true);
+      f.pair('natsu','hifumi',{reduced:true});f.skill('guardian',50,true);
       f.emit('skillStart','guardian');f.emit('heal','starlightHeal');f.emit('shield','ironWard');f.emit('skillEnd','guardian');
       const before=f.unitVisuals()[0];s.update(start+500,500);
       return {before,after:f.unitVisuals()[0],effects:f.inspect().effects};
@@ -79,12 +79,12 @@ fs.mkdirSync(shots,{recursive:true});
     assert.ok(reduced.effects.every(e=>e.scaleX===1&&e.scaleY===1),'reduced skill effects stay static');
     const transition=await p.evaluate(()=>{
       const f=window.combatFixture,s=f.scene;
-      f.pair('mage','knight');f.emit('skillStart');s.update(s.time.now+65,65);
+      f.pair('hifumi','yuuka');f.emit('skillStart');s.update(s.time.now+65,65);
       s.reduced=true;s.update(s.time.now+80,15);return {effects:f.inspect().effects,pose:f.unitVisuals()[0].pose};
     });assert.equal(transition.effects.length,0);assert.equal(transition.pose.scaleY,1);
     await p.evaluate(()=>window.combatFixture.scene.scene.resume());
     const animation=await p.evaluate(async()=>{
-      const f=window.combatFixture;f.pair('oracle','mage',{sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
+      const f=window.combatFixture;f.pair('koharu','hifumi',{sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
       f.emit('skillStart','starlightHeal');f.emit('heal','starlightHeal');
       const before=f.inspect();await new Promise(r=>setTimeout(r,70));const after=f.inspect();f.scene.scene.pause();return {before,after};
     });
@@ -93,7 +93,7 @@ fs.mkdirSync(shots,{recursive:true});
     assert.ok(animation.after.effects.find(e=>e.role==='heal').y<animation.before.effects.find(e=>e.role==='heal').y);
     await p.locator('#board').screenshot({path:`${shots}/${mode}-heal.png`});
     await p.evaluate(()=>{
-      const f=window.combatFixture;f.pair('warden','mage',{sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
+      const f=window.combatFixture;f.pair('natsu','hifumi',{sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
       f.skill('guardian',60,true);f.emit('skillStart','guardian');f.emit('shield','ironWard');
     });await p.waitForTimeout(40);await p.locator('#board').screenshot({path:`${shots}/${mode}-active.png`});
     await p.evaluate(()=>window.combatFixture.scene.scene.resume());await p.waitForTimeout(1100);
@@ -110,7 +110,7 @@ fs.mkdirSync(shots,{recursive:true});
     const stream=document.querySelector('#board canvas').captureStream(30),chunks=[];
     const recorder=new MediaRecorder(stream,{mimeType:'video/webm;codecs=vp8'});recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
     window.skillRecording={stream,chunks,recorder};recorder.start();
-    window.combatFixture.pair('warden','mage',{sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
+    window.combatFixture.pair('natsu','hifumi',{sourcePosition:{x:1,y:4},targetPosition:{x:4,y:2}});
   });
   await p.waitForTimeout(750);await p.evaluate(()=>window.combatFixture.skill('guardian',80));
   await p.waitForTimeout(550);await p.evaluate(()=>{const f=window.combatFixture;f.skill('guardian',75,true);f.emit('skillStart','guardian');});
