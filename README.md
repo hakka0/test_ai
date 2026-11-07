@@ -6,7 +6,7 @@
 
 ## 자동 갱신
 
-저장소 **Settings → Pages → Source**를 **GitHub Actions**로 설정합니다. 이후 이 구현이 있는 `main` 또는 `codex/default-roster-pages` 브랜치에 소스 변경을 **커밋·푸시**하면 `.github/workflows/pages.yml`이 테스트 → Pages 빌드 → 배포를 실행합니다. 로컬 파일 저장만으로는 배포되지 않습니다. 문서만 바뀐 푸시는 게임 빌드에서 제외합니다. 배포 결과는 저장소 Actions에서 확인합니다.
+저장소 **Settings → Pages → Source**를 **GitHub Actions**로 설정합니다. 이후 `main` 브랜치에 소스 변경을 **커밋·푸시**하면 `.github/workflows/pages.yml`이 테스트 → Pages 빌드 → 배포를 실행합니다. 로컬 파일 저장만으로는 배포되지 않습니다. GitHub의 `github-pages` 환경에 배포 브랜치 보호 규칙이 있다면 **Settings → Environments → github-pages → Deployment branches and tags**에서 `main`을 허용해야 합니다. 기존 허용 브랜치와 다른 보호 규칙은 유지합니다. 문서만 바뀐 푸시는 게임 빌드에서 제외합니다. 배포 결과는 저장소 Actions에서 확인합니다.
 
 Pages 주소는 `https://hakka0.github.io/test_ai/`입니다. 배포된 소스 커밋은 `source-version.json`으로 확인합니다. 기존 **Deploy from a branch / gh-pages** 설정을 사용하는 동안에는 `npm run publish:pages`로 수동 갱신할 수 있습니다. 아래 v0.21.2 설명의 브랜치 활성화 방법은 이 수동 방식에 해당합니다.
 

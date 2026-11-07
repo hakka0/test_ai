@@ -5,7 +5,7 @@
 - `npm run build:pages`, `npm run build` 통과. Pages는 `dist-pages/`, 온라인판은 `dist/`에 생성합니다. 기존 Vite 번들 크기 경고는 유지합니다.
 - Pages 및 기존 서버용 `test:blue-archive:browser` 검사 통과. 같은 일반 연습 버튼에서 시작하며 삭제된 시작 항목이 없는지, 1레벨/10골드/빈 보유 목록과 새 20종 상점, 전체 배치 확인 프리셋, 실제 배치·스킬·회전·재접속·봇 전투 결과를 확인합니다. Pages 검사는 게임 HTTP API와 WebSocket을 차단한 정적 서버에서 실행합니다. 정적 자원 누락·페이지 오류 0개입니다.
 - 전체 20종 배치 디버깅 프리셋의 출전 수 8명과 추가 배치 후 9명을 단위 검사로 확인했습니다. 계열 집중 프리셋은 20종·8명 출전·12명 대기입니다.
-- `.github/workflows/pages.yml`에 소스 푸시 후 테스트·정적 빌드·공식 Pages 배포 작업을 추가했습니다. YAML을 파싱하고 구성한 로컬 테스트/빌드 명령을 실제 실행했습니다. 원격 Actions 배포의 성공 여부와 실제 휴대폰 검사는 별도입니다. Pages Source를 GitHub Actions로 선택해야 자동 배포를 사용할 수 있습니다.
+- `.github/workflows/pages.yml`에 소스 푸시 후 테스트·정적 빌드·공식 Pages 배포 작업을 추가했습니다. YAML을 파싱하고 구성한 로컬 테스트/빌드 명령을 실제 실행했습니다. 원격 Actions 배포의 성공 여부와 실제 휴대폰 검사는 별도입니다. Pages Source를 GitHub Actions로 선택해야 자동 배포를 사용할 수 있습니다. GitHub의 실제 Actions 실행에서도 테스트·빌드·아티팩트 생성은 통과했지만, 배포는 `github-pages` 환경의 브랜치 보호 규칙이 `main`을 허용하지 않아 거부되었습니다. 설정에서 main 배포를 허용한 후 다시 실행해야 공개 사이트의 자동 갱신까지 검증할 수 있습니다.
 
 # v0.21.2 GitHub Pages 1인 연습 — 2026-11-07
 

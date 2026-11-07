@@ -2,7 +2,7 @@ name: Deploy game to GitHub Pages
 
 on:
   push:
-    branches: [main, codex/default-roster-pages]
+    branches: [main]
     paths-ignore:
       - 'docs/**'
       - '*.md'
