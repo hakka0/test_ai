@@ -27,6 +27,7 @@ import { createSkillDetailsUI, skillCardHTML } from "./skill-ui";
 import {createShopPreviewUI} from './shop-preview';
 import "./style.css";
 import './interface-theme.css';
+import './ba-theme.css';
 import { createBoard } from "./board";
 import { COMBAT_ATTRIBUTES } from "../shared/combat-attributes";
 import { CELL, WIDTH, MARGIN, BOARD_ASPECT } from "./board-geometry";
@@ -45,7 +46,7 @@ function shopTraitBadges(traits: readonly Trait[]): string {
   return traits.slice(0, 3).map(trait => `<span class="trait-badge" data-trait="${trait}">${TRAITS[trait].name}</span>`).join("");
 }
 document.querySelector("#app")!.innerHTML = `
-<header><div class="brand"><span>✦</span> 별빛 전술 <span class="eyebrow">ALPHA</span></div><div class="header-actions"><div id="room-code-control" class="room-code-control" hidden><span class="room-code-label">방 코드</span><span id="room-code" class="is-concealed" aria-hidden="true">—</span><button id="room-code-toggle" type="button" aria-label="방 코드 표시" aria-pressed="false" aria-controls="room-code"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button><button id="room-code-copy" type="button" aria-label="방 코드 복사" title="방 코드 복사"><svg class="copy-symbol" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span class="copy-check" aria-hidden="true">✓</span></button></div><button id="motion" aria-pressed="false">효과 줄이기</button><button id="leave" class="quiet">로비</button></div></header>
+<header><div class="brand"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">별빛 전술</span><span class="eyebrow brand-tag">BLUE ARCHIVE FAN GAME</span></div><div class="header-actions"><div id="room-code-control" class="room-code-control" hidden><span class="room-code-label">방 코드</span><span id="room-code" class="is-concealed" aria-hidden="true">—</span><button id="room-code-toggle" type="button" aria-label="방 코드 표시" aria-pressed="false" aria-controls="room-code"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button><button id="room-code-copy" type="button" aria-label="방 코드 복사" title="방 코드 복사"><svg class="copy-symbol" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span class="copy-check" aria-hidden="true">✓</span></button></div><button id="motion" aria-pressed="false">효과 줄이기</button><button id="leave" class="quiet">로비</button></div></header>
 <main id="game-view" class="layout hidden">
 <section class="arena-panel" aria-label="전장">
  <div class="matchbar"><div><div class="eyebrow" id="round">TACTICAL DUEL</div><h1 id="phase" tabindex="-1">별빛 아래, 나만의 전략</h1><div class="connection" id="connection">접속 전</div><button id="reward-open" type="button" hidden aria-haspopup="dialog">라운드 보상 보기</button></div><div class="timer" id="timer" aria-label="남은 시간">—</div></div>
@@ -94,10 +95,10 @@ document.querySelector("#app")!.innerHTML = `
 </section>
 <main id="lobby" class="home-page" aria-labelledby="lobby-title">
  <section class="home-intro">
-  <div class="eyebrow">STARLIGHT TACTICS</div>
-  <h1 id="lobby-title">작은 전장,<br>당신만의 한 수.</h1>
-  <p>20명의 유닛으로 나만의 진형을 만들고,<br>별빛 아래 자동 전투를 시작하세요.</p>
-  <div class="heroes" aria-hidden="true"><img src="${assetUrl("/units/blue-archive/icons/yuuka.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/shiroko.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/hifumi.png")}" alt=""></div>
+  <div class="eyebrow home-kicker">BLUE ARCHIVE · FAN GAME</div>
+  <h1 id="lobby-title">선생님,<br>작전을 시작할까요?</h1>
+  <p>20명의 학생으로 진형을 짜고,<br>자동 전투로 승부를 가려 보세요.</p>
+  <div class="heroes" aria-hidden="true"><img src="${assetUrl("/units/blue-archive/icons/hoshino.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/yuuka.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/shiroko.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/aris.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/mika.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/hifumi.png")}" alt=""></div>
  </section>
  <section class="home-play" aria-labelledby="home-play-title">
   <h2 id="home-play-title">게임 시작</h2>
@@ -116,7 +117,7 @@ document.querySelector("#app")!.innerHTML = `
 </main>
 <footer id="screen-mode-footer" class="screen-mode-footer" aria-label="게임 정보와 화면 설정">
  <div class="site-footer-inner">
-  <div class="site-footer-info"><span>별빛 전술 · ALPHA</span><span id="game-version">v${__APP_VERSION__}</span></div>
+  <div class="site-footer-info"><span>별빛 전술 · ALPHA</span><span id="game-version">v${__APP_VERSION__}</span><span class="fan-credit">비공식 팬 2차 창작 · 블루 아카이브와 캐릭터의 권리는 각 권리자에게 있습니다</span></div>
   <section class="site-footer-settings" aria-label="화면 모드 선택">
    <div class="site-footer-mode-label"><strong>화면 모드</strong><span id="screen-mode-status" role="status" aria-live="polite"></span></div>
    <div class="screen-mode-buttons" role="group" aria-label="PC 또는 모바일 화면 선택"><button id="screen-mode-pc" type="button" aria-pressed="false">PC</button><button id="screen-mode-mobile" type="button" aria-pressed="false">모바일</button><button id="screen-mode-auto" type="button" class="quiet">자동 판별로 복원</button></div>
