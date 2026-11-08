@@ -8,7 +8,7 @@ import { CombatEffects, type EffectUnit } from "./combat-effects";
 import { UnitMotion } from "./unit-motion";
 import { HealthTrail, HEALTH_TRAIL_COLOR } from "./health-trail";
 import { skillIndicator } from "./skill-indicator";
-import { directionFrame, unitImageSize } from "./unit-appearance";
+import { directionFrame, measureUnitFrame, unitImageLayout, UNIT_FOOT_Y, type UnitFrameBounds } from "./unit-appearance";
 import { BLUE_ARCHIVE_KINDS, SPRITE_FRAME_SIZE } from "../shared/blue-archive";
 import type { Snapshot, Unit, FighterSnapshot } from "../shared/model";
 import { COLS, ROWS } from "../shared/model";
@@ -41,6 +41,7 @@ export class Board extends Phaser.Scene {
   private attackTargets = new Map<string, string>();
   private visualContext = "";
   private visual = new Map<string, { x: number; y: number }>();
+  private frameBounds = new Map<string, Map<string, UnitFrameBounds>>();
   constructor() {
     super("Board");
   }
@@ -68,7 +69,22 @@ export class Board extends Phaser.Scene {
   }
   create() {
     for (const kind of BLUE_ARCHIVE_KINDS) {
-      if (this.textures.exists(kind)) this.textures.get(kind).setFilter(Phaser.Textures.FilterMode.NEAREST);
+      if (!this.textures.exists(kind)) continue;
+      const texture = this.textures.get(kind);
+      texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
+      const source = texture.getSourceImage() as HTMLImageElement;
+      const canvas = document.createElement("canvas");
+      canvas.width = source.width; canvas.height = source.height;
+      const context = canvas.getContext("2d", { willReadFrequently: true })!;
+      context.drawImage(source, 0, 0);
+      const frames = new Map<string, UnitFrameBounds>();
+      for (const name of texture.getFrameNames()) {
+        const frame = texture.get(name);
+        const pixels = context.getImageData(frame.cutX, frame.cutY, frame.cutWidth, frame.cutHeight);
+        const bounds = measureUnitFrame(pixels.data, pixels.width, pixels.height);
+        if (bounds) frames.set(String(name), bounds);
+      }
+      this.frameBounds.set(kind, frames);
     }
     this.tiles = this.add.graphics();
     this.bars = this.add.graphics().setDepth(20);
@@ -105,6 +121,9 @@ export class Board extends Phaser.Scene {
       const p = this.displayPosition(u);
       return p.x === x && p.y === y && ("hp" in u ? u.hp! > 0 : true);
     });
+  }
+  private imageLayout(image: Phaser.GameObjects.Image) {
+    return unitImageLayout(image.width, image.height, this.frameBounds.get(image.texture.key)?.get(String(image.frame.name)));
   }
   update(time: number, delta: number) {
     if (!this.tiles) return;
@@ -188,8 +207,6 @@ export class Board extends Phaser.Scene {
         this.ranks.set(u.id,this.add.text(tx,ty+34,'',{fontFamily:'sans-serif',fontSize:'12px',color:'#0b6fc2',backgroundColor:'#f4faffee',padding:{left:1,right:3,top:1,bottom:1}}).setOrigin(0,0.5).setDepth(21));
       }
       image.setAlpha(this.dragging === u.id ? 0.3 : 1);
-      const imageSize = unitImageSize(image.width, image.height);
-      image.setDisplaySize(imageSize.width, imageSize.height);
       this.names.get(u.id)!.setText(unitDefinition(u).name).setAlpha(this.dragging === u.id ? 0.35 : 1);
       this.ranks.get(u.id)!.setText('★'.repeat(u.rank)).setAlpha(this.dragging===u.id?0.35:1);
       const v = this.visual.get(u.id)!;
@@ -205,8 +222,7 @@ export class Board extends Phaser.Scene {
         g.strokeRoundedRect(v.x - CELL * 0.43, v.y - CELL * 0.44, CELL * 0.86, CELL * 0.86, 10);
       }
       g.fillStyle(0x1f4a73, 0.22);
-      g.fillEllipse(v.x, v.y + CELL * 0.32, CELL * 0.65, CELL * 0.12);
-      image.setPosition(v.x, v.y - 4);
+      g.fillEllipse(v.x, v.y + (directional ? UNIT_FOOT_Y : CELL * 0.32), CELL * 0.65, CELL * 0.12);
       const remembered = byId.get(this.attackTargets.get(u.id) ?? "");
       const target = fighting ? (remembered && remembered.hp! > 0 && remembered.owner !== u.owner ? remembered
         : alive.filter(enemy => enemy.owner !== u.owner).sort((a, b) =>
@@ -216,12 +232,15 @@ export class Board extends Phaser.Scene {
         const frame = directionFrame(aim ? aim.x - p.x : 0, aim ? aim.y - p.y : 0, own);
         if (Number(image.frame.name) !== frame) image.setFrame(frame);
       }
+      const layout = this.imageLayout(image);
+      image.setOrigin(layout.originX, layout.originY)
+        .setPosition(v.x, v.y + layout.offsetY).setDisplaySize(layout.width, layout.height);
       this.motion.update(u.id, {
         x: v.x, y: v.y, targetX: tx, targetY: ty,
         aim: aim ? { x: MARGIN + (aim.x + 0.5) * CELL - v.x, y: MARGIN + (aim.y + 0.5) * CELL - v.y } : undefined,
         facing: own ? 1 : -1, now: time, delta, reduced: this.reduced,
         idle: this.dragging !== u.id,
-        halfHeight: imageSize.height / 2,
+        halfHeight: layout.footAnchored ? 0 : layout.height / 2,
       });
       this.names.get(u.id)!.setPosition(v.x, v.y + 34);
       this.ranks.get(u.id)!.setPosition(v.x+this.names.get(u.id)!.width/2+1,v.y+34);
@@ -301,10 +320,11 @@ export class Board extends Phaser.Scene {
       const unit = byId.get(id);
       if (!unit) return;
       const sprite = this.sprites.get(id), p = this.displayPosition(unit);
+      const layout = sprite && this.imageLayout(sprite);
       return {
         kind: unit.kind, sprite,
         x: sprite?.x ?? MARGIN + (p.x + 0.5) * CELL,
-        y: sprite?.y ?? MARGIN + (p.y + 0.5) * CELL - 4,
+        y: sprite && layout ? sprite.y + layout.centerY - layout.offsetY : MARGIN + (p.y + 0.5) * CELL - 4,
       };
     };
     for (const e of this.snapshot?.events ?? []) {
@@ -337,10 +357,10 @@ export class Board extends Phaser.Scene {
       }
       const pose = this.motion.pose(id, time, this.reduced), v = this.visual.get(id)!;
       if (pose.finished) { this.removeUnitVisual(id); continue; }
-      const imageSize = unitImageSize(sprite.width, sprite.height);
-      sprite.setPosition(v.x + pose.x, v.y - 4 + pose.y)
+      const layout = this.imageLayout(sprite);
+      sprite.setPosition(v.x + pose.x, v.y + layout.offsetY + pose.y)
         .setAngle(pose.angle).setFlipX(!sprite.getData("directional") && pose.flipX)
-        .setDisplaySize(imageSize.width * pose.scaleX, imageSize.height * pose.scaleY)
+        .setDisplaySize(layout.width * pose.scaleX, layout.height * pose.scaleY)
         .setAlpha(pose.alpha * (this.dragging === id ? 0.3 : 1))
         .setDepth(pose.dying ? 9 : 10).setData("unitMotion", pose);
     }

@@ -51,6 +51,7 @@
     "test:combat-attributes:browser": "node tests/combat-attributes.browser.cjs",
     "test:unit-motion": "node --import tsx --test tests/unit-motion.test.ts",
     "test:unit-motion:browser": "node tests/unit-motion.browser.cjs",
+    "test:unit-alignment:browser": "node tests/unit-alignment.browser.cjs",
     "test:gun-effects:browser": "node tests/gun-effects.browser.cjs",
     "test:barrier:browser": "node tests/barrier-health.browser.cjs",
     "test:idle-skills:browser": "node tests/idle-skills.browser.cjs",
