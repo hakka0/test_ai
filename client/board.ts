@@ -117,7 +117,7 @@ export class Board extends Phaser.Scene {
     const g = this.tiles;
     const selectedOwn = this.snapshot?.players.find(p => p.id === this.selfId)?.units.some(u => u.id === this.selected);
     g.clear();
-    g.fillStyle(0xb9c9ce);
+    g.fillStyle(0xcfe6f7);
     g.fillRoundedRect(22, 30, WIDTH - 44, HEIGHT - 60, 15);
     for (let y = 0; y < ROWS; y++)
       for (let x = 0; x < COLS; x++) {
@@ -125,11 +125,11 @@ export class Board extends Phaser.Scene {
         g.fillStyle(
           own
             ? (x + y) % 2
-              ? 0xd0dedc
-              : 0xc8d7d7
+              ? 0xeef8ff
+              : 0xe0f1fc
             : (x + y) % 2
-              ? 0xbecbd1
-              : 0xc5d0d5,
+              ? 0xdfe5f2
+              : 0xd5dcec,
         );
         g.fillRoundedRect(
           MARGIN + x * CELL + 2,
@@ -139,7 +139,7 @@ export class Board extends Phaser.Scene {
           8,
         );
         if (selectedOwn && own && !this.readOnly && this.snapshot?.phase === "prepare") {
-          g.lineStyle(1, 0x5c8f99, 0.35);
+          g.lineStyle(1, 0x1b9cf2, 0.45);
           g.strokeRoundedRect(
             MARGIN + x * CELL + 2,
             MARGIN + y * CELL + 2,
@@ -149,7 +149,7 @@ export class Board extends Phaser.Scene {
           );
         }
       }
-    g.lineStyle(2, 0x5c8f99, 0.4);
+    g.lineStyle(3, 0x1b9cf2, 0.5);
     g.lineBetween(MARGIN, HEIGHT / 2, WIDTH - MARGIN, HEIGHT / 2);
     this.bars.clear();
     const present = new Set<string>();
@@ -178,14 +178,14 @@ export class Board extends Phaser.Scene {
             .text(tx, ty + 34, unitDefinition(u).name, {
               fontFamily: "sans-serif",
               fontSize: "12px",
-              color: "#294e67",
-              backgroundColor: "#dce5dfed",
+              color: "#12294d",
+              backgroundColor: "#f4faffee",
               padding: { left: 3, right: 3, top: 1, bottom: 1 },
             })
             .setOrigin(0.5)
             .setDepth(21),
         );
-        this.ranks.set(u.id,this.add.text(tx,ty+34,'',{fontFamily:'sans-serif',fontSize:'12px',color:'#285e83',backgroundColor:'#dce5dfed',padding:{left:1,right:3,top:1,bottom:1}}).setOrigin(0,0.5).setDepth(21));
+        this.ranks.set(u.id,this.add.text(tx,ty+34,'',{fontFamily:'sans-serif',fontSize:'12px',color:'#0b6fc2',backgroundColor:'#f4faffee',padding:{left:1,right:3,top:1,bottom:1}}).setOrigin(0,0.5).setDepth(21));
       }
       image.setAlpha(this.dragging === u.id ? 0.3 : 1);
       const imageSize = unitImageSize(image.width, image.height);
@@ -199,12 +199,12 @@ export class Board extends Phaser.Scene {
       // Quiet portrait frames support preparation; combat keeps only a ground
       // shadow so gunfire, health bars and moving characters stay readable.
       if (this.snapshot?.phase === 'prepare' && this.dragging !== u.id) {
-        g.fillStyle(0x365365, 0.3);
+        g.fillStyle(0x1b6fb3, 0.16);
         g.fillRoundedRect(v.x - CELL * 0.43, v.y - CELL * 0.44, CELL * 0.86, CELL * 0.86, 10);
-        g.lineStyle(1, 0x9dc2cf, 0.22);
+        g.lineStyle(1, 0xffffff, 0.7);
         g.strokeRoundedRect(v.x - CELL * 0.43, v.y - CELL * 0.44, CELL * 0.86, CELL * 0.86, 10);
       }
-      g.fillStyle(0x02070d, 0.28);
+      g.fillStyle(0x1f4a73, 0.22);
       g.fillEllipse(v.x, v.y + CELL * 0.32, CELL * 0.65, CELL * 0.12);
       image.setPosition(v.x, v.y - 4);
       const remembered = byId.get(this.attackTargets.get(u.id) ?? "");
@@ -231,9 +231,9 @@ export class Board extends Phaser.Scene {
       resources.forEach((state, index) => {
         const resource = SKILLS[state.id].resource!;
         const y = v.y - 31 + index * 6;
-        this.bars.fillStyle(0xb8cbd1);
+        this.bars.fillStyle(0xc3dcf0);
         this.bars.fillRect(v.x - 32, y, 64, 4);
-        this.bars.fillStyle(state.active ? COMBAT_ATTRIBUTES[UNITS[u.kind].attackAttribute].color : 0x91b8ff);
+        this.bars.fillStyle(state.active ? COMBAT_ATTRIBUTES[UNITS[u.kind].attackAttribute].color : 0x2f7de1);
         this.bars.fillRect(
           v.x - 32,
           y,
@@ -263,18 +263,18 @@ export class Board extends Phaser.Scene {
         }
       }
       const mine = u.owner === this.selfId;
-      this.bars.lineStyle(2, mine ? 0x8ce2c5 : 0xe69db5, 0.9);
+      this.bars.lineStyle(2, mine ? 0x2aa8f0 : 0xf0607c, 0.9);
       this.bars.strokeEllipse(v.x, v.y + 25, 70, 15);
       if (u.hp !== undefined) {
         const health = this.healthTrail.update(u.id, u.hp, u.maxHp || 1, time, this.reduced);
         image.setData("healthBar", health);
-        this.bars.fillStyle(0xb8cbd1);
+        this.bars.fillStyle(0xc3dcf0);
         this.bars.fillRoundedRect(v.x - 32, v.y - 40, 64, 6, 3);
         if (health.trail > health.current) {
           this.bars.fillStyle(HEALTH_TRAIL_COLOR, 0.9);
           this.bars.fillRoundedRect(v.x - 32, v.y - 40, 64 * health.trail, 6, 3);
         }
-        this.bars.fillStyle(mine ? 0x8ce2c5 : 0xe69db5);
+        this.bars.fillStyle(mine ? 0x2aa8f0 : 0xf0607c);
         this.bars.fillRoundedRect(
           v.x - 32,
           v.y - 40,
@@ -388,7 +388,7 @@ export function createBoard() {
     parent: "board",
     width: WIDTH,
     height: HEIGHT,
-    backgroundColor: "#d1dcdb",
+    backgroundColor: "#e0edf6",
     scene: [scene],
     scale: { mode: Phaser.Scale.FIT, autoCenter: Phaser.Scale.CENTER_BOTH },
     render: { antialias: true },
