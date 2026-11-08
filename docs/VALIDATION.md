@@ -1,3 +1,11 @@
+# 전장 유닛 이미지 정렬 — 2026-11-08
+
+- 실제 PNG 20종과 각 6방향, 총 120개 프레임을 확인했습니다. `CHROME_PATH=/usr/bin/chromium npm run test:unit-alignment:browser` 통과: 표시 높이 75.6px, 발 중심 오차 0px, 공통 바닥 높이 25.2px, 비율 유지와 칸 선택을 검사합니다. 대기 모션에서 발 위치 유지, 이동 후 선택, 총격 효과가 발 대신 몸통에 표시되는지도 확인합니다.
+- `npm test` 통과. Node 24에서 파일 단위로 표시되는 실행과 별도로, 같은 47개 테스트 파일을 `node --import tsx --test --test-isolation=none`으로 실행해 세부 **329개 통과**, 실패·건너뜀 0개를 확인했습니다. 새 검사는 투명 여백·분리된 헤일로·잔여 픽셀, 서로 다른 원본 크기와 위치, 발 기준 회전축을 다룹니다.
+- `npm run build:pages` 통과(TypeScript 포함). 기존 Vite 번들 크기 경고는 유지됩니다.
+- `CHROME_PATH=/usr/bin/chromium npm run test:pages:browser` 통과: PC 2종·모바일 세로 2종·가로 4종·세로 복귀의 9개 배치, 관전/모드/방 유지, 실제 배치·스킬 상세·새로고침 복원·봇 전투 결과를 확인했습니다. 정적 서버에서 게임 HTTP API와 WebSocket을 차단한 검사이며 자원 누락·페이지 오류 0개입니다.
+- Linux Chromium 156 에뮬레이션입니다. 실제 iOS/Android와 공개 Pages 사이트 배포 검사는 포함하지 않습니다. 화면 캡처와 프레임별 수치는 `test-results/unit-alignment/`, 전체 화면 캡처는 `test-results/pages/`에 생성됩니다.
+
 # 0.24.0 상점 창 개선 검증 기록
 
 - 실행하지 못함: `npm ci`, `npm test`, `npm run build` (이 환경은 네트워크 차단).
