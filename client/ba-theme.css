@@ -142,3 +142,97 @@ html:root body #pc-bench .bench-slot[data-unit] strong { font-size:11px; line-he
  html:root body .home-intro .heroes img:nth-child(even) { transform:none; }
  .home-intro::before { width:170px; height:170px; right:-60px; top:-60px; border-width:20px; }
 }
+
+/* 0.24.0: shop window. Card outer size is untouched (grid rows stay 108px); everything below is
+   drawn inside the card. Name 14px, trait 12px, price 16px bold on a yellow band; state is shown
+   with text/icons (lock, "합성" flag, star rarity) and never by color alone.
+   html:root body :is(#pc-play-dock #shop-panel,#shop-panel): both id paths so the rules also beat the two-id desktop dock selectors. */
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-rarity] {
+ background:#fff url('/ui/shop/card-bg.svg') center/cover no-repeat; border:2px solid var(--rarity-border,var(--ba-line));
+ border-radius:var(--ba-cut-small); box-shadow:inset 0 4px 0 var(--rarity-border,var(--ba-blue)),0 2px 0 #1b9cf233;
+ color:var(--ba-navy);
+}
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-rarity]:hover:not(:disabled) { background:#fff url('/ui/shop/card-bg.svg') center/cover no-repeat; box-shadow:inset 0 4px 0 var(--rarity-border,var(--ba-blue)),0 0 0 3px #1b9cf24d; }
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-merge-ready='true'] { border-color:var(--ba-win); box-shadow:inset 0 4px 0 var(--ba-win),0 0 0 3px #1fae7a55; }
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-portrait { background-color:transparent; }
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-portrait::after { content:none; }
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-portrait img { position:absolute; left:0; top:5px; width:100%; height:calc(100% - 52px); padding:0; object-fit:contain; }
+
+/* Trait: emblem + 12px name, always shown (compact layouts keep the emblem). */
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-traits { left:4px; top:7px; bottom:auto; right:auto; flex-direction:row; max-width:none; }
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-traits .trait-badge {
+ display:inline-flex; align-items:center; gap:3px; padding:1px 6px 1px 4px; border-radius:9px;
+ color:#fff; background:var(--ba-blue-deep); font-size:12px; line-height:16px; font-weight:900; box-shadow:0 1px 0 #12294d55;
+}
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-traits .trait-badge::before {
+ content:''; flex:none; width:12px; height:12px; background:currentColor;
+ -webkit-mask:var(--trait-icon) center/contain no-repeat; mask:var(--trait-icon) center/contain no-repeat;
+}
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .trait-badge[data-trait='bulwark'] { --trait-icon:url('/ui/shop/trait-bulwark.svg'); background:#2a62a8; }
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .trait-badge[data-trait='scout'] { --trait-icon:url('/ui/shop/trait-scout.svg'); background:#1a8a68; }
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .trait-badge[data-trait='arcane'] { --trait-icon:url('/ui/shop/trait-arcane.svg'); background:#7048b0; }
+
+/* Rarity as a number too (the frame color is only a second cue). */
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-rarity {
+ position:absolute; right:4px; top:7px; z-index:1; padding:0 5px; border-radius:9px;
+ color:var(--ba-navy); background:#fff; border:1.5px solid var(--rarity-border,var(--ba-line));
+ font-size:12px; line-height:15px; font-weight:900; pointer-events:none;
+}
+
+/* Name: slanted white label on the lower edge of the art, blue accent at the left. */
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-unit-info { left:0; right:auto; bottom:26px; max-width:100%; }
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-unit-info strong {
+ padding:1px 13px 1px 7px; color:var(--ba-navy); background:#fff; border-left:4px solid var(--ba-blue);
+ clip-path:polygon(0 0,100% 0,calc(100% - 9px) 100%,0 100%);
+ font-size:14px; line-height:18px; font-weight:900; font-style:italic; letter-spacing:-.3px; text-align:left; text-shadow:none;
+}
+
+/* Price: full-width yellow band, coin + 16px bold number. */
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-price {
+ left:0; right:0; bottom:0; top:auto; justify-content:center; gap:4px; height:26px; padding:0; border-radius:0;
+ color:var(--ba-navy)!important; background:linear-gradient(180deg,var(--ba-yellow-soft),var(--ba-yellow))!important;
+ border:0!important; border-top:2px solid #fff3bd!important; box-shadow:inset 0 -3px 0 var(--ba-yellow-deep)!important;
+ font-size:16px; line-height:22px; font-weight:900;
+}
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-price .currency-coin { width:18px; height:18px; border:0; background:url('/ui/shop/coin.svg') center/contain no-repeat; }
+
+/* "합성" flag: buying this card completes a merge. */
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-merge-ribbon {
+ position:absolute; left:0; top:28px; z-index:2; padding:1px 9px 1px 6px; color:#fff; background:var(--ba-win);
+ clip-path:polygon(0 0,100% 0,calc(100% - 6px) 50%,100% 100%,0 100%);
+ font-size:12px; line-height:15px; font-weight:900; pointer-events:none;
+}
+/* Not enough gold: lock + words over a dimmed art area. The yellow band stays readable. */
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-lack {
+ position:absolute; left:0; right:0; top:0; bottom:26px; z-index:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:0;
+ padding-top:27px; color:#fff; background:#12294d73; font-size:12px; line-height:14px; font-weight:900; text-shadow:0 1px 2px #12294d; pointer-events:none;
+}
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-lock { width:18px; height:18px; background:url('/ui/shop/lock.svg') center/contain no-repeat; filter:drop-shadow(0 1px 1px #12294d99); }
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-merge-ribbon,
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-unit-info { z-index:2; }
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card:focus-visible { outline:3px solid var(--ba-blue-deep); outline-offset:2px; }
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card.shop-sold,
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card.shop-empty { color:#5b7389; background:#e4eef6; border:2px dashed var(--ba-line); border-radius:var(--ba-cut-small); box-shadow:none; }
+
+/* Shop controls: both are 44px+ tall and keep their grid positions. */
+html:root body #pc-play-dock #shop-control-column #reroll {
+ min-height:44px; color:#fff; background:linear-gradient(180deg,#38b6ff,var(--ba-blue-deep)); border:2px solid #fff;
+ border-radius:var(--ba-cut-small); box-shadow:0 3px 0 #0a4f8f; font-weight:900;
+}
+html:root body #pc-play-dock #shop-control-column #reroll:hover:not(:disabled) { background:linear-gradient(180deg,#5cc4ff,#1180d8); }
+html:root body #pc-play-dock #shop-control-column #reroll:disabled { color:#5f7a92; background:#d9e6f0; box-shadow:none; }
+html:root body #pc-play-dock #shop-control-column #reroll .currency-coin { background:url('/ui/shop/coin.svg') center/contain no-repeat; border:0; }
+html:root body #pc-play-dock #buy-experience { min-height:44px; }
+
+/* Compact (mobile landscape): smaller type, emblem-only trait, shorter band. */
+html:root.landscape-layout body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-traits .trait-badge { font-size:0; gap:0; padding:2px; }
+html:root.landscape-layout body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-traits .trait-badge::before { width:13px; height:13px; }
+html:root.landscape-layout body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-price { height:19px; font-size:13px; line-height:17px; }
+html:root.landscape-layout body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-price .currency-coin { width:13px; height:13px; }
+html:root.landscape-layout body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-unit-info { bottom:19px; }
+html:root.landscape-layout body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-unit-info strong { font-size:11px; line-height:14px; padding:0 9px 0 5px; }
+html:root.landscape-layout body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-portrait img { height:calc(100% - 36px); top:3px; }
+html:root.landscape-layout body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-rarity { font-size:10px; line-height:12px; top:4px; padding:0 3px; }
+html:root.landscape-layout body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-merge-ribbon { top:22px; font-size:10px; line-height:12px; padding:0 6px 0 4px; }
+html:root.landscape-layout body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-lack { bottom:19px; font-size:0; padding-top:0; }
+@media(prefers-reduced-motion:no-preference) { html:root body #shop-panel .shop-card { transition:box-shadow .12s; } }
