@@ -293,7 +293,7 @@ export class Board extends Phaser.Scene {
           this.bars.fillStyle(HEALTH_TRAIL_COLOR, 0.9);
           this.bars.fillRoundedRect(v.x - 32, v.y - 40, 64 * health.trail, 6, 3);
         }
-        this.bars.fillStyle(mine ? 0x2aa8f0 : 0xf0607c);
+        this.bars.fillStyle(mine ? 0x35d07a : 0xf0607c);
         this.bars.fillRoundedRect(
           v.x - 32,
           v.y - 40,
