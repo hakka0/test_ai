@@ -3,6 +3,7 @@ import type { Stats, FighterSnapshot } from '../shared/model';
 import type { SkillDefinition } from '../shared/skill-types';
 import { skillDescriptionFor } from '../shared/skill-description';
 import { skillCardState } from './skill-presentation';
+import { createTooltipHover } from './tooltip-hover';
 
 const escape=(value:string)=>value.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
 const imageFor=(skill:SkillDefinition)=>skill.image??assetUrl('/skills/default.svg');
@@ -29,12 +30,12 @@ export function createSkillDetailsUI(details:(unitId:string,skillId:string)=>Ski
  const find=<T extends HTMLElement=HTMLElement>(id:string)=>tip.querySelector<T>(`#skill-detail-${id}`)!;
  const text=(id:string,value:string)=>{const node=find(id);if(node.textContent!==value)node.textContent=value;};
  let active:{unitId:string;skillId:string;source:HTMLElement;parent:HTMLDialogElement|null}|null=null,lastResource:string|null=null;
- let pinned=false,leaveTimer=0;
+ let pinned=false;
+ const hover=createTooltipHover({tip,source:()=>active?.source??null,pinned:()=>pinned,close});
  const trigger=(target:EventTarget|null)=>(target as Element|null)?.closest<HTMLElement>('button.skill-card[data-skill-id]');
  const mobile=()=>document.documentElement.dataset.screenMode==='mobile';
- function cancelLeave(){window.clearTimeout(leaveTimer);leaveTimer=0;}
  function close(){
-  cancelLeave();
+  hover.cancel();
   if(active){active.source.setAttribute('aria-expanded','false');active.source.removeAttribute('aria-describedby');}
   if(tip.matches(':popover-open'))tip.hidePopover();
   tip.hidden=true;active=null;lastResource=null;pinned=false;
@@ -68,15 +69,15 @@ export function createSkillDetailsUI(details:(unitId:string,skillId:string)=>Ski
  }
  function show(source:HTMLElement,pin:boolean){
   if(!details(source.dataset.skillUnit!,source.dataset.skillId!))return;
-  cancelLeave();
+  hover.cancel();
   if(active?.source!==source){close();active={unitId:source.dataset.skillUnit!,skillId:source.dataset.skillId!,source,parent:source.closest('dialog')};(active.parent??document.body).append(tip);}
   pinned=pin;source.setAttribute('aria-expanded','true');source.setAttribute('aria-describedby',tip.id);
+  hover.enter();
   document.dispatchEvent(new CustomEvent('game-tooltip-open',{detail:tip}));
   tip.hidden=false;refresh();if(!active)return;
   if(typeof tip.showPopover==='function'&&!tip.matches(':popover-open'))tip.showPopover();
   position();
  }
- function leave(){if(!pinned){cancelLeave();leaveTimer=window.setTimeout(close,120);}}
  document.addEventListener('close',e=>{if(active?.parent===e.target)close();},true);
  document.addEventListener('click',e=>{
   const source=trigger(e.target);
@@ -86,9 +87,7 @@ export function createSkillDetailsUI(details:(unitId:string,skillId:string)=>Ski
  });
  document.addEventListener('pointerdown',e=>{if(active&&!tip.contains(e.target as Node)&&trigger(e.target)!==active.source)close();},true);
  document.addEventListener('pointerover',e=>{const source=trigger(e.target);if(!mobile()&&e.pointerType==='mouse'&&source)show(source,false);});
- document.addEventListener('pointerout',e=>{if(active&&active.source===trigger(e.target)&&!(e.relatedTarget instanceof Node&&(active.source.contains(e.relatedTarget)||tip.contains(e.relatedTarget))))leave();});
- tip.addEventListener('pointerenter',cancelLeave);
- tip.addEventListener('pointerleave',e=>{if(!(e.relatedTarget instanceof Node&&active?.source.contains(e.relatedTarget)))leave();});
+ document.addEventListener('pointerout',e=>{if(active&&active.source===trigger(e.target))hover.leave(e.relatedTarget);});
  document.addEventListener('focusin',e=>{const source=trigger(e.target);if(source&&!mobile()&&source.matches(':focus-visible'))show(source,false);else if(active&&e.target!==active.source&&!tip.contains(e.target as Node))close();});
  document.addEventListener('game-tooltip-open',e=>{if((e as CustomEvent).detail!==tip)close();});
  window.addEventListener('keydown',e=>{if(e.key==='Escape'&&active){e.preventDefault();e.stopImmediatePropagation();close();}},true);

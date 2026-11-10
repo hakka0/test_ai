@@ -3,6 +3,7 @@ import {SKILLS} from '../shared/skill-catalog';
 import {skillDescriptionFor} from '../shared/skill-description';
 import {canAcquireUnit} from '../shared/bench';
 import type {SelfPlayerSnapshot,Snapshot} from '../shared/model';
+import {createTooltipHover} from './tooltip-hover';
 
 const escape=(text:string)=>text.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
 type Selection={roomId:string;playerId:string;offerId:string;revision:number};
@@ -17,9 +18,10 @@ export function createShopPreviewUI(options:{
  const tip=document.createElement('div');tip.id='shop-unit-tooltip';tip.className='help-tooltip shop-unit-tooltip';
  tip.setAttribute('role','tooltip');tip.setAttribute('popover','manual');tip.hidden=true;document.body.append(tip);
  const ghost=document.createElement('div');ghost.className='shop-drag-ghost';ghost.hidden=true;ghost.setAttribute('aria-hidden','true');document.body.append(ghost);
- let active:Selection|null=null,drag:ShopDrag|null=null,detailKey='',hideTimer=0;
+ let active:Selection|null=null,drag:ShopDrag|null=null,detailKey='';
  const pc=()=>document.documentElement.dataset.screenMode==='pc';
  const sourceFor=(selection:Selection)=>offers.querySelector<HTMLButtonElement>(`[data-offer="${CSS.escape(selection.offerId)}"]`);
+ const hover=createTooltipHover({tip,source:()=>active?sourceFor(active):null,close:closeTip});
  function selectionFor(source:HTMLButtonElement):Selection|undefined{
   const {player:p,snapshot:s,inspectable}=options.state();
   if(p&&s&&inspectable&&!source.disabled&&Number(source.dataset.revision)===p.shopRevision&&p.shop.some(o=>o.id===source.dataset.offer&&!o.sold))
@@ -34,7 +36,7 @@ export function createShopPreviewUI(options:{
   const c=current(selection);return c&&c.canBuy&&c.p.gold>=c.offer.cost&&canAcquireUnit(c.p,c.offer.kind,c.s.phase==='prepare')?c:undefined;
  }
  function closeTip(){
-  window.clearTimeout(hideTimer);
+  hover.cancel();
   if(tip.matches(':popover-open'))tip.hidePopover();tip.hidden=true;active=null;detailKey='';
   offers.querySelectorAll('[aria-describedby="shop-unit-tooltip"]').forEach(card=>card.removeAttribute('aria-describedby'));
  }
@@ -72,14 +74,14 @@ export function createShopPreviewUI(options:{
   source.setAttribute('aria-describedby',tip.id);position(source);
  }
  function show(source:HTMLButtonElement){
-  window.clearTimeout(hideTimer);if(!pc()||drag?.active)return;
+  hover.cancel();if(!pc()||drag?.active)return;
   const selection=selectionFor(source);if(!selection)return;
-  if(active?.offerId===selection.offerId){refresh();return;}
+  if(active?.offerId===selection.offerId){hover.enter();refresh();return;}
   closeTip();active=selection;document.dispatchEvent(new CustomEvent('game-tooltip-open',{detail:tip}));
+  hover.enter();
   tip.hidden=false;refresh();if(!active)return;
   if(typeof tip.showPopover==='function')tip.showPopover();position(source);
  }
- const leave=()=>{window.clearTimeout(hideTimer);hideTimer=window.setTimeout(closeTip,120);};
  function purchase(selection:Selection|undefined){
   if(!selection||!purchasable(selection))return;
   close();options.commit(selection.offerId,selection.revision);
@@ -91,11 +93,10 @@ export function createShopPreviewUI(options:{
  offers.addEventListener('pointerover',e=>{const source=(e.target as Element).closest<HTMLButtonElement>('[data-offer]');if(e.pointerType==='mouse'&&source)show(source);});
  offers.addEventListener('pointerout',e=>{
   const source=(e.target as Element).closest('[data-offer]');
-  if(source&&!(e.relatedTarget instanceof Node&&(source.contains(e.relatedTarget)||tip.contains(e.relatedTarget))))leave();
+  if(source&&active&&source===sourceFor(active))hover.leave(e.relatedTarget);
  });
  offers.addEventListener('focusin',e=>{const source=(e.target as Element).closest<HTMLButtonElement>('[data-offer]');if(source?.matches(':focus-visible'))show(source);});
- offers.addEventListener('focusout',e=>{if(!(e.relatedTarget instanceof Node&&offers.contains(e.relatedTarget)))leave();});
- tip.addEventListener('pointerenter',()=>window.clearTimeout(hideTimer));tip.addEventListener('pointerleave',leave);
+ offers.addEventListener('focusout',e=>{if(!(e.relatedTarget instanceof Node&&offers.contains(e.relatedTarget)))hover.leave(e.relatedTarget);});
  offers.addEventListener('pointerdown',e=>{
   if(!e.isPrimary){close();return;}
   const source=(e.target as Element).closest<HTMLButtonElement>('[data-offer]');

@@ -2,6 +2,7 @@ import {MAX_INTEREST} from '../shared/match-rules';
 import { UNIT_STAT_HELP } from './unit-stats';
 import {TRAITS,TRAIT_IDS} from '../shared/synergy';
 import {synergyHelpHTML} from './synergy-ui';
+import {createTooltipHover} from './tooltip-hover';
 
 type Help = {title:string;text?:string;sources?:string[]};
 const help:Record<string,Help> = {
@@ -46,6 +47,7 @@ export function createHelpTooltips() {
  tip.setAttribute('role','tooltip');tip.setAttribute('popover','manual');tip.hidden=true;
  document.body.append(tip);
  let active:HTMLButtonElement|null=null,pinned=false,lastText='',frame=0,openedAt=0;
+ const hover=createTooltipHover({tip,source:()=>active,pinned:()=>pinned,close});
  function content(button:HTMLButtonElement) {
   const entry=help[button.dataset.help!];
   const parts=(entry.sources??[]).map(id=>{
@@ -58,6 +60,7 @@ export function createHelpTooltips() {
   return {title:trait?`${TRAITS[trait].name} ${Number(button.dataset.synergyCount??0)}`:button.dataset.helpTitle??entry.title,text:parts.filter(Boolean).join('\n\n'),html:trait?synergyHelpHTML(trait,Number(button.dataset.synergyCount??0)):undefined};
  }
  function close() {
+  hover.cancel();
   if(!active)return;
   active.setAttribute('aria-expanded','false');active.removeAttribute('aria-describedby');
   if(tip.matches(':popover-open'))tip.hidePopover();
@@ -93,6 +96,7 @@ export function createHelpTooltips() {
   document.dispatchEvent(new CustomEvent('game-tooltip-open',{detail:tip}));
   if(active!==button){close();active=button;const parent=button.closest('dialog')??document.body;parent.append(tip);}
   pinned=pin;openedAt=performance.now();button.setAttribute('aria-expanded','true');button.setAttribute('aria-describedby',tip.id);
+  hover.enter();
   tip.hidden=false;refresh();if(!active)return;
   if(typeof tip.showPopover==='function'&&!tip.matches(':popover-open'))tip.showPopover();
   position();
@@ -109,9 +113,8 @@ export function createHelpTooltips() {
  document.addEventListener('pointerdown',e=>{if(active&&!tip.contains(e.target as Node)&&!trigger(e.target))close();},true);
  document.addEventListener('pointerover',e=>{const button=trigger(e.target);if(!mobile()&&e.pointerType==='mouse'&&button&&button.dataset.helpActivation!=='click')show(button,false);});
  document.addEventListener('pointerout',e=>{
-  if(!pinned&&active===trigger(e.target)&&!(e.relatedTarget instanceof Node&&active?.contains(e.relatedTarget)))close();
+  if(active===trigger(e.target))hover.leave(e.relatedTarget);
  });
- tip.addEventListener('pointerleave',e=>{if(!pinned&&!(e.relatedTarget instanceof Node&&active?.contains(e.relatedTarget)))close();});
  // Capture before native dialog cancellation or equipment-selection shortcuts.
  window.addEventListener('keydown',e=>{if(e.key==='Escape'&&active){e.preventDefault();e.stopImmediatePropagation();close();}},true);
  document.addEventListener('focusin',e=>{if(active&&pinned&&e.target!==active&&!tip.contains(e.target as Node))close();});
