@@ -148,11 +148,11 @@ html:root body #pc-bench .bench-slot[data-unit] strong { font-size:11px; line-he
    with text/icons (lock, "합성" flag, star rarity) and never by color alone.
    html:root body :is(#pc-play-dock #shop-panel,#shop-panel): both id paths so the rules also beat the two-id desktop dock selectors. */
 html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-rarity] {
- background:#fff url('/ui/shop/card-bg.svg') center/cover no-repeat; border:2px solid var(--rarity-border,var(--ba-line));
+ background:linear-gradient(180deg,var(--card-tint,#0000) 0,#0000 78%) center/100% 100% no-repeat,url('/ui/shop/card-bg.svg') center/cover no-repeat,#fff; border:2px solid var(--rarity-border,var(--ba-line));
  border-radius:var(--ba-cut-small); box-shadow:inset 0 4px 0 var(--rarity-border,var(--ba-blue)),0 2px 0 #1b9cf233;
  color:var(--ba-navy);
 }
-html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-rarity]:hover:not(:disabled) { background:#fff url('/ui/shop/card-bg.svg') center/cover no-repeat; box-shadow:inset 0 4px 0 var(--rarity-border,var(--ba-blue)),0 0 0 3px #1b9cf24d; }
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-rarity]:hover:not(:disabled) { background:linear-gradient(180deg,var(--card-tint,#0000) 0,#0000 78%) center/100% 100% no-repeat,url('/ui/shop/card-bg.svg') center/cover no-repeat,#fff; box-shadow:inset 0 4px 0 var(--rarity-border,var(--ba-blue)),0 0 0 3px #1b9cf24d; }
 html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-merge-ready='true'] { border-color:var(--ba-win); box-shadow:inset 0 4px 0 var(--ba-win),0 0 0 3px #1fae7a55; }
 html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-portrait { background-color:transparent; }
 html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-portrait::after { content:none; }
@@ -301,3 +301,15 @@ html:root body #shop-panel .section-title::after { content:none; }
 html:root body #inspection-tabs button[aria-selected='true']:hover:not(:disabled) { --bt-line:#fff; --bt-top:#46bcff; --bt-bot:var(--ba-blue); --bt-edge:#0a4f8f; }
 html:root body #pc-play-dock #dock-ready #ready { --bt-chev:linear-gradient(#0000,#0000); }
 @media(max-width:1100px) { html:root body #pc-play-dock #dock-ready #ready { --bt-slant:10px; font-size:15px; } }
+
+/* ===== 0.26.0: ideas taken from Blue Archive's battle and formation screens =====
+   Reference (text descriptions of the game, no official assets used): EX skill cards sit at the lower
+   right with their background colored by damage type; allies carry a green HP bar; the formation screen
+   leads with a few big main stats. Here: shop cards are tinted by trait, main stats get a colored tab. */
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-trait='bulwark'] { --card-tint:#2a62a84d; }
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-trait='scout'] { --card-tint:#1a8a684d; }
+html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-trait='arcane'] { --card-tint:#7048b04d; }
+html:root:not(.landscape-layout) body #selected-unit-content .stats .stat[data-stat='hp'] { box-shadow:inset 4px 0 0 #2fd06b; }
+html:root:not(.landscape-layout) body #selected-unit-content .stats .stat[data-stat='attack'] { box-shadow:inset 4px 0 0 #ea5a74; }
+html:root:not(.landscape-layout) body #selected-unit-content .stats .stat[data-stat='defense'] { box-shadow:inset 4px 0 0 #2a8de0; }
+html:root:not(.landscape-layout) body #selected-unit-content .stats .stat:is([data-stat='hp'],[data-stat='attack'],[data-stat='defense']) .stat-value strong { font-size:1.15em; }
