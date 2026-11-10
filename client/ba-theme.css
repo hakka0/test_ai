@@ -214,13 +214,8 @@ html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card:focus-visib
 html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card.shop-sold,
 html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card.shop-empty { color:#5b7389; background:#e4eef6; border:2px dashed var(--ba-line); border-radius:var(--ba-cut-small); box-shadow:none; }
 
-/* Shop controls: both are 44px+ tall and keep their grid positions. */
-html:root body #pc-play-dock #shop-control-column #reroll {
- min-height:44px; color:#fff; background:linear-gradient(180deg,#38b6ff,var(--ba-blue-deep)); border:2px solid #fff;
- border-radius:var(--ba-cut-small); box-shadow:0 3px 0 #0a4f8f; font-weight:900;
-}
-html:root body #pc-play-dock #shop-control-column #reroll:hover:not(:disabled) { background:linear-gradient(180deg,#5cc4ff,#1180d8); }
-html:root body #pc-play-dock #shop-control-column #reroll:disabled { color:#5f7a92; background:#d9e6f0; box-shadow:none; }
+/* Shop controls: both are 44px+ tall and keep their grid positions (colors: slanted-button layer). */
+html:root body #pc-play-dock #shop-control-column #reroll { min-height:44px; }
 html:root body #pc-play-dock #shop-control-column #reroll .currency-coin { background:url('/ui/shop/coin.svg') center/contain no-repeat; border:0; }
 html:root body #pc-play-dock #buy-experience { min-height:44px; }
 
@@ -236,3 +231,73 @@ html:root.landscape-layout body :is(#pc-play-dock #shop-panel,#shop-panel) .shop
 html:root.landscape-layout body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-merge-ribbon { top:22px; font-size:10px; line-height:12px; padding:0 6px 0 4px; }
 html:root.landscape-layout body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-lack { bottom:19px; font-size:0; padding-top:0; }
 @media(prefers-reduced-motion:no-preference) { html:root body #shop-panel .shop-card { transition:box-shadow .12s; } }
+
+/* ===== 0.25.0: slanted (parallelogram) buttons and tablet-style panels =====
+   Buttons keep their box, border width and position. The visible shape is two clipped pseudo
+   elements (border layer + fill layer) behind the label, so nothing is skewed and no text is
+   distorted. Colors come from --bt-* variables; !important only removes the old flat paint. */
+:is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary) {
+ --bt-slant:8px; --bt-line:#a7cee9; --bt-top:#ffffff; --bt-bot:#e3f3ff; --bt-edge:#b9d9ee; --bt-text:var(--ba-navy);
+}
+html:root body :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary) {
+ position:relative; isolation:isolate; color:var(--bt-text); font-weight:900;
+ background:none!important; box-shadow:none!important; border-color:transparent!important; border-radius:0!important;
+}
+html:root body :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary)::before,
+html:root body :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary)::after {
+ content:''; position:absolute; z-index:-1; pointer-events:none;
+ clip-path:polygon(var(--bt-slant) 0,100% 0,calc(100% - var(--bt-slant)) 100%,0 100%);
+}
+html:root body :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary)::before { inset:0; background:var(--bt-line); }
+html:root body :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary)::after {
+ inset:2px;
+ background:var(--bt-chev,linear-gradient(#0000,#0000)) right calc(var(--bt-slant) + 6px) center/16px no-repeat,
+  linear-gradient(180deg,var(--bt-top) 0,var(--bt-bot) calc(100% - 4px),var(--bt-edge) calc(100% - 4px));
+}
+html:root body :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary):hover:not(:disabled) {
+ --bt-line:var(--ba-blue); --bt-top:#f4fbff; --bt-bot:#d3ebfb; --bt-edge:#8cc8ee;
+}
+/* Yellow "go" buttons, with a double chevron. */
+html:root body :is(#pc-play-dock #dock-ready #ready,#lobby .home-action.primary,dialog .primary,#craft-dialog #craft-footer .primary) {
+ --bt-line:#fff3bd; --bt-top:var(--ba-yellow-soft); --bt-bot:var(--ba-yellow); --bt-edge:var(--ba-yellow-deep); --bt-chev:url('/ui/chevrons.svg');
+}
+html:root body :is(#pc-play-dock #dock-ready #ready,#lobby .home-action.primary,dialog .primary,#craft-dialog #craft-footer .primary):hover:not(:disabled) {
+ --bt-line:#fff3bd; --bt-top:#fff0b0; --bt-bot:#ffdc5c; --bt-edge:var(--ba-yellow-deep);
+}
+html:root body :is(dialog .primary,#craft-dialog #craft-footer .primary) { --bt-chev:linear-gradient(#0000,#0000); }
+html:root body #pc-play-dock #dock-ready #ready { --bt-slant:14px; letter-spacing:.5px; font-style:italic; font-size:18px; }
+/* Blue: reroll and the selected tab. */
+html:root body #pc-play-dock #shop-control-column #reroll,
+html:root body #inspection-tabs button[aria-selected='true'] {
+ --bt-line:#fff; --bt-top:#46bcff; --bt-bot:var(--ba-blue); --bt-edge:#0a4f8f; --bt-text:#fff;
+}
+html:root body #pc-play-dock #shop-control-column #reroll:hover:not(:disabled) { --bt-top:#69ccff; --bt-bot:#2aa8f0; --bt-line:#fff; }
+html:root body #pc-play-dock #shop-control-column #reroll .reroll-price { color:#fff; }
+html:root body :is(#pc-play-dock #dock-ready #ready,#pc-play-dock #shop-control-column #reroll,.header-actions > button,#pc-match-tools button,#inspection-tabs button,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary):disabled {
+ --bt-line:#d4e1eb; --bt-top:#eff4f8; --bt-bot:#e2eaf1; --bt-edge:#d4e1eb; --bt-text:#8aa0b3; --bt-chev:linear-gradient(#0000,#0000);
+}
+html:root body #pc-play-dock #shop-control-column #reroll:disabled .reroll-price { color:#8aa0b3; }
+/* Large home buttons slant more; small header buttons keep the 8px slant. */
+html:root body #lobby .home-action { --bt-slant:14px; }
+
+/* Timer: slanted block with a darker lower edge. */
+html:root body #game-view .matchbar .timer {
+ padding-inline:18px; border-radius:0; box-shadow:none; clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);
+ background:linear-gradient(180deg,#46bcff 0,var(--ba-blue-deep) calc(100% - 4px),#0a4f8f calc(100% - 4px));
+}
+
+/* Panels: a faint blue grid like a tablet screen; cards share the diagonal-corner shape. */
+html:root:not(.landscape-layout) body #game-view :is(.arena-panel,#synergy-panel,.equipment-sidebar,#selected-unit-panel,#player-ranking) {
+ background-image:linear-gradient(#1b9cf20f 1px,#0000 1px),linear-gradient(90deg,#1b9cf20f 1px,#0000 1px);
+ background-size:22px 22px;
+}
+html:root:not(.landscape-layout) body :is(#player-ranking .ranking-row,#synergy-panel .synergy-card,.equipment-source,#selected-unit-content .stats .stat,#pc-bench .bench-slot) { border-radius:var(--ba-cut-small); }
+html:root:not(.landscape-layout) body #selected-unit-content .stats .stat { box-shadow:inset 4px 0 0 var(--ba-blue); }
+html:root body .section-title::after {
+ content:''; position:absolute; right:0; bottom:2px; width:28%; height:4px; pointer-events:none;
+ background:repeating-linear-gradient(135deg,#1b9cf233 0 4px,#0000 4px 8px);
+}
+html:root body #shop-panel .section-title::after { content:none; }
+html:root body #inspection-tabs button[aria-selected='true']:hover:not(:disabled) { --bt-line:#fff; --bt-top:#46bcff; --bt-bot:var(--ba-blue); --bt-edge:#0a4f8f; }
+html:root body #pc-play-dock #dock-ready #ready { --bt-chev:linear-gradient(#0000,#0000); }
+@media(max-width:1100px) { html:root body #pc-play-dock #dock-ready #ready { --bt-slant:10px; font-size:15px; } }
