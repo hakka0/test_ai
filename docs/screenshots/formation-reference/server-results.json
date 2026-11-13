@@ -1,0 +1,265 @@
+{
+  "results": [
+    {
+      "mobile": false,
+      "width": 1400,
+      "height": 1000,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 272.984375,
+          "y": 85,
+          "width": 638.015625,
+          "height": 638.015625,
+          "right": 911,
+          "bottom": 723.015625
+        },
+        "bench": {
+          "x": 273,
+          "y": 745,
+          "width": 896,
+          "height": 86,
+          "right": 1169,
+          "bottom": 831
+        },
+        "shop": {
+          "x": 261,
+          "y": 831,
+          "width": 920,
+          "height": 152,
+          "right": 1181,
+          "bottom": 983
+        },
+        "ranking": {
+          "x": 1216,
+          "y": 84,
+          "width": 168,
+          "height": 640,
+          "right": 1384,
+          "bottom": 724
+        },
+        "inspector": {
+          "x": 924,
+          "y": 84,
+          "width": 280,
+          "height": 640,
+          "right": 1204,
+          "bottom": 724
+        },
+        "supply": {
+          "x": 260,
+          "y": 736,
+          "width": 922,
+          "height": 248,
+          "right": 1182,
+          "bottom": 984
+        },
+        "dock": {
+          "x": 16,
+          "y": 736,
+          "width": 1368,
+          "height": 248,
+          "right": 1384,
+          "bottom": 984
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1400,
+          "height": 72,
+          "top": 0,
+          "right": 1400,
+          "bottom": 72,
+          "left": 0
+        },
+        "targets": [
+          {
+            "width": 62,
+            "height": 46
+          },
+          {
+            "width": 172,
+            "height": 168
+          },
+          {
+            "width": 172.796875,
+            "height": 104
+          },
+          {
+            "width": 172.796875,
+            "height": 104
+          },
+          {
+            "width": 172.796875,
+            "height": 104
+          },
+          {
+            "width": 172.796875,
+            "height": 104
+          },
+          {
+            "width": 172.8125,
+            "height": 104
+          },
+          {
+            "width": 150,
+            "height": 88
+          },
+          {
+            "width": 150,
+            "height": 88
+          },
+          {
+            "width": 150,
+            "height": 88
+          },
+          {
+            "width": 150,
+            "height": 88
+          },
+          {
+            "width": 150,
+            "height": 88
+          },
+          {
+            "width": 150,
+            "height": 88
+          }
+        ]
+      },
+      "realPlacementAndBenchReturn": true
+    },
+    {
+      "mobile": false,
+      "width": 1024,
+      "height": 768,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 214.78125,
+          "y": 84,
+          "width": 408,
+          "height": 408,
+          "right": 622.78125,
+          "bottom": 492
+        },
+        "bench": {
+          "x": 206.6875,
+          "y": 513,
+          "width": 641.34375,
+          "height": 86,
+          "right": 848.03125,
+          "bottom": 599
+        },
+        "shop": {
+          "x": 198.6875,
+          "y": 599,
+          "width": 657.34375,
+          "height": 152,
+          "right": 856.03125,
+          "bottom": 751
+        },
+        "ranking": {
+          "x": 885.125,
+          "y": 84,
+          "width": 122.875,
+          "height": 408,
+          "right": 1008,
+          "bottom": 492
+        },
+        "inspector": {
+          "x": 643.125,
+          "y": 84,
+          "width": 230,
+          "height": 408,
+          "right": 873.125,
+          "bottom": 492
+        },
+        "supply": {
+          "x": 197.6875,
+          "y": 504,
+          "width": 659.34375,
+          "height": 248,
+          "right": 857.03125,
+          "bottom": 752
+        },
+        "dock": {
+          "x": 16,
+          "y": 504,
+          "width": 992,
+          "height": 248,
+          "right": 1008,
+          "bottom": 752
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 72,
+          "top": 0,
+          "right": 1024,
+          "bottom": 72,
+          "left": 0
+        },
+        "targets": [
+          {
+            "width": 55,
+            "height": 46
+          },
+          {
+            "width": 120.96875,
+            "height": 168
+          },
+          {
+            "width": 121.859375,
+            "height": 104
+          },
+          {
+            "width": 121.875,
+            "height": 104
+          },
+          {
+            "width": 121.859375,
+            "height": 104
+          },
+          {
+            "width": 121.875,
+            "height": 104
+          },
+          {
+            "width": 121.875,
+            "height": 104
+          },
+          {
+            "width": 112.875,
+            "height": 88
+          },
+          {
+            "width": 112.875,
+            "height": 88
+          },
+          {
+            "width": 112.875,
+            "height": 88
+          },
+          {
+            "width": 112.875,
+            "height": 88
+          },
+          {
+            "width": 112.875,
+            "height": 88
+          },
+          {
+            "width": 112.875,
+            "height": 88
+          }
+        ]
+      },
+      "realPlacementAndBenchReturn": true
+    }
+  ],
+  "errors": [],
+  "failures": [],
+  "source": "Node server and live snapshots"
+}

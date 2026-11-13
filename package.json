@@ -78,6 +78,7 @@
     "test:blue-archive:browser": "node tests/blue-archive.browser.cjs",
     "build:pages": "npm run check && vite build --mode pages",
     "test:pages:browser": "node tests/pages.browser.cjs",
+    "test:formation:browser": "node tests/formation-layout.browser.cjs",
     "publish:pages": "node scripts/publish-pages.mjs"
   },
   "dependencies": {

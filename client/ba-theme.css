@@ -232,6 +232,7 @@ html:root.landscape-layout body :is(#pc-play-dock #shop-panel,#shop-panel) .shop
 html:root.landscape-layout body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card .shop-lack { bottom:19px; font-size:0; padding-top:0; }
 @media(prefers-reduced-motion:no-preference) { html:root body #shop-panel .shop-card { transition:box-shadow .12s; } }
 
+/* The approved formation theme replaces these decorations on wide PC. */
 /* ===== 0.25.0: slanted (parallelogram) buttons and tablet-style panels =====
    Buttons keep their box, border width and position. The visible shape is two clipped pseudo
    elements (border layer + fill layer) behind the label, so nothing is skewed and no text is
@@ -239,77 +240,77 @@ html:root.landscape-layout body :is(#pc-play-dock #shop-panel,#shop-panel) .shop
 :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary) {
  --bt-slant:8px; --bt-line:#a7cee9; --bt-top:#ffffff; --bt-bot:#e3f3ff; --bt-edge:#b9d9ee; --bt-text:var(--ba-navy);
 }
-html:root body :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary) {
+html:root body:not(.formation-reference) :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary) {
  position:relative; isolation:isolate; color:var(--bt-text); font-weight:900;
  background:none!important; box-shadow:none!important; border-color:transparent!important; border-radius:0!important;
 }
-html:root body :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary)::before,
-html:root body :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary)::after {
+html:root body:not(.formation-reference) :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary)::before,
+html:root body:not(.formation-reference) :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary)::after {
  content:''; position:absolute; z-index:-1; pointer-events:none;
  clip-path:polygon(var(--bt-slant) 0,100% 0,calc(100% - var(--bt-slant)) 100%,0 100%);
 }
-html:root body :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary)::before { inset:0; background:var(--bt-line); }
-html:root body :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary)::after {
+html:root body:not(.formation-reference) :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary)::before { inset:0; background:var(--bt-line); }
+html:root body:not(.formation-reference) :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary)::after {
  inset:2px;
  background:var(--bt-chev,linear-gradient(#0000,#0000)) right calc(var(--bt-slant) + 6px) center/16px no-repeat,
   linear-gradient(180deg,var(--bt-top) 0,var(--bt-bot) calc(100% - 4px),var(--bt-edge) calc(100% - 4px));
 }
-html:root body :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary):hover:not(:disabled) {
+html:root body:not(.formation-reference) :is(.header-actions > button,#pc-match-tools button,#inspection-tabs button,#pc-play-dock #shop-control-column #reroll,#pc-play-dock #dock-ready #ready,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary):hover:not(:disabled) {
  --bt-line:var(--ba-blue); --bt-top:#f4fbff; --bt-bot:#d3ebfb; --bt-edge:#8cc8ee;
 }
 /* Yellow "go" buttons, with a double chevron. */
-html:root body :is(#pc-play-dock #dock-ready #ready,#lobby .home-action.primary,dialog .primary,#craft-dialog #craft-footer .primary) {
+html:root body:not(.formation-reference) :is(#pc-play-dock #dock-ready #ready,#lobby .home-action.primary,dialog .primary,#craft-dialog #craft-footer .primary) {
  --bt-line:#fff3bd; --bt-top:var(--ba-yellow-soft); --bt-bot:var(--ba-yellow); --bt-edge:var(--ba-yellow-deep); --bt-chev:url('/ui/chevrons.svg');
 }
-html:root body :is(#pc-play-dock #dock-ready #ready,#lobby .home-action.primary,dialog .primary,#craft-dialog #craft-footer .primary):hover:not(:disabled) {
+html:root body:not(.formation-reference) :is(#pc-play-dock #dock-ready #ready,#lobby .home-action.primary,dialog .primary,#craft-dialog #craft-footer .primary):hover:not(:disabled) {
  --bt-line:#fff3bd; --bt-top:#fff0b0; --bt-bot:#ffdc5c; --bt-edge:var(--ba-yellow-deep);
 }
-html:root body :is(dialog .primary,#craft-dialog #craft-footer .primary) { --bt-chev:linear-gradient(#0000,#0000); }
-html:root body #pc-play-dock #dock-ready #ready { --bt-slant:14px; letter-spacing:.5px; font-style:italic; font-size:18px; }
+html:root body:not(.formation-reference) :is(dialog .primary,#craft-dialog #craft-footer .primary) { --bt-chev:linear-gradient(#0000,#0000); }
+html:root body:not(.formation-reference) #pc-play-dock #dock-ready #ready { --bt-slant:14px; letter-spacing:.5px; font-style:italic; font-size:18px; }
 /* Blue: reroll and the selected tab. */
-html:root body #pc-play-dock #shop-control-column #reroll,
-html:root body #inspection-tabs button[aria-selected='true'] {
+html:root body:not(.formation-reference) #pc-play-dock #shop-control-column #reroll,
+html:root body:not(.formation-reference) #inspection-tabs button[aria-selected='true'] {
  --bt-line:#fff; --bt-top:#46bcff; --bt-bot:var(--ba-blue); --bt-edge:#0a4f8f; --bt-text:#fff;
 }
-html:root body #pc-play-dock #shop-control-column #reroll:hover:not(:disabled) { --bt-top:#69ccff; --bt-bot:#2aa8f0; --bt-line:#fff; }
-html:root body #pc-play-dock #shop-control-column #reroll .reroll-price { color:#fff; }
-html:root body :is(#pc-play-dock #dock-ready #ready,#pc-play-dock #shop-control-column #reroll,.header-actions > button,#pc-match-tools button,#inspection-tabs button,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary):disabled {
+html:root body:not(.formation-reference) #pc-play-dock #shop-control-column #reroll:hover:not(:disabled) { --bt-top:#69ccff; --bt-bot:#2aa8f0; --bt-line:#fff; }
+html:root body:not(.formation-reference) #pc-play-dock #shop-control-column #reroll .reroll-price { color:#fff; }
+html:root body:not(.formation-reference) :is(#pc-play-dock #dock-ready #ready,#pc-play-dock #shop-control-column #reroll,.header-actions > button,#pc-match-tools button,#inspection-tabs button,#lobby .home-action,dialog .primary,#craft-dialog #craft-footer .primary):disabled {
  --bt-line:#d4e1eb; --bt-top:#eff4f8; --bt-bot:#e2eaf1; --bt-edge:#d4e1eb; --bt-text:#8aa0b3; --bt-chev:linear-gradient(#0000,#0000);
 }
-html:root body #pc-play-dock #shop-control-column #reroll:disabled .reroll-price { color:#8aa0b3; }
+html:root body:not(.formation-reference) #pc-play-dock #shop-control-column #reroll:disabled .reroll-price { color:#8aa0b3; }
 /* Large home buttons slant more; small header buttons keep the 8px slant. */
-html:root body #lobby .home-action { --bt-slant:14px; }
+html:root body:not(.formation-reference) #lobby .home-action { --bt-slant:14px; }
 
 /* Timer: slanted block with a darker lower edge. */
-html:root body #game-view .matchbar .timer {
+html:root body:not(.formation-reference) #game-view .matchbar .timer {
  padding-inline:18px; border-radius:0; box-shadow:none; clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);
  background:linear-gradient(180deg,#46bcff 0,var(--ba-blue-deep) calc(100% - 4px),#0a4f8f calc(100% - 4px));
 }
 
 /* Panels: a faint blue grid like a tablet screen; cards share the diagonal-corner shape. */
-html:root:not(.landscape-layout) body #game-view :is(.arena-panel,#synergy-panel,.equipment-sidebar,#selected-unit-panel,#player-ranking) {
+html:root:not(.landscape-layout) body:not(.formation-reference) #game-view :is(.arena-panel,#synergy-panel,.equipment-sidebar,#selected-unit-panel,#player-ranking) {
  background-image:linear-gradient(#1b9cf20f 1px,#0000 1px),linear-gradient(90deg,#1b9cf20f 1px,#0000 1px);
  background-size:22px 22px;
 }
-html:root:not(.landscape-layout) body :is(#player-ranking .ranking-row,#synergy-panel .synergy-card,.equipment-source,#selected-unit-content .stats .stat,#pc-bench .bench-slot) { border-radius:var(--ba-cut-small); }
-html:root:not(.landscape-layout) body #selected-unit-content .stats .stat { box-shadow:inset 4px 0 0 var(--ba-blue); }
-html:root body .section-title::after {
+html:root:not(.landscape-layout) body:not(.formation-reference) :is(#player-ranking .ranking-row,#synergy-panel .synergy-card,.equipment-source,#selected-unit-content .stats .stat,#pc-bench .bench-slot) { border-radius:var(--ba-cut-small); }
+html:root:not(.landscape-layout) body:not(.formation-reference) #selected-unit-content .stats .stat { box-shadow:inset 4px 0 0 var(--ba-blue); }
+html:root body:not(.formation-reference) .section-title::after {
  content:''; position:absolute; right:0; bottom:2px; width:28%; height:4px; pointer-events:none;
  background:repeating-linear-gradient(135deg,#1b9cf233 0 4px,#0000 4px 8px);
 }
-html:root body #shop-panel .section-title::after { content:none; }
-html:root body #inspection-tabs button[aria-selected='true']:hover:not(:disabled) { --bt-line:#fff; --bt-top:#46bcff; --bt-bot:var(--ba-blue); --bt-edge:#0a4f8f; }
-html:root body #pc-play-dock #dock-ready #ready { --bt-chev:linear-gradient(#0000,#0000); }
-@media(max-width:1100px) { html:root body #pc-play-dock #dock-ready #ready { --bt-slant:10px; font-size:15px; } }
+html:root body:not(.formation-reference) #shop-panel .section-title::after { content:none; }
+html:root body:not(.formation-reference) #inspection-tabs button[aria-selected='true']:hover:not(:disabled) { --bt-line:#fff; --bt-top:#46bcff; --bt-bot:var(--ba-blue); --bt-edge:#0a4f8f; }
+html:root body:not(.formation-reference) #pc-play-dock #dock-ready #ready { --bt-chev:linear-gradient(#0000,#0000); }
+@media(max-width:1100px) { html:root body:not(.formation-reference) #pc-play-dock #dock-ready #ready { --bt-slant:10px; font-size:15px; } }
 
 /* ===== 0.26.0: ideas taken from Blue Archive's battle and formation screens =====
    Reference (text descriptions of the game, no official assets used): EX skill cards sit at the lower
    right with their background colored by damage type; allies carry a green HP bar; the formation screen
    leads with a few big main stats. Here: shop cards are tinted by trait, main stats get a colored tab. */
-html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-trait='bulwark'] { --card-tint:#2a62a84d; }
-html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-trait='scout'] { --card-tint:#1a8a684d; }
-html:root body :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-trait='arcane'] { --card-tint:#7048b04d; }
-html:root:not(.landscape-layout) body #selected-unit-content .stats .stat[data-stat='hp'] { box-shadow:inset 4px 0 0 #2fd06b; }
-html:root:not(.landscape-layout) body #selected-unit-content .stats .stat[data-stat='attack'] { box-shadow:inset 4px 0 0 #ea5a74; }
-html:root:not(.landscape-layout) body #selected-unit-content .stats .stat[data-stat='defense'] { box-shadow:inset 4px 0 0 #2a8de0; }
-html:root:not(.landscape-layout) body #selected-unit-content .stats .stat:is([data-stat='hp'],[data-stat='attack'],[data-stat='defense']) .stat-value strong { font-size:1.15em; }
+html:root body:not(.formation-reference) :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-trait='bulwark'] { --card-tint:#2a62a84d; }
+html:root body:not(.formation-reference) :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-trait='scout'] { --card-tint:#1a8a684d; }
+html:root body:not(.formation-reference) :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-trait='arcane'] { --card-tint:#7048b04d; }
+html:root:not(.landscape-layout) body:not(.formation-reference) #selected-unit-content .stats .stat[data-stat='hp'] { box-shadow:inset 4px 0 0 #2fd06b; }
+html:root:not(.landscape-layout) body:not(.formation-reference) #selected-unit-content .stats .stat[data-stat='attack'] { box-shadow:inset 4px 0 0 #ea5a74; }
+html:root:not(.landscape-layout) body:not(.formation-reference) #selected-unit-content .stats .stat[data-stat='defense'] { box-shadow:inset 4px 0 0 #2a8de0; }
+html:root:not(.landscape-layout) body:not(.formation-reference) #selected-unit-content .stats .stat:is([data-stat='hp'],[data-stat='attack'],[data-stat='defense']) .stat-value strong { font-size:1.15em; }

@@ -1,3 +1,15 @@
+# 편성 HTML 연결 — 2026-11-14
+
+- 정리한 편성 HTML을 실제 게임의 PC 메인 화면으로 연결했습니다. 1400×1000에서 시안의 72px 헤더·640px 중앙 영역·248px 하단 운영 영역과 열 위치를 확인하고, 1024×768에서는 작은 전장과 내부 스크롤을 사용합니다. 별도 전투 화면은 사용하지 않습니다.
+- 검사 크기: PC **1400×1000·1024×768**, 모바일 세로 **390×844·320×740**, 가로 **844×390·740×360·667×375·480×320**, **390×844 복귀**. 각 크기에서 실제 구매 유닛의 배치/대기석 복귀, 주요 버튼 44px 이상, 전장/대기석/상점/독립 순위의 겹침과 가로 넘침을 확인합니다.
+- 기본 경제(10골드 시작·실제 가격 구매·4골드 경험치), 전체 유닛 프리셋의 8→9→8명 배치, 상세 창의 전체 7개 능력치, 실제 장비 2칸, Enter 준비 완료, 같은 전장의 전투/결과, 전투 중 대기석 판매/구매, 관전 읽기 전용·복귀, 기록/장비 조회, 새로고침 복원과 로비 복귀를 자동 검사합니다.
+- 데이터는 UI용 가짜 6명이 아닌 **실제 엔진의 사람 1명+봇 5명 연습**입니다. 서버판에서는 별도 두 브라우저의 **사람 2인 방 생성/참가**와 PC 정보 메뉴의 방 코드 표시/복사·작은 화면 이동·재접속도 확인합니다. 실제 사람 6인 대전은 이번 범위에 포함하지 않습니다.
+- 재현: `npm run build:pages` 후 `CHROME_PATH=/usr/bin/chromium npm run test:formation:browser`. 서버판은 `npm run build`와 `PORT=2702 DEBUG_GAME=1 NODE_ENV=development npm start` 후 `GAME_URL=http://127.0.0.1:2702 CHROME_PATH=/usr/bin/chromium npm run test:formation:browser`.
+- Linux Chromium의 마우스/모바일 터치 에뮬레이션이며 실기기·Safari 검증과 게시/배포는 실행하지 않았습니다. 캡처와 좌표 측정은 `test-results/formation-layout/`에 생성합니다. 실행 결과는 [검증 기록](VALIDATION.md)에 기록합니다.
+- 보관한 캡처: [PC 1400×1000·봇 5명 연습](screenshots/formation-reference/pc-1400-1000-formation.png), [PC 1024×768·혼자 연습](screenshots/formation-reference/pc-1024-768-final.png), [모바일 세로·혼자 연습](screenshots/formation-reference/mobile-390-844-final.png), [모바일 가로](screenshots/formation-reference/mobile-844-390-final.png), [480×320](screenshots/formation-reference/mobile-480-320-final.png). 혼자 연습은 사람 1명+연습 상대 1명입니다.
+
+이하 내용은 이전 버전 기록입니다.
+
 # 전장 유닛 이미지 정렬 — 2026-11-08
 
 - 20종의 앞·뒤 모습을 나란히 표시한 실제 Phaser 화면을 확인했습니다. 투명 여백에 따른 크기 차이를 보정하고 각 방향의 발 중심과 바닥 높이를 맞췄습니다. 보정 후 120개 프레임의 표시 높이는 모두 75.6px입니다. 무기·머리카락 등의 자연스러운 폭 차이는 유지합니다.

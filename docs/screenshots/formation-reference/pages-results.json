@@ -1,0 +1,1168 @@
+{
+  "results": [
+    {
+      "mobile": false,
+      "width": 1400,
+      "height": 1000,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 272.984375,
+          "y": 85,
+          "width": 638.015625,
+          "height": 638.015625,
+          "right": 911,
+          "bottom": 723.015625
+        },
+        "bench": {
+          "x": 273,
+          "y": 745,
+          "width": 896,
+          "height": 86,
+          "right": 1169,
+          "bottom": 831
+        },
+        "shop": {
+          "x": 261,
+          "y": 831,
+          "width": 920,
+          "height": 152,
+          "right": 1181,
+          "bottom": 983
+        },
+        "ranking": {
+          "x": 1216,
+          "y": 84,
+          "width": 168,
+          "height": 640,
+          "right": 1384,
+          "bottom": 724
+        },
+        "inspector": {
+          "x": 924,
+          "y": 84,
+          "width": 280,
+          "height": 640,
+          "right": 1204,
+          "bottom": 724
+        },
+        "supply": {
+          "x": 260,
+          "y": 736,
+          "width": 922,
+          "height": 248,
+          "right": 1182,
+          "bottom": 984
+        },
+        "dock": {
+          "x": 16,
+          "y": 736,
+          "width": 1368,
+          "height": 248,
+          "right": 1384,
+          "bottom": 984
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1400,
+          "height": 72,
+          "top": 0,
+          "right": 1400,
+          "bottom": 72,
+          "left": 0
+        },
+        "targets": [
+          {
+            "width": 62,
+            "height": 46
+          },
+          {
+            "width": 172,
+            "height": 168
+          },
+          {
+            "width": 172.796875,
+            "height": 104
+          },
+          {
+            "width": 172.796875,
+            "height": 104
+          },
+          {
+            "width": 172.796875,
+            "height": 104
+          },
+          {
+            "width": 172.796875,
+            "height": 104
+          },
+          {
+            "width": 172.8125,
+            "height": 104
+          },
+          {
+            "width": 150,
+            "height": 88
+          },
+          {
+            "width": 150,
+            "height": 88
+          },
+          {
+            "width": 150,
+            "height": 88
+          },
+          {
+            "width": 150,
+            "height": 88
+          },
+          {
+            "width": 150,
+            "height": 88
+          },
+          {
+            "width": 150,
+            "height": 88
+          }
+        ]
+      },
+      "realPlacementAndBenchReturn": true
+    },
+    {
+      "mobile": false,
+      "width": 1024,
+      "height": 768,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 214.78125,
+          "y": 84,
+          "width": 408,
+          "height": 408,
+          "right": 622.78125,
+          "bottom": 492
+        },
+        "bench": {
+          "x": 206.6875,
+          "y": 513,
+          "width": 641.34375,
+          "height": 86,
+          "right": 848.03125,
+          "bottom": 599
+        },
+        "shop": {
+          "x": 198.6875,
+          "y": 599,
+          "width": 657.34375,
+          "height": 152,
+          "right": 856.03125,
+          "bottom": 751
+        },
+        "ranking": {
+          "x": 885.125,
+          "y": 84,
+          "width": 122.875,
+          "height": 408,
+          "right": 1008,
+          "bottom": 492
+        },
+        "inspector": {
+          "x": 643.125,
+          "y": 84,
+          "width": 230,
+          "height": 408,
+          "right": 873.125,
+          "bottom": 492
+        },
+        "supply": {
+          "x": 197.6875,
+          "y": 504,
+          "width": 659.34375,
+          "height": 248,
+          "right": 857.03125,
+          "bottom": 752
+        },
+        "dock": {
+          "x": 16,
+          "y": 504,
+          "width": 992,
+          "height": 248,
+          "right": 1008,
+          "bottom": 752
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 72,
+          "top": 0,
+          "right": 1024,
+          "bottom": 72,
+          "left": 0
+        },
+        "targets": [
+          {
+            "width": 55,
+            "height": 46
+          },
+          {
+            "width": 120.96875,
+            "height": 168
+          },
+          {
+            "width": 121.859375,
+            "height": 104
+          },
+          {
+            "width": 121.875,
+            "height": 104
+          },
+          {
+            "width": 121.859375,
+            "height": 104
+          },
+          {
+            "width": 121.875,
+            "height": 104
+          },
+          {
+            "width": 121.875,
+            "height": 104
+          },
+          {
+            "width": 112.875,
+            "height": 88
+          },
+          {
+            "width": 112.875,
+            "height": 88
+          },
+          {
+            "width": 112.875,
+            "height": 88
+          },
+          {
+            "width": 112.875,
+            "height": 88
+          },
+          {
+            "width": 112.875,
+            "height": 88
+          },
+          {
+            "width": 112.875,
+            "height": 88
+          }
+        ]
+      },
+      "realPlacementAndBenchReturn": true
+    },
+    {
+      "mobile": true,
+      "width": 390,
+      "height": 844,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 11,
+          "y": 185,
+          "width": 308,
+          "height": 308,
+          "right": 319,
+          "bottom": 493
+        },
+        "bench": {
+          "x": 7,
+          "y": 493,
+          "width": 316,
+          "height": 94,
+          "right": 323,
+          "bottom": 587
+        },
+        "shop": {
+          "x": 133,
+          "y": 623,
+          "width": 196,
+          "height": 214,
+          "right": 329,
+          "bottom": 837
+        },
+        "ranking": {
+          "x": 328,
+          "y": 56,
+          "width": 56,
+          "height": 360,
+          "right": 384,
+          "bottom": 416
+        },
+        "inspector": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "supply": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "dock": {
+          "x": 6,
+          "y": 622,
+          "width": 378,
+          "height": 216,
+          "right": 384,
+          "bottom": 838
+        },
+        "header": {
+          "x": 6,
+          "y": 6,
+          "width": 378,
+          "height": 44,
+          "top": 6,
+          "right": 384,
+          "bottom": 50,
+          "left": 6
+        },
+        "targets": [
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 64,
+            "height": 63.328125
+          },
+          {
+            "width": 64,
+            "height": 63.328125
+          },
+          {
+            "width": 64,
+            "height": 63.328125
+          },
+          {
+            "width": 64,
+            "height": 63.328125
+          },
+          {
+            "width": 64,
+            "height": 63.328125
+          },
+          {
+            "width": 52,
+            "height": 168
+          },
+          {
+            "width": 44,
+            "height": 48
+          },
+          {
+            "width": 44,
+            "height": 48
+          },
+          {
+            "width": 44,
+            "height": 48
+          },
+          {
+            "width": 44,
+            "height": 48
+          },
+          {
+            "width": 44,
+            "height": 48
+          },
+          {
+            "width": 44,
+            "height": 48
+          }
+        ]
+      },
+      "realPlacementAndBenchReturn": true
+    },
+    {
+      "mobile": true,
+      "width": 320,
+      "height": 740,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 53,
+          "y": 234.25,
+          "width": 154,
+          "height": 154,
+          "right": 207,
+          "bottom": 388.25
+        },
+        "bench": {
+          "x": 7,
+          "y": 388.25,
+          "width": 246,
+          "height": 94,
+          "right": 253,
+          "bottom": 482.25
+        },
+        "shop": {
+          "x": 133,
+          "y": 519,
+          "width": 126,
+          "height": 214,
+          "right": 259,
+          "bottom": 733
+        },
+        "ranking": {
+          "x": 258,
+          "y": 56,
+          "width": 56,
+          "height": 360,
+          "right": 314,
+          "bottom": 416
+        },
+        "inspector": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "supply": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "dock": {
+          "x": 6,
+          "y": 518,
+          "width": 308,
+          "height": 216,
+          "right": 314,
+          "bottom": 734
+        },
+        "header": {
+          "x": 6,
+          "y": 6,
+          "width": 308,
+          "height": 44,
+          "top": 6,
+          "right": 314,
+          "bottom": 50,
+          "left": 6
+        },
+        "targets": [
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 53,
+            "height": 53
+          },
+          {
+            "width": 53,
+            "height": 53
+          },
+          {
+            "width": 53,
+            "height": 53
+          },
+          {
+            "width": 53,
+            "height": 53
+          },
+          {
+            "width": 53,
+            "height": 53
+          },
+          {
+            "width": 52,
+            "height": 168
+          },
+          {
+            "width": 44,
+            "height": 48
+          },
+          {
+            "width": 44,
+            "height": 48
+          },
+          {
+            "width": 44,
+            "height": 48
+          },
+          {
+            "width": 44,
+            "height": 48
+          },
+          {
+            "width": 44,
+            "height": 48
+          },
+          {
+            "width": 44,
+            "height": 48
+          }
+        ]
+      },
+      "realPlacementAndBenchReturn": true
+    },
+    {
+      "mobile": true,
+      "width": 844,
+      "height": 390,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 88.328125,
+          "y": 57,
+          "width": 231,
+          "height": 231,
+          "right": 319.328125,
+          "bottom": 288
+        },
+        "bench": {
+          "x": 13,
+          "y": 292,
+          "width": 381.671875,
+          "height": 87,
+          "right": 394.671875,
+          "bottom": 379
+        },
+        "shop": {
+          "x": 638.6875,
+          "y": 53,
+          "width": 90.3125,
+          "height": 330,
+          "right": 729,
+          "bottom": 383
+        },
+        "ranking": {
+          "x": 782,
+          "y": 52,
+          "width": 56,
+          "height": 332,
+          "right": 838,
+          "bottom": 384
+        },
+        "inspector": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "supply": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "dock": {
+          "x": 539.6875,
+          "y": 52,
+          "width": 236.3125,
+          "height": 332,
+          "right": 776,
+          "bottom": 384
+        },
+        "header": {
+          "x": 82,
+          "y": 4,
+          "width": 680,
+          "height": 44,
+          "top": 4,
+          "right": 762,
+          "bottom": 48,
+          "left": 82
+        },
+        "targets": [
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 48,
+            "height": 48
+          },
+          {
+            "width": 48,
+            "height": 48
+          },
+          {
+            "width": 48,
+            "height": 48
+          },
+          {
+            "width": 48,
+            "height": 48
+          },
+          {
+            "width": 48,
+            "height": 48
+          },
+          {
+            "width": 44,
+            "height": 284
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          }
+        ]
+      },
+      "realPlacementAndBenchReturn": true
+    },
+    {
+      "mobile": true,
+      "width": 740,
+      "height": 360,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 65.5,
+          "y": 57,
+          "width": 201,
+          "height": 201,
+          "right": 266.5,
+          "bottom": 258
+        },
+        "bench": {
+          "x": 13,
+          "y": 262,
+          "width": 306,
+          "height": 87,
+          "right": 319,
+          "bottom": 349
+        },
+        "shop": {
+          "x": 563,
+          "y": 53,
+          "width": 62,
+          "height": 300,
+          "right": 625,
+          "bottom": 353
+        },
+        "ranking": {
+          "x": 678,
+          "y": 52,
+          "width": 56,
+          "height": 302,
+          "right": 734,
+          "bottom": 354
+        },
+        "inspector": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "supply": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "dock": {
+          "x": 464,
+          "y": 52,
+          "width": 208,
+          "height": 302,
+          "right": 672,
+          "bottom": 354
+        },
+        "header": {
+          "x": 30,
+          "y": 4,
+          "width": 680,
+          "height": 44,
+          "top": 4,
+          "right": 710,
+          "bottom": 48,
+          "left": 30
+        },
+        "targets": [
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 46,
+            "height": 46
+          },
+          {
+            "width": 46,
+            "height": 46
+          },
+          {
+            "width": 46,
+            "height": 46
+          },
+          {
+            "width": 46,
+            "height": 46
+          },
+          {
+            "width": 46,
+            "height": 46
+          },
+          {
+            "width": 44,
+            "height": 254
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          }
+        ]
+      },
+      "realPlacementAndBenchReturn": true
+    },
+    {
+      "mobile": true,
+      "width": 667,
+      "height": 375,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 43.5,
+          "y": 57,
+          "width": 216,
+          "height": 216,
+          "right": 259.5,
+          "bottom": 273
+        },
+        "bench": {
+          "x": 13,
+          "y": 277,
+          "width": 277,
+          "height": 87,
+          "right": 290,
+          "bottom": 364
+        },
+        "shop": {
+          "x": 490,
+          "y": 53,
+          "width": 62,
+          "height": 315,
+          "right": 552,
+          "bottom": 368
+        },
+        "ranking": {
+          "x": 605,
+          "y": 52,
+          "width": 56,
+          "height": 317,
+          "right": 661,
+          "bottom": 369
+        },
+        "inspector": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "supply": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "dock": {
+          "x": 391,
+          "y": 52,
+          "width": 208,
+          "height": 317,
+          "right": 599,
+          "bottom": 369
+        },
+        "header": {
+          "x": 6,
+          "y": 4,
+          "width": 655,
+          "height": 44,
+          "top": 4,
+          "right": 661,
+          "bottom": 48,
+          "left": 6
+        },
+        "targets": [
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 46,
+            "height": 46
+          },
+          {
+            "width": 46,
+            "height": 46
+          },
+          {
+            "width": 46,
+            "height": 46
+          },
+          {
+            "width": 46,
+            "height": 46
+          },
+          {
+            "width": 46,
+            "height": 46
+          },
+          {
+            "width": 44,
+            "height": 269
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          }
+        ]
+      },
+      "realPlacementAndBenchReturn": true
+    },
+    {
+      "mobile": true,
+      "width": 480,
+      "height": 320,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 13,
+          "y": 61,
+          "width": 114,
+          "height": 114,
+          "right": 127,
+          "bottom": 175
+        },
+        "bench": {
+          "x": 13,
+          "y": 179,
+          "width": 114,
+          "height": 87,
+          "right": 127,
+          "bottom": 266
+        },
+        "shop": {
+          "x": 303,
+          "y": 57,
+          "width": 62,
+          "height": 256,
+          "right": 365,
+          "bottom": 313
+        },
+        "ranking": {
+          "x": 418,
+          "y": 56,
+          "width": 56,
+          "height": 258,
+          "right": 474,
+          "bottom": 314
+        },
+        "inspector": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "supply": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "dock": {
+          "x": 204,
+          "y": 56,
+          "width": 208,
+          "height": 258,
+          "right": 412,
+          "bottom": 314
+        },
+        "header": {
+          "x": 6,
+          "y": 6,
+          "width": 468,
+          "height": 44,
+          "top": 6,
+          "right": 474,
+          "bottom": 50,
+          "left": 6
+        },
+        "targets": [
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 46,
+            "height": 44.796875
+          },
+          {
+            "width": 46,
+            "height": 44.796875
+          },
+          {
+            "width": 46,
+            "height": 44.796875
+          },
+          {
+            "width": 46,
+            "height": 44.796875
+          },
+          {
+            "width": 46,
+            "height": 44.796875
+          },
+          {
+            "width": 44,
+            "height": 210
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          }
+        ]
+      },
+      "realPlacementAndBenchReturn": true
+    },
+    {
+      "mobile": true,
+      "width": 390,
+      "height": 844,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 11,
+          "y": 185,
+          "width": 308,
+          "height": 308,
+          "right": 319,
+          "bottom": 493
+        },
+        "bench": {
+          "x": 7,
+          "y": 493,
+          "width": 316,
+          "height": 94,
+          "right": 323,
+          "bottom": 587
+        },
+        "shop": {
+          "x": 133,
+          "y": 623,
+          "width": 196,
+          "height": 214,
+          "right": 329,
+          "bottom": 837
+        },
+        "ranking": {
+          "x": 328,
+          "y": 56,
+          "width": 56,
+          "height": 360,
+          "right": 384,
+          "bottom": 416
+        },
+        "inspector": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "supply": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "dock": {
+          "x": 6,
+          "y": 622,
+          "width": 378,
+          "height": 216,
+          "right": 384,
+          "bottom": 838
+        },
+        "header": {
+          "x": 6,
+          "y": 6,
+          "width": 378,
+          "height": 44,
+          "top": 6,
+          "right": 384,
+          "bottom": 50,
+          "left": 6
+        },
+        "targets": [
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 64,
+            "height": 63.328125
+          },
+          {
+            "width": 64,
+            "height": 63.328125
+          },
+          {
+            "width": 64,
+            "height": 63.328125
+          },
+          {
+            "width": 64,
+            "height": 63.328125
+          },
+          {
+            "width": 64,
+            "height": 63.328125
+          },
+          {
+            "width": 52,
+            "height": 168
+          },
+          {
+            "width": 44,
+            "height": 48
+          },
+          {
+            "width": 44,
+            "height": 48
+          },
+          {
+            "width": 44,
+            "height": 48
+          },
+          {
+            "width": 44,
+            "height": 48
+          },
+          {
+            "width": 44,
+            "height": 48
+          },
+          {
+            "width": 44,
+            "height": 48
+          }
+        ]
+      },
+      "realPlacementAndBenchReturn": true
+    }
+  ],
+  "errors": [],
+  "failures": [],
+  "source": "Pages local engine; actual one-human/five-bot practice"
+}

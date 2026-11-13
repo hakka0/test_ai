@@ -28,6 +28,7 @@ import {createShopPreviewUI} from './shop-preview';
 import "./style.css";
 import './interface-theme.css';
 import './ba-theme.css';
+import './formation-layout.css';
 import { createBoard } from "./board";
 import { COMBAT_ATTRIBUTES } from "../shared/combat-attributes";
 import { CELL, WIDTH, MARGIN, BOARD_ASPECT } from "./board-geometry";
@@ -38,7 +39,7 @@ import { unitStatsMarkup } from "./unit-stats";
 import { unitSummaryMarkup } from "./unit-summary";
 import { TRAITS, synergiesForPlayer, bonusFor } from "../shared/synergy";
 import {synergyCards} from './synergy-ui';
-import { COLS, ROWS, BENCH_SIZE, MAX_ROUNDS, type Snapshot, type SelfPlayerSnapshot, type Unit, type RewardOption, type DebugAction, type Trait } from "../shared/model";
+import { COLS, ROWS, BENCH_SIZE, MAX_ROUNDS, PREP_MS, MATCHING_MS, COMBAT_MS, OVERTIME_MS, RESULT_MS, type Snapshot, type SelfPlayerSnapshot, type Unit, type RewardOption, type DebugAction, type Trait } from "../shared/model";
 const $ = <T extends HTMLElement = HTMLElement>(id: string) =>
   document.getElementById(id) as T;
 // Keep one composition label per row; the shop supports up to three labels.
@@ -325,11 +326,17 @@ function renderSelectedUnitPanel() {
   const quickSell=own&&me()?.units.some(u=>u.id===unit.id)&&!rewardUI.peeking&&!scoutingState.active?`<button type="button" class="unit-quick-sell" data-quick-sell="${escape(unit.id)}" ${!canSell(unit.id)?'disabled':''} aria-label="${escape(unitDefinition(unit).name)} ${unitSellPrice(unit)}골드에 판매"><span>판매</span><strong>${unitSellPrice(unit)}G</strong></button>`:'';
   const overviewNode=document.createElement('div');
   overviewNode.innerHTML=$("selection").innerHTML;
-  if(quickSell)overviewNode.querySelector('.selection')!.insertAdjacentHTML('beforeend',quickSell);
   const overviewWithSale=overviewNode.innerHTML;
+  const equipmentSlots=Array.from({length:2},(_,i)=>{
+    const item=player.inventory.find(item=>item.id===unit.equipment[i]);
+    return item?`<span class="formation-equipment-slot" title="${escape(EQUIPMENT[item.definition].description)}">${escape(EQUIPMENT[item.definition].name)}</span>`:'<span class="formation-equipment-slot empty" aria-label="빈 장비 칸">＋</span>';
+  }).join('');
+  const canReturn=own&&!scoutingState.active&&canEdit()&&unit.x>=0&&!!me()&&freeBenchSlot(me()!)>=0;
   setHTML("selected-unit-content", `<section class="selected-unit-overview">${overviewWithSale}</section>` +
     `<section class="selected-unit-section"><h3>스킬</h3><div data-skill-cards></div></section>` +
-    `<section class="selected-unit-section"><h3>착용 장비</h3>${equipment || '<p class="small muted">착용한 장비가 없습니다.</p>'}</section>`);
+    `<section class="selected-unit-section"><h3>장비</h3><div class="formation-equipment-slots">${equipmentSlots}<span>유닛당 2개</span></div><div class="formation-equipment-description">${equipment || '<p class="small muted">착용한 장비가 없습니다.</p>'}</div></section>`+
+    `<button type="button" class="formation-details" data-formation-details>상세 정보 <span>스킬 · 전체 능력치 · 장비</span></button>`+
+    `<div class="formation-unit-actions">${own?`<button type="button" data-formation-bench ${canReturn?'':'disabled'}>대기석으로</button>`:''}${quickSell}</div>`);
   syncSkillCards($("selected-unit-content").querySelector<HTMLElement>('[data-skill-cards]')!);
   const portrait = $("selected-unit-content").querySelector<HTMLElement>(".selection img");
   if (portrait && (own||rewardUI.peeking||scoutingState.active)) {
@@ -368,6 +375,12 @@ function sellSelected(id=selected){
 }
 $("unit-title-sell").onclick=()=>sellSelected();
 $("selected-unit-content").addEventListener('click',e=>{const b=(e.target as HTMLElement).closest<HTMLButtonElement>('[data-quick-sell]');if(b&&!b.disabled)sellSelected(b.dataset.quickSell);});
+$("selected-unit-content").addEventListener('click',e=>{
+ const b=(e.target as HTMLElement).closest<HTMLButtonElement>('[data-formation-details],[data-formation-bench]');
+ if(!b||b.disabled)return;
+ if(b.hasAttribute('data-formation-details'))inspectUnit(selected);
+ else $<HTMLButtonElement>('bench-button').click();
+});
 function renderReserve() {
   $("bench").classList.remove("hidden");
   $("shop-panel").classList.remove("hidden");
@@ -644,6 +657,7 @@ function render() {
   renderSkills();
   renderRewards(p);
   const other = opponentFor(s,p.id),viewed=viewedPlayer()??p,viewUnits=roster(viewed),viewS=rosterView(s),concealed=viewed.visibility==='opponent'&&viewed.rosterVisible===false;
+  pcUI.updateFormation(s,p,viewed);
   const key = JSON.stringify([
     s.phase,
     s.round,
@@ -724,6 +738,7 @@ function render() {
   setHTML("level-label", `<span class="visually-hidden">레벨 ${p.level} / ${MAX_LEVEL}</span><span aria-hidden="true">Lv. ${p.level}<small> / ${MAX_LEVEL}</small></span>`);
   setHTML("experience-label", maximum ? "최대 레벨" : `<span>경험치</span><span>${p.experience} / ${requiredXP}</span>`);
   $("experience-fill").style.height = `${maximum ? 100 : 100 * p.experience / requiredXP}%`;
+  $("experience-track").style.setProperty('--xp-progress',`${maximum?100:100*p.experience/requiredXP}%`);
   $("experience-track").setAttribute("aria-valuemax", String(maximum ? 1 : requiredXP));
   $("experience-track").setAttribute("aria-valuenow", String(maximum ? 1 : p.experience));
   $("experience-track").setAttribute("aria-valuetext", maximum ? `최대 레벨 ${MAX_LEVEL}` : `레벨 ${p.level}, 경험치 ${p.experience} / ${requiredXP}`);
@@ -802,7 +817,7 @@ function render() {
   ($("bench-button") as HTMLButtonElement).disabled =
     !ownUnit || !canEdit() || ownUnit.x < 0 || freeBenchSlot(p) < 0;
   ($("ready") as HTMLButtonElement).disabled = !canReady();
-  $("ready").textContent = p.ready ? "준비 완료 ✓" : "준비 완료";
+  $("ready").textContent = s.phase==='prepare'?(p.ready?"준비 완료 ✓":"준비 완료"):{waiting:'상대 대기',matching:'전투 준비',combat:'전투 진행 중',result:'결과 확인',finished:'경기 종료'}[s.phase];
   $("ready").title = p.pendingReward ? "미선택 라운드 보상은 골드로 자동 선택됩니다." : "배치를 마치고 준비 완료";
   $("ready").setAttribute("aria-label", p.pendingReward ? "준비 완료, 미선택 라운드 보상은 골드 자동 선택" : p.ready ? "준비 완료됨" : "준비 완료");
   pcUI.update();
@@ -877,6 +892,12 @@ $("buy-experience").onclick = () => {
   mutate({type: "buyExperience", revision: p.experienceRevision});
 };
 $("ready").onclick = () => mutate({ type: "ready" });
+$("ready").setAttribute('aria-keyshortcuts','Enter');
+window.addEventListener('keydown',e=>{
+ if(e.key!=='Enter'||e.repeat||e.isComposing||!snapshot||!canReady()||document.querySelector('dialog[open]')||
+   (e.target instanceof Element&&e.target.closest('button,input,textarea,select,a,[contenteditable="true"]')))return;
+ e.preventDefault();mutate({type:'ready'});
+});
 $("debug-speed").onchange = () => net.debug({type: "speed", value: Number($<HTMLSelectElement>("debug-speed").value)});
 $("debug-pause").onclick = () => net.debug({type: "pause", paused: !snapshot?.debug?.paused});
 $("debug-step").onclick = () => net.debug({type: "step", ms: 100});
@@ -946,6 +967,8 @@ function refreshCells() {
 setInterval(() => {
   if (!snapshot || !snapshot.deadline) {
     $("timer").textContent = "—";
+    $("timer").dataset.clock='—';
+    $('formation-time-fill').style.width='0%';
     $("timer").setAttribute("aria-label", "남은 시간 없음");
     return;
   }
@@ -954,6 +977,9 @@ setInterval(() => {
     Math.ceil((snapshot.deadline - net.gameNow()) / 1000),
   );
   $("timer").textContent = String(seconds).padStart(2, "0");
+  $("timer").dataset.clock=`${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`;
+  const duration=(snapshot.phase==='prepare'?PREP_MS:snapshot.phase==='matching'?MATCHING_MS:snapshot.phase==='combat'?(snapshot.overtime?OVERTIME_MS:COMBAT_MS):RESULT_MS)/1000;
+  $('formation-time-fill').style.width=`${Math.min(100,100*seconds/duration)}%`;
   $("timer").setAttribute("aria-label", `${snapshot.phase==='combat'&&snapshot.overtime?'피버타임 ':''}남은 시간 ${seconds}초`);
   rewardUI.render();
   if (seconds === 0) { endDrag(); cancelSale(); render(); }
@@ -989,6 +1015,7 @@ function resetMatchView() {
   $<HTMLDialogElement>("unit-dialog").close();finalUI.reset();historyUI.reset();rewardUI.reset();
   $("notice").classList.add("hidden");clearTimeout(noticeTimeout);
   $("lobby").classList.remove("hidden");document.body.classList.add("home-active");
+  pcUI.sync();
   $("game-view").classList.add("hidden");$("game-view").inert = true;
   document.querySelector("header")!.inert = false;$("screen-mode-footer").inert = false;
   $("game-view").classList.remove("match-finished");
