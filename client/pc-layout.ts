@@ -1,5 +1,6 @@
 import { BOARD_ASPECT } from "./board-geometry";
-import type { Player } from "../shared/model";
+import type { Player, Snapshot, SelfPlayerSnapshot, PublicPlayerSnapshot } from "../shared/model";
+import {deploymentLimit} from '../shared/progression';
 // Shared dock/dialog structure; mode-specific CSS preserves the PC layout.
 export function createPCLayout(options:{beforeChange:()=>void;afterChange:()=>void}) {
  const $=<T extends HTMLElement=HTMLElement>(id:string)=>document.getElementById(id) as T;
@@ -10,6 +11,12 @@ export function createPCLayout(options:{beforeChange:()=>void;afterChange:()=>vo
  dock.setAttribute('aria-label','유닛 상점');
  dock.innerHTML=`<div id="shop-economy"><div id="dock-gold" class="dock-gold"><span class="dock-gold-label">보유 골드</span><span class="currency-coin gold-coin" aria-hidden="true"></span><div id="dock-gold-value"></div></div><div id="pc-growth" aria-label="레벨과 경험치"><div id="pc-progression"></div></div><div id="shop-control-column"><div class="dock-shop-tools"></div></div></div><div id="pc-dock-reserve"><div id="pc-shop" role="region" aria-label="상점" tabindex="0"></div></div><div id="dock-ready"><button type="button" id="dock-streak" data-help="streak" aria-expanded="false" aria-controls="game-help-tooltip" data-streak="none" aria-live="polite" aria-atomic="true" aria-label="연승·연패 기록 없음"><span class="streak-icon" id="dock-streak-icon" aria-hidden="true"></span><span id="dock-streak-label"></span></button></div><div id="pc-actions"></div>`;
  const leftRail=document.createElement('aside');leftRail.id='pc-left-rail';leftRail.setAttribute('aria-label','출전 조합과 보유 장비');
+ const deployment=document.createElement('section');deployment.id='formation-deployment';
+ deployment.innerHTML='<h2>출전 현황</h2><div class="formation-deployment-row"><div id="formation-deployed"></div><div><strong>배치 유닛</strong><div id="formation-slots" aria-hidden="true"></div><p id="formation-capacity"></p></div></div><p id="formation-combat-state" hidden>전투 진행 중 · 배치 잠김</p>';
+ leftRail.append(deployment);
+ const supply=document.createElement('section');supply.id='formation-supply';supply.setAttribute('aria-label','대기석과 상점');dock.append(supply);
+ dock.querySelector('#dock-ready')!.insertAdjacentHTML('afterbegin','<p id="formation-ready-help">편성을 마치면<br>준비 완료를 눌러주세요.</p>');
+ dock.querySelector('#dock-gold')!.insertAdjacentHTML('beforeend','<span id="formation-interest"></span>');
  const synergyPanel=$('synergy-panel');
  const benchRegion=document.createElement('div');benchRegion.id='pc-bench';benchRegion.setAttribute('role','region');benchRegion.setAttribute('aria-label','대기석');
  $('battlefield-stage').after(benchRegion);
@@ -28,7 +35,11 @@ export function createPCLayout(options:{beforeChange:()=>void;afterChange:()=>vo
  const moves:{node:HTMLElement;home:Comment;target:HTMLElement}[]=[];
  function move(node:HTMLElement,target:HTMLElement){const home=document.createComment('mobile home');node.before(home);moves.push({node,home,target});}
  const matchbar=document.querySelector<HTMLElement>('.matchbar')!;
+ const header=document.querySelector<HTMLElement>('#app > header')!,headerActions=header.querySelector<HTMLElement>('.header-actions')!;
+ matchbar.firstElementChild!.insertAdjacentHTML('beforeend','<div id="formation-stage-detail"></div>');
+ const clock=document.createElement('div');clock.id='formation-clock';clock.innerHTML='<span id="formation-time-label">배치 종료까지</span><div class="formation-time-track"><i id="formation-time-fill"></i></div>';
  const matchTools=document.createElement('div');matchTools.id='pc-match-tools';matchbar.insertBefore(matchTools,$('timer'));
+ matchbar.append(clock);clock.append($('timer'));
  const more=document.createElement('button');more.id='mobile-info-open';more.type='button';more.textContent='정보';more.setAttribute('aria-haspopup','dialog');matchTools.append(more);more.onclick=()=>open('rewards',more);
  move($('history-toggle'),matchTools);
  // Selection belongs to the battlefield; equipped gear and bench return belong to its dialog.
@@ -62,18 +73,29 @@ export function createPCLayout(options:{beforeChange:()=>void;afterChange:()=>vo
   if(!mode)return;
   const wide=mode==='pc'&&innerWidth>700&&!document.documentElement.classList.contains('landscape-layout');
   document.documentElement.classList.toggle('tactical-desktop',wide);
+  document.body.classList.toggle('formation-reference',wide&&!document.body.classList.contains('home-active'));
   const sidebar=document.getElementById('equipment-sidebar');
   if(wide){
-   if(matchbar.parentElement!==main)main.prepend(matchbar);
-   if(benchRegion.parentElement!==dock)dock.insertBefore(benchRegion,$('pc-dock-reserve'));
-   if(synergyPanel.parentElement!==leftRail)leftRail.prepend(synergyPanel);
+   if(matchbar.parentElement!==header)header.insertBefore(matchbar,headerActions);
+   if(matchTools.parentElement!==headerActions)headerActions.prepend(matchTools);
+   if($('room-code-control').parentElement!==$('pc-info-connection'))$('pc-info-connection').prepend($('room-code-control'));
+   if(benchRegion.parentElement!==supply)supply.prepend(benchRegion);
+   if($('pc-dock-reserve').parentElement!==supply)supply.append($('pc-dock-reserve'));
+   if($('deployed').parentElement!==$('formation-deployed'))$('formation-deployed').append($('deployed'));
+   if(synergyPanel.parentElement!==leftRail)leftRail.append(synergyPanel);
    if(sidebar&&sidebar.parentElement!==leftRail)leftRail.append(sidebar);
+   if($('dock-streak').parentElement!==$('dock-gold'))$('dock-gold').append($('dock-streak'));
   }else{
    const stage=$('battlefield-stage'),arena=stage.parentElement!;
    if(matchbar.parentElement!==arena)arena.prepend(matchbar);
+   if(matchTools.parentElement!==matchbar)matchbar.insertBefore(matchTools,clock);
+   if($('room-code-control').parentElement!==headerActions)headerActions.prepend($('room-code-control'));
+   if($('pc-dock-reserve').parentElement!==dock)dock.insertBefore($('pc-dock-reserve'),$('dock-ready'));
+   if($('deployed').parentElement!==$('deployment-overlay'))$('deployment-overlay').append($('deployed'));
    if(benchRegion.parentElement!==arena)stage.after(benchRegion);
    if(synergyPanel.parentElement!==arena)stage.before(synergyPanel);
    if(sidebar&&sidebar.parentElement!==main)main.append(sidebar);
+   if($('dock-streak').parentElement!==$('dock-ready'))$('dock-ready').prepend($('dock-streak'));
   }
   leftRail.hidden=!wide;
  }
@@ -100,6 +122,15 @@ export function createPCLayout(options:{beforeChange:()=>void;afterChange:()=>vo
  function measure(){
   if(!active)return;placeStatus();const dockRect=dock.getBoundingClientRect();const height=Math.ceil(dockRect.height)+24;
   const arena=document.querySelector<HTMLElement>('.arena-panel')!,stage=$('battlefield-stage');
+  if(document.documentElement.classList.contains('tactical-desktop')){
+   const field=Math.max(160,Math.min(arena.getBoundingClientRect().width,innerHeight-360));
+   document.documentElement.style.setProperty('--formation-field',`${Math.floor(field)}px`);
+   const chrome=[...arena.children].filter(el=>el!==stage).reduce((sum,el)=>sum+el.getBoundingClientRect().height,0);
+   document.documentElement.style.setProperty('--board-room',`${Math.max(100,Math.floor(field-chrome))}px`);
+   document.documentElement.style.setProperty('--arena-room',`${Math.floor(field)}px`);
+   document.documentElement.style.setProperty('--play-dock-height',`${height}px`);
+   return;
+  }
   const arenaTop=arena.getBoundingClientRect().top+scrollY;
   const landscape=document.documentElement.classList.contains('landscape-layout');
   const minimumBoard=landscape?90:document.body.classList.contains('ranking-compact')&&innerHeight<=700?100:120;
@@ -147,5 +178,17 @@ export function createPCLayout(options:{beforeChange:()=>void;afterChange:()=>vo
     ?'<svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M12 2C9 7 4 11 4 16a8 8 0 0 0 16 0c0-5-5-9-8-14Z"/><path class="streak-water-shine" d="M8 15a4 4 0 0 0 4 5"/></svg>'
     :'';
  }
- return {sync,update,open,close,setStreak};
+ function updateFormation(s:Snapshot,p:SelfPlayerSnapshot,viewed:PublicPlayerSnapshot|SelfPlayerSnapshot){
+  document.body.dataset.gamePhase=s.phase;
+  $('phase').dataset.formationLabel={waiting:'입장 대기',prepare:'준비 단계',matching:'매칭 중',combat:'전투 중',result:'라운드 결과',finished:'경기 종료'}[s.phase];
+  $('formation-combat-state').hidden=s.phase!=='combat';
+  const count=viewed.units.filter(u=>u.x>=0).length,cap=deploymentLimit(viewed);
+  $('formation-slots').replaceChildren(...Array.from({length:cap},(_,i)=>{const pip=document.createElement('i');pip.dataset.filled=String(i<count);return pip;}));
+  $('formation-capacity').textContent=`Lv.${viewed.level} · ${Math.max(0,cap-count)}칸 더 배치 가능`;
+  $('formation-stage-detail').textContent=s.encounter==='minion'?`미니언전 ${s.round}/3`:'플레이어 대전';
+  $('formation-interest').textContent=`최근 이자 +${p.lastIncome.interest}`;
+  $('formation-time-label').textContent={waiting:'상대 입장 대기',prepare:'배치 종료까지',matching:'매칭 종료까지',combat:s.overtime?'피버타임 종료까지':'전투 종료까지',result:'다음 준비까지',finished:'경기 종료'}[s.phase];
+  $('formation-ready-help').textContent=p.ready&&s.phase==='prepare'?'준비 완료 · 상대를 기다리는 중':s.phase==='combat'?'전투 진행 중 · 배치가 잠겼습니다.':s.phase==='result'?'라운드 결과를 확인하세요.':s.phase==='finished'?'최종 결과를 확인하세요.':'편성을 마치면 준비 완료를 눌러주세요.';
+ }
+ return {sync,update,open,close,setStreak,updateFormation};
 }

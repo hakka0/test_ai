@@ -1,0 +1,41 @@
+{
+  "results": [
+    {
+      "mobile": false,
+      "width": 1400,
+      "height": 1000,
+      "visibleHistoryLabel": true,
+      "font": 11,
+      "box": {
+        "x": 1182,
+        "y": 13,
+        "width": 62,
+        "height": 46,
+        "top": 13,
+        "right": 1244,
+        "bottom": 59,
+        "left": 1182
+      },
+      "overflow": false
+    },
+    {
+      "mobile": false,
+      "width": 1024,
+      "height": 768,
+      "visibleHistoryLabel": true,
+      "font": 11,
+      "box": {
+        "x": 835,
+        "y": 13,
+        "width": 55,
+        "height": 46,
+        "top": 13,
+        "right": 890,
+        "bottom": 59,
+        "left": 835
+      },
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

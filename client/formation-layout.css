@@ -1,0 +1,299 @@
+/* Live implementation of the approved formation HTML. Compact modes keep the
+   shared controls and their existing touch layout; only wide PC is rearranged. */
+#formation-deployment,#formation-supply,#formation-ready-help,#formation-interest,
+#formation-stage-detail,#formation-time-label,.formation-time-track { display:none; }
+#formation-clock { display:contents; }
+.formation-equipment-slots { display:flex; align-items:center; gap:8px; }
+.formation-equipment-slot { display:grid; place-items:center; width:64px; min-height:44px; padding:4px; border:1px solid #b9cbe0; border-radius:5px; font-size:10px; color:#0f2a55; background:#eaf3ff; }
+.formation-equipment-slot.empty { border-style:dashed; font-size:20px; }
+.formation-equipment-slots > span:last-child { font-size:11px; color:#5a6b85; }
+.formation-unit-actions { display:flex; gap:8px; }
+.formation-unit-actions > button { flex:1; }
+.formation-details { display:flex; width:100%; align-items:center; justify-content:space-between; gap:6px; margin:6px 0; }
+.formation-details span { font-size:11px; font-weight:400; }
+body.home-active header .matchbar,body.home-active #pc-match-tools { display:none!important; }
+
+html:root.tactical-desktop body:not(.home-active) #app {
+ --formation-left:clamp(150px,17.42857vw,244px);
+ --formation-inspector:clamp(230px,20vw,280px);
+ --formation-ranking:clamp(96px,12vw,168px);
+ --formation-panel:#fff; --formation-line:#c6d6e8;
+ --ba-navy:#0f2a55; --ui-paper:#fff; --ui-raised:#f3f7fc;
+ color:#1c2d4a; background:#e8f0f8;
+}
+html:root.tactical-desktop body:not(.home-active) #app {
+ padding:0 0 16px; background:#e8f0f8; max-width:1400px; margin:auto;
+}
+html:root.tactical-desktop body:not(.home-active) #app > header {
+ width:100%; max-width:none; height:72px; margin:0; padding:0 16px;
+ display:grid; grid-template-columns:var(--formation-left) minmax(0,1fr) 272px; gap:12px;
+ background:#fff; border:0; border-bottom:1px solid var(--formation-line); border-radius:0; box-shadow:none;
+}
+html:root.tactical-desktop body:not(.home-active) #app .brand {
+ display:grid; grid-template-columns:40px minmax(0,1fr); grid-template-rows:24px 16px; gap:0 10px;
+ font-style:normal; min-width:0;
+}
+html:root.tactical-desktop body:not(.home-active) #app .brand-mark {
+ grid-row:1/3; width:40px; height:40px; border:0; border-radius:9px; background:#0f2a55; box-shadow:none;
+}
+html:root.tactical-desktop body:not(.home-active) #app .brand-mark::after {
+ inset:10px; background:#fff; clip-path:polygon(50% 0,62% 36%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%); transform:none; border-radius:0;
+}
+html:root.tactical-desktop body:not(.home-active) #app .brand-name { font-size:20px; white-space:nowrap; }
+html:root.tactical-desktop body:not(.home-active) #app .brand-tag { display:block; padding:0; border:0; border-radius:0; background:none; font-size:9px; line-height:14px; color:#5a6b85; letter-spacing:1px; white-space:nowrap; }
+html:root.tactical-desktop body:not(.home-active) #app header .matchbar {
+ display:flex; align-items:center; gap:16px; padding:0; margin:0; min-width:0; height:72px;
+ position:static; border:0; border-radius:0; background:none; box-shadow:none;
+}
+html:root.tactical-desktop body:not(.home-active) #app .matchbar > div:first-child {
+ display:grid; grid-template-columns:84px minmax(0,1fr); grid-template-rows:26px 18px; gap:0 12px; min-width:220px;
+}
+html:root.tactical-desktop body:not(.home-active) #app .round-summary-line { grid-row:1/3; display:block; width:84px; margin:0; }
+html:root.tactical-desktop body:not(.home-active) #app #round {
+ display:flex; flex-direction:column; justify-content:center; width:84px; height:44px; padding:5px 12px;
+ background:#0f2a55; color:#fff; border:0; font-size:0; letter-spacing:0;
+ clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,0 100%);
+}
+html:root.tactical-desktop body:not(.home-active) #app #round::before { content:'STAGE'; font-size:9px; letter-spacing:1.5px; color:#b9cdea; }
+html:root.tactical-desktop body:not(.home-active) #app #round::after { content:attr(data-compact-label); font-size:25px; line-height:24px; font-style:italic; font-weight:900; }
+html:root.tactical-desktop body:not(.home-active) #app #phase { grid-column:2; grid-row:1; font-size:0; line-height:26px; margin:0; white-space:nowrap; }
+html:root.tactical-desktop body:not(.home-active) #app #phase::after { content:attr(data-formation-label); font-size:19px; color:#0f2a55; font-weight:900; }
+html:root.tactical-desktop body:not(.home-active) #app #formation-stage-detail { grid-column:2; display:block; font-size:11px; line-height:18px; color:#5a6b85; white-space:nowrap; }
+html:root.tactical-desktop body:not(.home-active) #app #recent-results { display:none; }
+html:root.tactical-desktop body:not(.home-active) #app #formation-clock { flex:1; min-width:105px; position:relative; display:grid; grid-template-columns:minmax(0,1fr) 100px; grid-template-rows:20px 12px; gap:4px 12px; align-items:center; }
+html:root.tactical-desktop body:not(.home-active) #app #formation-time-label { display:block; font-size:11px; color:#5a6b85; white-space:nowrap; }
+html:root.tactical-desktop body:not(.home-active) #app .formation-time-track { display:block; grid-column:1; grid-row:2; height:6px; overflow:hidden; border-radius:3px; background:#d6e3f1; }
+html:root.tactical-desktop body:not(.home-active) #app #formation-time-fill { display:block; height:100%; background:#1f8fff; }
+html:root.tactical-desktop body:not(.home-active) #app #timer { grid-column:2; grid-row:1/3; padding:0; min-width:0; width:100px; border:0; border-radius:0; background:none; box-shadow:none; font-size:0; line-height:40px; color:#0f2a55; }
+html:root.tactical-desktop body:not(.home-active) #app #timer::after { content:attr(data-clock); font-size:36px; font-style:italic; font-weight:900; }
+html:root.tactical-desktop body:not(.home-active) #app .header-actions { display:flex; align-items:center; gap:8px; width:272px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-match-tools { display:contents; }
+html:root.tactical-desktop body:not(.home-active) #app .header-actions button { flex:none; width:62px; height:46px; min-height:44px; padding:3px; font-size:11px; border:1px solid #b9cbe0; border-radius:4px; background:#fff; color:#0f2a55; box-shadow:none; white-space:nowrap; clip-path:none; transform:none; }
+html:root.tactical-desktop body:not(.home-active) #app .header-actions button::before { display:block; content:'ⓘ'; height:20px; font-size:17px; position:static; transform:none; clip-path:none; border:0; background:none; opacity:1; box-shadow:none; }
+html:root.tactical-desktop body:not(.home-active) #app #history-toggle::before { content:'☷'; }
+html:root.tactical-desktop body:not(.home-active) #app #motion::before { content:'☼'; }
+html:root.tactical-desktop body:not(.home-active) #app #leave::before { content:'⌂'; }
+html:root.tactical-desktop body:not(.home-active) #app .header-actions button::after { content:none; }
+html:root.tactical-desktop body:not(.home-active) #app #game-view.layout {
+ display:grid; width:auto; max-width:none; margin:12px 16px 0; padding:0;
+ grid-template-columns:var(--formation-left) minmax(0,1fr) var(--formation-inspector) var(--formation-ranking);
+ grid-template-areas:'equipment arena inspection ranking'; gap:12px; align-items:start;
+}
+html:root.tactical-desktop body:not(.home-active) #app .arena-panel {
+ width:100%; max-width:none; margin:0; height:var(--formation-field,640px); min-height:0; padding:0; display:flex; flex-direction:column;
+ background:#fff; border:1px solid var(--formation-line); border-radius:4px; box-shadow:0 2px 6px #1c3c6e14; overflow:hidden; scrollbar-gutter:auto;
+}
+html:root.tactical-desktop body:not(.home-active) #app #battlefield-stage { flex:1; min-height:0; width:100%; padding:0; display:flex; align-items:center; justify-content:center; }
+html:root.tactical-desktop body:not(.home-active) #app #board-wrap { width:min(100%,var(--board-room,640px)); height:auto; max-width:none; max-height:none; aspect-ratio:1; margin:0; border:0; border-radius:0; box-shadow:none; }
+html:root.tactical-desktop body:not(.home-active) #app #board { inset:0; }
+html:root.tactical-desktop body:not(.home-active) #app #deployment-overlay { display:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-left-rail { position:static; max-height:var(--formation-field,640px); overflow:auto; top:auto; }
+html:root.tactical-desktop body:not(.home-active) #app #formation-deployment { display:block; padding:14px; border:1px solid var(--formation-line); border-bottom:0; border-radius:6px 6px 0 0; background:#fff; }
+html:root.tactical-desktop body:not(.home-active) #app #formation-deployment h2 { font-size:14px; margin:0 0 18px; color:#0f2a55; }
+html:root.tactical-desktop body:not(.home-active) #app .formation-deployment-row { display:flex; gap:18px; align-items:center; }
+html:root.tactical-desktop body:not(.home-active) #app #deployed { font-size:42px; font-style:italic; font-weight:900; color:#0f2a55; white-space:nowrap; }
+html:root.tactical-desktop body:not(.home-active) #app #formation-deployment strong { font-size:12px; color:#5a6b85; }
+html:root.tactical-desktop body:not(.home-active) #app #formation-slots { display:flex; gap:4px; flex-wrap:wrap; max-width:112px; margin:6px 0; }
+html:root.tactical-desktop body:not(.home-active) #app #formation-slots i { display:block; width:9px; height:7px; border:1px solid #8fa5c0; border-radius:2px; }
+html:root.tactical-desktop body:not(.home-active) #app #formation-slots i[data-filled='true'] { background:#1f8fff; border-color:#1f8fff; }
+html:root.tactical-desktop body:not(.home-active) #app #formation-capacity { margin:0; font-size:10px; line-height:15px; color:#5a6b85; }
+html:root.tactical-desktop body[data-game-phase='combat'] #app .formation-deployment-row { display:none; }
+html:root.tactical-desktop body[data-game-phase='combat'] #app #formation-combat-state { display:block; font-size:12px; }
+html:root.tactical-desktop body:not(.home-active) #app #synergy-panel { padding:12px; margin:0 0 12px; border:1px solid var(--formation-line); border-top:0; border-radius:0 0 6px 6px; background:#fff; box-shadow:0 2px 6px #1c3c6e14; }
+html:root.tactical-desktop body:not(.home-active) #app #synergy-panel .section-title { margin:0 0 10px; font-size:13px; }
+html:root.tactical-desktop body:not(.home-active) #app #my-synergies { display:grid; gap:6px; }
+html:root.tactical-desktop body:not(.home-active) #app #my-synergies .synergy-card { min-height:54px; border:1px solid #c6d6e8; background:#fff; border-radius:5px; padding:6px 8px; box-shadow:none; }
+html:root.tactical-desktop body:not(.home-active) #app #my-synergies .synergy-card[data-active='true'] { background:#eaf3ff; border-color:#9cc4f2; }
+html:root.tactical-desktop body:not(.home-active) #app #my-synergies .synergy-card::before,html:root.tactical-desktop body:not(.home-active) #app #my-synergies .synergy-card::after { content:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-left-rail #equipment-sidebar { position:static; width:100%; max-height:none; border:1px solid var(--formation-line); border-radius:6px; background:#fff; box-shadow:0 2px 6px #1c3c6e14; }
+html:root.tactical-desktop body:not(.home-active) #app #equipment-toggle { display:flex; align-items:center; gap:8px; width:100%; border:0; padding:8px 12px; border-radius:0; background:none; color:#0f2a55; font-size:14px; }
+html:root.tactical-desktop body:not(.home-active) #app #equipment-toggle::before,html:root.tactical-desktop body:not(.home-active) #app #equipment-toggle::after { content:none; }
+html:root.tactical-desktop body:not(.home-active) #app #equipment-count { margin-left:auto; font-size:11px; color:#5a6b85; }
+html:root.tactical-desktop body:not(.home-active) #app #equipment-count::before { content:'보유 '; }
+html:root.tactical-desktop body:not(.home-active) #app #equipment-stash { padding:4px 10px 12px; }
+html:root.tactical-desktop body:not(.home-active) #app .equipment-group { display:flex; flex-wrap:wrap; gap:8px; }
+html:root.tactical-desktop body:not(.home-active) #app .equipment-group h3 { flex-basis:100%; margin:0; font-size:11px; }
+html:root.tactical-desktop body:not(.home-active) #app #equipment-stash .equipment-source { display:flex; flex-direction:column; justify-content:center; width:64px; min-height:80px; padding:5px; gap:4px; background:#eaf3ff; border:1px solid #b9cbe0; border-radius:5px; }
+html:root.tactical-desktop body:not(.home-active) #app #equipment-stash .equipment-source strong { font-size:10px; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel { position:static; height:var(--formation-field,640px); min-height:0; max-height:var(--formation-field,640px); overflow:auto; scrollbar-gutter:auto; border:1px solid var(--formation-line); border-radius:5px; padding:0; background:#fff; box-shadow:0 2px 6px #1c3c6e14; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #inspection-tabs { position:sticky; top:0; z-index:2; padding:0; height:40px; min-height:40px; gap:0; border:0; border-bottom:1px solid var(--formation-line); background:#f3f7fc; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #inspection-tabs button { flex:1; border:0; border-radius:0; padding:4px 8px; background:none; color:#5a6b85; font-size:14px; box-shadow:none; clip-path:none; transform:none; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #inspection-tabs button[aria-selected='true'] { background:#0f2a55; color:#fff; clip-path:polygon(0 0,100% 0,calc(100% - 14px) 100%,0 100%); }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #inspection-tabs button::before,html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #inspection-tabs button::after { content:none; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #inspection-tabs svg { display:none; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content { padding:12px; background:#fff; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel .selected-unit-overview { padding:0; border:0; background:none; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .selection { display:grid; grid-template-columns:106px minmax(0,1fr); gap:12px; align-items:start; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .selection > img { width:106px; min-width:0; height:140px; padding:0; object-fit:contain; border:2px solid #7a45c9; border-radius:8px; background:#dfe8f5; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .selection h2 { font-size:27px; line-height:1.15; margin:5px 0 10px; color:#0f2a55; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .selection .eyebrow { font-size:10px; line-height:15px; letter-spacing:0; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .unit-meta { flex-wrap:wrap; font-size:12px; gap:4px; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .combat-attributes { margin:10px 0 6px; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .stats { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-top:8px; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .combat-attributes { display:none; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .stat-value { display:flex; flex-direction:column; align-items:flex-start; gap:3px; position:static; min-width:0; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .stat-label { position:static; display:block; font-size:11px; line-height:14px; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .stat-icon { position:static; width:13px; height:13px; margin:2px 4px 0 0; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .stat.help-trigger { display:flex; align-items:flex-start; min-height:54px; height:auto; width:100%; padding:6px 8px; border:0; border-radius:5px; background:#eef4fb; box-shadow:none; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .stat::before,html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .stat::after { content:none; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .stat strong { font-size:22px; line-height:24px; font-style:italic; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .stat[data-stat='crit-chance'],html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .stat[data-stat='crit-damage'],html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .stat[data-stat='attack-speed'] { display:none; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .stat[data-stat='range'] { grid-column:auto; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel .selected-unit-section { padding:0; margin-top:10px; border:0; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel .selected-unit-section h3 { font-size:13px; margin:0 0 8px; color:#0f2a55; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel .selected-unit-section [data-skill-cards] { display:grid; grid-template-columns:1fr; gap:6px; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel .skill-summary-card { min-height:60px; padding:8px; border:1px solid var(--formation-line); border-radius:5px; background:#fff; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel .formation-equipment-description { display:none; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel .formation-details { min-height:44px; padding:6px 8px; font-size:12px; border:1px solid #b9cbe0; border-radius:4px; background:#fff; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel .formation-unit-actions button { position:static; width:auto; min-width:0; min-height:44px; padding:6px; font-size:12px; border-radius:4px; background:#fff; border:1px solid #b9cbe0; }
+html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel .formation-unit-actions [data-quick-sell] { color:#a31f37; border-color:#d99aa5; }
+html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking { position:static; height:var(--formation-field,640px); max-height:var(--formation-field,640px); width:auto; padding:8px; border:1px solid var(--formation-line); border-radius:5px; background:#fff; box-shadow:0 2px 6px #1c3c6e14; }
+html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-heading { height:30px; padding:0 4px; flex-direction:row; }
+html:root.tactical-desktop body:not(.home-active) #app #ranking-count { font-size:10px; }
+html:root.tactical-desktop body:not(.home-active) #app #ranking-list { height:calc(100% - 30px); overflow:auto; display:flex; flex-direction:column; gap:6px; }
+html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-row { flex:none; display:grid; grid-template-columns:20px 26px minmax(0,1fr); grid-template-rows:26px 7px 20px; gap:5px 5px; width:100%; min-height:88px; padding:7px 8px; border:1px solid #c6d6e8; border-radius:5px; background:#fff; box-shadow:none; }
+html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-row::before,html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-row::after { content:none; }
+html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-row[data-watching='true'] { border:2px solid #1f8fff; background:#eaf4ff; }
+html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-row[data-opponent='true'] { border-color:#0f2a55; }
+html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-place { grid-column:1; grid-row:1; font-size:22px; font-style:italic; }
+html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-avatar { grid-column:2; grid-row:1; width:26px; height:26px; font-size:12px; }
+html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-name { display:block; grid-column:3; grid-row:1; padding:0; font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-health-track { display:block; grid-column:1/4; grid-row:2; width:100%; height:7px; position:static; border-radius:4px; background:#d6e3f1; overflow:hidden; }
+html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-health-track > span { height:100%; background:#1f8fff; }
+html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-level { display:block; grid-column:1/3; grid-row:3; font-size:10px; }
+html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-tag { grid-column:1/3; grid-row:3; justify-self:end; font-size:9px; }
+html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-health { grid-column:3; grid-row:3; font-size:20px; line-height:20px; text-align:right; font-style:italic; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock {
+ display:grid; grid-template-columns:clamp(160px,16.57143vw,232px) minmax(0,1fr) clamp(128px,13.57143vw,190px); grid-template-rows:248px; gap:12px;
+ width:min(1368px,calc(100% - 32px)); height:248px; max-height:none; padding:0; bottom:16px; left:50%; right:auto; transform:translateX(-50%);
+ overflow:visible; border:0; border-radius:0; background:transparent; box-shadow:none;
+}
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-economy { display:flex; flex-direction:column; gap:6px; grid-column:1; grid-row:1; padding:10px 12px; min-width:0; border:1px solid var(--formation-line); border-radius:6px; background:#fff; box-shadow:0 2px 6px #1c3c6e14; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #dock-gold { position:relative; display:flex; flex-wrap:wrap; justify-content:flex-start; height:60px; min-height:60px; gap:0 8px; margin:0; padding:0; border:0; border-radius:0; background:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock .dock-gold-label { display:block; width:100%; font-size:12px; text-align:left; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #dock-gold .gold-coin { width:30px; height:30px; flex-basis:30px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #dock-gold #gold { font-size:40px; line-height:42px; font-style:italic; color:#0f2a55; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #formation-interest { display:block; position:absolute; right:0; bottom:6px; font-size:10px; color:#5a6b85; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #dock-streak { position:absolute; right:0; top:0; min-height:20px; padding:0 4px; font-size:10px; background:none; border:0; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #dock-streak[data-streak='none'] { display:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-growth { display:block; flex:1; min-height:0; margin:0; padding:0; border:0; border-top:1px solid #d6e3f1; background:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-progression .progression-panel { display:block; margin:0; padding:0; border:0; background:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-growth .progression-heading,html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-growth .progression-panel > p { display:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #buy-experience { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:30px 8px 36px; gap:5px 8px; width:100%; height:auto; min-height:0; margin:0; padding:6px 0 0; border:0; border-radius:0; background:none; color:#0f2a55; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #level-label { grid-column:1; grid-row:1; text-align:left; font-size:24px; line-height:26px; font-style:italic; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #level-label small { display:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #experience-label { grid-column:2; grid-row:1; font-size:12px; text-align:right; padding:0; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #experience-label > span:first-child { display:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #experience-track { grid-column:1/3; grid-row:2; width:100%; height:8px; margin:0; border:0; border-radius:4px; background:#d6e3f1; transform:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #experience-fill { position:absolute; left:0; bottom:0; width:var(--xp-progress,0%); height:100%!important; background:#1f8fff; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #experience-purchase { grid-column:1/3; grid-row:3; display:flex; align-items:center; justify-content:space-between; flex-direction:row; padding:4px 6px; border:1px solid #b9cbe0; border-radius:4px; background:#fff; font-size:12px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #experience-purchase::before { content:'경험치 구매'; font-weight:700; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock .xp-gain { font-size:10px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock .xp-price { display:flex; align-items:center; gap:4px; padding:3px 8px; background:#ffd54a; border-radius:3px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-control-column { display:block; flex:none; grid-area:auto; height:42px; padding:0; border:0; border-radius:4px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #reroll { display:flex; flex-direction:row; align-items:center; justify-content:flex-start; gap:8px; width:100%; height:42px; min-height:42px; border:1px solid #0b6fd6; border-radius:4px; padding:4px 10px; background:#1f8fff; color:#fff; font-size:14px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #reroll::before,html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #reroll::after,html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #buy-experience::before,html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #buy-experience::after { content:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #reroll .reroll-icon { width:18px; height:18px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #reroll .reroll-price { margin-left:auto; display:flex; flex-direction:row; align-items:center; gap:4px; padding:3px 8px; color:#0f2a55; background:#ffd54a; border-radius:3px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #formation-supply { display:grid; grid-column:2; grid-row:1; grid-template-rows:94px minmax(0,1fr); min-width:0; border:1px solid var(--formation-line); border-radius:6px; background:#fff; box-shadow:0 2px 6px #1c3c6e14; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-bench { grid-area:auto; padding:8px 12px 0; min-width:0; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-bench .bench { display:block; height:100%; padding:0; margin:0; border:0; border-radius:0; background:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-bench .section-title { height:18px; margin:0 0 8px; font-size:13px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #mobile-bench-viewport { overflow:visible; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-bench .bench-list { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:6px; width:100%; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-bench .bench-slot { width:100%; min-width:0; height:58px; min-height:44px; aspect-ratio:auto; border:1px solid #b9cbe0; border-radius:6px; background:#dfe8f5; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-bench .bench-slot img { padding:0; width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-bench .bench-slot strong { left:0; right:0; bottom:0; font-size:10px; line-height:13px; background:#ffffffd9; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-bench .empty-slot { border:1px dashed #aabfd8; background:#f8faff; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-dock-reserve { display:block; grid-area:auto; height:auto; min-height:0; padding:4px 12px 12px; overflow:visible; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-shop,html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel { display:block; width:100%; height:100%; padding:0; margin:0; border:0; background:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel > .section-title { display:flex; height:22px; margin:0 0 4px; font-size:13px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-offers { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); grid-template-rows:104px; gap:8px; height:104px; min-height:0; margin:0; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-offers .shop-offer { width:100%; min-width:0; max-width:none; height:104px; justify-self:stretch; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-card { display:block; position:relative; width:100%; max-width:none; min-width:0; height:104px; min-height:0; margin:0; padding:0; aspect-ratio:auto; border:1px solid #b9cbe0; border-radius:8px; background:#fff; box-shadow:none; overflow:hidden; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-card::before,html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-card::after { content:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-portrait { position:absolute; inset:0; width:100%; height:100%; display:block; border:0; border-radius:0; background:transparent; transform:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-portrait::after { content:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-portrait img { position:absolute; left:0; top:0; width:66px; height:102px; max-width:none; padding:0; margin:0; object-fit:contain; background:#dfe8f5; visibility:visible; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-traits { left:76px; top:7px; right:4px; bottom:auto; max-width:none; display:flex; flex-direction:row; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .trait-badge { font-size:10px; line-height:18px; padding:0 4px; border-radius:3px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-unit-info { position:absolute; left:76px; right:4px; top:28px; bottom:auto; padding:0; background:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-unit-info strong { display:block; padding:0; font-size:17px; line-height:22px; font-weight:900; color:#0f2a55; background:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-rarity { position:absolute; left:76px; top:53px; right:auto; bottom:auto; width:auto; height:19px; padding:0 5px; border:1px solid #e3b93c; border-radius:10px; background:#fff; color:#7a4e00; font-size:11px; line-height:17px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-price { position:absolute; left:66px; right:0; top:auto; bottom:0; display:flex; align-items:center; justify-content:center; gap:5px; width:auto; height:28px; padding:0; border:0; border-radius:0; background:#ffd54a; color:#0f2a55; font-size:21px; line-height:26px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-price .currency-coin { width:18px; height:18px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-merge-ribbon { left:auto; right:4px; top:54px; bottom:auto; height:16px; padding:0 3px; border-radius:3px; font-size:9px; line-height:16px; background:#0f7d5c; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-card[data-merge-ready='true'] { border-color:#0f7d5c; box-shadow:inset 0 0 0 1px #0f7d5c; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-lack { display:flex; align-items:center; justify-content:center; gap:3px; left:66px; right:0; top:auto; bottom:0; height:28px; padding:0 2px; background:#e3eaf3; color:#c4283f; font-size:10px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-lack .shop-lock { display:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-card[data-unaffordable='true'] .shop-price { visibility:hidden; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-card.shop-sold { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; color:#5a6b85; background:#eef3f9; font-size:12px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-footer { display:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #dock-ready { display:flex; flex-direction:column; gap:8px; grid-column:3; grid-row:1; padding:8px; min-width:0; background:#fff; border:1px solid var(--formation-line); border-radius:6px; box-shadow:0 2px 6px #1c3c6e14; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #formation-ready-help { display:block; min-height:46px; margin:6px 8px 2px; font-size:12px; line-height:18px; color:#5a6b85; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #ready { display:flex; flex-direction:column; justify-content:center; align-items:center; flex:1; min-height:44px; width:100%; padding:8px; border:0; border-bottom:5px solid #e0a500; border-radius:0; clip-path:polygon(16px 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%,0 16px); background:#ffd84a; color:#0f2a55; font-size:25px; font-weight:900; box-shadow:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #ready::before { content:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #ready::after { content:'Enter'; display:block; position:static; width:42px; height:18px; margin:6px auto 0; padding:0; border:1px solid #0f2a55; border-radius:3px; background:none; color:#0f2a55; font-size:11px; line-height:16px; transform:none; box-shadow:none; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #ready:disabled { opacity:.65; cursor:default; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #ready:disabled::after { content:none; }
+html:root.tactical-desktop body:not(.home-active) #app #screen-mode-footer { position:static; margin-top:280px; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-actions { position:absolute; bottom:100%; left:0; width:auto; height:auto; clip-path:none; overflow:visible; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #action-status:empty { display:none; }
+html:root.tactical-desktop body:not(.home-active) #app #scout-banner { flex:none; margin:0; padding:4px 8px; min-height:36px; }
+html:root.tactical-desktop body:not(.home-active) #app .final-summary { flex:none; margin:0; }
+
+@media(max-width:1200px) and (min-height:541px) {
+ html:root.tactical-desktop body:not(.home-active) #app > header { grid-template-columns:var(--formation-left) minmax(0,1fr) 232px; gap:8px; }
+ html:root.tactical-desktop body:not(.home-active) #app .header-actions { width:232px; gap:4px; }
+ html:root.tactical-desktop body:not(.home-active) #app .header-actions button { width:55px; }
+ html:root.tactical-desktop body:not(.home-active) #app header .matchbar { gap:8px; }
+ html:root.tactical-desktop body:not(.home-active) #app .matchbar > div:first-child { min-width:180px; grid-template-columns:72px minmax(0,1fr); gap:0 8px; }
+ html:root.tactical-desktop body:not(.home-active) #app #round,html:root.tactical-desktop body:not(.home-active) #app .round-summary-line { width:72px; }
+ html:root.tactical-desktop body:not(.home-active) #app #formation-clock { grid-template-columns:1fr 80px; min-width:80px; gap:4px; }
+ html:root.tactical-desktop body:not(.home-active) #app #timer { width:80px; }
+ html:root.tactical-desktop body:not(.home-active) #app #timer::after { font-size:28px; }
+ html:root.tactical-desktop body:not(.home-active) #app #formation-time-label { font-size:10px; }
+ html:root.tactical-desktop body:not(.home-active) #app .brand-name { font-size:17px; }
+ html:root.tactical-desktop body:not(.home-active) #app .brand-tag { font-size:7px; letter-spacing:0; }
+ html:root.tactical-desktop body:not(.home-active) #app .brand { grid-template-columns:32px 1fr; gap:0 6px; }
+ html:root.tactical-desktop body:not(.home-active) #app .brand-mark { width:32px; height:32px; align-self:center; }
+ html:root.tactical-desktop body:not(.home-active) #app #pc-left-rail { font-size:12px; }
+ html:root.tactical-desktop body:not(.home-active) #app .formation-deployment-row { gap:8px; }
+ html:root.tactical-desktop body:not(.home-active) #app #deployed { font-size:30px; }
+ html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content { padding:10px; }
+ html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .selection { grid-template-columns:80px 1fr; gap:8px; }
+ html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .selection > img { width:80px; height:106px; }
+ html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .selection h2 { font-size:22px; }
+ html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking { padding:4px; }
+ html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-row { grid-template-columns:16px 20px minmax(0,1fr); gap:5px 3px; padding:6px 4px; }
+ html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-avatar { width:20px; height:20px; font-size:10px; }
+ html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-name { font-size:10px; }
+ html:root.tactical-desktop body:not(.home-active) #app #ranking-count { font-size:8px; }
+ html:root.tactical-desktop body:not(.home-active) #app #game-view #player-ranking .ranking-tag { display:none; }
+ html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #experience-purchase { font-size:11px; gap:3px; white-space:nowrap; }
+ html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock .xp-gain { font-size:9px; }
+ html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock .xp-price { padding-inline:6px; gap:2px; }
+ html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-portrait img { width:48px; }
+ html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-traits,html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-unit-info,html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-rarity { left:54px; }
+ html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-unit-info strong { font-size:14px; }
+ html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-price,html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-lack { left:48px; }
+ html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #shop-panel .shop-merge-ribbon { top:72px; }
+ html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-bench { padding-inline:8px; }
+ html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-bench .bench-list { gap:3px; }
+ html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-dock-reserve { padding-inline:8px; }
+ html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #ready { font-size:20px; }
+}
+
+/* Keep the compact shop's existing touch geometry, but give the artwork its
+   whole portrait slot instead of subtracting 52px from a 44–64px card. */
+html:root.mobile-layout body #app #shop-panel .shop-card .shop-portrait img,
+html:root.landscape-layout body #app #shop-panel .shop-card .shop-portrait img { top:0; height:100%; padding:0; object-fit:contain; }
+html:root.mobile-layout body #app #shop-panel .shop-card .shop-traits { display:none; }
+html:root.mobile-layout body #app #shop-panel .shop-card .shop-unit-info { bottom:15px; }
+html:root.mobile-layout body #app #shop-panel .shop-card .shop-unit-info strong { font-size:10px; line-height:12px; padding:0 2px; }
+html:root.mobile-layout body #app #shop-panel .shop-card .shop-price { height:15px; font-size:11px; line-height:14px; }
+html:root.mobile-layout body #app #shop-panel .shop-card .shop-price .currency-coin { width:10px; height:10px; }
+/* The shared slanted-button decoration occupies ::after in compact modes,
+   so keep the history button's real label visible instead of a pseudo label. */
+html:root.mobile-layout body #app #pc-match-tools #history-toggle,
+html:root.landscape-layout body #app #pc-match-tools #history-toggle { font-size:10px; }

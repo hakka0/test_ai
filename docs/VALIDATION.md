@@ -1,3 +1,16 @@
+# 편성 HTML 연결 검증 — 2026-11-14
+
+- 사용자 승인 편성 시안의 실제 게임 연결입니다. 원본 HTML의 임의 데이터와 스크립트는 게임 규칙으로 사용하지 않았습니다. 기존 `server/`·`shared/`·캐릭터 원본은 수정하지 않았습니다.
+- `npm test` **329개**, `npm run test:network` **16개** 통과. 실패·건너뜀 0개입니다. `npm run build:pages` 및 `npm run build` 통과(TypeScript 포함). 기존 Phaser 번들 크기 경고는 남아 있습니다.
+- `CHROME_PATH=/usr/bin/chromium npm run test:formation:browser` 통과: Pages 정적 빌드의 로컬 엔진(사람 1명+봇 5명), PC 2종과 모바일 세로/가로/세로 복귀의 **9개 배치**에서 실제 구매·배치·대기석 복귀·경험치 구매·상세·전투·판매·관전·결과·기록·장비·복원을 확인했습니다. 페이지 오류·자원 누락 0개입니다. 크기·터치 영역·겹침과 DOM의 PC/모바일 부모 이동도 검사합니다. [화면 QA](SCREEN_QA.md).
+- `GAME_URL=http://127.0.0.1:2702 FORMATION_TEST_MODE=pc CHROME_PATH=/usr/bin/chromium npm run test:formation:browser` 통과: Node 서버판 PC 2개 크기의 같은 게임 흐름과, 별도의 두 브라우저로 **사람 2인 방 생성/모바일 참가**, 숨겨진 방 코드 복사, 작은 화면/PC 전환, 재접속을 확인했습니다. Colyseus가 재접속 토큰을 새로 발급하므로 새로고침 뒤에는 같은 방이 복원되는지 검사합니다. 페이지 오류 0개입니다.
+- 최종 CSS로 PC 마우스/모바일 CDP 터치의 상점 드래그 구매, 대기석 두 유닛 자리 교환, 전장 배치/대기석 복귀도 확인했습니다. 혼자 연습(사람 1명+연습 상대 1명)에서 실행했으며, 같은 9개 크기의 전투 기록 버튼 글자·44px 터치 영역·실제 기록 열기/닫기를 확인했습니다. 모바일 기록 버튼의 실제 글자를 가리던 이전 장식 CSS 충돌을 보정했습니다. 페이지 오류 0개입니다.
+- 1024px 순위 행의 보조 태그가 레벨과 겹치지 않도록 작은 PC에서는 태그를 숨기고, 경험치 구매 문구를 한 줄로 맞췄습니다. 수정 후 PC 2개 크기의 위 드래그/교환/기록 조작과 경험치 구매 줄의 가로 넘침·높이를 다시 확인했습니다. [최종 PC 측정](screenshots/formation-reference/final-pc-controls.json).
+- 보관한 측정: [Pages 9개 배치](screenshots/formation-reference/pages-results.json), [서버 PC 배치](screenshots/formation-reference/server-results.json), [최종 조작과 기록 버튼](screenshots/formation-reference/final-controls.json). [대표 화면](SCREEN_QA.md).
+- Linux Chromium 에뮬레이션 결과이며 실제 휴대폰·다른 브라우저·공개 사이트 게시/배포 검사는 실행하지 않았습니다. 원본 로그는 `/tmp/formation-integration/`, 생성 캡처와 측정은 `test-results/formation-layout/`에 있습니다.
+
+이하 내용은 이전 버전 기록입니다.
+
 # 0.26.0 원작 UI 참고 적용 검증 기록
 
 - 실행하지 못함: `npm ci`, `npm test`, `npm run build` (네트워크 차단).
