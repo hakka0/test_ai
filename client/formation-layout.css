@@ -1,6 +1,6 @@
 /* Live implementation of the approved formation HTML. Compact modes keep the
    shared controls and their existing touch layout; only wide PC is rearranged. */
-#formation-deployment,#formation-supply,#formation-ready-help,#formation-interest,
+#formation-supply,#formation-ready-help,#formation-interest,
 #formation-stage-detail,#formation-time-label,.formation-time-track { display:none; }
 #formation-clock { display:contents; }
 .formation-equipment-slots { display:flex; align-items:center; gap:8px; }
@@ -86,20 +86,8 @@ html:root.tactical-desktop body:not(.home-active) #app .arena-panel {
 html:root.tactical-desktop body:not(.home-active) #app #battlefield-stage { flex:1; min-height:0; width:100%; padding:0; display:flex; align-items:center; justify-content:center; }
 html:root.tactical-desktop body:not(.home-active) #app #board-wrap { width:min(100%,var(--board-room,640px)); height:auto; max-width:none; max-height:none; aspect-ratio:1; margin:0; border:0; border-radius:0; box-shadow:none; }
 html:root.tactical-desktop body:not(.home-active) #app #board { inset:0; }
-html:root.tactical-desktop body:not(.home-active) #app #deployment-overlay { display:none; }
 html:root.tactical-desktop body:not(.home-active) #app #pc-left-rail { position:static; max-height:var(--formation-field,640px); overflow:auto; top:auto; }
-html:root.tactical-desktop body:not(.home-active) #app #formation-deployment { display:block; padding:14px; border:1px solid var(--formation-line); border-bottom:0; border-radius:6px 6px 0 0; background:#fff; }
-html:root.tactical-desktop body:not(.home-active) #app #formation-deployment h2 { font-size:14px; margin:0 0 18px; color:#0f2a55; }
-html:root.tactical-desktop body:not(.home-active) #app .formation-deployment-row { display:flex; gap:18px; align-items:center; }
-html:root.tactical-desktop body:not(.home-active) #app #deployed { font-size:42px; font-style:italic; font-weight:900; color:#0f2a55; white-space:nowrap; }
-html:root.tactical-desktop body:not(.home-active) #app #formation-deployment strong { font-size:12px; color:#5a6b85; }
-html:root.tactical-desktop body:not(.home-active) #app #formation-slots { display:flex; gap:4px; flex-wrap:wrap; max-width:112px; margin:6px 0; }
-html:root.tactical-desktop body:not(.home-active) #app #formation-slots i { display:block; width:9px; height:7px; border:1px solid #8fa5c0; border-radius:2px; }
-html:root.tactical-desktop body:not(.home-active) #app #formation-slots i[data-filled='true'] { background:#1f8fff; border-color:#1f8fff; }
-html:root.tactical-desktop body:not(.home-active) #app #formation-capacity { margin:0; font-size:10px; line-height:15px; color:#5a6b85; }
-html:root.tactical-desktop body[data-game-phase='combat'] #app .formation-deployment-row { display:none; }
-html:root.tactical-desktop body[data-game-phase='combat'] #app #formation-combat-state { display:block; font-size:12px; }
-html:root.tactical-desktop body:not(.home-active) #app #synergy-panel { padding:12px; margin:0 0 12px; border:1px solid var(--formation-line); border-top:0; border-radius:0 0 6px 6px; background:#fff; box-shadow:0 2px 6px #1c3c6e14; }
+html:root.tactical-desktop body:not(.home-active) #app #synergy-panel { padding:12px; margin:0 0 12px; border:1px solid var(--formation-line); border-radius:6px; background:#fff; box-shadow:0 2px 6px #1c3c6e14; }
 html:root.tactical-desktop body:not(.home-active) #app #synergy-panel .section-title { margin:0 0 10px; font-size:13px; }
 html:root.tactical-desktop body:not(.home-active) #app #my-synergies { display:grid; gap:6px; }
 html:root.tactical-desktop body:not(.home-active) #app #my-synergies .synergy-card { min-height:54px; border:1px solid #c6d6e8; background:#fff; border-radius:5px; padding:6px 8px; box-shadow:none; }
@@ -258,8 +246,6 @@ html:root.tactical-desktop body:not(.home-active) #app .final-summary { flex:non
  html:root.tactical-desktop body:not(.home-active) #app .brand { grid-template-columns:32px 1fr; gap:0 6px; }
  html:root.tactical-desktop body:not(.home-active) #app .brand-mark { width:32px; height:32px; align-self:center; }
  html:root.tactical-desktop body:not(.home-active) #app #pc-left-rail { font-size:12px; }
- html:root.tactical-desktop body:not(.home-active) #app .formation-deployment-row { gap:8px; }
- html:root.tactical-desktop body:not(.home-active) #app #deployed { font-size:30px; }
  html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content { padding:10px; }
  html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .selection { grid-template-columns:80px 1fr; gap:8px; }
  html:root.tactical-desktop body:not(.home-active) #app #selected-unit-panel #selected-unit-content .selection > img { width:80px; height:106px; }

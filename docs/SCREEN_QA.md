@@ -1,3 +1,12 @@
+# 출전 인원 중앙 표시 — 2026-11-17
+
+- PC **1400×1000·1024×768**, 모바일 세로 **390×844·320×740**, 가로 **844×390·740×360·667×375·480×320**, **390×844 복귀**를 확인합니다.
+- 왼쪽 출전 현황 영역 제거, 실제 첫 배치 `1/1`, 화면 크기별 전장 전체 중심과 숫자 중심 일치(오차 1px 미만), 불투명도 0.38과 입력 통과를 검사합니다. 실제 배치·대기석 복귀로 수치 갱신, 전투 중 숨김도 확인합니다.
+- 재현: `npm run build:pages` 후 `CHROME_PATH=/usr/bin/chromium npm run test:formation:browser`. 기존 게임 흐름·관전·회전 검사도 함께 실행합니다. 실제 엔진의 사람 1명+봇 5명 연습이며, 실기기 검사와 구분합니다.
+- [PC `1/1` 화면](screenshots/center-deployment-count/pc-one-deployed.png), [모바일 `1/1` 화면](screenshots/center-deployment-count/mobile-one-deployed.png), [9개 배치 측정](screenshots/center-deployment-count/results.json).
+
+이하 내용은 이전 버전 기록입니다.
+
 # 편성 HTML 연결 — 2026-11-14
 
 - 정리한 편성 HTML을 실제 게임의 PC 메인 화면으로 연결했습니다. 1400×1000에서 시안의 72px 헤더·640px 중앙 영역·248px 하단 운영 영역과 열 위치를 확인하고, 1024×768에서는 작은 전장과 내부 스크롤을 사용합니다. 별도 전투 화면은 사용하지 않습니다.

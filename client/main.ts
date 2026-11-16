@@ -657,7 +657,7 @@ function render() {
   renderSkills();
   renderRewards(p);
   const other = opponentFor(s,p.id),viewed=viewedPlayer()??p,viewUnits=roster(viewed),viewS=rosterView(s),concealed=viewed.visibility==='opponent'&&viewed.rosterVisible===false;
-  pcUI.updateFormation(s,p,viewed);
+  pcUI.updateFormation(s,p);
   const key = JSON.stringify([
     s.phase,
     s.round,

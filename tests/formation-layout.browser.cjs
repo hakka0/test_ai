@@ -43,6 +43,8 @@ const failures=[],server=createServer(async(req,res)=>{
   const cost=Number((await offer.getAttribute('aria-label')).match(/(\d+) 골드에 구매/)[1]);
   await press(offer);await waitCount(1);assert.equal(await p.locator('#gold').textContent(),String(10-cost));
   await placeFirst();await deployed(1);await waitCount(0);
+  assert.equal(await p.locator('#deployment-overlay #deployed').textContent(),'1/1');
+  await p.screenshot({path:`${shots}/${mobile?'mobile':'pc'}-one-deployed.png`});
   await returnSelected();await deployed(0);await waitCount(1);
   const gold=Number(await p.locator('#gold').textContent());
   if(gold>=4){await press('#buy-experience');await p.waitForFunction(gold=>Number(document.querySelector('#gold').textContent)===gold-4,gold);assert.match(await p.locator('#level-label').textContent(),/레벨 3/);}
@@ -55,13 +57,19 @@ const failures=[],server=createServer(async(req,res)=>{
    await placeFirst();await deployed(9);await returnSelected();await deployed(8);await closeUnit();
    const geometry=await p.evaluate(()=>{
     const box=id=>{const e=document.getElementById(id),r=e.getBoundingClientRect();return{x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom};};
-    return{overflow:document.documentElement.scrollWidth>innerWidth,board:box('board-wrap'),bench:box('bench'),shop:box('pc-dock-reserve'),ranking:box('player-ranking'),inspector:box('selected-unit-panel'),supply:box('formation-supply'),dock:box('pc-play-dock'),header:document.querySelector('header').getBoundingClientRect().toJSON(),targets:[...document.querySelectorAll('.ranking-row,#shop-offers [data-offer],#ready,#mobile-info-open')].filter(e=>e.getClientRects().length).map(e=>({width:e.getBoundingClientRect().width,height:e.getBoundingClientRect().height}))};
+    const overlayStyle=getComputedStyle(document.getElementById('deployment-overlay'));
+    return{overflow:document.documentElement.scrollWidth>innerWidth,board:box('board-wrap'),deployed:box('deployed'),overlay:{opacity:Number(overlayStyle.opacity),pointerEvents:overlayStyle.pointerEvents},bench:box('bench'),shop:box('pc-dock-reserve'),ranking:box('player-ranking'),inspector:box('selected-unit-panel'),supply:box('formation-supply'),dock:box('pc-play-dock'),header:document.querySelector('header').getBoundingClientRect().toJSON(),targets:[...document.querySelectorAll('.ranking-row,#shop-offers [data-offer],#ready,#mobile-info-open')].filter(e=>e.getClientRects().length).map(e=>({width:e.getBoundingClientRect().width,height:e.getBoundingClientRect().height}))};
    });
    assert.equal(geometry.overflow,false);assert.ok(geometry.targets.every(r=>r.width>=44&&r.height>=44));
+   assert.equal(await p.locator('#deployment-overlay #deployed').count(),1);
+   assert.equal(await p.locator('#formation-deployment').count(),0);
+   assert.equal(await p.locator('#deployed').isVisible(),true);
+   assert.ok(Math.abs(geometry.deployed.x+geometry.deployed.width/2-geometry.board.x-geometry.board.width/2)<1);
+   assert.ok(Math.abs(geometry.deployed.y+geometry.deployed.height/2-geometry.board.y-geometry.board.height/2)<1);
+   assert.equal(geometry.overlay.opacity,.38);assert.equal(geometry.overlay.pointerEvents,'none');
    const overlap=(a,b)=>a.x<b.right-1&&a.right>b.x+1&&a.y<b.bottom-1&&a.bottom>b.y+1;
    for(const [a,b] of [['board','bench'],['board','shop'],['board','ranking'],['bench','shop'],['shop','ranking']])assert.equal(overlap(geometry[a],geometry[b]),false,`${width}x${height} ${a}/${b}`);
    if(!mobile){
-    assert.equal(await p.locator('#formation-deployment #deployed').count(),1);
     assert.equal(await p.locator('header .matchbar').count(),1);
     assert.equal(await p.locator('#formation-supply #shop-panel').count(),1);
     assert.ok(Math.abs(geometry.header.height-72)<1);assert.ok(Math.abs(geometry.dock.height-248)<1);
