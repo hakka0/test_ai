@@ -1,0 +1,1826 @@
+{
+  "frames": [
+    {
+      "file": "public/units/blue-archive/aris.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        8,
+        0,
+        119,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/aris.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        8,
+        0,
+        119,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/aris.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        11,
+        0,
+        117,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/aris.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        14,
+        0,
+        113,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/aris.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        11,
+        0,
+        116,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/aris.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        16,
+        0,
+        112,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/aru.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        24,
+        0,
+        103,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/aru.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        21,
+        0,
+        107,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/aru.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        26,
+        0,
+        102,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/aru.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        24,
+        0,
+        104,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/aru.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        21,
+        0,
+        107,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/aru.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        24,
+        0,
+        104,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/azusa.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        12,
+        0,
+        115,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/azusa.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        12,
+        0,
+        116,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/azusa.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        19,
+        0,
+        108,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/azusa.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        17,
+        0,
+        111,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/azusa.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        16,
+        0,
+        112,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/azusa.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        15,
+        0,
+        113,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/haruna.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        24,
+        0,
+        103,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/haruna.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        23,
+        0,
+        105,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/haruna.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        25,
+        0,
+        103,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/haruna.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        27,
+        0,
+        101,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/haruna.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        26,
+        0,
+        101,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/haruna.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        27,
+        0,
+        101,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hifumi.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        21,
+        0,
+        106,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hifumi.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        23,
+        0,
+        105,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hifumi.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        21,
+        0,
+        107,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hifumi.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        26,
+        0,
+        101,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hifumi.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        23,
+        0,
+        105,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hifumi.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        28,
+        0,
+        100,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hina.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        13,
+        0,
+        114,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hina.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        4,
+        0,
+        124,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hina.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        11,
+        0,
+        117,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hina.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        14,
+        0,
+        114,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hina.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        6,
+        0,
+        121,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hina.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        13,
+        0,
+        115,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hoshino.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        25,
+        0,
+        103,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hoshino.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        27,
+        0,
+        101,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hoshino.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        26,
+        0,
+        101,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hoshino.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        30,
+        0,
+        98,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hoshino.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        29,
+        0,
+        98,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/hoshino.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        26,
+        0,
+        101,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/aris.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        8,
+        0,
+        119,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/aru.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        21,
+        0,
+        107,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/azusa.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        12,
+        0,
+        116,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/haruna.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        23,
+        0,
+        105,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/hifumi.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        23,
+        0,
+        105,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/hina.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        4,
+        0,
+        124,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/hoshino.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        27,
+        0,
+        101,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/iori.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        15,
+        0,
+        112,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/izuna.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        23,
+        0,
+        104,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/koharu.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        20,
+        0,
+        108,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/maki.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        11,
+        0,
+        117,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/midori.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        21,
+        0,
+        106,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/mika.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        20,
+        0,
+        108,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/natsu.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        32,
+        0,
+        95,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/neru.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        27,
+        0,
+        100,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/noa.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        20,
+        0,
+        108,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/shiroko.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        24,
+        0,
+        104,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/wakamo.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        10,
+        0,
+        117,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/yuuka.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        14,
+        0,
+        114,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/icons/yuzu.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        21,
+        0,
+        106,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/iori.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        19,
+        0,
+        108,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/iori.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        15,
+        0,
+        112,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/iori.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        19,
+        0,
+        108,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/iori.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        31,
+        0,
+        96,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/iori.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        16,
+        0,
+        111,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/iori.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        30,
+        0,
+        97,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/izuna.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        21,
+        0,
+        107,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/izuna.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        23,
+        0,
+        104,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/izuna.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        22,
+        0,
+        105,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/izuna.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        28,
+        0,
+        100,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/izuna.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        26,
+        0,
+        102,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/izuna.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        28,
+        0,
+        100,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/koharu.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        21,
+        0,
+        106,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/koharu.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        20,
+        0,
+        108,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/koharu.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        23,
+        0,
+        105,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/koharu.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        24,
+        0,
+        103,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/koharu.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        21,
+        0,
+        106,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/koharu.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        23,
+        0,
+        105,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/maki.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        14,
+        0,
+        114,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/maki.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        11,
+        0,
+        117,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/maki.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        13,
+        0,
+        114,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/maki.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        19,
+        0,
+        108,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/maki.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        14,
+        0,
+        113,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/maki.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        18,
+        0,
+        110,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/midori.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        25,
+        0,
+        103,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/midori.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        21,
+        0,
+        106,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/midori.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        23,
+        0,
+        104,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/midori.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        26,
+        0,
+        101,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/midori.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        23,
+        0,
+        104,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/midori.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        25,
+        0,
+        102,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/mika.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        21,
+        0,
+        107,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/mika.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        20,
+        0,
+        108,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/mika.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        24,
+        0,
+        103,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/mika.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        26,
+        0,
+        102,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/mika.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        20,
+        0,
+        108,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/mika.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        24,
+        0,
+        104,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/natsu.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        34,
+        0,
+        93,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/natsu.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        32,
+        0,
+        95,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/natsu.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        33,
+        0,
+        94,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/natsu.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        35,
+        0,
+        93,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/natsu.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        34,
+        0,
+        94,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/natsu.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        34,
+        0,
+        93,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/neru.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        27,
+        0,
+        100,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/neru.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        27,
+        0,
+        100,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/neru.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        28,
+        0,
+        100,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/neru.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        33,
+        0,
+        94,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/neru.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        29,
+        0,
+        99,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/neru.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        29,
+        0,
+        98,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/noa.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        21,
+        0,
+        107,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/noa.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        20,
+        0,
+        108,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/noa.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        20,
+        0,
+        108,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/noa.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        25,
+        0,
+        103,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/noa.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        20,
+        0,
+        107,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/noa.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        22,
+        0,
+        105,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/shiroko.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        25,
+        0,
+        102,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/shiroko.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        24,
+        0,
+        104,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/shiroko.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        28,
+        0,
+        100,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/shiroko.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        28,
+        0,
+        100,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/shiroko.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        26,
+        0,
+        101,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/shiroko.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        26,
+        0,
+        101,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/wakamo.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        12,
+        0,
+        115,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/wakamo.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        10,
+        0,
+        117,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/wakamo.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        14,
+        0,
+        113,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/wakamo.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        12,
+        0,
+        116,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/wakamo.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        9,
+        0,
+        118,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/wakamo.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        11,
+        0,
+        117,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/yuuka.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        17,
+        0,
+        110,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/yuuka.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        14,
+        0,
+        114,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/yuuka.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        16,
+        0,
+        111,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/yuuka.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        17,
+        0,
+        110,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/yuuka.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        15,
+        0,
+        112,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/yuuka.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        17,
+        0,
+        110,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/yuzu.png",
+      "frame": [
+        0,
+        0
+      ],
+      "bounds": [
+        19,
+        0,
+        109,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/yuzu.png",
+      "frame": [
+        1,
+        0
+      ],
+      "bounds": [
+        21,
+        0,
+        106,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/yuzu.png",
+      "frame": [
+        2,
+        0
+      ],
+      "bounds": [
+        26,
+        0,
+        102,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/yuzu.png",
+      "frame": [
+        0,
+        1
+      ],
+      "bounds": [
+        21,
+        0,
+        107,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/yuzu.png",
+      "frame": [
+        1,
+        1
+      ],
+      "bounds": [
+        22,
+        0,
+        105,
+        128
+      ]
+    },
+    {
+      "file": "public/units/blue-archive/yuzu.png",
+      "frame": [
+        2,
+        1
+      ],
+      "bounds": [
+        20,
+        0,
+        108,
+        128
+      ]
+    }
+  ],
+  "palettePreserved": true,
+  "binaryTransparency": true
+}

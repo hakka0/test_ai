@@ -190,7 +190,7 @@ html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-bench .
 html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #mobile-bench-viewport { overflow:visible; }
 html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-bench .bench-list { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:6px; width:100%; }
 html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-bench .bench-slot { width:100%; min-width:0; height:58px; min-height:44px; aspect-ratio:auto; border:1px solid #b9cbe0; border-radius:6px; background:#dfe8f5; }
-html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-bench .bench-slot img { padding:0; width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
+html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-bench .bench-slot img { padding:0; width:100%; height:100%; object-fit:contain; object-position:center; }
 html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-bench .bench-slot strong { left:0; right:0; bottom:0; font-size:10px; line-height:13px; background:#ffffffd9; }
 html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-bench .empty-slot { border:1px dashed #aabfd8; background:#f8faff; }
 html:root.tactical-desktop body:not(.home-active) #app #pc-play-dock #pc-dock-reserve { display:block; grid-area:auto; height:auto; min-height:0; padding:4px 12px 12px; overflow:visible; }

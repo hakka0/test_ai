@@ -1,0 +1,3607 @@
+{
+  "frames": [
+    {
+      "kind": "yuuka",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.59765625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 17,
+        "top": 0,
+        "right": 110,
+        "bottom": 128,
+        "width": 93,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 14,
+        "top": 0,
+        "right": 114,
+        "bottom": 128,
+        "width": 100,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hoshino",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.54296875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 25,
+        "top": 0,
+        "right": 103,
+        "bottom": 128,
+        "width": 78,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 27,
+        "top": 0,
+        "right": 101,
+        "bottom": 128,
+        "width": 74,
+        "height": 128
+      }
+    },
+    {
+      "kind": "natsu",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.47265625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 34,
+        "top": 0,
+        "right": 93,
+        "bottom": 128,
+        "width": 59,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 32,
+        "top": 0,
+        "right": 95,
+        "bottom": 128,
+        "width": 63,
+        "height": 128
+      }
+    },
+    {
+      "kind": "neru",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.47265625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 27,
+        "top": 0,
+        "right": 100,
+        "bottom": 128,
+        "width": 73,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 27,
+        "top": 0,
+        "right": 100,
+        "bottom": 128,
+        "width": 73,
+        "height": 128
+      }
+    },
+    {
+      "kind": "izuna",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.41015625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 21,
+        "top": 0,
+        "right": 107,
+        "bottom": 128,
+        "width": 86,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 81,
+        "height": 128
+      }
+    },
+    {
+      "kind": "mika",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.48828125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 21,
+        "top": 0,
+        "right": 107,
+        "bottom": 128,
+        "width": 86,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    },
+    {
+      "kind": "shiroko",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.57421875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 25,
+        "top": 0,
+        "right": 102,
+        "bottom": 128,
+        "width": 77,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 24,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 80,
+        "height": 128
+      }
+    },
+    {
+      "kind": "koharu",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.50390625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 21,
+        "top": 0,
+        "right": 106,
+        "bottom": 128,
+        "width": 85,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    },
+    {
+      "kind": "aru",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.52734375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 24,
+        "top": 0,
+        "right": 103,
+        "bottom": 128,
+        "width": 79,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 107,
+        "bottom": 128,
+        "width": 86,
+        "height": 128
+      }
+    },
+    {
+      "kind": "haruna",
+      "frame": 0,
+      "sourceHeight": 126,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 76.8,
+      "originX": 0.44921875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 24,
+        "top": 0,
+        "right": 103,
+        "bottom": 128,
+        "width": 79,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 82,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hifumi",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.52734375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 21,
+        "top": 0,
+        "right": 106,
+        "bottom": 128,
+        "width": 85,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 82,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hina",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.52734375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 13,
+        "top": 0,
+        "right": 114,
+        "bottom": 128,
+        "width": 101,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 4,
+        "top": 0,
+        "right": 124,
+        "bottom": 128,
+        "width": 120,
+        "height": 128
+      }
+    },
+    {
+      "kind": "iori",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.52734375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 19,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 89,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 15,
+        "top": 0,
+        "right": 112,
+        "bottom": 128,
+        "width": 97,
+        "height": 128
+      }
+    },
+    {
+      "kind": "maki",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.50390625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 14,
+        "top": 0,
+        "right": 114,
+        "bottom": 128,
+        "width": 100,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 11,
+        "top": 0,
+        "right": 117,
+        "bottom": 128,
+        "width": 106,
+        "height": 128
+      }
+    },
+    {
+      "kind": "aris",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.48828125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 8,
+        "top": 0,
+        "right": 119,
+        "bottom": 128,
+        "width": 111,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 8,
+        "top": 0,
+        "right": 119,
+        "bottom": 128,
+        "width": 111,
+        "height": 128
+      }
+    },
+    {
+      "kind": "midori",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.51171875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 25,
+        "top": 0,
+        "right": 103,
+        "bottom": 128,
+        "width": 78,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 106,
+        "bottom": 128,
+        "width": 85,
+        "height": 128
+      }
+    },
+    {
+      "kind": "yuzu",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.53125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 19,
+        "top": 0,
+        "right": 109,
+        "bottom": 128,
+        "width": 90,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 106,
+        "bottom": 128,
+        "width": 85,
+        "height": 128
+      }
+    },
+    {
+      "kind": "azusa",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.54296875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 12,
+        "top": 0,
+        "right": 115,
+        "bottom": 128,
+        "width": 103,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 12,
+        "top": 0,
+        "right": 116,
+        "bottom": 128,
+        "width": 104,
+        "height": 128
+      }
+    },
+    {
+      "kind": "wakamo",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.54296875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 12,
+        "top": 0,
+        "right": 115,
+        "bottom": 128,
+        "width": 103,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 10,
+        "top": 0,
+        "right": 117,
+        "bottom": 128,
+        "width": 107,
+        "height": 128
+      }
+    },
+    {
+      "kind": "noa",
+      "frame": 0,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.44921875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 21,
+        "top": 0,
+        "right": 107,
+        "bottom": 128,
+        "width": 86,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    },
+    {
+      "kind": "yuuka",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.50390625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 14,
+        "top": 0,
+        "right": 114,
+        "bottom": 128,
+        "width": 100,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 14,
+        "top": 0,
+        "right": 114,
+        "bottom": 128,
+        "width": 100,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hoshino",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.54296875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 27,
+        "top": 0,
+        "right": 101,
+        "bottom": 128,
+        "width": 74,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 27,
+        "top": 0,
+        "right": 101,
+        "bottom": 128,
+        "width": 74,
+        "height": 128
+      }
+    },
+    {
+      "kind": "natsu",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.50390625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 32,
+        "top": 0,
+        "right": 95,
+        "bottom": 128,
+        "width": 63,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 32,
+        "top": 0,
+        "right": 95,
+        "bottom": 128,
+        "width": 63,
+        "height": 128
+      }
+    },
+    {
+      "kind": "neru",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.47265625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 27,
+        "top": 0,
+        "right": 100,
+        "bottom": 128,
+        "width": 73,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 27,
+        "top": 0,
+        "right": 100,
+        "bottom": 128,
+        "width": 73,
+        "height": 128
+      }
+    },
+    {
+      "kind": "izuna",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.55078125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 23,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 81,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 81,
+        "height": 128
+      }
+    },
+    {
+      "kind": "mika",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.54296875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    },
+    {
+      "kind": "shiroko",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.48828125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 24,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 80,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 24,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 80,
+        "height": 128
+      }
+    },
+    {
+      "kind": "koharu",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.51171875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    },
+    {
+      "kind": "aru",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.52734375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 21,
+        "top": 0,
+        "right": 107,
+        "bottom": 128,
+        "width": 86,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 107,
+        "bottom": 128,
+        "width": 86,
+        "height": 128
+      }
+    },
+    {
+      "kind": "haruna",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.46484375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 23,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 82,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 82,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hifumi",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.54296875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 23,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 82,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 82,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hina",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.53515625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 4,
+        "top": 0,
+        "right": 124,
+        "bottom": 128,
+        "width": 120,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 4,
+        "top": 0,
+        "right": 124,
+        "bottom": 128,
+        "width": 120,
+        "height": 128
+      }
+    },
+    {
+      "kind": "iori",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.57421875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 15,
+        "top": 0,
+        "right": 112,
+        "bottom": 128,
+        "width": 97,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 15,
+        "top": 0,
+        "right": 112,
+        "bottom": 128,
+        "width": 97,
+        "height": 128
+      }
+    },
+    {
+      "kind": "maki",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.50390625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 11,
+        "top": 0,
+        "right": 117,
+        "bottom": 128,
+        "width": 106,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 11,
+        "top": 0,
+        "right": 117,
+        "bottom": 128,
+        "width": 106,
+        "height": 128
+      }
+    },
+    {
+      "kind": "aris",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.51171875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 8,
+        "top": 0,
+        "right": 119,
+        "bottom": 128,
+        "width": 111,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 8,
+        "top": 0,
+        "right": 119,
+        "bottom": 128,
+        "width": 111,
+        "height": 128
+      }
+    },
+    {
+      "kind": "midori",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.52734375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 21,
+        "top": 0,
+        "right": 106,
+        "bottom": 128,
+        "width": 85,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 106,
+        "bottom": 128,
+        "width": 85,
+        "height": 128
+      }
+    },
+    {
+      "kind": "yuzu",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.51953125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 21,
+        "top": 0,
+        "right": 106,
+        "bottom": 128,
+        "width": 85,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 106,
+        "bottom": 128,
+        "width": 85,
+        "height": 128
+      }
+    },
+    {
+      "kind": "azusa",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.49609375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 12,
+        "top": 0,
+        "right": 116,
+        "bottom": 128,
+        "width": 104,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 12,
+        "top": 0,
+        "right": 116,
+        "bottom": 128,
+        "width": 104,
+        "height": 128
+      }
+    },
+    {
+      "kind": "wakamo",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.55859375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 10,
+        "top": 0,
+        "right": 117,
+        "bottom": 128,
+        "width": 107,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 10,
+        "top": 0,
+        "right": 117,
+        "bottom": 128,
+        "width": 107,
+        "height": 128
+      }
+    },
+    {
+      "kind": "noa",
+      "frame": 1,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.49609375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    },
+    {
+      "kind": "yuuka",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.40234375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 16,
+        "top": 0,
+        "right": 111,
+        "bottom": 128,
+        "width": 95,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 14,
+        "top": 0,
+        "right": 114,
+        "bottom": 128,
+        "width": 100,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hoshino",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.46875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 26,
+        "top": 0,
+        "right": 101,
+        "bottom": 128,
+        "width": 75,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 27,
+        "top": 0,
+        "right": 101,
+        "bottom": 128,
+        "width": 74,
+        "height": 128
+      }
+    },
+    {
+      "kind": "natsu",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.52734375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 33,
+        "top": 0,
+        "right": 94,
+        "bottom": 128,
+        "width": 61,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 32,
+        "top": 0,
+        "right": 95,
+        "bottom": 128,
+        "width": 63,
+        "height": 128
+      }
+    },
+    {
+      "kind": "neru",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.49609375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 28,
+        "top": 0,
+        "right": 100,
+        "bottom": 128,
+        "width": 72,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 27,
+        "top": 0,
+        "right": 100,
+        "bottom": 128,
+        "width": 73,
+        "height": 128
+      }
+    },
+    {
+      "kind": "izuna",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.58203125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 22,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 83,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 81,
+        "height": 128
+      }
+    },
+    {
+      "kind": "mika",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.55859375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 24,
+        "top": 0,
+        "right": 103,
+        "bottom": 128,
+        "width": 79,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    },
+    {
+      "kind": "shiroko",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.4921875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 28,
+        "top": 0,
+        "right": 100,
+        "bottom": 128,
+        "width": 72,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 24,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 80,
+        "height": 128
+      }
+    },
+    {
+      "kind": "koharu",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.47265625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 23,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 82,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    },
+    {
+      "kind": "aru",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.49609375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 26,
+        "top": 0,
+        "right": 102,
+        "bottom": 128,
+        "width": 76,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 107,
+        "bottom": 128,
+        "width": 86,
+        "height": 128
+      }
+    },
+    {
+      "kind": "haruna",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.48046875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 25,
+        "top": 0,
+        "right": 103,
+        "bottom": 128,
+        "width": 78,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 82,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hifumi",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.48046875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 21,
+        "top": 0,
+        "right": 107,
+        "bottom": 128,
+        "width": 86,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 82,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hina",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.48828125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 11,
+        "top": 0,
+        "right": 117,
+        "bottom": 128,
+        "width": 106,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 4,
+        "top": 0,
+        "right": 124,
+        "bottom": 128,
+        "width": 120,
+        "height": 128
+      }
+    },
+    {
+      "kind": "iori",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.58203125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 19,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 89,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 15,
+        "top": 0,
+        "right": 112,
+        "bottom": 128,
+        "width": 97,
+        "height": 128
+      }
+    },
+    {
+      "kind": "maki",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.55078125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 13,
+        "top": 0,
+        "right": 114,
+        "bottom": 128,
+        "width": 101,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 11,
+        "top": 0,
+        "right": 117,
+        "bottom": 128,
+        "width": 106,
+        "height": 128
+      }
+    },
+    {
+      "kind": "aris",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.52734375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 11,
+        "top": 0,
+        "right": 117,
+        "bottom": 128,
+        "width": 106,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 8,
+        "top": 0,
+        "right": 119,
+        "bottom": 128,
+        "width": 111,
+        "height": 128
+      }
+    },
+    {
+      "kind": "midori",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.46484375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 23,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 81,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 106,
+        "bottom": 128,
+        "width": 85,
+        "height": 128
+      }
+    },
+    {
+      "kind": "yuzu",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.55078125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 26,
+        "top": 0,
+        "right": 102,
+        "bottom": 128,
+        "width": 76,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 106,
+        "bottom": 128,
+        "width": 85,
+        "height": 128
+      }
+    },
+    {
+      "kind": "azusa",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.51953125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 19,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 89,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 12,
+        "top": 0,
+        "right": 116,
+        "bottom": 128,
+        "width": 104,
+        "height": 128
+      }
+    },
+    {
+      "kind": "wakamo",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.52734375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 14,
+        "top": 0,
+        "right": 113,
+        "bottom": 128,
+        "width": 99,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 10,
+        "top": 0,
+        "right": 117,
+        "bottom": 128,
+        "width": 107,
+        "height": 128
+      }
+    },
+    {
+      "kind": "noa",
+      "frame": 2,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.52734375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    },
+    {
+      "kind": "yuuka",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.44140625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 17,
+        "top": 0,
+        "right": 110,
+        "bottom": 128,
+        "width": 93,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 14,
+        "top": 0,
+        "right": 114,
+        "bottom": 128,
+        "width": 100,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hoshino",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.41796875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 30,
+        "top": 0,
+        "right": 98,
+        "bottom": 128,
+        "width": 68,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 27,
+        "top": 0,
+        "right": 101,
+        "bottom": 128,
+        "width": 74,
+        "height": 128
+      }
+    },
+    {
+      "kind": "natsu",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.48828125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 35,
+        "top": 0,
+        "right": 93,
+        "bottom": 128,
+        "width": 58,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 32,
+        "top": 0,
+        "right": 95,
+        "bottom": 128,
+        "width": 63,
+        "height": 128
+      }
+    },
+    {
+      "kind": "neru",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.47265625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 33,
+        "top": 0,
+        "right": 94,
+        "bottom": 128,
+        "width": 61,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 27,
+        "top": 0,
+        "right": 100,
+        "bottom": 128,
+        "width": 73,
+        "height": 128
+      }
+    },
+    {
+      "kind": "izuna",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.37890625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 28,
+        "top": 0,
+        "right": 100,
+        "bottom": 128,
+        "width": 72,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 81,
+        "height": 128
+      }
+    },
+    {
+      "kind": "mika",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.46484375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 26,
+        "top": 0,
+        "right": 102,
+        "bottom": 128,
+        "width": 76,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    },
+    {
+      "kind": "shiroko",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.52734375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 28,
+        "top": 0,
+        "right": 100,
+        "bottom": 128,
+        "width": 72,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 24,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 80,
+        "height": 128
+      }
+    },
+    {
+      "kind": "koharu",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.49609375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 24,
+        "top": 0,
+        "right": 103,
+        "bottom": 128,
+        "width": 79,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    },
+    {
+      "kind": "aru",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.50390625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 24,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 80,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 107,
+        "bottom": 128,
+        "width": 86,
+        "height": 128
+      }
+    },
+    {
+      "kind": "haruna",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.46484375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 27,
+        "top": 0,
+        "right": 101,
+        "bottom": 128,
+        "width": 74,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 82,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hifumi",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.44140625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 26,
+        "top": 0,
+        "right": 101,
+        "bottom": 128,
+        "width": 75,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 82,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hina",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.46484375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 14,
+        "top": 0,
+        "right": 114,
+        "bottom": 128,
+        "width": 100,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 4,
+        "top": 0,
+        "right": 124,
+        "bottom": 128,
+        "width": 120,
+        "height": 128
+      }
+    },
+    {
+      "kind": "iori",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.3984375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 31,
+        "top": 0,
+        "right": 96,
+        "bottom": 128,
+        "width": 65,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 15,
+        "top": 0,
+        "right": 112,
+        "bottom": 128,
+        "width": 97,
+        "height": 128
+      }
+    },
+    {
+      "kind": "maki",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.44140625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 19,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 89,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 11,
+        "top": 0,
+        "right": 117,
+        "bottom": 128,
+        "width": 106,
+        "height": 128
+      }
+    },
+    {
+      "kind": "aris",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.49609375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 14,
+        "top": 0,
+        "right": 113,
+        "bottom": 128,
+        "width": 99,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 8,
+        "top": 0,
+        "right": 119,
+        "bottom": 128,
+        "width": 111,
+        "height": 128
+      }
+    },
+    {
+      "kind": "midori",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.48046875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 26,
+        "top": 0,
+        "right": 101,
+        "bottom": 128,
+        "width": 75,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 106,
+        "bottom": 128,
+        "width": 85,
+        "height": 128
+      }
+    },
+    {
+      "kind": "yuzu",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.48828125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 21,
+        "top": 0,
+        "right": 107,
+        "bottom": 128,
+        "width": 86,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 106,
+        "bottom": 128,
+        "width": 85,
+        "height": 128
+      }
+    },
+    {
+      "kind": "azusa",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.50390625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 17,
+        "top": 0,
+        "right": 111,
+        "bottom": 128,
+        "width": 94,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 12,
+        "top": 0,
+        "right": 116,
+        "bottom": 128,
+        "width": 104,
+        "height": 128
+      }
+    },
+    {
+      "kind": "wakamo",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.57421875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 12,
+        "top": 0,
+        "right": 116,
+        "bottom": 128,
+        "width": 104,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 10,
+        "top": 0,
+        "right": 117,
+        "bottom": 128,
+        "width": 107,
+        "height": 128
+      }
+    },
+    {
+      "kind": "noa",
+      "frame": 3,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.45703125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 25,
+        "top": 0,
+        "right": 103,
+        "bottom": 128,
+        "width": 78,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    },
+    {
+      "kind": "yuuka",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.49609375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 15,
+        "top": 0,
+        "right": 112,
+        "bottom": 128,
+        "width": 97,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 14,
+        "top": 0,
+        "right": 114,
+        "bottom": 128,
+        "width": 100,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hoshino",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.47265625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 29,
+        "top": 0,
+        "right": 98,
+        "bottom": 128,
+        "width": 69,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 27,
+        "top": 0,
+        "right": 101,
+        "bottom": 128,
+        "width": 74,
+        "height": 128
+      }
+    },
+    {
+      "kind": "natsu",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.50390625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 34,
+        "top": 0,
+        "right": 94,
+        "bottom": 128,
+        "width": 60,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 32,
+        "top": 0,
+        "right": 95,
+        "bottom": 128,
+        "width": 63,
+        "height": 128
+      }
+    },
+    {
+      "kind": "neru",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.51953125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 29,
+        "top": 0,
+        "right": 99,
+        "bottom": 128,
+        "width": 70,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 27,
+        "top": 0,
+        "right": 100,
+        "bottom": 128,
+        "width": 73,
+        "height": 128
+      }
+    },
+    {
+      "kind": "izuna",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.55078125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 26,
+        "top": 0,
+        "right": 102,
+        "bottom": 128,
+        "width": 76,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 81,
+        "height": 128
+      }
+    },
+    {
+      "kind": "mika",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.47265625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    },
+    {
+      "kind": "shiroko",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.51953125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 26,
+        "top": 0,
+        "right": 101,
+        "bottom": 128,
+        "width": 75,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 24,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 80,
+        "height": 128
+      }
+    },
+    {
+      "kind": "koharu",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.51171875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 21,
+        "top": 0,
+        "right": 106,
+        "bottom": 128,
+        "width": 85,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    },
+    {
+      "kind": "aru",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.5078125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 21,
+        "top": 0,
+        "right": 107,
+        "bottom": 128,
+        "width": 86,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 107,
+        "bottom": 128,
+        "width": 86,
+        "height": 128
+      }
+    },
+    {
+      "kind": "haruna",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.48828125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 26,
+        "top": 0,
+        "right": 101,
+        "bottom": 128,
+        "width": 75,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 82,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hifumi",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.51953125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 23,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 82,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 82,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hina",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.47265625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 6,
+        "top": 0,
+        "right": 121,
+        "bottom": 128,
+        "width": 115,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 4,
+        "top": 0,
+        "right": 124,
+        "bottom": 128,
+        "width": 120,
+        "height": 128
+      }
+    },
+    {
+      "kind": "iori",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.44921875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 16,
+        "top": 0,
+        "right": 111,
+        "bottom": 128,
+        "width": 95,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 15,
+        "top": 0,
+        "right": 112,
+        "bottom": 128,
+        "width": 97,
+        "height": 128
+      }
+    },
+    {
+      "kind": "maki",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.50390625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 14,
+        "top": 0,
+        "right": 113,
+        "bottom": 128,
+        "width": 99,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 11,
+        "top": 0,
+        "right": 117,
+        "bottom": 128,
+        "width": 106,
+        "height": 128
+      }
+    },
+    {
+      "kind": "aris",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.54296875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 11,
+        "top": 0,
+        "right": 116,
+        "bottom": 128,
+        "width": 105,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 8,
+        "top": 0,
+        "right": 119,
+        "bottom": 128,
+        "width": 111,
+        "height": 128
+      }
+    },
+    {
+      "kind": "midori",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.51171875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 23,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 81,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 106,
+        "bottom": 128,
+        "width": 85,
+        "height": 128
+      }
+    },
+    {
+      "kind": "yuzu",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.50390625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 22,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 83,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 106,
+        "bottom": 128,
+        "width": 85,
+        "height": 128
+      }
+    },
+    {
+      "kind": "azusa",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.46484375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 16,
+        "top": 0,
+        "right": 112,
+        "bottom": 128,
+        "width": 96,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 12,
+        "top": 0,
+        "right": 116,
+        "bottom": 128,
+        "width": 104,
+        "height": 128
+      }
+    },
+    {
+      "kind": "wakamo",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.55859375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 9,
+        "top": 0,
+        "right": 118,
+        "bottom": 128,
+        "width": 109,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 10,
+        "top": 0,
+        "right": 117,
+        "bottom": 128,
+        "width": 107,
+        "height": 128
+      }
+    },
+    {
+      "kind": "noa",
+      "frame": 4,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.47265625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 20,
+        "top": 0,
+        "right": 107,
+        "bottom": 128,
+        "width": 87,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    },
+    {
+      "kind": "yuuka",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.55078125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 17,
+        "top": 0,
+        "right": 110,
+        "bottom": 128,
+        "width": 93,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 14,
+        "top": 0,
+        "right": 114,
+        "bottom": 128,
+        "width": 100,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hoshino",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.58203125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 26,
+        "top": 0,
+        "right": 101,
+        "bottom": 128,
+        "width": 75,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 27,
+        "top": 0,
+        "right": 101,
+        "bottom": 128,
+        "width": 74,
+        "height": 128
+      }
+    },
+    {
+      "kind": "natsu",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.51171875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 34,
+        "top": 0,
+        "right": 93,
+        "bottom": 128,
+        "width": 59,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 32,
+        "top": 0,
+        "right": 95,
+        "bottom": 128,
+        "width": 63,
+        "height": 128
+      }
+    },
+    {
+      "kind": "neru",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.51953125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 29,
+        "top": 0,
+        "right": 98,
+        "bottom": 128,
+        "width": 69,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 27,
+        "top": 0,
+        "right": 100,
+        "bottom": 128,
+        "width": 73,
+        "height": 128
+      }
+    },
+    {
+      "kind": "izuna",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.62890625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 28,
+        "top": 0,
+        "right": 100,
+        "bottom": 128,
+        "width": 72,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 81,
+        "height": 128
+      }
+    },
+    {
+      "kind": "mika",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.53515625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 24,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 80,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    },
+    {
+      "kind": "shiroko",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.49609375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 26,
+        "top": 0,
+        "right": 101,
+        "bottom": 128,
+        "width": 75,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 24,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 80,
+        "height": 128
+      }
+    },
+    {
+      "kind": "koharu",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.51171875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 23,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 82,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    },
+    {
+      "kind": "aru",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.50390625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 24,
+        "top": 0,
+        "right": 104,
+        "bottom": 128,
+        "width": 80,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 107,
+        "bottom": 128,
+        "width": 86,
+        "height": 128
+      }
+    },
+    {
+      "kind": "haruna",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.19999999999999,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.54296875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 27,
+        "top": 0,
+        "right": 101,
+        "bottom": 128,
+        "width": 74,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 82,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hifumi",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.58203125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 28,
+        "top": 0,
+        "right": 100,
+        "bottom": 128,
+        "width": 72,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 23,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 82,
+        "height": 128
+      }
+    },
+    {
+      "kind": "hina",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.54296875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 13,
+        "top": 0,
+        "right": 115,
+        "bottom": 128,
+        "width": 102,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 4,
+        "top": 0,
+        "right": 124,
+        "bottom": 128,
+        "width": 120,
+        "height": 128
+      }
+    },
+    {
+      "kind": "iori",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.59765625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 30,
+        "top": 0,
+        "right": 97,
+        "bottom": 128,
+        "width": 67,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 15,
+        "top": 0,
+        "right": 112,
+        "bottom": 128,
+        "width": 97,
+        "height": 128
+      }
+    },
+    {
+      "kind": "maki",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.48828125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 18,
+        "top": 0,
+        "right": 110,
+        "bottom": 128,
+        "width": 92,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 11,
+        "top": 0,
+        "right": 117,
+        "bottom": 128,
+        "width": 106,
+        "height": 128
+      }
+    },
+    {
+      "kind": "aris",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.50390625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 16,
+        "top": 0,
+        "right": 112,
+        "bottom": 128,
+        "width": 96,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 8,
+        "top": 0,
+        "right": 119,
+        "bottom": 128,
+        "width": 111,
+        "height": 128
+      }
+    },
+    {
+      "kind": "midori",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.50390625,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 25,
+        "top": 0,
+        "right": 102,
+        "bottom": 128,
+        "width": 77,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 106,
+        "bottom": 128,
+        "width": 85,
+        "height": 128
+      }
+    },
+    {
+      "kind": "yuzu",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.52734375,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 21,
+        "top": 0,
+        "right": 106,
+        "bottom": 128,
+        "width": 85,
+        "height": 128
+      }
+    },
+    {
+      "kind": "azusa",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.51171875,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 15,
+        "top": 0,
+        "right": 113,
+        "bottom": 128,
+        "width": 98,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 12,
+        "top": 0,
+        "right": 116,
+        "bottom": 128,
+        "width": 104,
+        "height": 128
+      }
+    },
+    {
+      "kind": "wakamo",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.45703125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 11,
+        "top": 0,
+        "right": 117,
+        "bottom": 128,
+        "width": 106,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 10,
+        "top": 0,
+        "right": 117,
+        "bottom": 128,
+        "width": 107,
+        "height": 128
+      }
+    },
+    {
+      "kind": "noa",
+      "frame": 5,
+      "sourceHeight": 128,
+      "height": 75.6,
+      "feetX": 0,
+      "feetY": 25.200000000000045,
+      "aspect": 1,
+      "hit": true,
+      "width": 75.6,
+      "originX": 0.55078125,
+      "expectedHeight": 75.6,
+      "expectedFeetY": 25.200000000000003,
+      "alpha": {
+        "left": 22,
+        "top": 0,
+        "right": 105,
+        "bottom": 128,
+        "width": 83,
+        "height": 128
+      },
+      "portraitAlpha": {
+        "left": 20,
+        "top": 0,
+        "right": 108,
+        "bottom": 128,
+        "width": 88,
+        "height": 128
+      }
+    }
+  ],
+  "breathing": true,
+  "combat": true,
+  "errors": []
+}

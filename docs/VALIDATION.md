@@ -1,3 +1,13 @@
+# 유닛 이미지 여백 정리 — 2026-11-17
+
+- 초상화 20장·스프라이트 120프레임의 실제 알파 경계를 검사했습니다. 총 140개 모두 긴 쪽 128px, 중앙 여백 오차 최대 1px, 원본 색상 집합과 이진 투명도(0/255) 보존을 확인했습니다. [독립 측정](screenshots/unit-image-trim/independent-check.json).
+- `CHROME_PATH=/usr/bin/chromium npm run normalize:units -- --source-ref 9ae1f9e --check` 통과: 원본 커밋에서 재생성한 40개 PNG와 현재 파일이 정확히 일치합니다. 처리한 이미지를 원본 삼아 반복 확대하지 않습니다.
+- `CHROME_PATH=/usr/bin/chromium npm run test:unit-alignment:browser` 통과: 실제 20종×6방향의 그림/초상화 경계와 중심, 동일한 표시 높이 75.6px·발 중심/바닥 높이 25.2px, 원래 비율, 대기 모션·이동·칸 판정·몸통 타격 효과를 확인했습니다. 고립 픽셀 판별에 따라 화면상 그림을 측정하는 경계는 원본 알파 경계와 구분합니다.
+- `npm test` **329개** 통과, `npm run build:pages` 통과(TypeScript 포함). 기존 Phaser 번들 크기 경고는 유지됩니다. 게임 규칙/서버는 수정하지 않았으며 네트워크 검사는 반복하지 않았습니다.
+- `CHROME_PATH=/usr/bin/chromium npm run test:formation:browser` 통과: PC 2종·모바일 세로/가로/세로 복귀의 **9개 배치**, 구매·배치·복귀·전투·관전·상세·기록·장비·저장 복원을 확인했습니다. 페이지 오류·자원 누락 0개입니다. [실제 프레임/발 정렬 측정](screenshots/unit-image-trim/alignment-results.json), [게임 화면 측정](screenshots/unit-image-trim/formation-results.json). Linux Chromium 에뮬레이션이며 실제 휴대폰 검사와 게시/배포는 이번 변경 범위에 포함하지 않습니다.
+
+이하 내용은 이전 버전 기록입니다.
+
 # 출전 인원 중앙 표시 — 2026-11-17
 
 - 왼쪽 출전 현황 패널의 DOM·갱신 코드·전용 CSS를 제거하고 기존 전장 중앙 표시를 PC에서도 사용합니다. 조합 패널의 위 테두리와 모서리를 독립된 패널로 맞췄습니다. 서버·게임 규칙·원본 이미지는 수정하지 않았습니다.

@@ -12,6 +12,7 @@ fs.mkdirSync(shots,{recursive:true});
   await page.waitForFunction(()=>window.combatFixture?.scene.sys.isActive());
   const results=await page.evaluate(async()=>{
     const {BLUE_ARCHIVE_KINDS}=await import('/shared/blue-archive.ts');
+    const {UNITS}=await import('/shared/catalog.ts');
     const {UNIT_BODY_HEIGHT,UNIT_FOOT_Y}=await import('/client/unit-appearance.ts');
     const fixture=window.combatFixture,scene=fixture.scene;
     scene.scene.pause();fixture.pair('yuuka','hifumi',{reduced:true});
@@ -20,6 +21,23 @@ fs.mkdirSync(shots,{recursive:true});
     scene.snapshot.fighters=BLUE_ARCHIVE_KINDS.map((kind,i)=>({...structuredClone(source),
       id:`aligned-${kind}`,kind,x:i%5+1,y:Math.floor(i/5)*2+1,owner:i%2?'a':'b'}));
     scene.update(scene.time.now,16);
+    const canvas=document.createElement('canvas');canvas.width=128;canvas.height=128;
+    const context=canvas.getContext('2d',{willReadFrequently:true});
+    function alphaBounds(source,x=0,y=0){
+      context.clearRect(0,0,128,128);context.drawImage(source,x,y,128,128,0,0,128,128);
+      const pixels=context.getImageData(0,0,128,128).data;
+      let left=128,top=128,right=0,bottom=0;
+      for(let y=0;y<128;y++)for(let x=0;x<128;x++)if(pixels[(y*128+x)*4+3]){
+        left=Math.min(left,x);top=Math.min(top,y);right=Math.max(right,x+1);bottom=Math.max(bottom,y+1);
+      }
+      return{left,top,right,bottom,width:right-left,height:bottom-top};
+    }
+    const portraits=new Map();
+    for(const kind of BLUE_ARCHIVE_KINDS){
+      const image=await new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>resolve(image);image.onerror=reject;image.src=UNITS[kind].image;});
+      if(image.width!==128||image.height!==128)throw new Error(kind+' portrait must remain 128×128');
+      portraits.set(kind,alphaBounds(image));
+    }
     const results=[];
     for(let frame=0;frame<6;frame++){
       for(const sprite of scene.sprites.values())sprite.setFrame(frame);
@@ -32,7 +50,8 @@ fs.mkdirSync(shots,{recursive:true});
           feetX:sprite.x+(bounds.footX-sprite.originX*sprite.width)*sprite.scaleX-anchor.x,
           feetY:sprite.y+(bounds.footY-sprite.originY*sprite.height)*sprite.scaleY-anchor.y,
           aspect:sprite.scaleX/sprite.scaleY,hit:scene.unitAt(unit.x,unit.y)?.id===unit.id,
-          width:sprite.displayWidth,originX:sprite.originX,expectedHeight:UNIT_BODY_HEIGHT,expectedFeetY:UNIT_FOOT_Y});
+          width:sprite.displayWidth,originX:sprite.originX,expectedHeight:UNIT_BODY_HEIGHT,expectedFeetY:UNIT_FOOT_Y,
+          alpha:alphaBounds(scene.textures.get(unit.kind).getSourceImage(),(frame%3)*128,Math.floor(frame/3)*128),portraitAlpha:portraits.get(unit.kind)});
       }
     }
     return results;
@@ -43,9 +62,12 @@ fs.mkdirSync(shots,{recursive:true});
     assert.ok(Math.abs(result.feetX)<1e-8,`${result.kind}/${result.frame}: centered feet`);
     assert.ok(Math.abs(result.feetY-result.expectedFeetY)<1e-8,`${result.kind}/${result.frame}: common baseline`);
     assert.equal(result.aspect,1);assert.equal(result.hit,true);
-    assert.ok(result.sourceHeight>=85&&result.sourceHeight<=120);
+    for(const bounds of [result.alpha,result.portraitAlpha]){
+      assert.equal(Math.max(bounds.width,bounds.height),128,'normalized artwork fills its long edge');
+      assert.ok(Math.abs(bounds.left-(128-bounds.right))<=1,'horizontal transparent margins are centered');
+      assert.ok(Math.abs(bounds.top-(128-bounds.bottom))<=1,'vertical transparent margins are centered');
+    }
   }
-  assert.ok(new Set(results.map(r=>r.width.toFixed(3))).size>5,'different transparent padding requires different frame scales');
   assert.ok(new Set(results.map(r=>r.originX)).size>10,'direction-specific foot centers are used');
   for(const frame of [1,4]){
     await page.evaluate(frame=>{

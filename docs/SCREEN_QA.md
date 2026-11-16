@@ -1,3 +1,13 @@
+# 유닛 이미지 여백 정리 — 2026-11-17
+
+- 원래 비율로 정리한 초상화 20장과 6방향 120프레임을 게임에 연결했습니다. 긴 쪽 128px·중앙 정렬·원본 색과 투명도를 유지하며, PC 대기석은 확대된 머리/발이 카드에 잘리지 않도록 `contain`을 사용합니다.
+- 최소 확인 크기는 PC **1400×1000·1024×768**, 모바일 **390×844·320×740·844×390·740×360·667×375·480×320**, **390×844 복귀**입니다. 실제 사람 1명+봇 5명 연습의 배치·구매·관전·전투·재접속 흐름을 사용합니다.
+- 재현: `npm run build:pages`, `CHROME_PATH=/usr/bin/chromium npm run test:formation:browser`. 별도 `CHROME_PATH=/usr/bin/chromium npm run test:unit-alignment:browser`에서 실제 20종 전체의 전·후방 모습, 6방향과 발 정렬을 확인합니다.
+- [20종 변경 전/후](screenshots/unit-image-trim/before-after.png), [전장 정면](screenshots/unit-image-trim/aligned-front.png), [전장 후면](screenshots/unit-image-trim/aligned-back.png), [PC 게임 화면](screenshots/unit-image-trim/pc-1400-1000.png), [모바일 게임 화면](screenshots/unit-image-trim/mobile-390-844.png).
+- [원본/출력 프레임 경계](screenshots/unit-image-trim/normalization.json), [9개 화면 측정](screenshots/unit-image-trim/formation-results.json). 실기기·타 브라우저 검사와 게시/배포는 포함하지 않습니다.
+
+이하 내용은 이전 버전 기록입니다.
+
 # 출전 인원 중앙 표시 — 2026-11-17
 
 - PC **1400×1000·1024×768**, 모바일 세로 **390×844·320×740**, 가로 **844×390·740×360·667×375·480×320**, **390×844 복귀**를 확인합니다.

@@ -79,6 +79,7 @@
     "build:pages": "npm run check && vite build --mode pages",
     "test:pages:browser": "node tests/pages.browser.cjs",
     "test:formation:browser": "node tests/formation-layout.browser.cjs",
+    "normalize:units": "node --import tsx scripts/normalize-unit-images.cjs",
     "publish:pages": "node scripts/publish-pages.mjs"
   },
   "dependencies": {
