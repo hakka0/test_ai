@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>유닛 아트 비교 · 도트 질감 툰</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, -apple-system, "Noto Sans KR", sans-serif; color: #25384b; background: #edf1f2; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 1380px; margin: auto; padding: 40px 24px 64px; }
+    .eyebrow { color: #56776b; font-size: 12px; font-weight: 750; letter-spacing: .12em; }
+    h1 { font-size: clamp(26px, 4vw, 38px); letter-spacing: -.05em; margin: 10px 0 12px; }
+    .intro { max-width: 760px; color: #536577; font-size: 14px; line-height: 1.8; }
+    .toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin: 26px 0; padding: 16px 20px; background: #fff; border: 1px solid #d8e0e3; border-radius: 12px; }
+    label { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 13px; font-weight: 650; }
+    select, input { font: inherit; }
+    select { min-height: 44px; padding: 8px 30px 8px 12px; color: inherit; background: #f6f8f8; border: 1px solid #c6d3d7; border-radius: 7px; }
+    #search { min-width: 150px; max-width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid #c6d3d7; border-radius: 7px; }
+    #count { font-size: 13px; color: #647586; margin-left: auto; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .card { min-width: 0; padding: 18px; border: 1px solid #d6dfe3; background: #fff; border-radius: 12px; }
+    .card header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 15px; }
+    h2 { margin: 0; font-size: 17px; letter-spacing: -.03em; }
+    .id { color: #7a8897; font-size: 11px; }
+    .compare { --board: #d7e0d8; --line: #bdcbbf; --board-image: linear-gradient(90deg, var(--line) 1px, transparent 1px), linear-gradient(var(--line) 1px, transparent 1px); display: grid; grid-template-columns: 36px 1fr 1fr 1fr; align-items: end; gap: 6px; padding: 12px 8px; background-color: var(--board); background-image: var(--board-image); background-size: 24px 24px; border: 1px solid var(--line); border-radius: 8px; }
+    [data-background="dark"] .compare { --board: #293a4d; --line: #415369; }
+    [data-background="check"] .compare { --board: #e3e7eb; --line: #cdd5dd; --board-image: conic-gradient(#fff 25%, transparent 0 50%, #fff 0 75%, transparent 0); background-size: 16px 16px; }
+    .size { text-align: center; font-size: 10px; color: #455c4c; font-variant-numeric: tabular-nums; }
+    [data-background="dark"] .size, [data-background="dark"] .row-label { color: #dee6ee; }
+    .row-label { align-self: center; color: #445a4d; font-size: 10px; font-weight: 650; }
+    .sample { display: flex; align-items: end; justify-content: center; height: 90px; min-width: 0; }
+    .sprite { width: var(--size); height: var(--size); flex: 0 0 auto; background-repeat: no-repeat; background-size: 300% 200%; background-position: var(--px, 50%) var(--py, 0%); }
+    .original .sprite { image-rendering: pixelated; }
+    .toon .sprite { image-rendering: auto; }
+    .minion .sprite { background-size: contain; background-position: center bottom; }
+    .links { display: flex; gap: 8px; margin: 10px 0 0; flex-wrap: wrap; }
+    a { color: #286759; text-underline-offset: 3px; font-size: 12px; }
+    .links a { display: inline-flex; align-items: center; min-height: 44px; }
+    details { border-top: 1px solid #e4e9ec; margin-top: 8px; }
+    summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; color: #526779; font-size: 12px; }
+    summary::before { content: "+"; margin-right: 8px; }
+    details[open] summary::before { content: "−"; }
+    .sheet { width: 100%; height: auto; display: block; border-radius: 6px; background: repeating-conic-gradient(#e3e8ed 0% 25%, #fff 0% 50%) 0 0 / 16px 16px; }
+    .missing { color: #a13737; background: #fff0f0; font-size: 12px; padding: 10px; }
+    footer { font-size: 12px; color: #657687; line-height: 1.8; margin-top: 28px; }
+    :focus-visible { outline: 3px solid #358e7a; outline-offset: 3px; }
+    @media (max-width: 1120px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 720px) { main { padding: 24px 12px 40px; } .grid { grid-template-columns: 1fr; } .toolbar { padding: 12px; gap: 12px; } .card { padding: 14px; } #count { margin-left: 0; } }
+    @media (max-width: 350px) { .card { padding: 10px; } .compare { padding: 10px 4px; gap: 3px; grid-template-columns: 30px 1fr 1fr 1fr; } }
+  </style>
+</head>
+<body data-background="light">
+<main>
+  <div class="eyebrow">UNIT ART STUDY / 03</div>
+  <h1>도트 질감을 섞은 툰 일러스트</h1>
+  <p class="intro">매끈한 윤곽, 넓은 명암 면, 부분적인 사각 하이라이트로 다시 그린 테스트 세트입니다. 기존 이미지와 새 이미지를 같은 48·64·80px 슬롯에서 비교하세요. 캐릭터 20종은 6방향을 선택할 수 있습니다.</p>
+  <div class="links"><a href="units/toon-pixel-test/comparison-light.png" download>전체 비교표 · 밝은 전장</a><a href="units/toon-pixel-test/comparison-dark.png" download>전체 비교표 · 어두운 전장</a><a href="units/toon-pixel-test/directions-review.png" download>20종 전체 6방향</a></div>
+  <div class="toolbar">
+    <label>방향 <select id="direction"><option value="0">정면 왼쪽</option><option value="1" selected>정면</option><option value="2">정면 오른쪽</option><option value="3">후면 왼쪽</option><option value="4">후면</option><option value="5">후면 오른쪽</option></select></label>
+    <label>배경 <select id="background"><option value="light">밝은 전장</option><option value="dark">어두운 전장</option><option value="check">투명 확인</option></select></label>
+    <label>찾기 <input id="search" type="search" placeholder="유닛 이름" autocomplete="off"></label>
+    <span id="count" role="status"></span>
+  </div>
+  <div class="grid" id="units"></div>
+  <footer>테스트용 별도 리소스입니다. 기존 게임의 유닛 이미지와 렌더링 설정은 유지됩니다.<br>원본은 최근접 보간, 새 일러스트는 부드러운 축소를 사용합니다. 위 전장 배경은 축소 가독성 비교용이며 실제 게임 화면 캡처가 아닙니다.</footer>
+</main>
+<script>
+  const characters = [
+    ["aris", "아리스"], ["aru", "아루"], ["azusa", "아즈사"], ["haruna", "하루나"],
+    ["hifumi", "히후미"], ["hina", "히나"], ["hoshino", "호시노"], ["iori", "이오리"],
+    ["izuna", "이즈나"], ["koharu", "코하루"], ["maki", "마키"], ["midori", "미도리"],
+    ["mika", "미카"], ["natsu", "나츠"], ["neru", "네루"], ["noa", "노아"],
+    ["shiroko", "시로코"], ["wakamo", "와카모"], ["yuuka", "유우카"], ["yuzu", "유즈"]
+  ];
+  const units = characters.map(([id, name]) => ({id, name,
+    original: `units/blue-archive/${id}.png`,
+    sheet: `units/toon-pixel-test/blue-archive/${id}.png`,
+    icon: `units/toon-pixel-test/blue-archive/icons/${id}.png`
+  })).concat(["drone", "sentry"].map(kind => ({id: `minion-${kind}`, name: kind === "drone" ? "미니언 드론" : "미니언 센트리", minion: true,
+    original: `units/minion-${kind}.svg`, sheet: `units/toon-pixel-test/minions/minion-${kind}.png`, icon: `units/toon-pixel-test/minions/minion-${kind}.png`
+  })));
+  const sizes = [48, 64, 80];
+  const container = document.querySelector("#units");
+  function samples(path, kind) {
+    return sizes.map(size => `<div class="sample ${kind}"><div class="sprite" style="--size:${size}px;background-image:url('${path}')" role="img" aria-label="${kind === "original" ? "기존" : "툰"} ${size}px"></div></div>`).join("");
+  }
+  for (const unit of units) {
+    const article = document.createElement("article");
+    article.className = `card${unit.minion ? " minion" : ""}`;
+    article.dataset.name = `${unit.id} ${unit.name}`;
+    article.innerHTML = `<header><h2>${unit.name}</h2><span class="id">${unit.id}${unit.minion ? " · 단일 이미지" : " · 6방향"}</span></header>
+      <div class="compare"><div></div>${sizes.map(size => `<div class="size">${size}px</div>`).join("")}
+      <div class="row-label">기존</div>${samples(unit.original, "original")}
+      <div class="row-label">툰</div>${samples(unit.sheet, "toon")}</div>
+      <div class="links"><a href="${unit.sheet}" download>${unit.minion ? "이미지" : "6방향 시트"} PNG</a><a href="${unit.icon}" download>정면 PNG</a></div>
+      <details><summary>${unit.minion ? "전체 이미지" : "6방향 전체 시트"} 보기</summary><img class="sheet" src="${unit.sheet}" alt="${unit.name} 새 테스트 이미지" loading="lazy"></details>`;
+    container.append(article);
+  }
+  document.querySelector("#direction").addEventListener("change", event => {
+    const frame = Number(event.target.value);
+    container.style.setProperty("--px", `${frame % 3 * 50}%`);
+    container.style.setProperty("--py", `${Math.floor(frame / 3) * 100}%`);
+  });
+  document.querySelector("#background").addEventListener("change", event => document.body.dataset.background = event.target.value);
+  document.querySelector("#search").addEventListener("input", event => {
+    const query = event.target.value.trim().toLocaleLowerCase();
+    let shown = 0;
+    for (const card of container.children) { card.hidden = !card.dataset.name.toLocaleLowerCase().includes(query); if (!card.hidden) shown++; }
+    document.querySelector("#count").textContent = `${shown} / ${units.length}종`;
+  });
+  document.querySelector("#count").textContent = `${units.length}종 · 캐릭터 20 / 미니언 2`;
+  for (const image of document.querySelectorAll(".sheet")) image.addEventListener("error", () => {
+    const message = document.createElement("p"); message.className = "missing"; message.textContent = "이미지를 불러오지 못했습니다. 압축 파일 전체를 풀었는지 확인해 주세요."; image.replaceWith(message);
+  }, {once:true});
+</script>
+</body>
+</html>

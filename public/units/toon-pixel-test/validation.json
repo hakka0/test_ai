@@ -1,0 +1,20 @@
+{
+  "characters": 20,
+  "minions": 2,
+  "pngAssetFiles": 42,
+  "characterDirectionalFrames": 120,
+  "minionFrames": 2,
+  "checks": [
+    "all current source unit IDs covered",
+    "RGBA and transparent backgrounds in all 122 frames",
+    "square frames and 3x2 character atlases",
+    "all 20 icons exactly match front frame 1",
+    "source and output SHA-256 recorded"
+  ],
+  "warnings": [],
+  "browserQA": {
+    "status": "unverified",
+    "reason": "Managed preview relay did not become ready; no live game or interactive browser validation claimed"
+  },
+  "comparison": "Separate static review composition at 48, 64, 80px; original nearest, new lanczos3"
+}

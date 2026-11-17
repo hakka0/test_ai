@@ -1,3 +1,9 @@
+# 도트 질감 툰 일러스트 테스트 — 2026-11-17
+
+- 별도 [비교 화면](../public/unit-art-test.html)과 [22종 PNG 세트](../public/units/toon-pixel-test/README.md)를 추가했습니다. 실제 게임의 UI와 이미지 연결은 유지합니다.
+- 검토 자료: [48·64·80px 밝은 배경](../public/units/toon-pixel-test/comparison-light.png), [어두운 배경](../public/units/toon-pixel-test/comparison-dark.png), [20종 6방향](../public/units/toon-pixel-test/directions-review.png). 모두 실제 게임 캡처와 구분되는 정적 리소스 검토표입니다.
+- 리소스의 122개 프레임 투명도·규격·경계 여백과 정면 20장 일치 검사를 통과했습니다. 웹 미리보기 릴레이가 준비되지 않아 PC·모바일·회전·조작 검증은 완료하지 않았습니다. 기존 게임의 이전 검증을 이번 비교 화면 검증으로 간주하지 않습니다.
+
 # 유닛 이미지 여백 정리 — 2026-11-17
 
 - 원래 비율로 정리한 초상화 20장과 6방향 120프레임을 게임에 연결했습니다. 긴 쪽 128px·중앙 정렬·원본 색과 투명도를 유지하며, PC 대기석은 확대된 머리/발이 카드에 잘리지 않도록 `contain`을 사용합니다.

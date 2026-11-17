@@ -1,0 +1,1718 @@
+{
+  "version": 1,
+  "createdAt": "2026-11-17",
+  "sourceRepository": "hakka0/test_ai",
+  "sourceCommit": "9f24e5f81f2c957a659b0644228e1c18cb6e9bc8",
+  "style": "Smooth toon illustration with sparse pixel highlights",
+  "artworkGeneratedWith": "image_gen",
+  "gameIntegration": "Separate test set; production assets and renderer unchanged",
+  "characterFrameOrder": [
+    "front-left",
+    "front",
+    "front-right",
+    "back-left",
+    "back",
+    "back-right"
+  ],
+  "iconFrameIndex": 1,
+  "reviewSizes": [
+    48,
+    64,
+    80
+  ],
+  "stylePrompt": "Reproduce the attached game's character sprite sheet as a NEW CLEAN TOON ILLUSTRATION WITH SPARSE PIXEL TEXTURE, optimized to read at 48-80 pixels on a tactical battle board.\nFollow the reference's exact character identity, costume, hair color and silhouette, halo, weapon, accessories, proportions and six view directions. Do not invent outfits or remove signature equipment.\nSTYLE: smooth confident dark contours and anti-aliased edges; large simple cel-shaded color shapes; two or three clear light/shadow values per material; bold readable facial features; clearly separated hair, hands, clothing and weapon. Preserve a retro game feel ONLY through a few intentional square accent marks within shadow/highlight regions, no all-over pixel grid, jagged contours, dithering, blurry texture or micro-detail. This must look noticeably cleaner and smoother than the low-resolution reference, not an upscaled or filtered copy. Keep the chibi full-body proportions and original age-appropriate fully clothed uniform.\nOUTPUT: one transparent RGBA landscape sprite atlas, exactly 3 equal columns by 2 equal rows, ideally 1536 by 1024 pixels with six 512-square cells. EXACTLY ONE complete full-body character per cell, separated by generous transparent gutters, no clipping, feet aligned to a common baseline within each cell, halos included. Columns and rows match the reference: top row front-left / front / front-right; bottom row back-left / back / back-right. All six poses must have the same scale and consistent designs. No text, labels, separators, border, checkerboard, ground plane, scenery or cast shadow. Genuine transparent background.",
+  "identities": {
+    "aris": "Aris (아리스): very long dark navy hair, blue eyes, cyan geometric halo, white and navy uniform, enormous white-and-blue railgun.",
+    "aru": "Aru (아루): long rose-red hair, gold-and-black curved horns, red circular halo, burgundy black-and-gold coat and skirt, red eyes, long dark rifle.",
+    "azusa": "Azusa (아즈사): long lavender-white hair, violet eyes, gold halo and purple flower hair ornament, black-and-white uniform with gold tie, small white wings, long rifle.",
+    "haruna": "Haruna (하루나): long silver hair, red eyes, black beret with orange emblem, thin orange halo, black military coat with orange and gold trim, long rifle and dark tail.",
+    "hifumi": "Hifumi (히후미): light brown twin tails with yellow ribbons, gold halo, white school uniform with yellow bow, plaid skirt, pink shoes, pink-and-white rifle and backpack.",
+    "hina": "Hina (히나): very long pale lilac hair, purple eyes, dark horns, intricate purple horizontal halo, dark military coat with red armband, gold accents, small dark purple bat wings, large machine gun.",
+    "hoshino": "Hoshino (호시노): very long pastel pink hair and cowlick, sleepy eyes, pale pink halo, white shirt and dark tactical vest, turquoise tie, dark skirt, white-and-navy shoes, compact shotgun.",
+    "iori": "Iori (이오리): long silver-lavender twin-tail hair, dark horns, purple ring halo, reddish eyes, dark military uniform, red armband, tall dark boots, long brown-and-black rifle.",
+    "izuna": "Izuna (이즈나): short dark brown hair, fox ears and fluffy cream fox tail, pink ring halo, gold eyes, bright pink floral ninja outfit with dark skirt, red ribbon and firearm.",
+    "koharu": "Koharu (코하루): pastel pink twin braids, black beret, dark feather accessories, pink halo, dark school uniform with pink trim and pink bow, striped socks, long pink-and-dark rifle carried horizontally.",
+    "maki": "Maki (마키): vivid red hair in two big top buns, blue eyes, red geometric halo, black jacket with white sleeves and red accents, dark pleated skirt, striped socks, large blue-patterned machine gun with yellow details.",
+    "midori": "Midori (미도리): short peach-blonde hair, bright green eyes, cat-ear gaming headset, lime green halo, green hoodie under black jacket, dark shorts, white socks, neon green-and-black sniper rifle.",
+    "mika": "Mika (미카): very long pink hair, violet-and-gold halo, lavender eyes, small white feather wings, white-and-lavender uniform dress with gold ornaments, dark stockings and white boots, white-and-lavender firearm.",
+    "natsu": "Natsu (나츠): long light pink twin-tail hair, sleepy pink eyes, pale pink halo, white-and-light-blue sailor uniform with red bow, black leggings, dark shoes, compact blue-and-white firearm.",
+    "neru": "Neru (네루): short orange hair, orange halo, sharp orange eyes, black jacket with gold dragon details over black-and-white maid uniform, red socks, paired black-and-orange compact guns.",
+    "noa": "Noa (ノア / 노아): extremely long pale blue-white hair, violet eyes, cyan ring halo, blue hair accessory, white-and-blue coat with black bow, dark skirt and stockings, small black pistol.",
+    "shiroko": "Shiroko (시로코): silver-gray bob haircut, wolf ears, blue eyes, turquoise halo, dark school uniform with bright cyan scarf, white socks, blue-and-lime shoes, black-and-cyan rifle.",
+    "wakamo": "Wakamo (와카모): long dark hair, fox ears and fox tail, signature red-and-white fox mask, red circular halo, black-and-crimson floral kimono, long horizontal rifle. Keep the fox mask exactly as the reference.",
+    "yuuka": "Yuuka (유우카): long dark purple hair in two low bunches, purple eyes, dark blue elliptical halo, white-and-navy uniform jacket with cyan accents, dark skirt, two compact navy-and-cyan pistols.",
+    "yuzu": "Yuzu (유즈): long red side ponytail, shy sleepy expression, orange geometric halo, white jacket with teal sleeves and yellow accents, dark shorts and orange shoes, black-and-orange grenade launcher."
+  },
+  "units": [
+    {
+      "id": "aris",
+      "type": "character",
+      "source": "units/blue-archive/aris.png",
+      "sourceSHA256": "7638c71f583dff9bc6570826d27b0fc8f479188ccb9cca399e20d0769bd081f0",
+      "sheet": "units/toon-pixel-test/blue-archive/aris.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 36,
+            "top": 5,
+            "right": 466,
+            "bottom": 494
+          },
+          "edgePixels": 0,
+          "clearPixels": 122526
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 38,
+            "top": 5,
+            "right": 462,
+            "bottom": 493
+          },
+          "edgePixels": 0,
+          "clearPixels": 124030
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 47,
+            "top": 4,
+            "right": 466,
+            "bottom": 494
+          },
+          "edgePixels": 0,
+          "clearPixels": 124672
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 52,
+            "top": 5,
+            "right": 456,
+            "bottom": 497
+          },
+          "edgePixels": 0,
+          "clearPixels": 126265
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 42,
+            "top": 5,
+            "right": 456,
+            "bottom": 498
+          },
+          "edgePixels": 0,
+          "clearPixels": 120001
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 64,
+            "top": 5,
+            "right": 460,
+            "bottom": 498
+          },
+          "edgePixels": 0,
+          "clearPixels": 123794
+        }
+      ],
+      "sha256": "5df9f92ecb8d6eb6668e0ee66862bec5c57c0d588be3feba245c0a312c227241",
+      "icon": "units/toon-pixel-test/blue-archive/icons/aris.png",
+      "iconSHA256": "5ce863b104aba44546c536536ad1a625e2f404bd8f62a7dbb9dd1c007b310acb"
+    },
+    {
+      "id": "aru",
+      "type": "character",
+      "source": "units/blue-archive/aru.png",
+      "sourceSHA256": "905b5aa68a0337b633cb6ca9940f6a9f2e93952ae18445f0a22ef192594ea506",
+      "sheet": "units/toon-pixel-test/blue-archive/aru.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 119,
+            "top": 8,
+            "right": 400,
+            "bottom": 466
+          },
+          "edgePixels": 0,
+          "clearPixels": 163422
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 108,
+            "top": 8,
+            "right": 405,
+            "bottom": 466
+          },
+          "edgePixels": 0,
+          "clearPixels": 159245
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 108,
+            "top": 8,
+            "right": 386,
+            "bottom": 467
+          },
+          "edgePixels": 0,
+          "clearPixels": 162928
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 111,
+            "top": 6,
+            "right": 403,
+            "bottom": 468
+          },
+          "edgePixels": 0,
+          "clearPixels": 164700
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 102,
+            "top": 7,
+            "right": 412,
+            "bottom": 468
+          },
+          "edgePixels": 0,
+          "clearPixels": 157314
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 107,
+            "top": 6,
+            "right": 403,
+            "bottom": 468
+          },
+          "edgePixels": 0,
+          "clearPixels": 164837
+        }
+      ],
+      "sha256": "566b5d0985dd796bcf05ebb462d09152c10b6ddf1eda94912e6dfe828fabc298",
+      "icon": "units/toon-pixel-test/blue-archive/icons/aru.png",
+      "iconSHA256": "76beedfc6e4971f9c5398d28cb7165be372491a1361fcd52b55173a065e1dfce"
+    },
+    {
+      "id": "azusa",
+      "type": "character",
+      "source": "units/blue-archive/azusa.png",
+      "sourceSHA256": "ffa7a666da85165dc995c6d442a87287e6e24c0b164aa374ac6d3d7f68b564b9",
+      "sheet": "units/toon-pixel-test/blue-archive/azusa.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 72,
+            "top": 10,
+            "right": 428,
+            "bottom": 466
+          },
+          "edgePixels": 0,
+          "clearPixels": 147342
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 89,
+            "top": 10,
+            "right": 430,
+            "bottom": 465
+          },
+          "edgePixels": 0,
+          "clearPixels": 146427
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 96,
+            "top": 10,
+            "right": 407,
+            "bottom": 465
+          },
+          "edgePixels": 0,
+          "clearPixels": 155589
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 80,
+            "top": 1,
+            "right": 422,
+            "bottom": 469
+          },
+          "edgePixels": 0,
+          "clearPixels": 153181
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 84,
+            "top": 1,
+            "right": 423,
+            "bottom": 468
+          },
+          "edgePixels": 0,
+          "clearPixels": 147267
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 86,
+            "top": 1,
+            "right": 430,
+            "bottom": 469
+          },
+          "edgePixels": 0,
+          "clearPixels": 158067
+        }
+      ],
+      "sha256": "2dfc5197c4f7b2f0c0eea55c62da2c231af436c3d3a14c8a0e3e4682be6b16ef",
+      "icon": "units/toon-pixel-test/blue-archive/icons/azusa.png",
+      "iconSHA256": "38070106e56577e71c503e2e68f523b4e50fa9d41550557d1f50e11b7a23b1eb"
+    },
+    {
+      "id": "haruna",
+      "type": "character",
+      "source": "units/blue-archive/haruna.png",
+      "sourceSHA256": "606ed9e5daf096e585ebbadee0ad54d7a4293fbe39e2bd5d95a387267369180e",
+      "sheet": "units/toon-pixel-test/blue-archive/haruna.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 112,
+            "top": 11,
+            "right": 398,
+            "bottom": 487
+          },
+          "edgePixels": 0,
+          "clearPixels": 141722
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 112,
+            "top": 10,
+            "right": 406,
+            "bottom": 487
+          },
+          "edgePixels": 0,
+          "clearPixels": 134616
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 118,
+            "top": 12,
+            "right": 406,
+            "bottom": 487
+          },
+          "edgePixels": 0,
+          "clearPixels": 140850
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 119,
+            "top": 7,
+            "right": 394,
+            "bottom": 488
+          },
+          "edgePixels": 0,
+          "clearPixels": 124868
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 103,
+            "top": 9,
+            "right": 397,
+            "bottom": 487
+          },
+          "edgePixels": 0,
+          "clearPixels": 117886
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 116,
+            "top": 4,
+            "right": 401,
+            "bottom": 487
+          },
+          "edgePixels": 0,
+          "clearPixels": 139479
+        }
+      ],
+      "sha256": "6278913c638be84f55d1d8f7410cde5f0d2ed8b5307c616af7bb03b1c1e41acc",
+      "icon": "units/toon-pixel-test/blue-archive/icons/haruna.png",
+      "iconSHA256": "269ae3e6f142a14f724c5a0f0e7dc06d88fc3f3f80e07b05d5ed09a1a0965b98"
+    },
+    {
+      "id": "hifumi",
+      "type": "character",
+      "source": "units/blue-archive/hifumi.png",
+      "sourceSHA256": "f77fbbfcd78102ba8ab81155f290518f6448bf6f0885ba1b2c608969f56c6e9f",
+      "sheet": "units/toon-pixel-test/blue-archive/hifumi.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 97,
+            "top": 8,
+            "right": 417,
+            "bottom": 493
+          },
+          "edgePixels": 0,
+          "clearPixels": 152687
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 90,
+            "top": 7,
+            "right": 410,
+            "bottom": 493
+          },
+          "edgePixels": 0,
+          "clearPixels": 150621
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 89,
+            "top": 8,
+            "right": 406,
+            "bottom": 493
+          },
+          "edgePixels": 0,
+          "clearPixels": 157987
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 122,
+            "top": 6,
+            "right": 403,
+            "bottom": 493
+          },
+          "edgePixels": 0,
+          "clearPixels": 166392
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 91,
+            "top": 4,
+            "right": 410,
+            "bottom": 493
+          },
+          "edgePixels": 0,
+          "clearPixels": 158729
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 100,
+            "top": 6,
+            "right": 383,
+            "bottom": 493
+          },
+          "edgePixels": 0,
+          "clearPixels": 166343
+        }
+      ],
+      "sha256": "34e86652cb92ba3ab6885ed26e84059b08e52a549103d6fd3e8d416691e0928a",
+      "icon": "units/toon-pixel-test/blue-archive/icons/hifumi.png",
+      "iconSHA256": "7a5c858c28b1087a8c65190d0fd4c78190257c44afd92b0bdc2962fa50e7a023"
+    },
+    {
+      "id": "hina",
+      "type": "character",
+      "source": "units/blue-archive/hina.png",
+      "sourceSHA256": "151b409a8db9f9abd17697d7b98499426f58cf45ae3932ccc559ed3bf555578c",
+      "sheet": "units/toon-pixel-test/blue-archive/hina.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 53,
+            "top": 9,
+            "right": 431,
+            "bottom": 487
+          },
+          "edgePixels": 0,
+          "clearPixels": 125239
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 51,
+            "top": 9,
+            "right": 460,
+            "bottom": 486
+          },
+          "edgePixels": 0,
+          "clearPixels": 121659
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 79,
+            "top": 9,
+            "right": 459,
+            "bottom": 487
+          },
+          "edgePixels": 0,
+          "clearPixels": 127183
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 53,
+            "top": 10,
+            "right": 433,
+            "bottom": 492
+          },
+          "edgePixels": 0,
+          "clearPixels": 129357
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 49,
+            "top": 11,
+            "right": 460,
+            "bottom": 493
+          },
+          "edgePixels": 0,
+          "clearPixels": 120883
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 79,
+            "top": 11,
+            "right": 456,
+            "bottom": 492
+          },
+          "edgePixels": 0,
+          "clearPixels": 132852
+        }
+      ],
+      "sha256": "fd327df0a10d44dc6f466e13b04db9bb52fc81bbf0545d7b48f251f24e899fd1",
+      "icon": "units/toon-pixel-test/blue-archive/icons/hina.png",
+      "iconSHA256": "d6f2cb7c12580bf69dd74f1cfdbb5020a510abc5d4b22c636c78105b2ebdff8d"
+    },
+    {
+      "id": "hoshino",
+      "type": "character",
+      "source": "units/blue-archive/hoshino.png",
+      "sourceSHA256": "0956314f5e31deeda16d6abc11e8c655414c4b7a9381e4a5986636f026ad71b4",
+      "sheet": "units/toon-pixel-test/blue-archive/hoshino.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 117,
+            "top": 7,
+            "right": 411,
+            "bottom": 489
+          },
+          "edgePixels": 0,
+          "clearPixels": 160330
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 110,
+            "top": 7,
+            "right": 403,
+            "bottom": 488
+          },
+          "edgePixels": 0,
+          "clearPixels": 156244
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 95,
+            "top": 7,
+            "right": 389,
+            "bottom": 488
+          },
+          "edgePixels": 0,
+          "clearPixels": 162926
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 127,
+            "top": 4,
+            "right": 407,
+            "bottom": 485
+          },
+          "edgePixels": 0,
+          "clearPixels": 163235
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 113,
+            "top": 3,
+            "right": 397,
+            "bottom": 484
+          },
+          "edgePixels": 0,
+          "clearPixels": 160199
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 95,
+            "top": 4,
+            "right": 401,
+            "bottom": 485
+          },
+          "edgePixels": 0,
+          "clearPixels": 163173
+        }
+      ],
+      "sha256": "0b4ce977925d4b835ef3b9f51861129ec70e8b042fe0fe74df3331c5596e8c1d",
+      "icon": "units/toon-pixel-test/blue-archive/icons/hoshino.png",
+      "iconSHA256": "4187ed697f74995689a122065272e9871338b9d684e2bc7ffe27147d792d24fb"
+    },
+    {
+      "id": "iori",
+      "type": "character",
+      "source": "units/blue-archive/iori.png",
+      "sourceSHA256": "e70ff1334d904458af38e8c8c48d2f0c5551d48175802b65cf16323030a339b4",
+      "sheet": "units/toon-pixel-test/blue-archive/iori.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 108,
+            "top": 19,
+            "right": 419,
+            "bottom": 462
+          },
+          "edgePixels": 0,
+          "clearPixels": 168091
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 89,
+            "top": 18,
+            "right": 421,
+            "bottom": 461
+          },
+          "edgePixels": 0,
+          "clearPixels": 162778
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 85,
+            "top": 18,
+            "right": 406,
+            "bottom": 462
+          },
+          "edgePixels": 0,
+          "clearPixels": 167606
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 146,
+            "top": 16,
+            "right": 399,
+            "bottom": 463
+          },
+          "edgePixels": 0,
+          "clearPixels": 186095
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 82,
+            "top": 18,
+            "right": 431,
+            "bottom": 463
+          },
+          "edgePixels": 0,
+          "clearPixels": 159981
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 112,
+            "top": 17,
+            "right": 366,
+            "bottom": 463
+          },
+          "edgePixels": 0,
+          "clearPixels": 182808
+        }
+      ],
+      "sha256": "f9327eb25726fc66def0de9382f0f92dd5cc3c9b59f0b1db04ad473e5ca77d37",
+      "icon": "units/toon-pixel-test/blue-archive/icons/iori.png",
+      "iconSHA256": "198784dbabc1d4aac2f7e44730ab4b7f02bd824809e0353b9c40132c3a31ff47"
+    },
+    {
+      "id": "izuna",
+      "type": "character",
+      "source": "units/blue-archive/izuna.png",
+      "sourceSHA256": "1d3c24dd102987c62dbd9a0ae70a62744d3a9fcbe558fe96c769bab4b0ad2cca",
+      "sheet": "units/toon-pixel-test/blue-archive/izuna.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 95,
+            "top": 12,
+            "right": 412,
+            "bottom": 477
+          },
+          "edgePixels": 0,
+          "clearPixels": 148475
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 110,
+            "top": 12,
+            "right": 393,
+            "bottom": 477
+          },
+          "edgePixels": 0,
+          "clearPixels": 149649
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 92,
+            "top": 12,
+            "right": 398,
+            "bottom": 477
+          },
+          "edgePixels": 0,
+          "clearPixels": 152591
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 128,
+            "top": 6,
+            "right": 392,
+            "bottom": 475
+          },
+          "edgePixels": 0,
+          "clearPixels": 161046
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 118,
+            "top": 3,
+            "right": 399,
+            "bottom": 477
+          },
+          "edgePixels": 0,
+          "clearPixels": 156732
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 119,
+            "top": 5,
+            "right": 386,
+            "bottom": 477
+          },
+          "edgePixels": 0,
+          "clearPixels": 165786
+        }
+      ],
+      "sha256": "bdd1492637c61643e3bff0bd665c0f6bae072e9c632edd82e1c387c367ee0cc1",
+      "icon": "units/toon-pixel-test/blue-archive/icons/izuna.png",
+      "iconSHA256": "b5b4eb983cb13297a468780a5599a2ef5206e4dfb90eb80c7fe86820dc2b92fc"
+    },
+    {
+      "id": "koharu",
+      "type": "character",
+      "source": "units/blue-archive/koharu.png",
+      "sourceSHA256": "f2e8dd39efd403f5ca8dd2b621f3484dce80f51f2b0f4586c1f0257df1ee2ba8",
+      "sheet": "units/toon-pixel-test/blue-archive/koharu.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 80,
+            "top": 8,
+            "right": 393,
+            "bottom": 487
+          },
+          "edgePixels": 0,
+          "clearPixels": 167261
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 93,
+            "top": 8,
+            "right": 414,
+            "bottom": 489
+          },
+          "edgePixels": 0,
+          "clearPixels": 164160
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 127,
+            "top": 8,
+            "right": 434,
+            "bottom": 488
+          },
+          "edgePixels": 0,
+          "clearPixels": 167663
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 87,
+            "top": 5,
+            "right": 391,
+            "bottom": 494
+          },
+          "edgePixels": 0,
+          "clearPixels": 166443
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 86,
+            "top": 9,
+            "right": 408,
+            "bottom": 496
+          },
+          "edgePixels": 0,
+          "clearPixels": 157279
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 111,
+            "top": 2,
+            "right": 423,
+            "bottom": 494
+          },
+          "edgePixels": 0,
+          "clearPixels": 164543
+        }
+      ],
+      "sha256": "85469468997327b6fd2a73713673f36fe509483b83107f5a1b86d55bed375478",
+      "icon": "units/toon-pixel-test/blue-archive/icons/koharu.png",
+      "iconSHA256": "a43b587d804eeb7ba259b6496ebf58cb9ca08a89f1ff2ffd2e283092e886f633"
+    },
+    {
+      "id": "maki",
+      "type": "character",
+      "source": "units/blue-archive/maki.png",
+      "sourceSHA256": "e2ab7ce175cef02f21d8871cf5c37c6b249ef7881b930c2c7c24541dd7c28fe7",
+      "sheet": "units/toon-pixel-test/blue-archive/maki.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 89,
+            "top": 10,
+            "right": 414,
+            "bottom": 476
+          },
+          "edgePixels": 0,
+          "clearPixels": 162877
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 69,
+            "top": 10,
+            "right": 417,
+            "bottom": 478
+          },
+          "edgePixels": 0,
+          "clearPixels": 157508
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 92,
+            "top": 10,
+            "right": 414,
+            "bottom": 478
+          },
+          "edgePixels": 0,
+          "clearPixels": 160449
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 117,
+            "top": 10,
+            "right": 420,
+            "bottom": 484
+          },
+          "edgePixels": 0,
+          "clearPixels": 161642
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 105,
+            "top": 11,
+            "right": 417,
+            "bottom": 486
+          },
+          "edgePixels": 0,
+          "clearPixels": 159327
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 108,
+            "top": 12,
+            "right": 409,
+            "bottom": 487
+          },
+          "edgePixels": 0,
+          "clearPixels": 162615
+        }
+      ],
+      "sha256": "b4ed8a04befcc0b6437879248e2f9e441e8eec56e2bd69beb9b919e1de78bbed",
+      "icon": "units/toon-pixel-test/blue-archive/icons/maki.png",
+      "iconSHA256": "19dc3b9d4ece6575dcf49133aa787d125f47c6868b5f8a65597f4451d7174cbc"
+    },
+    {
+      "id": "midori",
+      "type": "character",
+      "source": "units/blue-archive/midori.png",
+      "sourceSHA256": "76063c164d2fd6fb6b2fda0e60013ceccb4cad4e8aafdb2b695af97c80c34af1",
+      "sheet": "units/toon-pixel-test/blue-archive/midori.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 118,
+            "top": 10,
+            "right": 408,
+            "bottom": 481
+          },
+          "edgePixels": 0,
+          "clearPixels": 152860
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 118,
+            "top": 10,
+            "right": 407,
+            "bottom": 481
+          },
+          "edgePixels": 0,
+          "clearPixels": 160379
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 122,
+            "top": 9,
+            "right": 407,
+            "bottom": 481
+          },
+          "edgePixels": 0,
+          "clearPixels": 160305
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 95,
+            "top": 10,
+            "right": 381,
+            "bottom": 480
+          },
+          "edgePixels": 0,
+          "clearPixels": 162994
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 105,
+            "top": 7,
+            "right": 389,
+            "bottom": 480
+          },
+          "edgePixels": 0,
+          "clearPixels": 165099
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 128,
+            "top": 10,
+            "right": 416,
+            "bottom": 480
+          },
+          "edgePixels": 0,
+          "clearPixels": 165470
+        }
+      ],
+      "sha256": "3a91b943db71f5b2303ed086c64903b0a237fb14ea4c7e70c5f05ada73684347",
+      "icon": "units/toon-pixel-test/blue-archive/icons/midori.png",
+      "iconSHA256": "9251ef7927feedac3c777cdfaf58b0ea7d24284b82cbc87a1d04b9717cd4b469"
+    },
+    {
+      "id": "mika",
+      "type": "character",
+      "source": "units/blue-archive/mika.png",
+      "sourceSHA256": "32dacb7f03ba62151bd5b8eb641573c615e667997d75a1d3518b7d92d8e90d37",
+      "sheet": "units/toon-pixel-test/blue-archive/mika.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 101,
+            "top": 3,
+            "right": 426,
+            "bottom": 489
+          },
+          "edgePixels": 0,
+          "clearPixels": 132971
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 83,
+            "top": 2,
+            "right": 425,
+            "bottom": 489
+          },
+          "edgePixels": 0,
+          "clearPixels": 123236
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 85,
+            "top": 3,
+            "right": 402,
+            "bottom": 489
+          },
+          "edgePixels": 0,
+          "clearPixels": 140658
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 118,
+            "top": 6,
+            "right": 415,
+            "bottom": 480
+          },
+          "edgePixels": 0,
+          "clearPixels": 144262
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 86,
+            "top": 3,
+            "right": 428,
+            "bottom": 480
+          },
+          "edgePixels": 0,
+          "clearPixels": 119466
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 91,
+            "top": 6,
+            "right": 405,
+            "bottom": 480
+          },
+          "edgePixels": 0,
+          "clearPixels": 138197
+        }
+      ],
+      "sha256": "270b53cafcf5e9edfe5c0ef2e5f8fb824e5483a4f83a2d818bf456e2900670f8",
+      "icon": "units/toon-pixel-test/blue-archive/icons/mika.png",
+      "iconSHA256": "1265633b849fd81c064a07527856c868e0b97ea9c73a6f5caabf12f2e9541c35"
+    },
+    {
+      "id": "minion-drone",
+      "type": "minion",
+      "source": "units/minion-drone.svg",
+      "sourceSHA256": "07ba574a9d46f19277f0a641bbf2238e42762db0fb101d3956e8cf39f7810179",
+      "sheet": "units/toon-pixel-test/minions/minion-drone.png",
+      "width": 1254,
+      "height": 1254,
+      "frameSize": 1254,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 133,
+            "top": 250,
+            "right": 1120,
+            "bottom": 944
+          },
+          "edgePixels": 0,
+          "clearPixels": 1166065
+        }
+      ],
+      "sha256": "ddf2cdac35a4b58a9bf01430497c79ae1777b5c2be918c3060247eb2998f67ce",
+      "icon": "units/toon-pixel-test/minions/minion-drone.png"
+    },
+    {
+      "id": "minion-sentry",
+      "type": "minion",
+      "source": "units/minion-sentry.svg",
+      "sourceSHA256": "e19f80315f11b107e5e516e6dd4a5b8c027af315c94c7b0e9e6c91ef79813055",
+      "sheet": "units/toon-pixel-test/minions/minion-sentry.png",
+      "width": 1254,
+      "height": 1254,
+      "frameSize": 1254,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 263,
+            "top": 163,
+            "right": 1017,
+            "bottom": 1059
+          },
+          "edgePixels": 0,
+          "clearPixels": 1133662
+        }
+      ],
+      "sha256": "2321a281fdbfc568421c8b2ec6cca23a03dbc4435c78a69d6b905f7d9a70b84b",
+      "icon": "units/toon-pixel-test/minions/minion-sentry.png"
+    },
+    {
+      "id": "natsu",
+      "type": "character",
+      "source": "units/blue-archive/natsu.png",
+      "sourceSHA256": "95a322ce20ecb809c3f85bc37adc467ca925bc5678de4047c2f493f5d8f1771e",
+      "sheet": "units/toon-pixel-test/blue-archive/natsu.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 123,
+            "top": 9,
+            "right": 391,
+            "bottom": 500
+          },
+          "edgePixels": 0,
+          "clearPixels": 162023
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 112,
+            "top": 9,
+            "right": 398,
+            "bottom": 499
+          },
+          "edgePixels": 0,
+          "clearPixels": 156210
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 112,
+            "top": 9,
+            "right": 378,
+            "bottom": 500
+          },
+          "edgePixels": 0,
+          "clearPixels": 162835
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 128,
+            "top": 8,
+            "right": 392,
+            "bottom": 499
+          },
+          "edgePixels": 0,
+          "clearPixels": 157482
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 117,
+            "top": 8,
+            "right": 397,
+            "bottom": 499
+          },
+          "edgePixels": 0,
+          "clearPixels": 149959
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 119,
+            "top": 8,
+            "right": 390,
+            "bottom": 499
+          },
+          "edgePixels": 0,
+          "clearPixels": 160398
+        }
+      ],
+      "sha256": "fec3507ceb3b2c57310b9cf538eb155f4fa25b7be7c2b0b4b3b3e0d389d4c849",
+      "icon": "units/toon-pixel-test/blue-archive/icons/natsu.png",
+      "iconSHA256": "759fdf0c1ac2b36a0bdd34ca4c89bd67a50a90fd91ed002bb2c650b01266e73e"
+    },
+    {
+      "id": "neru",
+      "type": "character",
+      "source": "units/blue-archive/neru.png",
+      "sourceSHA256": "5f4ec319218ac0a44ddaf36bce068d0bb6f3b0a0f732b5667f13254dd91e9293",
+      "sheet": "units/toon-pixel-test/blue-archive/neru.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 164,
+            "top": 6,
+            "right": 377,
+            "bottom": 500
+          },
+          "edgePixels": 0,
+          "clearPixels": 179078
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 142,
+            "top": 6,
+            "right": 349,
+            "bottom": 500
+          },
+          "edgePixels": 0,
+          "clearPixels": 178111
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 126,
+            "top": 6,
+            "right": 339,
+            "bottom": 500
+          },
+          "edgePixels": 0,
+          "clearPixels": 178013
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 174,
+            "top": 2,
+            "right": 365,
+            "bottom": 499
+          },
+          "edgePixels": 0,
+          "clearPixels": 183036
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 153,
+            "top": 2,
+            "right": 351,
+            "bottom": 499
+          },
+          "edgePixels": 0,
+          "clearPixels": 172867
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 139,
+            "top": 2,
+            "right": 339,
+            "bottom": 499
+          },
+          "edgePixels": 0,
+          "clearPixels": 173115
+        }
+      ],
+      "sha256": "9b9a480a34e22a1953fb5df6a0b87cf5dfe8f22f7c19146a7c8644c462b7ad78",
+      "icon": "units/toon-pixel-test/blue-archive/icons/neru.png",
+      "iconSHA256": "2cdd33b9090a0cd4386f97435d342e29edcdb612a7b689d3d69ef6b8a9aa11b8"
+    },
+    {
+      "id": "noa",
+      "type": "character",
+      "source": "units/blue-archive/noa.png",
+      "sourceSHA256": "f86cc637772e114666394c0a56cd39f4410b38c404765052a7ee1ea8c36d0d33",
+      "sheet": "units/toon-pixel-test/blue-archive/noa.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 89,
+            "top": 11,
+            "right": 431,
+            "bottom": 495
+          },
+          "edgePixels": 0,
+          "clearPixels": 133433
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 80,
+            "top": 11,
+            "right": 421,
+            "bottom": 495
+          },
+          "edgePixels": 0,
+          "clearPixels": 137207
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 76,
+            "top": 12,
+            "right": 423,
+            "bottom": 495
+          },
+          "edgePixels": 0,
+          "clearPixels": 135698
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 103,
+            "top": 14,
+            "right": 425,
+            "bottom": 501
+          },
+          "edgePixels": 0,
+          "clearPixels": 147667
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 86,
+            "top": 13,
+            "right": 427,
+            "bottom": 501
+          },
+          "edgePixels": 0,
+          "clearPixels": 142218
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 84,
+            "top": 14,
+            "right": 409,
+            "bottom": 501
+          },
+          "edgePixels": 0,
+          "clearPixels": 142830
+        }
+      ],
+      "sha256": "9ee4651832c4a83826dc1c2b305498c731d39b122ca576c89f1ea65c1675da35",
+      "icon": "units/toon-pixel-test/blue-archive/icons/noa.png",
+      "iconSHA256": "a325f0143fe6baa9e1280ee2ac4c756905c43b78815e3126b6e04269a53c9719"
+    },
+    {
+      "id": "shiroko",
+      "type": "character",
+      "source": "units/blue-archive/shiroko.png",
+      "sourceSHA256": "a97dbe8d1062a2eb87502c577a06ed04fc44623d15b4e832f8bf3408b53126a9",
+      "sheet": "units/toon-pixel-test/blue-archive/shiroko.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 102,
+            "top": 11,
+            "right": 388,
+            "bottom": 491
+          },
+          "edgePixels": 0,
+          "clearPixels": 167403
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 103,
+            "top": 10,
+            "right": 379,
+            "bottom": 489
+          },
+          "edgePixels": 0,
+          "clearPixels": 164253
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 100,
+            "top": 10,
+            "right": 374,
+            "bottom": 490
+          },
+          "edgePixels": 0,
+          "clearPixels": 169100
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 106,
+            "top": 12,
+            "right": 381,
+            "bottom": 502
+          },
+          "edgePixels": 0,
+          "clearPixels": 170961
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 126,
+            "top": 12,
+            "right": 400,
+            "bottom": 501
+          },
+          "edgePixels": 0,
+          "clearPixels": 167019
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 120,
+            "top": 12,
+            "right": 404,
+            "bottom": 502
+          },
+          "edgePixels": 0,
+          "clearPixels": 167823
+        }
+      ],
+      "sha256": "f6dfca0afc51a8901ac1654b83eeea0088e227495ecb8e766a3ea991cd108cc5",
+      "icon": "units/toon-pixel-test/blue-archive/icons/shiroko.png",
+      "iconSHA256": "1573418271de4c10a25a5dc3a1df7bfce3c64f51868424712aba9417b4ae11a9"
+    },
+    {
+      "id": "wakamo",
+      "type": "character",
+      "source": "units/blue-archive/wakamo.png",
+      "sourceSHA256": "357d38f80d7758c5f5ca9b93936b4d2df6108877cb48bd2d3c0d2ec1dba44323",
+      "sheet": "units/toon-pixel-test/blue-archive/wakamo.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 75,
+            "top": 16,
+            "right": 421,
+            "bottom": 473
+          },
+          "edgePixels": 0,
+          "clearPixels": 169673
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 80,
+            "top": 15,
+            "right": 433,
+            "bottom": 473
+          },
+          "edgePixels": 0,
+          "clearPixels": 166712
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 94,
+            "top": 15,
+            "right": 440,
+            "bottom": 473
+          },
+          "edgePixels": 0,
+          "clearPixels": 171133
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 69,
+            "top": 13,
+            "right": 413,
+            "bottom": 480
+          },
+          "edgePixels": 0,
+          "clearPixels": 167629
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 72,
+            "top": 15,
+            "right": 425,
+            "bottom": 480
+          },
+          "edgePixels": 0,
+          "clearPixels": 167908
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 84,
+            "top": 14,
+            "right": 436,
+            "bottom": 480
+          },
+          "edgePixels": 0,
+          "clearPixels": 166165
+        }
+      ],
+      "sha256": "9f1392121348538b8c1095354d34b2f06fa23fadf2b41e52a5d87f8955fb4b49",
+      "icon": "units/toon-pixel-test/blue-archive/icons/wakamo.png",
+      "iconSHA256": "953ea1740f5ad17a69a8452bb3d987803713262b3c33128796c1f81c41dbed76"
+    },
+    {
+      "id": "yuuka",
+      "type": "character",
+      "source": "units/blue-archive/yuuka.png",
+      "sourceSHA256": "600a529299b4520f4e9d2a779d8b30aad08be4ca4dd2978fdea35522124aab6a",
+      "sheet": "units/toon-pixel-test/blue-archive/yuuka.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 80,
+            "top": 13,
+            "right": 419,
+            "bottom": 493
+          },
+          "edgePixels": 0,
+          "clearPixels": 156090
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 74,
+            "top": 12,
+            "right": 433,
+            "bottom": 491
+          },
+          "edgePixels": 0,
+          "clearPixels": 146276
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 87,
+            "top": 13,
+            "right": 434,
+            "bottom": 493
+          },
+          "edgePixels": 0,
+          "clearPixels": 156406
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 75,
+            "top": 3,
+            "right": 432,
+            "bottom": 494
+          },
+          "edgePixels": 0,
+          "clearPixels": 152244
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 70,
+            "top": 4,
+            "right": 438,
+            "bottom": 494
+          },
+          "edgePixels": 0,
+          "clearPixels": 140285
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 77,
+            "top": 4,
+            "right": 438,
+            "bottom": 494
+          },
+          "edgePixels": 0,
+          "clearPixels": 153440
+        }
+      ],
+      "sha256": "ab12c15dc7a0dc2c0c48a1cd804800b3241be90952c1cde6bc2990ab9658db15",
+      "icon": "units/toon-pixel-test/blue-archive/icons/yuuka.png",
+      "iconSHA256": "aae10a14bf9eda91a69953db17822bf4bcbc5f53790b05775c51dfd2fdda136d"
+    },
+    {
+      "id": "yuzu",
+      "type": "character",
+      "source": "units/blue-archive/yuzu.png",
+      "sourceSHA256": "af09da23321a7e2b2ba7bbc1a57fc9ac1b4b75330ee7b7419544f2d99218c3b6",
+      "sheet": "units/toon-pixel-test/blue-archive/yuzu.png",
+      "width": 1536,
+      "height": 1024,
+      "frameSize": 512,
+      "frames": [
+        {
+          "index": 0,
+          "bounds": {
+            "left": 114,
+            "top": 20,
+            "right": 410,
+            "bottom": 458
+          },
+          "edgePixels": 0,
+          "clearPixels": 176668
+        },
+        {
+          "index": 1,
+          "bounds": {
+            "left": 102,
+            "top": 20,
+            "right": 395,
+            "bottom": 458
+          },
+          "edgePixels": 0,
+          "clearPixels": 177065
+        },
+        {
+          "index": 2,
+          "bounds": {
+            "left": 100,
+            "top": 20,
+            "right": 358,
+            "bottom": 459
+          },
+          "edgePixels": 0,
+          "clearPixels": 181315
+        },
+        {
+          "index": 3,
+          "bounds": {
+            "left": 125,
+            "top": 22,
+            "right": 405,
+            "bottom": 464
+          },
+          "edgePixels": 0,
+          "clearPixels": 183809
+        },
+        {
+          "index": 4,
+          "bounds": {
+            "left": 119,
+            "top": 22,
+            "right": 397,
+            "bottom": 463
+          },
+          "edgePixels": 0,
+          "clearPixels": 177934
+        },
+        {
+          "index": 5,
+          "bounds": {
+            "left": 96,
+            "top": 21,
+            "right": 390,
+            "bottom": 464
+          },
+          "edgePixels": 0,
+          "clearPixels": 181770
+        }
+      ],
+      "sha256": "881c460c9ace9854036f9e315401ef93f861500a858d8007c96761feb1b0e027",
+      "icon": "units/toon-pixel-test/blue-archive/icons/yuzu.png",
+      "iconSHA256": "72162072de37f15f1e5db3ab5afde53d1443e25f89fb2f8b624c9997e326b396"
+    }
+  ]
+}
