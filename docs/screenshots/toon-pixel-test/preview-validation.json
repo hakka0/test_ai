@@ -1,0 +1,65 @@
+{
+  "url": "http://127.0.0.1:4173/",
+  "status": "passed",
+  "units": 22,
+  "assets": "all original and generated unit paths return HTTP 200",
+  "interactions": [
+    "direction",
+    "background",
+    "search",
+    "reload"
+  ],
+  "layouts": [
+    {
+      "width": 1400,
+      "height": 1000,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 740,
+      "height": 360,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 480,
+      "height": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "horizontalOverflow": false
+    }
+  ],
+  "pageErrors": [],
+  "launcher": "scripts/preview-unit-art.sh",
+  "launcherRestartCheck": "passed: official preview stop, launcher start, HTTP render and 22 cards",
+  "updatedAt": "2026-11-17T13:20:39.149Z",
+  "screenshot": "docs/screenshots/toon-pixel-test/live-preview.png",
+  "sharedBrowserControl": "MCP control endpoint unavailable; verification uses the project Chromium runner"
+}

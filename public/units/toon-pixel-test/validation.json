@@ -13,8 +13,75 @@
   ],
   "warnings": [],
   "browserQA": {
-    "status": "unverified",
-    "reason": "Managed preview relay did not become ready; no live game or interactive browser validation claimed"
+    "status": "passed",
+    "runner": "project Chromium",
+    "scope": "standalone unit art comparison page",
+    "units": 22,
+    "pageErrors": 0,
+    "viewports": [
+      {
+        "width": 1400,
+        "height": 1000,
+        "horizontalOverflow": false
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "horizontalOverflow": false
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "horizontalOverflow": false
+      },
+      {
+        "width": 320,
+        "height": 740,
+        "horizontalOverflow": false
+      },
+      {
+        "width": 844,
+        "height": 390,
+        "horizontalOverflow": false
+      },
+      {
+        "width": 740,
+        "height": 360,
+        "horizontalOverflow": false
+      },
+      {
+        "width": 667,
+        "height": 375,
+        "horizontalOverflow": false
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "horizontalOverflow": false
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "horizontalOverflow": false
+      }
+    ],
+    "interactions": [
+      "direction",
+      "background",
+      "search",
+      "reload"
+    ],
+    "report": "docs/screenshots/toon-pixel-test/preview-validation.json",
+    "sharedBrowserControl": "MCP endpoint unavailable; shared-browser automation not verified",
+    "actualGame": "not tested"
   },
-  "comparison": "Separate static review composition at 48, 64, 80px; original nearest, new lanczos3"
+  "comparison": "Separate static review composition at 48, 64, 80px; original nearest, new lanczos3",
+  "previewRecovery": {
+    "launcher": "scripts/preview-unit-art.sh",
+    "officialCommand": "sites-preview start",
+    "serverNetwork": "dedicated loopback namespace",
+    "restartCheck": "passed",
+    "url": "http://127.0.0.1:4173/",
+    "urlScope": "Cloud environment only"
+  }
 }

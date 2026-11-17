@@ -1,3 +1,8 @@
+# 유닛 아트 미리보기 연결 복구 — 2026-11-17
+
+- `bash scripts/preview-unit-art.sh`로 공식 미리보기 서버와 중계의 포트 충돌을 피하는 실행을 확인했습니다. [실시간 HTML의 실제 Chromium 캡처](screenshots/toon-pixel-test/live-preview.png)는 앞서 만든 정적 PNG 비교표와 구분됩니다.
+- 22종 리소스·검색·방향·배경·새로고침 및 PC/모바일 9개 크기 검사가 통과했습니다. [전체 결과](screenshots/toon-pixel-test/preview-validation.json). 공유 브라우저 제어용 MCP 연결과 실기기·실제 게임 검증은 포함하지 않습니다.
+
 # 도트 질감 툰 일러스트 테스트 — 2026-11-17
 
 - 별도 [비교 화면](../public/unit-art-test.html)과 [22종 PNG 세트](../public/units/toon-pixel-test/README.md)를 추가했습니다. 실제 게임의 UI와 이미지 연결은 유지합니다.
