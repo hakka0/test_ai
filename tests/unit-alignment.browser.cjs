@@ -8,10 +8,11 @@ fs.mkdirSync(shots,{recursive:true});
   browser=await chromium.launch(browserOptions());
   const page=await browser.newPage({viewport:{width:900,height:900}}),errors=[];
   page.on('pageerror',error=>errors.push(error.message));
-  await page.goto(url+'/tests/combat-attributes.fixture.html');
+  await page.goto(url+'/tests/combat-attributes.fixture.html'+(process.env.UNIT_ART_STYLE==='pixel'?'?art=pixel':''));
   await page.waitForFunction(()=>window.combatFixture?.scene.sys.isActive());
   const results=await page.evaluate(async()=>{
-    const {BLUE_ARCHIVE_KINDS}=await import('/shared/blue-archive.ts');
+    const {BLUE_ARCHIVE_KINDS,SPRITE_FRAME_SIZE}=await import('/shared/blue-archive.ts');
+    const {UNIT_ART_STYLE}=await import('/shared/unit-art.ts');
     const {UNITS}=await import('/shared/catalog.ts');
     const {UNIT_BODY_HEIGHT,UNIT_FOOT_Y}=await import('/client/unit-appearance.ts');
     const fixture=window.combatFixture,scene=fixture.scene;
@@ -21,13 +22,14 @@ fs.mkdirSync(shots,{recursive:true});
     scene.snapshot.fighters=BLUE_ARCHIVE_KINDS.map((kind,i)=>({...structuredClone(source),
       id:`aligned-${kind}`,kind,x:i%5+1,y:Math.floor(i/5)*2+1,owner:i%2?'a':'b'}));
     scene.update(scene.time.now,16);
-    const canvas=document.createElement('canvas');canvas.width=128;canvas.height=128;
+    const size=SPRITE_FRAME_SIZE;
+    const canvas=document.createElement('canvas');canvas.width=size;canvas.height=size;
     const context=canvas.getContext('2d',{willReadFrequently:true});
     function alphaBounds(source,x=0,y=0){
-      context.clearRect(0,0,128,128);context.drawImage(source,x,y,128,128,0,0,128,128);
-      const pixels=context.getImageData(0,0,128,128).data;
-      let left=128,top=128,right=0,bottom=0;
-      for(let y=0;y<128;y++)for(let x=0;x<128;x++)if(pixels[(y*128+x)*4+3]){
+      context.clearRect(0,0,size,size);context.drawImage(source,x,y,size,size,0,0,size,size);
+      const pixels=context.getImageData(0,0,size,size).data;
+      let left=size,top=size,right=0,bottom=0;
+      for(let y=0;y<size;y++)for(let x=0;x<size;x++)if(pixels[(y*size+x)*4+3]>=128){
         left=Math.min(left,x);top=Math.min(top,y);right=Math.max(right,x+1);bottom=Math.max(bottom,y+1);
       }
       return{left,top,right,bottom,width:right-left,height:bottom-top};
@@ -35,7 +37,7 @@ fs.mkdirSync(shots,{recursive:true});
     const portraits=new Map();
     for(const kind of BLUE_ARCHIVE_KINDS){
       const image=await new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>resolve(image);image.onerror=reject;image.src=UNITS[kind].image;});
-      if(image.width!==128||image.height!==128)throw new Error(kind+' portrait must remain 128×128');
+      if(image.width!==size||image.height!==size)throw new Error(kind+' portrait must match the selected frame size');
       portraits.set(kind,alphaBounds(image));
     }
     const results=[];
@@ -51,7 +53,7 @@ fs.mkdirSync(shots,{recursive:true});
           feetY:sprite.y+(bounds.footY-sprite.originY*sprite.height)*sprite.scaleY-anchor.y,
           aspect:sprite.scaleX/sprite.scaleY,hit:scene.unitAt(unit.x,unit.y)?.id===unit.id,
           width:sprite.displayWidth,originX:sprite.originX,expectedHeight:UNIT_BODY_HEIGHT,expectedFeetY:UNIT_FOOT_Y,
-          alpha:alphaBounds(scene.textures.get(unit.kind).getSourceImage(),(frame%3)*128,Math.floor(frame/3)*128),portraitAlpha:portraits.get(unit.kind)});
+          frameSize:size,artStyle:UNIT_ART_STYLE,filter:scene.textures.get(unit.kind).source[0].scaleMode,alpha:alphaBounds(scene.textures.get(unit.kind).getSourceImage(),(frame%3)*size,Math.floor(frame/3)*size),portraitAlpha:portraits.get(unit.kind)});
       }
     }
     return results;
@@ -62,10 +64,16 @@ fs.mkdirSync(shots,{recursive:true});
     assert.ok(Math.abs(result.feetX)<1e-8,`${result.kind}/${result.frame}: centered feet`);
     assert.ok(Math.abs(result.feetY-result.expectedFeetY)<1e-8,`${result.kind}/${result.frame}: common baseline`);
     assert.equal(result.aspect,1);assert.equal(result.hit,true);
+    assert.equal(result.filter,result.artStyle==='toon'?0:1,'texture filtering matches the chosen art style');
     for(const bounds of [result.alpha,result.portraitAlpha]){
-      assert.equal(Math.max(bounds.width,bounds.height),128,'normalized artwork fills its long edge');
-      assert.ok(Math.abs(bounds.left-(128-bounds.right))<=1,'horizontal transparent margins are centered');
-      assert.ok(Math.abs(bounds.top-(128-bounds.bottom))<=1,'vertical transparent margins are centered');
+      assert.ok(bounds.width>0&&bounds.height>0,'artwork remains visible');
+      if(result.artStyle==='pixel'){
+        assert.equal(Math.max(bounds.width,bounds.height),result.frameSize,'normalized artwork fills its long edge');
+        assert.ok(Math.abs(bounds.left-(result.frameSize-bounds.right))<=1,'horizontal transparent margins are centered');
+        assert.ok(Math.abs(bounds.top-(result.frameSize-bounds.bottom))<=1,'vertical transparent margins are centered');
+      }else{
+        assert.ok(bounds.left>0&&bounds.top>0&&bounds.right<result.frameSize&&bounds.bottom<result.frameSize,`${result.kind}/${result.frame}: toon halos and equipment fit inside the frame`);
+      }
     }
   }
   assert.ok(new Set(results.map(r=>r.originX)).size>10,'direction-specific foot centers are used');

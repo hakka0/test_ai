@@ -1,4 +1,5 @@
 import { assetUrl } from "../shared/assets";
+import { UNIT_ART_STYLE } from "../shared/unit-art";
 declare const __APP_VERSION__:string;
 import {createEquipmentUI} from "./equipment-ui";
 import {createCraftUI} from "./craft-ui";
@@ -42,6 +43,7 @@ import {synergyCards} from './synergy-ui';
 import { COLS, ROWS, BENCH_SIZE, MAX_ROUNDS, PREP_MS, MATCHING_MS, COMBAT_MS, OVERTIME_MS, RESULT_MS, type Snapshot, type SelfPlayerSnapshot, type Unit, type RewardOption, type DebugAction, type Trait } from "../shared/model";
 const $ = <T extends HTMLElement = HTMLElement>(id: string) =>
   document.getElementById(id) as T;
+document.documentElement.dataset.unitArt = UNIT_ART_STYLE;
 // Keep one composition label per row; the shop supports up to three labels.
 function shopTraitBadges(traits: readonly Trait[]): string {
   return traits.slice(0, 3).map(trait => `<span class="trait-badge" data-trait="${trait}">${TRAITS[trait].name}</span>`).join("");
@@ -99,7 +101,7 @@ document.querySelector("#app")!.innerHTML = `
   <div class="eyebrow home-kicker">BLUE ARCHIVE · FAN GAME</div>
   <h1 id="lobby-title">선생님,<br>작전을 시작할까요?</h1>
   <p>20명의 학생으로 진형을 짜고,<br>자동 전투로 승부를 가려 보세요.</p>
-  <div class="heroes" aria-hidden="true"><img src="${assetUrl("/units/blue-archive/icons/hoshino.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/yuuka.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/shiroko.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/aris.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/mika.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/hifumi.png")}" alt=""></div>
+  <div class="heroes" aria-hidden="true">${(["hoshino", "yuuka", "shiroko", "aris", "mika", "hifumi"] as const).map(kind => `<img src="${UNITS[kind].image}" alt="">`).join("")}</div>
  </section>
  <section class="home-play" aria-labelledby="home-play-title">
   <h2 id="home-play-title">게임 시작</h2>

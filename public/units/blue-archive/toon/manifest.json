@@ -1,0 +1,111 @@
+{
+  "frameSize": 256,
+  "contentSize": 252,
+  "padding": 2,
+  "columns": 3,
+  "rows": 2,
+  "sampling": "lanczos3",
+  "source": "units/toon-pixel-test",
+  "units": [
+    {
+      "id": "aris",
+      "sourceSHA256": "5df9f92ecb8d6eb6668e0ee66862bec5c57c0d588be3feba245c0a312c227241",
+      "sheetSHA256": "e9a0ee8013d830e25eab0e2e6e041b2b1297659d2836dff48de2917e7eaed8d3"
+    },
+    {
+      "id": "aru",
+      "sourceSHA256": "566b5d0985dd796bcf05ebb462d09152c10b6ddf1eda94912e6dfe828fabc298",
+      "sheetSHA256": "860b32546ae4cc70f638d8f0f3b4ee3f2f1ec00100017fb898ace9be314848c9"
+    },
+    {
+      "id": "azusa",
+      "sourceSHA256": "2dfc5197c4f7b2f0c0eea55c62da2c231af436c3d3a14c8a0e3e4682be6b16ef",
+      "sheetSHA256": "78d30f4dc443c8e3e63c92a243eca5f9f545c26284ed810d31a8cf586fc7fe3a"
+    },
+    {
+      "id": "haruna",
+      "sourceSHA256": "6278913c638be84f55d1d8f7410cde5f0d2ed8b5307c616af7bb03b1c1e41acc",
+      "sheetSHA256": "b4089658433be1407511906705e36e13577d403c93d0a8d63c4b4ce2fa7e7c2d"
+    },
+    {
+      "id": "hifumi",
+      "sourceSHA256": "34e86652cb92ba3ab6885ed26e84059b08e52a549103d6fd3e8d416691e0928a",
+      "sheetSHA256": "bc590eaf130ccec773f8ff9d0aecd9af18b387e63e777361e5466be7dea1abc7"
+    },
+    {
+      "id": "hina",
+      "sourceSHA256": "fd327df0a10d44dc6f466e13b04db9bb52fc81bbf0545d7b48f251f24e899fd1",
+      "sheetSHA256": "f08716c6b069710444c024263c2a2eca4176a17fbe1c58ac996e6ef42ee8c6d0"
+    },
+    {
+      "id": "hoshino",
+      "sourceSHA256": "0b4ce977925d4b835ef3b9f51861129ec70e8b042fe0fe74df3331c5596e8c1d",
+      "sheetSHA256": "1b7dfbee6babdde02b736987b6943762cd7b9b5c3d857c8f692489e6bb749660"
+    },
+    {
+      "id": "iori",
+      "sourceSHA256": "f9327eb25726fc66def0de9382f0f92dd5cc3c9b59f0b1db04ad473e5ca77d37",
+      "sheetSHA256": "bc2b3ec80583403a74524cc9f3e22651d9e3ceaf1599dba51c116de938df8b85"
+    },
+    {
+      "id": "izuna",
+      "sourceSHA256": "bdd1492637c61643e3bff0bd665c0f6bae072e9c632edd82e1c387c367ee0cc1",
+      "sheetSHA256": "10b40ef50b7ae29144329459aadcb2f4893e8a22b90eba023a4c919e6f9ace83"
+    },
+    {
+      "id": "koharu",
+      "sourceSHA256": "85469468997327b6fd2a73713673f36fe509483b83107f5a1b86d55bed375478",
+      "sheetSHA256": "8ebb949a6c7b5c96206507fb368bcf08b63fc14da22061c405f1afb29d3edf27"
+    },
+    {
+      "id": "maki",
+      "sourceSHA256": "b4ed8a04befcc0b6437879248e2f9e441e8eec56e2bd69beb9b919e1de78bbed",
+      "sheetSHA256": "34f8028519d674862e0a6d00fd63d28ab4124247e1fad52f27c6dd5aa47baa48"
+    },
+    {
+      "id": "midori",
+      "sourceSHA256": "3a91b943db71f5b2303ed086c64903b0a237fb14ea4c7e70c5f05ada73684347",
+      "sheetSHA256": "53d7e9e111083ad70025326a56e243163b6f13f26b9d97de2ba175d5acb0045c"
+    },
+    {
+      "id": "mika",
+      "sourceSHA256": "270b53cafcf5e9edfe5c0ef2e5f8fb824e5483a4f83a2d818bf456e2900670f8",
+      "sheetSHA256": "b42240f5d5a44231e8b8c92f2ba413d5adf0cee5aeaf8c4fd661d3f9179de832"
+    },
+    {
+      "id": "natsu",
+      "sourceSHA256": "fec3507ceb3b2c57310b9cf538eb155f4fa25b7be7c2b0b4b3b3e0d389d4c849",
+      "sheetSHA256": "1cfec4a17b342bed886571303b1277de7d26385315acc3aebac22d6f6d823c2c"
+    },
+    {
+      "id": "neru",
+      "sourceSHA256": "9b9a480a34e22a1953fb5df6a0b87cf5dfe8f22f7c19146a7c8644c462b7ad78",
+      "sheetSHA256": "e958adee0d41b9ffea39452c394fe7d18eb10e9c9812cb22286ccd1b20360562"
+    },
+    {
+      "id": "noa",
+      "sourceSHA256": "9ee4651832c4a83826dc1c2b305498c731d39b122ca576c89f1ea65c1675da35",
+      "sheetSHA256": "247d549e7bce3119086fef93226d7732033b7d1aa4449bfb8b83aa21466a6ac4"
+    },
+    {
+      "id": "shiroko",
+      "sourceSHA256": "f6dfca0afc51a8901ac1654b83eeea0088e227495ecb8e766a3ea991cd108cc5",
+      "sheetSHA256": "c21dba8c5fd8188a22ae445222ee9981f44eea82251db0d37b95758df36a304c"
+    },
+    {
+      "id": "wakamo",
+      "sourceSHA256": "9f1392121348538b8c1095354d34b2f06fa23fadf2b41e52a5d87f8955fb4b49",
+      "sheetSHA256": "76e3608bb10351d41c049230c069a8342a35f4b33473e1eb8fffde2c95ccb304"
+    },
+    {
+      "id": "yuuka",
+      "sourceSHA256": "ab12c15dc7a0dc2c0c48a1cd804800b3241be90952c1cde6bc2990ab9658db15",
+      "sheetSHA256": "29137dd0b1cabb5a516bfdaf60365b255c25f83ee6b6782ae2639f35b60920a9"
+    },
+    {
+      "id": "yuzu",
+      "sourceSHA256": "881c460c9ace9854036f9e315401ef93f861500a858d8007c96761feb1b0e027",
+      "sheetSHA256": "16b5f8e57e3741ed0e510a124649093aa7d02dea335a8efcca1e1da2df4b8c81"
+    }
+  ]
+}

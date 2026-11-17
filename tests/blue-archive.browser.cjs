@@ -42,7 +42,7 @@ async function main() {
       page.on("response", response => {
         const path = new URL(response.url()).pathname;
         const loaded = response.ok() || response.status() === 304;
-        if (/\/units\/blue-archive\/\w+\.png$/.test(path) && loaded) textures.add(path);
+        if (/\/units\/blue-archive\/(?:toon\/)?\w+\.png$/.test(path) && loaded) textures.add(path);
         if (path.includes("/units/blue-archive/") && !loaded) errors.push(path + " HTTP " + response.status());
       });
       await page.goto(url);

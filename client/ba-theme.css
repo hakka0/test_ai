@@ -314,3 +314,6 @@ html:root:not(.landscape-layout) body:not(.formation-reference) #selected-unit-c
 html:root:not(.landscape-layout) body:not(.formation-reference) #selected-unit-content .stats .stat[data-stat='attack'] { box-shadow:inset 4px 0 0 #ea5a74; }
 html:root:not(.landscape-layout) body:not(.formation-reference) #selected-unit-content .stats .stat[data-stat='defense'] { box-shadow:inset 4px 0 0 #2a8de0; }
 html:root:not(.landscape-layout) body:not(.formation-reference) #selected-unit-content .stats .stat:is([data-stat='hp'],[data-stat='attack'],[data-stat='defense']) .stat-value strong { font-size:1.15em; }
+
+html[data-unit-art='toon'] img[src*='/units/'] { image-rendering:auto; }
+html[data-unit-art='pixel'] img[src*='/units/'] { image-rendering:pixelated; }

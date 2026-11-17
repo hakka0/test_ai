@@ -1,10 +1,10 @@
-import { assetUrl } from "./assets";
+import { unitArtImage, UNIT_ART_FRAME_SIZE } from "./unit-art";
 import type { Rarity, Stats, Trait } from "./model";
 import type { ResourceDefinition, SkillDefinition, SkillEffect, TargetRule } from "./skill-types";
 import type { CombatAttribute } from "./combat-attributes";
 import { BASE_COMBAT_STATS } from "./damage";
 
-export const SPRITE_FRAME_SIZE = 128;
+export const SPRITE_FRAME_SIZE = UNIT_ART_FRAME_SIZE;
 
 function active(id: string, name: string, description: string, target: TargetRule, effects: SkillEffect[], recovery: Omit<ResourceDefinition, "max">): SkillDefinition {
   return {
@@ -35,8 +35,8 @@ function unit(id: string, name: string, role: string, rarity: Rarity, trait: Tra
     name, role, rarity, trait, attackAttribute, defenseAttribute,
     stats: { ...BASE_COMBAT_STATS, ...stats, defense },
     skills: [`ba-${id}`],
-    image: assetUrl(`/units/blue-archive/icons/${id}.png`),
-    spriteSheet: assetUrl(`/units/blue-archive/${id}.png`),
+    image: unitArtImage(id, true),
+    spriteSheet: unitArtImage(id),
   };
 }
 

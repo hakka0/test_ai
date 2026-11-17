@@ -1,3 +1,11 @@
+# 툰 일러스트를 적용한 오토체스 — 2026-11-18
+
+- `npm run build:pages` 및 타입 검사, `node --import tsx --test tests/blue-archive.test.ts tests/unit-appearance.test.ts tests/minions.test.ts`가 통과했습니다.
+- `CHROME_PATH=/usr/bin/chromium npm run test:unit-alignment:browser`와 `UNIT_ART_STYLE=pixel CHROME_PATH=/usr/bin/chromium npm run test:unit-alignment:browser`가 통과했습니다. 각 모드에서 20종×6방향의 높이·발 중심/바닥·비율·대기 모션·타격 위치와 텍스처 필터를 확인했습니다. 일러스트는 프레임 경계의 여백도 검사합니다.
+- `CHROME_PATH=/usr/bin/chromium npm run test:formation:browser`가 통과했습니다. 실제 구매·경험치·배치/복귀·전투·대기석 판매/구매·관전·기록·장비·저장 복원과 PC **1400×1000·1024×768**, 모바일 **390×844·320×740·844×390·740×360·667×375·480×320**, **390×844 복귀**의 9개 배치를 포함합니다. 실제 사람 1명+봇 5명 경기입니다.
+- `PAGES_BASE_PATH=/ npm run build:pages`로 별도 테스트 사이트용 루트 경로 빌드를 준비하고, 실제 게시할 정적 파일에서 일러스트/도트 두 모드의 6명 봇 연습·상점 이미지 크기·미니언 상세 이미지·새로고침 복원·누락 이미지 0개를 검사했습니다. [결과](screenshots/toon-autochess/game-validation.json), [실제 화면](screenshots/toon-autochess/pc-game.png).
+- 브라우저 검사는 프로젝트 Chromium 실행 결과입니다. 공유 브라우저 제어 도구의 연결과 실기기 Safari/Chrome 검증은 포함하지 않습니다. 기존 서버의 다인 네트워크 검사를 이번 이미지 변경에 반복하지 않았습니다.
+
 # 유닛 아트 미리보기 연결 복구 — 2026-11-17
 
 - 공식 중계의 `Address in use`를 확인하고, 서버를 전용 루프백 네트워크에 두는 `scripts/preview-unit-art.sh`로 포트 충돌을 해결했습니다. 공식 `sites-preview`의 중지→스크립트 재시작→HTTP 렌더링을 재현했습니다. 반환된 주소는 `http://127.0.0.1:4173/`이며 Cloud 환경 내부 주소입니다.

@@ -5,7 +5,7 @@
   "sourceCommit": "9f24e5f81f2c957a659b0644228e1c18cb6e9bc8",
   "style": "Smooth toon illustration with sparse pixel highlights",
   "artworkGeneratedWith": "image_gen",
-  "gameIntegration": "Separate test set; production assets and renderer unchanged",
+  "gameIntegration": "High-resolution masters preserved here; the game uses 256px derived toon assets in units/blue-archive/toon by default, with ?art=pixel for original artwork",
   "characterFrameOrder": [
     "front-left",
     "front",

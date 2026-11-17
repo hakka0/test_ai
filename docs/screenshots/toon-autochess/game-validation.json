@@ -1,0 +1,80 @@
+{
+  "defaultArt": "toon",
+  "modes": [
+    {
+      "art": "toon",
+      "hero": "/units/blue-archive/toon/icons/hoshino.png",
+      "portraits": [
+        {
+          "src": "/units/blue-archive/toon/icons/yuuka.png",
+          "width": 256,
+          "height": 256
+        },
+        {
+          "src": "/units/blue-archive/toon/icons/haruna.png",
+          "width": 256,
+          "height": 256
+        },
+        {
+          "src": "/units/blue-archive/toon/icons/iori.png",
+          "width": 256,
+          "height": 256
+        },
+        {
+          "src": "/units/blue-archive/toon/icons/maki.png",
+          "width": 256,
+          "height": 256
+        },
+        {
+          "src": "/units/blue-archive/toon/icons/hifumi.png",
+          "width": 256,
+          "height": 256
+        }
+      ],
+      "minion": "/units/blue-archive/toon/minion-sentry.png",
+      "players": 6,
+      "localEngine": true,
+      "reload": true,
+      "pageErrors": []
+    },
+    {
+      "art": "pixel",
+      "hero": "/units/blue-archive/icons/hoshino.png",
+      "portraits": [
+        {
+          "src": "/units/blue-archive/icons/maki.png",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "src": "/units/blue-archive/icons/hifumi.png",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "src": "/units/blue-archive/icons/hina.png",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "src": "/units/blue-archive/icons/hifumi.png",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "src": "/units/blue-archive/icons/noa.png",
+          "width": 128,
+          "height": 128
+        }
+      ],
+      "minion": "/units/minion-sentry.svg",
+      "players": 6,
+      "localEngine": true,
+      "reload": true,
+      "pageErrors": []
+    }
+  ],
+  "missingAssets": [],
+  "source": "root-path production build served from dedicated Sites checkout; real local game engine",
+  "screenshot": "docs/screenshots/toon-autochess/pc-game.png"
+}

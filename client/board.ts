@@ -1,4 +1,3 @@
-import { assetUrl } from "../shared/assets";
 import {unitDefinition} from "../shared/minions";
 import { SKILLS } from "../shared/skill-catalog";
 import Phaser from "phaser";
@@ -10,6 +9,7 @@ import { HealthTrail, HEALTH_TRAIL_COLOR } from "./health-trail";
 import { skillIndicator } from "./skill-indicator";
 import { directionFrame, measureUnitFrame, unitImageLayout, UNIT_FOOT_Y, type UnitFrameBounds } from "./unit-appearance";
 import { BLUE_ARCHIVE_KINDS, SPRITE_FRAME_SIZE } from "../shared/blue-archive";
+import { minionArtImage, UNIT_ART_STYLE } from "../shared/unit-art";
 import type { Snapshot, Unit, FighterSnapshot } from "../shared/model";
 import { COLS, ROWS } from "../shared/model";
 import { WIDTH, HEIGHT, MARGIN, CELL, preparationPosition, displayPosition } from "./board-geometry";
@@ -65,13 +65,13 @@ export class Board extends Phaser.Scene {
         this.load.spritesheet(id, def.spriteSheet, { frameWidth: SPRITE_FRAME_SIZE, frameHeight: SPRITE_FRAME_SIZE });
       } else this.load.image(id, def.image);
     }
-    for(const variant of ["sentry","drone"])this.load.image(`minion-${variant}`,assetUrl(`/units/minion-${variant}.svg`));
+    for(const variant of ["sentry","drone"] as const)this.load.image(`minion-${variant}`,minionArtImage(variant));
   }
   create() {
     for (const kind of BLUE_ARCHIVE_KINDS) {
       if (!this.textures.exists(kind)) continue;
       const texture = this.textures.get(kind);
-      texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
+      texture.setFilter(UNIT_ART_STYLE === "toon" ? Phaser.Textures.FilterMode.LINEAR : Phaser.Textures.FilterMode.NEAREST);
       const source = texture.getSourceImage() as HTMLImageElement;
       const canvas = document.createElement("canvas");
       canvas.width = source.width; canvas.height = source.height;
@@ -85,6 +85,9 @@ export class Board extends Phaser.Scene {
         if (bounds) frames.set(String(name), bounds);
       }
       this.frameBounds.set(kind, frames);
+    }
+    for (const variant of ["sentry", "drone"]) {
+      this.textures.get(`minion-${variant}`).setFilter(UNIT_ART_STYLE === "toon" ? Phaser.Textures.FilterMode.LINEAR : Phaser.Textures.FilterMode.NEAREST);
     }
     this.tiles = this.add.graphics();
     this.bars = this.add.graphics().setDepth(20);
