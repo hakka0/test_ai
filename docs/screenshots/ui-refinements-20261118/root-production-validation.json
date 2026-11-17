@@ -1,0 +1,155 @@
+{
+  "results": [
+    {
+      "mobile": false,
+      "width": 1182,
+      "height": 955,
+      "geometry": {
+        "overflow": false,
+        "board": {
+          "x": 235,
+          "y": 84.609375,
+          "width": 527.78125,
+          "height": 527.78125,
+          "right": 762.78125,
+          "bottom": 612.390625
+        },
+        "deployed": {
+          "x": 433.640625,
+          "y": 319.46875,
+          "width": 130.5,
+          "height": 58.0625,
+          "right": 564.140625,
+          "bottom": 377.53125
+        },
+        "overlay": {
+          "opacity": 0.38,
+          "pointerEvents": "none"
+        },
+        "bench": {
+          "x": 232.859375,
+          "y": 700,
+          "width": 751.734375,
+          "height": 86,
+          "right": 984.59375,
+          "bottom": 786
+        },
+        "shop": {
+          "x": 224.859375,
+          "y": 786,
+          "width": 767.734375,
+          "height": 152,
+          "right": 992.59375,
+          "bottom": 938
+        },
+        "ranking": {
+          "x": 1024.171875,
+          "y": 84,
+          "width": 141.828125,
+          "height": 529,
+          "right": 1166,
+          "bottom": 613
+        },
+        "inspector": {
+          "x": 775.78125,
+          "y": 84,
+          "width": 236.390625,
+          "height": 529,
+          "right": 1012.171875,
+          "bottom": 613
+        },
+        "supply": {
+          "x": 223.859375,
+          "y": 691,
+          "width": 769.734375,
+          "height": 248,
+          "right": 993.59375,
+          "bottom": 939
+        },
+        "dock": {
+          "x": 16,
+          "y": 691,
+          "width": 1150,
+          "height": 248,
+          "right": 1166,
+          "bottom": 939
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1182,
+          "height": 72,
+          "top": 0,
+          "right": 1182,
+          "bottom": 72,
+          "left": 0
+        },
+        "targets": [
+          {
+            "width": 55,
+            "height": 46
+          },
+          {
+            "width": 142.40625,
+            "height": 168
+          },
+          {
+            "width": 143.9375,
+            "height": 104
+          },
+          {
+            "width": 143.953125,
+            "height": 104
+          },
+          {
+            "width": 143.9375,
+            "height": 104
+          },
+          {
+            "width": 143.953125,
+            "height": 104
+          },
+          {
+            "width": 143.9375,
+            "height": 104
+          },
+          {
+            "width": 131.828125,
+            "height": 88
+          },
+          {
+            "width": 131.828125,
+            "height": 88
+          },
+          {
+            "width": 131.828125,
+            "height": 88
+          },
+          {
+            "width": 131.828125,
+            "height": 88
+          },
+          {
+            "width": 131.828125,
+            "height": 88
+          },
+          {
+            "width": 131.828125,
+            "height": 88
+          }
+        ]
+      },
+      "realPlacementAndBenchReturn": true
+    }
+  ],
+  "errors": [],
+  "failures": [],
+  "checks": {
+    "oneMoveFocusAndRetainedInspection": true,
+    "reselectionAllowsAnotherMove": true,
+    "fullWidthShopArtAndStackedNamePrice": true,
+    "rarityBackgroundAndTopLeftTrait": true,
+    "recentInterestRemoved": true
+  },
+  "source": "Pages local engine; actual one-human/five-bot practice"
+}

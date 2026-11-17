@@ -306,10 +306,13 @@ html:root body:not(.formation-reference) #pc-play-dock #dock-ready #ready { --bt
 /* ===== 0.26.0: ideas taken from Blue Archive's battle and formation screens =====
    Reference (text descriptions of the game, no official assets used): EX skill cards sit at the lower
    right with their background colored by damage type; allies carry a green HP bar; the formation screen
-   leads with a few big main stats. Here: shop cards are tinted by trait, main stats get a colored tab. */
-html:root body:not(.formation-reference) :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-trait='bulwark'] { --card-tint:#2a62a84d; }
-html:root body:not(.formation-reference) :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-trait='scout'] { --card-tint:#1a8a684d; }
-html:root body:not(.formation-reference) :is(#pc-play-dock #shop-panel,#shop-panel) .shop-card[data-trait='arcane'] { --card-tint:#7048b04d; }
+   leads with a few big main stats. Here: shop cards are tinted by rarity, main stats get a colored tab. */
+/* Fixed rarity palette, independent of the unit's composition trait. */
+html:root body #shop-panel .shop-card[data-rarity='1'] { --card-tint:#e2e8f0; }
+html:root body #shop-panel .shop-card[data-rarity='2'] { --card-tint:#d0eddf; }
+html:root body #shop-panel .shop-card[data-rarity='3'] { --card-tint:#cee2ff; }
+html:root body #shop-panel .shop-card[data-rarity='4'] { --card-tint:#e7d4f8; }
+html:root body #shop-panel .shop-card[data-rarity='5'] { --card-tint:#ffecb3; }
 html:root:not(.landscape-layout) body:not(.formation-reference) #selected-unit-content .stats .stat[data-stat='hp'] { box-shadow:inset 4px 0 0 #2fd06b; }
 html:root:not(.landscape-layout) body:not(.formation-reference) #selected-unit-content .stats .stat[data-stat='attack'] { box-shadow:inset 4px 0 0 #ea5a74; }
 html:root:not(.landscape-layout) body:not(.formation-reference) #selected-unit-content .stats .stat[data-stat='defense'] { box-shadow:inset 4px 0 0 #2a8de0; }

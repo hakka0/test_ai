@@ -1,3 +1,11 @@
+# 상점·역할 표시와 이동 선택 개선 — 2026-11-18
+
+- PC 1400×1000·1182×955·1024×768, 모바일 세로 390×844·320×740, 가로 844×390·740×360·667×375·480×320, 390×844 복귀를 실제 사람 1명+봇 5명 연습으로 검사했습니다. [10개 화면 결과](screenshots/ui-refinements-20261118/responsive-validation.json).
+- 한 번 배치한 뒤 빈 칸과 빈 대기석을 눌러도 위치가 바뀌지 않고 상세 정보가 유지되며, 유닛을 다시 선택하면 한 번 더 이동하는 것을 검사했습니다. 기존 구매·경험치·대기석 복귀·전투·관전·장비·새로고침 복원도 통과했습니다.
+- [PC 상점과 역할](screenshots/ui-refinements-20261118/pc-1400-1000-formation.png), [연패 위치](screenshots/ui-refinements-20261118/pc-streak.png), [모바일 세로](screenshots/ui-refinements-20261118/mobile-390-844-formation.png), [작은 가로](screenshots/ui-refinements-20261118/mobile-480-320-formation.png). 카드 너비의 그림, 이름 아래의 가격, 왼쪽 위 조합, 희귀도별 배경과 44px 터치 영역·패널 겹침·가로 넘침을 확인했습니다.
+- [최종 1182×955 화면](screenshots/ui-refinements-20261118/pc-1182-955-formation.png)에서는 같은 유닛을 다시 선택해도 역할·조합이 상단에 보입니다. 루트 경로 게시용 빌드의 재검사도 통과했습니다.
+- 프로젝트 Chromium 자동 검사를 사용했습니다. 사용 중인 공유 브라우저 세션의 직접 조작, 실기기·다른 브라우저 검사는 포함하지 않습니다. 별도 서버의 실제 사람끼리 대전과 정적 웹의 봇 대전 범위를 구분합니다.
+
 # 툰 일러스트를 적용한 오토체스 — 2026-11-18
 
 - 별도 비교표에 있던 새 그림을 실제 게임의 전장·대기석·상점·상세·로비·미니언으로 연결했습니다. [실제 게임 캡처](screenshots/toon-autochess/pc-game.png), [두 아트 모드 결과](screenshots/toon-autochess/game-validation.json).

@@ -5,6 +5,7 @@ import type { CombatAttribute } from "./combat-attributes";
 import { BASE_COMBAT_STATS } from "./damage";
 
 export const SPRITE_FRAME_SIZE = UNIT_ART_FRAME_SIZE;
+export type UnitRole = "딜러" | "탱커" | "서포터";
 
 function active(id: string, name: string, description: string, target: TargetRule, effects: SkillEffect[], recovery: Omit<ResourceDefinition, "max">): SkillDefinition {
   return {
@@ -28,7 +29,7 @@ const combatByTrait: Record<Trait, { defense: number; attackAttribute: CombatAtt
   arcane: { defense: 8, attackAttribute: "blue", defenseAttribute: "purple" },
 };
 
-function unit(id: string, name: string, role: string, rarity: Rarity, trait: Trait,
+function unit(id: string, name: string, role: UnitRole, rarity: Rarity, trait: Trait,
   stats: Pick<Stats, "hp" | "attack" | "interval" | "range" | "moveMs">) {
   const { defense, attackAttribute, defenseAttribute } = combatByTrait[trait];
   return {
@@ -41,26 +42,26 @@ function unit(id: string, name: string, role: string, rarity: Rarity, trait: Tra
 }
 
 export const BLUE_ARCHIVE_UNITS = {
-  yuuka: unit("yuuka", "유우카", "계산형 탱커", 2, "bulwark", { hp: 325, attack: 24, interval: 880, range: 2, moveMs: 440 }),
-  hoshino: unit("hoshino", "호시노", "방패 돌격수", 3, "bulwark", { hp: 345, attack: 29, interval: 1140, range: 1, moveMs: 470 }),
-  natsu: unit("natsu", "나츠", "자가 회복 탱커", 2, "bulwark", { hp: 310, attack: 23, interval: 1000, range: 2, moveMs: 480 }),
-  neru: unit("neru", "네루", "근거리 난사", 2, "scout", { hp: 232, attack: 23, interval: 640, range: 1, moveMs: 345 }),
-  izuna: unit("izuna", "이즈나", "고속 교란", 2, "scout", { hp: 196, attack: 25, interval: 720, range: 2, moveMs: 325 }),
-  mika: unit("mika", "미카", "중장 돌격수", 5, "bulwark", { hp: 330, attack: 42, interval: 1020, range: 2, moveMs: 400 }),
-  shiroko: unit("shiroko", "시로코", "드론 정찰수", 1, "scout", { hp: 190, attack: 27, interval: 790, range: 3, moveMs: 385 }),
-  koharu: unit("koharu", "코하루", "치유 지원", 2, "arcane", { hp: 184, attack: 21, interval: 1050, range: 3, moveMs: 465 }),
-  aru: unit("aru", "아루", "폭발 저격수", 3, "scout", { hp: 171, attack: 41, interval: 1180, range: 4, moveMs: 520 }),
-  haruna: unit("haruna", "하루나", "관통 저격수", 3, "scout", { hp: 173, attack: 40, interval: 1130, range: 4, moveMs: 520 }),
-  hifumi: unit("hifumi", "히후미", "보호막 지원", 1, "arcane", { hp: 189, attack: 22, interval: 970, range: 3, moveMs: 455 }),
-  hina: unit("hina", "히나", "광역 제압", 5, "bulwark", { hp: 258, attack: 43, interval: 900, range: 4, moveMs: 510 }),
-  iori: unit("iori", "이오리", "속사 저격수", 3, "scout", { hp: 190, attack: 35, interval: 870, range: 4, moveMs: 445 }),
-  maki: unit("maki", "마키", "표식 지원", 1, "arcane", { hp: 184, attack: 24, interval: 890, range: 3, moveMs: 455 }),
-  aris: unit("aris", "아리스", "광선 포격", 4, "arcane", { hp: 210, attack: 50, interval: 1470, range: 4, moveMs: 570 }),
-  midori: unit("midori", "미도리", "치유 사격", 1, "arcane", { hp: 177, attack: 24, interval: 960, range: 4, moveMs: 455 }),
-  yuzu: unit("yuzu", "유즈", "범위 유탄", 2, "arcane", { hp: 176, attack: 30, interval: 1160, range: 3, moveMs: 480 }),
-  azusa: unit("azusa", "아즈사", "단일 집중 사격", 3, "scout", { hp: 197, attack: 32, interval: 900, range: 3, moveMs: 430 }),
-  wakamo: unit("wakamo", "와카모", "고화력 저격수", 4, "scout", { hp: 199, attack: 48, interval: 1170, range: 4, moveMs: 480 }),
-  noa: unit("noa", "노아", "전술 기록 지원", 2, "arcane", { hp: 192, attack: 22, interval: 920, range: 3, moveMs: 435 }),
+  yuuka: unit("yuuka", "유우카", "탱커", 2, "bulwark", { hp: 325, attack: 24, interval: 880, range: 2, moveMs: 440 }),
+  hoshino: unit("hoshino", "호시노", "탱커", 3, "bulwark", { hp: 345, attack: 29, interval: 1140, range: 1, moveMs: 470 }),
+  natsu: unit("natsu", "나츠", "탱커", 2, "bulwark", { hp: 310, attack: 23, interval: 1000, range: 2, moveMs: 480 }),
+  neru: unit("neru", "네루", "딜러", 2, "scout", { hp: 232, attack: 23, interval: 640, range: 1, moveMs: 345 }),
+  izuna: unit("izuna", "이즈나", "딜러", 2, "scout", { hp: 196, attack: 25, interval: 720, range: 2, moveMs: 325 }),
+  mika: unit("mika", "미카", "딜러", 5, "bulwark", { hp: 330, attack: 42, interval: 1020, range: 2, moveMs: 400 }),
+  shiroko: unit("shiroko", "시로코", "딜러", 1, "scout", { hp: 190, attack: 27, interval: 790, range: 3, moveMs: 385 }),
+  koharu: unit("koharu", "코하루", "서포터", 2, "arcane", { hp: 184, attack: 21, interval: 1050, range: 3, moveMs: 465 }),
+  aru: unit("aru", "아루", "딜러", 3, "scout", { hp: 171, attack: 41, interval: 1180, range: 4, moveMs: 520 }),
+  haruna: unit("haruna", "하루나", "딜러", 3, "scout", { hp: 173, attack: 40, interval: 1130, range: 4, moveMs: 520 }),
+  hifumi: unit("hifumi", "히후미", "서포터", 1, "arcane", { hp: 189, attack: 22, interval: 970, range: 3, moveMs: 455 }),
+  hina: unit("hina", "히나", "딜러", 5, "bulwark", { hp: 258, attack: 43, interval: 900, range: 4, moveMs: 510 }),
+  iori: unit("iori", "이오리", "딜러", 3, "scout", { hp: 190, attack: 35, interval: 870, range: 4, moveMs: 445 }),
+  maki: unit("maki", "마키", "서포터", 1, "arcane", { hp: 184, attack: 24, interval: 890, range: 3, moveMs: 455 }),
+  aris: unit("aris", "아리스", "딜러", 4, "arcane", { hp: 210, attack: 50, interval: 1470, range: 4, moveMs: 570 }),
+  midori: unit("midori", "미도리", "서포터", 1, "arcane", { hp: 177, attack: 24, interval: 960, range: 4, moveMs: 455 }),
+  yuzu: unit("yuzu", "유즈", "딜러", 2, "arcane", { hp: 176, attack: 30, interval: 1160, range: 3, moveMs: 480 }),
+  azusa: unit("azusa", "아즈사", "딜러", 3, "scout", { hp: 197, attack: 32, interval: 900, range: 3, moveMs: 430 }),
+  wakamo: unit("wakamo", "와카모", "딜러", 4, "scout", { hp: 199, attack: 48, interval: 1170, range: 4, moveMs: 480 }),
+  noa: unit("noa", "노아", "서포터", 2, "arcane", { hp: 192, attack: 22, interval: 920, range: 3, moveMs: 435 }),
 };
 export type BlueArchiveKind = keyof typeof BLUE_ARCHIVE_UNITS;
 export const BLUE_ARCHIVE_KINDS = Object.keys(BLUE_ARCHIVE_UNITS) as BlueArchiveKind[];

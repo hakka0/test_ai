@@ -3,13 +3,14 @@ import { RANK_STAT_MULTIPLIER } from "./merge";
 import type { CombatAttribute } from "./combat-attributes";
 import { BASE_COMBAT_STATS, clampDamageStats } from "./damage";
 import { BLUE_ARCHIVE_KINDS, BLUE_ARCHIVE_UNITS } from "./blue-archive";
+import type { UnitRole } from "./blue-archive";
 export { BASE_COMBAT_STATS } from "./damage";
 
 interface UnitDefinition {
   name: string;
   rarity: Rarity;
   trait: Trait;
-  role: string;
+  role: UnitRole;
   image: string;
   spriteSheet?: string;
   stats: Stats;

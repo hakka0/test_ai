@@ -4,7 +4,7 @@ const {resolve,extname}=require('node:path');
 const assert=require('node:assert/strict');
 const {chromium,browserOptions}=require('./browser-runtime.cjs');
 const {debugClick,debugPreset}=require('./ui-helpers.cjs');
-const root=resolve('dist-pages'),prefix='/test_ai/',shots='test-results/formation-layout';
+const root=resolve('dist-pages'),prefix=process.env.PAGES_BASE_PATH??'/test_ai/',shots='test-results/formation-layout';
 const types={'.html':'text/html','.js':'text/javascript','.css':'text/css','.png':'image/png','.svg':'image/svg+xml','.ttf':'font/ttf'};
 const failures=[],server=createServer(async(req,res)=>{
  const name=new URL(req.url,'http://localhost').pathname;
@@ -43,6 +43,24 @@ const failures=[],server=createServer(async(req,res)=>{
   const cost=Number((await offer.getAttribute('aria-label')).match(/(\d+) 골드에 구매/)[1]);
   await press(offer);await waitCount(1);assert.equal(await p.locator('#gold').textContent(),String(10-cost));
   await placeFirst();await deployed(1);await waitCount(0);
+  // One accepted placement consumes movement focus while keeping the inspector.
+  const unitCell=p.locator('#cells button[data-x="2"][data-y="6"]');
+  const unitId=await unitCell.getAttribute('data-board-unit');
+  const details=await p.locator('#selected-unit-content .selection h2').textContent();
+  assert.equal(await p.locator('#cells [aria-pressed="true"],#units [aria-pressed="true"]').count(),0);
+  await press('#cells button[data-x="3"][data-y="6"]');
+  await press('#units [data-bench-slot="5"]');
+  assert.equal(await unitCell.getAttribute('data-board-unit'),unitId,'extra empty cell/bench taps do not move the unit');
+  assert.equal(await p.locator('#selected-unit-content .selection h2').textContent(),details,'unit detail remains visible');
+  assert.match(await p.locator('#selected-unit-content .unit-role-badge').textContent(),/^(딜러|탱커|서포터)$/);
+  assert.equal(await p.locator('#selected-unit-content .unit-identity svg').count(),2,'role and composition have separate icons');
+  await press(unitCell);await closeUnit();
+  await press('#cells button[data-x="3"][data-y="6"]');
+  await p.waitForFunction(id=>document.querySelector('#cells button[data-x="3"][data-y="6"]').dataset.boardUnit===id,unitId);
+  assert.equal(await p.locator('#cells [aria-pressed="true"]').count(),0,'a new selection allows exactly one more move');
+  await press('#cells button[data-x="3"][data-y="6"]');await closeUnit();
+  await press('#cells button[data-x="2"][data-y="6"]');
+  await p.waitForFunction(id=>document.querySelector('#cells button[data-x="2"][data-y="6"]').dataset.boardUnit===id,unitId);
   assert.equal(await p.locator('#deployment-overlay #deployed').textContent(),'1/1');
   await p.screenshot({path:`${shots}/${mobile?'mobile':'pc'}-one-deployed.png`});
   await returnSelected();await deployed(0);await waitCount(1);
@@ -51,7 +69,7 @@ const failures=[],server=createServer(async(req,res)=>{
   await debugPreset(p,'catalog');
   const room=await p.evaluate(()=>sessionStorage.getItem('duel-token'));
   const board=await p.locator('#board-wrap').elementHandle();
-  const sizes=mobile?[[390,844],[320,740],[844,390],[740,360],[667,375],[480,320],[390,844]]:[[1400,1000],[1024,768]];
+  const sizes=process.env.FORMATION_TEST_VIEWPORT?[process.env.FORMATION_TEST_VIEWPORT.split('x').map(Number)]:mobile?[[390,844],[320,740],[844,390],[740,360],[667,375],[480,320],[390,844]]:[[1400,1000],[1182,955],[1024,768]];
   for(const [width,height] of sizes){
    await p.setViewportSize({width,height});await p.waitForTimeout(180);
    await placeFirst();await deployed(9);await returnSelected();await deployed(8);await closeUnit();
@@ -61,6 +79,17 @@ const failures=[],server=createServer(async(req,res)=>{
     return{overflow:document.documentElement.scrollWidth>innerWidth,board:box('board-wrap'),deployed:box('deployed'),overlay:{opacity:Number(overlayStyle.opacity),pointerEvents:overlayStyle.pointerEvents},bench:box('bench'),shop:box('pc-dock-reserve'),ranking:box('player-ranking'),inspector:box('selected-unit-panel'),supply:box('formation-supply'),dock:box('pc-play-dock'),header:document.querySelector('header').getBoundingClientRect().toJSON(),targets:[...document.querySelectorAll('.ranking-row,#shop-offers [data-offer],#ready,#mobile-info-open')].filter(e=>e.getClientRects().length).map(e=>({width:e.getBoundingClientRect().width,height:e.getBoundingClientRect().height}))};
    });
    assert.equal(geometry.overflow,false);assert.ok(geometry.targets.every(r=>r.width>=44&&r.height>=44));
+   const cards=await p.locator('#shop-offers [data-offer]').evaluateAll(offers=>offers.map(card=>{
+    const rect=el=>el.getBoundingClientRect().toJSON();
+    return{card:rect(card),art:rect(card.querySelector('img')),name:rect(card.querySelector('.shop-unit-info')),price:rect(card.querySelector('.shop-price')),trait:rect(card.querySelector('.shop-traits')),rarity:card.dataset.rarity,tint:getComputedStyle(card).getPropertyValue('--card-tint').trim()};
+   }));
+   for(const c of cards){
+    assert.ok(c.art.width>=c.card.width-5,`shop illustration fills the width: ${JSON.stringify(c)}`);
+    assert.ok(c.name.y<c.price.y&&c.name.bottom<=c.price.y+1,'name sits above the full-width price');
+    assert.ok(c.trait.x<c.card.x+c.card.width/2&&c.trait.y<c.card.y+c.card.height/2,'composition sits at the top left');
+    assert.ok(c.tint,'rarity background is present');
+   }
+   assert.equal(await p.locator('#formation-interest').count(),0,'recent interest was removed');
    assert.equal(await p.locator('#deployment-overlay #deployed').count(),1);
    assert.equal(await p.locator('#formation-deployment').count(),0);
    assert.equal(await p.locator('#deployed').isVisible(),true);
@@ -79,6 +108,18 @@ const failures=[],server=createServer(async(req,res)=>{
     assert.equal(await p.locator('#selected-unit-content .formation-equipment-slot').count(),2);
    }
    assert.equal(await p.evaluate(()=>sessionStorage.getItem('duel-token')),room);
+   if(!mobile&&width===1182){
+    const icons=[];
+    for(const [name,role] of [['아루','딜러'],['코하루','서포터'],['나츠','탱커']]){
+     const target=p.locator(`#cells [aria-label*="칸, ${name},"],#units [aria-label*="${name},"]`).first();
+     await press(target);
+     assert.equal(await p.locator('#selected-unit-content .unit-role-badge').textContent(),role);
+     const heading=await p.locator('#selected-unit-content .unit-identity').boundingBox(),panel=await p.locator('#selected-unit-panel').boundingBox();
+     assert.ok(heading.y>=panel.y+39&&heading.y+heading.height<panel.y+panel.height,`selecting a unit shows its role and composition below the sticky tabs: ${JSON.stringify({heading,panel})}`);
+     icons.push(await p.locator('#selected-unit-content .unit-role-badge svg').innerHTML());
+    }
+    assert.equal(new Set(icons).size,3,'dealer, tank and support have distinct icons');
+   }
    await p.screenshot({path:`${shots}/${mobile?'mobile':'pc'}-${width}-${height}-formation.png`});
    results.push({mobile,width,height,geometry,realPlacementAndBenchReturn:true});console.log('PASS formation',mobile?'mobile':'pc',width,height);
   }
@@ -102,6 +143,12 @@ const failures=[],server=createServer(async(req,res)=>{
   await press('#scout-return');await debugClick(p,'debug-second');
   await p.screenshot({path:`${shots}/${mobile?'mobile':'pc'}-combat.png`});
   await debugClick(p,'debug-next');await p.waitForFunction(()=>document.body.dataset.gamePhase==='result');
+  if(!mobile&&await p.locator('#dock-streak').isVisible()){
+   const economy=await p.locator('#dock-gold').boundingBox(),streak=await p.locator('#dock-streak').boundingBox(),value=await p.locator('#gold').boundingBox();
+   assert.ok(streak.x>=value.x+value.width-1&&streak.y>economy.y+16,'streak occupies the lower right of the gold panel');
+   assert.ok(streak.x+streak.width<=economy.x+economy.width+1,'streak fits inside the panel');
+   await p.screenshot({path:`${shots}/pc-streak.png`});
+  }
   await press('#history-toggle');await p.locator('#history-panel').waitFor({state:'visible'});
   assert.ok(await p.locator('#history-rounds button:not(:disabled)').count());
   await press(mobile?'#combat-sheet-close':'#inspection-unit-tab');
@@ -150,6 +197,6 @@ const failures=[],server=createServer(async(req,res)=>{
   console.log('PASS real two-person room create, information-menu code/copy, mobile join, compact/PC relocation and reconnect');
  }
  assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
- await writeFile(`${shots}/results.json`,JSON.stringify({results,errors,failures,source:process.env.GAME_URL?'Node server and live snapshots':'Pages local engine; actual one-human/five-bot practice'},null,2));
- console.log(`PASS real purchases, XP, placement/return, ${results.length} layouts, same-board combat, reserve sale/buy, scouting, history, gear details, restore and lobby`);
+ await writeFile(`${shots}/results.json`,JSON.stringify({results,errors,failures,checks:{oneMoveFocusAndRetainedInspection:true,reselectionAllowsAnotherMove:true,fullWidthShopArtAndStackedNamePrice:true,rarityBackgroundAndTopLeftTrait:true,recentInterestRemoved:true},source:process.env.GAME_URL?'Node server and live snapshots':'Pages local engine; actual one-human/five-bot practice'},null,2));
+ console.log(`PASS one-move focus/detail retention/reselection, shop composition, role icons, streak position, real purchases, XP, ${results.length} layouts, combat, scouting, history, gear, restore and lobby`);
 }finally{await browser?.close();await new Promise(r=>server.close(r));}})().catch(e=>{console.error(e.stack);process.exitCode=1;});

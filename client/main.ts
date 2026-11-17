@@ -38,6 +38,7 @@ import {unitDefinition,minionStats} from "../shared/minions";
 import { UNITS, EQUIPMENT, statsFor, unitKindsFor } from "../shared/catalog";
 import { unitStatsMarkup } from "./unit-stats";
 import { unitSummaryMarkup } from "./unit-summary";
+import { unitIdentityMarkup } from "./unit-labels";
 import { TRAITS, synergiesForPlayer, bonusFor } from "../shared/synergy";
 import {synergyCards} from './synergy-ui';
 import { COLS, ROWS, BENCH_SIZE, MAX_ROUNDS, PREP_MS, MATCHING_MS, COMBAT_MS, OVERTIME_MS, RESULT_MS, type Snapshot, type SelfPlayerSnapshot, type Unit, type RewardOption, type DebugAction, type Trait } from "../shared/model";
@@ -171,6 +172,11 @@ function mutate(action: Parameters<Connection["send"]>[0]) {
   if(snapshot?.phase==='matching'&&action.type==='ready'){if(allowed)net.send(action);return;}
   if (!snapshot || !allowed || !gate.start(snapshot)) return;
   endDrag();
+  if (action.type === 'place' || action.type === 'bench') {
+    placementSelected = '';
+    scene.selected = '';
+    refreshCells();
+  }
   net.send(action);
   lastUI = "";
   render();
@@ -178,6 +184,7 @@ function mutate(action: Parameters<Connection["send"]>[0]) {
 const { scene, game } = createBoard();
 let snapshot: Snapshot | null = null,
   selected = "",
+  placementSelected = "",
   lastUI = "",
   noticeTimeout: ReturnType<typeof setTimeout>;
 let combatPanel:ReturnType<typeof createCombatPanel>|null=null;
@@ -229,7 +236,7 @@ function setWatchedPlayer(id:string,refresh=true){
  if(!snapshot||rewardUI.peeking)return;
  const before=scoutingState.playerId;if(!scoutingState.watch(snapshot,net.room?.sessionId??'',id)||before===scoutingState.playerId)return;
  endDrag();cancelSale();equipmentUI?.cancel();pcUI.close();craftUI?.close();historyUI.close();$<HTMLDialogElement>('unit-dialog').close();
- selected='';scene.selected='';lastUI='';syncBoardView();
+ selected='';placementSelected='';scene.selected='';lastUI='';syncBoardView();
  if(refresh){render();refreshCells();}
 }
 function preparationOpen() {
@@ -256,11 +263,15 @@ function canSell(id=selected) {const p=me();return !!(canSupply()&&snapshot&&p&&
 function canReady(){const p=me();return !!(net.connected&&net.hasSnapshot&&snapshot&&p&&!gate.busy&&!rewardUI.peeking&&(snapshot.mode!=='botPractice'||p.health>0)&&readyActionOpen(snapshot.phase,p.ready,net.gameNow(),snapshot.deadline));}
 function select(id: string) {
   if(id)historyUI.close();
-  if (selected !== id) cancelSale();
+  const changed = selected !== id;
+  if (changed) cancelSale();
   selected = id;
+  // Inspection survives a move; movement focus is consumed by place/bench.
+  placementSelected = id;
   scene.selected = id;
   lastUI = "";
   render();
+  $('selected-unit-panel').scrollTop = 0;
   refreshCells();
 }
 function compactUnitDetails(){return document.documentElement.dataset.screenMode==='mobile'||innerWidth<=700||(innerHeight<=540&&innerWidth>innerHeight);}
@@ -393,7 +404,8 @@ function planPlacement(id: string, to: Destination) {
   return gate.busy ? {...intent, reason: "서버 응답 후 다시 배치하세요."} : intent;
 }
 function place(x: number, y: number) {
-  const intent = planPlacement(selected, {kind: "cell", x, y});
+  if (!placementSelected) return;
+  const intent = planPlacement(placementSelected, {kind: "cell", x, y});
   if (intent.action) mutate(intent.action);
   else if (!intent.valid) notice(intent.reason);
 }
@@ -465,7 +477,7 @@ function dropTarget(clientX: number, clientY: number) {
   const el = document.elementFromPoint(clientX, clientY)?.closest<HTMLElement>("#cells button, [data-bench-slot], #pc-dock-reserve") ?? null;
   const to: Destination = !el ? {kind: "outside"} : el.id==='pc-dock-reserve'?{kind:'shop'}:el.dataset.benchSlot !== undefined ?
     {kind: "bench", slot: Number(el.dataset.benchSlot)} : {kind: "cell", x: Number(el.dataset.x), y: Number(el.dataset.y)};
-  return {el, to, ...planPlacement(drag?.id ?? selected, to)};
+  return {el, to, ...planPlacement(drag?.id ?? placementSelected, to)};
 }
 document.addEventListener("pointerdown", (e) => {
   if (!e.isPrimary) { endDrag(); return; }
@@ -572,8 +584,8 @@ $("units").addEventListener("click", (e) => {
   if (!target) return;
   if (target.dataset.unit) chooseUnit(target.dataset.unit);
   else {
-    if(rewardUI.peeking||scoutingState.active)return;
-    const intent = planPlacement(selected, {kind: "bench", slot: Number(target.dataset.benchSlot)});
+    if(rewardUI.peeking||scoutingState.active||!placementSelected)return;
+    const intent = planPlacement(placementSelected, {kind: "bench", slot: Number(target.dataset.benchSlot)});
     if (intent.action) mutate(intent.action);
     else if (!intent.valid) notice(intent.reason);
   }
@@ -649,6 +661,7 @@ function render() {
   $("game-view").classList.toggle("match-finished", s.phase === "finished");
   if (selected && !inspectionOf(selected)) {
     selected = "";
+    placementSelected = "";
     scene.selected = "";
     endDrag();
     $<HTMLDialogElement>("unit-dialog").close();
@@ -670,6 +683,7 @@ function render() {
     s.overtime,
     s.fighters.map(f => [f.id, f.kind, f.rank, f.owner]),
     selected,
+    placementSelected,
     net.connected,
     gate.busy, canEdit(), canShop(), canPurchase(),rewardUI.peeking,scoutingState.playerId,
   ]);
@@ -768,7 +782,7 @@ function render() {
   setHTML("units", Array.from({length: BENCH_SIZE}, (_, slot) => {
     if(concealed)return `<button class="bench-slot empty-slot" data-bench-slot="${slot}" disabled aria-label="대기석 ${slot+1}, 비공개"><span class="slot-number">${slot+1}</span><span aria-hidden="true">—</span></button>`;
     const u = viewUnits.find(u => u.x < 0 && u.benchSlot === slot);
-    return u ? `<button class="unit-card bench-slot ${u.id === selected ? "selected" : ""}" data-bench-slot="${slot}" data-rarity="${UNITS[u.kind].rarity}" data-unit="${escape(u.id)}" aria-label="대기석 ${slot + 1}, ${unitDefinition(u).name}, ${TRAITS[UNITS[u.kind].trait].name}, 강화 ${u.rank}성, 레어도 ${UNITS[u.kind].rarity}등급" aria-pressed="${u.id === selected}"><svg class="bench-selection-pointer" viewBox="0 0 18 12" aria-hidden="true" focusable="false"><path d="M1 1h16L9 11Z" fill="currentColor" stroke="#fff4b0" stroke-width="1"/></svg><span class="slot-number">${slot + 1}</span><img src="${UNITS[u.kind].image}" alt="" draggable="false"><strong>${unitDefinition(u).name}</strong><span class="small trait-badge" data-trait="${UNITS[u.kind].trait}">${TRAITS[UNITS[u.kind].trait].name}</span><span class="unit-rank" aria-label="강화 ${u.rank}성">강화 ${"★".repeat(u.rank)}</span><span class="bench-rarity" aria-label="레어도 ${UNITS[u.kind].rarity}등급">★${UNITS[u.kind].rarity}</span><span class="pc-bench-rank" aria-hidden="true">${"★".repeat(u.rank)}</span>${u.equipment.length ? `<span class="pc-bench-equipment" aria-label="장비 ${u.equipment.length}개">◇${u.equipment.length}</span>` : ""}</button>` : `<button class="bench-slot empty-slot" data-bench-slot="${slot}" aria-label="대기석 ${slot + 1}, 빈자리"><span class="slot-number">${slot + 1}</span><span aria-hidden="true">＋</span></button>`;
+    return u ? `<button class="unit-card bench-slot ${u.id === placementSelected ? "selected" : ""}" data-bench-slot="${slot}" data-rarity="${UNITS[u.kind].rarity}" data-unit="${escape(u.id)}" aria-label="대기석 ${slot + 1}, ${unitDefinition(u).name}, ${TRAITS[UNITS[u.kind].trait].name}, 강화 ${u.rank}성, 레어도 ${UNITS[u.kind].rarity}등급" aria-pressed="${u.id === placementSelected}"><svg class="bench-selection-pointer" viewBox="0 0 18 12" aria-hidden="true" focusable="false"><path d="M1 1h16L9 11Z" fill="currentColor" stroke="#fff4b0" stroke-width="1"/></svg><span class="slot-number">${slot + 1}</span><img src="${UNITS[u.kind].image}" alt="" draggable="false"><strong>${unitDefinition(u).name}</strong><span class="small trait-badge" data-trait="${UNITS[u.kind].trait}">${TRAITS[UNITS[u.kind].trait].name}</span><span class="unit-rank" aria-label="강화 ${u.rank}성">강화 ${"★".repeat(u.rank)}</span><span class="bench-rarity" aria-label="레어도 ${UNITS[u.kind].rarity}등급">★${UNITS[u.kind].rarity}</span><span class="pc-bench-rank" aria-hidden="true">${"★".repeat(u.rank)}</span>${u.equipment.length ? `<span class="pc-bench-equipment" aria-label="장비 ${u.equipment.length}개">◇${u.equipment.length}</span>` : ""}</button>` : `<button class="bench-slot empty-slot" data-bench-slot="${slot}" aria-label="대기석 ${slot + 1}, 빈자리"><span class="slot-number">${slot + 1}</span><span aria-hidden="true">＋</span></button>`;
   }).join(""));
   const mySynergies = synergiesForPlayer(viewS, viewed);
   setHTML("my-synergies", concealed?`<p class="synergy-empty">${s.phase==='matching'?'매칭':'준비'} 중 비공개</p>`:synergyCards(mySynergies.filter(s=>s.count>0))||'<p class="synergy-empty">출전 유닛 없음</p>');
@@ -786,7 +800,7 @@ function render() {
       bonus.shield ? `시너지 시작 보호막 +${bonus.shield}` : "",
     ].filter(Boolean).join(" · ");
     $("selection").innerHTML =
-      `<div class="selection"><img data-rarity="${def.rarity}" src="${def.image}" alt=""><div><div class="eyebrow">${def.role}${unit.minion?'':` · ${TRAITS[def.trait].name}`}</div><h2>${def.name}</h2>${unit.minion?'<div class="unit-meta">중립 유닛</div>':unitSummaryMarkup(unit.rank,def.rarity)}</div></div>${statNotes ? `<div class="muted small">${statNotes}</div>` : ""}${unitStatsMarkup(stats)}`;
+      `<div class="selection"><img data-rarity="${def.rarity}" src="${def.image}" alt=""><div>${unit.minion?'<div class="unit-identity"><span class="unit-neutral-badge">중립 유닛</span></div>':unitIdentityMarkup(UNITS[unit.kind].role,def.trait)}<h2>${def.name}</h2>${unit.minion?'<div class="unit-meta">중립 유닛</div>':unitSummaryMarkup(unit.rank,def.rarity)}</div></div>${statNotes ? `<div class="muted small">${statNotes}</div>` : ""}${unitStatsMarkup(stats)}`;
   } else {
     $("selection").innerHTML = '<div class="empty">유닛을 선택하세요.</div>';
   }
@@ -813,7 +827,7 @@ function render() {
   $("action-status").textContent = gate.busy ? "서버 응답을 기다리는 중…" : "";
   $("selected-help").textContent = unit
     ? ownUnit && canEdit()
-      ? "빈 아군 칸·대기석을 터치하거나 드래그하세요."
+      ? placementSelected ? "빈 아군 칸·대기석을 터치하거나 드래그하세요." : "다시 이동하려면 유닛을 선택하세요."
       : "현재는 캐릭터 정보만 확인할 수 있습니다."
     : "한 번 터치는 선택 · 상세·장비 버튼으로 확인";
   ($("bench-button") as HTMLButtonElement).disabled =
@@ -929,7 +943,7 @@ net.onSnapshot = (s) => {
   const reset = !!s.debug && s.debug.generation !== snapshot?.debug?.generation;
   if (reset) {
     craftUI?.reset();
-    gate.reset(); cancelSale(); endDrag(); selected = ""; scene.selected = ""; scene.resetVisuals();
+    gate.reset(); cancelSale(); endDrag(); selected = ""; placementSelected = ""; scene.selected = ""; scene.resetVisuals();
     $<HTMLDialogElement>("unit-dialog").close(); lastUI = "";
   }
   snapshot = s;
@@ -940,13 +954,14 @@ net.onSnapshot = (s) => {
     endDrag();
     const merged = p.lastMerge;
     if (!scoutingState.active && merged.consumedIds.includes(selected)) selected = merged.unitId;
+    if (!scoutingState.active && merged.consumedIds.includes(placementSelected)) placementSelected = merged.unitId;
     notice(`${UNITS[merged.kind].name} 강화 ${merged.rank}성 합성!${merged.returnedEquipment ? ` 장비 ${merged.returnedEquipment}개를 인벤토리에 반환했습니다.` : ""}`);
   }
   if (!reset && selected && (scoutingState.active?!inspectionOf(selected):inspectionSelection(previousSnapshot, s, selected) !== selected)) {
-    endDrag(); cancelSale(); selected = "";
+    endDrag(); cancelSale(); selected = ""; placementSelected = "";
     $<HTMLDialogElement>("unit-dialog").close(); lastUI = "";
   }
-  scene.selected = selected;
+  scene.selected = placementSelected;
   if (drag?.active && !canEdit() && !canSell(drag.id)) endDrag();
   render();
   renderSkills();
@@ -959,7 +974,7 @@ function refreshCells() {
       y = Number(b.dataset.y),
       u = scene.unitAt(x, y);
     if(u){b.dataset.boardUnit=u.id;b.dataset.boardOwner=u.owner;}else{delete b.dataset.boardUnit;delete b.dataset.boardOwner;}
-    b.setAttribute("aria-pressed", String(u?.id === selected));
+    b.setAttribute("aria-pressed", String(!!placementSelected && u?.id === placementSelected));
     b.setAttribute(
       "aria-label",
       `${y + 1}행 ${x + 1}열 ${scoutingState.active?'관전':y >= ROWS / 2 ? "아군" : "상대"} 칸${u ? `, ${unitDefinition(u).name}, ${TRAITS[UNITS[u.kind].trait].name}, 강화 ${u.rank}성${"hp" in u ? `, 체력 ${u.hp}` : ""}${scoutingState.active?`, ${snapshot?.players.find(p=>p.id===u.owner)?.name??""} 진영`:""}` : ", 빈 칸"}`,
@@ -1007,7 +1022,7 @@ function resetMatchView() {
   scoutingState.reset();boardViewKey='';document.body.classList.remove('scouting-player');
   const player = me();
   if (player) $<HTMLInputElement>("nickname").value = player.name;
-  endDrag(); cancelSale(); gate.reset(); selected = ""; lastUI = "";
+  endDrag(); cancelSale(); gate.reset(); selected = ""; placementSelected = ""; lastUI = "";
   pcUI.close();
   craftUI?.reset();
   snapshot = null; equipmentUI?.render(); scene.snapshot = null; scene.selfId = ""; scene.readOnly=false;scene.selected = ""; scene.resetVisuals();rankingUI?.render();

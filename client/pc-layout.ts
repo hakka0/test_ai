@@ -12,7 +12,6 @@ export function createPCLayout(options:{beforeChange:()=>void;afterChange:()=>vo
  const leftRail=document.createElement('aside');leftRail.id='pc-left-rail';leftRail.setAttribute('aria-label','출전 조합과 보유 장비');
  const supply=document.createElement('section');supply.id='formation-supply';supply.setAttribute('aria-label','대기석과 상점');dock.append(supply);
  dock.querySelector('#dock-ready')!.insertAdjacentHTML('afterbegin','<p id="formation-ready-help">편성을 마치면<br>준비 완료를 눌러주세요.</p>');
- dock.querySelector('#dock-gold')!.insertAdjacentHTML('beforeend','<span id="formation-interest"></span>');
  const synergyPanel=$('synergy-panel');
  const benchRegion=document.createElement('div');benchRegion.id='pc-bench';benchRegion.setAttribute('role','region');benchRegion.setAttribute('aria-label','대기석');
  $('battlefield-stage').after(benchRegion);
@@ -176,7 +175,6 @@ export function createPCLayout(options:{beforeChange:()=>void;afterChange:()=>vo
   document.body.dataset.gamePhase=s.phase;
   $('phase').dataset.formationLabel={waiting:'입장 대기',prepare:'준비 단계',matching:'매칭 중',combat:'전투 중',result:'라운드 결과',finished:'경기 종료'}[s.phase];
   $('formation-stage-detail').textContent=s.encounter==='minion'?`미니언전 ${s.round}/3`:'플레이어 대전';
-  $('formation-interest').textContent=`최근 이자 +${p.lastIncome.interest}`;
   $('formation-time-label').textContent={waiting:'상대 입장 대기',prepare:'배치 종료까지',matching:'매칭 종료까지',combat:s.overtime?'피버타임 종료까지':'전투 종료까지',result:'다음 준비까지',finished:'경기 종료'}[s.phase];
   $('formation-ready-help').textContent=p.ready&&s.phase==='prepare'?'준비 완료 · 상대를 기다리는 중':s.phase==='combat'?'전투 진행 중 · 배치가 잠겼습니다.':s.phase==='result'?'라운드 결과를 확인하세요.':s.phase==='finished'?'최종 결과를 확인하세요.':'편성을 마치면 준비 완료를 눌러주세요.';
  }

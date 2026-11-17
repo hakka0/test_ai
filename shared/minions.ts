@@ -12,7 +12,7 @@ export function minionStats(unit:Unit):Stats{
 }
 export function unitDefinition(unit:Pick<Unit,'kind'|'minion'>){
  const base=UNITS[unit.kind];
- return unit.minion?{...base,name:unit.minion.variant==='drone'?'미니언 드론':'훈련 미니언',role:'중립 기계',image:minionArtImage(unit.minion.variant),skills:[],stats:minionStats(unit as Unit),trait:base.trait}:base;
+ return unit.minion?{...base,name:unit.minion.variant==='drone'?'미니언 드론':'훈련 미니언',role:'중립 기계',image:minionArtImage(unit.minion.variant),skills:[] as string[],stats:minionStats(unit as Unit),trait:base.trait}:base;
 }
 export function createMinionBattles(players:readonly Player[],round:number):MinionBattle[]{
  return players.map(player=>{

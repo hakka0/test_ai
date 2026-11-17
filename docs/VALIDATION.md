@@ -1,3 +1,12 @@
+# 상점·역할 표시와 이동 선택 개선 — 2026-11-18
+
+- `npm run build:pages`, `PAGES_BASE_PATH=/ npm run build:pages`: TypeScript 검사와 `/test_ai/`·루트 경로 정적 빌드 통과. 기존 Phaser 번들 크기 알림 외 빌드 오류가 없습니다.
+- `node --import tsx --test tests/interaction.test.ts tests/unit-inspection.test.ts tests/blue-archive.test.ts`: 배치·변경 요청 게이트·판매 확인·내/상대 유닛 조회와 캐릭터 정의 검사 통과.
+- `CHROME_PATH=/usr/bin/chromium npm run test:formation:browser`: 실제 1명+봇 5명 경기에서 PC 3크기와 모바일 7크기/회전, 총 10개 화면 통과. 배치 한 번 뒤 포커스 해제·상세 유지·다른 빈 칸/대기석 클릭 무시·재선택 후 재이동을 PC/모바일에서 확인했습니다.
+- 상점 그림의 전체 너비, 이름 아래 가격, 왼쪽 위 조합, 희귀도 배경, 최근 이자 제거와 PC의 실제 연패 위치를 검사했습니다. 전장/대기석/상점/순위 겹침·가로 넘침·44px 터치 영역, 구매·경험치·전투·판매·관전·장비·복원·로비 이동도 통과했습니다. [화면별 측정](screenshots/ui-refinements-20261118/responsive-validation.json).
+- `PAGES_BASE_PATH=/ FORMATION_TEST_MODE=pc FORMATION_TEST_VIEWPORT=1182x955 CHROME_PATH=/usr/bin/chromium npm run test:formation:browser`: 최종 루트 경로 빌드 통과. 같은 유닛 재선택·다른 유닛 선택 후 상세 창 상단 노출, 아루/코하루/나츠의 딜러/서포터/탱커 표시와 서로 다른 아이콘을 확인했습니다. 구매·이동·전투·복원까지 다시 통과했으며 페이지 오류·이미지 누락은 없습니다. [게시용 결과](screenshots/ui-refinements-20261118/root-production-validation.json), [사용자와 같은 크기의 최종 화면](screenshots/ui-refinements-20261118/pc-1182-955-formation.png).
+- 화면 기록과 공유 브라우저·실기기·다른 브라우저의 검증 범위는 [화면 QA](SCREEN_QA.md)를 참고합니다.
+
 # 툰 일러스트를 적용한 오토체스 — 2026-11-18
 
 - `npm run build:pages` 및 타입 검사, `node --import tsx --test tests/blue-archive.test.ts tests/unit-appearance.test.ts tests/minions.test.ts`가 통과했습니다.
