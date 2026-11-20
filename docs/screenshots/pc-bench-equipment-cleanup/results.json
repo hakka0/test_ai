@@ -1,0 +1,79 @@
+{
+  "records": [
+    {
+      "width": 1400,
+      "height": 1000,
+      "sequence": [
+        0,
+        1,
+        2,
+        1,
+        0
+      ],
+      "emptyStashHides": true,
+      "unequipRestoresStash": true,
+      "benchAccessibleLabel": "대기석 1, 시로코, 정찰, 강화 1성, 레어도 1등급",
+      "layout": {
+        "overflow": false,
+        "sidebar": {
+          "x": 16,
+          "y": 204,
+          "width": 243.984375,
+          "height": 184,
+          "top": 204,
+          "right": 259.984375,
+          "bottom": 388,
+          "left": 16
+        },
+        "inspector": {
+          "x": 924,
+          "y": 84,
+          "width": 280,
+          "height": 640,
+          "top": 84,
+          "right": 1204,
+          "bottom": 724,
+          "left": 924
+        }
+      }
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "sequence": [
+        0,
+        1,
+        2,
+        1,
+        0
+      ],
+      "emptyStashHides": true,
+      "unequipRestoresStash": true,
+      "benchAccessibleLabel": "대기석 1, 시로코, 정찰, 강화 1성, 레어도 1등급",
+      "layout": {
+        "overflow": false,
+        "sidebar": {
+          "x": 16,
+          "y": 204,
+          "width": 178.453125,
+          "height": 184,
+          "top": 204,
+          "right": 194.453125,
+          "bottom": 388,
+          "left": 16
+        },
+        "inspector": {
+          "x": 643.125,
+          "y": 84,
+          "width": 230,
+          "height": 408,
+          "top": 84,
+          "right": 873.125,
+          "bottom": 492,
+          "left": 643.125
+        }
+      }
+    }
+  ],
+  "errors": []
+}

@@ -13,6 +13,12 @@
 .formation-details span { font-size:11px; font-weight:400; }
 body.home-active header .matchbar,body.home-active #pc-match-tools { display:none!important; }
 
+/* PC: empty equipment and reserve indexes do not reserve visual space. */
+html:root.pc-layout body #app #pc-bench .slot-number,
+html:root.pc-layout body #app #selected-unit-content .formation-equipment-slot.empty { display:none; }
+html:root.pc-layout body #app #selected-unit-content .selected-unit-section:has(> .formation-equipment-slots):not(:has(.formation-equipment-slot:not(.empty))) { display:none; }
+html:root.pc-layout body #app #equipment-sidebar:not(:has([data-equipment-item])) { display:none; }
+
 html:root.tactical-desktop body:not(.home-active) #app {
  --formation-left:clamp(150px,17.42857vw,244px);
  --formation-inspector:clamp(230px,20vw,280px);

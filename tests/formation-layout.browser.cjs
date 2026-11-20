@@ -76,7 +76,9 @@ const failures=[],server=createServer(async(req,res)=>{
     if(width===1400){assert.ok(Math.abs(geometry.supply.x-260)<2);assert.ok(Math.abs(geometry.supply.width-922)<2);assert.ok(geometry.board.width>=630);assert.ok(Math.abs(geometry.ranking.x-1216)<2);}
     await press('[data-formation-details]');await p.locator('#unit-dialog').waitFor({state:'visible'});
     assert.equal(await p.locator('#unit-detail .stat').count(),7,'all stats remain available in full detail');await closeUnit();
-    assert.equal(await p.locator('#selected-unit-content .formation-equipment-slot').count(),2);
+    assert.equal(await p.locator('#selected-unit-content .formation-equipment-slot:visible').count(),0);
+    assert.equal(await p.locator('#units .slot-number:visible').count(),0);
+    assert.equal(await p.locator('#equipment-sidebar').isVisible(),false);
    }
    assert.equal(await p.evaluate(()=>sessionStorage.getItem('duel-token')),room);
    await p.screenshot({path:`${shots}/${mobile?'mobile':'pc'}-${width}-${height}-formation.png`});

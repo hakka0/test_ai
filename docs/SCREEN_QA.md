@@ -1,3 +1,12 @@
+# PC 대기석 번호·빈 장비 영역 — 2026-11-20
+
+- PC 1400×1000·1024×768에서 대기석 슬롯 번호가 보이지 않고 접근성 이름에는 순서가 남는지 확인했습니다.
+- 실제 장착·해제로 장비 **0→1→2→1→0개**의 표시 변화를 확인했습니다. 빈 `＋`는 없으며, 0개면 장비 구역이 차지하는 공간이 사라집니다. 모든 보관 장비 장착 시 왼쪽 보관함이 접히고, 상세 창에서 장비를 해제하면 다시 나타납니다.
+- 기존 구매·배치/복귀·전투·판매·관전·상세·기록·장비 조회·복원 검사를 PC 모드로 통과했습니다. 모바일 수정/전체 검사는 이번 범위에 포함하지 않았습니다.
+- [빈 장비 상태](screenshots/pc-bench-equipment-cleanup/empty-1400.png), [장비 1개](screenshots/pc-bench-equipment-cleanup/one-1400.png), [장비 2개](screenshots/pc-bench-equipment-cleanup/two-1400.png), [1024px 빈 장비](screenshots/pc-bench-equipment-cleanup/none-1024.png), [장착/해제 측정](screenshots/pc-bench-equipment-cleanup/results.json).
+
+이하 내용은 이전 버전 기록입니다.
+
 # 유닛 이미지 여백 정리 — 2026-11-17
 
 - 원래 비율로 정리한 초상화 20장과 6방향 120프레임을 게임에 연결했습니다. 긴 쪽 128px·중앙 정렬·원본 색과 투명도를 유지하며, PC 대기석은 확대된 머리/발이 카드에 잘리지 않도록 `contain`을 사용합니다.
