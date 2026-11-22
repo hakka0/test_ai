@@ -3,7 +3,7 @@ import {readFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {UNITS} from '../public/js/data.js';
-import {portraitURL,getImportedSprite,UNIT_FRAME_SIZE,UNIT_SOURCE_FRAME_SIZE} from '../public/js/sprites.js';
+import {portraitURL,getImportedSprite,UNIT_SOURCE_FRAME_SIZE} from '../public/js/sprites.js';
 
 const root=new URL('../public/units/toon-pixel-test-20261117/',import.meta.url);
 const report=JSON.parse(await readFile(new URL('archive-source.json',root),'utf8'));
@@ -13,7 +13,6 @@ for(const file of report.files){
  assert.deepEqual([data.readUInt32BE(16),data.readUInt32BE(20)],[file.width,file.height]);
 }
 assert.equal(report.files.length,42);
-assert.equal(UNIT_FRAME_SIZE,128,'PC display size stays 128 CSS pixels');
 assert.equal(UNIT_SOURCE_FRAME_SIZE,256,'ZIP sources use 256px frames');
 
 // Exercise the actual crop selection using real PNG headers and a canvas spy.
@@ -43,4 +42,4 @@ for(const unit of imported){
   frames++;
  }
 }
-console.log(JSON.stringify({project:'bachess',archive:report.archive,characters:imported.length,verifiedImages:report.files.length,verifiedDirectionFrames:frames,sourceFrameSize:UNIT_SOURCE_FRAME_SIZE,pcDisplaySize:UNIT_FRAME_SIZE,passed:true},null,2));
+console.log(JSON.stringify({project:'bachess',archive:report.archive,characters:imported.length,verifiedImages:report.files.length,verifiedDirectionFrames:frames,sourceFrameSize:UNIT_SOURCE_FRAME_SIZE,passed:true},null,2));

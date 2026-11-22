@@ -124,7 +124,7 @@ function drawEnemy(ctx, d, color) {
 }
 
 const artRoot = new URL(PC_MODE ? '../units/toon-pixel-test-20261117/' : '../units/blue-archive/', import.meta.url);
-// Keep the existing PC display size while reading the ZIP's larger source frames.
+// 프레임 크기는 이미지를 자를 때 사용한다. 화면 표시 배율은 전장 렌더러가 정한다.
 export const UNIT_FRAME_SIZE = 128;
 export const UNIT_SOURCE_FRAME_SIZE = PC_MODE ? 256 : UNIT_FRAME_SIZE;
 export const DRAWN_FRAME_SIZE = 96;

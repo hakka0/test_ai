@@ -1,13 +1,14 @@
 // 보드 렌더링 + 전투 이펙트 (총구 화염, 탄도, 반동, 피격, 배리어)
 import { COLS, ROWS, SIDE_ROWS, CW, CH, BOARD_W, BOARD_H, WEAPONS, SCHOOLS, PC_MODE } from './data.js';
-import { getSprite, getEnemySprite, getImportedSprite, facesAway, getPixelWeapon, drawWeapon, UNIT_FRAME_SIZE, DRAWN_FRAME_SIZE } from './sprites.js';
+import { getSprite, getEnemySprite, getImportedSprite, facesAway, getPixelWeapon, drawWeapon } from './sprites.js';
 import { sfx } from './audio.js';
-import { project, unproject, traceFloor, traceCell, traceGroundCircle, paintPerspectiveFloor, setSpriteClearance } from './battlefield-view.js';
+import { project, unproject, traceFloor, traceCell, traceGroundCircle, paintPerspectiveFloor } from './battlefield-view.js';
 
 const TAU = Math.PI * 2;
 const rnd = Math.random;
 const reducedMotion = typeof matchMedia === 'function' ? matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
 const UNIT_SIZE = 64;
+const UNIT_TILE_RATIO = 0.50;
 
 function bodyPose(u, time) {
   const recoil = u.recoil || 0;
@@ -153,8 +154,6 @@ export class BoardRenderer {
     if (PC_MODE && s > 0 && this.canvas.clientWidth > 0 && this.canvas.clientHeight > 0) {
       this.pixelsPerX = this.canvas.clientWidth * s / BOARD_W;
       this.pixelsPerY = this.canvas.clientHeight * s / BOARD_H;
-      setSpriteClearance(UNIT_FRAME_SIZE, this.pixelsPerX, this.pixelsPerY);
-      this.floor = buildFloor();
     }
     this.applyRes();
   }
@@ -168,12 +167,13 @@ export class BoardRenderer {
     if (!PC_MODE) return { x: u.x, y: u.y, zoom: 1, foot: 0 };
     const groundY = Math.min(BOARD_H, u.y + CH * 0.16);
     const base = project(u.x, groundY);
-    const artSize = u.def?.imageKey ? UNIT_FRAME_SIZE : DRAWN_FRAME_SIZE;
-    const zoom = artSize / (UNIT_SIZE * this.pixelsPerY);
+    const tileWidth = project(u.x + CW, groundY).x - base.x;
+    const zoom = tileWidth * UNIT_TILE_RATIO / (UNIT_SIZE * this.unitAspectX);
     return { ...base, zoom, foot: UNIT_SIZE * u.scale * 0.33 };
   }
 
-  transformUnit(ctx, u, view = this.unitView(u)) {
+  transformUnit(ctx, u) {
+    const view = this.unitView(u);
     ctx.translate(view.x, view.y);
     ctx.scale(this.unitAspectX * view.zoom, view.zoom);
     ctx.translate(-u.x, -u.y - view.foot);
@@ -506,9 +506,7 @@ export class BoardRenderer {
     const y = u.y + 25 * u.scale + (u.scale > 1 ? 8 : 0);
     // 별
     ctx.save();
-    const view = this.unitView(u);
-    if (PC_MODE) view.zoom *= 0.56;
-    this.transformUnit(ctx, u, view);
+    this.transformUnit(ctx, u);
     ctx.fillStyle = '#122a52';
     ctx.beginPath(); ctx.roundRect(x - 1.5, y - 1.5, w + 3, h + 3 + 4, 3); ctx.fill();
     const hp = Math.max(0, u.hp / u.maxHp);

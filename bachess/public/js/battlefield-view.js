@@ -3,31 +3,22 @@ import { COLS, ROWS, SIDE_ROWS, CW, CH, BOARD_W, BOARD_H, PC_MODE } from './data
 const farWidth = 0.76;
 const nearWidth = 0.98;
 const perspective = nearWidth / farWidth - 1;
+const top = 65;
+const bottom = BOARD_H - 27;
 const center = BOARD_W / 2;
-let top = 65;
-let bottom = BOARD_H - 27;
-let widthScale = 1;
-
-export function setSpriteClearance(size, pixelsPerX, pixelsPerY) {
-  bottom = BOARD_H - Math.max(27, Math.min(BOARD_H * 0.16, 34 / pixelsPerY));
-  top = Math.max(65, Math.min((size + 16) / pixelsPerY, bottom - BOARD_H * 0.40));
-  // 가장자리 칸의 유닛도 발을 칸에 둔 채 그림 전체가 보이도록 한다.
-  const availableHalfWidth = center - (size / 2 + 8) / pixelsPerX;
-  widthScale = Math.min(1, Math.max(0.35, availableHalfWidth / ((center - CW / 3) * nearWidth)));
-}
 
 export function project(x, y) {
   if (!PC_MODE) return { x, y };
   const depth = y / BOARD_H;
   const t = depth / (1 + perspective * (1 - depth));
-  const width = (farWidth + (nearWidth - farWidth) * t) * widthScale;
+  const width = farWidth + (nearWidth - farWidth) * t;
   return { x: center + (x - center) * width, y: top + (bottom - top) * t };
 }
 
 export function unproject(x, y) {
   if (!PC_MODE) return { x, y };
   const t = (y - top) / (bottom - top);
-  const width = (farWidth + (nearWidth - farWidth) * t) * widthScale;
+  const width = farWidth + (nearWidth - farWidth) * t;
   return {
     x: center + (x - center) / width,
     y: BOARD_H * t * (1 + perspective) / (1 + perspective * t),
