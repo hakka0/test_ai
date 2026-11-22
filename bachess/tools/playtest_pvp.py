@@ -1,0 +1,40 @@
+import json, os
+from playwright.sync_api import sync_playwright
+OUT = '/home/ubuntu/bachess/tools/shots'; os.makedirs(OUT, exist_ok=True)
+errs = []
+with sync_playwright() as p:
+    b = p.chromium.launch(executable_path='/usr/bin/chromium', args=['--no-sandbox'])
+    pg = b.new_page(viewport={'width':1280,'height':720})
+    pg.on('console', lambda m: errs.append(('console', m.type, m.text)) if m.type in ('error','warning') else None)
+    pg.on('pageerror', lambda e: errs.append(('pageerror', str(e))))
+    pg.goto('http://localhost:3000/'); pg.wait_for_timeout(600)
+    pg.screenshot(path=f'{OUT}/p0_title.png')
+    pg.click('#btnPlay'); pg.wait_for_timeout(500)
+    for i in range(1, 4): pg.keyboard.press(str(i))
+    pg.keyboard.press('a'); pg.wait_for_timeout(300)
+    pg.screenshot(path=f'{OUT}/p1_prep.png')
+    pg.hover('#lbList li >> nth=2'); pg.wait_for_timeout(250)
+    pg.screenshot(path=f'{OUT}/p1b_lbtip.png')
+    pg.mouse.move(640, 5)
+    pg.keyboard.press('Space'); pg.wait_for_timeout(600)
+    pg.screenshot(path=f'{OUT}/p2_ready.png')
+    # 모두 준비될 때까지 대기 (봇 readyAt <=36s) -> 시간 단축
+    pg.evaluate("(()=>{const G=window.__bachess.S.G; G.prepT=Math.min(G.prepT,6);})()")
+    pg.wait_for_timeout(7000)
+    print('phase', pg.evaluate("window.__bachess.S.G.phase"))
+    pg.screenshot(path=f'{OUT}/p3_matching1.png')
+    pg.wait_for_timeout(1500)
+    pg.screenshot(path=f'{OUT}/p3_matching2.png')
+    pg.wait_for_timeout(3000)
+    print('phase', pg.evaluate("window.__bachess.S.G.phase"))
+    pg.wait_for_timeout(3500)
+    pg.screenshot(path=f'{OUT}/p4_battle.png')
+    pg.evaluate("window.__bachess.U.UI.speed=3; window.__bachess.renderer.speed=3")
+    for _ in range(40):
+        pg.wait_for_timeout(1000)
+        if pg.evaluate("window.__bachess.S.G.phase")!='battle': break
+    pg.wait_for_timeout(2500)
+    print('phase', pg.evaluate("window.__bachess.S.G.phase"))
+    pg.screenshot(path=f'{OUT}/p5_result.png')
+    print('errors', json.dumps(errs, ensure_ascii=False)[:2000])
+    b.close()
