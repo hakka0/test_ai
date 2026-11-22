@@ -129,6 +129,30 @@ export const UNIT_FRAME_SIZE = 128;
 export const UNIT_SOURCE_FRAME_SIZE = PC_MODE ? 256 : UNIT_FRAME_SIZE;
 export const DRAWN_FRAME_SIZE = 96;
 const sheets = new Map();
+const spriteFeet = new WeakMap();
+
+export function spriteFootRatio(sprite) {
+  const cached = spriteFeet.get(sprite);
+  if (cached !== undefined) return cached;
+
+  // 반투명 그림자와 외곽의 작은 흔적은 발 위치 계산에서 제외한다.
+  const { width, height } = sprite;
+  const { data } = sprite.getContext('2d').getImageData(0, 0, width, height);
+  const minPixels = Math.max(2, Math.ceil(width * 0.015));
+  for (let row = height - 1; row >= 0; row--) {
+    let opaque = 0;
+    for (let i = row * width * 4 + 3, end = i + width * 4; i < end; i += 4) {
+      if (data[i] >= 96) opaque++;
+      if (opaque >= minPixels) {
+        const foot = (row + 1) / height;
+        spriteFeet.set(sprite, foot);
+        return foot;
+      }
+    }
+  }
+  spriteFeet.set(sprite, 0.99);
+  return 0.99;
+}
 
 export function facesAway(aim) {
   return Math.sin(aim) < 0;

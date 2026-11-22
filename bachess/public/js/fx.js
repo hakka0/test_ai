@@ -1,6 +1,6 @@
 // 보드 렌더링 + 전투 이펙트 (총구 화염, 탄도, 반동, 피격, 배리어)
 import { COLS, ROWS, SIDE_ROWS, CW, CH, BOARD_W, BOARD_H, WEAPONS, SCHOOLS, PC_MODE } from './data.js';
-import { getSprite, getEnemySprite, getImportedSprite, facesAway, getPixelWeapon, drawWeapon } from './sprites.js';
+import { getSprite, getEnemySprite, getImportedSprite, facesAway, getPixelWeapon, drawWeapon, spriteFootRatio } from './sprites.js';
 import { sfx } from './audio.js';
 import { project, unproject, traceFloor, traceCell, traceGroundCircle, paintPerspectiveFloor } from './battlefield-view.js';
 
@@ -8,19 +8,28 @@ const TAU = Math.PI * 2;
 const rnd = Math.random;
 const reducedMotion = typeof matchMedia === 'function' ? matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
 const UNIT_SIZE = 64;
-const UNIT_TILE_RATIO = 0.70;
+const UNIT_TILE_RATIO = 0.80;
+const UNIT_TOP_RATIO = 0.66;
+const UNIT_FOOT_RATIO = 0.33;
 
-function bodyPose(u, time) {
+function bodyPose(u, time, sprite) {
   const recoil = u.recoil || 0;
   const dx = Math.cos(u.aim), dy = Math.sin(u.aim);
   const bob = u.alive
-    ? (u.moving ? -4 * Math.abs(Math.sin(time * 13 + u.id)) : 1.2 * Math.sin(time * 2.6 + u.id))
+    ? (u.moving ? -4 * Math.abs(Math.sin(time * 13 + u.id)) : PC_MODE ? 0 : 1.2 * Math.sin(time * 2.6 + u.id))
     : 0;
+  const offsetY = PC_MODE
+    ? (UNIT_TOP_RATIO + UNIT_FOOT_RATIO - spriteFootRatio(sprite)) * UNIT_SIZE * u.scale
+    : -dy * recoil * 2.2;
   return {
     x: u.x - dx * recoil * 3.2,
-    y: u.y + bob - dy * recoil * 2.2,
+    y: u.y + bob + offsetY,
     tilt: -dx * recoil * 0.05,
   };
+}
+
+function unitSprite(u, imported) {
+  return imported ?? (u.def.isEnemy ? getEnemySprite(u.def, u.enemyColor) : getSprite(u.def));
 }
 
 function pixelWeaponPose(u, aim) {
@@ -165,11 +174,10 @@ export class BoardRenderer {
 
   unitView(u) {
     if (!PC_MODE) return { x: u.x, y: u.y, zoom: 1, foot: 0 };
-    const groundY = Math.min(BOARD_H, u.y + CH * 0.16);
-    const base = project(u.x, groundY);
-    const tileWidth = project(u.x + CW, groundY).x - base.x;
+    const base = project(u.x, u.y);
+    const tileWidth = project(u.x + CW, u.y).x - base.x;
     const zoom = tileWidth * UNIT_TILE_RATIO / (UNIT_SIZE * this.unitAspectX);
-    return { ...base, zoom, foot: UNIT_SIZE * u.scale * 0.33 };
+    return { ...base, zoom, foot: UNIT_SIZE * u.scale * UNIT_FOOT_RATIO };
   }
 
   transformUnit(ctx, u) {
@@ -209,10 +217,11 @@ export class BoardRenderer {
         let x = ev.mx, y = ev.my;
         if (PC_MODE) {
           const view = this.unitView(u);
+          const imported = getImportedSprite(u.def, ev.ang);
+          const pose = bodyPose(u, this.t, unitSprite(u, imported));
           let offsetX = ev.mx - u.x;
-          let offsetY = ev.my - u.y;
-          if (getImportedSprite(u.def, ev.ang) && getPixelWeapon(ev.weapon)) {
-            const pose = bodyPose(u, this.t);
+          let offsetY = ev.my - u.y + (pose.y - u.y);
+          if (imported && getPixelWeapon(ev.weapon)) {
             const muzzle = pixelWeaponPose(u, ev.ang);
             const c = Math.cos(pose.tilt), s = Math.sin(pose.tilt);
             offsetX = pose.x - u.x + c * muzzle.x - s * muzzle.y;
@@ -402,9 +411,11 @@ export class BoardRenderer {
     const size = UNIT_SIZE * s;
     const t = this.t;
     const rec = u.recoil || 0;
-    const { x: cx, y: cy, tilt } = bodyPose(u, t);
     const imported = getImportedSprite(u.def, u.aim);
-    const sprite = imported ?? (u.def.isEnemy ? getEnemySprite(u.def, u.enemyColor) : getSprite(u.def));
+    const sprite = unitSprite(u, imported);
+    const { x: cx, y: cy, tilt } = bodyPose(u, t, sprite);
+    const ground = u.y + size * UNIT_FOOT_RATIO;
+    const spriteTop = -size * UNIT_TOP_RATIO;
     const pixelWeapon = imported && u.alive ? getPixelWeapon(u.weapon) : null;
     const weaponBehind = facesAway(u.aim);
     ctx.save();
@@ -414,10 +425,10 @@ export class BoardRenderer {
     // 그림자
     if (PC_MODE) {
       ctx.fillStyle = 'rgba(32,60,88,.15)';
-      ctx.beginPath(); ctx.ellipse(u.x + size * 0.05, u.y + size * 0.35, size * 0.38, size * 0.12, 0, 0, TAU); ctx.fill();
+      ctx.beginPath(); ctx.ellipse(u.x, ground, size * 0.34, size * 0.12, 0, 0, TAU); ctx.fill();
     }
     ctx.fillStyle = 'rgba(30,60,100,.22)';
-    ctx.beginPath(); ctx.ellipse(u.x, u.y + size * 0.33, size * 0.32, size * 0.1, 0, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(u.x, ground, size * (PC_MODE ? 0.23 : 0.32), size * (PC_MODE ? 0.065 : 0.1), 0, 0, TAU); ctx.fill();
     // 스킬 시전 오라
     if (u.castFlash > 0 && this.quality === 'high') {
       ctx.globalCompositeOperation = 'lighter';
@@ -435,11 +446,11 @@ export class BoardRenderer {
       ctx.imageSmoothingQuality = 'high';
     }
     if (pixelWeapon && weaponBehind) drawPixelWeapon(ctx, u, pixelWeapon);
-    ctx.drawImage(sprite, -size / 2, -size * 0.66, size, size);
+    ctx.drawImage(sprite, -size / 2, spriteTop, size, size);
     if (u.hitFlash > 0.05) {
       ctx.globalAlpha = alpha * u.hitFlash * 0.55;
       if (this.quality === 'high') ctx.globalCompositeOperation = 'lighter';
-      ctx.drawImage(sprite, -size / 2, -size * 0.66, size, size);
+      ctx.drawImage(sprite, -size / 2, spriteTop, size, size);
       ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = alpha;
     }
     if (pixelWeapon && !weaponBehind) drawPixelWeapon(ctx, u, pixelWeapon);
@@ -457,7 +468,7 @@ export class BoardRenderer {
     ctx.restore();
     // 헤일로
     if (!u.def.isEnemy && u.alive && !imported) {
-      const hy = cy - size * 0.66 - 1;
+      const hy = cy + spriteTop - 1;
       ctx.save();
       ctx.translate(cx, hy);
       ctx.strokeStyle = u.def.halo || '#ffe56b';
@@ -494,7 +505,7 @@ export class BoardRenderer {
     // 선택 링
     if (this.selectedUid && u.uid === this.selectedUid) {
       ctx.strokeStyle = '#ffd23a'; ctx.lineWidth = 3;
-      ctx.beginPath(); ctx.ellipse(u.x, u.y + size * 0.3, size * 0.45, size * 0.15, 0, 0, TAU); ctx.stroke();
+      ctx.beginPath(); ctx.ellipse(u.x, PC_MODE ? ground : u.y + size * 0.3, size * 0.45, size * 0.15, 0, 0, TAU); ctx.stroke();
     }
     ctx.restore();
   }
