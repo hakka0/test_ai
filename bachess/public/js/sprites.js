@@ -124,7 +124,8 @@ function drawEnemy(ctx, d, color) {
 }
 
 const artRoot = new URL('../units/blue-archive/', import.meta.url);
-const frameSize = 128;
+export const UNIT_FRAME_SIZE = 128;
+export const DRAWN_FRAME_SIZE = 96;
 const sheets = new Map();
 
 export function facesAway(aim) {
@@ -142,7 +143,8 @@ export function getImportedSprite(def, aim) {
     image.decode().then(() => { sheet.ready = true; }, () => {});
   }
   const { image, frames } = sheet;
-  if (!sheet.ready || image.naturalWidth !== frameSize * 3 || image.naturalHeight !== frameSize * 2) return;
+  const size = UNIT_FRAME_SIZE;
+  if (!sheet.ready || image.naturalWidth !== size * 3 || image.naturalHeight !== size * 2) return;
 
   // 위 행은 정면, 아래 행은 후면. 각 행은 왼쪽 / 가운데 / 오른쪽 순서.
   const dx = Math.cos(aim), dy = Math.sin(aim);
@@ -150,8 +152,8 @@ export function getImportedSprite(def, aim) {
   const col = Math.abs(dx) <= Math.abs(dy) * 0.35 ? 1 : dx < 0 ? 0 : 2;
   const index = row * 3 + col;
   if (!frames[index]) {
-    const frame = mk(frameSize, frameSize);
-    frame.getContext('2d').drawImage(image, col * frameSize, row * frameSize, frameSize, frameSize, 0, 0, frameSize, frameSize);
+    const frame = mk(size, size);
+    frame.getContext('2d').drawImage(image, col * size, row * size, size, size, 0, 0, size, size);
     frames[index] = frame;
   }
   return frames[index];
@@ -161,7 +163,7 @@ const spriteCache = new Map();
 export function getSprite(def) {
   let c = spriteCache.get(def.key);
   if (c) return c;
-  c = mk(96, 96);
+  c = mk(DRAWN_FRAME_SIZE, DRAWN_FRAME_SIZE);
   const ctx = c.getContext('2d');
   if (def.isEnemy) drawEnemy(ctx, def, def.enemyColor || '#e0b030');
   else drawStudent(ctx, def);
@@ -172,7 +174,7 @@ export function getEnemySprite(def, color) {
   const k = def.key + color;
   let c = spriteCache.get(k);
   if (c) return c;
-  c = mk(96, 96);
+  c = mk(DRAWN_FRAME_SIZE, DRAWN_FRAME_SIZE);
   drawEnemy(c.getContext('2d'), def, color);
   spriteCache.set(k, c);
   return c;

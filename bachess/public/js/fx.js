@@ -1,14 +1,13 @@
 // 보드 렌더링 + 전투 이펙트 (총구 화염, 탄도, 반동, 피격, 배리어)
 import { COLS, ROWS, SIDE_ROWS, CW, CH, BOARD_W, BOARD_H, WEAPONS, SCHOOLS, PC_MODE } from './data.js';
-import { getSprite, getEnemySprite, getImportedSprite, facesAway, getPixelWeapon, drawWeapon } from './sprites.js';
+import { getSprite, getEnemySprite, getImportedSprite, facesAway, getPixelWeapon, drawWeapon, UNIT_FRAME_SIZE, DRAWN_FRAME_SIZE } from './sprites.js';
 import { sfx } from './audio.js';
-import { project, unproject, traceFloor, traceCell, traceGroundCircle, paintPerspectiveFloor } from './battlefield-view.js';
+import { project, unproject, traceFloor, traceCell, traceGroundCircle, paintPerspectiveFloor, setSpriteClearance } from './battlefield-view.js';
 
 const TAU = Math.PI * 2;
 const rnd = Math.random;
 const reducedMotion = typeof matchMedia === 'function' ? matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
 const UNIT_SIZE = 64;
-const UNIT_TILE_RATIO = 0.80;
 
 function bodyPose(u, time) {
   const recoil = u.recoil || 0;
@@ -121,7 +120,10 @@ export class BoardRenderer {
     this.hlCell = null;      // {col,row,ok}
     this.selectedUid = null;
     this.drawRange = null;
-    this.res = 1;
+    this.pixelsPerY = 1;
+    this.pixelsPerX = 1;
+    this.resX = 1;
+    this.resY = 1;
     this.t = 0;
     this.lastShotSfx = 0;
     this.lastHitSfx = 0;
@@ -132,12 +134,30 @@ export class BoardRenderer {
   applyRes() {
     const dpr = window.devicePixelRatio || 1;
     const s = this.stageScale || 1;
+    if (PC_MODE && this.quality === 'high') {
+      const density = Math.min(2, dpr);
+      this.canvas.width = Math.max(1, Math.round(BOARD_W * this.pixelsPerX * density));
+      this.canvas.height = Math.max(1, Math.round(BOARD_H * this.pixelsPerY * density));
+      this.resX = this.canvas.width / BOARD_W;
+      this.resY = this.canvas.height / BOARD_H;
+      return;
+    }
     const res = this.quality === 'high' ? Math.min(2, Math.max(1, s * dpr)) : Math.min(1, Math.max(0.75, s));
-    this.res = res;
+    this.resX = res;
+    this.resY = res;
     this.canvas.width = Math.round(BOARD_W * res);
     this.canvas.height = Math.round(BOARD_H * res);
   }
-  setStageScale(s) { this.stageScale = s; this.applyRes(); }
+  setStageScale(s) {
+    this.stageScale = s;
+    if (PC_MODE && s > 0 && this.canvas.clientWidth > 0 && this.canvas.clientHeight > 0) {
+      this.pixelsPerX = this.canvas.clientWidth * s / BOARD_W;
+      this.pixelsPerY = this.canvas.clientHeight * s / BOARD_H;
+      setSpriteClearance(UNIT_FRAME_SIZE, this.pixelsPerX, this.pixelsPerY);
+      this.floor = buildFloor();
+    }
+    this.applyRes();
+  }
   get cap() { return this.quality === 'high' ? 420 : 110; }
 
   setUnits(units) { this.units = units; }
@@ -148,24 +168,26 @@ export class BoardRenderer {
     if (!PC_MODE) return { x: u.x, y: u.y, zoom: 1, foot: 0 };
     const groundY = Math.min(BOARD_H, u.y + CH * 0.16);
     const base = project(u.x, groundY);
-    // 발 위치의 전장 칸 너비를 기준으로 스프라이트 비율을 유지한다.
-    const tileWidth = project(u.x + CW, groundY).x - base.x;
-    const zoom = tileWidth * UNIT_TILE_RATIO / (UNIT_SIZE * this.unitAspectX);
+    const artSize = u.def?.imageKey ? UNIT_FRAME_SIZE : DRAWN_FRAME_SIZE;
+    const zoom = artSize / (UNIT_SIZE * this.pixelsPerY);
     return { ...base, zoom, foot: UNIT_SIZE * u.scale * 0.33 };
   }
 
-  transformUnit(ctx, u) {
-    const view = this.unitView(u);
+  transformUnit(ctx, u, view = this.unitView(u)) {
     ctx.translate(view.x, view.y);
     ctx.scale(this.unitAspectX * view.zoom, view.zoom);
     ctx.translate(-u.x, -u.y - view.foot);
   }
 
   unitAt(px, py, team) {
+    const cell = PC_MODE && !this.battle ? unproject(px, py) : null;
     let best = null, bd = 1e9;
     for (const u of this.units) {
       if (!u.alive) continue;
       if (team !== undefined && u.team !== team) continue;
+      // 준비 단계에서 그림이 겹치면 포인터가 가리키는 배치 칸의 학생을 먼저 찾는다.
+      if (cell && Math.floor(u.x / CW) === Math.floor(cell.x / CW)
+        && Math.floor(u.y / CH) === Math.floor(cell.y / CH)) return u;
       const view = this.unitView(u);
       const r = 32 * u.scale * view.zoom;
       const bodyY = view.y - (view.foot + 8 * u.scale) * view.zoom;
@@ -335,8 +357,7 @@ export class BoardRenderer {
   // ---------- 그리기 ----------
   draw(realDt) {
     const ctx = this.ctx;
-    const res = this.res;
-    ctx.setTransform(res, 0, 0, res, 0, 0);
+    ctx.setTransform(this.resX, 0, 0, this.resY, 0, 0);
     ctx.clearRect(0, 0, BOARD_W, BOARD_H);
     let sx = 0, sy = 0;
     if (this.shake > 0 && !reducedMotion.matches) { sx = (rnd() - 0.5) * this.shake; sy = (rnd() - 0.5) * this.shake; }
@@ -482,7 +503,9 @@ export class BoardRenderer {
     const y = u.y + 25 * u.scale + (u.scale > 1 ? 8 : 0);
     // 별
     ctx.save();
-    this.transformUnit(ctx, u);
+    const view = this.unitView(u);
+    if (PC_MODE) view.zoom *= 0.56;
+    this.transformUnit(ctx, u, view);
     ctx.fillStyle = '#122a52';
     ctx.beginPath(); ctx.roundRect(x - 1.5, y - 1.5, w + 3, h + 3 + 4, 3); ctx.fill();
     const hp = Math.max(0, u.hp / u.maxHp);
