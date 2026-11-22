@@ -6,6 +6,7 @@ import {
 import { computeUnitStats } from './sim.js';
 import * as S from './state.js';
 import { portraitURL, itemURL, getEnemySprite, roleIconSVG } from './sprites.js';
+import { unproject } from './battlefield-view.js';
 import { sfx, setMuted, isMuted, setVolumes } from './audio.js';
 import { MATCH_TIME } from './bots.js';
 
@@ -24,12 +25,15 @@ function stagePt(e) {
 }
 function boardPt(e) {
   const r = $('#board').getBoundingClientRect();
-  return { x: ((e.clientX - r.left) / r.width) * BOARD_W, y: ((e.clientY - r.top) / r.height) * BOARD_H, inside: e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom };
+  const screenX = ((e.clientX - r.left) / r.width) * BOARD_W;
+  const screenY = ((e.clientY - r.top) / r.height) * BOARD_H;
+  const point = unproject(screenX, screenY);
+  return { ...point, screenX, screenY, inside: e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom };
 }
 function boardCell(point) {
   const col = Math.floor(point.x / CW), row = Math.floor(point.y / CH);
-  const own = row >= SIDE_ROWS && row < ROWS && col >= 0 && col < COLS;
-  return { col, row, own };
+  const onFloor = row >= 0 && row < ROWS && col >= 0 && col < COLS;
+  return { col, row, onFloor, own: onFloor && row >= SIDE_ROWS };
 }
 
 // ---------- 헬퍼 ----------
@@ -525,7 +529,7 @@ function dropTargetUnit(e) {
   if (bs && G.bench[+bs.dataset.bslot]) return { where: 'bench', idx: +bs.dataset.bslot };
   const bp = boardPt(e);
   if (bp.inside && UI.renderer) {
-    const u = UI.renderer.unitAt(bp.x, bp.y, 0);
+    const u = UI.renderer.unitAt(bp.screenX, bp.screenY, 0);
     if (u) { const l = S.locOfUid(u.uid); if (l) return l; }
   }
   const eqd = el && el.closest('[data-eqdrop]');
@@ -554,9 +558,8 @@ function updateDrag(e) {
   if (drag.kind === 'unit') {
     const bp = boardPt(e);
     if (bp.inside) {
-      const { col, row, own } = boardCell(bp);
-      if (own) r.hlCell = { col, row, ok: G.phase === 'prep' };
-      else r.hlCell = { col: Math.max(0, Math.min(COLS - 1, col)), row: Math.max(0, Math.min(ROWS - 1, row)), ok: false };
+      const { col, row, onFloor, own } = boardCell(bp);
+      if (onFloor) r.hlCell = { col, row, ok: own && G.phase === 'prep' };
     } else {
       const bs = slotFromPoint(e)?.closest('[data-bslot]');
       if (bs) bs.classList.add('drop');
@@ -636,7 +639,7 @@ export function initUI(renderer, hooks) {
   board.addEventListener('mousemove', (e) => {
     if (drag && drag.moved) return;
     const bp = boardPt(e);
-    const u = renderer.unitAt(bp.x, bp.y);
+    const u = renderer.unitAt(bp.screenX, bp.screenY);
     renderer.drawRange = u && G.phase === 'prep' ? u : null;
     if (u) {
       const p = stagePt(e);
@@ -669,7 +672,7 @@ export function initUI(renderer, hooks) {
     if (inv) { if (prep) { const i = +inv.dataset.inv; startDrag('item', { idx: i }, itemURL(G.inv[i], 56), e); } return; }
     if (t === board) {
       const bp = boardPt(e);
-      const u = renderer.unitAt(bp.x, bp.y, 0);
+      const u = renderer.unitAt(bp.screenX, bp.screenY, 0);
       if (u && !u.def.isEnemy) {
         const l = S.locOfUid(u.uid);
         // 매칭/전투 중 보드 유닛은 정보 확인만 가능 (이동·판매 불가)

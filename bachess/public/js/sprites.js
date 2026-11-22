@@ -137,11 +137,12 @@ export function getImportedSprite(def, aim) {
   if (!sheet) {
     const image = new Image();
     image.src = new URL(`${def.imageKey}.png`, artRoot).href;
-    sheet = { image, frames: [] };
+    sheet = { image, frames: [], ready: false };
     sheets.set(def.imageKey, sheet);
+    image.decode().then(() => { sheet.ready = true; }, () => {});
   }
   const { image, frames } = sheet;
-  if (image.naturalWidth !== frameSize * 3 || image.naturalHeight !== frameSize * 2) return;
+  if (!sheet.ready || image.naturalWidth !== frameSize * 3 || image.naturalHeight !== frameSize * 2) return;
 
   // 위 행은 정면, 아래 행은 후면. 각 행은 왼쪽 / 가운데 / 오른쪽 순서.
   const dx = Math.cos(aim), dy = Math.sin(aim);

@@ -2,6 +2,7 @@
 import { COLS, ROWS, SIDE_ROWS, CW, CH, BOARD_W, BOARD_H, WEAPONS, SCHOOLS, PC_MODE } from './data.js';
 import { getSprite, getEnemySprite, getImportedSprite, facesAway, getPixelWeapon, drawWeapon } from './sprites.js';
 import { sfx } from './audio.js';
+import { project, unproject, traceFloor, traceCell, traceGroundCircle, paintPerspectiveFloor } from './battlefield-view.js';
 
 const TAU = Math.PI * 2;
 const rnd = Math.random;
@@ -13,10 +14,9 @@ function bodyPose(u, time) {
   const bob = u.alive
     ? (u.moving ? -4 * Math.abs(Math.sin(time * 13 + u.id)) : 1.2 * Math.sin(time * 2.6 + u.id))
     : 0;
-  const y = u.y + bob - dy * recoil * 2.2;
   return {
     x: u.x - dx * recoil * 3.2,
-    y: PC_MODE ? Math.max(y, 64 * u.scale * 0.66 + 1) : y,
+    y: u.y + bob - dy * recoil * 2.2,
     tilt: -dx * recoil * 0.05,
   };
 }
@@ -69,12 +69,16 @@ function glow(color) {
 function buildFloor() {
   const c = mkCanvas(BOARD_W, BOARD_H);
   const x = c.getContext('2d');
+  if (PC_MODE) {
+    paintPerspectiveFloor(x);
+    return c;
+  }
   for (let r = 0; r < ROWS; r++) {
     for (let col = 0; col < COLS; col++) {
       const enemy = r < SIDE_ROWS;
       const alt = (r + col) % 2 === 0;
       x.fillStyle = enemy ? (alt ? '#f6e9ee' : '#eddde4') : (alt ? '#f5fbff' : '#e3f0fb');
-      x.beginPath(); x.roundRect(col * CW + 2, r * CH + 2, CW - 4, CH - 4, 8); x.fill();
+      traceCell(x, col, r); x.fill();
       x.strokeStyle = enemy ? 'rgba(200,120,140,.25)' : 'rgba(80,160,220,.28)'; x.lineWidth = 1.5; x.stroke();
     }
   }
@@ -138,14 +142,31 @@ export class BoardRenderer {
   startBattle(b) { this.battle = b; this.units = b.units; this.parts.length = 0; this.nums.length = 0; this.rings.length = 0; this.beams.length = 0; this.texts.length = 0; }
   endBattle() { this.battle = null; }
 
+  unitView(u) {
+    if (!PC_MODE) return { x: u.x, y: u.y, zoom: 1, foot: 0 };
+    const groundY = Math.min(BOARD_H, u.y + CH * 0.16);
+    const base = project(u.x, groundY);
+    return { ...base, zoom: 1.07 + 0.17 * groundY / BOARD_H, foot: 64 * u.scale * 0.33 };
+  }
+
+  transformUnit(ctx, u) {
+    const view = this.unitView(u);
+    ctx.translate(view.x, view.y);
+    ctx.scale(this.unitAspectX * view.zoom, view.zoom);
+    ctx.translate(-u.x, -u.y - view.foot);
+  }
+
   unitAt(px, py, team) {
     let best = null, bd = 1e9;
     for (const u of this.units) {
       if (!u.alive) continue;
       if (team !== undefined && u.team !== team) continue;
-      const r = 32 * u.scale;
-      const d = Math.hypot((u.x - px) / this.unitAspectX, (u.y - 8 * u.scale) - py);
-      if (d < r && d < bd) { bd = d; best = u; }
+      const view = this.unitView(u);
+      const r = 32 * u.scale * view.zoom;
+      const bodyY = view.y - (view.foot + 8 * u.scale) * view.zoom;
+      const d = Math.hypot((view.x - px) / this.unitAspectX, bodyY - py);
+      const nearer = PC_MODE && best && u.y !== best.y ? u.y > best.y : d < bd;
+      if (d < r && nearer) { bd = d; best = u; }
     }
     return best;
   }
@@ -157,13 +178,21 @@ export class BoardRenderer {
       case 'shot': {
         const w = WEAPONS[ev.weapon];
         const big = ev.big;
+        const u = ev.u;
         let x = ev.mx, y = ev.my;
-        if (getImportedSprite(ev.u.def, ev.ang) && getPixelWeapon(ev.weapon)) {
-          const pose = bodyPose(ev.u, this.t);
-          const muzzle = pixelWeaponPose(ev.u, ev.ang);
-          const c = Math.cos(pose.tilt), s = Math.sin(pose.tilt);
-          x = ev.u.x + (pose.x - ev.u.x + c * muzzle.x - s * muzzle.y) * this.unitAspectX;
-          y = pose.y + s * muzzle.x + c * muzzle.y;
+        if (PC_MODE) {
+          const view = this.unitView(u);
+          let offsetX = ev.mx - u.x;
+          let offsetY = ev.my - u.y;
+          if (getImportedSprite(u.def, ev.ang) && getPixelWeapon(ev.weapon)) {
+            const pose = bodyPose(u, this.t);
+            const muzzle = pixelWeaponPose(u, ev.ang);
+            const c = Math.cos(pose.tilt), s = Math.sin(pose.tilt);
+            offsetX = pose.x - u.x + c * muzzle.x - s * muzzle.y;
+            offsetY = pose.y - u.y + s * muzzle.x + c * muzzle.y;
+          }
+          const drawn = unproject(view.x + offsetX * view.zoom * this.unitAspectX, view.y + (offsetY - view.foot) * view.zoom);
+          x = drawn.x; y = drawn.y;
         }
         this.addPart({ t: 'flash', x, y, ang: ev.ang, life: big ? 0.14 : 0.07, max: big ? 0.14 : 0.07, size: (big ? 1.9 : 1) * (ev.weapon === 'SG' ? 1.5 : ev.weapon === 'SR' ? 1.4 : 1), color: w.color, wp: ev.weapon });
         if (hi || big) {
@@ -313,7 +342,7 @@ export class BoardRenderer {
     if (this.hlCell) {
       const h = this.hlCell;
       ctx.fillStyle = h.ok ? 'rgba(60,190,255,.38)' : 'rgba(255,90,90,.32)';
-      ctx.beginPath(); ctx.roundRect(h.col * CW + 2, h.row * CH + 2, CW - 4, CH - 4, 8); ctx.fill();
+      traceCell(ctx, h.col, h.row); ctx.fill();
       ctx.strokeStyle = h.ok ? '#27a8f0' : '#f05a5a'; ctx.lineWidth = 3; ctx.stroke();
     }
     // 사거리 표시
@@ -321,8 +350,9 @@ export class BoardRenderer {
       const u = this.drawRange;
       const r = u.range * 82 + 40;
       ctx.save();
+      if (PC_MODE) { traceFloor(ctx); ctx.clip(); }
       ctx.strokeStyle = 'rgba(30,140,230,.65)'; ctx.fillStyle = 'rgba(60,170,255,.1)'; ctx.lineWidth = 2; ctx.setLineDash([8, 6]);
-      ctx.beginPath(); ctx.arc(u.x, u.y, r, 0, TAU); ctx.fill(); ctx.stroke();
+      traceGroundCircle(ctx, u.x, u.y, r); ctx.fill(); ctx.stroke();
       ctx.restore();
     }
     // 유닛
@@ -352,12 +382,14 @@ export class BoardRenderer {
     const pixelWeapon = imported && u.alive ? getPixelWeapon(u.weapon) : null;
     const weaponBehind = facesAway(u.aim);
     ctx.save();
-    ctx.translate(u.x, 0);
-    ctx.scale(this.unitAspectX, 1);
-    ctx.translate(-u.x, 0);
+    this.transformUnit(ctx, u);
     ctx.save();
     ctx.globalAlpha = alpha;
     // 그림자
+    if (PC_MODE) {
+      ctx.fillStyle = 'rgba(32,60,88,.15)';
+      ctx.beginPath(); ctx.ellipse(u.x + size * 0.05, u.y + size * 0.35, size * 0.38, size * 0.12, 0, 0, TAU); ctx.fill();
+    }
     ctx.fillStyle = 'rgba(30,60,100,.22)';
     ctx.beginPath(); ctx.ellipse(u.x, u.y + size * 0.33, size * 0.32, size * 0.1, 0, 0, TAU); ctx.fill();
     // 스킬 시전 오라
@@ -372,6 +404,7 @@ export class BoardRenderer {
     ctx.translate(cx, cy);
     if (rec > 0) ctx.rotate(tilt);
     if (!u.alive) { const k = 1 - u.deadT / 0.45; ctx.scale(1 + (1 - k) * 0.15, k * 0.5 + 0.5); }
+    if (PC_MODE && imported) ctx.imageSmoothingEnabled = false;
     if (pixelWeapon && weaponBehind) drawPixelWeapon(ctx, u, pixelWeapon);
     ctx.drawImage(sprite, -size / 2, -size * 0.66, size, size);
     if (u.hitFlash > 0.05) {
@@ -441,10 +474,10 @@ export class BoardRenderer {
     const s = Math.min(u.scale, 1.5);
     const w = 52 * s, h = 7;
     const x = u.x - w / 2;
-    const barY = u.y + 25 * u.scale + (u.scale > 1 ? 8 : 0);
-    const y = PC_MODE ? Math.min(barY, BOARD_H - 13) : barY;
+    const y = u.y + 25 * u.scale + (u.scale > 1 ? 8 : 0);
     // 별
     ctx.save();
+    this.transformUnit(ctx, u);
     ctx.fillStyle = '#122a52';
     ctx.beginPath(); ctx.roundRect(x - 1.5, y - 1.5, w + 3, h + 3 + 4, 3); ctx.fill();
     const hp = Math.max(0, u.hp / u.maxHp);
@@ -460,13 +493,13 @@ export class BoardRenderer {
       ctx.fillStyle = '#0d1e3c'; ctx.fillRect(x, y + h + 1, w, 3);
       ctx.fillStyle = '#35b6ff'; ctx.fillRect(x, y + h + 1, w * Math.min(1, u.mana / u.manaMax), 3);
     }
-    ctx.restore();
     if (!u.def.isEnemy && u.star > 1) {
       ctx.fillStyle = '#ffd23a'; ctx.font = '700 11px sans-serif'; ctx.textAlign = 'left';
       ctx.strokeStyle = '#122a52'; ctx.lineWidth = 3;
       const txt = '★'.repeat(u.star);
       ctx.strokeText(txt, x - 1, y - 4); ctx.fillText(txt, x - 1, y - 4);
     }
+    ctx.restore();
   }
 
   drawBullets(ctx) {
@@ -480,13 +513,16 @@ export class BoardRenderer {
       if (d < 0.01) { dx = Math.cos(b.ang); dy = Math.sin(b.ang); d = 1; }
       const ux = dx / d, uy = dy / d;
       const len = b.big ? 60 : (b.weapon === 'SR' ? 54 : b.weapon === 'SG' ? 14 : 28);
+      const head = project(b.x, b.y);
+      const tail = project(b.x - ux * len, b.y - uy * len);
+      const core = project(b.x - ux * len * 0.4, b.y - uy * len * 0.4);
       ctx.strokeStyle = b.color;
       ctx.lineWidth = b.big ? 6 : (b.weapon === 'SR' ? 3.2 : 2.2);
       ctx.globalAlpha = 0.85;
-      ctx.beginPath(); ctx.moveTo(b.x - ux * len, b.y - uy * len); ctx.lineTo(b.x, b.y); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(tail.x, tail.y); ctx.lineTo(head.x, head.y); ctx.stroke();
       ctx.strokeStyle = '#fff'; ctx.lineWidth = b.big ? 2.5 : 1.2; ctx.globalAlpha = 1;
-      ctx.beginPath(); ctx.moveTo(b.x - ux * len * 0.4, b.y - uy * len * 0.4); ctx.lineTo(b.x, b.y); ctx.stroke();
-      if (b.aoe) { ctx.fillStyle = '#ffb347'; ctx.beginPath(); ctx.arc(b.x, b.y, 6, 0, TAU); ctx.fill(); }
+      ctx.beginPath(); ctx.moveTo(core.x, core.y); ctx.lineTo(head.x, head.y); ctx.stroke();
+      if (b.aoe) { ctx.fillStyle = '#ffb347'; ctx.beginPath(); ctx.arc(head.x, head.y, 6, 0, TAU); ctx.fill(); }
     }
     ctx.restore();
   }
@@ -495,18 +531,20 @@ export class BoardRenderer {
     for (const b of this.beams) {
       const k = b.life / b.max;
       if (b.t === 'snipe') {
+        const start = project(b.x1, b.y1), end = project(b.x2, b.y2);
         ctx.save();
         ctx.lineCap = 'round';
         if (this.quality === 'high') ctx.globalCompositeOperation = 'lighter';
         ctx.globalAlpha = k;
         ctx.strokeStyle = '#59c8ff'; ctx.lineWidth = b.w * k + 4;
-        ctx.beginPath(); ctx.moveTo(b.x1, b.y1); ctx.lineTo(b.x2, b.y2); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(start.x, start.y); ctx.lineTo(end.x, end.y); ctx.stroke();
         ctx.strokeStyle = '#ffffff'; ctx.lineWidth = Math.max(2, b.w * 0.3 * k);
-        ctx.beginPath(); ctx.moveTo(b.x1, b.y1); ctx.lineTo(b.x2, b.y2); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(start.x, start.y); ctx.lineTo(end.x, end.y); ctx.stroke();
         ctx.restore();
       } else if (b.t === 'barrier') {
         const u = b.u; const r = 33 * u.scale;
         ctx.save();
+        this.transformUnit(ctx, u);
         ctx.translate(u.x, u.y - 8 * u.scale);
         ctx.strokeStyle = `rgba(210,250,255,${k})`; ctx.lineWidth = 5 * k + 1;
         ctx.beginPath(); ctx.arc(0, 0, r + 2, b.a - 0.7, b.a + 0.7); ctx.stroke();
@@ -516,6 +554,7 @@ export class BoardRenderer {
       } else if (b.t === 'cast') {
         const u = b.u; const k2 = 1 - k;
         ctx.save();
+        this.transformUnit(ctx, u);
         ctx.strokeStyle = u.team === 0 ? `rgba(120,220,255,${k})` : `rgba(255,120,120,${k})`; ctx.lineWidth = 4 * k + 1;
         ctx.beginPath(); ctx.ellipse(u.x, u.y + 24 * u.scale, 18 + 40 * k2, 7 + 14 * k2, 0, 0, TAU); ctx.stroke();
         ctx.restore();
@@ -528,10 +567,11 @@ export class BoardRenderer {
     ctx.save();
     for (const p of this.parts) {
       const k = p.life / p.max;
+      const { x, y } = project(p.x, p.y);
       switch (p.t) {
         case 'flash': {
           ctx.save();
-          ctx.translate(p.x, p.y); ctx.rotate(p.ang);
+          ctx.translate(x, y); ctx.rotate(p.ang);
           const s = p.size * (0.6 + 0.4 * k);
           if (hi) { ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = k; const g = glow(p.color); ctx.drawImage(g, -18 * s, -18 * s, 36 * s, 36 * s); ctx.globalAlpha = 1; }
           ctx.fillStyle = '#fff6c8';
@@ -544,38 +584,40 @@ export class BoardRenderer {
           ctx.restore();
           break;
         }
-        case 'spark':
+        case 'spark': {
+          const end = project(p.x - p.vx * p.len, p.y - p.vy * p.len);
           ctx.strokeStyle = p.color; ctx.globalAlpha = k; ctx.lineWidth = 2; ctx.lineCap = 'round';
-          ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x - p.vx * p.len, p.y - p.vy * p.len); ctx.stroke();
+          ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(end.x, end.y); ctx.stroke();
           break;
+        }
         case 'casing':
-          ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.globalAlpha = Math.min(1, k * 2);
+          ctx.save(); ctx.translate(x, y); ctx.rotate(p.rot); ctx.globalAlpha = Math.min(1, k * 2);
           ctx.fillStyle = '#f3c24a'; ctx.fillRect(-3, -1.5, 6, 3); ctx.restore();
           break;
         case 'smoke':
           ctx.globalAlpha = k * 0.35; ctx.fillStyle = '#ffffff';
-          ctx.beginPath(); ctx.arc(p.x, p.y, p.size * (1.6 - k), 0, TAU); ctx.fill();
+          ctx.beginPath(); ctx.arc(x, y, p.size * (1.6 - k), 0, TAU); ctx.fill();
           break;
         case 'fire': {
           const r = p.size * (1.1 - k * 0.5);
           if (hi) ctx.globalCompositeOperation = 'lighter';
           ctx.globalAlpha = k * 0.9;
-          const g = glow('#ff9a40'); ctx.drawImage(g, p.x - r, p.y - r, r * 2, r * 2);
+          const g = glow('#ff9a40'); ctx.drawImage(g, x - r, y - r, r * 2, r * 2);
           ctx.globalCompositeOperation = 'source-over';
           break;
         }
         case 'dot':
           ctx.globalAlpha = k; ctx.fillStyle = p.color;
-          ctx.beginPath(); ctx.arc(p.x, p.y, p.size * k, 0, TAU); ctx.fill();
+          ctx.beginPath(); ctx.arc(x, y, p.size * k, 0, TAU); ctx.fill();
           break;
         case 'plus':
           ctx.globalAlpha = k; ctx.fillStyle = '#6dffa8'; ctx.strokeStyle = '#1c8a58'; ctx.lineWidth = 1.2;
           ctx.beginPath(); const q = p.size, w2 = q / 3;
-          ctx.rect(p.x - w2, p.y - q, w2 * 2, q * 2); ctx.rect(p.x - q, p.y - w2, q * 2, w2 * 2); ctx.fill();
+          ctx.rect(x - w2, y - q, w2 * 2, q * 2); ctx.rect(x - q, y - w2, q * 2, w2 * 2); ctx.fill();
           break;
         case 'arrow':
           ctx.globalAlpha = k; ctx.fillStyle = '#ffe45a';
-          ctx.beginPath(); ctx.moveTo(p.x, p.y - p.size); ctx.lineTo(p.x + p.size, p.y + 2); ctx.lineTo(p.x + 2, p.y + 2); ctx.lineTo(p.x + 2, p.y + p.size); ctx.lineTo(p.x - 2, p.y + p.size); ctx.lineTo(p.x - 2, p.y + 2); ctx.lineTo(p.x - p.size, p.y + 2); ctx.closePath(); ctx.fill();
+          ctx.beginPath(); ctx.moveTo(x, y - p.size); ctx.lineTo(x + p.size, y + 2); ctx.lineTo(x + 2, y + 2); ctx.lineTo(x + 2, y + p.size); ctx.lineTo(x - 2, y + p.size); ctx.lineTo(x - 2, y + 2); ctx.lineTo(x - p.size, y + 2); ctx.closePath(); ctx.fill();
           break;
       }
       ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
@@ -588,7 +630,7 @@ export class BoardRenderer {
     for (const r of this.rings) {
       const k = r.life / r.max;
       ctx.globalAlpha = k; ctx.strokeStyle = r.color; ctx.lineWidth = r.w * k + 0.5;
-      ctx.beginPath(); ctx.arc(r.x, r.y, r.r, 0, TAU); ctx.stroke();
+      traceGroundCircle(ctx, r.x, r.y, r.r); ctx.stroke();
     }
     ctx.restore();
   }
@@ -597,22 +639,24 @@ export class BoardRenderer {
     ctx.save();
     ctx.textAlign = 'center'; ctx.lineJoin = 'round';
     for (const n of this.nums) {
+      const { x, y } = project(n.x, n.y);
       const k = n.life / n.max;
       const pop = n.crit ? 1 + Math.max(0, (k - 0.7)) * 2.2 : 1;
       const size = (n.crit ? 22 : n.skill ? 17 : 14) * pop;
       ctx.globalAlpha = Math.min(1, k * 2);
       ctx.font = `900 italic ${size}px 'Noto Sans KR', sans-serif`;
       ctx.lineWidth = 4; ctx.strokeStyle = n.crit ? '#7a3a00' : '#1a2a52';
-      ctx.strokeText(n.txt, n.x, n.y);
+      ctx.strokeText(n.txt, x, y);
       ctx.fillStyle = n.crit ? '#ffe03a' : n.color;
-      ctx.fillText(n.txt, n.x, n.y);
+      ctx.fillText(n.txt, x, y);
     }
     for (const n of this.texts) {
+      const { x, y } = project(n.x, n.y);
       const k = n.life / n.max;
       ctx.globalAlpha = Math.min(1, k * 2);
       ctx.font = `800 ${n.skillName ? 'italic ' : ''}${n.size}px 'Noto Sans KR', sans-serif`;
       ctx.lineWidth = 3.5; ctx.strokeStyle = '#17305c';
-      ctx.strokeText(n.txt, n.x, n.y); ctx.fillStyle = n.color; ctx.fillText(n.txt, n.x, n.y);
+      ctx.strokeText(n.txt, x, y); ctx.fillStyle = n.color; ctx.fillText(n.txt, x, y);
     }
     ctx.restore();
   }
