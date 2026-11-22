@@ -8,7 +8,7 @@ const TAU = Math.PI * 2;
 const rnd = Math.random;
 const reducedMotion = typeof matchMedia === 'function' ? matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
 const UNIT_SIZE = 64;
-const UNIT_TILE_RATIO = 0.50;
+const UNIT_TILE_RATIO = 0.70;
 
 function bodyPose(u, time) {
   const recoil = u.recoil || 0;
