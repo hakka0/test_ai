@@ -7,6 +7,8 @@ import { project, unproject, traceFloor, traceCell, traceGroundCircle, paintPers
 const TAU = Math.PI * 2;
 const rnd = Math.random;
 const reducedMotion = typeof matchMedia === 'function' ? matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
+const UNIT_SIZE = 64;
+const UNIT_TILE_RATIO = 0.70;
 
 function bodyPose(u, time) {
   const recoil = u.recoil || 0;
@@ -146,7 +148,10 @@ export class BoardRenderer {
     if (!PC_MODE) return { x: u.x, y: u.y, zoom: 1, foot: 0 };
     const groundY = Math.min(BOARD_H, u.y + CH * 0.16);
     const base = project(u.x, groundY);
-    return { ...base, zoom: 1.07 + 0.17 * groundY / BOARD_H, foot: 64 * u.scale * 0.33 };
+    // 발 위치의 전장 칸 너비를 기준으로 스프라이트 비율을 유지한다.
+    const tileWidth = project(u.x + CW, groundY).x - base.x;
+    const zoom = tileWidth * UNIT_TILE_RATIO / (UNIT_SIZE * this.unitAspectX);
+    return { ...base, zoom, foot: UNIT_SIZE * u.scale * 0.33 };
   }
 
   transformUnit(ctx, u) {
@@ -373,7 +378,7 @@ export class BoardRenderer {
     let alpha = 1;
     if (!u.alive) { alpha = 1 - u.deadT / 0.45; if (alpha <= 0) return; }
     const s = u.scale;
-    const size = 64 * s;
+    const size = UNIT_SIZE * s;
     const t = this.t;
     const rec = u.recoil || 0;
     const { x: cx, y: cy, tilt } = bodyPose(u, t);
@@ -420,7 +425,7 @@ export class BoardRenderer {
       ctx.rotate(u.aim);
       if (Math.cos(u.aim) < 0) ctx.scale(1, -1);
       ctx.translate(size * 0.12 - rec * 5, 0);
-      const ws = size / 64;
+      const ws = size / UNIT_SIZE;
       ctx.scale(ws, ws);
       drawWeapon(ctx, u.weapon);
       ctx.restore();
