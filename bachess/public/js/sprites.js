@@ -1,5 +1,5 @@
 // 학생 이미지와 코드로 그리는 기본 스프라이트 / 아이템 아이콘
-import { SCHOOLS, ITEMS, COST_COLORS } from './data.js';
+import { SCHOOLS, ITEMS, COST_COLORS, PC_MODE } from './data.js';
 
 const OUT = 'rgba(32,44,78,0.62)';
 const SKIN = '#ffe7d6';
@@ -123,8 +123,10 @@ function drawEnemy(ctx, d, color) {
   ctx.strokeStyle = 'rgba(255,255,255,.3)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(38, 54); ctx.lineTo(58, 54); ctx.moveTo(38, 57); ctx.lineTo(58, 57); ctx.stroke();
 }
 
-const artRoot = new URL('../units/blue-archive/', import.meta.url);
+const artRoot = new URL(PC_MODE ? '../units/toon-pixel-test-20261117/' : '../units/blue-archive/', import.meta.url);
+// Keep the existing PC display size while reading the ZIP's larger source frames.
 export const UNIT_FRAME_SIZE = 128;
+export const UNIT_SOURCE_FRAME_SIZE = PC_MODE ? 256 : UNIT_FRAME_SIZE;
 export const DRAWN_FRAME_SIZE = 96;
 const sheets = new Map();
 
@@ -143,7 +145,7 @@ export function getImportedSprite(def, aim) {
     image.decode().then(() => { sheet.ready = true; }, () => {});
   }
   const { image, frames } = sheet;
-  const size = UNIT_FRAME_SIZE;
+  const size = UNIT_SOURCE_FRAME_SIZE;
   if (!sheet.ready || image.naturalWidth !== size * 3 || image.naturalHeight !== size * 2) return;
 
   // 위 행은 정면, 아래 행은 후면. 각 행은 왼쪽 / 가운데 / 오른쪽 순서.

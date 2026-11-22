@@ -430,7 +430,10 @@ export class BoardRenderer {
     ctx.translate(cx, cy);
     if (rec > 0) ctx.rotate(tilt);
     if (!u.alive) { const k = 1 - u.deadT / 0.45; ctx.scale(1 + (1 - k) * 0.15, k * 0.5 + 0.5); }
-    if (PC_MODE && imported) ctx.imageSmoothingEnabled = false;
+    if (PC_MODE && imported) {
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = 'high';
+    }
     if (pixelWeapon && weaponBehind) drawPixelWeapon(ctx, u, pixelWeapon);
     ctx.drawImage(sprite, -size / 2, -size * 0.66, size, size);
     if (u.hitFlash > 0.05) {
