@@ -1,5 +1,5 @@
 // 보드 렌더링 + 전투 이펙트 (총구 화염, 탄도, 반동, 피격, 배리어)
-import { COLS, ROWS, CW, CH, BOARD_W, BOARD_H, WEAPONS, SCHOOLS } from './data.js';
+import { COLS, ROWS, SIDE_ROWS, CW, CH, BOARD_W, BOARD_H, WEAPONS, SCHOOLS, PC_MODE } from './data.js';
 import { getSprite, getEnemySprite, getImportedSprite, facesAway, getPixelWeapon, drawWeapon } from './sprites.js';
 import { sfx } from './audio.js';
 
@@ -13,7 +13,12 @@ function bodyPose(u, time) {
   const bob = u.alive
     ? (u.moving ? -4 * Math.abs(Math.sin(time * 13 + u.id)) : 1.2 * Math.sin(time * 2.6 + u.id))
     : 0;
-  return { x: u.x - dx * recoil * 3.2, y: u.y + bob - dy * recoil * 2.2, tilt: -dx * recoil * 0.05 };
+  const y = u.y + bob - dy * recoil * 2.2;
+  return {
+    x: u.x - dx * recoil * 3.2,
+    y: PC_MODE ? Math.max(y, 64 * u.scale * 0.66 + 1) : y,
+    tilt: -dx * recoil * 0.05,
+  };
 }
 
 function pixelWeaponPose(u, aim) {
@@ -66,7 +71,7 @@ function buildFloor() {
   const x = c.getContext('2d');
   for (let r = 0; r < ROWS; r++) {
     for (let col = 0; col < COLS; col++) {
-      const enemy = r < 3;
+      const enemy = r < SIDE_ROWS;
       const alt = (r + col) % 2 === 0;
       x.fillStyle = enemy ? (alt ? '#f6e9ee' : '#eddde4') : (alt ? '#f5fbff' : '#e3f0fb');
       x.beginPath(); x.roundRect(col * CW + 2, r * CH + 2, CW - 4, CH - 4, 8); x.fill();
@@ -74,7 +79,7 @@ function buildFloor() {
     }
   }
   // 중앙선
-  const y = 3 * CH;
+  const y = SIDE_ROWS * CH;
   x.save();
   x.strokeStyle = 'rgba(255,196,40,.9)'; x.lineWidth = 3; x.setLineDash([14, 10]);
   x.beginPath(); x.moveTo(6, y); x.lineTo(BOARD_W - 6, y); x.stroke();
@@ -82,7 +87,7 @@ function buildFloor() {
   // 육각 장식
   x.globalAlpha = 0.08; x.strokeStyle = '#2a7bd0'; x.lineWidth = 2;
   for (let i = 0; i < 6; i++) {
-    const cx = 80 + i * 130, cy = 230 + (i % 2) * 0;
+    const cx = (80 + i * 130) * BOARD_W / (9 * CW), cy = y + 2;
     x.beginPath(); for (let k = 0; k < 6; k++) { const a = k * TAU / 6 + 0.5; const px = cx + Math.cos(a) * 26, py = cy + Math.sin(a) * 26; k ? x.lineTo(px, py) : x.moveTo(px, py); } x.closePath(); x.stroke();
   }
   return c;
@@ -93,6 +98,10 @@ export class BoardRenderer {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d', { alpha: true });
     this.floor = buildFloor();
+    // 전투 좌표를 기존 화면 영역에 맞추되, 유닛 그림의 비율은 유지한다.
+    this.unitAspectX = PC_MODE && canvas.clientWidth > 0
+      ? (canvas.clientHeight / BOARD_H) / (canvas.clientWidth / BOARD_W)
+      : 1;
     this.quality = 'high';
     this.parts = [];
     this.nums = [];
@@ -135,7 +144,7 @@ export class BoardRenderer {
       if (!u.alive) continue;
       if (team !== undefined && u.team !== team) continue;
       const r = 32 * u.scale;
-      const d = Math.hypot(u.x - px, (u.y - 8 * u.scale) - py);
+      const d = Math.hypot((u.x - px) / this.unitAspectX, (u.y - 8 * u.scale) - py);
       if (d < r && d < bd) { bd = d; best = u; }
     }
     return best;
@@ -153,7 +162,7 @@ export class BoardRenderer {
           const pose = bodyPose(ev.u, this.t);
           const muzzle = pixelWeaponPose(ev.u, ev.ang);
           const c = Math.cos(pose.tilt), s = Math.sin(pose.tilt);
-          x = pose.x + c * muzzle.x - s * muzzle.y;
+          x = ev.u.x + (pose.x - ev.u.x + c * muzzle.x - s * muzzle.y) * this.unitAspectX;
           y = pose.y + s * muzzle.x + c * muzzle.y;
         }
         this.addPart({ t: 'flash', x, y, ang: ev.ang, life: big ? 0.14 : 0.07, max: big ? 0.14 : 0.07, size: (big ? 1.9 : 1) * (ev.weapon === 'SG' ? 1.5 : ev.weapon === 'SR' ? 1.4 : 1), color: w.color, wp: ev.weapon });
@@ -343,6 +352,10 @@ export class BoardRenderer {
     const pixelWeapon = imported && u.alive ? getPixelWeapon(u.weapon) : null;
     const weaponBehind = facesAway(u.aim);
     ctx.save();
+    ctx.translate(u.x, 0);
+    ctx.scale(this.unitAspectX, 1);
+    ctx.translate(-u.x, 0);
+    ctx.save();
     ctx.globalAlpha = alpha;
     // 그림자
     ctx.fillStyle = 'rgba(30,60,100,.22)';
@@ -421,12 +434,15 @@ export class BoardRenderer {
       ctx.strokeStyle = '#ffd23a'; ctx.lineWidth = 3;
       ctx.beginPath(); ctx.ellipse(u.x, u.y + size * 0.3, size * 0.45, size * 0.15, 0, 0, TAU); ctx.stroke();
     }
+    ctx.restore();
   }
 
   drawBars(ctx, u) {
     const s = Math.min(u.scale, 1.5);
     const w = 52 * s, h = 7;
-    const x = u.x - w / 2, y = u.y + 25 * u.scale + (u.scale > 1 ? 8 : 0);
+    const x = u.x - w / 2;
+    const barY = u.y + 25 * u.scale + (u.scale > 1 ? 8 : 0);
+    const y = PC_MODE ? Math.min(barY, BOARD_H - 13) : barY;
     // 별
     ctx.save();
     ctx.fillStyle = '#122a52';

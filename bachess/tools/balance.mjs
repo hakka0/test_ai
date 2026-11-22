@@ -1,4 +1,4 @@
-import { UNITS, SHOP_ODDS, MAX_ROUND, COMP_KEYS } from '../public/js/data.js';
+import { UNITS, SHOP_ODDS, MAX_ROUND, COMP_KEYS, COLS, CENTER_COLS, FRONT_ROWS, BACK_ROWS } from '../public/js/data.js';
 
 const levelFor = r => Math.min(9, 2 + Math.ceil(r * 0.55));
 function pickCost(level){ const o=SHOP_ODDS[level]; let x=Math.random()*100; for(let i=0;i<5;i++){ if((x-=o[i])<0) return i+1;} return 1; }
@@ -17,9 +17,13 @@ function team(r, q){
     placed.push({def:d, star, items, uid:i, col:0,row:0, front});
   }
   // 배치
-  const slots=[[0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2]].sort(()=>Math.random()-.5);
-  let fi=0,bi=0; const frontCols=[4,3,5,2,6,1,7], backCols=[4,3,5,2,6,1,7,0,8];
-  for(const p of placed){ if(p.front){p.col=frontCols[fi%7]; p.row=fi<7?0:1; fi++;} else {p.col=backCols[bi%9]; p.row=bi<9?2:1; bi++;} }
+  let front = 0, back = 0;
+  for (const p of placed) {
+    const index = p.front ? front++ : back++;
+    const rows = p.front ? FRONT_ROWS : BACK_ROWS;
+    p.col = CENTER_COLS[index % COLS];
+    p.row = rows[Math.floor(index / COLS)];
+  }
   return placed;
 }
 globalThis.__HPK=process.argv[3]||2.6; globalThis.__ATKK=process.argv[4]||1.5;

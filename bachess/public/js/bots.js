@@ -1,6 +1,7 @@
 // PVP 봇: 상점/경제/배치/장비 AI, 매치메이킹, 순위 계산 (DOM 의존 없음)
 import {
-  UNITS, UNIT_BY_KEY, SHOP_ODDS, XP_NEED, MAX_LEVEL, COLS, COMP_KEYS, COST_MULT, STAR_MULT, ITEMS, combine, dropsFor, BENCH_SIZE,
+  UNITS, UNIT_BY_KEY, SHOP_ODDS, XP_NEED, MAX_LEVEL, COLS, CENTER_COLS, FRONT_ROWS, BACK_ROWS,
+  COMP_KEYS, COST_MULT, STAR_MULT, ITEMS, combine, dropsFor, BENCH_SIZE,
 } from './data.js';
 import { simulateMatch } from './sim.js';
 
@@ -138,16 +139,16 @@ export function arrangeBot(b) {
   }
   for (const u of sorted) { if (chosen.length >= b.level) break; if (!chosen.includes(u)) chosen.push(u); }
   const taken = new Set();
-  const mid = [4, 3, 5, 2, 6, 1, 7, 0, 8];
   const put = (u, rows) => {
-    for (const r of rows) for (const c of mid) { const k = r * COLS + c; if (!taken.has(k)) { taken.add(k); return { col: c, row: r }; } }
+    for (const r of rows) for (const c of CENTER_COLS) { const k = r * COLS + c; if (!taken.has(k)) { taken.add(k); return { col: c, row: r }; } }
     return { col: 0, row: 0 };
   };
   const placed = [];
   const add = (u, rows) => { const p = put(u, rows); placed.push({ def: UNIT_BY_KEY[u.key], star: u.star, items: u.items.slice(), col: p.col, row: p.row, uid: u.uid }); };
-  chosen.filter((u) => role(u) === 'tank').forEach((u) => add(u, [0, 1, 2]));
-  chosen.filter((u) => role(u) === 'dealer').forEach((u) => add(u, [1, 2, 0]));
-  chosen.filter((u) => role(u) === 'support').forEach((u) => add(u, [2, 1, 0]));
+  const dealerRows = [...FRONT_ROWS.slice(1), 0];
+  chosen.filter((u) => role(u) === 'tank').forEach((u) => add(u, FRONT_ROWS));
+  chosen.filter((u) => role(u) === 'dealer').forEach((u) => add(u, dealerRows));
+  chosen.filter((u) => role(u) === 'support').forEach((u) => add(u, BACK_ROWS));
   b.placed = placed;
 }
 // 전투 결과 반영 (승패/체력/수입)

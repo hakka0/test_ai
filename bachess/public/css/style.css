@@ -114,6 +114,9 @@ kbd { font: 700 10px/1 'Noto Sans KR', sans-serif; background: rgba(20, 40, 80, 
 /* ---------- 보드 ---------- */
 #boardWrap { position: absolute; left: 236px; top: 64px; width: 792px; height: 456px; border-radius: 10px; overflow: hidden; border: 2px solid #fff; box-shadow: 0 3px 14px rgba(30,70,130,.3); background: #eaf4fc; }
 #board { position: absolute; left: 0; top: 0; width: 792px; height: 456px; display: block; }
+@media (hover: hover) and (pointer: fine) {
+  #board { width: 100%; height: 100%; }
+}
 #hud { position: absolute; left: 0; top: 0; width: 100%; display: flex; justify-content: center; align-items: center; gap: 12px; padding-top: 6px; pointer-events: none; font-weight: 900; font-style: italic; font-size: 14px; }
 #hud .side { padding: 2px 14px; border-radius: 12px; color: #fff; transform: skewX(-10deg); }
 #hud .ally { background: rgba(44,141,240,.9); }

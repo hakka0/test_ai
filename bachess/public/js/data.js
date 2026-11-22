@@ -1,10 +1,17 @@
 // 게임 데이터: 학생, 역할, 무기, 장비, 시너지, 적 웨이브
-export const COLS = 9;
-export const ROWS = 6;          // 위 3줄 = 적 진영, 아래 3줄 = 아군 진영
+export const PC_MODE = globalThis.matchMedia?.('(hover: hover) and (pointer: fine)').matches ?? true;
+export const COLS = PC_MODE ? 8 : 9;
+export const SIDE_ROWS = PC_MODE ? 4 : 3;
+export const ROWS = SIDE_ROWS * 2;
 export const CW = 88;           // 칸 폭(px)
 export const CH = 76;           // 칸 높이(px)
 export const BOARD_W = COLS * CW;
 export const BOARD_H = ROWS * CH;
+const centerCol = (COLS - 1) / 2;
+export const CENTER_COLS = Array.from({ length: COLS }, (_, col) => col)
+  .sort((a, b) => Math.abs(a - centerCol) - Math.abs(b - centerCol));
+export const FRONT_ROWS = Array.from({ length: SIDE_ROWS }, (_, row) => row);
+export const BACK_ROWS = FRONT_ROWS.slice().reverse();
 export const MAX_ROUND = 15;
 export const BENCH_SIZE = 9;
 export const STAR_MULT = [1, 1.8, 3.2];
@@ -37,7 +44,6 @@ export const WEAPONS = {
 
 // ---------- 학생 ----------
 // hair/eye/skin: 외형 색, outfit: [주색, 포인트색]
-export const PC_MODE = globalThis.matchMedia?.('(hover: hover) and (pointer: fine)').matches ?? true;
 function student(def, imageKey, name = def.name) {
   if (!PC_MODE || !imageKey) return def;
   return { ...def, imageKey, name };
@@ -259,16 +265,16 @@ export function waveFor(round) {
   const list = WAVES[round] || WAVES[MAX_ROUND];
   const mult = ROUND_MULT[round] ?? 3.5;
   const out = [];
-  const rowOf = { grunt: 2, boss1: 1, boss2: 1, boss3: 1, rifle: 1, gunner: 1, sniper: 0, medic: 0 };
+  const middle = SIDE_ROWS - 2;
+  const rowOf = { grunt: SIDE_ROWS - 1, boss1: middle, boss2: middle, boss3: middle, rifle: middle, gunner: middle, sniper: 0, medic: 0 };
   const used = new Set();
   for (const t of list) {
     const row = rowOf[t];
     // 같은 줄에서 중앙부터 빈 칸 탐색
-    const order = [4, 3, 5, 2, 6, 1, 7, 0, 8];
     let col = -1, r = row;
-    for (let tries = 0; tries < 3 && col < 0; tries++) {
-      for (const c of order) { if (!used.has(r * COLS + c)) { col = c; break; } }
-      if (col < 0) r = (r + 1) % 3;
+    for (let tries = 0; tries < SIDE_ROWS && col < 0; tries++) {
+      for (const c of CENTER_COLS) { if (!used.has(r * COLS + c)) { col = c; break; } }
+      if (col < 0) r = (r + 1) % SIDE_ROWS;
     }
     used.add(r * COLS + col);
     out.push({ type: t, col, row: r, mult });

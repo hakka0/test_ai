@@ -1,6 +1,7 @@
 // 게임 상태, 경제, 상점, 합성, 장비 로직
 import {
-  UNITS, UNIT_BY_KEY, POOL_SIZE, SHOP_ODDS, XP_NEED, MAX_LEVEL, BENCH_SIZE, COLS, MAX_ROUND, ITEMS, COMP_KEYS, combine, dropsFor, SYNERGIES, SYNERGY_ORDER, PC_MODE,
+  UNITS, UNIT_BY_KEY, POOL_SIZE, SHOP_ODDS, XP_NEED, MAX_LEVEL, BENCH_SIZE, COLS, SIDE_ROWS, CENTER_COLS, FRONT_ROWS, BACK_ROWS,
+  MAX_ROUND, ITEMS, COMP_KEYS, combine, dropsFor, SYNERGIES, SYNERGY_ORDER, PC_MODE,
 } from './data.js';
 import { buildPlayerBattlers, buildEnemyBattlers, buildTeamBattlers, Battle, calcSynergies } from './sim.js';
 import {
@@ -8,7 +9,7 @@ import {
   PVP_HP, PREP_FIRST, PREP_TIME, MATCH_TIME,
 } from './bots.js';
 
-export const BOARD_SLOTS = COLS * 3;
+export const BOARD_SLOTS = COLS * SIDE_ROWS;
 const listeners = [];
 export const on = (fn) => listeners.push(fn);
 const emit = (type, data) => { for (const l of listeners) l(type, data); };
@@ -231,12 +232,10 @@ export function autoArrange() {
   const tanks = chosen.filter((u) => defOf(u).role === 'tank');
   const dealers = chosen.filter((u) => defOf(u).role === 'dealer');
   const supports = chosen.filter((u) => defOf(u).role === 'support');
-  const place = (list, row, order) => { for (const u of list) { for (const c of order) { const idx = row * COLS + c; if (!G.board[idx]) { G.board[idx] = u; return true; } } } };
-  const mid = [4, 3, 5, 2, 6, 1, 7, 0, 8];
-  const put = (u, rows) => { for (const r of rows) for (const c of mid) { const idx = r * COLS + c; if (!G.board[idx]) { G.board[idx] = u; return; } } };
-  tanks.forEach((u) => put(u, [0, 1, 2]));
-  dealers.forEach((u) => put(u, [2, 1, 0]));
-  supports.forEach((u) => put(u, [2, 1, 0]));
+  const put = (u, rows) => { for (const r of rows) for (const c of CENTER_COLS) { const idx = r * COLS + c; if (!G.board[idx]) { G.board[idx] = u; return; } } };
+  tanks.forEach((u) => put(u, FRONT_ROWS));
+  dealers.forEach((u) => put(u, BACK_ROWS));
+  supports.forEach((u) => put(u, BACK_ROWS));
   const rest = all.slice(G.level);
   rest.forEach((u, i) => { G.bench[i] = u; });
   emit('change'); emit('sfx', 'click');
@@ -395,12 +394,11 @@ export function toggleReady() {
 export function autoFill() {
   if (boardCount() >= G.level) return;
   const bench = G.bench.map((u, i) => ({ u, i })).filter((x) => x.u).sort((a, b) => defOf(b.u).cost * 3 + b.u.star - (defOf(a.u).cost * 3 + a.u.star));
-  const mid = [4, 3, 5, 2, 6, 1, 7, 0, 8];
   for (const { u, i } of bench) {
     if (boardCount() >= G.level) break;
-    const rows = defOf(u).role === 'tank' ? [0, 1, 2] : [2, 1, 0];
+    const rows = defOf(u).role === 'tank' ? FRONT_ROWS : BACK_ROWS;
     let done = false;
-    for (const r of rows) { for (const c of mid) { const idx = r * COLS + c; if (!G.board[idx]) { G.board[idx] = u; G.bench[i] = null; done = true; break; } } if (done) break; }
+    for (const r of rows) { for (const c of CENTER_COLS) { const idx = r * COLS + c; if (!G.board[idx]) { G.board[idx] = u; G.bench[i] = null; done = true; break; } } if (done) break; }
   }
 }
 function beginMatching() {

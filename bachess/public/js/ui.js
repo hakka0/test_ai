@@ -1,7 +1,7 @@
 // DOM UI: 상점, 벤치, 시너지, 툴팁, 모달, 드래그 앤 드롭
 import {
   UNITS, UNIT_BY_KEY, SCHOOLS, ROLES, WEAPONS, ITEMS, COMP_KEYS, COMPONENTS, combine, COST_COLORS, SYNERGIES, SYNERGY_ORDER,
-  skillDesc, MAX_ROUND, describeWave, ENEMY_TYPES, BENCH_SIZE, COLS, CW, CH, BOARD_W, BOARD_H, XP_NEED, MAX_LEVEL, PC_MODE,
+  skillDesc, MAX_ROUND, describeWave, ENEMY_TYPES, BENCH_SIZE, COLS, ROWS, SIDE_ROWS, CW, CH, BOARD_W, BOARD_H, XP_NEED, MAX_LEVEL, PC_MODE,
 } from './data.js';
 import { computeUnitStats } from './sim.js';
 import * as S from './state.js';
@@ -25,6 +25,11 @@ function stagePt(e) {
 function boardPt(e) {
   const r = $('#board').getBoundingClientRect();
   return { x: ((e.clientX - r.left) / r.width) * BOARD_W, y: ((e.clientY - r.top) / r.height) * BOARD_H, inside: e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom };
+}
+function boardCell(point) {
+  const col = Math.floor(point.x / CW), row = Math.floor(point.y / CH);
+  const own = row >= SIDE_ROWS && row < ROWS && col >= 0 && col < COLS;
+  return { col, row, own };
 }
 
 // ---------- 헬퍼 ----------
@@ -549,9 +554,9 @@ function updateDrag(e) {
   if (drag.kind === 'unit') {
     const bp = boardPt(e);
     if (bp.inside) {
-      const col = Math.floor(bp.x / CW), row = Math.floor(bp.y / CH);
-      if (row >= 3 && col >= 0 && col < COLS) r.hlCell = { col, row, ok: G.phase === 'prep' };
-      else r.hlCell = { col: Math.max(0, Math.min(COLS - 1, col)), row: Math.max(0, Math.min(5, row)), ok: false };
+      const { col, row, own } = boardCell(bp);
+      if (own) r.hlCell = { col, row, ok: G.phase === 'prep' };
+      else r.hlCell = { col: Math.max(0, Math.min(COLS - 1, col)), row: Math.max(0, Math.min(ROWS - 1, row)), ok: false };
     } else {
       const bs = slotFromPoint(e)?.closest('[data-bslot]');
       if (bs) bs.classList.add('drop');
@@ -584,8 +589,8 @@ function endDrag(e) {
     const bp = boardPt(e);
     let to = null;
     if (bp.inside) {
-      const col = Math.floor(bp.x / CW), row = Math.floor(bp.y / CH);
-      if (row >= 3 && col >= 0 && col < COLS) to = { where: 'board', idx: (row - 3) * COLS + col };
+      const { col, row, own } = boardCell(bp);
+      if (own) to = { where: 'board', idx: (row - SIDE_ROWS) * COLS + col };
     } else {
       const bs = el && el.closest('[data-bslot]');
       if (bs) to = { where: 'bench', idx: +bs.dataset.bslot };

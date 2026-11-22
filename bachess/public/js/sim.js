@@ -1,7 +1,7 @@
 // 순수 전투 시뮬레이션 (DOM 의존 없음)
 import {
   CW, CH, BOARD_W, BOARD_H, WEAPONS, ROLES, SKILL_MULT, STAR_MULT, ITEMS, SYNERGIES, SYNERGY_ORDER,
-  baseStats, ENEMY_TYPES, waveFor, ROWS, COLS,
+  baseStats, ENEMY_TYPES, waveFor, SIDE_ROWS, COLS,
 } from './data.js';
 
 const rand = Math.random;
@@ -84,12 +84,7 @@ function makeBattler(o) {
 }
 
 export function buildPlayerBattlers(placed) {
-  // placed: [{def, star, items, col, row(0..2), uid}]
-  const syn = calcSynergies(placed.map((p) => p.def));
-  return placed.map((p) => makeBattler({
-    team: 0, def: p.def, star: p.star, col: p.col, row: 3 + p.row, uid: p.uid, items: p.items,
-    stats: computeUnitStats(p.def, p.star, p.items, synergyStatsFor(p.def, syn.active)),
-  }));
+  return buildTeamBattlers(placed, 0);
 }
 
 // PVP: 임의의 편성(placed)을 team(0|1)의 전투원으로 변환. team 1은 위쪽 절반에 좌우/상하 대칭으로 배치
@@ -97,7 +92,7 @@ export function buildTeamBattlers(placed, team) {
   const syn = calcSynergies(placed.map((p) => p.def));
   return placed.map((p, i) => makeBattler({
     team, def: p.def, star: p.star, items: p.items, uid: team === 0 ? p.uid : 100000 + i,
-    col: team === 0 ? p.col : COLS - 1 - p.col, row: team === 0 ? 3 + p.row : 2 - p.row,
+    col: team === 0 ? p.col : COLS - 1 - p.col, row: team === 0 ? SIDE_ROWS + p.row : SIDE_ROWS - 1 - p.row,
     stats: computeUnitStats(p.def, p.star, p.items, synergyStatsFor(p.def, syn.active)),
   }));
 }
