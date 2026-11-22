@@ -1,7 +1,7 @@
 // DOM UI: 상점, 벤치, 시너지, 툴팁, 모달, 드래그 앤 드롭
 import {
   UNITS, UNIT_BY_KEY, SCHOOLS, ROLES, WEAPONS, ITEMS, COMP_KEYS, COMPONENTS, combine, COST_COLORS, SYNERGIES, SYNERGY_ORDER,
-  skillDesc, MAX_ROUND, describeWave, ENEMY_TYPES, BENCH_SIZE, COLS, CW, CH, BOARD_W, BOARD_H, XP_NEED, MAX_LEVEL,
+  skillDesc, MAX_ROUND, describeWave, ENEMY_TYPES, BENCH_SIZE, COLS, CW, CH, BOARD_W, BOARD_H, XP_NEED, MAX_LEVEL, PC_MODE,
 } from './data.js';
 import { computeUnitStats } from './sim.js';
 import * as S from './state.js';
@@ -105,7 +105,7 @@ const FIXED_TIPS = {
   'btn-sell': `<h4>판매</h4>선택한 학생을 판매합니다. 단축키 <b>E</b>, 또는 상점 영역으로 드래그`,
   'btn-reroll': `<h4>리롤</h4>2 크레딧으로 상점을 새로 고칩니다. 단축키 <b>D</b>`,
   'btn-xp': `<h4>경험치 구매</h4>4 크레딧으로 경험치 +4. 레벨이 오르면 출전 인원이 늘어납니다. 단축키 <b>F</b>`,
-  'btn-lock': `<h4>상점 잠금</h4>다음 라운드에도 현재 상점을 유지합니다. 단축키 <b>L</b>`,
+  'btn-lock': `<h4>상점 잠금</h4>다음 라운드에도 현재 상점을 유지합니다.${PC_MODE ? ' 다음 라운드가 시작되면 잠금이 풀립니다.' : ''} 단축키 <b>L</b>`,
   'btn-start': `<h4>준비 완료</h4>모든 플레이어가 준비를 마치거나 시간이 끝나면 5초간 상대를 매칭한 뒤 1:1 전투가 시작됩니다. 단축키 <b>Space</b>`,
   'btn-auto': `<h4>자동 배치</h4>탱커는 앞줄, 딜러·서포터는 뒷줄에 최적 배치합니다. 단축키 <b>A</b>`,
   'btn-speed': `<h4>전투 배속</h4>x1 → x2 → x3. 단축키 <b>Q</b>`,

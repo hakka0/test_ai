@@ -1,6 +1,6 @@
 // 게임 상태, 경제, 상점, 합성, 장비 로직
 import {
-  UNITS, UNIT_BY_KEY, POOL_SIZE, SHOP_ODDS, XP_NEED, MAX_LEVEL, BENCH_SIZE, COLS, MAX_ROUND, ITEMS, COMP_KEYS, combine, dropsFor, SYNERGIES, SYNERGY_ORDER,
+  UNITS, UNIT_BY_KEY, POOL_SIZE, SHOP_ODDS, XP_NEED, MAX_LEVEL, BENCH_SIZE, COLS, MAX_ROUND, ITEMS, COMP_KEYS, combine, dropsFor, SYNERGIES, SYNERGY_ORDER, PC_MODE,
 } from './data.js';
 import { buildPlayerBattlers, buildEnemyBattlers, buildTeamBattlers, Battle, calcSynergies } from './sim.js';
 import {
@@ -90,7 +90,10 @@ export function rollShop(initial = false) {
   for (let i = 0; i < 5; i++) { const k = drawKey(); G.pool[k]--; G.shop[i] = k; }
 }
 export function refreshShopNewRound() {
-  if (G.locked) return;
+  if (G.locked) {
+    if (PC_MODE) G.locked = false;
+    return;
+  }
   rollShop();
 }
 // 매칭/전투 단계: 상점 구입·벤치 판매·학생 정보 확인은 가능, 보드 유닛은 고정

@@ -37,9 +37,9 @@ export const WEAPONS = {
 
 // ---------- 학생 ----------
 // hair/eye/skin: 외형 색, outfit: [주색, 포인트색]
-const useImportedArt = globalThis.matchMedia?.('(hover: hover) and (pointer: fine)').matches ?? true;
+export const PC_MODE = globalThis.matchMedia?.('(hover: hover) and (pointer: fine)').matches ?? true;
 function student(def, imageKey, name = def.name) {
-  if (!useImportedArt || !imageKey) return def;
+  if (!PC_MODE || !imageKey) return def;
   return { ...def, imageKey, name };
 }
 export const UNITS = [

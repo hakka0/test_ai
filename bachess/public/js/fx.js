@@ -1,11 +1,50 @@
 // 보드 렌더링 + 전투 이펙트 (총구 화염, 탄도, 반동, 피격, 배리어)
 import { COLS, ROWS, CW, CH, BOARD_W, BOARD_H, WEAPONS, SCHOOLS } from './data.js';
-import { getSprite, getEnemySprite, getImportedSprite, drawWeapon } from './sprites.js';
+import { getSprite, getEnemySprite, getImportedSprite, facesAway, getPixelWeapon, drawWeapon } from './sprites.js';
 import { sfx } from './audio.js';
 
 const TAU = Math.PI * 2;
 const rnd = Math.random;
 const reducedMotion = typeof matchMedia === 'function' ? matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
+
+function bodyPose(u, time) {
+  const recoil = u.recoil || 0;
+  const dx = Math.cos(u.aim), dy = Math.sin(u.aim);
+  const bob = u.alive
+    ? (u.moving ? -4 * Math.abs(Math.sin(time * 13 + u.id)) : 1.2 * Math.sin(time * 2.6 + u.id))
+    : 0;
+  return { x: u.x - dx * recoil * 3.2, y: u.y + bob - dy * recoil * 2.2, tilt: -dx * recoil * 0.05 };
+}
+
+function pixelWeaponPose(u, aim) {
+  const dx = Math.cos(aim), dy = Math.sin(aim);
+  const flip = dx < -Math.abs(dy) * 0.35;
+  const side = 12 * Math.abs(dy) * (flip ? -1 : 1);
+  // 전장 깊이 방향으로 향할수록 총열이 짧게 보인다.
+  const depth = dy * 0.64;
+  const reach = WEAPONS[u.weapon].len + 6 - (u.recoil || 0) * 4;
+  return {
+    x: (dx * reach - dy * side) * u.scale,
+    y: (-8 + depth * reach + dx * side) * u.scale,
+    angle: Math.atan2(depth, dx),
+    lengthScale: Math.hypot(dx, depth),
+    flip,
+  };
+}
+
+function drawPixelWeapon(ctx, u, image) {
+  const pose = pixelWeaponPose(u, u.aim);
+  const pixel = 1.35 * u.scale;
+  const width = image.naturalWidth * pixel * pose.lengthScale, height = image.naturalHeight * pixel;
+  ctx.save();
+  ctx.imageSmoothingEnabled = false;
+  ctx.translate(pose.x, pose.y);
+  ctx.rotate(pose.angle);
+  if (pose.flip) ctx.scale(1, -1);
+  // 총구는 6번째 도트 행의 오른쪽 끝에 있다.
+  ctx.drawImage(image, -width, -5.5 * pixel, width, height);
+  ctx.restore();
+}
 
 function mkCanvas(w, h) { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; }
 
@@ -109,7 +148,15 @@ export class BoardRenderer {
       case 'shot': {
         const w = WEAPONS[ev.weapon];
         const big = ev.big;
-        this.addPart({ t: 'flash', x: ev.mx, y: ev.my, ang: ev.ang, life: big ? 0.14 : 0.07, max: big ? 0.14 : 0.07, size: (big ? 1.9 : 1) * (ev.weapon === 'SG' ? 1.5 : ev.weapon === 'SR' ? 1.4 : 1), color: w.color, wp: ev.weapon });
+        let x = ev.mx, y = ev.my;
+        if (getImportedSprite(ev.u.def, ev.ang) && getPixelWeapon(ev.weapon)) {
+          const pose = bodyPose(ev.u, this.t);
+          const muzzle = pixelWeaponPose(ev.u, ev.ang);
+          const c = Math.cos(pose.tilt), s = Math.sin(pose.tilt);
+          x = pose.x + c * muzzle.x - s * muzzle.y;
+          y = pose.y + s * muzzle.x + c * muzzle.y;
+        }
+        this.addPart({ t: 'flash', x, y, ang: ev.ang, life: big ? 0.14 : 0.07, max: big ? 0.14 : 0.07, size: (big ? 1.9 : 1) * (ev.weapon === 'SG' ? 1.5 : ev.weapon === 'SR' ? 1.4 : 1), color: w.color, wp: ev.weapon });
         if (hi || big) {
           // 탄피
           if (ev.weapon !== 'SG' || rnd() < 0.5) {
@@ -117,7 +164,7 @@ export class BoardRenderer {
             this.addPart({ t: 'casing', x: ev.u.x, y: ev.u.y - 10, vx: Math.cos(side) * (60 + rnd() * 50), vy: Math.sin(side) * (60 + rnd() * 50) - 70, life: 0.5, max: 0.5, rot: rnd() * 6, vr: 20 * (rnd() - 0.5) });
           }
         }
-        if (hi) this.addPart({ t: 'smoke', x: ev.mx, y: ev.my, vx: Math.cos(ev.ang) * 18, vy: Math.sin(ev.ang) * 18 - 10, life: 0.45, max: 0.45, size: 6 });
+        if (hi) this.addPart({ t: 'smoke', x, y, vx: Math.cos(ev.ang) * 18, vy: Math.sin(ev.ang) * 18 - 10, life: 0.45, max: 0.45, size: 6 });
         if (ev.weapon === 'SR' || big) this.shake = Math.max(this.shake, big ? 5 : 2);
         if (this.t - this.lastShotSfx > 0.045 || big) { sfx(big ? 'big' : ev.weapon === 'SR' ? 'sr' : ev.weapon === 'SG' ? 'sg' : 'shot'); this.lastShotSfx = this.t; }
         break;
@@ -289,13 +336,12 @@ export class BoardRenderer {
     const s = u.scale;
     const size = 64 * s;
     const t = this.t;
-    const moving = u.moving && u.alive;
-    const bob = u.alive ? (moving ? Math.abs(Math.sin(t * 13 + u.id)) * -4 : Math.sin(t * 2.6 + u.id) * 1.2) : 0;
     const rec = u.recoil || 0;
-    const ox = -Math.cos(u.aim) * rec * 3.2, oy = -Math.sin(u.aim) * rec * 2.2;
-    const cx = u.x + ox, cy = u.y + oy + bob;
+    const { x: cx, y: cy, tilt } = bodyPose(u, t);
     const imported = getImportedSprite(u.def, u.aim);
     const sprite = imported ?? (u.def.isEnemy ? getEnemySprite(u.def, u.enemyColor) : getSprite(u.def));
+    const pixelWeapon = imported && u.alive ? getPixelWeapon(u.weapon) : null;
+    const weaponBehind = facesAway(u.aim);
     ctx.save();
     ctx.globalAlpha = alpha;
     // 그림자
@@ -311,8 +357,9 @@ export class BoardRenderer {
     }
     // 반동으로 몸 기울기
     ctx.translate(cx, cy);
-    if (rec > 0) ctx.rotate(-Math.cos(u.aim) * rec * 0.05);
+    if (rec > 0) ctx.rotate(tilt);
     if (!u.alive) { const k = 1 - u.deadT / 0.45; ctx.scale(1 + (1 - k) * 0.15, k * 0.5 + 0.5); }
+    if (pixelWeapon && weaponBehind) drawPixelWeapon(ctx, u, pixelWeapon);
     ctx.drawImage(sprite, -size / 2, -size * 0.66, size, size);
     if (u.hitFlash > 0.05) {
       ctx.globalAlpha = alpha * u.hitFlash * 0.55;
@@ -320,7 +367,7 @@ export class BoardRenderer {
       ctx.drawImage(sprite, -size / 2, -size * 0.66, size, size);
       ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = alpha;
     }
-    // 가져온 이미지에는 무기와 헤일로가 포함되어 있다.
+    if (pixelWeapon && !weaponBehind) drawPixelWeapon(ctx, u, pixelWeapon);
     if (u.alive && !imported) {
       ctx.save();
       ctx.translate(0, -size * 0.12);
@@ -335,9 +382,9 @@ export class BoardRenderer {
     ctx.restore();
     // 헤일로
     if (!u.def.isEnemy && u.alive && !imported) {
-      const hy = u.y + bob - size * 0.66 - 1 + oy;
+      const hy = cy - size * 0.66 - 1;
       ctx.save();
-      ctx.translate(u.x + ox, hy);
+      ctx.translate(cx, hy);
       ctx.strokeStyle = u.def.halo || '#ffe56b';
       ctx.lineWidth = 3;
       if (this.quality === 'high') { ctx.globalAlpha = 0.35; ctx.lineWidth = 6; ctx.beginPath(); ctx.ellipse(0, 0, 15, 5.5, 0, 0, TAU); ctx.stroke(); ctx.globalAlpha = 1; ctx.lineWidth = 2.6; }

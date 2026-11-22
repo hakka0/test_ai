@@ -127,6 +127,10 @@ const artRoot = new URL('../units/blue-archive/', import.meta.url);
 const frameSize = 128;
 const sheets = new Map();
 
+export function facesAway(aim) {
+  return Math.sin(aim) < 0;
+}
+
 export function getImportedSprite(def, aim) {
   if (!def.imageKey) return;
   let sheet = sheets.get(def.imageKey);
@@ -141,7 +145,7 @@ export function getImportedSprite(def, aim) {
 
   // 위 행은 정면, 아래 행은 후면. 각 행은 왼쪽 / 가운데 / 오른쪽 순서.
   const dx = Math.cos(aim), dy = Math.sin(aim);
-  const row = dy < 0 ? 1 : 0;
+  const row = facesAway(aim) ? 1 : 0;
   const col = Math.abs(dx) <= Math.abs(dy) * 0.35 ? 1 : dx < 0 ? 0 : 2;
   const index = row * 3 + col;
   if (!frames[index]) {
@@ -174,6 +178,17 @@ export function getEnemySprite(def, color) {
 }
 
 // ---------- 무기 (+x 방향) ----------
+const weaponImages = new Map();
+export function getPixelWeapon(type) {
+  let image = weaponImages.get(type);
+  if (!image) {
+    image = new Image();
+    image.src = new URL(`../units/weapons/${type.toLowerCase()}.png`, import.meta.url).href;
+    weaponImages.set(type, image);
+  }
+  if (image.naturalWidth) return image;
+}
+
 export function drawWeapon(ctx, type) {
   const dk = '#2f3548', md = '#4b5470', lt = '#8d98b8';
   ctx.lineWidth = 1.3; ctx.strokeStyle = 'rgba(20,28,50,.8)';
