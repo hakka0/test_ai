@@ -154,7 +154,13 @@ export function renderAll() {
 }
 export function refreshBoard() {
   if (!UI.renderer) return;
-  if (G.phase === 'prep') UI.renderer.setUnits(S.prepBattlers());
+  if (G.phase === 'prep') {
+    const units = S.prepBattlers();
+    if (PC_MODE) {
+      for (const unit of units) unit.aim = Math.PI / 2;
+    }
+    UI.renderer.setUnits(units);
+  }
   UI.renderer.selectedUid = UI.sel;
 }
 
