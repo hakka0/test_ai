@@ -1,5 +1,5 @@
 // 학생 이미지와 코드로 그리는 기본 스프라이트 / 아이템 아이콘
-import { SCHOOLS, ITEMS, COST_COLORS, PC_MODE } from './data.js';
+import { SCHOOLS, ITEMS, COST_COLORS, PC_MODE, UNITS, WEAPONS } from './data.js';
 
 const OUT = 'rgba(32,44,78,0.62)';
 const SKIN = '#ffe7d6';
@@ -130,6 +130,88 @@ export const UNIT_SOURCE_FRAME_SIZE = PC_MODE ? 256 : UNIT_FRAME_SIZE;
 export const DRAWN_FRAME_SIZE = 96;
 const sheets = new Map();
 const spriteFeet = new WeakMap();
+const weaponImages = new Map();
+const pcPortraits = new Map();
+const loadedPcArt = new Set();
+// 이미지가 교체되면 이전 브라우저 캐시를 사용하지 않도록 이 버전을 올린다.
+const PC_ART_VERSION = '20261117-v1';
+const PC_ART_CACHE = `bachess-pc-art:${new URL('../', import.meta.url).pathname}:${PC_ART_VERSION}`;
+
+function unitArtURL(key) { return new URL(`${key}.png`, artRoot); }
+function weaponArtURL(type) { return new URL(`../units/weapons/${type.toLowerCase()}.png`, import.meta.url); }
+
+function sheetFrame(image, index) {
+  const size = UNIT_SOURCE_FRAME_SIZE;
+  const frame = mk(size, size);
+  const col = index % 3, row = Math.floor(index / 3);
+  frame.getContext('2d').drawImage(image, col * size, row * size, size, size, 0, 0, size, size);
+  return frame;
+}
+
+function bitmapCanvas(image) {
+  const canvas = mk(image.width, image.height);
+  canvas.getContext('2d').drawImage(image, 0, 0);
+  return canvas;
+}
+
+async function prepareAsset(response, prepare) {
+  if (!response.ok) throw new Error(`Image request failed (${response.status})`);
+  const image = await createImageBitmap(await response.blob());
+  try { prepare(image); }
+  finally { image.close(); }
+}
+
+async function loadPcAsset(cache, url, prepare, onMiss) {
+  let cached;
+  try { cached = await cache?.match(url); } catch { /* Cache Storage may be unavailable. */ }
+  if (cached) {
+    try { await prepareAsset(cached, prepare); return; }
+    catch { /* Re-download invalid cached images. */ }
+  }
+  onMiss();
+  const response = await fetch(url, { cache: cached ? 'reload' : 'default', signal: AbortSignal.timeout(30_000) });
+  const copy = cache && response.ok ? response.clone() : null;
+  try { await prepareAsset(response, prepare); }
+  catch (error) {
+    if (copy?.body) void copy.body.cancel().catch(() => {});
+    throw error;
+  }
+  if (copy) {
+    try { await cache.put(url, copy); } catch { /* The decoded image is still usable. */ }
+  }
+}
+
+export async function preloadPcArt({ onMiss, onProgress }) {
+  if (!PC_MODE) return;
+  const keys = [...new Set(UNITS.map((unit) => unit.imageKey).filter(Boolean))];
+  const jobs = [
+    ...keys.map((key) => [unitArtURL(key), (image) => {
+      const size = UNIT_SOURCE_FRAME_SIZE;
+      if (image.width !== size * 3 || image.height !== size * 2) throw new Error('Invalid unit sprite sheet size');
+      sheets.set(key, { frames: Array.from({ length: 6 }, (_, i) => sheetFrame(image, i)) });
+    }]),
+    ...keys.map((key) => [unitArtURL(`icons/${key}`), (image) => {
+      pcPortraits.set(key, bitmapCanvas(image).toDataURL('image/png'));
+    }]),
+    ...Object.keys(WEAPONS).map((type) => [weaponArtURL(type), (image) => {
+      weaponImages.set(type, bitmapCanvas(image));
+    }]),
+  ];
+  for (const [url] of jobs) url.searchParams.set('art', PC_ART_VERSION);
+  const pending = jobs.filter(([url]) => !loadedPcArt.has(url.href));
+  let completed = jobs.length - pending.length;
+  onProgress(completed, jobs.length);
+  if (!pending.length) return;
+
+  let cache;
+  try { cache = await globalThis.caches?.open(PC_ART_CACHE); } catch { /* Use the HTTP cache. */ }
+  const results = await Promise.allSettled(pending.map(async ([url, prepare]) => {
+    await loadPcAsset(cache, url.href, prepare, onMiss);
+    loadedPcArt.add(url.href);
+    onProgress(++completed, jobs.length);
+  }));
+  if (results.some((result) => result.status === 'rejected')) throw new Error('Some game images could not be loaded');
+}
 
 export function spriteFootRatio(sprite) {
   const cached = spriteFeet.get(sprite);
@@ -163,24 +245,21 @@ export function getImportedSprite(def, aim) {
   let sheet = sheets.get(def.imageKey);
   if (!sheet) {
     const image = new Image();
-    image.src = new URL(`${def.imageKey}.png`, artRoot).href;
+    image.src = unitArtURL(def.imageKey).href;
     sheet = { image, frames: [], ready: false };
     sheets.set(def.imageKey, sheet);
     image.decode().then(() => { sheet.ready = true; }, () => {});
   }
   const { image, frames } = sheet;
-  const size = UNIT_SOURCE_FRAME_SIZE;
-  if (!sheet.ready || image.naturalWidth !== size * 3 || image.naturalHeight !== size * 2) return;
-
   // 위 행은 정면, 아래 행은 후면. 각 행은 왼쪽 / 가운데 / 오른쪽 순서.
   const dx = Math.cos(aim), dy = Math.sin(aim);
   const row = facesAway(aim) ? 1 : 0;
   const col = Math.abs(dx) <= Math.abs(dy) * 0.35 ? 1 : dx < 0 ? 0 : 2;
   const index = row * 3 + col;
   if (!frames[index]) {
-    const frame = mk(size, size);
-    frame.getContext('2d').drawImage(image, col * size, row * size, size, size, 0, 0, size, size);
-    frames[index] = frame;
+    const size = UNIT_SOURCE_FRAME_SIZE;
+    if (!sheet.ready || image.naturalWidth !== size * 3 || image.naturalHeight !== size * 2) return;
+    frames[index] = sheetFrame(image, index);
   }
   return frames[index];
 }
@@ -207,15 +286,14 @@ export function getEnemySprite(def, color) {
 }
 
 // ---------- 무기 (+x 방향) ----------
-const weaponImages = new Map();
 export function getPixelWeapon(type) {
   let image = weaponImages.get(type);
   if (!image) {
     image = new Image();
-    image.src = new URL(`../units/weapons/${type.toLowerCase()}.png`, import.meta.url).href;
+    image.src = weaponArtURL(type).href;
     weaponImages.set(type, image);
   }
-  if (image.naturalWidth) return image;
+  if (image.naturalWidth ?? image.width) return image;
 }
 
 export function drawWeapon(ctx, type) {
@@ -236,7 +314,7 @@ export function drawWeapon(ctx, type) {
 // ---------- 초상화 / 아이콘 (data URL 캐시) ----------
 const urlCache = new Map();
 export function portraitURL(def, size = 96) {
-  if (def.imageKey) return new URL(`icons/${def.imageKey}.png`, artRoot).href;
+  if (def.imageKey) return pcPortraits.get(def.imageKey) ?? unitArtURL(`icons/${def.imageKey}`).href;
   const k = 'p:' + def.key + size;
   if (urlCache.has(k)) return urlCache.get(k);
   const src = getSprite(def);

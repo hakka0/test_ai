@@ -290,6 +290,15 @@ kbd { font: 700 10px/1 'Noto Sans KR', sans-serif; background: rgba(20, 40, 80, 
 /* ---------- 타이틀 / 종료 ---------- */
 .screen { position: absolute; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 #title { background: linear-gradient(160deg, #bfe0fb, #eef7ff 55%, #cfe7fa); }
+@media (hover: hover) and (pointer: fine) {
+  #assetLoading { z-index: 120; background: linear-gradient(160deg, #bfe0fb, #eef7ff 55%, #cfe7fa); }
+  .asset-load-panel { box-sizing: border-box; width: 480px; padding: 32px; background: #f6faff; border: 3px solid #fff; border-radius: 14px; box-shadow: 0 12px 38px rgba(30,70,130,.22); text-align: center; }
+  .asset-load-panel h2 { margin: 0; font-size: 28px; color: var(--navy); }
+  #assetMessage { margin: 12px 0 18px; font-size: 16px; }
+  #assetProgress { display: block; width: 100%; height: 16px; accent-color: var(--blue); }
+  #assetCount { display: block; margin-top: 8px; font-size: 15px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  #btnAssetRetry { min-height: 56px; margin-top: 18px; }
+}
 .tbg { position: absolute; inset: 0; }
 .tbg .halo.big { position: absolute; left: 190px; top: -150px; width: 900px; height: 340px; border: 22px solid rgba(255,213,61,.55); border-radius: 50%; transform: rotate(-10deg); }
 .tbg .stripe { position: absolute; height: 120px; width: 1800px; left: -200px; background: rgba(255,255,255,.55); transform: rotate(-12deg); }

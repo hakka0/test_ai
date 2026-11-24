@@ -112,6 +112,15 @@
   </div>
   <!-- 종료 화면 -->
   <div id="endScreen" class="screen hidden"></div>
+  <section id="assetLoading" class="screen hidden" aria-labelledby="assetTitle" tabindex="-1">
+    <div class="asset-load-panel">
+      <h2 id="assetTitle">전장 이미지 준비 중</h2>
+      <p id="assetMessage" role="status"></p>
+      <progress id="assetProgress" aria-label="준비된 이미지"></progress>
+      <span id="assetCount"></span>
+      <button class="btn yellow hidden" id="btnAssetRetry" type="button">다시 시도</button>
+    </div>
+  </section>
 </div>
 </div>
 <script type="module" src="js/main.js"></script>

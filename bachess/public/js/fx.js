@@ -51,7 +51,8 @@ function pixelWeaponPose(u, aim) {
 function drawPixelWeapon(ctx, u, image) {
   const pose = pixelWeaponPose(u, u.aim);
   const pixel = 1.35 * u.scale;
-  const width = image.naturalWidth * pixel * pose.lengthScale, height = image.naturalHeight * pixel;
+  const width = (image.naturalWidth ?? image.width) * pixel * pose.lengthScale;
+  const height = (image.naturalHeight ?? image.height) * pixel;
   ctx.save();
   ctx.imageSmoothingEnabled = false;
   ctx.translate(pose.x, pose.y);

@@ -4,6 +4,7 @@ import * as S from './state.js';
 import * as U from './ui.js';
 import { initAudio, startMusic, setMusicMode, sfx } from './audio.js';
 import { PC_MODE } from './data.js';
+import { preloadPcArt } from './sprites.js';
 
 const $ = (s) => document.querySelector(s);
 const G = S.G;
@@ -12,6 +13,7 @@ const canvas = $('#board');
 const renderer = new BoardRenderer(canvas);
 const UI = U.UI;
 let battle = null;
+let starting = false;
 let endTimer = 0;
 let dueAcc = 0, hudAcc = 0;
 let lastT = performance.now();
@@ -67,8 +69,45 @@ function afterResult(res) {
   U.banner(`ROUND ${G.round}`, 'round', 900);
 }
 
-function startNewGame() {
-  initAudio(); startMusic(); setMusicMode('prep');
+async function startNewGame() {
+  if (starting) return;
+  initAudio();
+  if (PC_MODE) {
+    starting = true;
+    const loading = $('#assetLoading');
+    const retry = $('#btnAssetRetry');
+    $('#assetTitle').textContent = '전장 이미지 준비 중';
+    $('#assetMessage').textContent = '캐시에 없는 이미지를 불러오고 있습니다.';
+    retry.classList.add('hidden');
+    if (!loading.classList.contains('hidden')) loading.focus();
+    try {
+      await preloadPcArt({
+        onMiss() {
+          if (loading.classList.contains('hidden')) {
+            loading.classList.remove('hidden');
+            loading.focus();
+          }
+        },
+        onProgress(ready, total) {
+          const meter = $('#assetProgress');
+          meter.max = total;
+          meter.value = ready;
+          $('#assetCount').textContent = `${ready} / ${total}`;
+        },
+      });
+    } catch {
+      $('#assetTitle').textContent = '이미지를 불러오지 못했습니다';
+      $('#assetMessage').textContent = '연결을 확인한 뒤 다시 시도하세요.';
+      loading.classList.remove('hidden');
+      retry.classList.remove('hidden');
+      retry.focus();
+      return;
+    } finally {
+      starting = false;
+    }
+    loading.classList.add('hidden');
+  }
+  startMusic(); setMusicMode('prep');
   S.newGame('pvp');
   UI.sel = null; UI.paused = false;
   $('#title').classList.add('hidden');
@@ -127,6 +166,11 @@ function frame(now) {
 window.addEventListener('keydown', (e) => {
   if (e.ctrlKey || e.metaKey || e.altKey) return;
   const k = e.key;
+  if (PC_MODE) {
+    const loadingVisible = !$('#assetLoading').classList.contains('hidden');
+    if (loadingVisible && k === 'Tab') e.preventDefault();
+    if (starting || loadingVisible) return;
+  }
   initAudio();
   if (k === 'Escape') { if (U.modalOpen()) U.closeModal(); return; }
   if (!$('#title').classList.contains('hidden')) {
@@ -168,6 +212,7 @@ let q = 'high';
 try { q = localStorage.getItem('bachess_q') || ((navigator.hardwareConcurrency || 4) <= 2 ? 'low' : 'high'); } catch { /* ignore */ }
 U.setQuality(q);
 $('#btnPlay').onclick = () => { sfx('click'); startNewGame(); };
+if (PC_MODE) $('#btnAssetRetry').onclick = startNewGame;
 $('#btnHow').onclick = () => U.openHelp();
 U.updateBest();
 renderer.setUnits([]);
