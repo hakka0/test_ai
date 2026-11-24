@@ -50,7 +50,7 @@
   <!-- 보드 -->
   <main id="boardWrap">
     <canvas id="board"></canvas>
-    <div id="hud"><span class="side ally">아군 <b id="hudA">0</b></span><span id="hudT">0:00</span><span class="side foe">적 <b id="hudE">0</b></span></div>
+    <div id="hud"><span class="side ally">아군 <b id="hudA">0</b></span><span id="hudT">0:00</span><span class="side foe">적 <b id="hudE">0</b></span><span id="hudFever" class="hidden" role="status">피버타임</span></div>
     <div id="sellHint">여기로 드래그하면 판매</div>
     <div id="matchOv" class="hidden"></div>
     <div id="banner"></div>
@@ -83,7 +83,7 @@
     <button class="btn yellow huge" id="btnStart" data-tip="btn-start"><span id="startLbl">전투 시작</span><kbd>Space</kbd></button>
     <div class="subctl">
       <button class="btn white" id="btnAuto" data-tip="btn-auto"><span>자동 배치</span><kbd>A</kbd></button>
-      <button class="btn white" id="btnSpeed" data-tip="btn-speed"><span id="speedLbl">배속 x1</span><kbd>Q</kbd></button>
+      <button class="btn white hidden" id="btnSpeed" data-tip="btn-speed"><span id="speedLbl">배속 x1</span><kbd>Q</kbd></button>
       <button class="btn white" id="btnPause" data-tip="btn-pause"><span id="pauseLbl">일시정지</span><kbd>P</kbd></button>
     </div>
   </section>

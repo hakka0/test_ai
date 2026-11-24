@@ -348,7 +348,7 @@ function renderCtrl() {
   $('#btnAuto').classList.toggle('off', !prep);
   $('#btnPause').classList.toggle('off', G.phase !== 'battle');
   $('#pauseLbl').textContent = UI.paused ? '재개' : '일시정지';
-  $('#speedLbl').textContent = `배속 x${UI.speed}`;
+  if (!PC_MODE) $('#speedLbl').textContent = `배속 x${UI.speed}`;
   $('#hud').style.visibility = G.phase === 'battle' ? 'visible' : 'hidden';
   $('#btnSyn').classList.toggle('on', !UI.synCollapsed);
   $('#btnMute').classList.toggle('muted', isMuted());
@@ -369,6 +369,7 @@ export function updateHud(b) {
   $('#hudE').textContent = b.units.filter((u) => u.alive && u.team === 1).length;
   const t = Math.floor(b.time);
   $('#hudT').textContent = `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`;
+  if (PC_MODE) $('#hudFever').classList.toggle('hidden', !b.fever);
 }
 
 // ---------- 토스트/배너 ----------
@@ -485,10 +486,11 @@ export function openHelp() {
     <h3>진행</h3><ul><li><b>준비 단계</b>: 제한 시간(30초, 첫 라운드 45초) 안에 학생을 구매·배치합니다. <b>준비 완료</b>를 누르고 모든 플레이어가 준비하면 즉시 다음으로 넘어가며, 시간이 끝나도 자동으로 넘어갑니다.</li>
     <li><b>매칭</b>: 약 5초간 상대를 찾고 VS 화면이 표시됩니다. 상대의 편성이 공개됩니다.</li>
     <li><b>전투 단계</b>: 매칭된 상대와 1:1 자동 전투가 진행됩니다(보드가 좌우 반전되어 상대 학생이 맞은편에 섭니다). 총을 쏘고, 마나가 차면 스킬을 사용합니다.</li>
+    ${PC_MODE ? '<li><b>피버타임</b>은 전투 시간이 20초를 넘으면 시작됩니다. 양쪽의 기본 공격과 스킬 피해는 1.5배, 회복과 배리어는 0.5배가 됩니다.</li>' : ''}
     <li>같은 학생 <b>3명 = ★ 합성</b> (최대 ★3). 크레딧 10당 이자 +1 (최대 5).</li></ul>
     <h3>역할</h3><ul><li><b>탱커</b>: 샷건(사거리 1칸)·기관단총 등 전열. 높은 체력/방어로 피해를 받아냅니다.</li><li><b>딜러</b>: 돌격소총·기관총·저격총으로 화력 담당.</li><li><b>서포터</b>: 회복, 배리어, 버프. 뒷줄에 배치하세요.</li></ul>
     <h3>장비 · 시너지</h3><p>보관함의 장비를 학생에게 드래그하세요. 기본 장비 2개는 자동 조합됩니다(조합표 <b>R</b>). 학원·역할 시너지는 서로 다른 학생 수로 단계가 오릅니다(<b>S</b>로 패널 접기).</p>
-    <h3>단축키</h3><div class="keys"><span><kbd>Space</kbd>준비 완료/확인</span><span><kbd>D</kbd>리롤</span><span><kbd>F</kbd>경험치</span><span><kbd>L</kbd>상점 잠금</span><span><kbd>1-5</kbd>상점 구매</span><span><kbd>E</kbd>선택 판매</span><span><kbd>A</kbd>자동 배치</span><span><kbd>Q</kbd>배속</span><span><kbd>P</kbd>일시정지</span><span><kbd>S</kbd>시너지 토글</span><span><kbd>R</kbd>조합표</span><span><kbd>H</kbd>도움말</span><span><kbd>M</kbd>음소거</span><span><kbd>Esc</kbd>닫기</span></div>
+    <h3>단축키</h3><div class="keys"><span><kbd>Space</kbd>준비 완료/확인</span><span><kbd>D</kbd>리롤</span><span><kbd>F</kbd>경험치</span><span><kbd>L</kbd>상점 잠금</span><span><kbd>1-5</kbd>상점 구매</span><span><kbd>E</kbd>선택 판매</span><span><kbd>A</kbd>자동 배치</span>${PC_MODE ? '' : '<span><kbd>Q</kbd>배속</span>'}<span><kbd>P</kbd>일시정지</span><span><kbd>S</kbd>시너지 토글</span><span><kbd>R</kbd>조합표</span><span><kbd>H</kbd>도움말</span><span><kbd>M</kbd>음소거</span><span><kbd>Esc</kbd>닫기</span></div>
     <p class="hint" style="margin-top:8px;color:var(--ink2);font-size:12px">학생·장비·적 위에 마우스를 올리면 스킬과 능력치가 툴팁으로 표시됩니다.</p>`);
 }
 
@@ -700,7 +702,12 @@ export function initUI(renderer, hooks) {
   $('#btnHelp').onclick = openHelp;
   $('#btnMute').onclick = toggleMute;
   $('#btnOpt').onclick = openOptions;
-  $('#btnSpeed').onclick = () => hooks.cycleSpeed();
+  const speedButton = $('#btnSpeed');
+  if (PC_MODE) speedButton.remove();
+  else {
+    speedButton.classList.remove('hidden');
+    speedButton.onclick = hooks.cycleSpeed;
+  }
   $('#btnPause').onclick = () => hooks.togglePause();
   $('#btnStart').onclick = () => hooks.primary();
   stage.addEventListener('click', (e) => { if (e.target.closest('#btnSell')) { sellSelected(); hideTip(); } });

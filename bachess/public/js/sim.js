@@ -1,7 +1,7 @@
 // 순수 전투 시뮬레이션 (DOM 의존 없음)
 import {
   CW, CH, BOARD_W, BOARD_H, WEAPONS, ROLES, SKILL_MULT, STAR_MULT, ITEMS, SYNERGIES, SYNERGY_ORDER,
-  baseStats, ENEMY_TYPES, waveFor, SIDE_ROWS, COLS,
+  baseStats, ENEMY_TYPES, waveFor, SIDE_ROWS, COLS, PC_MODE,
 } from './data.js';
 
 const rand = Math.random;
@@ -99,7 +99,7 @@ export function buildTeamBattlers(placed, team) {
 // 화면 없이 전투를 끝까지 계산 (봇 vs 봇)
 export function simulateMatch(placedA, placedB) {
   const b = new Battle([...buildTeamBattlers(placedA, 0), ...buildTeamBattlers(placedB, 1)]);
-  for (let i = 0; i < 4000 && !b.over; i++) { b.advance(0.1, 1); b.events.length = 0; }
+  for (let i = 0; i < 4000 && !b.over; i++) { b.advance(0.1); b.events.length = 0; }
   return { winner: b.winner, a: b.survivors ? b.survivors.player : 0, b: b.survivors ? b.survivors.enemy : 0 };
 }
 export function buildEnemyBattlers(round) {
@@ -121,7 +121,10 @@ export function buildEnemyBattlers(round) {
 
 // ---------- 전투 ----------
 export const HPK = +(globalThis.__HPK ?? 2.6), ATKK = +(globalThis.__ATKK ?? 1.5);
-const SUDDEN_AT = 38;
+const FEVER_AT = 20;
+const FEVER_DAMAGE = 1.5;
+const FEVER_SUPPORT = 0.5;
+const MOBILE_SUDDEN_AT = 38;
 const HARD_END = 75;
 
 export class Battle {
@@ -137,9 +140,10 @@ export class Battle {
   }
   emit(type, data) { data.type = type; this.events.push(data); }
   alive(team) { return this.units.filter((u) => u.alive && u.team === team); }
+  // 60Hz 스텝 누적 오차로 20초가 되기 전에 피버타임이 시작되지 않도록 한다.
+  get fever() { return PC_MODE && Math.round(this.time * 1000) > FEVER_AT * 1000; }
 
-  // 실시간 dt와 배속으로 진행
-  advance(realDt, speed) {
+  advance(realDt, speed = 1) {
     if (this.over) return;
     this.acc += Math.min(realDt, 0.1) * speed;
     const h = 1 / 60;
@@ -155,8 +159,12 @@ export class Battle {
   effAtk(u) { let b = 0; for (const f of u.buffs) b += f.atkp || 0; return u.atk * (1 + b); }
 
   step(dt) {
+    const wasFever = this.fever;
     this.time += dt;
     const us = this.units;
+    if (!wasFever && this.fever) {
+      for (const u of us) u.shield *= FEVER_SUPPORT;
+    }
     for (const u of us) {
       if (!u.alive) { u.deadT += dt; continue; }
       // 타이머
@@ -166,8 +174,8 @@ export class Battle {
       if (u.tauntT > 0) u.tauntT -= dt;
       if (u.shieldT > 0) { u.shieldT -= dt; if (u.shieldT <= 0) u.shield = 0; }
       if (u.buffs.length) { for (const f of u.buffs) f.t -= dt; u.buffs = u.buffs.filter((f) => f.t > 0); }
-      if (u.regen) u.hp = Math.min(u.maxHp, u.hp + u.maxHp * u.regen * dt);
-      if (this.time > SUDDEN_AT) this.hurtRaw(u, u.maxHp * 0.05 * dt);
+      if (u.regen) this.heal(u, u.maxHp * u.regen * dt);
+      if (!PC_MODE && this.time > MOBILE_SUDDEN_AT) this.hurtRaw(u, u.maxHp * 0.05 * dt);
       if (!u.alive) continue;
       u.atkCd -= dt;
       if (u.castT > 0) { u.castT -= dt; u.moving = false; }
@@ -314,6 +322,7 @@ export class Battle {
     if (!tgt.alive) return;
     const pen = src ? src.pen : 0;
     let dmg = amount * (1 - clamp(tgt.defense - pen, 0, 0.8));
+    if (this.fever) dmg *= FEVER_DAMAGE;
     const hx = o.x ?? tgt.x, hy = o.y ?? (tgt.y - 10);
     let shielded = false;
     if (tgt.shield > 0) {
@@ -324,7 +333,7 @@ export class Battle {
     }
     if (dmg > 0) {
       tgt.hp -= dmg; tgt.hitFlash = 1;
-      if (src) { src.damageDealt += dmg; if (src.steal) src.hp = Math.min(src.maxHp, src.hp + dmg * src.steal); }
+      if (src) { src.damageDealt += dmg; if (src.steal) this.heal(src, dmg * src.steal); }
     }
     if (tgt.skill.type !== 'none') tgt.mana = Math.min(tgt.manaMax, tgt.mana + 4 * tgt.hitMana);
     this.emit('hit', { u: tgt, x: hx, y: hy, dmg, crit: !!o.crit, shielded, skill: !!o.skill, ang: o.ang ?? 0 });
@@ -409,9 +418,8 @@ export class Battle {
         const list = sk.count ? allies.slice(0, sk.count) : allies;
         for (const a of list) {
           const amt = sk.pct ? a.maxHp * sk.pct * p : (sk.amt + atk * sk.atkMult) * p;
-          const real = Math.min(a.maxHp - a.hp, amt);
-          a.hp += real;
-          this.emit('heal', { u: a, amt: Math.round(amt), from: u });
+          const scaled = this.heal(a, amt);
+          this.emit('heal', { u: a, amt: Math.round(scaled), from: u });
           if (sk.shield) this.addShield(a, a.maxHp * sk.shield * p, 5);
         }
         break;
@@ -430,7 +438,14 @@ export class Battle {
     }
   }
 
+  heal(u, amt) {
+    const scaled = this.fever ? amt * FEVER_SUPPORT : amt;
+    u.hp = Math.min(u.maxHp, u.hp + scaled);
+    return scaled;
+  }
+
   addShield(u, amt, dur) {
+    if (this.fever) amt *= FEVER_SUPPORT;
     u.shield = (u.shield > 0 ? Math.max(u.shield, amt) : amt);
     u.shieldT = Math.max(u.shieldT, dur);
     this.emit('shieldOn', { u });

@@ -3,6 +3,7 @@ import { BoardRenderer } from './fx.js';
 import * as S from './state.js';
 import * as U from './ui.js';
 import { initAudio, startMusic, setMusicMode, sfx } from './audio.js';
+import { PC_MODE } from './data.js';
 
 const $ = (s) => document.querySelector(s);
 const G = S.G;
@@ -107,12 +108,13 @@ function frame(now) {
   }
   if (battle) {
     if (!UI.paused) {
-      battle.advance(dt, UI.speed);
+      const speed = PC_MODE ? 1 : UI.speed;
+      battle.advance(dt, speed);
       const evs = battle.events; battle.events = [];
       for (const ev of evs) renderer.handle(ev);
-      fxDt = dt * UI.speed;
+      fxDt = dt * speed;
       U.updateHud(battle);
-      if (G.mode === 'pvp') { dueAcc += dt * UI.speed; if (dueAcc > 0.3) { dueAcc = 0; S.applyDue(battle.time); } }
+      if (G.mode === 'pvp') { dueAcc += fxDt; if (dueAcc > 0.3) { dueAcc = 0; S.applyDue(battle.time); } }
       if (battle.over && !endTimer) endTimer = 1;
     } else fxDt = 0;
     if (endTimer) { endTimer += dt; if (endTimer > 1.2) { endTimer = 0; endBattle(); } }
@@ -149,7 +151,7 @@ window.addEventListener('keydown', (e) => {
     case 'm': U.toggleMute(); break;
     case 'a': if (G.phase === 'prep') S.autoArrange(); break;
     case 'e': if (S.canShop()) U.sellSelected(); break;
-    case 'q': cycleSpeed(); break;
+    case 'q': if (!PC_MODE) cycleSpeed(); break;
     case 'p': togglePause(); break;
     case '1': case '2': case '3': case '4': case '5':
       if (S.canShop()) { S.buy(+lk - 1); U.renderAll(); }

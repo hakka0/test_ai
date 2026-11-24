@@ -122,6 +122,9 @@ kbd { font: 700 10px/1 'Noto Sans KR', sans-serif; background: rgba(20, 40, 80, 
 #hud .ally { background: rgba(44,141,240,.9); }
 #hud .foe { background: rgba(226,80,92,.92); }
 #hud #hudT { background: rgba(20,40,80,.8); color: #fff; padding: 2px 12px; border-radius: 12px; font-size: 13px; }
+@media (hover: hover) and (pointer: fine) {
+  #hudFever { padding: 2px 10px; border-radius: 12px; background: #9e391b; color: #fff5dc; }
+}
 #sellHint { position: absolute; inset: 0; display: none; align-items: flex-end; justify-content: center; pointer-events: none; }
 #banner { position: absolute; left: 0; right: 0; top: 150px; height: 130px; display: none; align-items: center; justify-content: center; pointer-events: none; }
 #banner.show { display: flex; animation: bannerIn .5s cubic-bezier(.2,1.2,.4,1); }
