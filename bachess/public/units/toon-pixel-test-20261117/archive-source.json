@@ -1,0 +1,396 @@
+{
+  "archive": "toon-pixel-test-20261117.zip",
+  "archiveSHA256": "cb75a0f404eda08777900facaccc6d232832190843eb76071c08985234e6816a",
+  "appliedAt": "2026-11-23",
+  "revision": "zip-20261117-cb75a0f404ed",
+  "characters": 20,
+  "minions": 2,
+  "sourceImagesVerified": 42,
+  "frameSize": 256,
+  "sourceFrameSize": 512,
+  "contentSize": 252,
+  "padding": 2,
+  "allExistingPixelsMatched": true,
+  "files": [
+    {
+      "file": "aris.png",
+      "sha256": "e9a0ee8013d830e25eab0e2e6e041b2b1297659d2836dff48de2917e7eaed8d3",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/aris.png",
+      "sourceSHA256": "5df9f92ecb8d6eb6668e0ee66862bec5c57c0d588be3feba245c0a312c227241",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/aris.png",
+      "sha256": "8d6156c284dd65e34a57443b84a871e497466edba3aaf3b6f8f56a4c9d4e4eca",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/aris.png",
+      "sourceSHA256": "5df9f92ecb8d6eb6668e0ee66862bec5c57c0d588be3feba245c0a312c227241",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "aru.png",
+      "sha256": "860b32546ae4cc70f638d8f0f3b4ee3f2f1ec00100017fb898ace9be314848c9",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/aru.png",
+      "sourceSHA256": "566b5d0985dd796bcf05ebb462d09152c10b6ddf1eda94912e6dfe828fabc298",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/aru.png",
+      "sha256": "4fd8787d438741f36f8ae9d60817b40649585a620421aec45a523e975c8771cb",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/aru.png",
+      "sourceSHA256": "566b5d0985dd796bcf05ebb462d09152c10b6ddf1eda94912e6dfe828fabc298",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "azusa.png",
+      "sha256": "78d30f4dc443c8e3e63c92a243eca5f9f545c26284ed810d31a8cf586fc7fe3a",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/azusa.png",
+      "sourceSHA256": "2dfc5197c4f7b2f0c0eea55c62da2c231af436c3d3a14c8a0e3e4682be6b16ef",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/azusa.png",
+      "sha256": "cb87de1ffbda66f60bb471a6d0b1ff59fd417e96a6ad564e8481f037c9cc0195",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/azusa.png",
+      "sourceSHA256": "2dfc5197c4f7b2f0c0eea55c62da2c231af436c3d3a14c8a0e3e4682be6b16ef",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "haruna.png",
+      "sha256": "b4089658433be1407511906705e36e13577d403c93d0a8d63c4b4ce2fa7e7c2d",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/haruna.png",
+      "sourceSHA256": "6278913c638be84f55d1d8f7410cde5f0d2ed8b5307c616af7bb03b1c1e41acc",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/haruna.png",
+      "sha256": "4af200c67e8ecf13b361d28d205f02bc3b3978eb6aea1bbd17acc9c21b953817",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/haruna.png",
+      "sourceSHA256": "6278913c638be84f55d1d8f7410cde5f0d2ed8b5307c616af7bb03b1c1e41acc",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "hifumi.png",
+      "sha256": "bc590eaf130ccec773f8ff9d0aecd9af18b387e63e777361e5466be7dea1abc7",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/hifumi.png",
+      "sourceSHA256": "34e86652cb92ba3ab6885ed26e84059b08e52a549103d6fd3e8d416691e0928a",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/hifumi.png",
+      "sha256": "a4c7dadec1d59c2c812222836740b506e84055ca77fbff78b05989bcb1326722",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/hifumi.png",
+      "sourceSHA256": "34e86652cb92ba3ab6885ed26e84059b08e52a549103d6fd3e8d416691e0928a",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "hina.png",
+      "sha256": "f08716c6b069710444c024263c2a2eca4176a17fbe1c58ac996e6ef42ee8c6d0",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/hina.png",
+      "sourceSHA256": "fd327df0a10d44dc6f466e13b04db9bb52fc81bbf0545d7b48f251f24e899fd1",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/hina.png",
+      "sha256": "398cc562df2284469c26af2b83a6597f9785ba5717cbe0a527af73b5c477e8e5",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/hina.png",
+      "sourceSHA256": "fd327df0a10d44dc6f466e13b04db9bb52fc81bbf0545d7b48f251f24e899fd1",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "hoshino.png",
+      "sha256": "1b7dfbee6babdde02b736987b6943762cd7b9b5c3d857c8f692489e6bb749660",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/hoshino.png",
+      "sourceSHA256": "0b4ce977925d4b835ef3b9f51861129ec70e8b042fe0fe74df3331c5596e8c1d",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/hoshino.png",
+      "sha256": "6b087c3ba322a121cbef3cddd66c916ad64bd7084657391bc1ae57c09db16f76",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/hoshino.png",
+      "sourceSHA256": "0b4ce977925d4b835ef3b9f51861129ec70e8b042fe0fe74df3331c5596e8c1d",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "iori.png",
+      "sha256": "bc2b3ec80583403a74524cc9f3e22651d9e3ceaf1599dba51c116de938df8b85",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/iori.png",
+      "sourceSHA256": "f9327eb25726fc66def0de9382f0f92dd5cc3c9b59f0b1db04ad473e5ca77d37",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/iori.png",
+      "sha256": "74ab226783e38a22d9046ab88688b9ac611149305630a97c2a0090b0196d0b21",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/iori.png",
+      "sourceSHA256": "f9327eb25726fc66def0de9382f0f92dd5cc3c9b59f0b1db04ad473e5ca77d37",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "izuna.png",
+      "sha256": "10b40ef50b7ae29144329459aadcb2f4893e8a22b90eba023a4c919e6f9ace83",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/izuna.png",
+      "sourceSHA256": "bdd1492637c61643e3bff0bd665c0f6bae072e9c632edd82e1c387c367ee0cc1",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/izuna.png",
+      "sha256": "988f5137b1487ae4a0f36cbcb7a3d4322fa00e5ad247fb9aa274ef4da3f913bb",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/izuna.png",
+      "sourceSHA256": "bdd1492637c61643e3bff0bd665c0f6bae072e9c632edd82e1c387c367ee0cc1",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "koharu.png",
+      "sha256": "8ebb949a6c7b5c96206507fb368bcf08b63fc14da22061c405f1afb29d3edf27",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/koharu.png",
+      "sourceSHA256": "85469468997327b6fd2a73713673f36fe509483b83107f5a1b86d55bed375478",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/koharu.png",
+      "sha256": "8579e89e76bffa20ee62d9be9435767b0a4e5d859aa2260d77052c9da9eeca4a",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/koharu.png",
+      "sourceSHA256": "85469468997327b6fd2a73713673f36fe509483b83107f5a1b86d55bed375478",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "maki.png",
+      "sha256": "34f8028519d674862e0a6d00fd63d28ab4124247e1fad52f27c6dd5aa47baa48",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/maki.png",
+      "sourceSHA256": "b4ed8a04befcc0b6437879248e2f9e441e8eec56e2bd69beb9b919e1de78bbed",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/maki.png",
+      "sha256": "95ab49c96e6bf08bc5714961a58532093e4e46b84cacddd0fa9d0b018c75d69d",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/maki.png",
+      "sourceSHA256": "b4ed8a04befcc0b6437879248e2f9e441e8eec56e2bd69beb9b919e1de78bbed",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "midori.png",
+      "sha256": "53d7e9e111083ad70025326a56e243163b6f13f26b9d97de2ba175d5acb0045c",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/midori.png",
+      "sourceSHA256": "3a91b943db71f5b2303ed086c64903b0a237fb14ea4c7e70c5f05ada73684347",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/midori.png",
+      "sha256": "1e12fb5f618044926eb8d177f57b6e5b7b0c971c6c5c6682b947fc890ae8057c",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/midori.png",
+      "sourceSHA256": "3a91b943db71f5b2303ed086c64903b0a237fb14ea4c7e70c5f05ada73684347",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "mika.png",
+      "sha256": "b42240f5d5a44231e8b8c92f2ba413d5adf0cee5aeaf8c4fd661d3f9179de832",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/mika.png",
+      "sourceSHA256": "270b53cafcf5e9edfe5c0ef2e5f8fb824e5483a4f83a2d818bf456e2900670f8",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/mika.png",
+      "sha256": "25f9d86b7876c1d9c2ba0a0b7097d6d1841cf87c3cb6e93538acbeeeca7e9d9c",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/mika.png",
+      "sourceSHA256": "270b53cafcf5e9edfe5c0ef2e5f8fb824e5483a4f83a2d818bf456e2900670f8",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "natsu.png",
+      "sha256": "1cfec4a17b342bed886571303b1277de7d26385315acc3aebac22d6f6d823c2c",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/natsu.png",
+      "sourceSHA256": "fec3507ceb3b2c57310b9cf538eb155f4fa25b7be7c2b0b4b3b3e0d389d4c849",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/natsu.png",
+      "sha256": "2dedef17714a26a9b95f9cce55bc9b612ec596ee8d81b3db483438c7b7bee8e0",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/natsu.png",
+      "sourceSHA256": "fec3507ceb3b2c57310b9cf538eb155f4fa25b7be7c2b0b4b3b3e0d389d4c849",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "neru.png",
+      "sha256": "e958adee0d41b9ffea39452c394fe7d18eb10e9c9812cb22286ccd1b20360562",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/neru.png",
+      "sourceSHA256": "9b9a480a34e22a1953fb5df6a0b87cf5dfe8f22f7c19146a7c8644c462b7ad78",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/neru.png",
+      "sha256": "85ac94428f1e5b2b40cbde7e326a04c8c9941bfa993feabdf0f954a50058c84d",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/neru.png",
+      "sourceSHA256": "9b9a480a34e22a1953fb5df6a0b87cf5dfe8f22f7c19146a7c8644c462b7ad78",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "noa.png",
+      "sha256": "247d549e7bce3119086fef93226d7732033b7d1aa4449bfb8b83aa21466a6ac4",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/noa.png",
+      "sourceSHA256": "9ee4651832c4a83826dc1c2b305498c731d39b122ca576c89f1ea65c1675da35",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/noa.png",
+      "sha256": "83307580fd9724c2e78962abc48c2fececcb65cc02acb95a025d561353d4b9e7",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/noa.png",
+      "sourceSHA256": "9ee4651832c4a83826dc1c2b305498c731d39b122ca576c89f1ea65c1675da35",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "shiroko.png",
+      "sha256": "c21dba8c5fd8188a22ae445222ee9981f44eea82251db0d37b95758df36a304c",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/shiroko.png",
+      "sourceSHA256": "f6dfca0afc51a8901ac1654b83eeea0088e227495ecb8e766a3ea991cd108cc5",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/shiroko.png",
+      "sha256": "3faefbecbd5efe4419876bcb2d85bfee48d1c09dedae97a1f03a360e1228156b",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/shiroko.png",
+      "sourceSHA256": "f6dfca0afc51a8901ac1654b83eeea0088e227495ecb8e766a3ea991cd108cc5",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "wakamo.png",
+      "sha256": "76e3608bb10351d41c049230c069a8342a35f4b33473e1eb8fffde2c95ccb304",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/wakamo.png",
+      "sourceSHA256": "9f1392121348538b8c1095354d34b2f06fa23fadf2b41e52a5d87f8955fb4b49",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/wakamo.png",
+      "sha256": "aa9469baa89b13ebb63ecac03c520531883a62371b30ac07b71fa7b63e9aa6c2",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/wakamo.png",
+      "sourceSHA256": "9f1392121348538b8c1095354d34b2f06fa23fadf2b41e52a5d87f8955fb4b49",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "yuuka.png",
+      "sha256": "29137dd0b1cabb5a516bfdaf60365b255c25f83ee6b6782ae2639f35b60920a9",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/yuuka.png",
+      "sourceSHA256": "ab12c15dc7a0dc2c0c48a1cd804800b3241be90952c1cde6bc2990ab9658db15",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/yuuka.png",
+      "sha256": "76a4d485a01346e5681cbf57d88b234a896bf556146d6bd547c1d200c488b904",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/yuuka.png",
+      "sourceSHA256": "ab12c15dc7a0dc2c0c48a1cd804800b3241be90952c1cde6bc2990ab9658db15",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "yuzu.png",
+      "sha256": "16b5f8e57e3741ed0e510a124649093aa7d02dea335a8efcca1e1da2df4b8c81",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/yuzu.png",
+      "sourceSHA256": "881c460c9ace9854036f9e315401ef93f861500a858d8007c96761feb1b0e027",
+      "width": 768,
+      "height": 512,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "icons/yuzu.png",
+      "sha256": "ec671837c827391869b60ad13007b8ebba66e8b213b0d1e42d7bff114ac90f86",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/blue-archive/yuzu.png",
+      "sourceSHA256": "881c460c9ace9854036f9e315401ef93f861500a858d8007c96761feb1b0e027",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "minion-sentry.png",
+      "sha256": "9a14037623f942e7d77bea1910d9890c0006ff4733ca42de006a010e4b16ccbc",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/minions/minion-sentry.png",
+      "sourceSHA256": "2321a281fdbfc568421c8b2ec6cca23a03dbc4435c78a69d6b905f7d9a70b84b",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    },
+    {
+      "file": "minion-drone.png",
+      "sha256": "0f19e02fdc00a12e53971a4fadae218a9ee8b23561a3cf80a71183ada4a182c6",
+      "source": "toon-pixel-test-20261117/units/toon-pixel-test/minions/minion-drone.png",
+      "sourceSHA256": "ddf2cdac35a4b58a9bf01430497c79ae1777b5c2be918c3060247eb2998f67ce",
+      "width": 256,
+      "height": 256,
+      "pixelsMatchPrevious": true
+    }
+  ],
+  "game": "bachess",
+  "pcDisplaySize": 128
+}

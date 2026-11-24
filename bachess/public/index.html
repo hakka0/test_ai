@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>샬레 오토 배틀 — 블루 아카이브 팬메이드 오토체스</title>
+<meta name="description" content="블루 아카이브 UI 감성의 팬메이드 웹 오토체스. 총기 기반 자동 전투, 탱커/딜러/서포터 구성, 장비 조합과 시너지.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%23ffd53d' stroke-width='4'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%232c8df0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="viewport">
+<div id="stage">
+  <div id="bg"><i class="halo h1"></i><i class="halo h2"></i></div>
+
+  <!-- 상단 바 -->
+  <header id="topbar">
+    <div class="lvbanner" data-tip="level">
+      <div class="lvnum"><small>Lv.</small><b id="lvnum">3</b></div>
+      <div class="lvinfo"><span class="nm">샬레 지휘관</span><div class="xpbar"><i id="xpfill"></i></div><em id="xptxt">0/2</em></div>
+    </div>
+    <div class="roundtag" data-tip="round"><small>ROUND</small><b id="rnum">1</b><span>/ <span id="rmax">15</span></span><em id="phase">준비 단계</em></div>
+    <div class="pills">
+      <div class="pill hp" data-tip="hp"><svg viewBox="0 0 24 24" class="ico"><path d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.700-8 11-8 11z" fill="#3fcf72"/></svg><b id="hpnum">20</b><span id="hpmax">/30</span></div>
+      <div class="pill gold" data-tip="gold"><svg viewBox="0 0 24 24" class="ico"><rect x="2" y="5" width="20" height="14" rx="3" fill="#ffd53d" stroke="#c98d00" stroke-width="1.6"/><path d="M6 9h6M6 13h4" stroke="#c98d00" stroke-width="1.8" stroke-linecap="round"/></svg><b id="goldnum">10</b><small id="intnum"></small></div>
+      <div class="pill gem" data-tip="kills"><svg viewBox="0 0 24 24" class="ico"><path d="M12 2 20 9l-8 13L4 9z" fill="#4dc3ff" stroke="#1d7fc4" stroke-width="1.6"/><path d="M4 9h16M12 2 9 9l3 13 3-13z" stroke="#fff" stroke-opacity=".6" fill="none"/></svg><b id="killnum">0</b></div>
+    </div>
+    <div class="tools">
+      <button class="tbtn" id="btnSyn" data-tip="btn-syn" aria-label="시너지"><svg viewBox="0 0 24 24"><path d="M12 3 4 7v5c0 4.500 3.300 7.800 8 9 4.700-1.200 8-4.500 8-9V7z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 12l3 3 5-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+      <button class="tbtn" id="btnRecipe" data-tip="btn-recipe" aria-label="장비 조합표"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="13" y="4" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="4" y="13" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.500 13v7M13 16.500h7" stroke="currentColor" stroke-width="2"/></svg></button>
+      <button class="tbtn" id="btnHelp" data-tip="btn-help" aria-label="도움말"><b>?</b></button>
+      <button class="tbtn" id="btnMute" data-tip="btn-mute" aria-label="소리"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z" fill="currentColor"/><path id="muteWave" d="M16 9a4 4 0 0 1 0 6M18.500 6.500a8 8 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <button class="tbtn" id="btnOpt" data-tip="btn-opt" aria-label="설정"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.200" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    </div>
+  </header>
+
+  <!-- 시너지 패널 -->
+  <aside id="lbPanel" class="panel">
+    <div class="ph"><span>실시간 순위</span><em id="lbInfo"></em></div>
+    <ol id="lbList"></ol>
+  </aside>
+  <aside id="synPanel" class="panel">
+    <div class="ph"><span>시너지</span><em class="teamcount" id="teamCount"></em><kbd>S</kbd></div>
+    <ul id="synList"></ul>
+  </aside>
+
+  <!-- 보드 -->
+  <main id="boardWrap">
+    <canvas id="board"></canvas>
+    <div id="hud"><span class="side ally">아군 <b id="hudA">0</b></span><span id="hudT">0:00</span><span class="side foe">적 <b id="hudE">0</b></span><span id="hudFever" class="hidden" role="status">피버타임</span></div>
+    <div id="sellHint">여기로 드래그하면 판매</div>
+    <div id="matchOv" class="hidden"></div>
+    <div id="banner"></div>
+    <div id="resultPanel" class="hidden"></div>
+  </main>
+
+  <!-- 우측 패널 -->
+  <aside id="rightPanel">
+    <section class="panel enemybox">
+      <div class="ph"><span>다음 전투</span></div>
+      <div id="enemyList"></div>
+    </section>
+    <section class="panel invbox">
+      <div class="ph"><span>장비 보관함</span><em id="invcount">0/10</em></div>
+      <div id="invGrid"></div>
+    </section>
+    <section class="panel unitbox" id="unitBox"></section>
+  </aside>
+
+  <!-- 하단 바 -->
+  <div id="bottombar"></div>
+  <section id="ctrl">
+    <button class="btn blue big" id="btnReroll" data-tip="btn-reroll"><span class="lbl">리롤</span><span class="cost"><i class="coin"></i>2</span><kbd>D</kbd></button>
+    <button class="btn blue big" id="btnXp" data-tip="btn-xp"><span class="lbl">경험치 +4</span><span class="cost"><i class="coin"></i>4</span><kbd>F</kbd></button>
+    <button class="btn white big" id="btnLock" data-tip="btn-lock"><span class="lbl" id="lockLbl">상점 잠금</span><kbd>L</kbd></button>
+  </section>
+  <section id="benchRow"></section>
+  <section id="shopRow"></section>
+  <section id="cta">
+    <button class="btn yellow huge" id="btnStart" data-tip="btn-start"><span id="startLbl">전투 시작</span><kbd>Space</kbd></button>
+    <div class="subctl">
+      <button class="btn white" id="btnAuto" data-tip="btn-auto"><span>자동 배치</span><kbd>A</kbd></button>
+      <button class="btn white hidden" id="btnSpeed" data-tip="btn-speed"><span id="speedLbl">배속 x1</span><kbd>Q</kbd></button>
+      <button class="btn white" id="btnPause" data-tip="btn-pause"><span id="pauseLbl">일시정지</span><kbd>P</kbd></button>
+    </div>
+  </section>
+
+  <div id="tip" class="hidden"></div>
+  <div id="toasts"></div>
+  <div id="ghost" class="hidden"></div>
+
+  <!-- 모달 -->
+  <div id="modal" class="modal hidden"><div class="win" id="winBody"></div></div>
+
+  <!-- 타이틀 -->
+  <div id="title" class="screen">
+    <div class="tbg"><i class="halo big"></i><i class="stripe s1"></i><i class="stripe s2"></i></div>
+    <div class="tcontent">
+      <div class="tmark"><svg viewBox="0 0 120 120" width="120" height="120"><ellipse cx="60" cy="60" rx="50" ry="20" fill="none" stroke="#ffd53d" stroke-width="8" transform="rotate(-18 60 60)"/><path d="M60 22 78 60 60 98 42 60z" fill="#2c8df0" stroke="#fff" stroke-width="4"/></svg></div>
+      <h1><span class="sm">BLUE ARCHIVE  FAN-MADE</span><b>샬레 오토 배틀</b><span class="sub">8인 PVP 오토 배틀 · 실시간 순위 · 시너지 편성</span></h1>
+      <div class="tbtns">
+        <button class="btn yellow huge" id="btnPlay"><span>PVP 대전 시작</span></button>
+        <button class="btn white big" id="btnHow"><span>게임 방법</span></button>
+        <button class="btn white big off" id="btnPve" disabled title="준비 중"><span>PVE <small>준비 중</small></span></button>
+      </div>
+      <div class="best" id="bestRec"></div>
+      <p class="disc">비공식 팬메이드 작품입니다. 'Blue Archive'는 NEXON Games / Yostar의 상표이며, 이 프로젝트는 원작의 UI 분위기를 참고한 비영리 팬 창작물입니다. 캐릭터 그래픽은 기존 버전의 이미지와 코드로 그린 일러스트를 사용합니다.</p>
+    </div>
+  </div>
+  <!-- 종료 화면 -->
+  <div id="endScreen" class="screen hidden"></div>
+  <section id="assetLoading" class="screen hidden" aria-labelledby="assetTitle" tabindex="-1">
+    <div class="asset-load-panel">
+      <h2 id="assetTitle">전장 이미지 준비 중</h2>
+      <p id="assetMessage" role="status"></p>
+      <progress id="assetProgress" aria-label="준비된 이미지"></progress>
+      <span id="assetCount"></span>
+      <button class="btn yellow hidden" id="btnAssetRetry" type="button">다시 시도</button>
+    </div>
+  </section>
+</div>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
