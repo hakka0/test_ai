@@ -3,7 +3,7 @@ import {
   UNITS, UNIT_BY_KEY, SCHOOLS, ROLES, WEAPONS, ITEMS, COMP_KEYS, COMPONENTS, combine, COST_COLORS, SYNERGIES, SYNERGY_ORDER,
   skillDesc, MAX_ROUND, describeWave, ENEMY_TYPES, BENCH_SIZE, COLS, ROWS, SIDE_ROWS, CW, CH, BOARD_W, BOARD_H, XP_NEED, MAX_LEVEL, PC_MODE, SHOP_ODDS,
 } from './data.js';
-import { computeUnitStats } from './sim.js';
+import { computeUnitStats, buildTeamBattlers, FEVER_AT } from './sim.js';
 import * as S from './state.js';
 import { portraitURL, itemURL, getEnemySprite, roleIconSVG } from './sprites.js';
 import { unproject } from './battlefield-view.js';
@@ -12,11 +12,14 @@ import { MATCH_TIME } from './bots.js';
 
 const $ = (s) => document.querySelector(s);
 const G = S.G;
-export const UI = { renderer: null, sel: null, speed: 1, paused: false, quality: 'high', volS: 0.8, volM: 0.5, scale: 1, synCollapsed: false, hooks: {} };
+export const UI = { renderer: null, sel: null, scoutId: null, speed: 1, paused: false, quality: 'high', volS: 0.8, volM: 0.5, scale: 1, synCollapsed: false, hooks: {} };
 
 const STAGE_W = 1280, STAGE_H = 720, TIP_MARGIN = 6;
 let stage, tip, drag = null, hoverTipKey = null;
 let synergyPage = 0;
+const prevLbState = new Map();
+const lbFloats = new Map();
+let lastLbHtml = '';
 const SYNERGIES_PER_PAGE = 5;
 const stars = (n) => '★'.repeat(n);
 const pct = (v) => Math.round(v * 100) + '%';
@@ -207,10 +210,80 @@ function setSynergyHighlight(key) {
   }
 }
 
-function hideTip() {
+function clearShopSynergyPreview() {
+  if (!PC_MODE) return;
+  const panel = $('#synPanel');
+  if (!panel) return;
+  for (const el of panel.querySelectorAll('.syn-preview, .syn-tier-up, .syn-match')) {
+    el.classList.remove('syn-preview', 'syn-tier-up', 'syn-match');
+    delete el.dataset.previewBadge;
+  }
+  const box = $('#synPreview');
+  if (box) { box.classList.add('hidden'); box.innerHTML = ''; }
+}
+
+function setShopSynergyPreview(shopIdx) {
+  if (!PC_MODE) return;
+  clearShopSynergyPreview();
+  if (shopIdx == null) return;
+  const unitKey = G.shop[shopIdx];
+  if (!unitKey) return;
+  const def = UNIT_BY_KEY[unitKey];
+  if (!def) return;
+  const { counts } = S.synergyNow();
+  const alreadyOnBoard = S.placedUnits().some((p) => p.def.key === unitKey);
+  const traits = [def.school, def.role].filter(Boolean);
+  const parts = [];
+  for (const k of traits) {
+    const sy = SYNERGIES[k];
+    const el = $('#synPanel')?.querySelector(`[data-syn="${k}"]`);
+    if (alreadyOnBoard) {
+      el?.classList.add('syn-match');
+      continue;
+    }
+    const cur = counts[k];
+    const next = cur + 1;
+    const tierUp = sy.tiers.includes(next);
+    if (el) {
+      el.classList.add('syn-preview');
+      if (tierUp) el.classList.add('syn-tier-up');
+      el.dataset.previewBadge = tierUp ? '단계↑' : '+1';
+    }
+    parts.push(`<span class="sp-chip ${tierUp ? 'up' : ''}" style="--c:${sy.color}">${sy.name} ${cur}→${next}${tierUp ? ' ★' : ''}</span>`);
+  }
+  const box = $('#synPreview');
+  if (!box) return;
+  if (alreadyOnBoard) {
+    box.innerHTML = `<span class="sp-note">이미 출전 중 (합성용)</span>`;
+    box.classList.remove('hidden');
+  } else if (parts.length) {
+    box.innerHTML = `<span class="sp-lbl">배치 시</span>${parts.join('')}`;
+    box.classList.remove('hidden');
+  }
+}
+
+export function hideTip() {
   tip.classList.add('hidden');
   hoverTipKey = null;
   setSynergyHighlight(null);
+  clearShopSynergyPreview();
+}
+
+export function resetLbState() {
+  prevLbState.clear();
+  lbFloats.clear();
+  lastLbHtml = '';
+}
+
+export function setScout(id) {
+  if (!PC_MODE) return;
+  const next = (id != null && id !== 0 && G.mode === 'pvp' && G.phase === 'prep') ? id : null;
+  if (UI.scoutId === next) return;
+  UI.scoutId = next;
+  if (next != null) UI.sel = null;
+  renderLb();
+  renderRight();
+  refreshBoard();
 }
 
 // ---------- 렌더 ----------
@@ -220,12 +293,35 @@ export function renderAll() {
 }
 export function refreshBoard() {
   if (!UI.renderer) return;
+  const scoutBar = $('#scoutBar');
+  const boardWrap = $('#boardWrap');
   if (G.phase === 'prep') {
+    if (PC_MODE && UI.scoutId != null && G.mode === 'pvp') {
+      const p = G.players.find((x) => x.id === UI.scoutId);
+      if (p) {
+        const units = buildTeamBattlers(p.placed, 1);
+        for (const unit of units) unit.aim = Math.PI / 2;
+        UI.renderer.setUnits(units);
+        if (scoutBar) {
+          $('#scoutInfo').innerHTML = `정찰 중 · <b>${p.name}</b> <span>Lv.${p.level} · HP ${Math.max(0, p.hp)}/${p.maxHp}${p.alive ? '' : ' · 탈락'}</span>`;
+          scoutBar.classList.remove('hidden');
+        }
+        boardWrap?.classList.add('scouting');
+        UI.renderer.selectedUid = null;
+        return;
+      }
+      UI.scoutId = null;
+    }
+    scoutBar?.classList.add('hidden');
+    boardWrap?.classList.remove('scouting');
     const units = S.prepBattlers();
     if (PC_MODE) {
       for (const unit of units) unit.aim = Math.PI / 2;
     }
     UI.renderer.setUnits(units);
+  } else {
+    scoutBar?.classList.add('hidden');
+    boardWrap?.classList.remove('scouting');
   }
   UI.renderer.selectedUid = UI.sel;
 }
@@ -288,15 +384,74 @@ export function renderLb() {
   const ri = S.readyInfo();
   $('#lbInfo').textContent = G.phase === 'prep' ? `준비 ${ri.ready}/${ri.total}` : `생존 ${S.aliveCount()}/${G.players.length}`;
   const oppId = G.opp && (G.phase === 'matching' || G.phase === 'battle' || G.phase === 'result') && G.revealOpp !== false ? G.opp.id : -1;
-  el.innerHTML = list.map((p, i) => {
+
+  const now = performance.now();
+  const prevTop = new Map();
+  const prevScroll = el.scrollTop;
+  if (PC_MODE) {
+    for (const li of el.querySelectorAll('li[data-pid]')) {
+      prevTop.set(+li.dataset.pid, li.getBoundingClientRect().top);
+    }
+  }
+
+  const newlyHit = new Set();
+  if (PC_MODE) {
+    list.forEach((p, i) => {
+      const prev = prevLbState.get(p.id);
+      if (prev && p.hp < prev.hp) {
+        lbFloats.set(p.id, { delta: p.hp - prev.hp, until: now + 1800 });
+        newlyHit.add(p.id);
+      }
+      prevLbState.set(p.id, { hp: p.hp, rank: i });
+    });
+    for (const [id, fl] of lbFloats) {
+      if (fl.until <= now) lbFloats.delete(id);
+    }
+  }
+
+  const html = list.map((p, i) => {
     const pc = Math.max(0, p.hp) / p.maxHp;
-    const cls = [p.id === 0 ? 'me' : '', p.id === oppId ? 'opp' : '', p.alive ? '' : 'dead'].join(' ');
+    const isScout = PC_MODE && UI.scoutId === p.id && G.phase === 'prep';
+    const cls = [p.id === 0 ? 'me' : '', p.id === oppId ? 'opp' : '', p.alive ? '' : 'dead', isScout ? 'scout' : '', newlyHit.has(p.id) ? 'hit' : ''].filter(Boolean).join(' ');
     let st = '';
     if (!p.alive) st = '';
+    else if (isScout) st = '👁';
     else if (p.id === oppId) st = '⚔';
     else if (G.phase === 'prep' && S.isReady(p)) st = '✔';
-    return `<li class="${cls}" data-tip="pl|${p.id}"><span class="rk">${i + 1}</span><span class="nm">${p.id === 0 ? '나' : p.name}</span><span class="hpb"><i class="${pc <= 0.3 ? 'low' : pc <= 0.6 ? 'mid' : ''}" style="width:${pc * 100}%"></i></span><span class="hpn">${p.alive ? p.hp : '탈락'}</span><span class="st">${st}</span></li>`;
+    const fl = PC_MODE ? lbFloats.get(p.id) : null;
+    const deltaHTML = fl ? `<span class="hp-delta">${fl.delta}</span>` : '';
+    return `<li class="${cls}" data-pid="${p.id}" data-tip="pl|${p.id}"><span class="rk">${i + 1}</span><span class="nm">${p.id === 0 ? '나' : p.name}</span><span class="hpb"><i class="${pc <= 0.3 ? 'low' : pc <= 0.6 ? 'mid' : ''}" style="width:${pc * 100}%"></i></span><span class="hpn">${p.alive ? p.hp : '탈락'}</span><span class="st">${st}</span>${deltaHTML}</li>`;
   }).join('');
+  if (PC_MODE && html === lastLbHtml && !newlyHit.size) return;
+  lastLbHtml = html;
+  el.innerHTML = html;
+
+  if (PC_MODE) {
+    el.scrollTop = prevScroll;
+    if (prevTop.size) {
+      const reduceMotion = globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+      if (!reduceMotion) {
+        const moved = [];
+        for (const li of el.querySelectorAll('li[data-pid]')) {
+          const oldY = prevTop.get(+li.dataset.pid);
+          if (oldY === undefined) continue;
+          const dy = oldY - li.getBoundingClientRect().top;
+          if (Math.abs(dy) > 1) {
+            li.style.transition = 'none';
+            li.style.transform = `translateY(${dy / UI.scale}px)`;
+            moved.push(li);
+          }
+        }
+        if (moved.length) {
+          el.getBoundingClientRect();
+          for (const li of moved) {
+            li.style.transition = 'transform .35s cubic-bezier(.2,.8,.2,1)';
+            li.style.transform = '';
+          }
+        }
+      }
+    }
+  }
 }
 function playerTipHTML(id) {
   const p = G.players.find((x) => x.id === id);
@@ -309,35 +464,54 @@ function playerTipHTML(id) {
     h += `<h5>현재 편성</h5><div class="mini">` + p.placed.map((u) => `<img class="own" src="${portraitURL(u.def, 56)}" alt="">`).join('') + `</div>`;
     if (syn) h += `<div class="hint">${syn}</div>`;
   }
+  if (PC_MODE && id !== 0 && G.phase === 'prep') {
+    h += `<div class="hint">${UI.scoutId === id ? '클릭하면 내 전장으로 돌아갑니다.' : '클릭하면 전장을 정찰합니다.'}</div>`;
+  }
   return h;
 }
 function renderSyn() {
   if (PC_MODE && hoverTipKey?.startsWith('syn|')) hideTip();
+  clearShopSynergyPreview();
   const { counts, active } = S.synergyNow();
-  let order = SYNERGY_ORDER.slice().sort((a, b) => (active[b] >= 0) - (active[a] >= 0) || counts[b] - counts[a]);
+  const sorted = SYNERGY_ORDER.slice().sort((a, b) => (active[b] >= 0) - (active[a] >= 0) || counts[b] - counts[a]);
+  const n = S.boardCount();
+  $('#teamCount').innerHTML = `출전 <b class="${n >= G.level ? 'full' : ''}">${n}/${G.level}</b>`;
   if (PC_MODE) {
-    order = order.filter((key) => counts[key] > 0);
-    const pages = Math.max(1, Math.ceil(order.length / SYNERGIES_PER_PAGE));
-    synergyPage = Math.max(0, Math.min(synergyPage, pages - 1));
-    $('#synEmpty').classList.toggle('hidden', order.length !== 0);
-    $('#synPager').classList.toggle('hidden', pages === 1);
-    $('#synPageStatus').textContent = `${synergyPage + 1} / ${pages}`;
-    $('#synPrev').classList.toggle('hidden', synergyPage === 0);
-    $('#synNext').classList.toggle('hidden', synergyPage === pages - 1);
-    const start = synergyPage * SYNERGIES_PER_PAGE;
-    order = order.slice(start, start + SYNERGIES_PER_PAGE);
+    const present = sorted.filter((key) => counts[key] > 0);
+    const activeKeys = present.filter((key) => active[key] >= 0);
+    const inactiveKeys = present.filter((key) => active[key] < 0);
+    $('#synEmpty').classList.toggle('hidden', present.length !== 0);
+    $('#synPager').classList.add('hidden');
+    $('#synList').innerHTML = activeKeys.map((k) => {
+      const sy = SYNERGIES[k];
+      const next = sy.tiers.find((t) => counts[k] < t);
+      const near = Boolean(next && next - counts[k] === 1);
+      const pips = sy.tiers.map((t) => `<i class="${counts[k] >= t ? 'on' : ''}"></i>`).join('');
+      const icon = sy.kind === 'school' ? SCHOOLS[k].letter : roleIconSVG(k);
+      return `<li class="act${near ? ' near' : ''}" data-syn="${k}" data-tip="syn|${k}"><span class="sicon" data-n="${counts[k]}" style="--c:${sy.color}">${icon}</span><span class="snm">${sy.name}</span><span class="pips">${pips}</span><span class="cnt">${counts[k]}${next ? `<small style="opacity:.75;font-weight:700">/${next}</small>` : ''}</span>${near ? '<span class="syn-need">1명 더</span>' : ''}</li>`;
+    }).join('');
+    const inact = $('#synInactive');
+    if (inact) {
+      inact.classList.toggle('hidden', inactiveKeys.length === 0);
+      inact.innerHTML = inactiveKeys.map((k) => {
+        const sy = SYNERGIES[k];
+        const next = sy.tiers[0];
+        const near = next - counts[k] === 1;
+        const icon = sy.kind === 'school' ? SCHOOLS[k].letter : roleIconSVG(k);
+        return `<div class="syn-chip${near ? ' near' : ''}" data-syn="${k}" data-tip="syn|${k}"><span class="sicon" data-n="${counts[k]}" style="--c:${sy.color}">${icon}</span><span class="snm">${sy.name}</span><span class="cnt">${counts[k]}/${next}</span></div>`;
+      }).join('');
+    }
+    return;
   }
-  $('#synList').innerHTML = order.map((k) => {
+  $('#synList').innerHTML = sorted.map((k) => {
     const sy = SYNERGIES[k];
     const act = active[k] >= 0;
-    const dim = PC_MODE ? !act : counts[k] === 0;
+    const dim = counts[k] === 0;
     const next = sy.tiers.find((t) => counts[k] < t);
     const pips = sy.tiers.map((t) => `<i class="${counts[k] >= t ? 'on' : ''}"></i>`).join('');
     const icon = sy.kind === 'school' ? SCHOOLS[k].letter : roleIconSVG(k);
     return `<li class="${act ? 'act' : dim ? 'dim' : ''}" data-tip="syn|${k}"><span class="sicon" data-n="${counts[k]}" style="--c:${sy.color}">${icon}</span><span class="snm">${sy.name}</span><span class="pips">${pips}</span><span class="cnt">${counts[k]}${next ? `<small style="opacity:.6;font-weight:600">/${next}</small>` : ''}</span></li>`;
   }).join('');
-  const n = S.boardCount();
-  $('#teamCount').innerHTML = `출전 <b class="${n >= G.level ? 'full' : ''}">${n}/${G.level}</b>`;
 }
 
 function changeSynergyPage(delta, button, other) {
@@ -490,7 +664,20 @@ export function updateHud(b) {
   $('#hudE').textContent = b.units.filter((u) => u.alive && u.team === 1).length;
   const t = Math.floor(b.time);
   $('#hudT').textContent = `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`;
-  if (PC_MODE) $('#hudFever').classList.toggle('hidden', !b.fever);
+  if (PC_MODE) {
+    const fever = b.fever;
+    $('#hudFever').classList.toggle('hidden', !fever);
+    const cd = $('#hudFeverCountdown');
+    if (cd) {
+      cd.classList.toggle('hidden', fever);
+      if (!fever) {
+        const rem = Math.max(0, Math.ceil(FEVER_AT - b.time));
+        $('#hudFeverLeft').textContent = `피버 ${rem}초`;
+        $('#hudFeverFill').style.width = `${Math.min(100, (b.time / FEVER_AT) * 100)}%`;
+        cd.classList.toggle('soon', rem <= 5);
+      }
+    }
+  }
 }
 
 // ---------- 토스트/배너 ----------
@@ -536,6 +723,22 @@ export function updateMatch() {
 }
 
 // ---------- 결과 / 종료 ----------
+const DPS_METRICS = [
+  { key: 'dmgDealt', label: '피해량', cls: 'dmg' },
+  { key: 'dmgTaken', label: '받은 피해', cls: 'tank' },
+  { key: 'healDone', label: '회복·보호', cls: 'heal' },
+];
+function dpsListHTML(report, metricKey, cls) {
+  const sorted = report.slice().sort((a, b) => b[metricKey] - a[metricKey]);
+  const max = Math.max(1, ...sorted.map((r) => r[metricKey]));
+  return sorted.map((r) => {
+    const def = UNIT_BY_KEY[r.key];
+    const val = r[metricKey];
+    const w = val > 0 ? Math.max(4, Math.round((val / max) * 100)) : 0;
+    return `<li><img src="${portraitURL(def, 40)}" alt=""><div class="dps-info"><div class="dps-top"><span class="dps-nm">${r.name}${r.star > 1 ? ` <i class="st">${stars(r.star)}</i>` : ''}</span><b class="dps-val">${val.toLocaleString()}</b></div><div class="dps-bar"><i class="${cls}" style="width:${w}%"></i></div></div></li>`;
+  }).join('');
+}
+
 export function showResult(res, onOk) {
   const el = $('#resultPanel');
   const rows = [
@@ -544,10 +747,24 @@ export function showResult(res, onOk) {
   if (!res.win) rows.unshift(['받은 피해', `-${res.dmg} 체력`]);
   if (res.mode === 'pvp') { rows.unshift(['상대', `${res.oppName}${res.ghost ? ' (잔상)' : ''}`]); rows.push(['현재 순위', `${res.rank}위 / 생존 ${res.alive}명`]); }
   else rows.push(['처치한 적', `${res.kills}`]);
+  const showDps = PC_MODE && res.report && res.report.length > 0;
+  el.classList.toggle('with-dps', Boolean(showDps));
+  const econHTML = `<table>${rows.map((r) => `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}<tr><td><b>획득 크레딧</b></td><td style="color:#c98d00">+${res.income}</td></tr></table>
+    ${res.drops.length ? `<div class="drops">${res.drops.map((k) => `<img src="${itemURL(k, 40)}" data-tip="item|${k}">`).join('')}</div><div style="text-align:center;font-size:12px;color:var(--ink2);font-weight:700">장비를 획득했습니다!</div>` : ''}`;
+  const dpsHTML = showDps ? `<div class="res-dps"><div class="dps-head"><span>전투 기여도</span><div class="dps-tabs">${DPS_METRICS.map((m, idx) => `<button type="button" class="dps-tab${idx === 0 ? ' active' : ''}" data-metric="${m.key}">${m.label}</button>`).join('')}</div></div><ul class="dps-list" id="dpsList">${dpsListHTML(res.report, DPS_METRICS[0].key, DPS_METRICS[0].cls)}</ul></div>` : '';
   el.innerHTML = `<div class="rh ${res.win ? 'win' : 'lose'}">${res.win ? 'VICTORY' : 'DEFEAT'} <span style="font-size:15px;margin-left:12px;opacity:.9">ROUND ${res.round}</span></div>
-    <table>${rows.map((r) => `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}<tr><td><b>획득 크레딧</b></td><td style="color:#c98d00">+${res.income}</td></tr></table>
-    ${res.drops.length ? `<div class="drops">${res.drops.map((k) => `<img src="${itemURL(k, 40)}" data-tip="item|${k}">`).join('')}</div><div style="text-align:center;font-size:12px;color:var(--ink2);font-weight:700">장비를 획득했습니다!</div>` : ''}
+    ${showDps ? `<div class="res-body"><div class="res-econ">${econHTML}</div>${dpsHTML}</div>` : econHTML}
     <div class="okrow"><button class="btn yellow big" id="btnOk" style="width:200px"><span>${res.over || res.cleared ? '결과 보기' : '다음 라운드'}</span><kbd>Space</kbd></button></div>`;
+  if (showDps) {
+    el.querySelectorAll('.dps-tab').forEach((btn) => {
+      btn.onclick = () => {
+        const m = DPS_METRICS.find((x) => x.key === btn.dataset.metric);
+        if (!m) return;
+        el.querySelectorAll('.dps-tab').forEach((b) => b.classList.toggle('active', b === btn));
+        $('#dpsList').innerHTML = dpsListHTML(res.report, m.key, m.cls);
+      };
+    });
+  }
   el.classList.remove('hidden');
   $('#btnOk').onclick = () => { el.classList.add('hidden'); onOk(); };
 }
@@ -722,6 +939,7 @@ function endDrag(e) {
     const bp = boardPt(e);
     let to = null;
     if (bp.inside) {
+      if (PC_MODE && UI.scoutId != null) { toast('정찰 중에는 배치할 수 없습니다. [내 전장으로]를 눌러 돌아가세요.', 'warn'); return; }
       const { col, row, own } = boardCell(bp);
       if (own) to = { where: 'board', idx: (row - SIDE_ROWS) * COLS + col };
     } else {
@@ -752,7 +970,10 @@ export function initUI(renderer, hooks) {
     const key = t.dataset.tip;
     const html = tipHTMLFor(key);
     if (!html) return;
-    if (PC_MODE && key !== hoverTipKey) setSynergyHighlight(key.startsWith('syn|') ? key.slice(4) : null);
+    if (PC_MODE && key !== hoverTipKey) {
+      setSynergyHighlight(key.startsWith('syn|') ? key.slice(4) : null);
+      setShopSynergyPreview(key.startsWith('unit-shop|') ? +key.slice(10) : null);
+    }
     hoverTipKey = key;
     const p = stagePt(e);
     showTip(html, p.x, p.y);
@@ -784,6 +1005,16 @@ export function initUI(renderer, hooks) {
   stage.addEventListener('pointerdown', (e) => {
     if (e.button !== 0 || !$('#title').classList.contains('hidden')) return;
     const t = e.target;
+    if (PC_MODE) {
+      const lbRow = t.closest('#lbList li[data-pid]');
+      if (lbRow && G.mode === 'pvp' && G.phase === 'prep') {
+        const pid = +lbRow.dataset.pid;
+        setScout(pid === 0 || pid === UI.scoutId ? null : pid);
+        sfx('click');
+        hideTip();
+        return;
+      }
+    }
     const shop = t.closest('[data-shop]');
     if (shop) { if (S.canShop()) { const i = +shop.dataset.shop; S.buy(i); renderAll(); } hideTip(); return; }
     const eq = t.closest('[data-eq]');
@@ -802,6 +1033,7 @@ export function initUI(renderer, hooks) {
     const inv = t.closest('[data-inv]');
     if (inv) { if (prep) { const i = +inv.dataset.inv; startDrag('item', { idx: i }, itemURL(G.inv[i], 56), e); } return; }
     if (t === board) {
+      if (PC_MODE && UI.scoutId != null) return;
       const bp = boardPt(e);
       const u = renderer.unitAt(bp.screenX, bp.screenY, 0);
       if (u && !u.def.isEnemy) {
@@ -831,6 +1063,8 @@ export function initUI(renderer, hooks) {
   if (PC_MODE) {
     const disc = $('#title .disc');
     if (disc) disc.textContent = "비공식 팬메이드 작품입니다. 'Blue Archive'는 NEXON Games / Yostar의 상표이며, 이 프로젝트는 원작의 UI 분위기를 참고한 비영리 팬 창작물입니다. PC판 캐릭터 그래픽은 20종 툰 아트워크와 코드로 그린 일러스트를 사용합니다.";
+    const scoutBack = $('#btnScoutBack');
+    if (scoutBack) scoutBack.onclick = () => { setScout(null); sfx('click'); };
     const prev = $('#synPrev'), next = $('#synNext');
     prev.onclick = () => changeSynergyPage(-1, prev, next);
     next.onclick = () => changeSynergyPage(1, next, prev);
