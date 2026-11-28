@@ -1,3 +1,8 @@
+# GitHub Pages PC 유닛 이미지 검증
+
+- Pages 빌드가 원본과 바이트 단위로 일치하는 PNG 42개를 내용 해시가 붙은 경로로 내보내는 것을 확인했습니다.
+- `npm test`와 `npm run build:pages`를 통과했습니다. Chromium에서 실제 Pages 경로로 상점의 256px 초상화와 20종 방향 시트 요청, 유닛 배치·전투·저장 복원을 확인했습니다. [화면 QA](SCREEN_QA.md)
+
 # 샬레 오토 배틀 PC 3단계 GUI 검증
 
 - `node bachess/tools/check-toon-zip.mjs` 무결성 검사와 1·2단계 회귀 검증(`1400×1000`·`1024×768`)을 통과했습니다.

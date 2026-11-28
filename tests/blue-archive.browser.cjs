@@ -38,11 +38,27 @@ async function main() {
       const activate = locator => mobile ? locator.tap() : locator.click();
       const errors = [];
       const textures = new Set();
+      const pagesSheets = new Set();
+      const pagesPC = !!process.env.PAGES_TEST && !mobile;
+      async function verifyShopPortraits() {
+        const portraits = page.locator("#shop-offers .shop-portrait img");
+        assert.equal(await portraits.count(), 5);
+        assert.equal(await portraits.evaluateAll(async (images, latest) => {
+          await Promise.all(images.map(image => image.decode()));
+          return images.every(image => latest
+            ? image.naturalWidth === 256 && image.src.includes("/assets/")
+            : image.src.includes("/units/blue-archive/"));
+        }, pagesPC), true);
+      }
       page.on("pageerror", error => errors.push(error.message));
       page.on("response", response => {
         const path = new URL(response.url()).pathname;
         const loaded = response.ok() || response.status() === 304;
         if (/\/units\/blue-archive\/\w+\.png$/.test(path) && loaded) textures.add(path);
+        if (pagesPC && loaded && /\/assets\/[^/]+\.png$/.test(path)) {
+          const png = fs.readFileSync("dist-pages/assets/" + path.split("/").pop());
+          if (png.readUInt32BE(16) === 768 && png.readUInt32BE(20) === 512) pagesSheets.add(path);
+        }
         if (path.includes("/units/blue-archive/") && !loaded) errors.push(path + " HTTP " + response.status());
       });
       await page.goto(url);
@@ -52,13 +68,13 @@ async function main() {
       assert.match(await page.locator("#level-label").textContent(), /레벨 1/);
       assert.equal(await page.locator("#gold").textContent(), "10");
       assert.equal(await page.locator("#units [data-unit]").count(), 0);
-      assert.equal(await page.locator("#shop-offers .shop-portrait img[src*='/units/blue-archive/']").count(), 5);
+      await verifyShopPortraits();
       await debugPreset(page, "catalog");
       await page.waitForFunction(() => document.querySelector("#deployed").textContent === "8/10");
       await debugClick(page, "debug-pause");
       assert.match(await page.locator("#level-label").textContent(), /레벨 10/);
       assert.equal(await page.locator("#units [data-unit]").count(), 12);
-      assert.equal(await page.locator("#shop-offers .shop-portrait img[src*='/units/blue-archive/']").count(), 5);
+      await verifyShopPortraits();
       assert.equal(await page.locator("#gold").textContent(), "30");
 
       const roomCode = await page.locator("#room-code").textContent();
@@ -122,6 +138,7 @@ async function main() {
       await debugClick(page, "debug-next");
       await page.waitForFunction(() => document.querySelector("#phase").textContent.startsWith("라운드 결과"));
       assert.equal(textures.size, 20);
+      if (pagesPC) assert.equal(pagesSheets.size, 20);
       assert.deepEqual(errors, []);
       await context.close();
       console.log(mobile ? "Mobile" : "Desktop", "20 textures, requested viewports, deployment, skill details, reconnect and bot battle verified.");

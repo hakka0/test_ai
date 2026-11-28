@@ -1,5 +1,6 @@
 import type {RoundResult} from '../shared/model';
 import {unitDefinition} from '../shared/minions';
+import {unitArtKey,unitPortrait} from './pages-unit-art';
 
 const number = new Intl.NumberFormat('ko-KR', {maximumFractionDigits: 1});
 export const contributionMetrics = [
@@ -19,7 +20,7 @@ export function contributionGroups(record:RoundResult,viewerId:string,metric:Con
  // Use a shared scale so the teams remain comparable when switching.
  const maximum=Math.max(0,...record.units.filter(u=>!pairedRecord||u.owner===viewerId||u.owner===opponent).map(u=>u[metric]));
  const rows=units.map(unit=>`<li class="contribution-unit" data-contribution-unit="${unit.id}" data-value="${unit[metric]}">
-  <img src="${unitDefinition(unit).image}" alt="" width="32" height="32">
+  <img src="${unitPortrait(unitArtKey(unit),unitDefinition(unit).image)}" alt="" width="32" height="32">
   <div class="contribution-row"><div class="contribution-label"><strong>${unitDefinition(unit).name} · ${unit.rank}성</strong><span data-contribution-metric="${metric}" aria-label="${label} ${number.format(unit[metric])}">${number.format(unit[metric])}</span></div>
   <div class="contribution-track" aria-hidden="true"><span style="width:${maximum?100*unit[metric]/maximum:0}%"></span></div></div>
  </li>`).join('');
