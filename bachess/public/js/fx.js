@@ -156,6 +156,7 @@ export class BoardRenderer {
     this.beams = [];
     this.texts = [];
     this.shake = 0;
+    this.shakeEnabled = true;
     this.units = [];
     this.battle = null;
     this.hover = null;       // hover unit
@@ -402,7 +403,7 @@ export class BoardRenderer {
     ctx.setTransform(this.resX, 0, 0, this.resY, 0, 0);
     ctx.clearRect(0, 0, BOARD_W, BOARD_H);
     let sx = 0, sy = 0;
-    if (this.shake > 0 && !reducedMotion.matches) { sx = (rnd() - 0.5) * this.shake; sy = (rnd() - 0.5) * this.shake; }
+    if (this.shake > 0 && this.shakeEnabled && !reducedMotion.matches) { sx = (rnd() - 0.5) * this.shake; sy = (rnd() - 0.5) * this.shake; }
     ctx.save();
     ctx.translate(sx, sy);
     ctx.drawImage(this.floor, 0, 0);

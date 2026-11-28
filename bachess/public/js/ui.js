@@ -12,10 +12,14 @@ import { MATCH_TIME } from './bots.js';
 
 const $ = (s) => document.querySelector(s);
 const G = S.G;
-export const UI = { renderer: null, sel: null, scoutId: null, speed: 1, paused: false, quality: 'high', volS: 0.8, volM: 0.5, scale: 1, synCollapsed: false, hooks: {} };
+export const UI = {
+  renderer: null, sel: null, scoutId: null, speed: 1, paused: false, quality: 'high',
+  volS: 0.8, volM: 0.5, scale: 1, synCollapsed: false,
+  shake: true, tipDelay: 0, reducedMotion: false, colorblind: false, hooks: {},
+};
 
 const STAGE_W = 1280, STAGE_H = 720, TIP_MARGIN = 6;
-let stage, tip, drag = null, hoverTipKey = null;
+let stage, tip, drag = null, hoverTipKey = null, tipTimer = null;
 let synergyPage = 0;
 const prevLbState = new Map();
 const lbFloats = new Map();
@@ -52,7 +56,9 @@ function enemyURL(type) {
   const u = c.toDataURL(); enemyIconCache.set(type, u); return u;
 }
 const schoolChip = (k) => `<span class="chip school" style="--c:${SCHOOLS[k].color}"><i>${SCHOOLS[k].name}</i></span>`;
-const roleChip = (k) => `<span class="chip" style="--c:${ROLES[k].color}">${ROLES[k].name}</span>`;
+const roleChip = (k) => PC_MODE
+  ? `<span class="chip role" style="--c:${ROLES[k].color}"><i class="rico" aria-hidden="true">${roleIconSVG(k)}</i>${ROLES[k].name}</span>`
+  : `<span class="chip" style="--c:${ROLES[k].color}">${ROLES[k].name}</span>`;
 function ownedCount(key, star = 1) { return S.allUnits().filter((u) => u.key === key && u.star === star).length; }
 
 // ---------- 툴팁 ----------
@@ -119,10 +125,11 @@ const FIXED_TIPS = {
   gold: `<h4>크레딧</h4>보유 크레딧 10당 이자 +1 (최대 +5). 연승/연패 보너스와 승리 보너스가 추가로 지급됩니다.`,
   kills: `<h4>청휘석 (처치 점수)</h4>쓰러뜨린 적의 누적 수입니다. 최종 점수에 반영됩니다.`,
   'btn-syn': `<h4>시너지 패널 접기/펼치기</h4>단축키 <b>S</b>`,
+  'btn-history': `<h4>전투 기록</h4>지난 라운드별 승패·시너지·유닛 기여도를 확인합니다. 단축키 <b>B</b>`,
   'btn-recipe': `<h4>장비 조합표</h4>모든 장비 조합을 한눈에 봅니다. 단축키 <b>R</b>`,
   'btn-help': `<h4>도움말</h4>게임 방법과 단축키. 단축키 <b>H</b>`,
   'btn-mute': `<h4>소리 켜기/끄기</h4>단축키 <b>M</b>`,
-  'btn-opt': `<h4>설정</h4>이펙트 품질(저사양 모드), 볼륨`,
+  'btn-opt': `<h4>설정</h4>${PC_MODE ? '이펙트 품질, 화면 흔들림, 모션 축소, 툴팁 지연, 색약 보조, 볼륨' : '이펙트 품질(저사양 모드), 볼륨'}`,
   'btn-sell': `<h4>판매</h4>선택한 학생을 판매합니다. 단축키 <b>E</b>, 또는 ${PC_MODE ? '하단 상점 영역으로 드래그하세요.' : '상점 영역으로 드래그'}`,
   'btn-reroll': `<h4>리롤</h4>2 크레딧으로 상점을 새로 고칩니다. 단축키 <b>D</b>`,
   'btn-xp': `<h4>경험치 구매</h4>4 크레딧으로 경험치 +4. 레벨이 오르면 출전 인원이 늘어납니다. 단축키 <b>F</b>`,
@@ -180,6 +187,14 @@ function tipHTMLFor(spec) {
     case 'eq': { const [uid, idx] = arg.split(':'); const loc = S.locOfUid(+uid); if (!loc) return null; const k = S.getUnit(loc).items[+idx]; return k ? itemTipHTML(k) + '<div class="hint">클릭하면 보관함으로 되돌립니다.</div>' : null; }
     case 'enemy': return `<h4>${ENEMY_TYPES[arg].name}</h4>${ENEMY_TYPES[arg].boss ? '<b>보스</b> — 체력이 매우 높고 강력한 스킬을 사용합니다.' : '헬멧단 소속 적. 역할: ' + ROLES[ENEMY_TYPES[arg].role].name + ' · ' + WEAPONS[ENEMY_TYPES[arg].weapon].name}`;
     case 'recipe': { const [a, b] = arg.split('+'); const r = combine(a, b); return itemTipHTML(r.key); }
+    case 'skill': {
+      const [key, st] = arg.split(':');
+      const d = UNIT_BY_KEY[key];
+      if (!d || !d.skill || d.skill.type === 'none') return null;
+      const star = +st || 1;
+      const s = computeUnitStats(d, star, [], null);
+      return `<h4>${d.skill.name} <span style="font-size:12px;color:#9fd0ff">액티브</span></h4><div class="hint" style="margin:0 0 4px">시작 마나 <b>${s.mana0}/${s.manaMax}</b></div><div class="sk">${skillDesc(d, star)}</div>`;
+    }
     default: return FIXED_TIPS[kind] || null;
   }
 }
@@ -263,10 +278,28 @@ function setShopSynergyPreview(shopIdx) {
 }
 
 export function hideTip() {
+  clearTimeout(tipTimer); tipTimer = null;
   tip.classList.add('hidden');
   hoverTipKey = null;
   setSynergyHighlight(null);
   clearShopSynergyPreview();
+}
+
+function openTipKey(key, x, y) {
+  const html = tipHTMLFor(key);
+  if (!html) return;
+  if (PC_MODE && key !== hoverTipKey) {
+    setSynergyHighlight(key.startsWith('syn|') ? key.slice(4) : null);
+    setShopSynergyPreview(key.startsWith('unit-shop|') ? +key.slice(10) : null);
+  }
+  hoverTipKey = key;
+  showTip(html, x, y);
+}
+
+function scheduleTip(key, x, y, immediate = false) {
+  clearTimeout(tipTimer); tipTimer = null;
+  if (immediate || !PC_MODE || !UI.tipDelay) { openTipKey(key, x, y); return; }
+  tipTimer = setTimeout(() => { tipTimer = null; openTipKey(key, x, y); }, UI.tipDelay);
 }
 
 export function resetLbState() {
@@ -420,7 +453,8 @@ export function renderLb() {
     else if (G.phase === 'prep' && S.isReady(p)) st = '✔';
     const fl = PC_MODE ? lbFloats.get(p.id) : null;
     const deltaHTML = fl ? `<span class="hp-delta">${fl.delta}</span>` : '';
-    return `<li class="${cls}" data-pid="${p.id}" data-tip="pl|${p.id}"><span class="rk">${i + 1}</span><span class="nm">${p.id === 0 ? '나' : p.name}</span><span class="hpb"><i class="${pc <= 0.3 ? 'low' : pc <= 0.6 ? 'mid' : ''}" style="width:${pc * 100}%"></i></span><span class="hpn">${p.alive ? p.hp : '탈락'}</span><span class="st">${st}</span>${deltaHTML}</li>`;
+    const kb = PC_MODE ? ` tabindex="0" role="button" aria-label="${i + 1}위 ${p.id === 0 ? '나' : p.name} 체력 ${p.alive ? p.hp : '탈락'}"` : '';
+    return `<li class="${cls}" data-pid="${p.id}" data-tip="pl|${p.id}"${kb}><span class="rk">${i + 1}</span><span class="nm">${p.id === 0 ? '나' : p.name}</span><span class="hpb"><i class="${pc <= 0.3 ? 'low' : pc <= 0.6 ? 'mid' : ''}" style="width:${pc * 100}%"></i></span><span class="hpn">${p.alive ? p.hp : '탈락'}</span><span class="st">${st}</span>${deltaHTML}</li>`;
   }).join('');
   if (PC_MODE && html === lastLbHtml && !newlyHit.size) return;
   lastLbHtml = html;
@@ -488,7 +522,8 @@ function renderSyn() {
       const near = Boolean(next && next - counts[k] === 1);
       const pips = sy.tiers.map((t) => `<i class="${counts[k] >= t ? 'on' : ''}"></i>`).join('');
       const icon = sy.kind === 'school' ? SCHOOLS[k].letter : roleIconSVG(k);
-      return `<li class="act${near ? ' near' : ''}" data-syn="${k}" data-tip="syn|${k}"><span class="sicon" data-n="${counts[k]}" style="--c:${sy.color}">${icon}</span><span class="snm">${sy.name}</span><span class="pips">${pips}</span><span class="cnt">${counts[k]}${next ? `<small style="opacity:.75;font-weight:700">/${next}</small>` : ''}</span>${near ? '<span class="syn-need">1명 더</span>' : ''}</li>`;
+      const tier = Math.min(4, active[k] + 1);
+      return `<li class="act${near ? ' near' : ''}" data-tier="${tier}" data-syn="${k}" data-tip="syn|${k}" tabindex="0" aria-label="${sy.name} ${counts[k]}명 ${tier}단계 활성"><span class="sicon" data-n="${counts[k]}" style="--c:${sy.color}">${icon}</span><span class="snm">${sy.name}</span><span class="pips">${pips}</span><span class="cnt">${counts[k]}${next ? `<small style="opacity:.8;font-weight:700">/${next}</small>` : ''}</span>${near ? '<span class="syn-need">1명 더</span>' : ''}</li>`;
     }).join('');
     const inact = $('#synInactive');
     if (inact) {
@@ -498,7 +533,7 @@ function renderSyn() {
         const next = sy.tiers[0];
         const near = next - counts[k] === 1;
         const icon = sy.kind === 'school' ? SCHOOLS[k].letter : roleIconSVG(k);
-        return `<div class="syn-chip${near ? ' near' : ''}" data-syn="${k}" data-tip="syn|${k}"><span class="sicon" data-n="${counts[k]}" style="--c:${sy.color}">${icon}</span><span class="snm">${sy.name}</span><span class="cnt">${counts[k]}/${next}</span></div>`;
+        return `<div class="syn-chip${near ? ' near' : ''}" data-syn="${k}" data-tip="syn|${k}" tabindex="0" aria-label="${sy.name} ${counts[k]}/${next} 미발동"><span class="sicon" data-n="${counts[k]}" style="--c:${sy.color}">${icon}</span><span class="snm">${sy.name}</span><span class="cnt">${counts[k]}/${next}</span></div>`;
       }).join('');
     }
     return;
@@ -530,7 +565,8 @@ function renderShop() {
     const poor = G.gold < d.cost;
     const own = ownedCount(k, 1);
     const badge = own >= 2 ? `<span class="triple">합성!</span>` : own === 1 ? `<span class="triple" style="background:#6a8cc0">보유 1</span>` : '';
-    return `<div class="scard ${poor ? 'poor' : ''} ${G.locked ? 'locked' : ''}" data-shop="${i}" data-tip="unit-shop|${i}" style="--cc:${COST_COLORS[d.cost - 1]}">
+    const kb = PC_MODE ? ` tabindex="0" role="button" aria-label="${d.name} ${d.cost}크레딧 ${ROLES[d.role].name} 구매"` : '';
+    return `<div class="scard ${poor ? 'poor' : ''} ${G.locked ? 'locked' : ''}" data-shop="${i}" data-cost="${d.cost}" data-tip="unit-shop|${i}"${kb} style="--cc:${COST_COLORS[d.cost - 1]}">
       <div class="cbox">${d.cost}</div><div class="nm">${d.name}</div><img class="pt" data-synergy-unit="${d.key}" src="${portraitURL(d, 72)}" alt="">
       <div class="meta">${schoolChip(d.school)}${roleChip(d.role)}<span class="wp">${WEAPONS[d.weapon].name} · ${WEAPONS[d.weapon].range}칸</span></div>
       ${badge}<div class="buy"><b><i class="coin"></i>${d.cost}</b>구매하기</div></div>`;
@@ -548,7 +584,9 @@ function renderBench() {
     if (!u) return `<div class="bslot" data-bslot="${i}"></div>`;
     const d = S.defOf(u);
     const eqs = u.items.map((k) => `<i style="--c:${ITEMS[k].color}"></i>`).join('');
-    return `<div class="bslot has ${UI.sel === u.uid ? 'sel' : ''}" data-bslot="${i}" data-bench="${i}" data-tip="unit-bench|${i}"><img class="pt" data-synergy-unit="${d.key}" src="${portraitURL(d, 56)}" alt=""><span class="stars" data-star="${u.star}">${u.star > 1 ? stars(u.star) : ''}</span><span class="tag" style="--c:${ROLES[d.role].color}">${ROLES[d.role].name}</span><span class="eqs">${eqs}</span></div>`;
+    const kb = PC_MODE ? ` tabindex="0" role="button" aria-label="${d.name} ${u.star}성 대기석 ${i + 1}번"` : '';
+    const roleTag = PC_MODE ? `<i class="rico" aria-hidden="true">${roleIconSVG(d.role)}</i>${ROLES[d.role].name}` : ROLES[d.role].name;
+    return `<div class="bslot has ${UI.sel === u.uid ? 'sel' : ''}" data-bslot="${i}" data-bench="${i}" data-tip="unit-bench|${i}"${kb}><img class="pt" data-synergy-unit="${d.key}" src="${portraitURL(d, 56)}" alt=""><span class="stars" data-star="${u.star}">${u.star > 1 ? stars(u.star) : ''}</span><span class="tag" style="--c:${ROLES[d.role].color}">${roleTag}</span><span class="eqs">${eqs}</span></div>`;
   }).join('');
 }
 
@@ -614,7 +652,9 @@ function renderRight() {
   box.innerHTML = `<div class="ph"><span>학생 정보</span><em>${loc.where === 'board' ? '출전 중' : '벤치'}</em></div>
     <div class="ucard"><img class="pt" src="${portraitURL(d, 64)}" style="--cc:${COST_COLORS[d.cost - 1]}" alt=""><div><div class="nm">${d.name}</div><div class="st">${stars(u.star)}</div><div class="chips">${schoolChip(d.school)}${roleChip(d.role)}</div></div></div>
     <div class="statgrid"><span>체력<b>${Math.round(st.maxHp)}</b></span><span>공격<b>${Math.round(st.atk)}</b></span><span>공속<b>${st.as.toFixed(2)}</b></span><span>방어<b>${pct(st.def)}</b></span><span>사거리<b>${st.range}칸</b></span><span>치명<b>${pct(st.crit)}</b></span></div>
-    <div class="skline"><b class="t">${d.skill.name}</b> ${skillDesc(d, u.star).replace(/<\/?b>/g, '')}</div>
+    ${PC_MODE
+      ? `<div class="skline skcard" data-tip="skill|${d.key}:${u.star}" tabindex="0"><div class="skhead"><b class="t">${d.skill.name}</b><span class="skmeta">액티브 · ${st.mana0}/${st.manaMax}</span></div><div class="skdesc">${skillDesc(d, u.star).replace(/<\/?b>/g, '')}</div></div>`
+      : `<div class="skline"><b class="t">${d.skill.name}</b> ${skillDesc(d, u.star).replace(/<\/?b>/g, '')}</div>`}
     <div class="eqrow">${eq}<button class="btn white ${loc.where === 'board' && G.phase !== 'prep' ? 'off' : ''}" id="btnSell" data-tip="btn-sell"><span>${loc.where === 'board' && G.phase !== 'prep' ? (PC_MODE ? '판매 불가' : '전투 중 판매 불가') : `판매 +${S.sellPrice(u)}`}</span></button></div>`;
 }
 
@@ -817,6 +857,41 @@ export function openRecipe() {
   openModal('장비 조합표', t);
 }
 
+export function openHistory() {
+  if (modalOpen()) { closeModal(); return; }
+  if (!G.history.length) {
+    openModal('전투 기록', `<p class="hist-empty">아직 완료된 전투 기록이 없습니다.<br>첫 라운드 전투를 마치면 라운드별 승패·시너지·유닛 기여도가 기록됩니다.</p>`, 'hist-win');
+    return;
+  }
+  const items = G.history.slice().reverse();
+  let curIdx = 0, curMetric = DPS_METRICS[0].key;
+  const body = `<div class="hist-layout">
+    <ul class="hist-list">${items.map((h, i) => `<li><button type="button" class="hist-item${i === 0 ? ' active' : ''}" data-hi="${i}"><span class="hr">R${h.round}</span><span class="hres ${h.win ? 'hwin' : 'hlose'}">${h.win ? '승리' : '패배'}</span><span class="hopp">${h.oppName}${h.ghost ? ' (잔상)' : ''}</span><span class="hdmg">${h.dmg ? `-${h.dmg}` : `+${h.income}G`}</span></button></li>`).join('')}</ul>
+    <div class="hist-detail" id="histDetail"></div>
+  </div>`;
+  openModal('전투 기록', body, 'hist-win');
+  const renderDetail = () => {
+    const h = items[curIdx];
+    const m = DPS_METRICS.find((x) => x.key === curMetric) || DPS_METRICS[0];
+    $('#histDetail').innerHTML = `
+      <div class="hd-head"><b class="hres ${h.win ? 'hwin' : 'hlose'}">${h.win ? 'VICTORY' : 'DEFEAT'}</b><span>ROUND ${h.round} · vs ${h.oppName}${h.ghost ? ' (잔상)' : ''}</span>${h.rank ? `<em>${h.rank}위 / 생존 ${h.alive}명</em>` : ''}</div>
+      <div class="hd-syn"><span>출전 시너지</span><b>${h.synergies || '없음'}</b></div>
+      <div class="dps-head"><span>유닛 기여도</span><div class="dps-tabs">${DPS_METRICS.map((t) => `<button type="button" class="dps-tab${t.key === m.key ? ' active' : ''}" data-hmetric="${t.key}">${t.label}</button>`).join('')}</div></div>
+      <ul class="dps-list">${h.report?.length ? dpsListHTML(h.report, m.key, m.cls) : '<li class="hist-empty">기록된 유닛 없음</li>'}</ul>`;
+    $('#histDetail').querySelectorAll('[data-hmetric]').forEach((btn) => {
+      btn.onclick = () => { curMetric = btn.dataset.hmetric; renderDetail(); };
+    });
+  };
+  $('#winBody').querySelectorAll('[data-hi]').forEach((btn) => {
+    btn.onclick = () => {
+      curIdx = +btn.dataset.hi;
+      $('#winBody').querySelectorAll('[data-hi]').forEach((b) => b.classList.toggle('active', b === btn));
+      renderDetail();
+    };
+  });
+  renderDetail();
+}
+
 export function openHelp() {
   if (modalOpen()) { closeModal(); return; }
   openModal('게임 방법', `
@@ -828,21 +903,62 @@ export function openHelp() {
     ${PC_MODE ? '<li><b>피버타임</b>은 전투 시간이 20초를 넘으면 시작됩니다. 양쪽의 기본 공격과 스킬 피해는 1.5배, 회복과 배리어는 0.5배가 됩니다.</li>' : ''}
     <li>같은 학생 <b>3명 = ★ 합성</b> (최대 ★3). 크레딧 10당 이자 +1 (최대 5).</li></ul>
     <h3>역할</h3><ul><li><b>탱커</b>: 샷건(사거리 1칸)·기관단총 등 전열. 높은 체력/방어로 피해를 받아냅니다.</li><li><b>딜러</b>: 돌격소총·기관총·저격총으로 화력 담당.</li><li><b>서포터</b>: 회복, 배리어, 버프. 뒷줄에 배치하세요.</li></ul>
-    <h3>장비 · 시너지</h3><p>보관함의 장비를 학생에게 드래그하세요. 기본 장비 2개는 자동 조합됩니다(조합표 <b>R</b>). 학원·역할 시너지는 서로 다른 학생 수로 단계가 오릅니다(<b>S</b>로 패널 접기).</p>
-    <h3>단축키</h3><div class="keys"><span><kbd>Space</kbd>준비 완료/확인</span><span><kbd>D</kbd>리롤</span><span><kbd>F</kbd>경험치</span><span><kbd>L</kbd>상점 잠금</span><span><kbd>1-5</kbd>상점 구매</span><span><kbd>E</kbd>선택 판매</span>${PC_MODE ? '' : '<span><kbd>A</kbd>자동 배치</span><span><kbd>Q</kbd>배속</span><span><kbd>P</kbd>일시정지</span>'}<span><kbd>S</kbd>시너지 토글</span><span><kbd>R</kbd>조합표</span><span><kbd>H</kbd>도움말</span><span><kbd>M</kbd>음소거</span><span><kbd>Esc</kbd>닫기</span></div>
+    <h3>장비 · 시너지</h3><p>보관함의 장비를 학생에게 드래그하세요. 기본 장비 2개는 자동 조합됩니다(조합표 <b>R</b>). 학원·역할 시너지는 서로 다른 학생 수로 단계가 오릅니다(<b>S</b>로 패널 접기).${PC_MODE ? ' 상점 카드는 클릭 또는 대기석으로 드래그해 구매할 수 있습니다.' : ''}</p>
+    <h3>단축키</h3><div class="keys"><span><kbd>Space</kbd>준비 완료/확인</span><span><kbd>D</kbd>리롤</span><span><kbd>F</kbd>경험치</span><span><kbd>L</kbd>상점 잠금</span><span><kbd>1-5</kbd>상점 구매</span><span><kbd>E</kbd>선택 판매</span>${PC_MODE ? '<span><kbd>B</kbd>전투 기록</span><span><kbd>Tab</kbd>카드·대기석 이동</span>' : '<span><kbd>A</kbd>자동 배치</span><span><kbd>Q</kbd>배속</span><span><kbd>P</kbd>일시정지</span>'}<span><kbd>S</kbd>시너지 토글</span><span><kbd>R</kbd>조합표</span><span><kbd>H</kbd>도움말</span><span><kbd>M</kbd>음소거</span><span><kbd>Esc</kbd>닫기/정찰 종료</span></div>
     <p class="hint" style="margin-top:8px;color:var(--ink2);font-size:12px">학생·장비·적 위에 마우스를 올리면 스킬과 능력치가 툴팁으로 표시됩니다.</p>`);
 }
 
 export function openOptions() {
   if (modalOpen()) { closeModal(); return; }
+  const pcRows = PC_MODE ? `
+    <div class="optrow"><span>화면 흔들림<br><small style="color:var(--ink2);font-weight:500">저격·폭발 시 보드 진동 효과</small></span><div class="seg"><button class="btn ${UI.shake ? 'active' : 'white'}" data-shake="1"><span>켜기</span></button><button class="btn ${!UI.shake ? 'active' : 'white'}" data-shake="0"><span>끄기</span></button></div></div>
+    <div class="optrow"><span>모션 축소<br><small style="color:var(--ink2);font-weight:500">진입·순위 이동·반복 애니메이션 줄이기</small></span><div class="seg"><button class="btn ${!UI.reducedMotion ? 'active' : 'white'}" data-rm="0"><span>시스템</span></button><button class="btn ${UI.reducedMotion ? 'active' : 'white'}" data-rm="1"><span>항상 축소</span></button></div></div>
+    <div class="optrow"><span>툴팁 표시 지연</span><div class="seg"><button class="btn ${UI.tipDelay === 0 ? 'active' : 'white'}" data-td="0"><span>즉시</span></button><button class="btn ${UI.tipDelay === 150 ? 'active' : 'white'}" data-td="150"><span>0.15초</span></button><button class="btn ${UI.tipDelay === 350 ? 'active' : 'white'}" data-td="350"><span>0.35초</span></button></div></div>
+    <div class="optrow"><span>색약 보조 패턴<br><small style="color:var(--ink2);font-weight:500">상점 코스트 등급에 무늬와 테두리 강조</small></span><div class="seg"><button class="btn ${!UI.colorblind ? 'active' : 'white'}" data-cb="0"><span>끄기</span></button><button class="btn ${UI.colorblind ? 'active' : 'white'}" data-cb="1"><span>켜기</span></button></div></div>` : '';
   openModal('설정', `
     <div class="optrow"><span>이펙트 품질<br><small style="color:var(--ink2);font-weight:500">저사양: 발광/파티클/탄피 최소화, 해상도 하향</small></span><div class="seg"><button class="btn ${UI.quality === 'high' ? 'active' : 'white'}" data-q="high"><span>고품질</span></button><button class="btn ${UI.quality === 'low' ? 'active' : 'white'}" data-q="low"><span>저사양</span></button></div></div>
+    ${pcRows}
     <div class="optrow"><span>효과음 볼륨</span><input type="range" id="volS" min="0" max="1" step="0.05" value="${UI.volS}"></div>
     <div class="optrow"><span>BGM 볼륨</span><input type="range" id="volM" min="0" max="1" step="0.05" value="${UI.volM}"></div>`);
   const body = $('#winBody');
-  body.querySelectorAll('[data-q]').forEach((b) => b.onclick = () => { setQuality(b.dataset.q); closeModal(); toast(b.dataset.q === 'low' ? '저사양 모드 적용' : '고품질 모드 적용'); });
+  const markSeg = (sel, activeBtn) => body.querySelectorAll(sel).forEach((b) => { b.classList.toggle('active', b === activeBtn); b.classList.toggle('white', b !== activeBtn); });
+  body.querySelectorAll('[data-q]').forEach((b) => b.onclick = () => { setQuality(b.dataset.q); markSeg('[data-q]', b); toast(b.dataset.q === 'low' ? '저사양 모드 적용' : '고품질 모드 적용'); });
+  body.querySelectorAll('[data-shake]').forEach((b) => b.onclick = () => { setShake(b.dataset.shake === '1'); markSeg('[data-shake]', b); toast(UI.shake ? '화면 흔들림 켬' : '화면 흔들림 끔'); });
+  body.querySelectorAll('[data-rm]').forEach((b) => b.onclick = () => { setReducedMotion(b.dataset.rm === '1'); markSeg('[data-rm]', b); toast(UI.reducedMotion ? '모션 축소 적용' : '시스템 모션 설정 사용'); });
+  body.querySelectorAll('[data-td]').forEach((b) => b.onclick = () => { setTipDelay(+b.dataset.td); markSeg('[data-td]', b); toast(`툴팁 지연 ${UI.tipDelay ? (UI.tipDelay / 1000) + '초' : '즉시'}`); });
+  body.querySelectorAll('[data-cb]').forEach((b) => b.onclick = () => { setColorblind(b.dataset.cb === '1'); markSeg('[data-cb]', b); toast(UI.colorblind ? '색약 보조 패턴 켬' : '색약 보조 패턴 끔'); });
   $('#volS').oninput = (e) => { UI.volS = +e.target.value; setVolumes(UI.volS, UI.volM); };
   $('#volM').oninput = (e) => { UI.volM = +e.target.value; setVolumes(UI.volS, UI.volM); };
+}
+export function setShake(on) {
+  UI.shake = Boolean(on);
+  if (UI.renderer) UI.renderer.shakeEnabled = UI.shake;
+  try { localStorage.setItem('bachess_shake', UI.shake ? '1' : '0'); } catch { /* ignore */ }
+}
+export function setReducedMotion(on) {
+  UI.reducedMotion = Boolean(on);
+  document.body.classList.toggle('reduced-motion', UI.reducedMotion);
+  try { localStorage.setItem('bachess_reduced', UI.reducedMotion ? '1' : '0'); } catch { /* ignore */ }
+}
+export function setTipDelay(ms) {
+  UI.tipDelay = Number.isFinite(ms) && ms >= 0 ? ms : 0;
+  try { localStorage.setItem('bachess_tipdelay', String(UI.tipDelay)); } catch { /* ignore */ }
+}
+export function setColorblind(on) {
+  UI.colorblind = Boolean(on);
+  document.body.classList.toggle('cb-mode', UI.colorblind);
+  try { localStorage.setItem('bachess_cb', UI.colorblind ? '1' : '0'); } catch { /* ignore */ }
+}
+export function loadPcPrefs() {
+  if (!PC_MODE) return;
+  try {
+    const sh = localStorage.getItem('bachess_shake');
+    setShake(sh === null ? true : sh === '1');
+    setReducedMotion(localStorage.getItem('bachess_reduced') === '1');
+    const td = localStorage.getItem('bachess_tipdelay');
+    setTipDelay(td !== null ? +td : 0);
+    setColorblind(localStorage.getItem('bachess_cb') === '1');
+  } catch { /* ignore */ }
 }
 export function setQuality(q) {
   UI.quality = q;
@@ -889,10 +1005,15 @@ function startDrag(kind, src, imgSrc, e) {
 }
 function updateDrag(e) {
   if (!drag) return;
-  if (!drag.moved && Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) > 5) {
+  const thresh = drag.kind === 'shop' ? 8 : 5;
+  if (!drag.moved && Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) > thresh) {
     drag.moved = true;
     const gh = $('#ghost'); gh.innerHTML = `<img src="${drag.imgSrc}">`; gh.classList.remove('hidden');
     if (drag.kind === 'unit') $('#shopRow').classList.add('sellmode');
+    else if (drag.kind === 'shop') {
+      $('#benchRow').classList.add('buy-drop');
+      document.querySelector(`[data-shop="${drag.src.idx}"]`)?.classList.add('dragging');
+    }
     hideTip();
   }
   if (!drag.moved) return;
@@ -902,7 +1023,10 @@ function updateDrag(e) {
   const r = UI.renderer;
   r.hlCell = null;
   document.querySelectorAll('.drop').forEach((x) => x.classList.remove('drop'));
-  if (drag.kind === 'unit') {
+  if (drag.kind === 'shop') {
+    const bs = slotFromPoint(e)?.closest('[data-bslot]');
+    if (bs) bs.classList.add('drop');
+  } else if (drag.kind === 'unit') {
     const bp = boardPt(e);
     if (bp.inside) {
       const { col, row, onFloor, own } = boardCell(bp);
@@ -927,7 +1051,18 @@ function endDrag(e) {
   const r = UI.renderer;
   r.hlCell = null; r.selectedUid = UI.sel;
   $('#ghost').classList.add('hidden'); $('#shopRow').classList.remove('sellmode');
-  document.querySelectorAll('.drop').forEach((x) => x.classList.remove('drop'));
+  $('#benchRow').classList.remove('buy-drop');
+  document.querySelectorAll('.drop, .dragging').forEach((x) => x.classList.remove('drop', 'dragging'));
+  if (d.kind === 'shop') {
+    if (!d.moved) {
+      if (S.canShop()) { S.buy(d.src.idx); renderAll(); }
+      hideTip();
+      return;
+    }
+    const el = slotFromPoint(e);
+    if (el && el.closest('#benchRow') && S.canShop()) { S.buy(d.src.idx); renderAll(); }
+    return;
+  }
   if (!d.moved) {
     // 클릭
     if (d.kind === 'unit') { const u = S.getUnit(d.src); if (u) select(u.uid); }
@@ -962,21 +1097,14 @@ export function initUI(renderer, hooks) {
   stage = $('#stage'); tip = $('#tip');
   const board = $('#board');
 
-  // 툴팁 (위임)
+  // 툴팁 (위임 + PC 툴팁 지연 & 키보드 포커스)
   stage.addEventListener('mouseover', (e) => {
     if (drag && drag.moved) return;
     const t = e.target.closest('[data-tip]');
     if (!t) return;
     const key = t.dataset.tip;
-    const html = tipHTMLFor(key);
-    if (!html) return;
-    if (PC_MODE && key !== hoverTipKey) {
-      setSynergyHighlight(key.startsWith('syn|') ? key.slice(4) : null);
-      setShopSynergyPreview(key.startsWith('unit-shop|') ? +key.slice(10) : null);
-    }
-    hoverTipKey = key;
     const p = stagePt(e);
-    showTip(html, p.x, p.y);
+    scheduleTip(key, p.x, p.y, false);
   });
   stage.addEventListener('mousemove', (e) => {
     if (drag && drag.moved) return;
@@ -986,6 +1114,48 @@ export function initUI(renderer, hooks) {
     const t = e.target.closest('[data-tip]');
     if (t && !t.contains(e.relatedTarget)) hideTip();
   });
+  if (PC_MODE) {
+    stage.addEventListener('focusin', (e) => {
+      if (drag && drag.moved) return;
+      const t = e.target.closest('[data-tip]');
+      if (!t || !t.matches(':focus-visible')) return;
+      const r = t.getBoundingClientRect();
+      const sr = stage.getBoundingClientRect();
+      const x = ((r.left + r.width / 2) - sr.left) / UI.scale;
+      const y = (r.bottom - sr.top) / UI.scale;
+      scheduleTip(t.dataset.tip, x, y, true);
+    });
+    stage.addEventListener('focusout', (e) => {
+      const t = e.target.closest('[data-tip]');
+      if (t && !t.contains(e.relatedTarget)) hideTip();
+    });
+    stage.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const t = e.target;
+      if (!t || t === document.body) return;
+      const shop = t.closest('[data-shop]');
+      if (shop && !shop.classList.contains('sold')) {
+        e.preventDefault(); e.stopPropagation();
+        if (S.canShop()) { S.buy(+shop.dataset.shop); renderAll(); }
+        hideTip();
+        return;
+      }
+      const b = t.closest('[data-bench]');
+      if (b) {
+        e.preventDefault(); e.stopPropagation();
+        const u = G.bench[+b.dataset.bench];
+        if (u) select(u.uid);
+        return;
+      }
+      const lbRow = t.closest('#lbList li[data-pid]');
+      if (lbRow && G.mode === 'pvp' && G.phase === 'prep') {
+        e.preventDefault(); e.stopPropagation();
+        const pid = +lbRow.dataset.pid;
+        setScout(pid === 0 || pid === UI.scoutId ? null : pid);
+        sfx('click'); hideTip();
+      }
+    });
+  }
 
   // 보드 호버
   board.addEventListener('mousemove', (e) => {
@@ -1016,7 +1186,17 @@ export function initUI(renderer, hooks) {
       }
     }
     const shop = t.closest('[data-shop]');
-    if (shop) { if (S.canShop()) { const i = +shop.dataset.shop; S.buy(i); renderAll(); } hideTip(); return; }
+    if (shop) {
+      const i = +shop.dataset.shop;
+      if (PC_MODE) {
+        const key = G.shop[i];
+        if (key && S.canShop()) startDrag('shop', { idx: i }, portraitURL(UNIT_BY_KEY[key], 72), e);
+        return;
+      }
+      if (S.canShop()) { S.buy(i); renderAll(); }
+      hideTip();
+      return;
+    }
     const eq = t.closest('[data-eq]');
     if (eq) { const [uid, idx] = eq.dataset.eq.split(':'); const l = S.locOfUid(+uid); if (l) { S.unequip(l, +idx); renderAll(); hideTip(); } return; }
     const prep = G.phase === 'prep';
@@ -1047,7 +1227,12 @@ export function initUI(renderer, hooks) {
   window.addEventListener('pointerup', endDrag);
   window.addEventListener('blur', () => {
     if (PC_MODE && renderer.synergyHighlights) hideTip();
-    if (drag) { drag = null; $('#ghost').classList.add('hidden'); $('#shopRow').classList.remove('sellmode'); renderer.hlCell = null; }
+    if (drag) {
+      drag = null; $('#ghost').classList.add('hidden');
+      $('#shopRow').classList.remove('sellmode'); $('#benchRow').classList.remove('buy-drop');
+      document.querySelectorAll('.drop, .dragging').forEach((x) => x.classList.remove('drop', 'dragging'));
+      renderer.hlCell = null;
+    }
   });
 
   // 버튼
@@ -1063,6 +1248,8 @@ export function initUI(renderer, hooks) {
   if (PC_MODE) {
     const disc = $('#title .disc');
     if (disc) disc.textContent = "비공식 팬메이드 작품입니다. 'Blue Archive'는 NEXON Games / Yostar의 상표이며, 이 프로젝트는 원작의 UI 분위기를 참고한 비영리 팬 창작물입니다. PC판 캐릭터 그래픽은 20종 툰 아트워크와 코드로 그린 일러스트를 사용합니다.";
+    const histBtn = $('#btnHistory');
+    if (histBtn) { histBtn.classList.remove('hidden'); histBtn.onclick = openHistory; }
     const scoutBack = $('#btnScoutBack');
     if (scoutBack) scoutBack.onclick = () => { setScout(null); sfx('click'); };
     const prev = $('#synPrev'), next = $('#synNext');

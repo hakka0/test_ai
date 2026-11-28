@@ -641,6 +641,79 @@ kbd { font: 700 10px/1 'Noto Sans KR', sans-serif; background: rgba(20, 40, 80, 
   .dps-bar i.tank { background: linear-gradient(90deg, #2b86e6, #5cd0ff); }
   .dps-bar i.heal { background: linear-gradient(90deg, #27b56b, #7ee69e); }
   #resultPanel.with-dps .okrow { flex: none; margin-top: 8px; }
+
+  /* ---------- PC 3단계 GUI (키보드 포커스 · 색약 보조 · 시너지 단계 색 · 전투 기록 · 상점 드래그 구매) ---------- */
+  /* 상단 도구 버튼 6개(전투 기록 포함) 여유 간격 확보 */
+  .tools { gap: 6px; }
+  .tbtn { width: 36px; }
+
+  /* 키보드 포커스 링 */
+  :is(.scard, .bslot, #lbList li, #synList li, .syn-chip, .skcard, .dps-tab, .hist-item, .win .wh .x):focus-visible {
+    outline: 3px solid var(--cyan); outline-offset: 2px; position: relative; z-index: 5;
+  }
+
+  /* 역할 아이콘(색약 보조 상시 적용) */
+  .chip .rico, .bslot .tag .rico { display: inline-flex; align-items: center; justify-content: center; width: 12px; height: 12px; flex: none; }
+  .bslot .tag { display: inline-flex; align-items: center; gap: 2px; }
+
+  /* 상점 코스트 등급 패턴 (색약 보조 모드에서 패턴·테두리 강화) */
+  .scard[data-cost="2"]::before { background: repeating-linear-gradient(90deg, var(--cc) 0 12px, rgba(255,255,255,.45) 12px 15px); }
+  .scard[data-cost="3"]::before { background: repeating-linear-gradient(135deg, var(--cc) 0 8px, rgba(255,255,255,.4) 8px 12px); }
+  .scard[data-cost="4"]::before { background: repeating-linear-gradient(45deg, var(--cc) 0 6px, #fff3c4 6px 10px); }
+  .scard[data-cost="5"]::before { height: 6px; background: linear-gradient(90deg, #e09a00, #fff2a0, #f0a800, #fff2a0, #e09a00); }
+  body.cb-mode .scard::before { height: 8px; }
+  body.cb-mode .scard[data-cost="1"] .cbox { border-style: solid; }
+  body.cb-mode .scard[data-cost="2"] .cbox { border-style: dashed; border-color: var(--cc); }
+  body.cb-mode .scard[data-cost="3"] .cbox { border-style: double; border-width: 3px; border-color: var(--cc); }
+  body.cb-mode .scard[data-cost="4"] .cbox { border-radius: 50%; border-color: var(--cc); }
+  body.cb-mode .scard[data-cost="5"] .cbox { border-color: #c98d00; background: #fff4c2; }
+
+  /* 시너지 브론즈 / 실버 / 골드 / 퍼플 단계 색 */
+  #synList li.act[data-tier="1"]::before { background: linear-gradient(90deg, #5e3b22, #8c5a34); box-shadow: 0 2px 0 #3f2614, inset 0 0 0 1.5px rgba(235,176,120,.65); }
+  #synList li.act[data-tier="2"]::before { background: linear-gradient(90deg, #3c506b, #6882a3); box-shadow: 0 2px 0 #263448, inset 0 0 0 1.5px rgba(220,236,252,.8); }
+  #synList li.act[data-tier="3"]::before { background: linear-gradient(90deg, #7c5200, #c48700); box-shadow: 0 2px 0 #4f3300, 0 0 8px rgba(255,213,61,.55), inset 0 0 0 1.5px rgba(255,235,130,.9); }
+  #synList li.act[data-tier="4"]::before { background: linear-gradient(90deg, #562c7a, #894ec2); box-shadow: 0 2px 0 #361950, 0 0 8px rgba(185,120,255,.55), inset 0 0 0 1.5px rgba(226,194,255,.85); }
+
+  /* 우측 학생 상세 스킬 카드 (전체 설명은 호버/포커스 툴팁) */
+  .skcard { display: block; overflow: hidden; cursor: help; }
+  .skhead { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; margin-bottom: 1px; }
+  .skmeta { font-size: 12px; font-weight: 800; color: var(--ink2); white-space: nowrap; }
+  .skdesc { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+  /* 상점 드래그 구매 */
+  .scard.dragging { opacity: .45; transform: scale(.96); }
+  #benchRow.buy-drop { border-radius: 10px; outline: 3px solid var(--good); background: rgba(63,207,114,.14); }
+  #benchRow.buy-drop .bslot:not(.has) { border-color: var(--good); background: rgba(63,207,114,.15); }
+
+  /* 전투 기록 모달 */
+  .win.hist-win { width: 760px; max-height: 560px; }
+  .hist-empty { text-align: center; color: var(--ink2); font-weight: 700; padding: 28px 12px; line-height: 1.7; }
+  .hist-layout { display: grid; grid-template-columns: 232px 1fr; gap: 14px; min-height: 360px; }
+  .hist-list { list-style: none; margin: 0; padding: 0 4px 0 0; display: flex; flex-direction: column; gap: 5px; max-height: 440px; overflow-y: auto; scrollbar-width: thin; }
+  .hist-item { width: 100%; display: grid; grid-template-columns: 34px 40px 1fr auto; align-items: center; gap: 5px; padding: 8px 8px; border-radius: 8px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); font-size: 12px; font-weight: 800; text-align: left; cursor: pointer; }
+  .hist-item:hover { background: #edf5ff; }
+  .hist-item.active { border-color: var(--blue); background: #e3f0ff; box-shadow: 0 0 0 1px var(--blue); }
+  .hist-item .hr { font-style: italic; font-weight: 900; color: var(--navy); }
+  .hist-item .hopp { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  .hist-item .hdmg { font-variant-numeric: tabular-nums; color: var(--ink2); }
+  .hres { display: inline-block; padding: 1px 6px; border-radius: 5px; font-size: 12px; font-weight: 900; text-align: center; color: #fff; }
+  .hres.hwin { background: #1e88e5; }
+  .hres.hlose { background: #d64554; }
+  .hist-detail { display: flex; flex-direction: column; gap: 8px; min-width: 0; background: #fff; border: 1.5px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .hd-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 13px; font-weight: 800; color: var(--navy); }
+  .hd-head em { margin-left: auto; font-style: normal; font-size: 12px; color: var(--ink2); }
+  .hd-syn { display: flex; align-items: center; gap: 8px; padding: 5px 8px; border-radius: 7px; background: #eef5fc; font-size: 12px; }
+  .hd-syn span { color: var(--ink2); font-weight: 800; flex: none; }
+  .hd-syn b { color: var(--navy); font-weight: 800; }
+  .hist-detail .dps-list { max-height: 290px; }
+
+  /* 게임 내 모션 축소 설정 */
+  body.reduced-motion { --mo-dist: 0px; --mo-lift: 0px; --mo-dur: 160ms; }
+  body.reduced-motion .tcontent > *,
+  body.reduced-motion #stage:has(#title.hidden) :is(#topbar, #lbPanel, #synPanel, #boardWrap, #rightPanel, #ctrl, #benchRow, #shopRow, #cta) { animation-delay: 0s; animation-name: moFade; }
+  body.reduced-motion :is(#banner.show, #resultPanel, .win, .endwin, .toast, #matchOv, #matchOv .vs) { animation-name: moFade; animation-duration: var(--mo-fast); }
+  body.reduced-motion :is(#matchOv .spin::before, .roundtag em.timer.warn, #hudFeverCountdown.soon, #lbList li.hit::before, #lbList .hp-delta) { animation: none; }
+  body.reduced-motion :is(.scard, .btn::before, .tbtn::before, .xpbar i, #lbList .hpb i, #synPanel, .intbar i, #hudFeverCountdown .fvbar i, .dps-bar i) { transition: none; }
 }
 
 /* ---------- 모션 축소: 이동·확대·회전·반복 제거, 짧은 페이드만 유지 ---------- */

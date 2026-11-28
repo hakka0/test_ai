@@ -197,8 +197,13 @@ window.addEventListener('keydown', (e) => {
   const lk = k.toLowerCase();
   if (lk === 'h') { U.openHelp(); return; }
   if (lk === 'r') { U.openRecipe(); return; }
+  if (PC_MODE && lk === 'b') { U.openHistory(); return; }
   if (U.modalOpen()) return;
-  if (k === ' ' || k === 'Enter') { e.preventDefault(); primary(); return; }
+  if (k === ' ' || k === 'Enter') {
+    const ae = document.activeElement;
+    if (PC_MODE && ae && ae !== document.body && ae.id !== 'btnStart' && ae.matches('button, [role="button"], input, select, textarea')) return;
+    e.preventDefault(); primary(); return;
+  }
   switch (lk) {
     case 'd': if (G.phase === 'prep') { S.reroll(); U.renderAll(); } break;
     case 'f': if (G.phase === 'prep') { S.buyXp(); U.renderAll(); } break;
@@ -223,6 +228,7 @@ U.initUI(renderer, PC_MODE ? { primary } : { cycleSpeed, togglePause, primary })
 let q = 'high';
 try { q = localStorage.getItem('bachess_q') || ((navigator.hardwareConcurrency || 4) <= 2 ? 'low' : 'high'); } catch { /* ignore */ }
 U.setQuality(q);
+if (PC_MODE) U.loadPcPrefs();
 $('#btnPlay').onclick = () => { sfx('click'); startNewGame(); };
 if (PC_MODE) $('#btnAssetRetry').onclick = startNewGame;
 $('#btnHow').onclick = () => U.openHelp();
