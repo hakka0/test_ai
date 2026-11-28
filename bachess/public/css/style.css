@@ -486,8 +486,83 @@ kbd { font: 700 10px/1 'Noto Sans KR', sans-serif; background: rgba(20, 40, 80, 
 /* 저사양 옵션: 진입 모션 생략 */
 .lowfx .tcontent > *, .lowfx #stage:has(#title.hidden) :is(#topbar, #lbPanel, #synPanel, #boardWrap, #rightPanel, #ctrl, #benchRow, #shopRow, #cta) { animation: none; }
 
+/* ---------- PC 1단계 GUI 정리 (가독성 · 순위 행 44px+ · 경제/연속 표시) ---------- */
+@media (hover: hover) and (pointer: fine) {
+  /* 상단 바: 크레딧 이자 진행 바 · 연승/연패 표시 */
+  .lvinfo em { font-size: 12px; }
+  .roundtag { left: 274px; padding: 4px 10px 0 12px; }
+  .pills { left: 500px; gap: 8px; }
+  .pill { min-width: 96px; padding: 0 12px 0 38px; font-size: 18px; gap: 5px; }
+  .pill .ico { left: 10px; top: 8px; width: 22px; height: 22px; }
+  .pill.gold { min-width: 162px; padding-bottom: 4px; }
+  .pill.gold small { font-size: 12px; white-space: nowrap; }
+  .intbar { position: absolute; left: 38px; right: 12px; bottom: 4px; height: 3px; border-radius: 2px; background: rgba(27,53,96,.18); overflow: hidden; }
+  .intbar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #f0b800, #3fcf72); transition: width .25s; }
+  .pill.streak { min-width: 108px; }
+  .pill.streak span { font-size: 12px; white-space: nowrap; }
+  .pill.streak #streakIco { fill: #8fa3be; stroke: #5b7094; }
+  .pill.streak.streak-win::before { background: linear-gradient(#fff6e6, #ffe3c2); box-shadow: 0 2px 0 #d99b52, 0 3px 6px rgba(150,80,20,.18); }
+  .pill.streak.streak-win b { color: #c94c10; }
+  .pill.streak.streak-win span { color: #8c3c14; }
+  .pill.streak.streak-win #streakIco { fill: #ff7a29; stroke: #c4400c; }
+  .pill.streak.streak-lose::before { background: linear-gradient(#edf6ff, #d4e8ff); box-shadow: 0 2px 0 #8eb3db, 0 3px 6px rgba(20,60,120,.18); }
+  .pill.streak.streak-lose b { color: #1a66be; }
+  .pill.streak.streak-lose span { color: #2b548a; }
+  .pill.streak.streak-lose #streakIco { fill: #45a8ff; stroke: #1a63b8; }
+  .pill.gem { min-width: 78px; }
+
+  /* 순위표: 1024×768(0.8배)에서도 44px 이상 터치/클릭 높이를 유지하고 내부 스크롤 지원 */
+  #lbPanel { display: flex; flex-direction: column; padding: 0 4px 6px 0; }
+  #lbPanel .ph { flex: none; margin-bottom: 4px; }
+  #lbPanel .ph em { font-size: 12px; }
+  #lbList { flex: 1; min-height: 0; overflow-y: auto; gap: 3px; padding: 0 4px 2px 8px; scrollbar-width: thin; scrollbar-color: rgba(27,53,96,.35) transparent; }
+  #lbList li { height: 55px; flex: none; padding: 5px 8px 5px 6px; font-size: 13px; display: grid; grid-template-columns: 20px 1fr auto; grid-template-rows: 1fr auto; align-items: center; column-gap: 6px; row-gap: 3px; }
+  #lbList .rk { grid-column: 1; grid-row: 1 / span 2; width: auto; font-size: 16px; }
+  #lbList .nm { grid-column: 2; grid-row: 1; font-size: 13px; }
+  #lbList .st { grid-column: 3; grid-row: 1; width: auto; min-width: 16px; font-size: 13px; }
+  #lbList .hpb { grid-column: 2; grid-row: 2; width: 100%; height: 8px; }
+  #lbList .hpn { grid-column: 3; grid-row: 2; width: auto; font-size: 12px; }
+  #lbList li.dead .hpn { font-size: 12px; }
+
+  /* 시너지 / 우측 상세 / 대기석 / 상점 / 툴팁 / 모달 최소 12px 가독성 */
+  #synPanel .ph em.teamcount { font-size: 12px; height: 20px; line-height: 20px; }
+  #synList li .sicon { font-size: 12px; }
+  .syn-collapsed #synList li .sicon::after { font-size: 12px; min-width: 18px; height: 18px; }
+  .eic b, .bosstag { font-size: 12px; }
+  .unitbox { display: flex; flex-direction: column; }
+  .unitbox .ph { flex: none; margin-bottom: 4px; }
+  .ucard { flex: none; margin-bottom: 4px; }
+  .ucard img.pt { width: 44px; height: 44px; }
+  .chip { font-size: 12px; padding: 1px 7px; }
+  .statgrid { flex: none; grid-template-columns: 1fr 1fr; gap: 2px 5px; font-size: 12px; margin: 2px 0; }
+  .statgrid span { padding: 1px 6px; line-height: 1.25; }
+  .skline { font-size: 12px; line-height: 1.3; -webkit-line-clamp: 3; margin-top: 3px; padding: 3px 6px; }
+  .eqrow { flex: none; gap: 4px; margin-top: auto; padding-top: 4px; }
+  .eqslot { width: 32px; height: 32px; }
+  .eqrow .btn { height: 32px; padding: 0 10px; white-space: nowrap; }
+  .bslot .stars { font-size: 12px; font-weight: 900; line-height: 1; text-shadow: 0 1px 2px rgba(255,255,255,.95); }
+  .bslot .stars[data-star="2"] { color: #d98a00; }
+  .bslot .stars[data-star="3"] { font-size: 13px; color: #ff7a00; text-shadow: 0 0 6px rgba(255,213,61,.95), 0 1px 0 #fff; }
+  .bslot .tag { font-size: 12px; line-height: 15px; padding: 0 4px; }
+  .scard .cbox { width: 20px; height: 20px; font-size: 12px; }
+  .scard .nm { left: 30px; }
+  .scard img.pt { left: 5px; width: 54px; height: 54px; }
+  .scard .meta { left: 64px; right: 4px; top: 30px; gap: 2px; }
+  .scard .meta .chip { font-size: 12px; padding: 0 5px; line-height: 17px; }
+  .scard .meta .wp { font-size: 12px; line-height: 14px; white-space: nowrap; }
+  .scard .triple { font-size: 12px; }
+  #shopOddsList span { font-size: 12px; }
+  #tip h5, #tip .hint { font-size: 12px; }
+  .rtable th small { font-size: 12px; }
+  .disc { font-size: 12px; }
+  .tbtns .btn small { font-size: 12px; }
+  #btnXp .lbl { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.15; }
+  #btnXp .xp-rem { font-size: 12px; font-style: normal; font-weight: 700; opacity: .9; }
+}
+
 /* ---------- 모션 축소: 이동·확대·회전·반복 제거, 짧은 페이드만 유지 ---------- */
 @media (prefers-reduced-motion: reduce) {
+  .intbar i { transition: none; }
   :root { --mo-dist: 0px; --mo-lift: 0px; --mo-dur: 160ms; }
   /* 이동 없이 투명도만 변하는 진입 */
   .tcontent > *, #stage:has(#title.hidden) :is(#topbar, #lbPanel, #synPanel, #boardWrap, #rightPanel, #ctrl, #benchRow, #shopRow, #cta) { animation-delay: 0s; }
