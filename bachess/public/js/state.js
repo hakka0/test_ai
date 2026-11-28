@@ -48,7 +48,10 @@ export function newGame(mode = 'pvp') {
   if (mode === 'pvp') {
     G.players = [makePlayer(0, '나', false, 1), ...makeBots()];
     G.prepMax = G.prepT = PREP_FIRST;
-    for (const b of G.players) if (b.bot) { botPrep(b, 1); b.readyAt = 8 + Math.random() * 28; }
+    for (const b of G.players) if (b.bot) {
+      botPrep(b, 1);
+      if (!PC_MODE) b.readyAt = 8 + Math.random() * 28;
+    }
     syncMe();
   }
   emit('change');
@@ -71,24 +74,44 @@ export function locOfUid(uid) {
 }
 
 // ---------- 상점 ----------
+function drawFromStock(candidates) {
+  const total = candidates.reduce((sum, unit) => sum + G.pool[unit.key], 0);
+  let roll = Math.random() * total;
+  for (const unit of candidates) if ((roll -= G.pool[unit.key]) < 0) return unit.key;
+  return candidates[0].key;
+}
+
+function drawPcKey(odds) {
+  const stock = odds.map((weight, index) => weight
+    ? UNITS.filter((unit) => unit.cost === index + 1 && G.pool[unit.key] > 0)
+    : []);
+  const weights = odds.map((weight, index) => stock[index].length ? weight : 0);
+  const total = weights.reduce((sum, weight) => sum + weight, 0);
+  // 소진된 코스트를 제외하고, 출현할 수 있는 코스트의 확률 비율을 유지한다.
+  let roll = Math.random() * total;
+  const index = weights.findIndex((weight) => (roll -= weight) < 0);
+  return index >= 0 ? drawFromStock(stock[index]) : null;
+}
+
 function drawKey() {
   const odds = SHOP_ODDS[G.level];
+  if (PC_MODE) return drawPcKey(odds);
   for (let tries = 0; tries < 30; tries++) {
     let x = Math.random() * 100, cost = 1;
     for (let i = 0; i < 5; i++) { if ((x -= odds[i]) < 0) { cost = i + 1; break; } }
     const cands = UNITS.filter((u) => u.cost === cost && G.pool[u.key] > 0);
     if (!cands.length) continue;
-    // 가중치: 남은 수량
-    const tot = cands.reduce((s, u) => s + G.pool[u.key], 0);
-    let r = Math.random() * tot;
-    for (const u of cands) { if ((r -= G.pool[u.key]) < 0) return u.key; }
-    return cands[0].key;
+    return drawFromStock(cands);
   }
   return UNITS[0].key;
 }
 export function rollShop(initial = false) {
   for (const k of G.shop) if (k) G.pool[k]++;
-  for (let i = 0; i < 5; i++) { const k = drawKey(); G.pool[k]--; G.shop[i] = k; }
+  for (let i = 0; i < 5; i++) {
+    const k = drawKey();
+    if (k) G.pool[k]--;
+    G.shop[i] = k;
+  }
 }
 export function refreshShopNewRound() {
   if (G.locked) {
@@ -220,9 +243,9 @@ export function move(from, to) {
   return true;
 }
 
-// 자동 배치: 탱커 앞줄, 딜러/서포터 뒷줄
+// 모바일 자동 배치: 탱커 앞줄, 딜러/서포터 뒷줄
 export function autoArrange() {
-  if (G.phase !== 'prep') return;
+  if (PC_MODE || G.phase !== 'prep') return;
   const all = allUnits();
   const score = (u) => { const d = defOf(u); return d.cost * 10 + u.star * 14 + (d.role === 'tank' ? 4 : 0); };
   all.sort((a, b) => score(b) - score(a));
@@ -310,7 +333,12 @@ export function synergyNow() { return calcSynergies(placedUnits().map((p) => p.d
 
 export function startBattle() {
   if (G.phase !== 'prep' && !(G.mode === 'pvp' && G.phase === 'matching')) return null;
+  if (PC_MODE) autoFill();
   if (boardCount() === 0 && G.mode !== 'pvp') { toast('출전할 학생을 보드에 배치하세요.', 'warn'); emit('sfx', 'deny'); return null; }
+  if (PC_MODE && G.mode === 'pvp') {
+    syncMe();
+    while (G.pending.length) computeOne();
+  }
   G.phase = 'battle';
   const b = new Battle(prepBattlers());
   G.battle = b;
@@ -377,32 +405,52 @@ export function myRank() { return ranking().findIndex((p) => p.id === 0) + 1; }
 export const aliveCount = () => G.players.filter((p) => p.alive).length;
 function startPvpPrep() {
   G.prepMax = G.prepT = PREP_TIME; G.ready = false; G.opp = null; G.revealOpp = false; G.matches = []; G.results = []; G.pending = [];
-  for (const b of G.players) if (b.bot && b.alive) { botPrep(b, G.round); b.readyAt = 5 + Math.random() * 20 + (1 - b.skill) * 4; }
+  for (const b of G.players) if (b.bot && b.alive) {
+    botPrep(b, G.round);
+    if (!PC_MODE) b.readyAt = 5 + Math.random() * 20 + (1 - b.skill) * 4;
+  }
 }
 export function readyInfo() {
   const alive = G.players.filter((p) => p.alive);
-  const el = G.prepMax - G.prepT;
-  const ready = alive.filter((p) => (p.id === 0 ? G.ready : el >= p.readyAt)).length;
-  return { ready, total: alive.length };
+  return { ready: alive.filter(isReady).length, total: alive.length };
 }
-export function isReady(p) { return p.id === 0 ? G.ready : (G.phase === 'prep' ? G.prepMax - G.prepT >= p.readyAt : true); }
+export function isReady(p) {
+  if (p.id === 0) return G.ready;
+  return (PC_MODE && p.bot) || G.phase !== 'prep' || G.prepMax - G.prepT >= p.readyAt;
+}
+function allReady() { return G.ready && G.players.every((p) => !p.alive || isReady(p)); }
+
 export function toggleReady() {
   if (G.mode !== 'pvp' || G.phase !== 'prep') return;
-  G.ready = !G.ready; emit('sfx', G.ready ? 'buy' : 'click'); emit('change');
+  G.ready = !G.ready;
+  emit('sfx', G.ready ? 'buy' : 'click');
+  if (PC_MODE && allReady()) beginMatching();
+  else emit('change');
 }
-// 준비 시간 초과 시 비어 있는 출전 칸을 벤치의 학생으로 자동 보충
-export function autoFill() {
-  if (boardCount() >= G.level) return;
-  const bench = G.bench.map((u, i) => ({ u, i })).filter((x) => x.u).sort((a, b) => defOf(b.u).cost * 3 + b.u.star - (defOf(a.u).cost * 3 + a.u.star));
+// 기존 편성을 유지하면서 출전 한도까지 빈 칸을 채운다.
+function autoFill() {
+  let remaining = G.level - boardCount();
+  if (remaining <= 0) return;
+  const bench = G.bench.map((u, i) => ({ u, i })).filter((entry) => entry.u);
+  if (!PC_MODE) {
+    const score = (unit) => defOf(unit).cost * 3 + unit.star;
+    bench.sort((a, b) => score(b.u) - score(a.u));
+  }
   for (const { u, i } of bench) {
-    if (boardCount() >= G.level) break;
+    if (!remaining) break;
     const rows = defOf(u).role === 'tank' ? FRONT_ROWS : BACK_ROWS;
-    let done = false;
-    for (const r of rows) { for (const c of CENTER_COLS) { const idx = r * COLS + c; if (!G.board[idx]) { G.board[idx] = u; G.bench[i] = null; done = true; break; } } if (done) break; }
+    const cell = rows.flatMap((row) => CENTER_COLS.map((col) => row * COLS + col))
+      .find((idx) => !G.board[idx]);
+    if (cell === undefined) break;
+    G.board[cell] = u;
+    G.bench[i] = null;
+    remaining--;
   }
 }
 function beginMatching() {
-  G.ready = false; autoFill(); syncMe();
+  G.ready = false;
+  if (!PC_MODE) autoFill();
+  syncMe();
   G.phase = 'matching'; G.matchT = MATCH_TIME; G.revealOpp = false;
   G.matches = makeMatches(G.players, G.round);
   const mine = G.matches.find((m) => m.a.id === 0 || (m.b.id === 0 && !m.ghost));
@@ -413,8 +461,8 @@ function beginMatching() {
   G.results = [];
   emit('sfx', 'roll'); emit('change');
 }
-function computeOne() {
-  const m = G.pending.pop(); if (!m) return;
+function computeOne(index = -1) {
+  const [m] = G.pending.splice(index, 1);
   const r = resolveBotMatch(m, G.round);
   r.at = 7 + Math.random() * 20;
   G.results.push(r);
@@ -424,15 +472,19 @@ export function tick(dt) {
   if (G.mode !== 'pvp') return null;
   if (G.phase === 'prep') {
     G.prepT = Math.max(0, G.prepT - dt);
-    const ri = readyInfo();
-    if (G.prepT <= 0 || (G.ready && ri.ready >= ri.total)) beginMatching();
+    if (G.prepT <= 0 || allReady()) beginMatching();
     return null;
   }
   if (G.phase === 'matching') {
     G.matchT -= dt;
-    if (G.pending.length) computeOne();
+    // 내 잔상을 상대하는 봇은 자동 보충이 끝난 편성으로 계산한다.
+    const next = PC_MODE ? G.pending.findLastIndex((match) => !match.ghost || match.b.id !== 0) : G.pending.length - 1;
+    if (next >= 0) computeOne(next);
     if (!G.revealOpp && G.matchT <= MATCH_TIME - 2.2) { G.revealOpp = true; emit('sfx', 'merge'); emit('change'); }
-    if (G.matchT <= 0) { while (G.pending.length) computeOne(); return 'battle'; }
+    if (G.matchT <= 0) {
+      if (!PC_MODE) while (G.pending.length) computeOne();
+      return 'battle';
+    }
   }
   return null;
 }

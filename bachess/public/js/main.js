@@ -31,7 +31,7 @@ window.addEventListener('resize', fit);
 // ---------- 흐름 ----------
 function setSpeed(v) { UI.speed = v; renderer.speed = v; }
 function cycleSpeed() { setSpeed(UI.speed >= 3 ? 1 : UI.speed + 1); sfx('click'); U.renderAll(); }
-function togglePause() { if (G.phase !== 'battle') return; UI.paused = !UI.paused; sfx('click'); U.renderAll(); }
+function togglePause() { if (PC_MODE || G.phase !== 'battle') return; UI.paused = !UI.paused; sfx('click'); U.renderAll(); }
 
 function startBattle() {
   const b = S.startBattle();
@@ -114,7 +114,9 @@ async function startNewGame() {
   U.hideResult(); $('#endScreen').classList.add('hidden');
   renderer.endBattle(); battle = null;
   U.renderAll();
-  U.toast('학생을 편성하고 [준비 완료]를 누르세요. 모두 준비하거나 시간이 끝나면 매칭이 시작됩니다!', 'info');
+  U.toast(PC_MODE
+    ? '봇은 이미 준비 완료입니다. 학생을 편성하고 [준비 완료]를 누르면 매칭이 시작됩니다.'
+    : '학생을 편성하고 [준비 완료]를 누르세요. 모두 준비하거나 시간이 끝나면 매칭이 시작됩니다!', 'info');
 }
 function toTitle() {
   G.phase = 'title';
@@ -124,7 +126,11 @@ function toTitle() {
 
 function primary() {
   if (!$('#title').classList.contains('hidden')) return;
-  if (G.phase === 'prep') { S.toggleReady(); U.refreshReady(); }
+  if (G.phase === 'prep') {
+    S.toggleReady();
+    if (G.phase === 'matching') U.updateMatch();
+    else U.refreshReady();
+  }
   else if (G.phase === 'result' || G.phase === 'over') { const b = $('#btnOk'); if (b && !$('#resultPanel').classList.contains('hidden')) b.click(); }
 }
 
@@ -146,7 +152,7 @@ function frame(now) {
     if (r === 'battle') startBattle();
   }
   if (battle) {
-    if (!UI.paused) {
+    if (PC_MODE || !UI.paused) {
       const speed = PC_MODE ? 1 : UI.speed;
       battle.advance(dt, speed);
       const evs = battle.events; battle.events = [];
@@ -193,10 +199,10 @@ window.addEventListener('keydown', (e) => {
     case 'l': S.toggleLock(); break;
     case 's': U.toggleSyn(); break;
     case 'm': U.toggleMute(); break;
-    case 'a': if (G.phase === 'prep') S.autoArrange(); break;
+    case 'a': if (!PC_MODE) S.autoArrange(); break;
     case 'e': if (S.canShop()) U.sellSelected(); break;
     case 'q': if (!PC_MODE) cycleSpeed(); break;
-    case 'p': togglePause(); break;
+    case 'p': if (!PC_MODE) togglePause(); break;
     case '1': case '2': case '3': case '4': case '5':
       if (S.canShop()) { S.buy(+lk - 1); U.renderAll(); }
       break;
@@ -207,7 +213,7 @@ window.addEventListener('pointerdown', () => { initAudio(); if (G.phase !== 'tit
 
 // ---------- 시작 ----------
 fit();
-U.initUI(renderer, { cycleSpeed, togglePause, primary });
+U.initUI(renderer, PC_MODE ? { primary } : { cycleSpeed, togglePause, primary });
 let q = 'high';
 try { q = localStorage.getItem('bachess_q') || ((navigator.hardwareConcurrency || 4) <= 2 ? 'low' : 'high'); } catch { /* ignore */ }
 U.setQuality(q);

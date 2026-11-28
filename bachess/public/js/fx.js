@@ -65,6 +65,37 @@ function drawPixelWeapon(ctx, u, image) {
 
 function mkCanvas(w, h) { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; }
 
+const synergyOutlines = new WeakMap();
+function synergyOutline(sprite) {
+  const cached = synergyOutlines.get(sprite);
+  if (cached) return cached;
+  const radius = Math.ceil(sprite.width * 0.055);
+  const padding = radius * 3;
+  const mask = mkCanvas(sprite.width + 2 * padding, sprite.height + 2 * padding);
+  const ctx = mask.getContext('2d');
+  for (let i = 0; i < 8; i++) {
+    const angle = i * TAU / 8;
+    ctx.drawImage(sprite, padding + Math.round(radius * Math.cos(angle)), padding + Math.round(radius * Math.sin(angle)));
+  }
+  ctx.globalCompositeOperation = 'source-in';
+  ctx.fillStyle = '#fff3a6';
+  ctx.fillRect(0, 0, mask.width, mask.height);
+
+  // 방향별 그림에 발광을 한 번 구워두고, 전장에서는 캐시된 결과를 그린다.
+  const image = mkCanvas(mask.width, mask.height);
+  const light = image.getContext('2d');
+  light.save();
+  light.shadowColor = 'rgba(233, 167, 40, .86)';
+  light.shadowBlur = radius * 1.25;
+  light.drawImage(mask, 0, 0);
+  light.restore();
+  light.globalCompositeOperation = 'destination-out';
+  light.drawImage(sprite, padding, padding);
+  const outline = { image, scalePadding: padding / sprite.width };
+  synergyOutlines.set(sprite, outline);
+  return outline;
+}
+
 const glowCache = new Map();
 function glow(color) {
   let g = glowCache.get(color);
@@ -130,6 +161,7 @@ export class BoardRenderer {
     this.hover = null;       // hover unit
     this.hlCell = null;      // {col,row,ok}
     this.selectedUid = null;
+    this.synergyHighlights = null;
     this.drawRange = null;
     this.pixelsPerY = 1;
     this.pixelsPerX = 1;
@@ -445,6 +477,11 @@ export class BoardRenderer {
     if (PC_MODE && imported) {
       ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = 'high';
+    }
+    if (PC_MODE && u.alive && u.team === 0 && this.synergyHighlights?.has(u.def.key)) {
+      const { image, scalePadding } = synergyOutline(sprite);
+      const margin = size * scalePadding;
+      ctx.drawImage(image, -size / 2 - margin, spriteTop - margin, size + 2 * margin, size + 2 * margin);
     }
     if (pixelWeapon && weaponBehind) drawPixelWeapon(ctx, u, pixelWeapon);
     ctx.drawImage(sprite, -size / 2, spriteTop, size, size);
