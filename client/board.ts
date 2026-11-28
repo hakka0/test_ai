@@ -10,6 +10,7 @@ import { HealthTrail, HEALTH_TRAIL_COLOR } from "./health-trail";
 import { skillIndicator } from "./skill-indicator";
 import { directionFrame, measureUnitFrame, unitImageLayout, UNIT_FOOT_Y, type UnitFrameBounds } from "./unit-appearance";
 import { BLUE_ARCHIVE_KINDS, SPRITE_FRAME_SIZE } from "../shared/blue-archive";
+import { pagesTextureKey, pagesUnitImage, PAGES_UNIT_FRAME_SIZE, unitArtKey, usesPagesUnitArt } from "./pages-unit-art";
 import type { Snapshot, Unit, FighterSnapshot } from "../shared/model";
 import { COLS, ROWS } from "../shared/model";
 import { WIDTH, HEIGHT, MARGIN, CELL, preparationPosition, displayPosition } from "./board-geometry";
@@ -41,6 +42,7 @@ export class Board extends Phaser.Scene {
   private attackTargets = new Map<string, string>();
   private visualContext = "";
   private visual = new Map<string, { x: number; y: number }>();
+  private pagesArtQueued = false;
   private frameBounds = new Map<string, Map<string, UnitFrameBounds>>();
   constructor() {
     super("Board");
@@ -66,26 +68,43 @@ export class Board extends Phaser.Scene {
       } else this.load.image(id, def.image);
     }
     for(const variant of ["sentry","drone"])this.load.image(`minion-${variant}`,assetUrl(`/units/minion-${variant}.svg`));
+    this.queuePagesUnitArt();
+  }
+  private queuePagesUnitArt(): boolean {
+    if (this.pagesArtQueued || !usesPagesUnitArt()) return false;
+    this.pagesArtQueued = true;
+    for (const kind of BLUE_ARCHIVE_KINDS) {
+      const image = pagesUnitImage(kind);
+      if (image) this.load.spritesheet(pagesTextureKey(kind), image, {
+        frameWidth: PAGES_UNIT_FRAME_SIZE, frameHeight: PAGES_UNIT_FRAME_SIZE,
+      });
+    }
+    for (const kind of ["minion-sentry", "minion-drone"]) {
+      const image = pagesUnitImage(kind);
+      if (image) this.load.image(pagesTextureKey(kind), image);
+    }
+    return true;
+  }
+  private measureFrames(key: string) {
+    if (!this.textures.exists(key) || this.frameBounds.has(key)) return;
+    const texture = this.textures.get(key);
+    texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
+    const source = texture.getSourceImage() as HTMLImageElement;
+    const canvas = document.createElement("canvas");
+    canvas.width = source.width; canvas.height = source.height;
+    const context = canvas.getContext("2d", { willReadFrequently: true })!;
+    context.drawImage(source, 0, 0);
+    const frames = new Map<string, UnitFrameBounds>();
+    for (const name of texture.getFrameNames()) {
+      const frame = texture.get(name);
+      const pixels = context.getImageData(frame.cutX, frame.cutY, frame.cutWidth, frame.cutHeight);
+      const bounds = measureUnitFrame(pixels.data, pixels.width, pixels.height);
+      if (bounds) frames.set(String(name), bounds);
+    }
+    this.frameBounds.set(key, frames);
   }
   create() {
-    for (const kind of BLUE_ARCHIVE_KINDS) {
-      if (!this.textures.exists(kind)) continue;
-      const texture = this.textures.get(kind);
-      texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
-      const source = texture.getSourceImage() as HTMLImageElement;
-      const canvas = document.createElement("canvas");
-      canvas.width = source.width; canvas.height = source.height;
-      const context = canvas.getContext("2d", { willReadFrequently: true })!;
-      context.drawImage(source, 0, 0);
-      const frames = new Map<string, UnitFrameBounds>();
-      for (const name of texture.getFrameNames()) {
-        const frame = texture.get(name);
-        const pixels = context.getImageData(frame.cutX, frame.cutY, frame.cutWidth, frame.cutHeight);
-        const bounds = measureUnitFrame(pixels.data, pixels.width, pixels.height);
-        if (bounds) frames.set(String(name), bounds);
-      }
-      this.frameBounds.set(kind, frames);
-    }
+    for (const kind of BLUE_ARCHIVE_KINDS) this.measureFrames(kind);
     this.tiles = this.add.graphics();
     this.bars = this.add.graphics().setDepth(20);
     this.selectionTile = this.add.graphics().setDepth(5).setData('selectionIndicator','cell');
@@ -127,6 +146,8 @@ export class Board extends Phaser.Scene {
   }
   update(time: number, delta: number) {
     if (!this.tiles) return;
+    if (this.queuePagesUnitArt()) this.load.start();
+    const usePagesArt = usesPagesUnitArt();
     const context = this.snapshot ? `${this.snapshot.roomId}:${this.snapshot.round}:${this.selfId}` : "";
     if (context !== this.visualContext || (this.snapshot && this.snapshot.eventId < this.lastEvent)) {
       this.resetVisuals(); this.visualContext = context;
@@ -183,11 +204,14 @@ export class Board extends Phaser.Scene {
         tx = MARGIN + (p.x + 0.5) * CELL,
         ty = MARGIN + (p.y + 0.5) * CELL;
       const own = u.owner === this.selfId;
-      const directional = !u.minion && Boolean(UNITS[u.kind].spriteSheet) && this.textures.exists(u.kind);
+      const kind = unitArtKey(u);
+      const pagesKey = pagesTextureKey(kind);
+      const texture = usePagesArt && this.textures.exists(pagesKey) ? pagesKey : kind;
+      const directional = !u.minion && Boolean(UNITS[u.kind].spriteSheet) && this.textures.exists(texture);
       let image = this.sprites.get(u.id);
       if (!image) {
         image = this.add
-          .image(tx, ty, u.minion ? `minion-${u.minion.variant}` : u.kind, directional ? directionFrame(0, 0, own) : undefined)
+          .image(tx, ty, texture, directional ? directionFrame(0, 0, own) : undefined)
           .setDepth(10).setData("directional", directional);
         this.sprites.set(u.id, image);
         this.visual.set(u.id, { x: tx, y: ty });
@@ -205,7 +229,11 @@ export class Board extends Phaser.Scene {
             .setDepth(21),
         );
         this.ranks.set(u.id,this.add.text(tx,ty+34,'',{fontFamily:'sans-serif',fontSize:'12px',color:'#0b6fc2',backgroundColor:'#f4faffee',padding:{left:1,right:3,top:1,bottom:1}}).setOrigin(0,0.5).setDepth(21));
+      } else if (image.texture.key !== texture) {
+        const frame = directional ? (image.getData("directional") ? Number(image.frame.name) : directionFrame(0, 0, own)) : undefined;
+        image.setTexture(texture, frame).setData("directional", directional);
       }
+      if (directional && !this.frameBounds.has(texture)) this.measureFrames(texture);
       image.setAlpha(this.dragging === u.id ? 0.3 : 1);
       this.names.get(u.id)!.setText(unitDefinition(u).name).setAlpha(this.dragging === u.id ? 0.35 : 1);
       this.ranks.get(u.id)!.setText('★'.repeat(u.rank)).setAlpha(this.dragging===u.id?0.35:1);

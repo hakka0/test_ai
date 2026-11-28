@@ -1,4 +1,4 @@
-import { assetUrl } from "../shared/assets";
+import { unitArtKey, unitPortrait, usesPagesUnitArt } from "./pages-unit-art";
 declare const __APP_VERSION__:string;
 import {createEquipmentUI} from "./equipment-ui";
 import {createCraftUI} from "./craft-ui";
@@ -99,7 +99,7 @@ document.querySelector("#app")!.innerHTML = `
   <div class="eyebrow home-kicker">BLUE ARCHIVE · FAN GAME</div>
   <h1 id="lobby-title">선생님,<br>작전을 시작할까요?</h1>
   <p>20명의 학생으로 진형을 짜고,<br>자동 전투로 승부를 가려 보세요.</p>
-  <div class="heroes" aria-hidden="true"><img src="${assetUrl("/units/blue-archive/icons/hoshino.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/yuuka.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/shiroko.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/aris.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/mika.png")}" alt=""><img src="${assetUrl("/units/blue-archive/icons/hifumi.png")}" alt=""></div>
+  <div class="heroes" id="home-unit-portraits" aria-hidden="true"></div>
  </section>
  <section class="home-play" aria-labelledby="home-play-title">
   <h2 id="home-play-title">게임 시작</h2>
@@ -141,7 +141,22 @@ document.querySelector("#app")!.innerHTML = `
 <div id="notice" class="hidden" role="status" aria-live="polite"></div>`;
 document.body.classList.add("home-active");
 const roomCodeUI=createRoomCodeUI({notify:notice});
-createScreenModeUI({beforeChange: () => {endDrag();cancelSale();}, afterChange: () => {pcUI.sync();combatPanel?.sync();craftUI?.position();equipmentUI?.render();renderReserve();requestAnimationFrame(() => game.scale.refresh());}});
+function renderHomeUnitPortraits() {
+  const kinds = ["hoshino", "yuuka", "shiroko", "aris", "mika", "hifumi"] as const;
+  setHTML("home-unit-portraits", kinds
+    .map(kind => `<img src="${unitPortrait(kind, UNITS[kind].image)}" alt="">`).join(""));
+}
+createScreenModeUI({
+  beforeChange: () => {endDrag();cancelSale();},
+  afterChange: () => {
+    pcUI.sync();combatPanel?.sync();craftUI?.position();equipmentUI?.render();renderReserve();
+    if (import.meta.env.MODE === "pages") {
+      renderHomeUnitPortraits();
+      render();
+    }
+    requestAnimationFrame(() => game.scale.refresh());
+  },
+});
 $("game-view").inert = true;
 const net = new Connection();
 window.addEventListener("online", () => net.resume());
@@ -161,6 +176,7 @@ function setHTML(id: string, html: string) {
   const el = $(id);
   if (htmlCache.get(el) !== html) { el.innerHTML = html; htmlCache.set(el, html); }
 }
+renderHomeUnitPortraits();
 function cancelSale() { sale.clear(); saleArmed = false; }
 function mutate(action: Parameters<Connection["send"]>[0]) {
   if(rewardUI.peeking||(scoutingState.active&&!['buy','reroll','buyExperience','ready'].includes(action.type)))return;
@@ -489,7 +505,7 @@ document.addEventListener("pointerdown", (e) => {
     active: false,
     lastX: e.clientX, lastY: e.clientY,
   };
-  ghostImage.src = unitDefinition(unit).image;
+  ghostImage.src = unitPortrait(unitArtKey(unit), unitDefinition(unit).image);
   const cellWidth =
     ($("board-wrap").getBoundingClientRect().width * CELL) / WIDTH;
   ghost.style.width = `${Math.max(58, Math.min(88, cellWidth * 1.2))}px`;
@@ -670,6 +686,7 @@ function render() {
     selected,
     net.connected,
     gate.busy, canEdit(), canShop(), canPurchase(),rewardUI.peeking,scoutingState.playerId,
+    usesPagesUnitArt(),
   ]);
   if (lastUI === key) {
     equipmentUI?.render();
@@ -754,7 +771,7 @@ function render() {
     const def = UNITS[offer.kind];
     if (offer.sold) return `<div class="shop-offer"><button class="shop-card shop-sold" data-shop-slot="${slot}" disabled aria-label="${slot + 1}번 상품 구매 완료"><span class="sold-icon" aria-hidden="true">✓</span><strong>구매 완료</strong><span>리롤로 보충</span></button></div>`;
     const mergeReady=!hasMaxRank(p,offer.kind)&&p.units.filter(u=>u.kind===offer.kind&&u.rank===1).length%MERGE_COPIES===MERGE_COPIES-1;
-    return `<div class="shop-offer"><button type="button" class="shop-card" data-rarity="${def.rarity}" data-trait="${def.trait}" aria-disabled="${!canPurchase()||p.gold<offer.cost||!canAcquireUnit(p,offer.kind,s.phase==='prepare')}" data-merge-ready="${mergeReady}" data-unaffordable="${p.gold<offer.cost}" data-shop-slot="${slot}" data-offer="${escape(offer.id)}" data-revision="${p.shopRevision}" ${rewardUI.peeking ? "disabled" : ""} aria-label="${slot + 1}번 상품, ${def.name}, ${TRAITS[def.trait].name}, 레어도 ${def.rarity}등급, ${offer.cost} 골드에 구매${mergeReady?', 구매 시 합성 가능':''}${p.gold<offer.cost?', 골드 부족':''}"><span class="shop-portrait" data-kind="${offer.kind}" aria-hidden="true"><img src="${def.image}" alt="" draggable="false"><span class="shop-rarity">★${def.rarity}</span><span class="shop-traits">${shopTraitBadges([def.trait])}</span><span class="shop-unit-info"><strong>${def.name}</strong></span><span class="shop-price"><span class="currency-coin" aria-hidden="true"></span>${offer.cost}</span>${mergeReady?'<span class="shop-merge-ribbon">합성</span>':''}${p.gold<offer.cost?'<span class="shop-lack"><span class="shop-lock"></span>골드 부족</span>':''}</span></button></div>`;
+    return `<div class="shop-offer"><button type="button" class="shop-card" data-rarity="${def.rarity}" data-trait="${def.trait}" aria-disabled="${!canPurchase()||p.gold<offer.cost||!canAcquireUnit(p,offer.kind,s.phase==='prepare')}" data-merge-ready="${mergeReady}" data-unaffordable="${p.gold<offer.cost}" data-shop-slot="${slot}" data-offer="${escape(offer.id)}" data-revision="${p.shopRevision}" ${rewardUI.peeking ? "disabled" : ""} aria-label="${slot + 1}번 상품, ${def.name}, ${TRAITS[def.trait].name}, 레어도 ${def.rarity}등급, ${offer.cost} 골드에 구매${mergeReady?', 구매 시 합성 가능':''}${p.gold<offer.cost?', 골드 부족':''}"><span class="shop-portrait" data-kind="${offer.kind}" aria-hidden="true"><img src="${unitPortrait(offer.kind, def.image)}" alt="" draggable="false"><span class="shop-rarity">★${def.rarity}</span><span class="shop-traits">${shopTraitBadges([def.trait])}</span><span class="shop-unit-info"><strong>${def.name}</strong></span><span class="shop-price"><span class="currency-coin" aria-hidden="true"></span>${offer.cost}</span>${mergeReady?'<span class="shop-merge-ribbon">합성</span>':''}${p.gold<offer.cost?'<span class="shop-lack"><span class="shop-lock"></span>골드 부족</span>':''}</span></button></div>`;
   }).join(""));
   shopUI?.refresh();
   $<HTMLButtonElement>("reroll").disabled = !canShop() || p.gold < REROLL_COST || unitKindsFor(s.roster).every(kind=>hasMaxRank(p,kind));
@@ -766,7 +783,7 @@ function render() {
   setHTML("units", Array.from({length: BENCH_SIZE}, (_, slot) => {
     if(concealed)return `<button class="bench-slot empty-slot" data-bench-slot="${slot}" disabled aria-label="대기석 ${slot+1}, 비공개"><span class="slot-number">${slot+1}</span><span aria-hidden="true">—</span></button>`;
     const u = viewUnits.find(u => u.x < 0 && u.benchSlot === slot);
-    return u ? `<button class="unit-card bench-slot ${u.id === selected ? "selected" : ""}" data-bench-slot="${slot}" data-rarity="${UNITS[u.kind].rarity}" data-unit="${escape(u.id)}" aria-label="대기석 ${slot + 1}, ${unitDefinition(u).name}, ${TRAITS[UNITS[u.kind].trait].name}, 강화 ${u.rank}성, 레어도 ${UNITS[u.kind].rarity}등급" aria-pressed="${u.id === selected}"><svg class="bench-selection-pointer" viewBox="0 0 18 12" aria-hidden="true" focusable="false"><path d="M1 1h16L9 11Z" fill="currentColor" stroke="#fff4b0" stroke-width="1"/></svg><span class="slot-number">${slot + 1}</span><img src="${UNITS[u.kind].image}" alt="" draggable="false"><strong>${unitDefinition(u).name}</strong><span class="small trait-badge" data-trait="${UNITS[u.kind].trait}">${TRAITS[UNITS[u.kind].trait].name}</span><span class="unit-rank" aria-label="강화 ${u.rank}성">강화 ${"★".repeat(u.rank)}</span><span class="bench-rarity" aria-label="레어도 ${UNITS[u.kind].rarity}등급">★${UNITS[u.kind].rarity}</span><span class="pc-bench-rank" aria-hidden="true">${"★".repeat(u.rank)}</span>${u.equipment.length ? `<span class="pc-bench-equipment" aria-label="장비 ${u.equipment.length}개">◇${u.equipment.length}</span>` : ""}</button>` : `<button class="bench-slot empty-slot" data-bench-slot="${slot}" aria-label="대기석 ${slot + 1}, 빈자리"><span class="slot-number">${slot + 1}</span><span aria-hidden="true">＋</span></button>`;
+    return u ? `<button class="unit-card bench-slot ${u.id === selected ? "selected" : ""}" data-bench-slot="${slot}" data-rarity="${UNITS[u.kind].rarity}" data-unit="${escape(u.id)}" aria-label="대기석 ${slot + 1}, ${unitDefinition(u).name}, ${TRAITS[UNITS[u.kind].trait].name}, 강화 ${u.rank}성, 레어도 ${UNITS[u.kind].rarity}등급" aria-pressed="${u.id === selected}"><svg class="bench-selection-pointer" viewBox="0 0 18 12" aria-hidden="true" focusable="false"><path d="M1 1h16L9 11Z" fill="currentColor" stroke="#fff4b0" stroke-width="1"/></svg><span class="slot-number">${slot + 1}</span><img src="${unitPortrait(u.kind, UNITS[u.kind].image)}" alt="" draggable="false"><strong>${unitDefinition(u).name}</strong><span class="small trait-badge" data-trait="${UNITS[u.kind].trait}">${TRAITS[UNITS[u.kind].trait].name}</span><span class="unit-rank" aria-label="강화 ${u.rank}성">강화 ${"★".repeat(u.rank)}</span><span class="bench-rarity" aria-label="레어도 ${UNITS[u.kind].rarity}등급">★${UNITS[u.kind].rarity}</span><span class="pc-bench-rank" aria-hidden="true">${"★".repeat(u.rank)}</span>${u.equipment.length ? `<span class="pc-bench-equipment" aria-label="장비 ${u.equipment.length}개">◇${u.equipment.length}</span>` : ""}</button>` : `<button class="bench-slot empty-slot" data-bench-slot="${slot}" aria-label="대기석 ${slot + 1}, 빈자리"><span class="slot-number">${slot + 1}</span><span aria-hidden="true">＋</span></button>`;
   }).join(""));
   const mySynergies = synergiesForPlayer(viewS, viewed);
   setHTML("my-synergies", concealed?`<p class="synergy-empty">${s.phase==='matching'?'매칭':'준비'} 중 비공개</p>`:synergyCards(mySynergies.filter(s=>s.count>0))||'<p class="synergy-empty">출전 유닛 없음</p>');
@@ -784,7 +801,7 @@ function render() {
       bonus.shield ? `시너지 시작 보호막 +${bonus.shield}` : "",
     ].filter(Boolean).join(" · ");
     $("selection").innerHTML =
-      `<div class="selection"><img data-rarity="${def.rarity}" src="${def.image}" alt=""><div><div class="eyebrow">${def.role}${unit.minion?'':` · ${TRAITS[def.trait].name}`}</div><h2>${def.name}</h2>${unit.minion?'<div class="unit-meta">중립 유닛</div>':unitSummaryMarkup(unit.rank,def.rarity)}</div></div>${statNotes ? `<div class="muted small">${statNotes}</div>` : ""}${unitStatsMarkup(stats)}`;
+      `<div class="selection"><img data-rarity="${def.rarity}" src="${unitPortrait(unitArtKey(unit), def.image)}" alt=""><div><div class="eyebrow">${def.role}${unit.minion?'':` · ${TRAITS[def.trait].name}`}</div><h2>${def.name}</h2>${unit.minion?'<div class="unit-meta">중립 유닛</div>':unitSummaryMarkup(unit.rank,def.rarity)}</div></div>${statNotes ? `<div class="muted small">${statNotes}</div>` : ""}${unitStatsMarkup(stats)}`;
   } else {
     $("selection").innerHTML = '<div class="empty">유닛을 선택하세요.</div>';
   }
