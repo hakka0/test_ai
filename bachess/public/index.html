@@ -45,6 +45,12 @@
   <aside id="synPanel" class="panel">
     <div class="ph"><span>시너지</span><em class="teamcount" id="teamCount"></em><kbd>S</kbd></div>
     <ul id="synList"></ul>
+    <p id="synEmpty" class="hidden">시너지 유닛 없음</p>
+    <nav id="synPager" class="hidden" aria-label="시너지 페이지">
+      <button type="button" id="synPrev" aria-controls="synList" aria-label="이전 페이지"><span>이전</span><span class="syn-page-label"> 페이지</span></button>
+      <span id="synPageStatus" aria-live="polite"></span>
+      <button type="button" id="synNext" aria-controls="synList" aria-label="다음 페이지"><span>다음</span><span class="syn-page-label"> 페이지</span></button>
+    </nav>
   </aside>
 
   <!-- 보드 -->
@@ -81,10 +87,14 @@
   <section id="shopRow"></section>
   <section id="cta">
     <button class="btn yellow huge" id="btnStart" data-tip="btn-start"><span id="startLbl">전투 시작</span><kbd>Space</kbd></button>
-    <div class="subctl">
+    <div class="subctl hidden">
       <button class="btn white" id="btnAuto" data-tip="btn-auto"><span>자동 배치</span><kbd>A</kbd></button>
       <button class="btn white hidden" id="btnSpeed" data-tip="btn-speed"><span id="speedLbl">배속 x1</span><kbd>Q</kbd></button>
       <button class="btn white" id="btnPause" data-tip="btn-pause"><span id="pauseLbl">일시정지</span><kbd>P</kbd></button>
+    </div>
+    <div id="shopOdds" class="hidden" data-tip="shop-odds" aria-label="상점 확률">
+      <div class="shop-odds-heading"><b>상점 확률</b><span id="shopOddsLevel"></span></div>
+      <ul id="shopOddsList"></ul>
     </div>
   </section>
 

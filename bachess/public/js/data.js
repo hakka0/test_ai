@@ -106,12 +106,19 @@ export const UNITS = [
 export const UNIT_BY_KEY = Object.fromEntries(UNITS.map((u) => [u.key, u]));
 export const POOL_SIZE = [22, 18, 15, 12, 9];
 
-// 상점 확률 (플레이어 레벨별 코스트 1~5)
-export const SHOP_ODDS = {
+// 상점 한 칸의 코스트 1~5 확률
+const MOBILE_SHOP_ODDS = {
   1: [100, 0, 0, 0, 0], 2: [100, 0, 0, 0, 0],
   3: [75, 25, 0, 0, 0], 4: [55, 30, 15, 0, 0], 5: [45, 33, 20, 2, 0],
   6: [30, 40, 25, 5, 0], 7: [19, 30, 35, 15, 1], 8: [15, 20, 35, 25, 5], 9: [10, 15, 30, 30, 15],
 };
+// TFT 세트 18 일반 상점. 1~6레벨은 기존 값과 같다.
+export const SHOP_ODDS = PC_MODE ? {
+  ...MOBILE_SHOP_ODDS,
+  7: [19, 30, 40, 10, 1],
+  8: [15, 20, 32, 30, 3],
+  9: [10, 17, 25, 33, 15],
+} : MOBILE_SHOP_ODDS;
 export const XP_NEED = { 1: 1, 2: 2, 3: 6, 4: 12, 5: 20, 6: 32, 7: 48, 8: 70 };
 export const MAX_LEVEL = 9;
 

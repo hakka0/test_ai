@@ -1,7 +1,7 @@
 // DOM UI: 상점, 벤치, 시너지, 툴팁, 모달, 드래그 앤 드롭
 import {
   UNITS, UNIT_BY_KEY, SCHOOLS, ROLES, WEAPONS, ITEMS, COMP_KEYS, COMPONENTS, combine, COST_COLORS, SYNERGIES, SYNERGY_ORDER,
-  skillDesc, MAX_ROUND, describeWave, ENEMY_TYPES, BENCH_SIZE, COLS, ROWS, SIDE_ROWS, CW, CH, BOARD_W, BOARD_H, XP_NEED, MAX_LEVEL, PC_MODE,
+  skillDesc, MAX_ROUND, describeWave, ENEMY_TYPES, BENCH_SIZE, COLS, ROWS, SIDE_ROWS, CW, CH, BOARD_W, BOARD_H, XP_NEED, MAX_LEVEL, PC_MODE, SHOP_ODDS,
 } from './data.js';
 import { computeUnitStats } from './sim.js';
 import * as S from './state.js';
@@ -15,6 +15,8 @@ const G = S.G;
 export const UI = { renderer: null, sel: null, speed: 1, paused: false, quality: 'high', volS: 0.8, volM: 0.5, scale: 1, synCollapsed: false, hooks: {} };
 
 let stage, tip, drag = null, hoverTipKey = null;
+let synergyPage = 0;
+const SYNERGIES_PER_PAGE = 5;
 const stars = (n) => '★'.repeat(n);
 const pct = (v) => Math.round(v * 100) + '%';
 
@@ -76,14 +78,20 @@ function unitTipHTML(def, star, items, battler) {
   }
   return h;
 }
+function synergyMembers(key) {
+  const field = SYNERGIES[key].kind === 'school' ? 'school' : 'role';
+  return UNITS.filter((unit) => unit[field] === key);
+}
+
 function synTipHTML(key) {
   const sy = SYNERGIES[key];
   const { counts, active } = S.synergyNow();
-  let h = `<h4>${sy.name}  <span style="font-size:13px;color:#fff">${counts[key]}명 활성</span></h4><div class="hint" style="margin:0 0 4px">${sy.desc}</div>`;
+  const status = PC_MODE && active[key] < 0 ? '배치 · 미발동' : '활성';
+  let h = `<h4>${sy.name}  <span style="font-size:13px;color:#fff">${counts[key]}명 ${status}</span></h4><div class="hint" style="margin:0 0 4px">${sy.desc}</div>`;
   sy.tiers.forEach((t, i) => {
     h += `<div class="tier ${active[key] >= i ? 'on' : ''}"><b>${t}명</b> — ${sy.effects[i].text}</div>`;
   });
-  const members = UNITS.filter((u) => (sy.kind === 'school' ? u.school === key : u.role === key));
+  const members = synergyMembers(key);
   const own = new Set(S.placedUnits().map((p) => p.def.key));
   h += `<h5>소속 학생</h5><div class="mini">` + members.map((u) => `<img class="${own.has(u.key) ? 'own' : ''}" src="${portraitURL(u, 56)}" alt="${u.name}">`).join('') + `</div>`;
   h += `<div class="hint">보드에 배치한 서로 다른 학생 수로 계산됩니다.</div>`;
@@ -115,7 +123,8 @@ const FIXED_TIPS = {
   'btn-reroll': `<h4>리롤</h4>2 크레딧으로 상점을 새로 고칩니다. 단축키 <b>D</b>`,
   'btn-xp': `<h4>경험치 구매</h4>4 크레딧으로 경험치 +4. 레벨이 오르면 출전 인원이 늘어납니다. 단축키 <b>F</b>`,
   'btn-lock': `<h4>상점 잠금</h4>다음 라운드에도 현재 상점을 유지합니다.${PC_MODE ? ' 다음 라운드가 시작되면 잠금이 풀립니다.' : ''} 단축키 <b>L</b>`,
-  'btn-start': `<h4>준비 완료</h4>모든 플레이어가 준비를 마치거나 시간이 끝나면 5초간 상대를 매칭한 뒤 1:1 전투가 시작됩니다. 단축키 <b>Space</b>`,
+  'shop-odds': `<h4>상점 확률</h4>현재 레벨로 상점을 새로 열 때 한 칸에 각 코스트가 나올 기본 확률입니다. 재고가 없는 코스트는 제외됩니다.`,
+  'btn-start': `<h4>준비 완료</h4>${PC_MODE ? '봇은 이미 준비 완료입니다. 준비 완료를 누르거나' : '모든 플레이어가 준비를 마치거나'} 시간이 끝나면 5초간 상대를 매칭한 뒤 1:1 전투가 시작됩니다. 단축키 <b>Space</b>`,
   'btn-auto': `<h4>자동 배치</h4>탱커는 앞줄, 딜러·서포터는 뒷줄에 최적 배치합니다. 단축키 <b>A</b>`,
   'btn-speed': `<h4>전투 배속</h4>x1 → x2 → x3. 단축키 <b>Q</b>`,
   'btn-pause': `<h4>일시정지</h4>전투 중 정지/재개. 단축키 <b>P</b>`,
@@ -137,15 +146,36 @@ function tipHTMLFor(spec) {
   }
 }
 function showTip(html, x, y) {
+  const synergy = PC_MODE && hoverTipKey?.startsWith('syn|');
+  tip.classList.toggle('synergy-tip', Boolean(synergy));
   tip.innerHTML = html; tip.classList.remove('hidden');
   const w = tip.offsetWidth, h = tip.offsetHeight;
+  if (synergy) {
+    const panel = $('#synPanel');
+    tip.style.left = `${panel.offsetLeft}px`;
+    tip.style.top = `${Math.max(6, panel.offsetTop - h - 8)}px`;
+    return;
+  }
   let tx = x + 16, ty = y + 16;
   if (tx + w > 1272) tx = x - w - 14;
   if (ty + h > 714) ty = Math.max(6, 714 - h);
   if (tx < 4) tx = 4;
   tip.style.left = tx + 'px'; tip.style.top = ty + 'px';
 }
-function hideTip() { tip.classList.add('hidden'); hoverTipKey = null; }
+function setSynergyHighlight(key) {
+  if (!PC_MODE || (!key && !UI.renderer.synergyHighlights)) return;
+  const matching = key ? new Set(synergyMembers(key).map((unit) => unit.key)) : null;
+  UI.renderer.synergyHighlights = matching;
+  for (const image of stage.querySelectorAll('[data-synergy-unit]')) {
+    image.classList.toggle('synergy-highlight', matching?.has(image.dataset.synergyUnit) ?? false);
+  }
+}
+
+function hideTip() {
+  tip.classList.add('hidden');
+  hoverTipKey = null;
+  setSynergyHighlight(null);
+}
 
 // ---------- 렌더 ----------
 export function renderAll() {
@@ -230,12 +260,25 @@ function playerTipHTML(id) {
   return h;
 }
 function renderSyn() {
+  if (PC_MODE && hoverTipKey?.startsWith('syn|')) hideTip();
   const { counts, active } = S.synergyNow();
-  const order = SYNERGY_ORDER.slice().sort((a, b) => (active[b] >= 0) - (active[a] >= 0) || counts[b] - counts[a]);
+  let order = SYNERGY_ORDER.slice().sort((a, b) => (active[b] >= 0) - (active[a] >= 0) || counts[b] - counts[a]);
+  if (PC_MODE) {
+    order = order.filter((key) => counts[key] > 0);
+    const pages = Math.max(1, Math.ceil(order.length / SYNERGIES_PER_PAGE));
+    synergyPage = Math.max(0, Math.min(synergyPage, pages - 1));
+    $('#synEmpty').classList.toggle('hidden', order.length !== 0);
+    $('#synPager').classList.toggle('hidden', pages === 1);
+    $('#synPageStatus').textContent = `${synergyPage + 1} / ${pages}`;
+    $('#synPrev').classList.toggle('hidden', synergyPage === 0);
+    $('#synNext').classList.toggle('hidden', synergyPage === pages - 1);
+    const start = synergyPage * SYNERGIES_PER_PAGE;
+    order = order.slice(start, start + SYNERGIES_PER_PAGE);
+  }
   $('#synList').innerHTML = order.map((k) => {
     const sy = SYNERGIES[k];
     const act = active[k] >= 0;
-    const dim = counts[k] === 0;
+    const dim = PC_MODE ? !act : counts[k] === 0;
     const next = sy.tiers.find((t) => counts[k] < t);
     const pips = sy.tiers.map((t) => `<i class="${counts[k] >= t ? 'on' : ''}"></i>`).join('');
     const icon = sy.kind === 'school' ? SCHOOLS[k].letter : roleIconSVG(k);
@@ -243,6 +286,14 @@ function renderSyn() {
   }).join('');
   const n = S.boardCount();
   $('#teamCount').innerHTML = `출전 <b class="${n >= G.level ? 'full' : ''}">${n}/${G.level}</b>`;
+}
+
+function changeSynergyPage(delta, button, other) {
+  synergyPage += delta;
+  const focused = document.activeElement === button;
+  renderSyn();
+  hideTip();
+  if (focused && button.classList.contains('hidden')) other.focus();
 }
 
 function renderShop() {
@@ -254,10 +305,16 @@ function renderShop() {
     const own = ownedCount(k, 1);
     const badge = own >= 2 ? `<span class="triple">합성!</span>` : own === 1 ? `<span class="triple" style="background:#6a8cc0">보유 1</span>` : '';
     return `<div class="scard ${poor ? 'poor' : ''} ${G.locked ? 'locked' : ''}" data-shop="${i}" data-tip="unit-shop|${i}" style="--cc:${COST_COLORS[d.cost - 1]}">
-      <div class="cbox">${d.cost}</div><div class="nm">${d.name}</div><img class="pt" src="${portraitURL(d, 72)}" alt="">
+      <div class="cbox">${d.cost}</div><div class="nm">${d.name}</div><img class="pt" data-synergy-unit="${d.key}" src="${portraitURL(d, 72)}" alt="">
       <div class="meta">${schoolChip(d.school)}${roleChip(d.role)}<span class="wp">${WEAPONS[d.weapon].name} · ${WEAPONS[d.weapon].range}칸</span></div>
       ${badge}<div class="buy"><b><i class="coin"></i>${d.cost}</b>구매하기</div></div>`;
   }).join('');
+  if (PC_MODE) {
+    $('#shopOddsLevel').textContent = `Lv. ${G.level}`;
+    $('#shopOddsList').innerHTML = SHOP_ODDS[G.level].map((odds, i) =>
+      `<li style="--cost:${COST_COLORS[i]}"><span>${i + 1}코</span><b>${odds}%</b></li>`
+    ).join('');
+  }
 }
 
 function renderBench() {
@@ -265,7 +322,7 @@ function renderBench() {
     if (!u) return `<div class="bslot" data-bslot="${i}"></div>`;
     const d = S.defOf(u);
     const eqs = u.items.map((k) => `<i style="--c:${ITEMS[k].color}"></i>`).join('');
-    return `<div class="bslot has ${UI.sel === u.uid ? 'sel' : ''}" data-bslot="${i}" data-bench="${i}" data-tip="unit-bench|${i}"><img class="pt" src="${portraitURL(d, 56)}" alt=""><span class="stars">${u.star > 1 ? stars(u.star) : ''}</span><span class="tag" style="--c:${ROLES[d.role].color}">${ROLES[d.role].name}</span><span class="eqs">${eqs}</span></div>`;
+    return `<div class="bslot has ${UI.sel === u.uid ? 'sel' : ''}" data-bslot="${i}" data-bench="${i}" data-tip="unit-bench|${i}"><img class="pt" data-synergy-unit="${d.key}" src="${portraitURL(d, 56)}" alt=""><span class="stars">${u.star > 1 ? stars(u.star) : ''}</span><span class="tag" style="--c:${ROLES[d.role].color}">${ROLES[d.role].name}</span><span class="eqs">${eqs}</span></div>`;
   }).join('');
 }
 
@@ -296,7 +353,8 @@ function renderEnemy() {
       ph.insertAdjacentHTML('beforeend', `<em>${G.opp.name}${G.oppGhost ? ' (잔상)' : ''}</em>`);
     } else {
       const ri = S.readyInfo();
-      box.innerHTML = `<div class="wait">${G.phase === 'matching' ? '상대를 찾는 중...' : `모두 준비하면 매칭이 시작됩니다.<br>준비 완료 <b>${ri.ready}/${ri.total}</b> · 시간이 끝나도 시작`}</div>`;
+      const wait = PC_MODE ? '봇은 모두 준비 완료입니다.' : '모두 준비하면 매칭이 시작됩니다.';
+      box.innerHTML = `<div class="wait">${G.phase === 'matching' ? '상대를 찾는 중...' : `${wait}<br>준비 완료 <b>${ri.ready}/${ri.total}</b> · 시간이 끝나도 시작`}</div>`;
     }
     return;
   }
@@ -345,10 +403,12 @@ function renderCtrl() {
   bs.classList.toggle('ready', G.mode === 'pvp' && prep && G.ready);
   bs.classList.toggle('yellow', !(G.mode === 'pvp' && prep && G.ready));
   renderCtrlLabel();
-  $('#btnAuto').classList.toggle('off', !prep);
-  $('#btnPause').classList.toggle('off', G.phase !== 'battle');
-  $('#pauseLbl').textContent = UI.paused ? '재개' : '일시정지';
-  if (!PC_MODE) $('#speedLbl').textContent = `배속 x${UI.speed}`;
+  if (!PC_MODE) {
+    $('#btnAuto').classList.toggle('off', !prep);
+    $('#btnPause').classList.toggle('off', G.phase !== 'battle');
+    $('#pauseLbl').textContent = UI.paused ? '재개' : '일시정지';
+    $('#speedLbl').textContent = `배속 x${UI.speed}`;
+  }
   $('#hud').style.visibility = G.phase === 'battle' ? 'visible' : 'hidden';
   $('#btnSyn').classList.toggle('on', !UI.synCollapsed);
   $('#btnMute').classList.toggle('muted', isMuted());
@@ -483,14 +543,15 @@ export function openHelp() {
   if (modalOpen()) { closeModal(); return; }
   openModal('게임 방법', `
     <h3>목표</h3><p>8인 PVP입니다(현재는 봇 7명). 체력 30에서 시작해 전투에서 지면 체력이 깎이고, 0이 되면 탈락합니다. 마지막까지 살아남아 <b>1위</b>를 노리세요. 좌측 <b>실시간 순위표</b>는 남은 체력 기준입니다.</p>
-    <h3>진행</h3><ul><li><b>준비 단계</b>: 제한 시간(30초, 첫 라운드 45초) 안에 학생을 구매·배치합니다. <b>준비 완료</b>를 누르고 모든 플레이어가 준비하면 즉시 다음으로 넘어가며, 시간이 끝나도 자동으로 넘어갑니다.</li>
+    <h3>진행</h3><ul><li><b>준비 단계</b>: 제한 시간(30초, 첫 라운드 45초) 안에 학생을 구매·배치합니다.
+    ${PC_MODE ? '봇은 이미 준비되어 있어 <b>준비 완료</b>를 누르면 바로 매칭이 시작됩니다. 전투 시작 시 남은 출전 자리는 대기석 왼쪽부터 채웁니다.' : '<b>준비 완료</b>를 누르고 모든 플레이어가 준비하면 즉시 다음으로 넘어갑니다.'} 시간이 끝나도 자동으로 넘어갑니다.</li>
     <li><b>매칭</b>: 약 5초간 상대를 찾고 VS 화면이 표시됩니다. 상대의 편성이 공개됩니다.</li>
     <li><b>전투 단계</b>: 매칭된 상대와 1:1 자동 전투가 진행됩니다(보드가 좌우 반전되어 상대 학생이 맞은편에 섭니다). 총을 쏘고, 마나가 차면 스킬을 사용합니다.</li>
     ${PC_MODE ? '<li><b>피버타임</b>은 전투 시간이 20초를 넘으면 시작됩니다. 양쪽의 기본 공격과 스킬 피해는 1.5배, 회복과 배리어는 0.5배가 됩니다.</li>' : ''}
     <li>같은 학생 <b>3명 = ★ 합성</b> (최대 ★3). 크레딧 10당 이자 +1 (최대 5).</li></ul>
     <h3>역할</h3><ul><li><b>탱커</b>: 샷건(사거리 1칸)·기관단총 등 전열. 높은 체력/방어로 피해를 받아냅니다.</li><li><b>딜러</b>: 돌격소총·기관총·저격총으로 화력 담당.</li><li><b>서포터</b>: 회복, 배리어, 버프. 뒷줄에 배치하세요.</li></ul>
     <h3>장비 · 시너지</h3><p>보관함의 장비를 학생에게 드래그하세요. 기본 장비 2개는 자동 조합됩니다(조합표 <b>R</b>). 학원·역할 시너지는 서로 다른 학생 수로 단계가 오릅니다(<b>S</b>로 패널 접기).</p>
-    <h3>단축키</h3><div class="keys"><span><kbd>Space</kbd>준비 완료/확인</span><span><kbd>D</kbd>리롤</span><span><kbd>F</kbd>경험치</span><span><kbd>L</kbd>상점 잠금</span><span><kbd>1-5</kbd>상점 구매</span><span><kbd>E</kbd>선택 판매</span><span><kbd>A</kbd>자동 배치</span>${PC_MODE ? '' : '<span><kbd>Q</kbd>배속</span>'}<span><kbd>P</kbd>일시정지</span><span><kbd>S</kbd>시너지 토글</span><span><kbd>R</kbd>조합표</span><span><kbd>H</kbd>도움말</span><span><kbd>M</kbd>음소거</span><span><kbd>Esc</kbd>닫기</span></div>
+    <h3>단축키</h3><div class="keys"><span><kbd>Space</kbd>준비 완료/확인</span><span><kbd>D</kbd>리롤</span><span><kbd>F</kbd>경험치</span><span><kbd>L</kbd>상점 잠금</span><span><kbd>1-5</kbd>상점 구매</span><span><kbd>E</kbd>선택 판매</span>${PC_MODE ? '' : '<span><kbd>A</kbd>자동 배치</span><span><kbd>Q</kbd>배속</span><span><kbd>P</kbd>일시정지</span>'}<span><kbd>S</kbd>시너지 토글</span><span><kbd>R</kbd>조합표</span><span><kbd>H</kbd>도움말</span><span><kbd>M</kbd>음소거</span><span><kbd>Esc</kbd>닫기</span></div>
     <p class="hint" style="margin-top:8px;color:var(--ink2);font-size:12px">학생·장비·적 위에 마우스를 올리면 스킬과 능력치가 툴팁으로 표시됩니다.</p>`);
 }
 
@@ -630,6 +691,7 @@ export function initUI(renderer, hooks) {
     const key = t.dataset.tip;
     const html = tipHTMLFor(key);
     if (!html) return;
+    if (PC_MODE && key !== hoverTipKey) setSynergyHighlight(key.startsWith('syn|') ? key.slice(4) : null);
     hoverTipKey = key;
     const p = stagePt(e);
     showTip(html, p.x, p.y);
@@ -690,25 +752,38 @@ export function initUI(renderer, hooks) {
   });
   window.addEventListener('pointermove', updateDrag);
   window.addEventListener('pointerup', endDrag);
-  window.addEventListener('blur', () => { if (drag) { drag = null; $('#ghost').classList.add('hidden'); $('#shopRow').classList.remove('sellmode'); renderer.hlCell = null; } });
+  window.addEventListener('blur', () => {
+    if (PC_MODE && renderer.synergyHighlights) hideTip();
+    if (drag) { drag = null; $('#ghost').classList.add('hidden'); $('#shopRow').classList.remove('sellmode'); renderer.hlCell = null; }
+  });
 
   // 버튼
   $('#btnReroll').onclick = () => { S.reroll(); renderAll(); };
   $('#btnXp').onclick = () => { S.buyXp(); renderAll(); };
   $('#btnLock').onclick = () => { S.toggleLock(); };
-  $('#btnAuto').onclick = () => { S.autoArrange(); };
   $('#btnSyn').onclick = toggleSyn;
   $('#btnRecipe').onclick = openRecipe;
   $('#btnHelp').onclick = openHelp;
   $('#btnMute').onclick = toggleMute;
   $('#btnOpt').onclick = openOptions;
-  const speedButton = $('#btnSpeed');
-  if (PC_MODE) speedButton.remove();
-  else {
+  const subControls = $('.subctl');
+  if (PC_MODE) {
+    const prev = $('#synPrev'), next = $('#synNext');
+    prev.onclick = () => changeSynergyPage(-1, prev, next);
+    next.onclick = () => changeSynergyPage(1, next, prev);
+    $('#synPager').addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') event.stopPropagation();
+    });
+    subControls.remove();
+    $('#shopOdds').classList.remove('hidden');
+  } else {
+    subControls.classList.remove('hidden');
+    const speedButton = $('#btnSpeed');
     speedButton.classList.remove('hidden');
     speedButton.onclick = hooks.cycleSpeed;
+    $('#btnAuto').onclick = () => { S.autoArrange(); };
+    $('#btnPause').onclick = () => hooks.togglePause();
   }
-  $('#btnPause').onclick = () => hooks.togglePause();
   $('#btnStart').onclick = () => hooks.primary();
   stage.addEventListener('click', (e) => { if (e.target.closest('#btnSell')) { sellSelected(); hideTip(); } });
   $('#modal').addEventListener('pointerdown', (e) => { if (e.target.id === 'modal') closeModal(); });
