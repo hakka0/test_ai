@@ -66,6 +66,8 @@ function setUnit(loc, u) { if (loc.where === 'bench') G.bench[loc.idx] = u; else
 export function sellPrice(u) { const c = defOf(u).cost; return u.star === 1 ? c : c * (u.star === 2 ? 3 : 9) - 1; }
 export function xpNeed() { return G.level >= MAX_LEVEL ? Infinity : XP_NEED[G.level]; }
 export function interest() { return Math.min(5, Math.floor(G.gold / 10)); }
+// 연승/연패 보너스: 2~3연속 +1, 4~5연속 +2, 6연속 이상 +3
+export function streakBonusFor(streak) { const sk = Math.abs(streak); return sk >= 6 ? 3 : sk >= 4 ? 2 : sk >= 2 ? 1 : 0; }
 export function allUnits() { return [...G.bench, ...G.board].filter(Boolean); }
 export function locOfUid(uid) {
   let i = G.bench.findIndex((u) => u && u.uid === uid); if (i >= 0) return { where: 'bench', idx: i };
@@ -356,8 +358,7 @@ export function finishBattle(b) {
   else { G.stats.losses++; G.streak = G.streak < 0 ? G.streak - 1 : -1; dmg = 2 + survivors + Math.floor(G.round / 4); G.hp = Math.max(0, G.hp - dmg); }
   const base = 5;
   const intr = interest();
-  const sk = Math.abs(G.streak);
-  const streakBonus = sk >= 6 ? 3 : sk >= 4 ? 2 : sk >= 2 ? 1 : 0;
+  const streakBonus = streakBonusFor(G.streak);
   const winBonus = win ? 1 : 0;
   const income = base + intr + streakBonus + winBonus;
   G.gold += income;
@@ -517,8 +518,7 @@ function finishPvp(b) {
   if (win) { G.stats.wins++; G.streak = G.streak > 0 ? G.streak + 1 : 1; }
   else { G.stats.losses++; G.streak = G.streak < 0 ? G.streak - 1 : -1; dmg = lossDamage(survivors, G.round); G.hp = Math.max(0, G.hp - dmg); }
   const intr = interest();
-  const sk = Math.abs(G.streak);
-  const streakBonus = sk >= 6 ? 3 : sk >= 4 ? 2 : sk >= 2 ? 1 : 0;
+  const streakBonus = streakBonusFor(G.streak);
   const winBonus = win ? 1 : 0;
   const income = 5 + intr + streakBonus + winBonus;
   G.gold += income; G.stats.maxGold = Math.max(G.stats.maxGold, G.gold);

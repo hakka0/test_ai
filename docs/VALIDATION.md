@@ -1,3 +1,8 @@
+# 샬레 오토 배틀 PC 1단계 GUI 정리
+
+- `node bachess/tools/check-toon-zip.mjs`로 20종 캐릭터 PNG 42개와 6방향 프레임 120개 무결성을 확인했습니다.
+- Headless Chrome(`1400×1000`·`1024×768`)에서 타이틀 안내 문구, 상단 이자 진행 바/연승·연패 배지/경험치 남은 구매 횟수, PVP 툴팁 정합성, 순위표 행 높이 44px 이상 및 스크롤, 학생 정보·상점 카드 비겹침, 주요 PC 폰트 12px 이상, 전투 중 5px 마나바·완충 발광 및 콘솔 오류 0건을 검증했습니다. [화면 QA](SCREEN_QA.md)
+
 # 샬레 오토 배틀 Sites 버전 24 동기화
 
 - `bachess/public`의 103개 게임 파일이 [Sites 버전 24 스냅샷](https://github.com/hakka0/test_ai/commit/1863833b0f4c39fc8d9409b784de398fa1772a18)의 `dist`와 일치합니다. PNG 42개의 해시와 방향별 프레임 120개를 검사했습니다.

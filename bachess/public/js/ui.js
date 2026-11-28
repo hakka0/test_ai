@@ -14,6 +14,7 @@ const $ = (s) => document.querySelector(s);
 const G = S.G;
 export const UI = { renderer: null, sel: null, speed: 1, paused: false, quality: 'high', volS: 0.8, volM: 0.5, scale: 1, synCollapsed: false, hooks: {} };
 
+const STAGE_W = 1280, STAGE_H = 720, TIP_MARGIN = 6;
 let stage, tip, drag = null, hoverTipKey = null;
 let synergyPage = 0;
 const SYNERGIES_PER_PAGE = 5;
@@ -119,19 +120,53 @@ const FIXED_TIPS = {
   'btn-help': `<h4>도움말</h4>게임 방법과 단축키. 단축키 <b>H</b>`,
   'btn-mute': `<h4>소리 켜기/끄기</h4>단축키 <b>M</b>`,
   'btn-opt': `<h4>설정</h4>이펙트 품질(저사양 모드), 볼륨`,
-  'btn-sell': `<h4>판매</h4>선택한 학생을 판매합니다. 단축키 <b>E</b>, 또는 상점 영역으로 드래그`,
+  'btn-sell': `<h4>판매</h4>선택한 학생을 판매합니다. 단축키 <b>E</b>, 또는 ${PC_MODE ? '하단 상점 영역으로 드래그하세요.' : '상점 영역으로 드래그'}`,
   'btn-reroll': `<h4>리롤</h4>2 크레딧으로 상점을 새로 고칩니다. 단축키 <b>D</b>`,
   'btn-xp': `<h4>경험치 구매</h4>4 크레딧으로 경험치 +4. 레벨이 오르면 출전 인원이 늘어납니다. 단축키 <b>F</b>`,
   'btn-lock': `<h4>상점 잠금</h4>다음 라운드에도 현재 상점을 유지합니다.${PC_MODE ? ' 다음 라운드가 시작되면 잠금이 풀립니다.' : ''} 단축키 <b>L</b>`,
   'shop-odds': `<h4>상점 확률</h4>현재 레벨로 상점을 새로 열 때 한 칸에 각 코스트가 나올 기본 확률입니다. 재고가 없는 코스트는 제외됩니다.`,
   'btn-start': `<h4>준비 완료</h4>${PC_MODE ? '봇은 이미 준비 완료입니다. 준비 완료를 누르거나' : '모든 플레이어가 준비를 마치거나'} 시간이 끝나면 5초간 상대를 매칭한 뒤 1:1 전투가 시작됩니다. 단축키 <b>Space</b>`,
   'btn-auto': `<h4>자동 배치</h4>탱커는 앞줄, 딜러·서포터는 뒷줄에 최적 배치합니다. 단축키 <b>A</b>`,
-  'btn-speed': `<h4>전투 배속</h4>x1 → x2 → x3. 단축키 <b>Q</b>`,
+  ...(PC_MODE ? {} : { 'btn-speed': `<h4>전투 배속</h4>x1 → x2 → x3. 단축키 <b>Q</b>` }),
   'btn-pause': `<h4>일시정지</h4>전투 중 정지/재개. 단축키 <b>P</b>`,
   'btn-lb': `<h4>순위표</h4>남은 체력 기준 실시간 순위입니다. 이름에 마우스를 올리면 편성을 볼 수 있어요.`,
 };
+function pcRoundTipHTML() {
+  return `<h4>라운드</h4>8인 PVP 대전입니다. 매 라운드 준비 후 5초 매칭을 거쳐 1:1 자동 전투를 진행합니다. 마지막 1명이 남으면 승리합니다.`;
+}
+function pcHpTipHTML() {
+  return `<h4>체력</h4>0이 되면 탈락합니다. 전투 패배 시 <b>3 + 생존한 적 수 + ⌊라운드/2⌋</b> 피해를 받습니다.`;
+}
+function pcGoldTipHTML() {
+  const it = S.interest();
+  const nextLine = it < 5
+    ? `<div class="hint">다음 이자(<b>+${it + 1}</b>)까지 <b>${(it + 1) * 10 - G.gold}</b> 크레딧 남았습니다.</div>`
+    : `<div class="hint">최대 이자(<b>+5</b>)가 적용 중입니다.</div>`;
+  return `<h4>크레딧</h4>보유 크레딧 10당 이자 +1 (최대 +5). 연승/연패 보너스와 승리 보너스가 추가로 지급됩니다.${nextLine}`;
+}
+function pcStreakTipHTML() {
+  const sk = G.streak;
+  const bonus = S.streakBonusFor(sk);
+  const cur = sk > 0 ? `현재 <b>${sk}연승</b>` : sk < 0 ? `현재 <b>${-sk}연패</b>` : '현재 연속 기록 없음';
+  const bonusTxt = bonus > 0 ? ` (보너스 <b>+${bonus}</b>)` : '';
+  return `<h4>연승 / 연패</h4>${cur}${bonusTxt}<div class="hint">2~3연속 +1 · 4~5연속 +2 · 6연속 이상 +3 크레딧</div>`;
+}
+function pcXpTipHTML() {
+  const need = S.xpNeed();
+  if (need === Infinity) return `<h4>경험치 구매</h4>이미 최대 레벨(Lv.${MAX_LEVEL})입니다.`;
+  const rem = Math.max(0, need - G.xp);
+  const buys = Math.ceil(rem / 4);
+  return `<h4>경험치 구매</h4>4 크레딧으로 경험치 +4. 레벨이 오르면 출전 인원이 늘어납니다. 단축키 <b>F</b><div class="hint">Lv.${G.level + 1}까지 경험치 <b>${rem}</b> 남음 (구매 <b>${buys}회</b> · ${buys * 4} 크레딧)</div>`;
+}
 function tipHTMLFor(spec) {
   const [kind, arg] = spec.split('|');
+  if (PC_MODE) {
+    if (kind === 'round' && G.mode === 'pvp') return pcRoundTipHTML();
+    if (kind === 'hp' && G.mode === 'pvp') return pcHpTipHTML();
+    if (kind === 'gold') return pcGoldTipHTML();
+    if (kind === 'streak') return pcStreakTipHTML();
+    if (kind === 'btn-xp') return pcXpTipHTML();
+  }
   switch (kind) {
     case 'unit-shop': { const k = G.shop[+arg]; if (!k) return null; const d = UNIT_BY_KEY[k]; return unitTipHTML(d, 1, [], null) + `<div class="hint">클릭하여 구매 · 같은 학생 3명이면 ★ 합성</div>`; }
     case 'unit-bench': { const u = G.bench[+arg]; if (!u) return null; return unitTipHTML(S.defOf(u), u.star, u.items, null); }
@@ -153,12 +188,13 @@ function showTip(html, x, y) {
   if (synergy) {
     const panel = $('#synPanel');
     tip.style.left = `${panel.offsetLeft}px`;
-    tip.style.top = `${Math.max(6, panel.offsetTop - h - 8)}px`;
+    tip.style.top = `${Math.max(TIP_MARGIN, panel.offsetTop - h - 8)}px`;
     return;
   }
+  const maxX = STAGE_W - 8, maxY = STAGE_H - TIP_MARGIN;
   let tx = x + 16, ty = y + 16;
-  if (tx + w > 1272) tx = x - w - 14;
-  if (ty + h > 714) ty = Math.max(6, 714 - h);
+  if (tx + w > maxX) tx = x - w - 14;
+  if (ty + h > maxY) ty = Math.max(TIP_MARGIN, maxY - h);
   if (tx < 4) tx = 4;
   tip.style.left = tx + 'px'; tip.style.top = ty + 'px';
 }
@@ -207,7 +243,23 @@ function renderTop() {
   $('#hpmax').textContent = '/' + G.maxHp;
   $('#goldnum').textContent = G.gold;
   const it = S.interest();
-  $('#intnum').textContent = it > 0 ? `+${it}` : '';
+  if (PC_MODE) {
+    const nextNeed = it < 5 ? (it + 1) * 10 - G.gold : 0;
+    $('#intnum').textContent = it >= 5 ? '+5 MAX' : (it > 0 ? `+${it} · 다음 ${nextNeed}` : `다음 ${nextNeed}`);
+    const bar = $('#intbar');
+    bar.classList.remove('hidden');
+    $('#intfill').style.width = it >= 5 ? '100%' : `${(G.gold % 10) * 10}%`;
+    const sp = $('#streakPill');
+    sp.classList.remove('hidden');
+    const sk = G.streak;
+    const bonus = S.streakBonusFor(sk);
+    sp.classList.toggle('streak-win', sk > 0);
+    sp.classList.toggle('streak-lose', sk < 0);
+    $('#streaknum').textContent = Math.abs(sk);
+    $('#streaklbl').textContent = sk > 0 ? `연승${bonus ? ` +${bonus}` : ''}` : sk < 0 ? `연패${bonus ? ` +${bonus}` : ''}` : '연속';
+  } else {
+    $('#intnum').textContent = it > 0 ? `+${it}` : '';
+  }
   $('#killnum').textContent = G.stats.kills;
 }
 
@@ -322,7 +374,7 @@ function renderBench() {
     if (!u) return `<div class="bslot" data-bslot="${i}"></div>`;
     const d = S.defOf(u);
     const eqs = u.items.map((k) => `<i style="--c:${ITEMS[k].color}"></i>`).join('');
-    return `<div class="bslot has ${UI.sel === u.uid ? 'sel' : ''}" data-bslot="${i}" data-bench="${i}" data-tip="unit-bench|${i}"><img class="pt" data-synergy-unit="${d.key}" src="${portraitURL(d, 56)}" alt=""><span class="stars">${u.star > 1 ? stars(u.star) : ''}</span><span class="tag" style="--c:${ROLES[d.role].color}">${ROLES[d.role].name}</span><span class="eqs">${eqs}</span></div>`;
+    return `<div class="bslot has ${UI.sel === u.uid ? 'sel' : ''}" data-bslot="${i}" data-bench="${i}" data-tip="unit-bench|${i}"><img class="pt" data-synergy-unit="${d.key}" src="${portraitURL(d, 56)}" alt=""><span class="stars" data-star="${u.star}">${u.star > 1 ? stars(u.star) : ''}</span><span class="tag" style="--c:${ROLES[d.role].color}">${ROLES[d.role].name}</span><span class="eqs">${eqs}</span></div>`;
   }).join('');
 }
 
@@ -389,13 +441,22 @@ function renderRight() {
     <div class="ucard"><img class="pt" src="${portraitURL(d, 64)}" style="--cc:${COST_COLORS[d.cost - 1]}" alt=""><div><div class="nm">${d.name}</div><div class="st">${stars(u.star)}</div><div class="chips">${schoolChip(d.school)}${roleChip(d.role)}</div></div></div>
     <div class="statgrid"><span>체력<b>${Math.round(st.maxHp)}</b></span><span>공격<b>${Math.round(st.atk)}</b></span><span>공속<b>${st.as.toFixed(2)}</b></span><span>방어<b>${pct(st.def)}</b></span><span>사거리<b>${st.range}칸</b></span><span>치명<b>${pct(st.crit)}</b></span></div>
     <div class="skline"><b class="t">${d.skill.name}</b> ${skillDesc(d, u.star).replace(/<\/?b>/g, '')}</div>
-    <div class="eqrow">${eq}<button class="btn white ${loc.where === 'board' && G.phase !== 'prep' ? 'off' : ''}" id="btnSell" data-tip="btn-sell"><span>${loc.where === 'board' && G.phase !== 'prep' ? '전투 중 판매 불가' : `판매 +${S.sellPrice(u)}`}</span></button></div>`;
+    <div class="eqrow">${eq}<button class="btn white ${loc.where === 'board' && G.phase !== 'prep' ? 'off' : ''}" id="btnSell" data-tip="btn-sell"><span>${loc.where === 'board' && G.phase !== 'prep' ? (PC_MODE ? '판매 불가' : '전투 중 판매 불가') : `판매 +${S.sellPrice(u)}`}</span></button></div>`;
 }
 
 function renderCtrl() {
   const prep = G.phase === 'prep';
   $('#btnReroll').classList.toggle('off', !prep || G.gold < 2);
   $('#btnXp').classList.toggle('off', !prep || G.gold < 4 || G.level >= MAX_LEVEL);
+  if (PC_MODE) {
+    const need = S.xpNeed();
+    const xpLbl = $('#btnXp .lbl');
+    if (need === Infinity) xpLbl.innerHTML = '경험치<small class="xp-rem">MAX</small>';
+    else {
+      const buys = Math.ceil(Math.max(0, need - G.xp) / 4);
+      xpLbl.innerHTML = `경험치 +4<small class="xp-rem">Lv.${G.level + 1}까지 ${buys}회</small>`;
+    }
+  }
   $('#lockLbl').textContent = G.locked ? '잠금 해제' : '상점 잠금';
   $('#btnLock').classList.toggle('active', G.locked);
   const bs = $('#btnStart');
@@ -531,7 +592,7 @@ export function openRecipe() {
     COMP_KEYS.forEach((b, j) => {
       if (j < i) { t += `<td class="skip"></td>`; return; }
       const r = combine(a, b);
-      t += `<td class="${i === j ? 'diag' : ''}" data-tip="recipe|${a}+${b}"><img src="${itemURL(r.key, 48)}"><small style="display:block;font-size:10px;font-weight:800;color:var(--ink2)">${r.name.length > 6 ? r.name.slice(0, 6) + '…' : r.name}</small></td>`;
+      t += `<td class="${i === j ? 'diag' : ''}" data-tip="recipe|${a}+${b}"><img src="${itemURL(r.key, 48)}"><small style="display:block;font-size:${PC_MODE ? '12px' : '10px'};font-weight:800;color:var(--ink2)">${r.name.length > 6 ? r.name.slice(0, 6) + '…' : r.name}</small></td>`;
     });
     t += `</tr>`;
   });
@@ -768,6 +829,8 @@ export function initUI(renderer, hooks) {
   $('#btnOpt').onclick = openOptions;
   const subControls = $('.subctl');
   if (PC_MODE) {
+    const disc = $('#title .disc');
+    if (disc) disc.textContent = "비공식 팬메이드 작품입니다. 'Blue Archive'는 NEXON Games / Yostar의 상표이며, 이 프로젝트는 원작의 UI 분위기를 참고한 비영리 팬 창작물입니다. PC판 캐릭터 그래픽은 20종 툰 아트워크와 코드로 그린 일러스트를 사용합니다.";
     const prev = $('#synPrev'), next = $('#synNext');
     prev.onclick = () => changeSynergyPage(-1, prev, next);
     next.onclick = () => changeSynergyPage(1, next, prev);

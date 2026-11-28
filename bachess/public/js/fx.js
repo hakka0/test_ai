@@ -556,8 +556,10 @@ export class BoardRenderer {
     // 별
     ctx.save();
     this.transformUnit(ctx, u);
+    // PC는 마나바를 5px로 키워 스킬 발동 시점을 읽기 쉽게 한다.
+    const manaH = PC_MODE ? 5 : 3;
     ctx.fillStyle = '#122a52';
-    ctx.beginPath(); ctx.roundRect(x - 1.5, y - 1.5, w + 3, h + 3 + 4, 3); ctx.fill();
+    ctx.beginPath(); ctx.roundRect(x - 1.5, y - 1.5, w + 3, h + 3 + 1 + manaH, 3); ctx.fill();
     const hp = Math.max(0, u.hp / u.maxHp);
     ctx.fillStyle = u.team === 0 ? '#41d99a' : '#ff6a6a';
     ctx.fillRect(x, y, w * hp, h);
@@ -568,11 +570,20 @@ export class BoardRenderer {
     }
     // 마나
     if (u.skill.type !== 'none') {
-      ctx.fillStyle = '#0d1e3c'; ctx.fillRect(x, y + h + 1, w, 3);
-      ctx.fillStyle = '#35b6ff'; ctx.fillRect(x, y + h + 1, w * Math.min(1, u.mana / u.manaMax), 3);
+      const manaPct = Math.min(1, u.mana / u.manaMax);
+      ctx.fillStyle = '#0d1e3c'; ctx.fillRect(x, y + h + 1, w, manaH);
+      if (PC_MODE && manaPct >= 1) {
+        // 마나가 가득 차면 밝은 색과 발광으로 곧 스킬이 나간다는 것을 표시
+        ctx.save();
+        if (this.quality === 'high') { ctx.shadowColor = '#8fe6ff'; ctx.shadowBlur = 6; }
+        ctx.fillStyle = '#9ff0ff'; ctx.fillRect(x, y + h + 1, w, manaH);
+        ctx.restore();
+      } else {
+        ctx.fillStyle = '#35b6ff'; ctx.fillRect(x, y + h + 1, w * manaPct, manaH);
+      }
     }
     if (!u.def.isEnemy && u.star > 1) {
-      ctx.fillStyle = '#ffd23a'; ctx.font = '700 11px sans-serif'; ctx.textAlign = 'left';
+      ctx.fillStyle = '#ffd23a'; ctx.font = PC_MODE ? '800 13px sans-serif' : '700 11px sans-serif'; ctx.textAlign = 'left';
       ctx.strokeStyle = '#122a52'; ctx.lineWidth = 3;
       const txt = '★'.repeat(u.star);
       ctx.strokeText(txt, x - 1, y - 4); ctx.fillText(txt, x - 1, y - 4);
