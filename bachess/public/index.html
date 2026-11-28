@@ -31,6 +31,7 @@
     </div>
     <div class="tools">
       <button class="tbtn" id="btnSyn" data-tip="btn-syn" aria-label="시너지"><svg viewBox="0 0 24 24"><path d="M12 3 4 7v5c0 4.500 3.300 7.800 8 9 4.700-1.200 8-4.500 8-9V7z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 12l3 3 5-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+      <button class="tbtn hidden" id="btnHistory" data-tip="btn-history" aria-label="전투 기록"><svg viewBox="0 0 24 24"><path d="M5 4h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm3 5h8M8 13h8M8 17h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
       <button class="tbtn" id="btnRecipe" data-tip="btn-recipe" aria-label="장비 조합표"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="13" y="4" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="4" y="13" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.500 13v7M13 16.500h7" stroke="currentColor" stroke-width="2"/></svg></button>
       <button class="tbtn" id="btnHelp" data-tip="btn-help" aria-label="도움말"><b>?</b></button>
       <button class="tbtn" id="btnMute" data-tip="btn-mute" aria-label="소리"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z" fill="currentColor"/><path id="muteWave" d="M16 9a4 4 0 0 1 0 6M18.500 6.500a8 8 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
@@ -46,6 +47,8 @@
   <aside id="synPanel" class="panel">
     <div class="ph"><span>시너지</span><em class="teamcount" id="teamCount"></em><kbd>S</kbd></div>
     <ul id="synList"></ul>
+    <div id="synInactive" class="hidden"></div>
+    <div id="synPreview" class="hidden" aria-live="polite"></div>
     <p id="synEmpty" class="hidden">시너지 유닛 없음</p>
     <nav id="synPager" class="hidden" aria-label="시너지 페이지">
       <button type="button" id="synPrev" aria-controls="synList" aria-label="이전 페이지"><span>이전</span><span class="syn-page-label"> 페이지</span></button>
@@ -57,7 +60,8 @@
   <!-- 보드 -->
   <main id="boardWrap">
     <canvas id="board"></canvas>
-    <div id="hud"><span class="side ally">아군 <b id="hudA">0</b></span><span id="hudT">0:00</span><span class="side foe">적 <b id="hudE">0</b></span><span id="hudFever" class="hidden" role="status">피버타임</span></div>
+    <div id="hud"><span class="side ally">아군 <b id="hudA">0</b></span><span id="hudT">0:00</span><span class="side foe">적 <b id="hudE">0</b></span><span id="hudFeverCountdown" class="hidden"><em id="hudFeverLeft">피버 20초</em><span class="fvbar"><i id="hudFeverFill"></i></span></span><span id="hudFever" class="hidden" role="status">피버타임</span></div>
+    <div id="scoutBar" class="hidden" role="status"><span id="scoutInfo"></span><button type="button" class="btn white" id="btnScoutBack"><span>내 전장으로</span><kbd>Esc</kbd></button></div>
     <div id="sellHint">여기로 드래그하면 판매</div>
     <div id="matchOv" class="hidden"></div>
     <div id="banner"></div>

@@ -79,7 +79,7 @@ function makeBattler(o) {
     shield: s.shield0 || 0, shieldT: s.shield0 ? 99 : 0, tauntT: 0, atkCd: 0.2 + rand() * 0.4, castT: 0,
     target: null, retargetT: 0, buffs: [], alive: true, deadT: 0, aim: o.team === 0 ? -Math.PI / 2 : Math.PI / 2,
     moving: false, volley: null, speed: o.boss ? 62 : (o.def.role === 'tank' ? 84 : 96),
-    recoil: 0, hitFlash: 0, castFlash: 0, uid: o.uid, damageDealt: 0, items: o.items || [],
+    recoil: 0, hitFlash: 0, castFlash: 0, uid: o.uid, damageDealt: 0, damageTaken: 0, healDone: 0, items: o.items || [],
   };
 }
 
@@ -121,7 +121,7 @@ export function buildEnemyBattlers(round) {
 
 // ---------- 전투 ----------
 export const HPK = +(globalThis.__HPK ?? 2.6), ATKK = +(globalThis.__ATKK ?? 1.5);
-const FEVER_AT = 20;
+export const FEVER_AT = 20;
 const FEVER_DAMAGE = 1.5;
 const FEVER_SUPPORT = 0.5;
 const MOBILE_SUDDEN_AT = 38;
@@ -328,12 +328,14 @@ export class Battle {
     if (tgt.shield > 0) {
       const ab = Math.min(tgt.shield, dmg);
       tgt.shield -= ab; dmg -= ab; shielded = true;
+      tgt.damageTaken += ab;
       this.emit('barrierHit', { u: tgt, x: hx, y: hy, ang: o.ang ?? 0, broke: tgt.shield <= 0 });
       if (tgt.shield <= 0) tgt.shieldT = 0;
     }
     if (dmg > 0) {
       tgt.hp -= dmg; tgt.hitFlash = 1;
-      if (src) { src.damageDealt += dmg; if (src.steal) this.heal(src, dmg * src.steal); }
+      tgt.damageTaken += dmg;
+      if (src) { src.damageDealt += dmg; if (src.steal) this.heal(src, dmg * src.steal, src); }
     }
     if (tgt.skill.type !== 'none') tgt.mana = Math.min(tgt.manaMax, tgt.mana + 4 * tgt.hitMana);
     this.emit('hit', { u: tgt, x: hx, y: hy, dmg, crit: !!o.crit, shielded, skill: !!o.skill, ang: o.ang ?? 0 });
@@ -380,7 +382,7 @@ export class Battle {
         u.recoil = 1.5;
         this.bullets.push({ x: mx, y: my, src: u, tgt: t, dmg: atk * sk.mult * p, speed: 900, ang: u.aim, weapon: u.weapon, color: '#ffb347', basic: false,
           aoe: sk.r * 82 + 20, big: true, jx: 0, jy: 0, life: 1.5, trail: [] });
-        if (sk.selfPct) this.addShield(u, u.maxHp * sk.selfPct * p, 5);
+        if (sk.selfPct) this.addShield(u, u.maxHp * sk.selfPct * p, 5, u);
         if (sk.taunt) u.tauntT = sk.taunt;
         break;
       }
@@ -408,7 +410,7 @@ export class Battle {
         const rr = (sk.r || 0) * 82 + 30;
         for (const a of this.units) {
           if (!a.alive || a.team !== u.team) continue;
-          if (a === u || (sk.r > 0 && Math.hypot(a.x - u.x, a.y - u.y) <= rr)) this.addShield(a, a === u ? amt : amt * 0.9, sk.dur);
+          if (a === u || (sk.r > 0 && Math.hypot(a.x - u.x, a.y - u.y) <= rr)) this.addShield(a, a === u ? amt : amt * 0.9, sk.dur, u);
         }
         if (sk.taunt) u.tauntT = sk.taunt;
         break;
@@ -418,9 +420,9 @@ export class Battle {
         const list = sk.count ? allies.slice(0, sk.count) : allies;
         for (const a of list) {
           const amt = sk.pct ? a.maxHp * sk.pct * p : (sk.amt + atk * sk.atkMult) * p;
-          const scaled = this.heal(a, amt);
+          const scaled = this.heal(a, amt, u);
           this.emit('heal', { u: a, amt: Math.round(scaled), from: u });
-          if (sk.shield) this.addShield(a, a.maxHp * sk.shield * p, 5);
+          if (sk.shield) this.addShield(a, a.maxHp * sk.shield * p, 5, u);
         }
         break;
       }
@@ -438,15 +440,20 @@ export class Battle {
     }
   }
 
-  heal(u, amt) {
+  heal(u, amt, src = u) {
     const scaled = this.fever ? amt * FEVER_SUPPORT : amt;
+    const before = u.hp;
     u.hp = Math.min(u.maxHp, u.hp + scaled);
+    const actual = Math.max(0, u.hp - before);
+    if (src && actual > 0) src.healDone += actual;
     return scaled;
   }
 
-  addShield(u, amt, dur) {
+  addShield(u, amt, dur, src = u) {
     if (this.fever) amt *= FEVER_SUPPORT;
-    u.shield = (u.shield > 0 ? Math.max(u.shield, amt) : amt);
+    const prev = u.shield;
+    u.shield = (prev > 0 ? Math.max(prev, amt) : amt);
+    if (src && u.shield > prev) src.healDone += (u.shield - prev);
     u.shieldT = Math.max(u.shieldT, dur);
     this.emit('shieldOn', { u });
   }

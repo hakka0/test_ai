@@ -34,6 +34,7 @@ function cycleSpeed() { setSpeed(UI.speed >= 3 ? 1 : UI.speed + 1); sfx('click')
 function togglePause() { if (PC_MODE || G.phase !== 'battle') return; UI.paused = !UI.paused; sfx('click'); U.renderAll(); }
 
 function startBattle() {
+  U.setScout(null);
   const b = S.startBattle();
   if (!b) return;
   battle = b; endTimer = 0; UI.paused = false;
@@ -108,8 +109,9 @@ async function startNewGame() {
     loading.classList.add('hidden');
   }
   startMusic(); setMusicMode('prep');
+  U.resetLbState();
   S.newGame('pvp');
-  UI.sel = null; UI.paused = false;
+  UI.sel = null; UI.scoutId = null; UI.paused = false;
   $('#title').classList.add('hidden');
   U.hideResult(); $('#endScreen').classList.add('hidden');
   renderer.endBattle(); battle = null;
@@ -144,7 +146,7 @@ function frame(now) {
   if (G.mode === 'pvp' && (G.phase === 'prep' || G.phase === 'matching') && !battle) {
     const before = G.phase;
     const r = S.tick(dt);
-    if (before === 'prep' && G.phase === 'matching') { U.hideTip && U.hideTip(); U.renderAll(); }
+    if (before === 'prep' && G.phase === 'matching') { U.setScout(null); U.hideTip && U.hideTip(); U.renderAll(); }
     U.updateTimer();
     if (G.phase === 'matching') U.updateMatch();
     hudAcc += dt;
@@ -178,7 +180,11 @@ window.addEventListener('keydown', (e) => {
     if (starting || loadingVisible) return;
   }
   initAudio();
-  if (k === 'Escape') { if (U.modalOpen()) U.closeModal(); return; }
+  if (k === 'Escape') {
+    if (U.modalOpen()) U.closeModal();
+    else if (PC_MODE && UI.scoutId != null) { U.setScout(null); sfx('click'); }
+    return;
+  }
   if (!$('#title').classList.contains('hidden')) {
     if (k === ' ' || k === 'Enter') { e.preventDefault(); startNewGame(); }
     else if (k === 'h' || k === 'H') U.openHelp();
@@ -191,8 +197,13 @@ window.addEventListener('keydown', (e) => {
   const lk = k.toLowerCase();
   if (lk === 'h') { U.openHelp(); return; }
   if (lk === 'r') { U.openRecipe(); return; }
+  if (PC_MODE && lk === 'b') { U.openHistory(); return; }
   if (U.modalOpen()) return;
-  if (k === ' ' || k === 'Enter') { e.preventDefault(); primary(); return; }
+  if (k === ' ' || k === 'Enter') {
+    const ae = document.activeElement;
+    if (PC_MODE && ae && ae !== document.body && ae.id !== 'btnStart' && ae.matches('button, [role="button"], input, select, textarea')) return;
+    e.preventDefault(); primary(); return;
+  }
   switch (lk) {
     case 'd': if (G.phase === 'prep') { S.reroll(); U.renderAll(); } break;
     case 'f': if (G.phase === 'prep') { S.buyXp(); U.renderAll(); } break;
@@ -217,6 +228,7 @@ U.initUI(renderer, PC_MODE ? { primary } : { cycleSpeed, togglePause, primary })
 let q = 'high';
 try { q = localStorage.getItem('bachess_q') || ((navigator.hardwareConcurrency || 4) <= 2 ? 'low' : 'high'); } catch { /* ignore */ }
 U.setQuality(q);
+if (PC_MODE) U.loadPcPrefs();
 $('#btnPlay').onclick = () => { sfx('click'); startNewGame(); };
 if (PC_MODE) $('#btnAssetRetry').onclick = startNewGame;
 $('#btnHow').onclick = () => U.openHelp();

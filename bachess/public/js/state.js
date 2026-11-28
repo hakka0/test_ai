@@ -19,7 +19,7 @@ export const G = {
   phase: 'title', round: 1, hp: 20, maxHp: 20, gold: 10, level: 3, xp: 0, streak: 0,
   shop: [], locked: false, bench: [], board: [], inv: [], pool: {}, uidSeq: 1,
   stats: { kills: 0, wins: 0, losses: 0, merges: 0, maxGold: 0 }, lastResult: null, battle: null,
-  mode: 'pvp', players: [], prepT: 0, prepMax: 0, ready: false, matchT: 0, opp: null, oppGhost: false, revealOpp: false, matches: [], pending: [], results: [],
+  mode: 'pvp', players: [], prepT: 0, prepMax: 0, ready: false, matchT: 0, opp: null, oppGhost: false, revealOpp: false, matches: [], pending: [], results: [], history: [],
 };
 
 export function bestRecord() {
@@ -35,7 +35,7 @@ export function saveBest(rec) {
 export function newGame(mode = 'pvp') {
   const hp0 = mode === 'pvp' ? PVP_HP : 20;
   Object.assign(G, {
-    mode, players: [], prepT: 0, prepMax: 0, ready: false, matchT: 0, opp: null, oppGhost: false, revealOpp: false, matches: [], pending: [], results: [],
+    mode, players: [], prepT: 0, prepMax: 0, ready: false, matchT: 0, opp: null, oppGhost: false, revealOpp: false, matches: [], pending: [], results: [], history: [],
     phase: 'prep', round: 1, hp: hp0, maxHp: hp0, gold: 10, level: 3, xp: 0, streak: 0, locked: false,
     shop: [null, null, null, null, null], bench: Array(BENCH_SIZE).fill(null), board: Array(BOARD_SLOTS).fill(null),
     inv: [], pool: {}, uidSeq: 1, lastResult: null, battle: null,
@@ -348,6 +348,15 @@ export function startBattle() {
   return b;
 }
 
+export function combatReport(b) {
+  return b.units
+    .filter((u) => u.team === 0 && !u.def.isEnemy)
+    .map((u) => ({
+      uid: u.uid, key: u.def.key, name: u.def.name, star: u.star, role: u.def.role,
+      dmgDealt: Math.round(u.damageDealt), dmgTaken: Math.round(u.damageTaken), healDone: Math.round(u.healDone),
+    }));
+}
+
 export function finishBattle(b) {
   if (G.mode === 'pvp') return finishPvp(b);
   const win = b.winner === 0;
@@ -368,7 +377,8 @@ export function finishBattle(b) {
   const drops = [];
   const n = dropsFor(G.round);
   for (let i = 0; i < n; i++) { const k = giveItem(); if (k) drops.push(k); }
-  const res = { win, dmg, income, intr, streakBonus, winBonus, drops, round: G.round, kills: b.kills, time: b.time, survivors };
+  const res = { win, dmg, income, intr, streakBonus, winBonus, drops, round: G.round, kills: b.kills, time: b.time, survivors, report: combatReport(b) };
+  G.history.push({ round: G.round, win, oppName: `웨이브 ${G.round}`, ghost: false, dmg, income, rank: null, alive: null, synergies: synergyOf(placedUnits()), report: res.report });
   G.lastResult = res;
   const over = G.hp <= 0;
   const cleared = !over && G.round >= MAX_ROUND;
@@ -544,7 +554,8 @@ function finishPvp(b) {
   const alive = aliveCount();
   const dead = !m.alive;
   const cleared = m.alive && alive === 1;
-  const res = { mode: 'pvp', win, dmg, income, intr, streakBonus, winBonus, drops, round: G.round, kills: b.kills, time: b.time, survivors, rank, alive, oppName, ghost: G.oppGhost, elim, total: G.players.length };
+  const res = { mode: 'pvp', win, dmg, income, intr, streakBonus, winBonus, drops, round: G.round, kills: b.kills, time: b.time, survivors, rank, alive, oppName, ghost: G.oppGhost, elim, total: G.players.length, report: combatReport(b) };
+  G.history.push({ round: G.round, win, oppName, ghost: G.oppGhost, dmg, income, rank, alive, synergies: synergyOf(placedUnits()), report: res.report });
   G.lastResult = res;
   res.over = dead || cleared; res.cleared = cleared; res.placement = rank;
   G.phase = res.over ? 'over' : 'result';
